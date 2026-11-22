@@ -3,78 +3,225 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Interactive Maths</title>
+<title>Maths Atlas · Interactive maths courses</title>
 <style>
-:root{--ink:#1c2230;--muted:#7a8191;--paper:#f7f5f0;--line:#e4e0d7}
+:root{--ink:#1c2230;--muted:#737a8a;--paper:#f7f5f0;--line:#e4e0d7;--card:#fff;--c:#0e7c74;--c-soft:#e2f2f0}
+body.cam{--c:#3b4fa8;--c-soft:#e6e9f7}
 *{box-sizing:border-box}
 html,body{margin:0}
-body{min-height:100vh;background:var(--paper);color:var(--ink);font:16px/1.55 "Avenir Next","Segoe UI",system-ui,-apple-system,sans-serif;display:flex;flex-direction:column}
-main{flex:1;width:100%;max-width:980px;margin:0 auto;padding:11vh 1.4rem 3rem}
+body{background:var(--paper);color:var(--ink);font:16px/1.55 "Avenir Next","Segoe UI",system-ui,-apple-system,sans-serif;transition:background .3s}
+main{max-width:1000px;margin:0 auto;padding:8vh 1.2rem 3rem}
 .k{font-size:.76rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:600}
-h1{font-family:Georgia,"Times New Roman",serif;font-weight:600;font-size:clamp(2.1rem,6vw,3.2rem);line-height:1.08;margin:.4rem 0 .6rem}
-.lead{color:var(--muted);margin:0 0 2.6rem;max-width:520px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem}
-.tile{position:relative;display:flex;flex-direction:column;gap:.9rem;padding:1.2rem 1.15rem 1.1rem;border-radius:18px;border:1px solid var(--line);background:#fff;text-decoration:none;color:var(--ink);min-height:210px}
-.tile .ic{width:64px;height:64px;border-radius:16px;display:flex;align-items:center;justify-content:center}
-.tile .ic svg{width:40px;height:40px}
-.tile .lv{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
-.tile .tt{font-family:Georgia,serif;font-size:1.22rem;line-height:1.2;font-weight:600}
-.tile .ds{font-size:.85rem;color:var(--muted);margin-top:auto}
-/* lit tile */
-.tile.on{border-color:transparent;box-shadow:0 0 0 1.5px var(--c),0 10px 30px -12px var(--c);transition:transform .2s,box-shadow .2s}
-.tile.on:hover{transform:translateY(-4px);box-shadow:0 0 0 2px var(--c),0 18px 40px -14px var(--c)}
-.tile.on .ic{background:var(--c);color:#fff}
-.tile.on .lv{color:var(--c)}
-.tile.on .go{position:absolute;top:1.1rem;right:1.1rem;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--c);border-radius:999px;padding:.2rem .6rem}
-.tile.on .dot{position:absolute;top:1.25rem;right:5.6rem;width:8px;height:8px;border-radius:50%;background:var(--c);animation:glow 2.2s ease-in-out infinite}
-@keyframes glow{0%,100%{box-shadow:0 0 0 0 var(--c)}50%{box-shadow:0 0 0 6px transparent}}
-/* waiting tile */
-.tile.off{background:transparent;border-style:dashed;color:#a3a8b3;cursor:default}
-.tile.off .ic{background:#ece9e2;color:#b5b9c2}
-.tile.off .lv{color:#b5b9c2}
-.tile.off .tt{color:#a3a8b3}
-.tile.off .ds{color:#b5b9c2}
+h1{font-family:Georgia,"Times New Roman",serif;font-weight:600;font-size:clamp(2.2rem,6vw,3.3rem);line-height:1.05;margin:.35rem 0 .5rem}
+.lead{color:var(--muted);margin:0 0 2rem;max-width:560px}
+.live{display:inline-flex;align-items:center;gap:.45rem;font-size:.85rem;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:999px;padding:.25rem .8rem;margin-bottom:1.6rem}
+.live i{width:8px;height:8px;border-radius:50%;background:#e0a12a;box-shadow:0 0 0 0 #e0a12a;animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(224,161,42,.6)}70%{box-shadow:0 0 0 8px rgba(224,161,42,0)}100%{box-shadow:0 0 0 0 rgba(224,161,42,0)}}
+
+/* board switch */
+.boards{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-bottom:1.6rem}
+.board{text-align:left;font:inherit;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:18px;padding:1rem 1.1rem;cursor:pointer;position:relative;overflow:hidden;transition:border-color .2s,transform .2s}
+.board:hover{transform:translateY(-2px)}
+.board .bn{font-family:Georgia,serif;font-size:1.45rem;font-weight:600;display:block}
+.board .bs{font-size:.85rem;color:var(--muted)}
+.board .bc{position:absolute;right:1rem;top:1rem;font-size:.78rem;font-weight:700;color:var(--muted)}
+.board.on{border-color:var(--bcol);box-shadow:0 10px 28px -16px var(--bcol)}
+.board.on .bn{color:var(--bcol)}
+.board::after{content:"";position:absolute;left:0;bottom:0;height:4px;width:0;background:var(--bcol);transition:width .35s}
+.board.on::after{width:100%}
+
+/* constellation overview */
+.sky{background:#1c2230;color:#d9dce3;border-radius:18px;padding:1rem 1.1rem 1.1rem;margin-bottom:1.6rem}
+.sky .k{color:#8f96a6}
+.sky-grid{display:grid;gap:6px 4px;margin-top:.7rem;align-items:center}
+.sky-grid .yl{font-size:.75rem;color:#8f96a6;white-space:nowrap}
+.sky-grid .sl{font-size:.68rem;color:#8f96a6;text-align:center;line-height:1.15}
+.star{width:100%;aspect-ratio:1/1;max-width:34px;justify-self:center;border-radius:50%;border:none;background:#2b3243;cursor:pointer;padding:0;position:relative}
+.star:hover{background:#3a4358}
+.star.lit{background:radial-gradient(circle,#ffe9a8 0 30%,#f0b43c 60%,rgba(240,180,60,0) 72%);animation:twinkle 2.6s ease-in-out infinite}
+.star.na{visibility:hidden}
+@keyframes twinkle{0%,100%{filter:brightness(1)}50%{filter:brightness(1.35)}}
+.sky .hint{font-size:.78rem;color:#8f96a6;margin-top:.6rem}
+
+/* tools */
+.tools{display:flex;gap:.6rem;align-items:center;flex-wrap:wrap;margin:0 0 .8rem}
+.tools input[type=search]{flex:1;min-width:180px;font:inherit;padding:.5rem .8rem;border:1px solid var(--line);border-radius:10px;background:#fff}
+.tools button{font:inherit;font-size:.85rem;border:1px solid var(--line);background:#fff;border-radius:10px;padding:.45rem .8rem;cursor:pointer;color:var(--ink)}
+.tools label{font-size:.85rem;color:var(--muted);display:flex;gap:.35rem;align-items:center}
+
+/* stages and years */
+.stage{margin:1.4rem 0 .4rem;display:flex;align-items:baseline;gap:.6rem}
+.stage b{font-family:Georgia,serif;font-size:1.15rem}
+.stage span{font-size:.82rem;color:var(--muted)}
+details.year{background:#fff;border:1px solid var(--line);border-radius:16px;margin:.55rem 0;overflow:hidden}
+details.year>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:.9rem;padding:.8rem 1rem}
+details.year>summary::-webkit-details-marker{display:none}
+.yn{width:46px;height:46px;border-radius:12px;background:#f1eee7;display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;font-size:1.25rem;font-weight:700;flex:0 0 auto}
+details.year.has .yn{background:var(--c);color:#fff}
+.yt{flex:1;min-width:0}
+.yt b{display:block}
+.yt small{color:var(--muted);font-size:.82rem}
+.meter{display:flex;gap:3px}
+.meter i{width:9px;height:9px;border-radius:3px;background:#ebe7df}
+.meter i.on{background:#f0b43c}
+.chev{transition:transform .25s;color:var(--muted)}
+details.year[open] .chev{transform:rotate(90deg)}
+.strands{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:.6rem;padding:.2rem 1rem 1rem}
+.strand{border:1px dashed #dcd7cc;border-radius:14px;padding:.75rem .8rem;color:#a1a6b1;background:#fcfbf8;display:flex;flex-direction:column;gap:.45rem}
+.strand .si{width:38px;height:38px;border-radius:10px;background:#efece5;display:flex;align-items:center;justify-content:center}
+.strand .si svg{width:24px;height:24px}
+.strand .sn{font-weight:600;font-size:.95rem;line-height:1.2}
+.strand .ss{font-size:.78rem}
+.strand.lit{grid-column:span 2;border:1.5px solid var(--c);background:#fff;color:var(--ink);box-shadow:0 8px 22px -14px var(--c)}
+.strand.lit .si{background:var(--c);color:#fff}
+.strand.lit .ss{color:var(--c);font-weight:600}
+.strand.flash{animation:flash 1.2s ease}
+@keyframes flash{0%,100%{box-shadow:0 0 0 0 transparent}30%{box-shadow:0 0 0 5px #f0b43c}}
+.res{display:flex;flex-direction:column;gap:.35rem;margin-top:.2rem}
+.res a{display:flex;align-items:center;gap:.5rem;text-decoration:none;color:var(--ink);font-size:.86rem;background:var(--c-soft);border-radius:9px;padding:.4rem .55rem;transition:transform .15s}
+.res a:hover{transform:translateX(3px)}
+.res a .ty{font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--c);margin-left:auto}
+.hidden{display:none!important}
+.empty{color:var(--muted);font-size:.9rem;padding:1rem 0}
 footer{text-align:center;color:var(--muted);font-size:.8rem;padding:1.5rem}
-@media(max-width:480px){.grid{grid-template-columns:1fr 1fr;gap:.7rem}.tile{min-height:190px;padding:1rem .9rem}.tile .ic{width:52px;height:52px}.tile .ic svg{width:32px;height:32px}.tile .tt{font-size:1.05rem}.tile.on .go{display:none}.tile.on .dot{right:1rem}}
+@media(max-width:560px){.strand.lit{grid-column:1/-1}.boards{grid-template-columns:1fr 1fr;gap:.5rem}.board{padding:.8rem}.board .bn{font-size:1.15rem}.board .bc{display:none}.strands{grid-template-columns:1fr 1fr;padding:.2rem .7rem .8rem}.meter{display:none}.sky-grid .sl{font-size:.58rem}}
 </style>
 </head>
 <body>
 <main>
   <div class="k">Interactive maths</div>
-  <h1>Learn it. Play with it. Practise it.</h1>
-  <p class="lead">Choose a course. Lit tiles are ready to open; the others are on their way.</p>
-  <div class="grid" id="grid"></div>
+  <h1>Maths Atlas</h1>
+  <p class="lead">Pick your course, open your year, and choose a topic. Glowing topics are ready to explore. The rest of the map lights up as new revision goes live.</p>
+  <div class="live"><i></i><span id="liveTxt"></span></div>
+
+  <div class="boards" id="boards"></div>
+
+  <div class="sky">
+    <div class="k" id="skyTitle">Star map</div>
+    <div class="sky-grid" id="sky"></div>
+    <div class="hint">Each star is one topic in one year. Bright stars are live; tap one to jump to it.</div>
+  </div>
+
+  <div class="tools">
+    <input id="q" type="search" placeholder="Search a topic, e.g. probability" aria-label="search">
+    <label><input type="checkbox" id="liveOnly"> Live only</label>
+    <button type="button" id="expand">Open all</button>
+  </div>
+  <div id="tree"></div>
 </main>
-<footer>Interactive maths courses</footer>
+<footer>Maths Atlas · NCEA and Cambridge<br>Designed by Mr. Shen</footer>
 
 <script>
-/* ===== COURSE LIST =====
-   To add a course: put its files in a new folder, then add one line here.
-   ready:true lights the tile and makes it clickable; ready:false shows a dim "coming soon" tile.
-   icon: one of stats, geometry, algebra, number, measure, calculus
-*/
-const COURSES = [
-  {level:'NCEA · Year 10', title:'Statistics and Probability', desc:'Exam revision · 10 concept stations · about 45 min', href:'y10-statistics-probability/revision.html', icon:'stats', color:'#0e7c74', ready:true},
-  {level:'Year 9',  title:'Geometry',  desc:'Coming soon', icon:'geometry', ready:false},
-  {level:'Year 8',  title:'Algebra',   desc:'Coming soon', icon:'algebra',  ready:false},
-  {level:'Year 9',  title:'Number',    desc:'Coming soon', icon:'number',   ready:false},
-  {level:'Year 10', title:'Measurement', desc:'Coming soon', icon:'measure', ready:false},
-  {level:'Senior',  title:'Calculus',  desc:'Coming soon', icon:'calculus', ready:false}
-];
-
-const ICONS = {
-  stats:'<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 34h30"/><path d="M9 34V22M16 34V12M23 34V18"/><rect x="26" y="5" width="10" height="10" rx="2.5"/><circle cx="29" cy="8" r=".9" fill="currentColor"/><circle cx="33" cy="12" r=".9" fill="currentColor"/></svg>',
-  geometry:'<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"><path d="M6 33L20 7l14 26z"/><circle cx="20" cy="24" r="5"/></svg>',
-  algebra:'<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"><path d="M7 12l12 16M19 12L7 28"/><path d="M24 20h10M29 15v10"/></svg>',
-  number:'<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M4 22h32"/><path d="M8 18v8M16 18v8M24 18v8M32 18v8"/><path d="M12 12c4-5 12-5 16 0" /><path d="M25 9l3 3-4 1"/></svg>',
-  measure:'<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"><rect x="4" y="13" width="32" height="14" rx="2"/><path d="M10 13v6M16 13v4M22 13v6M28 13v4" stroke-linecap="round"/></svg>',
-  calculus:'<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M5 34h30M5 34V6"/><path d="M8 30C15 30 18 10 34 9"/><path d="M14 18l12-6"/></svg>'
+/* =================================================================
+   HOW TO ADD A RESOURCE
+   Find the key below as  board/year/strand  and add a line, e.g.
+     'cam/9/geometry': [ {title:'Angles revision', href:'cam-y9-geometry/revision.html', type:'interactive'} ],
+   type: interactive | print | lesson | revision
+   A strand with at least one resource lights up automatically.
+   ================================================================= */
+const RESOURCES = {
+  'ncea/10/statprob': [
+    {title:'Exam revision: concepts and practice', href:'y10-statistics-probability/revision.html', type:'interactive'}
+  ]
 };
 
-document.getElementById('grid').innerHTML = COURSES.map(c => c.ready
-  ? `<a class="tile on" href="${c.href}" style="--c:${c.color||'#0e7c74'}"><span class="dot"></span><span class="go">Open</span><div class="ic">${ICONS[c.icon]||''}</div><div><div class="lv">${c.level}</div><div class="tt">${c.title}</div></div><div class="ds">${c.desc}</div></a>`
-  : `<div class="tile off" aria-disabled="true"><div class="ic">${ICONS[c.icon]||''}</div><div><div class="lv">${c.level}</div><div class="tt">${c.title}</div></div><div class="ds">${c.desc}</div></div>`
-).join('');
+/* ===== STRUCTURE ===== */
+const STRANDS = {
+  number:{n:'Number',s:'Num'}, algebra:{n:'Algebra',s:'Alg'}, geometry:{n:'Geometry',s:'Geo'}, measurement:{n:'Measurement',s:'Meas'},
+  statprob:{n:'Statistics & Probability',s:'S&amp;P'}, statistics:{n:'Statistics',s:'Stat'}, probability:{n:'Probability',s:'Prob'},
+  trig:{n:'Trigonometry',s:'Trig'}, calculus:{n:'Calculus',s:'Calc'}, pure:{n:'Pure Mathematics',s:'Pure'}, mechanics:{n:'Mechanics',s:'Mech'}
+};
+const BOARDS = {
+  ncea:{name:'NCEA', sub:'New Zealand · Years 9–13', col:'#0e7c74', cls:'',
+    stages:[
+      {name:'Junior', note:'Years 9–10 · building towards NCEA', years:[9,10], strands:['number','algebra','geometry','measurement','statprob']},
+      {name:'Level 1', note:'Year 11', years:[11], strands:['number','algebra','geometry','measurement','statprob']},
+      {name:'Level 2', note:'Year 12', years:[12], strands:['algebra','trig','calculus','statprob']},
+      {name:'Level 3', note:'Year 13', years:[13], strands:['algebra','trig','calculus','statprob']}
+    ]},
+  cam:{name:'Cambridge', sub:'International · Years 7–13', col:'#3b4fa8', cls:'cam',
+    stages:[
+      {name:'Lower Secondary', note:'Years 7–9 · Checkpoint', years:[7,8,9], strands:['number','algebra','geometry','measurement','statistics','probability']},
+      {name:'IGCSE', note:'Years 10–11', years:[10,11], strands:['number','algebra','geometry','measurement','statistics','probability']},
+      {name:'AS Level', note:'Year 12', years:[12], strands:['pure','statistics','probability','mechanics']},
+      {name:'A Level', note:'Year 13', years:[13], strands:['pure','statistics','probability','mechanics']}
+    ]}
+};
+const ICON = {
+  number:'<path d="M3 13h18"/><path d="M6 10v6M12 10v6M18 10v6"/>',
+  algebra:'<path d="M4 7l8 10M12 7L4 17"/><path d="M15 12h6M18 9v6"/>',
+  geometry:'<path d="M4 19L12 5l8 14z"/><circle cx="12" cy="14" r="3"/>',
+  measurement:'<rect x="3" y="8" width="18" height="8" rx="1.5"/><path d="M7 8v3M11 8v2M15 8v3M19 8v2"/>',
+  statprob:'<path d="M3 20h12M5 20v-6M9 20V9M13 20v-4"/><rect x="15" y="3" width="6" height="6" rx="1.5"/>',
+  statistics:'<path d="M3 20h18M6 20v-6M11 20V8M16 20v-9"/>',
+  probability:'<rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="9" cy="9" r="1" fill="currentColor"/><circle cx="15" cy="15" r="1" fill="currentColor"/><circle cx="12" cy="12" r="1" fill="currentColor"/>',
+  trig:'<path d="M4 19h16L4 7z"/><path d="M8 19a4 4 0 0 0-1.5-3"/>',
+  calculus:'<path d="M4 20h16M4 20V4"/><path d="M6 17c5 0 7-11 13-12"/>',
+  pure:'<path d="M5 6h14M8 6v12M16 6v9a3 3 0 0 0 3 3"/>',
+  mechanics:'<circle cx="12" cy="12" r="3"/><path d="M12 3v4M12 17v4M3 12h4M17 12h4"/>'
+};
+const TYPE = {interactive:'Interactive', print:'Printable', lesson:'Lesson', revision:'Revision'};
+
+/* ===== STATE ===== */
+let board='ncea';
+try{const b=localStorage.getItem('atlas-board');if(BOARDS[b])board=b}catch(e){}
+if(/^#(ncea|cam)/.test(location.hash))board=location.hash.slice(1).split('-')[0];
+const $=s=>document.querySelector(s);
+const res=(b,y,s)=>RESOURCES[`${b}/${y}/${s}`]||[];
+const icon=k=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${ICON[k]||''}</svg>`;
+const yearsOf=b=>BOARDS[b].stages.flatMap(st=>st.years.map(y=>({y,st})));
+const countLive=b=>yearsOf(b).reduce((a,{y,st})=>a+st.strands.filter(s=>res(b,y,s).length).length,0);
+
+function renderBoards(){
+  $('#boards').innerHTML=Object.keys(BOARDS).map(k=>{const B=BOARDS[k],n=countLive(k);
+    return `<button type="button" class="board${k===board?' on':''}" data-b="${k}" style="--bcol:${B.col}"><span class="bn">${B.name}</span><span class="bs">${B.sub}</span><span class="bc">${n} live</span></button>`}).join('');
+  document.querySelectorAll('.board').forEach(b=>b.onclick=()=>{board=b.dataset.b;try{localStorage.setItem('atlas-board',board)}catch(e){};render()});
+  const total=Object.keys(BOARDS).reduce((a,k)=>a+countLive(k),0);
+  $('#liveTxt').textContent=`${total} topic${total===1?'':'s'} live · more coming`;
+}
+function renderSky(){
+  const B=BOARDS[board],ys=yearsOf(board),cols=[...new Set(B.stages.flatMap(s=>s.strands))];
+  $('#skyTitle').textContent=`${B.name} star map`;
+  const g=$('#sky');g.style.gridTemplateColumns=`auto repeat(${cols.length},minmax(0,1fr))`;
+  let h='<span></span>'+cols.map(c=>`<span class="sl" title="${STRANDS[c].n}">${STRANDS[c].s}</span>`).join('');
+  ys.forEach(({y,st})=>{h+=`<span class="yl">Year ${y}</span>`;
+    cols.forEach(c=>{const ok=st.strands.includes(c),lit=ok&&res(board,y,c).length;
+      h+=`<button type="button" class="star${lit?' lit':''}${ok?'':' na'}" data-y="${y}" data-s="${c}" title="Year ${y} · ${STRANDS[c].n}${lit?' (live)':''}" aria-label="Year ${y} ${STRANDS[c].n}"></button>`})});
+  g.innerHTML=h;
+  g.querySelectorAll('.star:not(.na)').forEach(s=>s.onclick=()=>jump(+s.dataset.y,s.dataset.s));
+}
+function renderTree(){
+  const B=BOARDS[board];let h='';
+  B.stages.forEach(st=>{
+    h+=`<div class="stage"><b>${st.name}</b><span>${st.note}</span></div>`;
+    st.years.forEach(y=>{
+      const live=st.strands.filter(s=>res(board,y,s).length).length;
+      h+=`<details class="year${live?' has':''}" id="${board}-${y}" ${live?'open':''}><summary><span class="yn">${y}</span><span class="yt"><b>Year ${y}</b><small>${live?live+' of '+st.strands.length+' topics live':'Topics coming soon'}</small></span><span class="meter">${st.strands.map(s=>`<i class="${res(board,y,s).length?'on':''}"></i>`).join('')}</span><span class="chev">▸</span></summary><div class="strands">`;
+      st.strands.forEach(s=>{const R=res(board,y,s);
+        h+=`<div class="strand${R.length?' lit':''}" data-s="${s}" data-text="${(STRANDS[s].n+' year '+y+' '+R.map(r=>r.title).join(' ')).toLowerCase()}"><div class="si">${icon(s)}</div><div class="sn">${STRANDS[s].n}</div>`+
+          (R.length?`<div class="ss">${R.length} resource${R.length>1?'s':''}</div><div class="res">${R.map(r=>`<a href="${r.href}">${r.title}<span class="ty">${TYPE[r.type]||''}</span></a>`).join('')}</div>`:`<div class="ss">Coming soon</div>`)+`</div>`});
+      h+=`</div></details>`;});
+  });
+  $('#tree').innerHTML=h+'<div class="empty hidden" id="empty">No topics match. Try another word.</div>';
+  filter();
+}
+function jump(y,s){
+  const d=document.getElementById(`${board}-${y}`);if(!d)return;d.open=true;
+  const el=d.querySelector(`.strand[data-s="${s}"]`);d.scrollIntoView({behavior:'smooth',block:'start'});
+  if(el){el.classList.remove('flash');void el.offsetWidth;el.classList.add('flash')}
+}
+function filter(){
+  const q=$('#q').value.trim().toLowerCase(),lo=$('#liveOnly').checked;let any=false;
+  document.querySelectorAll('details.year').forEach(d=>{let shown=0;
+    d.querySelectorAll('.strand').forEach(s=>{const ok=(!q||s.dataset.text.includes(q))&&(!lo||s.classList.contains('lit'));s.classList.toggle('hidden',!ok);if(ok)shown++});
+    d.classList.toggle('hidden',!shown);if((q||lo)&&shown)d.open=true;if(shown)any=true;});
+  document.querySelectorAll('.stage').forEach(st=>{let n=st.nextElementSibling,vis=false;while(n&&n.matches('details.year')){if(!n.classList.contains('hidden'))vis=true;n=n.nextElementSibling}st.classList.toggle('hidden',!vis)});
+  const e=$('#empty');if(e)e.classList.toggle('hidden',any);
+}
+function render(){document.body.className=BOARDS[board].cls;renderBoards();renderSky();renderTree();}
+$('#q').oninput=filter;$('#liveOnly').onchange=filter;
+$('#expand').onclick=()=>{const all=[...document.querySelectorAll('details.year')],open=all.some(d=>!d.open);all.forEach(d=>d.open=open);$('#expand').textContent=open?'Close all':'Open all'};
+render();
 </script>
 </body>
 </html>
