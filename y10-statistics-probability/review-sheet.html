@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Year 10 Statistics and Probability · Printable Review Sheet</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false})"></script>
+<style>
+@page{size:A4;margin:14mm 15mm}
+*{box-sizing:border-box}
+body{font:11.5pt/1.5 "Avenir Next","Segoe UI",system-ui,sans-serif;color:#1c2230;max-width:190mm;margin:0 auto;padding:10mm 4mm;background:#fff}
+h1{font-family:Georgia,serif;font-size:20pt;margin:0 0 2mm}
+h2{font-family:Georgia,serif;font-size:13.5pt;margin:6mm 0 2mm;padding-bottom:1mm;border-bottom:2px solid #1c2230}
+.top{display:flex;justify-content:space-between;align-items:flex-end;gap:6mm;flex-wrap:wrap}
+.name{font-size:11pt}
+.name span{display:inline-block;border-bottom:1px solid #555;width:62mm;margin-left:2mm}
+.intro{font-size:10.5pt;color:#444;margin:2mm 0 4mm}
+.q{break-inside:avoid;page-break-inside:avoid;margin:0 0 5mm}
+.q>.stem{margin:1mm 0 2mm}
+.part{display:flex;gap:2mm;margin:2.5mm 0 1mm}
+.part b{min-width:7mm}
+.lines{margin-left:9mm}
+.lines div{border-bottom:1px solid #b9b9b9;height:9mm}
+table.t{border-collapse:collapse;margin:2mm 0;font-size:10.5pt}
+table.t th,table.t td{border:1px solid #888;padding:1.2mm 2.5mm;text-align:center;min-width:16mm}
+table.t th{background:#f1eee7}
+table.t td.blank{min-width:22mm;height:8mm}
+.fig{margin:2mm 0 2mm 9mm}
+svg{display:block;max-width:100%;height:auto}
+.pb{break-before:page;page-break-before:always}
+.btnbar{position:fixed;right:12px;top:12px}
+.btnbar button{font:inherit;padding:6px 14px;border:1px solid #1c2230;background:#fff;border-radius:8px;cursor:pointer}
+@media print{.btnbar{display:none}body{padding:0}}
+@media(max-width:600px){body{padding:4mm}.lines,.fig{margin-left:0}}
+</style>
+</head>
+<body>
+<div class="btnbar"><button onclick="window.print()">Print / Save as PDF</button></div>
+<div class="top">
+  <h1>Statistics &amp; Probability · Review Sheet</h1>
+  <div class="name">Name<span></span></div>
+</div>
+<p class="intro">Show every step of your working. Give probabilities as fractions in simplest form unless asked otherwise. A calculator may be used.</p>
+
+<h2>Section A · Statistics</h2>
+
+<div class="q">
+  <p class="stem"><b>1.</b> 72 people chose their favourite fruit.</p>
+  <table class="t" style="margin-left:9mm">
+    <tr><th>Fruit</th><th>Number</th><th>Percentage (1 d.p.)</th><th>Pie chart angle</th></tr>
+    <tr><td>Apple</td><td>18</td><td class="blank"></td><td class="blank"></td></tr>
+    <tr><td>Banana</td><td>24</td><td class="blank"></td><td class="blank"></td></tr>
+    <tr><td>Kiwifruit</td><td>20</td><td class="blank"></td><td class="blank"></td></tr>
+    <tr><td>Grapes</td><td>10</td><td class="blank"></td><td class="blank"></td></tr>
+    <tr><th>Total</th><th>72</th><th>100%</th><th>$360^\circ$</th></tr>
+  </table>
+  <div class="part"><b>(a)</b><span>Complete the table. Write out one percentage calculation and one angle calculation in full.</span></div>
+  <div class="lines"><div></div><div></div><div></div></div>
+  <div class="part"><b>(b)</b><span>Draw and label a pie chart with a title in the circle below.</span></div>
+  <div class="fig"><svg viewBox="0 0 600 190" width="600"><circle cx="110" cy="95" r="85" fill="none" stroke="#333" stroke-width="1.5"/><circle cx="110" cy="95" r="2.5" fill="#333"/><line x1="110" y1="95" x2="110" y2="10" stroke="#333" stroke-width="1.2"/><text x="230" y="40" font-size="15" fill="#555">Title: ______________________________</text></svg></div>
+  <div class="part"><b>(c)</b><span>Sam says, “Exactly one third of the people chose banana.” Use a calculation to decide whether Sam is right.</span></div>
+  <div class="lines"><div></div><div></div></div>
+</div>
+
+<div class="q">
+  <p class="stem"><b>2.</b> The numbers of push-ups done in one minute by two groups, in order:</p>
+  <table class="t" style="margin-left:9mm">
+    <tr><th>X</th><td>14</td><td>16</td><td>17</td><td>19</td><td>22</td><td>24</td><td>25</td><td>28</td><td>31</td><td></td></tr>
+    <tr><th>Y</th><td>18</td><td>21</td><td>23</td><td>25</td><td>27</td><td>28</td><td>29</td><td>30</td><td>33</td><td>35</td></tr>
+  </table>
+  <div class="part"><b>(a)</b><span>Find the five-number summary for each group. Group X has 9 values and group Y has 10. Explain how you found the quartiles in each case.</span></div>
+  <div class="lines"><div></div><div></div><div></div><div></div></div>
+  <div class="part"><b>(b)</b><span>Draw both box plots on the scale below.</span></div>
+  <div class="fig" id="fig2"></div>
+  <div class="part"><b>(c)</b><span>Calculate the IQR of each group and compare the spreads in a sentence.</span></div>
+  <div class="lines"><div></div><div></div></div>
+  <div class="part"><b>(d)</b><span>Use the 75%–50% rule to decide whether group Y tends to do more push-ups than group X. Show the count and the percentage.</span></div>
+  <div class="lines"><div></div><div></div><div></div></div>
+</div>
+
+<div class="q pb">
+  <p class="stem"><b>3.</b> The age (years) and price (thousands of dollars) of 12 used cars of the same model:</p>
+  <table class="t" style="margin-left:9mm">
+    <tr><th>Age</th><td>1</td><td>2</td><td>2</td><td>3</td><td>4</td><td>4</td><td>5</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td></tr>
+    <tr><th>Price</th><td>24</td><td>22</td><td>21</td><td>19</td><td>18</td><td>17</td><td>15</td><td>25</td><td>13</td><td>11</td><td>10</td><td>8</td></tr>
+  </table>
+  <div class="part"><b>(a)</b><span>Plot the points on the grid and give the graph a title.</span></div>
+  <div class="fig" id="fig3"></div>
+  <div class="part"><b>(b)</b><span>Describe the direction and strength of the relationship. Identify the unusual point and suggest a reason for it.</span></div>
+  <div class="lines"><div></div><div></div><div></div></div>
+  <div class="part"><b>(c)</b><span>Draw a line of best fit. Use it to estimate the price of a car that is 6.5 years old.</span></div>
+  <div class="lines"><div></div><div></div></div>
+  <div class="part"><b>(d)</b><span>Would your line give a reliable price for a car that is 15 years old? Explain.</span></div>
+  <div class="lines"><div></div><div></div></div>
+</div>
+
+<div class="q">
+  <p class="stem"><b>4.</b> A club had 52 members last year and 56 this year. Its newsletter shows a bar graph whose vertical axis starts at 50.</p>
+  <div class="part"><b>(a)</b><span>On that graph, this year's bar <i>looks</i> how many times as tall as last year's bar? Show how you know.</span></div>
+  <div class="lines"><div></div><div></div></div>
+  <div class="part"><b>(b)</b><span>Calculate the actual percentage increase, and write a claim about the change that the data support.</span></div>
+  <div class="lines"><div></div><div></div><div></div></div>
+</div>
+
+<h2 class="pb">Section B · Probability</h2>
+
+<div class="q">
+  <p class="stem"><b>5.</b> The ten letters of the word <b>STATISTICS</b> are written on cards. One card is picked at random.</p>
+  <div class="part"><b>(a)</b><span>Find $P(\text{S})$.</span></div>
+  <div class="lines"><div></div></div>
+  <div class="part"><b>(b)</b><span>Find $P(\text{T or a vowel})$. List the cards you counted.</span></div>
+  <div class="lines"><div></div><div></div></div>
+  <div class="part"><b>(c)</b><span>Find $P(\text{the letter is one of C, A, T})$.</span></div>
+  <div class="lines"><div></div></div>
+  <div class="part"><b>(d)</b><span>Mark your answers to (a), (b) and (c) with the letters a, b and c on the probability scale.</span></div>
+  <div class="fig"><svg viewBox="0 0 600 60" width="600"><line x1="30" y1="25" x2="570" y2="25" stroke="#333" stroke-width="1.5"/><text x="30" y="52" font-size="14" text-anchor="middle">0</text><text x="300" y="52" font-size="14" text-anchor="middle">½</text><text x="570" y="52" font-size="14" text-anchor="middle">1</text><line x1="30" y1="17" x2="30" y2="33" stroke="#333"/><line x1="300" y1="17" x2="300" y2="33" stroke="#333"/><line x1="570" y1="17" x2="570" y2="33" stroke="#333"/><line x1="165" y1="20" x2="165" y2="30" stroke="#333"/><line x1="435" y1="20" x2="435" y2="30" stroke="#333"/></svg></div>
+</div>
+
+<div class="q">
+  <p class="stem"><b>6.</b> A drawing pin is dropped 120 times. It lands point up 66 times.</p>
+  <div class="part"><b>(a)</b><span>Estimate the probability that the pin lands point up.</span></div>
+  <div class="lines"><div></div></div>
+  <div class="part"><b>(b)</b><span>How many times would you expect it to land point up in 500 drops?</span></div>
+  <div class="lines"><div></div></div>
+  <div class="part"><b>(c)</b><span>Explain why the result in 500 drops will probably not be exactly your answer to (b), and how to get a better estimate.</span></div>
+  <div class="lines"><div></div><div></div></div>
+</div>
+
+<div class="q">
+  <p class="stem"><b>7.</b> Two fair dice are rolled and the two numbers are <b>multiplied</b>.</p>
+  <div class="part"><b>(a)</b><span>Complete the table of products.</span></div>
+  <table class="t" style="margin-left:9mm"><tr><th>×</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th></tr>
+    <tr><th>1</th><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><th>2</th><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><th>3</th><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><th>4</th><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><th>5</th><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><th>6</th><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>
+  <div class="part"><b>(b)</b><span>Find $P(\text{product is }12)$.</span></div>
+  <div class="lines"><div></div></div>
+  <div class="part"><b>(c)</b><span>Find $P(\text{neither die shows a }1)$.</span></div>
+  <div class="lines"><div></div></div>
+</div>
+
+<div class="q pb">
+  <p class="stem"><b>8.</b> A team has 3 girls and 5 boys. Two captains are chosen at random, one after the other (the same person cannot be chosen twice).</p>
+  <div class="part"><b>(a)</b><span>Complete the tree diagram with all six branch probabilities.</span></div>
+  <div class="fig"><svg viewBox="0 0 600 200" width="600"><g stroke="#333" stroke-width="1.5" fill="none"><line x1="30" y1="100" x2="230" y2="45"/><line x1="30" y1="100" x2="230" y2="155"/><line x1="260" y1="45" x2="470" y2="18"/><line x1="260" y1="45" x2="470" y2="72"/><line x1="260" y1="155" x2="470" y2="128"/><line x1="260" y1="155" x2="470" y2="182"/></g><g font-size="15" font-weight="700"><text x="238" y="50">G</text><text x="238" y="160">B</text><text x="478" y="23">G</text><text x="478" y="77">B</text><text x="478" y="133">G</text><text x="478" y="187">B</text></g><text x="40" y="30" font-size="13" fill="#666">1st captain</text><text x="300" y="196" font-size="13" fill="#666">2nd captain</text></svg></div>
+  <div class="part"><b>(b)</b><span>Find $P(\text{both captains are girls})$.</span></div>
+  <div class="lines"><div></div><div></div></div>
+  <div class="part"><b>(c)</b><span>Find $P(\text{one girl and one boy})$. Include both orders.</span></div>
+  <div class="lines"><div></div><div></div></div>
+  <div class="part"><b>(d)</b><span>Find $P(\text{at least one girl})$. Use the quickest method you can.</span></div>
+  <div class="lines"><div></div><div></div></div>
+</div>
+
+<div class="q">
+  <p class="stem"><b>9.</b> 80 students were asked whether they ate breakfast and whether they arrived late.</p>
+  <table class="t" style="margin-left:9mm">
+    <tr><th></th><th>Late</th><th>On time</th><th>Total</th></tr>
+    <tr><th>Breakfast</th><td>6</td><td class="blank"></td><td>52</td></tr>
+    <tr><th>No breakfast</th><td>10</td><td>18</td><td class="blank"></td></tr>
+    <tr><th>Total</th><td class="blank"></td><td class="blank"></td><td>80</td></tr>
+  </table>
+  <div class="part"><b>(a)</b><span>Complete the table.</span></div>
+  <div class="part"><b>(b)</b><span>Find $P(\text{ate breakfast and on time})$.</span></div>
+  <div class="lines"><div></div></div>
+  <div class="part"><b>(c)</b><span>Given that a student had no breakfast, find $P(\text{late})$.</span></div>
+  <div class="lines"><div></div></div>
+  <div class="part"><b>(d)</b><span>Given that a student was late, find $P(\text{no breakfast})$. Explain why (c) and (d) have different answers.</span></div>
+  <div class="lines"><div></div><div></div><div></div></div>
+</div>
+
+<script>
+// blank box-plot scale (Q2) and scatter grid (Q3)
+(function(){
+  let s='<svg viewBox="0 0 600 150" width="600">';
+  const sx=v=>30+(v-10)/(40-10)*540;
+  s+='<text x="4" y="40" font-size="15" font-weight="700">X</text><text x="4" y="95" font-size="15" font-weight="700">Y</text>';
+  s+='<line x1="30" y1="125" x2="570" y2="125" stroke="#333"/>';
+  for(let v=10;v<=40;v++){const big=v%5===0;s+=`<line x1="${sx(v)}" y1="125" x2="${sx(v)}" y2="${big?133:129}" stroke="#333"/>`;if(big)s+=`<text x="${sx(v)}" y="146" font-size="13" text-anchor="middle">${v}</text>`}
+  s+='<text x="570" y="115" font-size="12" text-anchor="end" fill="#666">push-ups</text></svg>';
+  document.getElementById('fig2').innerHTML=s;
+  let g='<svg viewBox="0 0 600 330" width="600">';
+  const L=50,B=290,R=580,T=10,gx=x=>L+x/10*(R-L),gy=y=>B-y/30*(B-T);
+  for(let x=0;x<=10;x+=0.5)g+=`<line x1="${gx(x)}" y1="${T}" x2="${gx(x)}" y2="${B}" stroke="${x%1?'#eee':'#ccc'}"/>`;
+  for(let y=0;y<=30;y+=1)g+=`<line x1="${L}" y1="${gy(y)}" x2="${R}" y2="${gy(y)}" stroke="${y%5?'#eee':'#ccc'}"/>`;
+  for(let x=0;x<=10;x++)g+=`<text x="${gx(x)}" y="${B+16}" font-size="12" text-anchor="middle">${x}</text>`;
+  for(let y=0;y<=30;y+=5)g+=`<text x="${L-6}" y="${gy(y)+4}" font-size="12" text-anchor="end">${y}</text>`;
+  g+=`<line x1="${L}" y1="${B}" x2="${R}" y2="${B}" stroke="#333"/><line x1="${L}" y1="${T}" x2="${L}" y2="${B}" stroke="#333"/>`;
+  g+=`<text x="${(L+R)/2}" y="326" font-size="13" text-anchor="middle">Age (years)</text><text x="14" y="${(T+B)/2}" font-size="13" text-anchor="middle" transform="rotate(-90 14 ${(T+B)/2})">Price ($1000s)</text></svg>`;
+  document.getElementById('fig3').innerHTML=g;
+})();
+</script>
+</body>
+</html>

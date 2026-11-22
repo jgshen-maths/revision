@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Interactive Maths</title>
+<style>
+:root{--ink:#1c2230;--muted:#7a8191;--paper:#f7f5f0;--line:#e4e0d7}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{min-height:100vh;background:var(--paper);color:var(--ink);font:16px/1.55 "Avenir Next","Segoe UI",system-ui,-apple-system,sans-serif;display:flex;flex-direction:column}
+main{flex:1;width:100%;max-width:980px;margin:0 auto;padding:11vh 1.4rem 3rem}
+.k{font-size:.76rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:600}
+h1{font-family:Georgia,"Times New Roman",serif;font-weight:600;font-size:clamp(2.1rem,6vw,3.2rem);line-height:1.08;margin:.4rem 0 .6rem}
+.lead{color:var(--muted);margin:0 0 2.6rem;max-width:520px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem}
+.tile{position:relative;display:flex;flex-direction:column;gap:.9rem;padding:1.2rem 1.15rem 1.1rem;border-radius:18px;border:1px solid var(--line);background:#fff;text-decoration:none;color:var(--ink);min-height:210px}
+.tile .ic{width:64px;height:64px;border-radius:16px;display:flex;align-items:center;justify-content:center}
+.tile .ic svg{width:40px;height:40px}
+.tile .lv{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+.tile .tt{font-family:Georgia,serif;font-size:1.22rem;line-height:1.2;font-weight:600}
+.tile .ds{font-size:.85rem;color:var(--muted);margin-top:auto}
+/* lit tile */
+.tile.on{border-color:transparent;box-shadow:0 0 0 1.5px var(--c),0 10px 30px -12px var(--c);transition:transform .2s,box-shadow .2s}
+.tile.on:hover{transform:translateY(-4px);box-shadow:0 0 0 2px var(--c),0 18px 40px -14px var(--c)}
+.tile.on .ic{background:var(--c);color:#fff}
+.tile.on .lv{color:var(--c)}
+.tile.on .go{position:absolute;top:1.1rem;right:1.1rem;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--c);border-radius:999px;padding:.2rem .6rem}
+.tile.on .dot{position:absolute;top:1.25rem;right:5.6rem;width:8px;height:8px;border-radius:50%;background:var(--c);animation:glow 2.2s ease-in-out infinite}
+@keyframes glow{0%,100%{box-shadow:0 0 0 0 var(--c)}50%{box-shadow:0 0 0 6px transparent}}
+/* waiting tile */
+.tile.off{background:transparent;border-style:dashed;color:#a3a8b3;cursor:default}
+.tile.off .ic{background:#ece9e2;color:#b5b9c2}
+.tile.off .lv{color:#b5b9c2}
+.tile.off .tt{color:#a3a8b3}
+.tile.off .ds{color:#b5b9c2}
+footer{text-align:center;color:var(--muted);font-size:.8rem;padding:1.5rem}
+@media(max-width:480px){.grid{grid-template-columns:1fr 1fr;gap:.7rem}.tile{min-height:190px;padding:1rem .9rem}.tile .ic{width:52px;height:52px}.tile .ic svg{width:32px;height:32px}.tile .tt{font-size:1.05rem}.tile.on .go{display:none}.tile.on .dot{right:1rem}}
+</style>
+</head>
+<body>
+<main>
+  <div class="k">Interactive maths</div>
+  <h1>Learn it. Play with it. Practise it.</h1>
+  <p class="lead">Choose a course. Lit tiles are ready to open; the others are on their way.</p>
+  <div class="grid" id="grid"></div>
+</main>
+<footer>Interactive maths courses</footer>
+
+<script>
+/* ===== COURSE LIST =====
+   To add a course: put its files in a new folder, then add one line here.
+   ready:true lights the tile and makes it clickable; ready:false shows a dim "coming soon" tile.
+   icon: one of stats, geometry, algebra, number, measure, calculus
+*/
+const COURSES = [
+  {level:'NCEA · Year 10', title:'Statistics and Probability', desc:'Exam revision · 10 concept stations · about 45 min', href:'y10-statistics-probability/revision.html', icon:'stats', color:'#0e7c74', ready:true},
+  {level:'Year 9',  title:'Geometry',  desc:'Coming soon', icon:'geometry', ready:false},
+  {level:'Year 8',  title:'Algebra',   desc:'Coming soon', icon:'algebra',  ready:false},
+  {level:'Year 9',  title:'Number',    desc:'Coming soon', icon:'number',   ready:false},
+  {level:'Year 10', title:'Measurement', desc:'Coming soon', icon:'measure', ready:false},
+  {level:'Senior',  title:'Calculus',  desc:'Coming soon', icon:'calculus', ready:false}
+];
+
+const ICONS = {
+  stats:'<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 34h30"/><path d="M9 34V22M16 34V12M23 34V18"/><rect x="26" y="5" width="10" height="10" rx="2.5"/><circle cx="29" cy="8" r=".9" fill="currentColor"/><circle cx="33" cy="12" r=".9" fill="currentColor"/></svg>',
+  geometry:'<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"><path d="M6 33L20 7l14 26z"/><circle cx="20" cy="24" r="5"/></svg>',
+  algebra:'<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"><path d="M7 12l12 16M19 12L7 28"/><path d="M24 20h10M29 15v10"/></svg>',
+  number:'<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M4 22h32"/><path d="M8 18v8M16 18v8M24 18v8M32 18v8"/><path d="M12 12c4-5 12-5 16 0" /><path d="M25 9l3 3-4 1"/></svg>',
+  measure:'<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"><rect x="4" y="13" width="32" height="14" rx="2"/><path d="M10 13v6M16 13v4M22 13v6M28 13v4" stroke-linecap="round"/></svg>',
+  calculus:'<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M5 34h30M5 34V6"/><path d="M8 30C15 30 18 10 34 9"/><path d="M14 18l12-6"/></svg>'
+};
+
+document.getElementById('grid').innerHTML = COURSES.map(c => c.ready
+  ? `<a class="tile on" href="${c.href}" style="--c:${c.color||'#0e7c74'}"><span class="dot"></span><span class="go">Open</span><div class="ic">${ICONS[c.icon]||''}</div><div><div class="lv">${c.level}</div><div class="tt">${c.title}</div></div><div class="ds">${c.desc}</div></a>`
+  : `<div class="tile off" aria-disabled="true"><div class="ic">${ICONS[c.icon]||''}</div><div><div class="lv">${c.level}</div><div class="tt">${c.title}</div></div><div class="ds">${c.desc}</div></div>`
+).join('');
+</script>
+</body>
+</html>

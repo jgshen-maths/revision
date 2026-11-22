@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Year 10 Statistics and Probability · Exam Revision</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<style>
+:root{
+  --ink:#1c2230;--muted:#5b6475;--paper:#f8f6f1;--card:#fff;--line:#e3dfd6;
+  --st:#0e7c74;--st-soft:#e2f2f0;--pr:#c4512a;--pr-soft:#fbeae3;
+  --good:#2f8a4c;--good-soft:#e5f4ea;--warn:#b7791f;--warn-soft:#fbf1dc;--bad:#c0392b;--bad-soft:#fbe5e2;--grey:#9aa1ad;
+  --c1:#0e7c74;--c2:#e09f3e;--c3:#4c6fb3;--c4:#c4512a;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font:16px/1.6 "Avenir Next","Segoe UI",system-ui,-apple-system,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.25;font-weight:600}
+h2{font-size:1.6rem;margin:.2rem 0 .6rem}
+h3{font-size:1.15rem;margin:1.6rem 0 .5rem}
+p{margin:.55rem 0}
+a{color:var(--st)}
+header.top{position:sticky;top:0;z-index:20;background:rgba(248,246,241,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.topin{max-width:940px;margin:0 auto;padding:.55rem 1rem .35rem;display:flex;align-items:center;gap:.8rem;flex-wrap:wrap}
+.brand{font-family:Georgia,serif;font-weight:600;font-size:1.02rem;flex:1;min-width:180px}
+.brand small{display:block;font-family:inherit;font-weight:400;color:var(--muted);font-size:.78rem}
+.prog{font-size:.82rem;color:var(--muted);text-align:right}
+.bar{height:6px;background:var(--line);border-radius:4px;overflow:hidden;width:150px;margin-top:3px}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--st),var(--pr));width:0;transition:width .4s}
+nav.tabs{max-width:940px;margin:0 auto;display:flex;gap:.35rem;overflow-x:auto;padding:.1rem 1rem .6rem;scrollbar-width:thin}
+nav.tabs button{flex:0 0 auto;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;padding:.3rem .75rem;font:inherit;font-size:.84rem;cursor:pointer;white-space:nowrap}
+nav.tabs button.st{border-color:#bfe0dc}
+nav.tabs button.pr{border-color:#f0cdbf}
+nav.tabs button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+nav.tabs button .tick{color:var(--good);font-weight:700;margin-left:.25rem}
+nav.tabs button.on .tick{color:#9be3b0}
+main{max-width:940px;margin:0 auto;padding:1.2rem 1rem 4rem}
+section.tab{display:none}
+section.tab.on{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.kicker{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
+.kicker.st{color:var(--st)}.kicker.pr{color:var(--pr)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1rem 1.1rem;margin:1rem 0}
+.idea{border-left:5px solid var(--st)}
+.pr-sec .idea{border-left-color:var(--pr)}
+.box-title{font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:.3rem}
+.key{background:var(--st-soft);border-radius:10px;padding:.6rem .8rem;margin:.6rem 0}
+.pr-sec .key{background:var(--pr-soft)}
+.trap{background:var(--warn-soft);border-radius:10px;padding:.6rem .8rem;margin:.6rem 0}
+.trap b{color:#8a5a0c}
+.steps{margin:.3rem 0;padding-left:1.3rem}
+.steps li{margin:.35rem 0}
+.tblwrap{overflow-x:auto;max-width:100%}
+table.t{border-collapse:collapse;margin:.5rem 0;font-size:.92rem}
+table.t th,table.t td{border:1px solid var(--line);padding:.3rem .55rem;text-align:center}
+table.t th{background:#f1eee7;font-weight:600}
+.widget{background:#fdfcfa;border:1px dashed #cfc9bc;border-radius:14px;padding:.9rem;margin:1rem 0}
+.widget .box-title{color:var(--st)}
+.pr-sec .widget .box-title{color:var(--pr)}
+.ctrl{display:flex;flex-wrap:wrap;gap:.5rem 1rem;align-items:center;margin:.4rem 0}
+.ctrl label{font-size:.9rem;display:flex;align-items:center;gap:.4rem}
+.ctrl input[type=range]{width:140px}
+.btn{border:1px solid var(--ink);background:#fff;color:var(--ink);border-radius:8px;padding:.32rem .75rem;font:inherit;font-size:.88rem;cursor:pointer}
+.btn:hover{background:#f1eee7}
+.btn.primary{background:var(--ink);color:#fff}
+.btn.on{background:var(--ink);color:#fff}
+.readout{background:#fff;border:1px solid var(--line);border-radius:10px;padding:.55rem .75rem;margin-top:.5rem;font-size:.95rem}
+svg{max-width:100%;height:auto;display:block}
+svg text{font-family:"Avenir Next","Segoe UI",system-ui,sans-serif}
+.wex{border-left:5px solid #7a6f5c}
+.wex .box-title{color:#7a6f5c}
+details.why{background:#f3f1ec;border-radius:12px;padding:.5rem .9rem;margin:1rem 0}
+details.why summary{cursor:pointer;font-weight:600}
+details.why[open]{padding-bottom:.8rem}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+@media(max-width:640px){.two{grid-template-columns:1fr}h2{font-size:1.35rem}}
+/* questions */
+.qhead{display:flex;align-items:baseline;gap:.6rem;margin-top:1.8rem}
+.qhead h3{margin:0}
+.qhead span{font-size:.85rem;color:var(--muted)}
+.q{background:#fff;border:1px solid var(--line);border-radius:14px;padding:.9rem 1rem;margin:.8rem 0}
+.q .qn{font-weight:700;color:var(--muted);font-size:.82rem;letter-spacing:.05em}
+.q .prompt{margin:.3rem 0 .6rem}
+.q.done-3{border-color:#9ed1ae}.q.done-2,.q.done-1{border-color:#e7c98d}.q.done-0{border-color:#e5a69e}
+.opts{display:grid;gap:.4rem}
+.opt{text-align:left;border:1px solid var(--line);background:#fbfaf7;border-radius:10px;padding:.45rem .7rem;font:inherit;cursor:pointer;color:var(--ink)}
+.opt:hover:not(:disabled){border-color:var(--ink)}
+.opt.wrong{background:var(--bad-soft);border-color:#e5a69e}
+.opt.right{background:var(--good-soft);border-color:#9ed1ae}
+.opt:disabled{cursor:default}
+.ansrow{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
+.ansrow input{font:inherit;padding:.35rem .6rem;border:1px solid #c9c3b6;border-radius:8px;width:150px}
+.preview{min-height:1.6rem;color:var(--muted);font-size:.95rem}
+.fmt{font-size:.83rem;color:var(--muted);margin-top:.3rem}
+.dots{display:inline-flex;gap:4px;margin-left:.4rem;vertical-align:middle}
+.dots i{width:10px;height:10px;border-radius:50%;border:1.5px solid var(--grey);display:inline-block}
+.dots i.x{background:var(--bad);border-color:var(--bad)}
+.dots i.ok{background:var(--good);border-color:var(--good)}
+.fb{margin-top:.5rem;font-size:.93rem}
+.fb.ok{color:var(--good)}.fb.no{color:var(--bad)}.fb.info{color:#8a5a0c}
+.hint{background:var(--warn-soft);border-radius:10px;padding:.5rem .7rem;margin-top:.5rem;font-size:.93rem}
+.sol{background:#f1f6f5;border-radius:10px;padding:.55rem .8rem;margin-top:.55rem;font-size:.93rem}
+.pr-sec .sol{background:#faf1ec}
+.next{display:flex;justify-content:flex-end;margin-top:2rem}
+/* start page */
+.hero{padding:1.2rem 0 .4rem}
+.hero h1{font-size:2.1rem;margin:.2rem 0}
+.hero p{color:var(--muted);max-width:640px}
+.route{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.6rem;margin:1rem 0}
+.stop{background:#fff;border:1px solid var(--line);border-radius:12px;padding:.65rem .8rem;cursor:pointer;text-align:left;font:inherit;color:var(--ink)}
+.stop:hover{border-color:var(--ink)}
+.stop .n{font-size:.75rem;font-weight:700;letter-spacing:.08em}
+.stop.st .n{color:var(--st)}.stop.pr .n{color:var(--pr)}.stop.rv .n{color:#6b5ca5}
+.stop .tt{font-weight:600;display:block}
+.stop .mm{font-size:.8rem;color:var(--muted)}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;margin:.6rem 0}
+.flow div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:.5rem .6rem;font-size:.88rem}
+.flow b{display:block;font-size:.95rem}
+@media(max-width:640px){.flow{grid-template-columns:1fr 1fr}.hero h1{font-size:1.6rem}}
+/* report */
+.rbar{margin:.45rem 0}
+.rbar .lab{display:flex;justify-content:space-between;font-size:.9rem;gap:.5rem}
+.rbar .tr{height:10px;background:#ece8df;border-radius:6px;overflow:hidden}
+.rbar .tr i{display:block;height:100%;background:var(--st)}
+.skill{display:flex;justify-content:space-between;gap:.6rem;padding:.35rem 0;border-bottom:1px solid #eeeae2;font-size:.92rem}
+.lvl{font-size:.78rem;border-radius:999px;padding:.05rem .55rem;white-space:nowrap;align-self:center}
+.lvl.g{background:var(--good-soft);color:var(--good)}.lvl.a{background:var(--warn-soft);color:#8a5a0c}.lvl.r{background:var(--bad-soft);color:var(--bad)}.lvl.n{background:#eee;color:#777}
+.score{font-family:Georgia,serif;font-size:2.4rem;text-align:center;margin:.3rem 0}
+.legend{display:flex;flex-wrap:wrap;gap:.4rem 1rem;font-size:.82rem;justify-content:center;margin-top:.4rem}
+.legend span{display:inline-flex;align-items:center;gap:.35rem}
+.legend i{width:12px;height:12px;border-radius:50%;display:inline-block}
+.adv{border-left:4px solid var(--warn);padding:.3rem .8rem;margin:.6rem 0;background:#fff;border-radius:0 10px 10px 0}
+.small{font-size:.85rem;color:var(--muted)}
+/* spinner, dice */
+.dgrid{display:grid;grid-template-columns:repeat(7,minmax(34px,46px));gap:3px;margin:.5rem 0}
+.dgrid div{text-align:center;padding:.3rem 0;border-radius:6px;background:#fff;border:1px solid var(--line);font-size:.9rem}
+.dgrid div.h{background:#f1eee7;font-weight:700}
+.dgrid div.on{background:var(--pr);color:#fff;border-color:var(--pr)}
+.tw td.cell,.tw th.sel{cursor:pointer}
+.tw td.cell:hover{outline:2px solid var(--pr)}
+.tw .given{background:var(--pr-soft)}
+.tw .pick{background:var(--pr);color:#fff}
+.tw th.selh{background:#f6d6c9}
+.tree{position:relative;width:100%;height:270px}
+.tree svg{position:absolute;inset:0;width:100%;height:100%}
+.tree .lb{position:absolute;transform:translate(-50%,-50%);background:#fdfcfa;padding:0 3px;font-size:.95rem;white-space:nowrap}
+.tree .nd{position:absolute;transform:translate(-50%,-50%);font-weight:700;font-size:.9rem;background:#fff;border:1.5px solid var(--ink);border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center}
+.stepper{display:inline-flex;align-items:center;gap:.3rem}
+.stepper button{width:28px;height:28px;border-radius:50%;border:1px solid var(--ink);background:#fff;cursor:pointer;font-weight:700}
+.chips{display:flex;flex-wrap:wrap;gap:4px;margin:.5rem 0}
+.chips span{min-width:34px;text-align:center;padding:.2rem .35rem;border-radius:7px;border:1px solid var(--line);background:#fff;font-size:.9rem;position:relative}
+.chips span.lo{background:#e2f2f0}.chips span.hi{background:#e6ecf8}
+.chips span.md{background:var(--ink);color:#fff;border-color:var(--ink)}
+.chips span.qq{outline:2.5px solid var(--c2);outline-offset:1px}
+.chips span.gap{min-width:6px;border:none;background:none;padding:0}
+.chips span.mk{min-width:0;border:none;background:none;padding:0 1px;color:var(--c2);font-weight:800}
+.katex{font-size:1.04em}
+.katex-display{overflow-x:auto;overflow-y:hidden;padding:.15rem 0}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="topin">
+    <div class="brand">Year 10 Statistics &amp; Probability<small>Exam revision · concepts first, then practice</small></div>
+    <div class="prog"><span id="progtxt">0 / 0 answered</span><div class="bar"><i id="progbar"></i></div></div>
+  </div>
+  <nav class="tabs" id="tabs"></nav>
+</header>
+
+<main>
+<!-- ================= START ================= -->
+<section class="tab" id="tab-start">
+  <div class="hero">
+    <div class="kicker st">Exam revision · about 45 minutes</div>
+    <h1>Statistics &amp; Probability</h1>
+    <p>Ten short stations cover every idea in your revision paper. At each station you first see <b>what the idea means</b>, play with it, watch a worked example from the paper, and then try a few new questions yourself.</p>
+  </div>
+  <div class="card">
+    <div class="box-title">How each station works</div>
+    <div class="flow">
+      <div><b>1 · The idea</b>What it is and why it works.</div>
+      <div><b>2 · Play</b>Move sliders, click, and watch.</div>
+      <div><b>3 · Worked example</b>A question from your paper, solved.</div>
+      <div><b>4 · Your turn</b>New questions, three tries each.</div>
+    </div>
+    <p class="small">Scoring: right on the first try = 3 points, second try = 2, third try = 1, three wrong = 0. A hint appears after your second wrong try. Your report at the end shows what to look at again.</p>
+  </div>
+  <h3>Your route</h3>
+  <div class="route" id="route"></div>
+  <div class="card">
+    <div class="box-title">Typing answers</div>
+    <ul class="steps">
+      <li>Fractions: type <code>5/33</code>, which means $\dfrac{5}{33}$. Give probabilities in simplest form.</li>
+      <li>Decimals: type <code>6.5</code>. Percentages: type <code>72.7</code> or <code>72.7%</code>.</li>
+      <li>A live preview under the box shows how your answer reads.</li>
+    </ul>
+    <p class="small">Your progress is saved on this device. <button class="btn" id="resetBtn" type="button">Start again</button></p>
+  </div>
+</section>
+
+<!-- ================= 1 CATEGORICAL ================= -->
+<section class="tab" id="tab-q1">
+  <div class="kicker st">Station 1 · Statistics</div>
+  <h2>Parts of a whole: percentages, bar graphs and pie charts</h2>
+  <div class="card idea">
+    <div class="box-title">The idea</div>
+    <p>Categorical data puts each item into a group (Fruit, Nuts, …). Every group is a <b>fraction of the total</b>. A percentage and a pie angle are the same fraction, measured in different units:</p>
+    <p>$$\begin{gathered}\text{percentage}=\frac{\text{frequency}}{\text{total}}\times 100\%\\[4pt]\text{pie angle}=\frac{\text{frequency}}{\text{total}}\times 360^\circ\end{gathered}$$</p>
+    <div class="key">A <b>bar graph</b> compares the sizes of groups directly. A <b>pie chart</b> shows each group as a share of the whole. Both need a title and labels.</div>
+    <div class="trap"><b>Trap:</b> “the biggest group” is not the same as “more than half”. A group is a majority only when its share is more than $50\%$, which means an angle of more than $180^\circ$.</div>
+  </div>
+  <div class="widget" id="w1">
+    <div class="box-title">Play · build the charts</div>
+    <p class="small">Move the sliders. Watch the percentages and angles change, and check whether the largest group is really a majority.</p>
+    <div class="ctrl" id="w1s"></div>
+    <div class="two"><div id="w1bar"></div><div id="w1pie"></div></div>
+    <div class="tblwrap"><table class="t" id="w1t"></table></div>
+    <div class="readout" id="w1r"></div>
+  </div>
+  <div class="card wex">
+    <div class="box-title">Worked example · Paper Question 1 (snack packs)</div>
+    <p>80 snack packs: Fruit 28, Nuts 20, Crackers 24, Popcorn 8.</p>
+    <ol class="steps">
+      <li>Fruit percentage: $\dfrac{28}{80}\times100\%=35\%$.</li>
+      <li>Fruit angle: $\dfrac{28}{80}\times360^\circ=126^\circ$.</li>
+      <li>In the same way: Nuts $25\%$, $90^\circ$; Crackers $30\%$, $108^\circ$; Popcorn $10\%$, $36^\circ$.</li>
+      <li>Check: $35+25+30+10=100\%$ and $126+90+108+36=360^\circ$.</li>
+      <li>The claim “the best-selling type must be more than half” is <b>false</b>. Fruit sells the most, but $35\%<50\%$.</li>
+    </ol>
+  </div>
+  <details class="why"><summary>Why does the angle formula work?</summary>
+    <p>A full turn is $360^\circ$, and it stands for the whole group. If a group is $\frac{f}{T}$ of the whole, its sector must be $\frac{f}{T}$ of the full turn, which is $\frac{f}{T}\times360^\circ$.</p>
+    <p>That also gives a quick conversion: $1\%$ of a pie is $3.6^\circ$, so $35\%$ is $35\times3.6^\circ=126^\circ$.</p>
+    <p>It works backwards too. A $72^\circ$ sector is $\frac{72}{360}=\frac15$ of the pie, so in a survey of 250 people it stands for $\frac15\times250=50$ people.</p>
+  </details>
+  <div class="qhead"><h3>Your turn</h3><span>3 questions</span></div>
+  <div class="qs" data-part="q1"></div>
+  <div class="next"><button class="btn primary" data-go="q2">Next: Five-number summary →</button></div>
+</section>
+
+<!-- ================= 2 FIVE NUMBER ================= -->
+<section class="tab" id="tab-q2">
+  <div class="kicker st">Station 2 · Statistics</div>
+  <h2>Five-number summary, box plots and the IQR</h2>
+  <div class="card idea">
+    <div class="box-title">The idea</div>
+    <p>Put the data <b>in order</b>. Five numbers then describe the whole spread (lowest value, lower quartile, median, upper quartile, highest value):</p>
+    <p>$$\text{lowest}\le\text{LQ}\le\text{median}\le\text{UQ}\le\text{max}$$</p>
+    <ul class="steps">
+      <li>The <b>median</b> is the middle value. For $n$ values it is in position $\frac{n+1}{2}$.</li>
+      <li>The <b>lower quartile (LQ)</b> is the median of the lower half. The <b>upper quartile (UQ)</b> is the median of the upper half.</li>
+      <li>When $n$ is <b>odd</b>, leave out the middle value when you make the two halves. When $n$ is <b>even</b>, split the list exactly in two.</li>
+    </ul>
+    <div class="key">$\text{IQR}=\text{UQ}-\text{LQ}$ is the spread of the <b>middle half</b> of the data. Unlike the range, it ignores extreme values.</div>
+    <div class="trap"><b>Trap:</b> always <b>order the data first</b>. Also, the quartiles are positions in the ordered list, not a quarter of the values.</div>
+  </div>
+  <div class="widget" id="w2">
+    <div class="box-title">Play · find the five numbers</div>
+    <div class="ctrl" id="w2b"></div>
+    <div class="chips" id="w2c"></div>
+    <div id="w2svg"></div>
+    <div class="readout" id="w2r"></div>
+  </div>
+  <div class="card wex">
+    <div class="box-title">Worked example · Paper Question 2 (Class A bag masses)</div>
+    <p>Class A, in order (kg): $2,\ 2.5,\ 3,\ 3,\ 3.5,\ 4,\ 4.5,\ 5,\ 5,\ 6,\ 7$. There are $n=11$ values.</p>
+    <ol class="steps">
+      <li>Median: position $\frac{11+1}{2}=6$, so the median is $4$ kg.</li>
+      <li>Lower half (leave out the median): $2,\ 2.5,\ 3,\ 3,\ 3.5$, so $\text{LQ}=3$ kg.</li>
+      <li>Upper half: $4.5,\ 5,\ 5,\ 6,\ 7$, so $\text{UQ}=5$ kg.</li>
+      <li>Five-number summary: $2,\ 3,\ 4,\ 5,\ 7$. $\text{IQR}=5-3=2$ kg.</li>
+      <li>Class B works the same way: $3,\ 4,\ 5.5,\ 6.5,\ 8$, and $\text{IQR}=6.5-4=2.5$ kg.</li>
+    </ol>
+    <p>So Class B has a higher median ($5.5$ kg against $4$ kg) and its middle half is more spread out ($2.5$ kg against $2$ kg).</p>
+  </div>
+  <details class="why"><summary>Why does a box plot split the data into quarters?</summary>
+    <p>The median splits the ordered data into two halves. The quartiles split each half again. So the four parts of a box plot (left whisker, left box, right box, right whisker) each hold about a quarter of the data.</p>
+    <p>A long part does <b>not</b> mean more data. It means the same quarter of the data is <b>more spread out</b>.</p>
+  </details>
+  <div class="qhead"><h3>Your turn</h3><span>3 questions</span></div>
+  <div class="qs" data-part="q2"></div>
+  <div class="next"><button class="btn primary" data-go="q3">Next: Comparing groups →</button></div>
+</section>
+
+<!-- ================= 3 COMPARE ================= -->
+<section class="tab" id="tab-q3">
+  <div class="kicker st">Station 3 · Statistics</div>
+  <h2>Comparing two groups: the 75%–50% rule</h2>
+  <div class="card idea">
+    <div class="box-title">The idea</div>
+    <p>Two samples nearly always overlap, so we never say “<i>every</i> B is bigger than every A”. Instead we ask whether B <b>tends to be</b> bigger.</p>
+    <div class="key"><b>75%–50% rule.</b> Take the upper quartile of group A. (About 75% of A is at or below it.) If <b>more than 50% of group B</b> is above A's upper quartile, we can say: “B tends to be greater than A.” This happens when B's median is above A's upper quartile.</div>
+    <p>Then back up your answer with a <b>median</b> (centre) or an <b>IQR</b> (spread), and give the numbers with units.</p>
+    <div class="trap"><b>Trap:</b> “tends to be heavier” is a claim about the groups in general. One heavy bag in A and one light bag in B do not break it, but they do break “every B is heavier”.</div>
+  </div>
+  <div class="widget" id="w3">
+    <div class="box-title">Play · slide Class B and test the rule</div>
+    <p class="small">Class A stays fixed. Move every Class B bag lighter or heavier and watch the share of B above A's upper quartile.</p>
+    <div class="ctrl"><label>Shift Class B <input type="range" id="w3s" min="-3" max="3" step="0.5" value="0"> <span id="w3v"></span></label></div>
+    <div id="w3svg"></div>
+    <div class="readout" id="w3r"></div>
+  </div>
+  <div class="card wex">
+    <div class="box-title">Worked example · Paper Question 3</div>
+    <ol class="steps">
+      <li>Class A's upper quartile is $5$ kg.</li>
+      <li>Class B values strictly above $5$: $5.5,\ 6,\ 6.5,\ 6.5,\ 7,\ 8$, which is $6$ of the $11$ values.</li>
+      <li>$\dfrac{6}{11}\times100\%\approx54.5\%>50\%$, so the rule supports “Class B students tend to carry heavier bags”.</li>
+      <li>“Every Class B bag is heavier than every Class A bag” is <b>not</b> supported. Counterexample: one B bag is $3$ kg and one A bag is $7$ kg.</li>
+    </ol>
+  </div>
+  <details class="why"><summary>Why 75% and 50%?</summary>
+    <p>About 75% of group A is at or below A's upper quartile. If more than half of group B is above that line, then most of B sits higher than three quarters of A. A shift that big is hard to explain by chance alone with samples of this size, so we say “B <b>tends to be</b>” greater. We do not say “always”.</p>
+    <p><b>Example.</b> A's UQ is 31 and B's median is 34. More than half of B is above 34, so more than half of B is above 31. The rule says yes.</p>
+    <p><b>Example.</b> A's UQ is 31 and B's median is 29. Fewer than half of B are above 31. The rule does not support the claim, even though B's median might still be a little higher than A's.</p>
+  </details>
+  <div class="qhead"><h3>Your turn</h3><span>3 questions</span></div>
+  <div class="card" style="margin-top:.4rem">
+    <p><b>Data for questions 3a–3c.</b> Standing long jumps (cm) for two groups of 11 students, in order:</p>
+    <div class="tblwrap"><table class="t"><tr><th>P</th><td>30</td><td>32</td><td>35</td><td>36</td><td>38</td><td>40</td><td>41</td><td>43</td><td>45</td><td>47</td><td>52</td></tr>
+    <tr><th>Q</th><td>36</td><td>40</td><td>44</td><td>46</td><td>47</td><td>48</td><td>50</td><td>51</td><td>53</td><td>55</td><td>58</td></tr></table></div>
+  </div>
+  <div class="qs" data-part="q3"></div>
+  <div class="next"><button class="btn primary" data-go="q4">Next: Scatter plots →</button></div>
+</section>
+
+<!-- ================= 4 SCATTER ================= -->
+<section class="tab" id="tab-q4">
+  <div class="kicker st">Station 4 · Statistics</div>
+  <h2>Scatter plots and the line of best fit</h2>
+  <div class="card idea">
+    <div class="box-title">The idea</div>
+    <p>A scatter plot shows <b>pairs</b> of measurements, such as (length, width) for each leaf. To describe it, use three words:</p>
+    <ul class="steps">
+      <li><b>Direction</b>: positive (both go up together) or negative (one goes up, the other goes down).</li>
+      <li><b>Strength</b>: strong (points close to a line), moderate, or weak.</li>
+      <li><b>Unusual points</b>: points far from the pattern.</li>
+    </ul>
+    <div class="key">A <b>line of best fit</b> follows the trend, with points roughly balanced above and below it. Use it to <b>estimate inside the data range</b> (interpolation). Outside the range (extrapolation) the estimate is <b>unreliable</b>, because the pattern may not continue.</div>
+    <div class="trap"><b>Trap:</b> repeated points sit on top of each other. Mark them (for example with a small “2”) so no leaf is lost.</div>
+  </div>
+  <div class="widget" id="w4">
+    <div class="box-title">Play · fit your own line to the 20 leaves</div>
+    <div class="ctrl">
+      <label>Slope <input type="range" id="w4m" min="0" max="1" step="0.05" value="0.3"> <span id="w4mv"></span></label>
+      <label>Intercept <input type="range" id="w4c" min="-3" max="4" step="0.25" value="2"> <span id="w4cv"></span></label>
+      <label>Predict at length <input type="range" id="w4x" min="1" max="30" step="0.5" value="10.5"> <span id="w4xv"></span></label>
+    </div>
+    <div class="ctrl"><button class="btn" id="w4ex" type="button">Show the example line</button><button class="btn" id="w4out" type="button">Spot the unusual point</button></div>
+    <div id="w4svg"></div>
+    <div class="readout" id="w4r"></div>
+  </div>
+  <div class="card wex">
+    <div class="box-title">Worked example · Paper Question 4 (leaves)</div>
+    <ol class="steps">
+      <li>The 20 points rise from left to right, so the relationship is <b>positive</b>. Most points lie close to a line, so it is <b>moderately strong</b> overall.</li>
+      <li>$(15,\,3)$ is unusual: that leaf is much narrower than the pattern suggests.</li>
+      <li>Example line: $\text{width}\approx0.5\times\text{length}+0.25$.</li>
+      <li>At length $10.5$ cm: $0.5\times10.5+0.25=5.5$ cm. Anything from about $5$ to $6$ cm fits a reasonable line.</li>
+      <li>At $30$ cm the line is <b>not reliable</b>. $30$ is far outside the measured lengths ($4$ to $17$ cm).</li>
+    </ol>
+  </div>
+  <details class="why"><summary>Why is extrapolation risky? Two examples</summary>
+    <p><b>Leaves:</b> the line predicts $0.5\times30+0.25=15.25$ cm for a $30$ cm leaf. No leaf near that size was measured, and very long leaves of this plant may be narrow, or may not exist at all.</p>
+    <p><b>Growth:</b> a child grows about 6 cm a year between ages 4 and 10. The same line would predict a 40-year-old over 2.5 m tall. Patterns change outside the data.</p>
+  </details>
+  <div class="qhead"><h3>Your turn</h3><span>3 questions</span></div>
+  <div class="card" style="margin-top:.4rem">
+    <p><b>Data for questions 4a–4c.</b> Hours of study and test score for 12 students:</p>
+    <div id="q4plot"></div>
+  </div>
+  <div class="qs" data-part="q4"></div>
+  <div class="next"><button class="btn primary" data-go="q5">Next: Misleading graphs →</button></div>
+</section>
+
+<!-- ================= 5 MISLEADING ================= -->
+<section class="tab" id="tab-q5">
+  <div class="kicker st">Station 5 · Statistics</div>
+  <h2>Reading graphs carefully: misleading axes</h2>
+  <div class="card idea">
+    <div class="box-title">The idea</div>
+    <p>A bar's <b>height</b> should be in proportion to its value. When the vertical axis starts above $0$, the bars are cut off at the bottom, and a small change can <b>look</b> huge.</p>
+    <div class="key">Always read the <b>numbers on the axis</b>, not the picture. Describe a change with an actual difference, and with a percentage change:
+    $$\text{percentage change}=\frac{\text{new}-\text{old}}{\text{old}}\times100\%$$</div>
+    <div class="trap"><b>Trap:</b> “tripled” means the new value is $3\times$ the old value. If the bar only <i>looks</i> three times as tall, check where the axis starts.</div>
+  </div>
+  <div class="widget" id="w5">
+    <div class="box-title">Play · move where the axis starts</div>
+    <div class="ctrl"><label>Axis starts at <input type="range" id="w5s" min="0" max="33" step="1" value="32"> <span id="w5v"></span></label></div>
+    <div id="w5svg"></div>
+    <div class="readout" id="w5r"></div>
+  </div>
+  <div class="card wex">
+    <div class="box-title">Worked example · Paper Question 5 (foodbank)</div>
+    <ol class="steps">
+      <li>Week 1: $34$ crates. Week 2: $38$ crates. Increase: $38-34=4$ crates.</li>
+      <li>Graph B starts at $32$, so the visible bars are $34-32=2$ and $38-32=6$ units tall. Week 2 <i>looks</i> three times as big.</li>
+      <li>“Donations tripled” is wrong. A supported claim: “Donations rose by 4 crates, from 34 to 38, an increase of about $11.8\%$.”</li>
+      <li>$\dfrac{38-34}{34}\times100\%\approx11.8\%$</li>
+    </ol>
+  </div>
+  <div class="qhead"><h3>Your turn</h3><span>3 questions</span></div>
+  <div class="card" style="margin-top:.4rem">
+    <p><b>For questions 5a–5c.</b> A shop sold 120 ice creams in January and 150 in February. Its graph has a vertical axis that starts at 110.</p>
+    <div id="q5plot"></div>
+  </div>
+  <div class="qs" data-part="q5"></div>
+  <div class="next"><button class="btn primary" data-go="q6">Next: Probability →</button></div>
+</section>
+
+<!-- ================= 6 THEORETICAL ================= -->
+<section class="tab pr-sec" id="tab-q6">
+  <div class="kicker pr">Station 6 · Probability</div>
+  <h2>Theoretical probability, “or”, and the probability scale</h2>
+  <div class="card idea">
+    <div class="box-title">The idea</div>
+    <p>When all outcomes are <b>equally likely</b> (a fair spinner, a fair die, a random card):</p>
+    <p>$$P(\text{event})=\frac{\text{number of favourable outcomes}}{\text{total number of outcomes}}$$</p>
+    <p>Every probability lies on a scale from $0$ (impossible) to $1$ (certain). $\frac12$ means an even chance.</p>
+    <div class="key"><b>“A or B”</b> means A happens, or B happens, or both. List the outcomes and <b>count each one only once</b>:
+    $$P(A\text{ or }B)=P(A)+P(B)-P(A\text{ and }B)$$</div>
+    <div class="trap"><b>Trap:</b> adding $P(\text{odd})+P(\text{shaded})$ counts sector 3 twice, because it is both odd and shaded.</div>
+  </div>
+  <div class="widget" id="w6">
+    <div class="box-title">Play · click sectors to shade them, then choose an event</div>
+    <div class="two">
+      <div id="w6svg"></div>
+      <div>
+        <div class="ctrl" id="w6e"></div>
+        <div class="readout" id="w6r"></div>
+      </div>
+    </div>
+    <div id="w6scale"></div>
+  </div>
+  <div class="card wex">
+    <div class="box-title">Worked example · Paper Question 6 (spinner 1–8, sectors 2, 3, 6 shaded)</div>
+    <ol class="steps">
+      <li>$P(5)=\dfrac18$, because one sector of eight shows 5.</li>
+      <li>$P(\text{shaded})=\dfrac38$, from sectors 2, 3 and 6.</li>
+      <li>Odd or shaded: $1,2,3,5,6,7$, which is six sectors, with 3 counted once. So $P=\dfrac68=\dfrac34$.</li>
+      <li>Check with the rule: $\frac48+\frac38-\frac18=\frac68$.</li>
+      <li>On the scale: landing on 9 is impossible ($0$). Landing on a number at most 8 is certain ($1$).</li>
+    </ol>
+  </div>
+  <details class="why"><summary>Proof of the “or” rule, with examples</summary>
+    <p><b>Proof by counting.</b> Say $a$ outcomes are in A, $b$ are in B, and $c$ are in both, out of $n$ equally likely outcomes. Counting A and then B counts the $c$ shared outcomes twice. So the number of outcomes in “A or B” is $a+b-c$, and
+    $$P(A\text{ or }B)=\frac{a+b-c}{n}=\frac an+\frac bn-\frac cn.$$</p>
+    <p><b>Example 1.</b> Cards 1–10, “even or multiple of 3”: $\frac{5}{10}+\frac{3}{10}-\frac{1}{10}=\frac{7}{10}$. Only 6 is in both.</p>
+    <p><b>Example 2.</b> If A and B can't both happen (rolling a 1 or a 6 on one die), then $c=0$ and you just add: $\frac16+\frac16=\frac13$.</p>
+    <p><b>Example 3.</b> “Not A” is everything else, so $P(\text{not }A)=1-P(A)$.</p>
+  </details>
+  <div class="qhead"><h3>Your turn</h3><span>3 questions</span></div>
+  <p>Ten cards numbered $1$ to $10$ are shuffled. One card is picked at random.</p>
+  <div class="qs" data-part="q6"></div>
+  <div class="next"><button class="btn primary" data-go="q7">Next: Experimental probability →</button></div>
+</section>
+
+<!-- ================= 7 EXPERIMENTAL ================= -->
+<section class="tab pr-sec" id="tab-q7">
+  <div class="kicker pr">Station 7 · Probability</div>
+  <h2>Experimental probability and expected counts</h2>
+  <div class="card idea">
+    <div class="box-title">The idea</div>
+    <p>When we can't count equally likely outcomes (a robot, a basketball shot, a drawing pin), we <b>estimate</b> a probability from trials:</p>
+    <p>$$P(\text{event})\approx\frac{\text{times it happened}}{\text{number of trials}}$$</p><p>This fraction is called the <b>relative frequency</b>.</p>
+    <div class="key"><b>Expected number</b> in $n$ more trials $=P(\text{event})\times n$. It is a best guess. Random variation means the real count will usually be a little above or below it.</div>
+    <div class="trap"><b>Trap:</b> more trials give a more reliable estimate. A small experiment can easily be far from the true probability.</div>
+  </div>
+  <div class="widget" id="w7">
+    <div class="box-title">Play · run the robot</div>
+    <p class="small">The robot's true chance of a direct hit is set by the slider. In real life nobody knows the true chance; we only see the results.</p>
+    <div class="ctrl">
+      <label>True chance <input type="range" id="w7p" min="0.05" max="0.95" step="0.05" value="0.6"> <span id="w7pv"></span></label>
+    </div>
+    <div class="ctrl"><button class="btn" data-n="10" type="button">+10 tries</button><button class="btn" data-n="100" type="button">+100 tries</button><button class="btn" data-n="1000" type="button">+1000 tries</button><button class="btn" id="w7reset" type="button">Reset</button></div>
+    <div id="w7svg"></div>
+    <div class="readout" id="w7r"></div>
+  </div>
+  <div class="card wex">
+    <div class="box-title">Worked example · Paper Question 7 (robot, 80 tries)</div>
+    <ol class="steps">
+      <li>Wins (direct hits) $=48$, so $P(\text{win})\approx\dfrac{48}{80}=\dfrac35=0.6$.</li>
+      <li>Not winning $=12+20=32$, so $P(\text{not win})\approx\dfrac{32}{80}=\dfrac25$. Check: $\frac35+\frac25=1$.</li>
+      <li>Expected wins in $150$ more tries: $\dfrac35\times150=90$.</li>
+      <li>It need not be exactly $90$. That is an estimate, and random variation means the result could be above or below it.</li>
+    </ol>
+  </div>
+  <details class="why"><summary>Why is “probability × trials” the expected number?</summary>
+    <p>If a win happens with probability $p$, then in the long run it happens in a fraction $p$ of all tries. In $n$ tries, a fraction $p$ of $n$ is $p\times n$.</p>
+    <p><b>Example.</b> A fair coin in 50 tosses: we expect $\frac12\times50=25$ heads. Getting 23 or 28 is normal.</p>
+    <p><b>Example.</b> A fair die rolled 300 times: we expect $\frac16\times300=50$ sixes.</p>
+  </details>
+  <div class="qhead"><h3>Your turn</h3><span>3 questions</span></div>
+  <p>Mia takes $50$ basketball shots. $32$ go in and $18$ miss.</p>
+  <div class="qs" data-part="q7"></div>
+  <div class="next"><button class="btn primary" data-go="q8">Next: Two dice →</button></div>
+</section>
+
+<!-- ================= 8 DICE ================= -->
+<section class="tab pr-sec" id="tab-q8">
+  <div class="kicker pr">Station 8 · Probability</div>
+  <h2>Sample spaces: two dice</h2>
+  <div class="card idea">
+    <div class="box-title">The idea</div>
+    <p>A <b>sample space</b> lists every possible outcome. Two fair dice give $6\times6=36$ <b>ordered pairs</b>, each equally likely. A table shows them all, so we can count:</p>
+    <p>$$P(\text{event})=\frac{\text{cells that fit}}{36}$$</p>
+    <div class="key">$(2,6)$ and $(6,2)$ are <b>different</b> cells, because the first die and the second die are different dice. $(4,4)$ is only <b>one</b> cell.</div>
+    <div class="trap"><b>Trap:</b> for “at least one die shows 5”, there are 6 cells with 5 on the first die and 6 with 5 on the second, but $(5,5)$ is in both. So the count is $6+6-1=11$, not 12.</div>
+  </div>
+  <div class="widget" id="w8">
+    <div class="box-title">Play · choose an event and see its cells</div>
+    <div class="ctrl" id="w8e"></div>
+    <div id="w8g"></div>
+    <div class="readout" id="w8r"></div>
+    <h3 style="margin-top:1rem">Theory and experiment</h3>
+    <div class="ctrl"><button class="btn" data-roll="36" type="button">Roll 36 times</button><button class="btn" data-roll="3600" type="button">Roll 3600 times</button></div>
+    <div id="w8sim"></div>
+    <div class="readout" id="w8sr">Bars show the experiment. Outlines show what the fair-dice model expects.</div>
+  </div>
+  <div class="card wex">
+    <div class="box-title">Worked example · Paper Question 8</div>
+    <ol class="steps">
+      <li>Sum of 8: $(2,6),(3,5),(4,4),(5,3),(6,2)$, so $P=\dfrac{5}{36}$.</li>
+      <li>Sum less than 5 (sums 2, 3, 4): $1+2+3=6$ cells, so $P=\dfrac{6}{36}=\dfrac16$.</li>
+      <li>Game A (7 or 11): $6+2=8$ cells, so $\dfrac{8}{36}=\dfrac29$. Game B (at least one 5): $6+6-1=11$ cells, so $\dfrac{11}{36}$. Game B is more likely to win.</li>
+      <li>Experiment: 9 sums of 8 in 36 rolls gives $\dfrac{9}{36}=\dfrac14$. The model predicts $\dfrac{5}{36}\times36=5$.</li>
+      <li>This does not <b>prove</b> the dice are biased. 36 rolls is a small experiment. Record each die separately over many more rolls and compare with $\frac16$ for each face.</li>
+    </ol>
+  </div>
+  <div class="qhead"><h3>Your turn</h3><span>3 questions</span></div>
+  <p>Two fair six-sided dice are rolled.</p>
+  <div class="qs" data-part="q8"></div>
+  <div class="next"><button class="btn primary" data-go="q9">Next: Tree diagrams →</button></div>
+</section>
+
+<!-- ================= 9 TREES ================= -->
+<section class="tab pr-sec" id="tab-q9">
+  <div class="kicker pr">Station 9 · Probability</div>
+  <h2>Tree diagrams: picking without replacement</h2>
+  <div class="card idea">
+    <div class="box-title">The idea</div>
+    <p>A tree shows events in <b>stages</b>. Each branch carries a probability, and the branches from one point add to $1$.</p>
+    <div class="key"><b>Multiply along</b> a path to get the probability of that whole path. <b>Add down</b> the paths when more than one path fits the event.</div>
+    <p><b>Without replacement</b>, the first item is not put back. The second draw has <b>one fewer item</b>, and its probabilities depend on what came out first.</p>
+    <div class="trap"><b>Trap:</b> “exactly one cinema pass” has <b>two orders</b>, cinema-then-pool and pool-then-cinema. Include both paths.</div>
+  </div>
+  <div class="widget" id="w9">
+    <div class="box-title">Play · change the tickets</div>
+    <div class="ctrl">
+      <span class="stepper">Cinema (C): <button type="button" data-k="a" data-d="-1">−</button><b id="w9a"></b><button type="button" data-k="a" data-d="1">+</button></span>
+      <span class="stepper">Pool (P): <button type="button" data-k="b" data-d="-1">−</button><b id="w9b"></b><button type="button" data-k="b" data-d="1">+</button></span>
+      <button class="btn" id="w9rep" type="button"></button>
+    </div>
+    <div class="tree" id="w9tree"></div>
+    <div class="readout" id="w9r"></div>
+  </div>
+  <div class="card wex">
+    <div class="box-title">Worked example · Paper Question 9 (5 cinema, 7 pool, two drawn)</div>
+    <ol class="steps">
+      <li>First draw: $P(C)=\dfrac{5}{12}$, $P(P)=\dfrac{7}{12}$.</li>
+      <li>After a C is removed, 11 tickets remain: $\dfrac{4}{11}$ C and $\dfrac{7}{11}$ P. After a P is removed: $\dfrac{5}{11}$ C and $\dfrac{6}{11}$ P.</li>
+      <li>$P(\text{both C})=\dfrac{5}{12}\times\dfrac{4}{11}=\dfrac{20}{132}=\dfrac{5}{33}$.</li>
+      <li>$P(\text{exactly one C})=\dfrac{5}{12}\times\dfrac{7}{11}+\dfrac{7}{12}\times\dfrac{5}{11}=\dfrac{70}{132}=\dfrac{35}{66}$.</li>
+      <li>The second-draw probabilities depend on the first ticket, because that ticket is gone and the mix of the remaining 11 has changed.</li>
+    </ol>
+  </div>
+  <details class="why"><summary>Why do we multiply along a branch?</summary>
+    <p>“C then C” happens in $\frac{4}{11}$ of the cases where the first ticket was C. Those cases are $\frac{5}{12}$ of all cases. A fraction of a fraction is a product: $\frac{4}{11}$ of $\frac{5}{12}$ is $\frac{5}{12}\times\frac{4}{11}$.</p>
+    <p><b>Check by counting.</b> There are $12\times11=132$ ordered ways to draw two tickets, and $5\times4=20$ of them are C then C. $\frac{20}{132}=\frac{5}{33}$. ✓</p>
+    <p><b>Shortcut.</b> $P(\text{at least one C})=1-P(\text{no C})=1-\frac{7}{12}\times\frac{6}{11}=1-\frac{42}{132}=\frac{15}{22}$.</p>
+  </details>
+  <div class="qhead"><h3>Your turn</h3><span>3 questions</span></div>
+  <p>A bag holds $4$ red and $6$ blue counters.</p>
+  <div class="qs" data-part="q9"></div>
+  <div class="next"><button class="btn primary" data-go="q10">Next: Two-way tables →</button></div>
+</section>
+
+<!-- ================= 10 TWO WAY ================= -->
+<section class="tab pr-sec" id="tab-q10">
+  <div class="kicker pr">Station 10 · Probability</div>
+  <h2>Two-way tables and “given that”</h2>
+  <div class="card idea">
+    <div class="box-title">The idea</div>
+    <p>A two-way table sorts every person by <b>two</b> features at once. Each person is in exactly one row and one column. The totals check the table.</p>
+    <div class="key"><b>“A and B”</b>: use the cell, out of the <b>grand total</b>.<br><b>“A given B”</b>: only look at group B. Use the cell, out of the <b>B total</b>:
+    $$P(A\mid B)=\frac{\text{number in A and B}}{\text{number in B}}$$</div>
+    <div class="trap"><b>Trap:</b> the word after “given that” chooses the denominator. $P(\text{walks}\mid\text{Year 10})$ and $P(\text{Year 10}\mid\text{walks})$ have different denominators.</div>
+  </div>
+  <div class="widget" id="w10">
+    <div class="box-title">Play · click a header for “given”, then click a cell</div>
+    <p class="small">Click a row or column header to restrict the group (click it again to remove it). Then click a cell.</p>
+    <div class="tblwrap" id="w10t"></div>
+    <div class="readout" id="w10r"></div>
+  </div>
+  <div class="card wex">
+    <div class="box-title">Worked example · Paper Question 10 (48 students)</div>
+    <ol class="steps">
+      <li>Missing entries: $18-8-4=6$, $18-5-10=3$, $12-6-4=2$. The last column total is $4+3+4=11$.</li>
+      <li>$P(\text{one instrument and two languages})=\dfrac{10}{48}=\dfrac{5}{24}$.</li>
+      <li>Given two or more instruments: only those 12 students count. $P(\text{one language})=\dfrac{2}{12}=\dfrac16$.</li>
+      <li>Given two languages: only those 22 students count. $10+6=16$ of them play at least one instrument, so $P=\dfrac{16}{22}=\dfrac{8}{11}$.</li>
+    </ol>
+  </div>
+  <div class="qhead"><h3>Your turn</h3><span>3 questions</span></div>
+  <div class="card" style="margin-top:.4rem">
+    <p>60 students said how they get to school.</p>
+    <div class="tblwrap"><table class="t">
+      <tr><th></th><th>Bus</th><th>Car</th><th>Walk</th><th>Total</th></tr>
+      <tr><th>Year 9</th><td>12</td><td>10</td><td>8</td><td>30</td></tr>
+      <tr><th>Year 10</th><td>9</td><td>6</td><td>15</td><td>30</td></tr>
+      <tr><th>Total</th><td>21</td><td>16</td><td>23</td><td>60</td></tr>
+    </table></div>
+  </div>
+  <div class="qs" data-part="q10"></div>
+  <div class="next"><button class="btn primary" data-go="qr">Next: Mixed review →</button></div>
+</section>
+
+<!-- ================= REVIEW ================= -->
+<section class="tab" id="tab-qr">
+  <div class="kicker" style="color:#6b5ca5">Mixed review · exam style</div>
+  <h2>Put it all together</h2>
+  <p>These questions are mixed up, like in the exam. For each one, first decide <b>which station's idea</b> you need, then work it out.</p>
+  <div class="qs" data-part="qr"></div>
+  <div class="next"><button class="btn primary" data-go="report">See my learning report →</button></div>
+</section>
+
+<!-- ================= REPORT ================= -->
+<section class="tab" id="tab-report">
+  <div class="kicker st">Learning report</div>
+  <h2>How did your revision go?</h2>
+  <div id="report"></div>
+</section>
+</main>
+
+<script>
+const R = String.raw;
+/* ================= TEXT ================= */
+const UI = {
+  tabs:{start:'Start',q1:'1 Pie & bar',q2:'2 Five numbers',q3:'3 Compare',q4:'4 Scatter',q5:'5 Misleading',q6:'6 Chance',q7:'7 Experiments',q8:'8 Two dice',q9:'9 Trees',q10:'10 Two-way',qr:'Review',report:'Report'},
+  mins:{q1:4,q2:5,q3:4,q4:4,q5:3,q6:4,q7:4,q8:4,q9:4,q10:4,qr:6},
+  check:'Check', attempt:'Try', of:'of',
+  fmtFrac:R`Type a fraction like 5/33, which means $\frac{5}{33}$. Simplest form.`,
+  fmtNum:'Type a number, for example 6.5',
+  fmtPct:'Type a percentage, for example 54.5',
+  fmtDeg:'Type the angle in degrees, for example 126',
+  previewPre:'You typed: ',
+  right:['Correct, first try!','Correct, on the second try.','Correct, on the third try.'],
+  wrong:'Not yet. Check your working and try again.',
+  wrongLast:'That was your last try. Read the solution below.',
+  simplify:'Right value! Now write it in simplest form. (This did not use a try.)',
+  needFrac:'Please give your answer as a fraction. (This did not use a try.)',
+  unreadable:'I could not read that. Try a number or a fraction such as 3/8.',
+  hint:'Hint', sol:'Solution',
+  prog:(a,t,p)=>`${a} / ${t} answered · ${p} pts`,
+  done:'done',
+  report:{
+    empty:'Nothing answered yet. Work through the stations, then come back here.',
+    byPart:'By station', bySkill:'By skill', how:'How you worked', advice:'What to do next', map:'Knowledge map', total:'Total score',
+    lv:{g:'steady',a:'practise',r:'needs work',n:'not answered'},
+    firstTry:n=>`<b>${n}</b> questions right on the first try.`,
+    fast:(n)=>!n?'No questions were answered right within a few seconds.':`<b>${n}</b> answered right very quickly (within a few seconds). That is great if you saw the idea at once. If you guessed, go back and make sure you can explain why.`,
+    rushed:(n)=>n?`<b>${n}</b> questions had three wrong tries in under 20 seconds. That looks like rushing. After a wrong answer, stop and ask: <i>What is the whole group? What exactly am I counting? Is anything counted twice? Did the first pick change the second?</i>`:'No rushing: you took time to think after wrong answers. Well done.',
+    notDone:n=>n?`<b>${n}</b> questions are not finished yet.`:'Every question is finished.',
+    why:(o,t)=>`You opened <b>${o}</b> of the <b>${t}</b> “Why does it work?” sections.`,
+    allGood:'Every skill you tried is steady. You are ready for the exam. For a final check, try the printable review sheet with pen and paper, writing every step, as you will in the exam.',
+    advIntro:'Look at these skills again, weakest first:',
+    note:'Each question scores 3 (right first try), 2 (second try), 1 (third try) or 0 (three wrong). Skill levels use the average: under 1.5 needs work, 1.5 to 2.5 practise, 2.5 and above steady.',
+    centre:['Data and chance:','reasoning with evidence'],
+    avg:a=>a==null?'–':a.toFixed(1)+' / 3'
+  }
+};
+const GROUPS = {stat:'Statistics', prob:'Probability'};
+const SEC = {q1:'1 Pie & bar graphs',q2:'2 Five-number summary',q3:'3 Comparing groups',q4:'4 Scatter plots',q5:'5 Misleading graphs',q6:'6 Theoretical probability',q7:'7 Experimental probability',q8:'8 Two dice',q9:'9 Tree diagrams',q10:'10 Two-way tables',qr:'Mixed review'};
+const SKILLS = {
+  pct:{n:'Percentages & pie angles',g:'stat',adv:R`Every share is a fraction of the total. Start by writing $\frac{\text{frequency}}{\text{total}}$, then multiply by $100\%$ for a percentage or by $360^\circ$ for an angle. Check that the angles add to $360^\circ$. To go backwards from an angle, use $\frac{\text{angle}}{360}\times\text{total}$.`},
+  claim:{n:'Evaluating claims with data',g:'stat',adv:'Test a claim against the numbers. Quote the actual value (for example 35%) and compare it with what the claim needs (more than 50%). Words like “every”, “must” and “tripled” are strong claims: one counterexample, or one calculation, can break them.'},
+  fivenum:{n:'Five-number summary',g:'stat',adv:R`Order the data first. Find the median at position $\frac{n+1}{2}$. If $n$ is odd, leave the median out and find the middle of each half. If $n$ is even, split the list exactly in two. Write all five numbers in order: lowest, LQ, median, UQ, highest.`},
+  iqr:{n:'IQR and spread',g:'stat',adv:R`$\text{IQR}=\text{UQ}-\text{LQ}$ is the width of the box: the spread of the middle half. A bigger IQR means the typical values are more spread out. Don't use the range: one extreme value can change it a lot.`},
+  rule:{n:'Comparing groups (75%–50% rule)',g:'stat',adv:'Find the upper quartile of the lower group. Count how many of the other group are strictly above it, and turn the count into a percentage. Above 50% → “B tends to be greater”. Never write “every” or “all”.'},
+  scatter:{n:'Describing scatter plots',g:'stat',adv:'Use three words: direction (positive or negative), strength (strong, moderate or weak), and any unusual point, given as coordinates. Picture a line through the cloud: are most points close to it?'},
+  lobf:{n:'Line of best fit predictions',g:'stat',adv:R`To predict, substitute the $x$ value into the line: $y=mx+c$. Do the multiplication first, then add $c$. Check that the answer looks sensible on the graph.`},
+  extrap:{n:'Reliability: inside or outside the data',g:'stat',adv:'Before trusting a prediction, find the smallest and largest x values that were measured. Inside that range is reasonable. Outside it, the pattern may change, so say “unreliable” and give the range.'},
+  mislead:{n:'Misleading graphs & % change',g:'stat',adv:R`First check where the vertical axis starts. Use the real values: work out the difference, then the percentage change $\frac{\text{new}-\text{old}}{\text{old}}\times100\%$. The old value is the denominator.`},
+  theo:{n:'Theoretical probability',g:'prob',adv:R`List the outcomes and check that they are equally likely. Then write $\frac{\text{favourable}}{\text{total}}$ and simplify. Writing the favourable outcomes out in full makes errors easy to spot.`},
+  orrule:{n:'“Or” events, overlaps & “not”',g:'prob',adv:R`For “A or B”, list every outcome in A or B and count each one once. Or use $P(A)+P(B)-P(A\text{ and }B)$. For “not”, “at least one” and “none”, $1-P(\ldots)$ is often quickest.`},
+  scale:{n:'Probability scale',g:'prob',adv:R`Probabilities live between $0$ and $1$. Impossible is $0$, certain is $1$, an even chance is $\frac12$. Change a fraction to a decimal to place it, for example $\frac38=0.375$.`},
+  expprob:{n:'Experimental probability',g:'prob',adv:R`Relative frequency is $\frac{\text{times it happened}}{\text{number of trials}}$. Use the total number of trials as the denominator, not the number of failures. More trials give a better estimate.`},
+  expect:{n:'Expected counts & variation',g:'prob',adv:R`Expected number $=P\times n$. It is an average-type prediction, not a promise. Real results vary around it, and the variation is bigger in small experiments.`},
+  dice:{n:'Two-dice sample space',g:'prob',adv:'Draw the 6 × 6 table and shade every cell that fits, then count out of 36. Remember (2,6) and (6,2) are different cells, but (5,5) is a single cell. Don\'t count it twice.'},
+  tree:{n:'Tree diagrams',g:'prob',adv:'Without replacement, the second branch has one fewer item in its denominator, and one fewer of the kind already taken. Multiply along each path. Add the paths that fit, and remember there are two orders for “one of each”.'},
+  joint:{n:'Two-way tables (“and”)',g:'prob',adv:'For “A and B”, find the single cell where row A meets column B, and divide by the grand total. Check that each row adds to its total first.'},
+  cond:{n:'Conditional probability (“given”)',g:'prob',adv:'“Given B” shrinks the group to B only. Write the B total as the denominator first, then find how many of B also have A. Say the condition aloud: “out of the Year 10s…”.'}
+};
+const LINKS=[['pct','claim'],['fivenum','iqr'],['fivenum','rule'],['iqr','rule'],['rule','claim'],['scatter','lobf'],['lobf','extrap'],['mislead','claim'],['mislead','pct'],['theo','orrule'],['theo','scale'],['theo','dice'],['expprob','expect'],['expprob','theo'],['dice','orrule'],['tree','orrule'],['joint','cond'],['tree','cond'],['pct','joint']];
+
+/* ================= QUESTIONS ================= */
+const Q = [
+ // Station 1
+ {id:'q1a',part:'q1',tags:['pct'],type:'num',fmt:'pct',ans:35,tol:0.05,
+  prompt:R`A survey asked 60 students for their favourite sport: Rugby 21, Netball 15, Football 18, Basketball 6. What percentage chose Rugby?`,
+  hint:R`Rugby is $\frac{21}{60}$ of the students. Multiply that fraction by $100\%$.`,
+  sol:R`$\dfrac{21}{60}\times100\%=35\%$`},
+ {id:'q1b',part:'q1',tags:['pct'],type:'num',fmt:'deg',ans:108,tol:0.05,
+  prompt:R`Same survey. What angle should the Football sector have in a pie chart?`,
+  hint:R`Football is $\frac{18}{60}$ of the whole circle, which is $360^\circ$.`,
+  sol:R`$\dfrac{18}{60}\times360^\circ=108^\circ$`},
+ {id:'q1c',part:'q1',tags:['claim'],type:'mc',ans:2,
+  prompt:R`Someone says: “Rugby is the most popular sport, so most students chose rugby.” Which response is best?`,
+  opts:[R`True, because rugby has the biggest frequency.`,R`True, because $35\%$ is more than $25\%$.`,R`False. Rugby is the most popular, but only $35\%$ chose it, and “most” needs more than $50\%$.`,R`We can't tell without drawing the pie chart.`],
+  hint:'“Most students” means more than half of all 60 students.',
+  sol:R`Rugby is the largest group ($21$ of $60$), but $35\%<50\%$, so it is not chosen by most students. Its sector, $126^\circ$, is less than half the circle.`},
+ // Station 2
+ {id:'q2a',part:'q2',tags:['fivenum'],type:'num',fmt:'num',ans:20,tol:1e-9,
+  prompt:R`Find the median of: $12,\ 15,\ 15,\ 18,\ 20,\ 21,\ 25,\ 27,\ 30$`,
+  hint:R`There are $9$ values in order. The median is in position $\frac{9+1}{2}$.`,
+  sol:R`Position $\frac{9+1}{2}=5$. The 5th value is $20$.`},
+ {id:'q2b',part:'q2',tags:['fivenum','iqr'],type:'num',fmt:'num',ans:11,tol:1e-9,
+  prompt:R`Same data: $12,\ 15,\ 15,\ 18,\ 20,\ 21,\ 25,\ 27,\ 30$. Find the interquartile range.`,
+  hint:R`Leave out the median $20$. Lower half: $12,15,15,18$. Upper half: $21,25,27,30$. Find the middle of each half.`,
+  sol:R`$\text{LQ}=\frac{15+15}{2}=15$, $\text{UQ}=\frac{25+27}{2}=26$, so $\text{IQR}=26-15=11$.`},
+ {id:'q2c',part:'q2',tags:['fivenum','iqr'],type:'num',fmt:'num',ans:4,tol:1e-9,
+  prompt:R`Now an even number of values: $3,\ 4,\ 4,\ 5,\ 6,\ 7,\ 8,\ 8,\ 9,\ 12$. Find the IQR.`,
+  hint:R`$10$ values: split into two halves of $5$, namely $3,4,4,5,6$ and $7,8,8,9,12$. Each quartile is the middle of its half.`,
+  sol:R`Median $=\frac{6+7}{2}=6.5$. $\text{LQ}=4$ (middle of $3,4,4,5,6$) and $\text{UQ}=8$ (middle of $7,8,8,9,12$). $\text{IQR}=8-4=4$.`},
+ // Station 3
+ {id:'q3a',part:'q3',tags:['fivenum'],type:'num',fmt:'num',ans:45,tol:1e-9,
+  prompt:R`What is the upper quartile of group P?`,
+  hint:R`$11$ values: the median is the 6th ($40$). The upper half is the five values after it.`,
+  sol:R`Upper half of P: $41,43,45,47,52$. The middle one is $45$, so $\text{UQ}=45$ cm.`},
+ {id:'q3b',part:'q3',tags:['rule'],type:'num',fmt:'pct',ans:72.73,tol:0.15,
+  prompt:R`What percentage of group Q jumped <b>further than</b> P's upper quartile? Give your answer to 1 decimal place.`,
+  hint:R`Count the Q values strictly greater than $45$, then divide by $11$.`,
+  sol:R`Q values above $45$: $46,47,48,50,51,53,55,58$, which is $8$ values. $\dfrac{8}{11}\times100\%\approx72.7\%$.`},
+ {id:'q3c',part:'q3',tags:['rule','claim'],type:'mc',ans:1,
+  prompt:'Which statement do the data support?',
+  opts:['Every student in Q jumped further than every student in P.','Students in Q tend to jump further than students in P.','The two groups have the same median.','Nothing, because the groups overlap.'],
+  hint:'More than 50% of Q is above P’s upper quartile. What does the rule let you say? Can you find a P student who beat a Q student?',
+  sol:R`$72.7\%>50\%$, so Q <b>tends to</b> jump further. (Medians: Q $48$ cm and P $40$ cm.) “Every” is false: a P student jumped $52$ cm and a Q student only $36$ cm. Overlap is normal and doesn't stop us comparing.`},
+ // Station 4
+ {id:'q4a',part:'q4',tags:['scatter'],type:'mc',ans:3,
+  prompt:'Which description of the study-score scatter plot is best?',
+  opts:['Strong negative relationship.','No relationship, because one point is far away.','Weak positive relationship with no unusual points.',R`Strong positive relationship, with an unusual point at $(6,\,30)$.`],
+  hint:'Do the points go up or down from left to right? How close are most of them to a line? Is one point far from the rest?',
+  sol:R`Scores rise as hours rise (positive), and 11 of the 12 points lie close to a line (strong). The student at $(6,\,30)$ scored far below the pattern, so it is unusual.`},
+ {id:'q4b',part:'q4',tags:['lobf'],type:'num',fmt:'num',ans:67.5,tol:0.01,
+  prompt:R`A line of best fit is $\text{score}=5\times\text{hours}+40$. Use it to estimate the score for $5.5$ hours of study.`,
+  hint:R`Substitute $5.5$ for hours: $5\times5.5+40$.`,
+  sol:R`$5\times5.5+40=27.5+40=67.5$`},
+ {id:'q4c',part:'q4',tags:['extrap'],type:'mc',ans:0,
+  prompt:R`The line gives $5\times20+40=140$ for 20 hours of study. Is this a good prediction?`,
+  opts:[R`No. $20$ hours is far outside the data ($1$ to $9$ hours), and a score of $140$ is not even possible.`,R`Yes. The line is strong, so it works for any number of hours.`,'Yes, but only if we round it to 100.','No, because the line has a positive slope.'],
+  hint:'What range of hours did the students actually study? Does the pattern have to continue past that?',
+  sol:R`This is extrapolation. The data only cover $1$ to $9$ hours, and scores can't go past $100$, so the pattern must change. The prediction is unreliable.`},
+ // Station 5
+ {id:'q5a',part:'q5',tags:['mislead'],type:'num',fmt:'pct',ans:25,tol:0.05,
+  prompt:R`By what percentage did sales increase from January ($120$) to February ($150$)?`,
+  hint:R`Increase $=150-120$. Divide by the <b>old</b> value, $120$.`,
+  sol:R`$\dfrac{150-120}{120}\times100\%=\dfrac{30}{120}\times100\%=25\%$`},
+ {id:'q5b',part:'q5',tags:['mislead'],type:'num',fmt:'num',ans:4,tol:0.01,
+  prompt:R`On the graph whose axis starts at $110$, the February bar <i>looks</i> how many times as tall as the January bar?`,
+  hint:R`Visible heights: $150-110$ and $120-110$.`,
+  sol:R`Visible heights $40$ and $10$, so it looks $\frac{40}{10}=4$ times as tall, but sales only went up $25\%$.`},
+ {id:'q5c',part:'q5',tags:['mislead','claim'],type:'mc',ans:2,
+  prompt:'Which claim is supported by the data?',
+  opts:['Sales quadrupled.','Sales increased by 30%.','Sales increased by a quarter, from 120 to 150.','Sales were about the same.'],
+  hint:'Use the real values, not the bar heights. What fraction of 120 is 30?',
+  sol:R`The increase is $30$ out of $120$, which is $\frac14=25\%$. “Quadrupled” comes from the cut-off axis. “30%” uses the wrong denominator.`},
+ // Station 6
+ {id:'q6a',part:'q6',tags:['orrule','theo'],type:'frac',ans:[7,10],
+  prompt:R`Find $P(\text{even or a multiple of }3)$.`,
+  hint:R`Evens: $2,4,6,8,10$. Multiples of 3: $3,6,9$. Count $6$ once.`,
+  sol:R`$\{2,3,4,6,8,9,10\}$ has $7$ cards, so $P=\dfrac{7}{10}$. Check: $\frac{5}{10}+\frac{3}{10}-\frac{1}{10}=\frac{7}{10}$.`},
+ {id:'q6b',part:'q6',tags:['orrule'],type:'frac',ans:[1,2],
+  prompt:R`Find $P(\text{a prime number or a multiple of }5)$.`,
+  hint:R`Primes up to 10: $2,3,5,7$. Multiples of 5: $5,10$. Is anything counted twice?`,
+  sol:R`$\{2,3,5,7,10\}$ has $5$ cards, with $5$ counted once. $P=\dfrac{5}{10}=\dfrac12$.`},
+ {id:'q6c',part:'q6',tags:['scale'],type:'mc',ans:1,
+  prompt:R`Which event has probability $0$?`,
+  opts:['Picking a number less than 11.','Picking the number 11.','Picking an even number.','Picking a number greater than 0.'],
+  hint:'Probability 0 means impossible. Which card is not in the pack?',
+  sol:R`There is no card 11, so it is impossible: $P=0$. “Less than 11” and “greater than 0” are certain ($P=1$). “Even” is $\frac12$.`},
+ // Station 7
+ {id:'q7a',part:'q7',tags:['expprob'],type:'frac',ans:[16,25],
+  prompt:R`Estimate the probability that Mia's next shot goes in.`,
+  hint:R`Successful shots out of <b>all</b> shots: $\frac{32}{50}$, then simplify.`,
+  sol:R`$\dfrac{32}{50}=\dfrac{16}{25}\;(=0.64)$`},
+ {id:'q7b',part:'q7',tags:['expect'],type:'num',fmt:'num',ans:128,tol:1e-9,
+  prompt:R`How many shots would you expect to go in if she takes $200$ more?`,
+  hint:R`Expected $=P\times n=\frac{16}{25}\times200$.`,
+  sol:R`$\dfrac{16}{25}\times200=128$ shots.`},
+ {id:'q7c',part:'q7',tags:['expect'],type:'mc',ans:3,
+  prompt:R`In her next 200 shots, 120 go in, not 128. What is the best conclusion?`,
+  opts:['Her estimate was wrong, so we should throw it away.','She must have changed her technique.','Something went wrong, because the expected number must happen.','This is normal random variation. Combining all 250 shots gives a better estimate.'],
+  hint:'Is an expected number a promise? What do more trials do to an estimate?',
+  sol:R`Expected counts vary. $120$ is close to $128$. Using all the data: $\frac{32+120}{250}=\frac{152}{250}=0.608$ is a more reliable estimate.`},
+ // Station 8
+ {id:'q8a',part:'q8',tags:['dice','theo'],type:'frac',ans:[1,9],
+  prompt:R`Find $P(\text{sum of }9)$.`,
+  hint:R`List the pairs: $(3,6),(4,5),(5,4),(6,3)$. Is that all?`,
+  sol:R`$4$ cells out of $36$: $\dfrac{4}{36}=\dfrac19$.`},
+ {id:'q8b',part:'q8',tags:['dice','orrule'],type:'frac',ans:[11,36],
+  prompt:R`Find $P(\text{at least one die shows a }6)$.`,
+  hint:R`$6$ cells have a 6 on the first die and $6$ have a 6 on the second. Which cell is in both?`,
+  sol:R`$6+6-1=11$ cells, because $(6,6)$ is counted once. $P=\dfrac{11}{36}$. Or: $1-P(\text{no }6)=1-\frac{25}{36}=\frac{11}{36}$.`},
+ {id:'q8c',part:'q8',tags:['dice'],type:'frac',ans:[2,9],
+  prompt:R`Find $P(\text{the two numbers differ by exactly }2)$.`,
+  hint:R`Pairs such as $(1,3)$ and $(3,1)$ both count. Work through first numbers $1$ to $6$.`,
+  sol:R`$(1,3),(3,1),(2,4),(4,2),(3,5),(5,3),(4,6),(6,4)$ gives $8$ cells. $\dfrac{8}{36}=\dfrac29$.`},
+ // Station 9
+ {id:'q9a',part:'q9',tags:['tree'],type:'frac',ans:[1,3],
+  prompt:R`Two counters are taken <b>without replacement</b>. Find $P(\text{both blue})$.`,
+  hint:R`First blue: $\frac{6}{10}$. Then only $9$ counters remain, and $5$ are blue.`,
+  sol:R`$\dfrac{6}{10}\times\dfrac{5}{9}=\dfrac{30}{90}=\dfrac13$`},
+ {id:'q9b',part:'q9',tags:['tree'],type:'frac',ans:[8,15],
+  prompt:R`Without replacement, find $P(\text{one of each colour})$.`,
+  hint:R`Two paths: red then blue, and blue then red. Multiply along each one, then add.`,
+  sol:R`$\dfrac{4}{10}\times\dfrac{6}{9}+\dfrac{6}{10}\times\dfrac{4}{9}=\dfrac{24}{90}+\dfrac{24}{90}=\dfrac{48}{90}=\dfrac{8}{15}$`},
+ {id:'q9c',part:'q9',tags:['tree'],type:'frac',ans:[9,25],
+  prompt:R`Now the first counter <b>is put back</b> before the second pick. Find $P(\text{both blue})$.`,
+  hint:R`With replacement the bag is the same for the second pick: $\frac{6}{10}$ again.`,
+  sol:R`$\dfrac{6}{10}\times\dfrac{6}{10}=\dfrac{36}{100}=\dfrac{9}{25}$. That is a little more than $\frac13$, because the second pick still has all 6 blues.`},
+ // Station 10
+ {id:'q10a',part:'q10',tags:['joint'],type:'frac',ans:[1,4],
+  prompt:R`A student is chosen at random. Find $P(\text{Year 10 and walks})$.`,
+  hint:R`One cell, out of everyone ($60$).`,
+  sol:R`$\dfrac{15}{60}=\dfrac14$`},
+ {id:'q10b',part:'q10',tags:['cond'],type:'frac',ans:[1,2],
+  prompt:R`Given that a student is in Year 10, find $P(\text{walks})$.`,
+  hint:R`Only the Year 10 row counts, so the denominator is $30$.`,
+  sol:R`$\dfrac{15}{30}=\dfrac12$`},
+ {id:'q10c',part:'q10',tags:['cond'],type:'frac',ans:[15,23],
+  prompt:R`Given that a student walks, find $P(\text{Year 10})$.`,
+  hint:R`Now only the Walk column counts. How many walk altogether?`,
+  sol:R`$23$ students walk, and $15$ of them are in Year 10: $\dfrac{15}{23}$. Compare with 10b: the condition changes the denominator.`},
+ // Review
+ {id:'qr1',part:'qr',tags:['pct'],type:'num',fmt:'num',ans:50,tol:1e-9,
+  prompt:R`In a pie chart of a survey of $250$ people, the “Tea” sector has an angle of $72^\circ$. How many people chose tea?`,
+  hint:R`What fraction of the circle is $72^\circ$? Take that fraction of $250$.`,
+  sol:R`$\dfrac{72}{360}\times250=\dfrac15\times250=50$ people.`},
+ {id:'qr2',part:'qr',tags:['rule'],type:'mc',ans:2,fig:'boxR',
+  prompt:R`The box plots show the times (seconds) for two samples of 11 runners. Which statement is best supported?`,
+  opts:['Every runner in B was slower than every runner in A.','A and B have the same spread.',R`B tends to take longer than A: B's median ($34$ s) is above A's upper quartile ($31$ s).`,'We cannot compare without the raw data.'],
+  hint:'Compare B’s median with A’s upper quartile. Then check the whiskers: do the groups overlap?',
+  sol:R`B's median $34$ s is above A's UQ $31$ s, so more than half of B is above three quarters of A: B tends to take longer. The groups overlap (A max $38$ s, B min $24$ s), so “every” is false. The IQRs are $5$ s and $7$ s, so the spreads differ.`},
+ {id:'qr3',part:'qr',tags:['lobf'],type:'num',fmt:'num',ans:15,tol:0.01,
+  prompt:R`A scatter plot of data with $x$ from $5$ to $25$ has line of best fit $y=0.8x+3$. Estimate $y$ when $x=15$.`,
+  hint:R`$x=15$ is inside the data, so substitute: $0.8\times15+3$.`,
+  sol:R`$0.8\times15+3=12+3=15$`},
+ {id:'qr4',part:'qr',tags:['expect','expprob'],type:'num',fmt:'num',ans:111,tol:1e-9,
+  prompt:R`A bottle cap landed “top up” $37$ times in $100$ flips. How many “top up” results would you expect in $300$ flips?`,
+  hint:R`$P(\text{top up})\approx\frac{37}{100}$. Multiply by $300$.`,
+  sol:R`$\dfrac{37}{100}\times300=111$`},
+ {id:'qr5',part:'qr',tags:['dice'],type:'frac',ans:[5,12],
+  prompt:R`Two fair dice are rolled. Find $P(\text{the sum is a prime number})$.`,
+  hint:R`The prime sums are $2,3,5,7,11$. Count the cells for each from the table: $1,2,4,6,2$.`,
+  sol:R`$1+2+4+6+2=15$ cells, so $\dfrac{15}{36}=\dfrac{5}{12}$.`},
+ {id:'qr6',part:'qr',tags:['tree','orrule'],type:'frac',ans:[7,10],
+  prompt:R`A jar has $3$ green and $2$ yellow sweets. Two are eaten at random, one after the other. Find $P(\text{at least one yellow})$.`,
+  hint:R`“At least one yellow” is the opposite of “both green”. Find $P(\text{both green})$ first, without replacement.`,
+  sol:R`$P(\text{both green})=\dfrac35\times\dfrac24=\dfrac{6}{20}=\dfrac{3}{10}$, so $P(\text{at least one yellow})=1-\dfrac{3}{10}=\dfrac{7}{10}$.`},
+ {id:'qr7',part:'qr',tags:['cond'],type:'frac',ans:[7,13],fig:'twR',
+  prompt:R`Use the table of 40 students. Given that a student has a sibling, find $P(\text{has a pet})$.`,
+  hint:R`Only the students with a sibling count. How many is that?`,
+  sol:R`Sibling column total $=14+12=26$, and $14$ of them have a pet: $\dfrac{14}{26}=\dfrac{7}{13}$.`}
+];
+
+/* ================= HELPERS ================= */
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const gcd=(a,b)=>{a=Math.abs(a);b=Math.abs(b);while(b){[a,b]=[b,a%b]}return a||1};
+const simp=(n,d)=>{const g=gcd(n,d);return [n/g,d/g]};
+const fr=(n,d)=>{const [a,b]=simp(n,d);return b===1?String(a):R`\frac{${a}}{${b}}`};
+const frFull=(n,d)=>{const [a,b]=simp(n,d);return (a===n&&b===d)?R`\frac{${n}}{${d}}`:R`\frac{${n}}{${d}}=${fr(n,d)}`};
+const r1=x=>Math.round(x*10)/10;
+const SVGNS='http://www.w3.org/2000/svg';
+function mathify(el){ if(window.renderMathInElement){ try{renderMathInElement(el,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});}catch(e){} } }
+function texStr(t){ if(window.katex){ try{return katex.renderToString(t,{throwOnError:false});}catch(e){} } return t; }
+function html(el,s){el.innerHTML=s;mathify(el);}
+function store(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+function load(k){try{return JSON.parse(localStorage.getItem(k))}catch(e){return null}}
+
+/* build assertions */
+(function(){const used=new Set();Q.forEach(q=>q.tags.forEach(t=>{if(!SKILLS[t])console.error('Missing skill',t);used.add(t)}));
+Object.keys(SKILLS).forEach(k=>{if(!used.has(k))console.error('Unused skill',k)});})();
+
+/* ================= STATE ================= */
+const KEY='y10-sp-revision';
+let S={}, WHY={};
+function blank(){return {att:0,done:false,pts:0,t0:null,tFirst:null,tLast:null,fastFirst:false,hist:[],wrongOpts:[]}}
+function initState(){const saved=load(KEY);Q.forEach(q=>{S[q.id]=Object.assign(blank(),saved&&saved.S&&saved.S[q.id]?saved.S[q.id]:{})});WHY=(saved&&saved.WHY)||{};}
+function save(){store(KEY,{S,WHY})}
+
+/* ================= TABS ================= */
+const ORDER=['start','q1','q2','q3','q4','q5','q6','q7','q8','q9','q10','qr','report'];
+function buildTabs(){
+  const nav=$('#tabs');nav.innerHTML='';
+  ORDER.forEach(k=>{const b=document.createElement('button');b.type='button';b.dataset.tab=k;
+    const n=Number(k.slice(1));if(k[0]==='q'&&k!=='qr')b.className=n<=5?'st':'pr';
+    b.innerHTML=UI.tabs[k]+'<span class="tick"></span>';b.onclick=()=>show(k);nav.appendChild(b)});
+  const route=$('#route');route.innerHTML='';
+  ORDER.slice(1,12).forEach(k=>{const b=document.createElement('button');b.type='button';b.className='stop '+(k==='qr'?'rv':(Number(k.slice(1))<=5?'st':'pr'));
+    b.innerHTML=`<span class="n">${k==='qr'?'REVIEW':'STATION '+k.slice(1)}</span><span class="tt">${SEC[k].replace(/^\d+ /,'')}</span><span class="mm" data-mm="${k}"></span>`;
+    b.onclick=()=>show(k);route.appendChild(b)});
+  $$('[data-go]').forEach(b=>b.onclick=()=>{show(b.dataset.go);window.scrollTo({top:0})});
+}
+function show(k){
+  $$('section.tab').forEach(s=>s.classList.toggle('on',s.id==='tab-'+k));
+  $$('#tabs button').forEach(b=>b.classList.toggle('on',b.dataset.tab===k));
+  const b=$(`#tabs button[data-tab="${k}"]`);if(b)b.scrollIntoView({block:'nearest',inline:'center'});
+  if(k==='report')renderReport();
+  try{if(location.hash!=='#'+k)history.replaceState(null,'','#'+k);}catch(e){}
+  window.scrollTo({top:0});
+}
+function refreshProgress(){
+  let a=0,p=0;Q.forEach(q=>{if(S[q.id].done){a++;p+=S[q.id].pts}});
+  $('#progtxt').textContent=UI.prog(a,Q.length,p);$('#progbar').style.width=(100*a/Q.length)+'%';
+  Object.keys(SEC).forEach(k=>{const qs=Q.filter(q=>q.part===k),d=qs.filter(q=>S[q.id].done).length;
+    const t=$(`#tabs button[data-tab="${k}"] .tick`);if(t)t.textContent=d===qs.length?'✓':'';
+    const m=$(`[data-mm="${k}"]`);if(m)m.textContent=`≈ ${UI.mins[k]} min · ${d}/${qs.length} ${UI.done}`;});
+}
+
+/* ================= QUESTIONS ================= */
+function parseAns(s){
+  s=String(s).trim().replace(/\s+/g,'').replace(/,/g,'').replace(/°|%|cm|kg|s$|deg|degrees|people|shots/gi,'');
+  let m=s.match(/^(-?\d+(?:\.\d+)?)\/(-?\d+(?:\.\d+)?)$/);
+  if(m){const a=Number(m[1]),b=Number(m[2]);if(!b)return null;return {v:a/b,frac:(Number.isInteger(a)&&Number.isInteger(b))?[a,b]:null};}
+  if(/^-?\d*\.?\d+$/.test(s))return {v:Number(s)};
+  return null;
+}
+function toTex(s){
+  s=String(s).trim();if(!s)return '';
+  return s.replace(/\s+/g,' ').replace(/(\d+(?:\.\d+)?)\s*\/\s*(\d+(?:\.\d+)?)/g,R`\frac{$1}{$2}`).replace(/\*/g,R`\times `).replace(/%/g,R`\%`).replace(/°/g,R`^\circ`);
+}
+/* returns 'ok' | 'no' | 'simplify' | 'needfrac' | 'bad' */
+function judge(q,input){
+  if(q.type==='mc')return input===q.ans?'ok':'no';
+  const p=parseAns(input);if(!p)return 'bad';
+  if(q.type==='frac'){
+    const [n,d]=q.ans, val=n/d;
+    if(p.frac){const [a,b]=p.frac;if(a*d===b*n){const [x,y]=simp(a,b);return (x===a&&y===b&&b>0)?'ok':'simplify';}return 'no';}
+    if(Math.abs(p.v-val)<5e-4)return 'needfrac';
+    return 'no';
+  }
+  return Math.abs(p.v-q.ans)<=q.tol+1e-9?'ok':'no';
+}
+function correct(q,ans){return judge(q,ans)==='ok'}
+function storedAnswer(q){if(q.type==='mc')return q.ans;if(q.type==='frac')return q.ans[0]+'/'+q.ans[1];return String(q.ans)}
+
+const FIG={
+ boxR:()=>boxPlotsSVG([{name:'A',v:[20,26,29,31,38],col:'var(--c3)'},{name:'B',v:[24,30,34,37,42],col:'var(--c4)'}],15,45,5,'Time (s)'),
+ twR:()=>`<div class="tblwrap"><table class="t"><tr><th></th><th>Sibling</th><th>No sibling</th><th>Total</th></tr><tr><th>Pet</th><td>14</td><td>6</td><td>20</td></tr><tr><th>No pet</th><td>12</td><td>8</td><td>20</td></tr><tr><th>Total</th><td>26</td><td>14</td><td>40</td></tr></table></div>`
+};
+function renderQuestions(){
+  $$('.qs').forEach(box=>{
+    const part=box.dataset.part;box.innerHTML='';
+    Q.filter(q=>q.part===part).forEach((q,i)=>{
+      const d=document.createElement('div');d.className='q';d.id='Q-'+q.id;
+      const label=part==='qr'?('R'+(i+1)):(part.slice(1)+String.fromCharCode(97+i));
+      let body=`<div class="qn">QUESTION ${label}<span class="dots">${'<i></i>'.repeat(3)}</span></div><div class="prompt">${q.prompt}</div>`;
+      if(q.fig)body+=`<div class="fig">${FIG[q.fig]()}</div>`;
+      if(q.type==='mc'){body+=`<div class="opts">${q.opts.map((o,j)=>`<button type="button" class="opt" data-j="${j}">${String.fromCharCode(65+j)}. ${o}</button>`).join('')}</div>`;}
+      else{const f=q.type==='frac'?UI.fmtFrac:UI['fmt'+{num:'Num',pct:'Pct',deg:'Deg'}[q.fmt]];
+        body+=`<div class="ansrow"><input type="text" inputmode="decimal" autocomplete="off" aria-label="answer"><button type="button" class="btn primary chk">${UI.check}</button></div><div class="preview"></div><div class="fmt">${f}</div>`;}
+      body+=`<div class="fb"></div><div class="hint" hidden></div><div class="sol" hidden></div>`;
+      d.innerHTML=body;box.appendChild(d);mathify(d);
+      if(q.type==='mc'){d.querySelectorAll('.opt').forEach(b=>b.onclick=()=>submit(q,Number(b.dataset.j)));}
+      else{const inp=d.querySelector('input'),pv=d.querySelector('.preview');
+        inp.addEventListener('input',()=>{const t=toTex(inp.value);pv.innerHTML=t?UI.previewPre+texStr(t):''});
+        inp.addEventListener('keydown',e=>{if(e.key==='Enter')submit(q,inp.value)});
+        d.querySelector('.chk').onclick=()=>submit(q,inp.value);}
+      paint(q);
+    });
+  });
+  // timing: t0 when question first seen
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const id=e.target.id.slice(2);if(S[id]&&S[id].t0==null){S[id].t0=Date.now();}}}),{threshold:0.6});
+  $$('.q').forEach(el=>io.observe(el));
+}
+function submit(q,input){
+  const st=S[q.id];if(st.done)return;
+  const res=judge(q,input), el=$('#Q-'+q.id), fb=el.querySelector('.fb');
+  if(res==='bad'){fb.className='fb info';fb.textContent=UI.unreadable;return}
+  if(res==='simplify'){fb.className='fb info';fb.textContent=UI.simplify;return}
+  if(res==='needfrac'){fb.className='fb info';fb.textContent=UI.needFrac;return}
+  const now=Date.now();if(st.t0==null)st.t0=now;
+  if(st.att===0)st.tFirst=now-st.t0;
+  st.tLast=now;st.att++;st.hist.push(input);
+  if(res==='ok'){st.done=true;st.pts=4-st.att;
+    if(st.att===1)st.fastFirst=st.tFirst<(q.type==='mc'?4000:7000);}
+  else{if(q.type==='mc')st.wrongOpts.push(input);if(st.att>=3){st.done=true;st.pts=0;}}
+  st.lastRes=res;
+  save();paint(q,true);refreshProgress();
+}
+function paint(q,fresh){
+  const st=S[q.id],el=$('#Q-'+q.id);if(!el)return;
+  const dots=el.querySelectorAll('.dots i');
+  dots.forEach((d,i)=>{d.className='';if(i<st.att){d.className=(st.done&&st.pts>0&&i===st.att-1)?'ok':'x'}});
+  const fb=el.querySelector('.fb');
+  if(st.att===0){fb.textContent='';}
+  else if(st.done&&st.pts>0){fb.className='fb ok';fb.textContent=UI.right[st.att-1];}
+  else if(st.done){fb.className='fb no';fb.textContent=UI.wrongLast;}
+  else{fb.className='fb no';fb.textContent=UI.wrong+` (${UI.attempt} ${st.att+1} ${UI.of} 3)`;}
+  const h=el.querySelector('.hint');
+  const wrongs=st.att-((st.done&&st.pts>0)?1:0);
+  if(wrongs>=2){if(h.hidden){h.hidden=false;html(h,`<b>${UI.hint}:</b> ${q.hint}`);}}
+  const s=el.querySelector('.sol');
+  if(st.done&&s.hidden){s.hidden=false;html(s,`<b>${UI.sol}:</b> ${q.sol}`);}
+  el.classList.remove('done-0','done-1','done-2','done-3');if(st.done)el.classList.add('done-'+st.pts);
+  if(q.type==='mc'){
+    el.querySelectorAll('.opt').forEach(b=>{const j=Number(b.dataset.j);b.classList.toggle('wrong',st.wrongOpts.includes(j));
+      if(st.done){b.disabled=true;if(j===q.ans)b.classList.add('right');}else if(st.wrongOpts.includes(j))b.disabled=true;});
+  }else{
+    const inp=el.querySelector('input'),btn=el.querySelector('.chk');
+    if(st.done){inp.disabled=true;btn.disabled=true;if(st.hist.length)inp.value=st.hist[st.hist.length-1];}
+  }
+}
+
+/* ================= REPORT ================= */
+function renderReport(){
+  const T=UI.report, box=$('#report');
+  const answered=Q.filter(q=>S[q.id].done);
+  if(!Q.some(q=>S[q.id].att>0)){box.innerHTML=`<div class="card">${T.empty}</div>`;return}
+  let h='';
+  // by part
+  h+=`<div class="card"><div class="box-title">${T.byPart}</div>`;
+  Object.keys(SEC).forEach(k=>{const qs=Q.filter(q=>q.part===k),d=qs.filter(q=>S[q.id].done),pts=d.reduce((a,q)=>a+S[q.id].pts,0);
+    h+=`<div class="rbar"><div class="lab"><span>${SEC[k]}</span><span>${d.length} / ${qs.length} · ${pts} pts</span></div><div class="tr"><i style="width:${100*pts/(qs.length*3)}%;background:${k==='qr'?'#6b5ca5':(['q6','q7','q8','q9','q10'].includes(k)?'var(--pr)':'var(--st)')}"></i></div></div>`});
+  h+='</div>';
+  // by skill
+  const avg={};Object.keys(SKILLS).forEach(k=>{const qs=answered.filter(q=>q.tags.includes(k));avg[k]=qs.length?qs.reduce((a,q)=>a+S[q.id].pts,0)/qs.length:null});
+  const lev=a=>a==null?'n':a<1.5?'r':a<2.5?'a':'g';
+  h+=`<div class="card"><div class="box-title">${T.bySkill}</div>`;
+  Object.keys(GROUPS).forEach(g=>{h+=`<h3 style="margin:.8rem 0 .3rem">${GROUPS[g]}</h3>`;
+    Object.keys(SKILLS).filter(k=>SKILLS[k].g===g).forEach(k=>{h+=`<div class="skill"><span>${SKILLS[k].n}</span><span><span class="small">${T.avg(avg[k])}</span> <span class="lvl ${lev(avg[k])}">${T.lv[lev(avg[k])]}</span></span></div>`})});
+  h+='</div>';
+  // how you worked
+  const first=answered.filter(q=>S[q.id].pts===3).length, fast=answered.filter(q=>S[q.id].fastFirst).length;
+  const rushed=Q.filter(q=>{const s=S[q.id];return s.done&&s.pts===0&&s.att>=3&&s.t0!=null&&(s.tLast-s.t0)<20000}).length;
+  const notDone=Q.length-answered.length;
+  const whyTotal=$$('details.why').length, whyOpen=Object.keys(WHY).length;
+  h+=`<div class="card"><div class="box-title">${T.how}</div><ul class="steps"><li>${T.firstTry(first)}</li><li>${T.fast(fast)}</li><li>${T.rushed(rushed)}</li><li>${T.notDone(notDone)}</li><li>${T.why(whyOpen,whyTotal)}</li></ul></div>`;
+  // advice
+  const weak=Object.keys(SKILLS).filter(k=>avg[k]!=null&&avg[k]<2.5).sort((a,b)=>avg[a]-avg[b]).slice(0,3);
+  h+=`<div class="card"><div class="box-title">${T.advice}</div>`;
+  if(weak.length){h+=`<p>${T.advIntro}</p>`;weak.forEach(k=>{h+=`<div class="adv"><b>${SKILLS[k].n}</b> <span class="small">(${T.avg(avg[k])})</span><br>${SKILLS[k].adv}</div>`})}
+  else h+=`<p>${T.allGood}</p>`;
+  h+='</div>';
+  // map
+  h+=`<div class="card"><div class="box-title">${T.map}</div><div id="kmap"></div><div class="legend"><span><i style="background:var(--good)"></i>${T.lv.g}</span><span><i style="background:var(--warn)"></i>${T.lv.a}</span><span><i style="background:var(--bad)"></i>${T.lv.r}</span><span><i style="background:var(--grey)"></i>${T.lv.n}</span></div></div>`;
+  // total
+  const tot=answered.reduce((a,q)=>a+S[q.id].pts,0);
+  h+=`<div class="card"><div class="box-title">${T.total}</div><div class="score">${tot} / ${Q.length*3}</div><p class="small" style="text-align:center">${Math.round(100*tot/(Q.length*3))}%</p><p class="small">${T.note}</p></div>`;
+  box.innerHTML=h;mathify(box);
+  drawMap(avg,lev);
+}
+function drawMap(avg,lev){
+  const box=$('#kmap'), narrow=box.clientWidth<620;
+  const col={g:'#2f8a4c',a:'#b7791f',r:'#c0392b',n:'#9aa1ad'};
+  const left=Object.keys(SKILLS).filter(k=>SKILLS[k].g==='stat'), right=Object.keys(SKILLS).filter(k=>SKILLS[k].g==='prob');
+  const rows=Math.max(left.length,right.length);
+  let W,H,cx,cy,xL,xR,bw,bh,gap,top,fs;
+  if(narrow){W=600;bw=250;bh=74;gap=98;top=170;fs=19;xL=140;xR=460;H=top+rows*gap;cx=300;cy=62;}
+  else{W=1000;bw=290;bh=54;gap=68;top=70;fs=16;xL=175;xR=825;H=top+rows*gap;cx=500;cy=top+(rows-1)*gap/2;}
+  const pos={};left.forEach((k,i)=>pos[k]=[xL,top+i*gap]);right.forEach((k,i)=>pos[k]=[xR,top+i*gap]);
+  const inner=k=>[pos[k][0]+(SKILLS[k].g==='stat'?bw/2:-bw/2),pos[k][1]];
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="knowledge map">`;
+  s+=`<text x="${xL}" y="${narrow?top-46:top-38}" text-anchor="middle" font-size="${fs}" font-weight="700" fill="#0e7c74">${GROUPS.stat}</text><text x="${xR}" y="${narrow?top-46:top-38}" text-anchor="middle" font-size="${fs}" font-weight="700" fill="#c4512a">${GROUPS.prob}</text>`;
+  Object.keys(SKILLS).forEach(k=>{const [x,y]=inner(k);s+=`<line x1="${cx}" y1="${cy}" x2="${x}" y2="${y}" stroke="#e8e4dc" stroke-width="1.5"/>`});
+  LINKS.forEach(([a,b])=>{const A=inner(a),B=inner(b);
+    if(SKILLS[a].g===SKILLS[b].g){const dir=SKILLS[a].g==='stat'?1:-1,bow=Math.min(narrow?40:70,18+Math.abs(A[1]-B[1])*0.18);
+      s+=`<path d="M${A[0]},${A[1]} Q${(A[0]+B[0])/2+dir*bow},${(A[1]+B[1])/2} ${B[0]},${B[1]}" fill="none" stroke="#b9b1a1" stroke-width="2" stroke-dasharray="5 4"/>`;}
+    else s+=`<line x1="${A[0]}" y1="${A[1]}" x2="${B[0]}" y2="${B[1]}" stroke="#b9b1a1" stroke-width="2" stroke-dasharray="5 4"/>`;});
+  s+=`<ellipse cx="${cx}" cy="${cy}" rx="${narrow?150:118}" ry="${narrow?46:44}" fill="#1c2230"/><text x="${cx}" y="${cy-4}" text-anchor="middle" fill="#fff" font-size="${fs}" font-weight="700">${UI.report.centre[0]}</text><text x="${cx}" y="${cy+18}" text-anchor="middle" fill="#fff" font-size="${fs-2}">${UI.report.centre[1]}</text>`;
+  const split=t=>{if(t.length<=(narrow?20:40))return [t];let m=Math.floor(t.length/2),a=t.lastIndexOf(' ',m),b=t.indexOf(' ',m);let c=(a<0||(b>=0&&b-m<m-a))?b:a;return [t.slice(0,c),t.slice(c+1)]};
+  Object.keys(SKILLS).forEach(k=>{const [x,y]=pos[k],L=lev(avg[k]),c=col[L],grp=SKILLS[k].g,lines=split(SKILLS[k].n);
+    s+=`<rect x="${x-bw/2}" y="${y-bh/2}" width="${bw}" height="${bh}" rx="12" fill="#fff" stroke="${c}" stroke-width="3"/>`;
+    s+=`<rect x="${x-bw/2}" y="${y-bh/2}" width="8" height="${bh}" rx="3" fill="${grp==='stat'?'#0e7c74':'#c4512a'}"/>`;
+    const lh=fs+3, y0=y-((lines.length)*lh)/2+fs*0.35-4;
+    lines.forEach((ln,i)=>{s+=`<text x="${x+4}" y="${y0+i*lh}" text-anchor="middle" font-size="${fs-1}" font-weight="600" fill="#1c2230" ${ln.length*(fs-1)*0.55>bw-24?`textLength="${bw-24}" lengthAdjust="spacingAndGlyphs"`:''}>${ln}</text>`});
+    s+=`<text x="${x+4}" y="${y0+lines.length*lh}" text-anchor="middle" font-size="${fs-2}" fill="${c}" font-weight="700">${UI.report.avg(avg[k])}</text>`;});
+  s+='</svg>';box.innerHTML=s;
+}
+/* ================= SHARED DRAWING ================= */
+function boxPlotsSVG(groups,lo,hi,step,label,dots){
+  const W=600,rowH=66,H=groups.length*rowH+78,L=40,Rr=W-20,sx=v=>L+(v-lo)/(hi-lo)*(Rr-L);
+  let s=`<svg viewBox="0 0 ${W} ${H}">`;
+  groups.forEach((g,i)=>{const y=20+i*rowH+22,[a,b,c,d,e]=g.v;
+    s+=`<text x="8" y="${y+5}" font-size="22" font-weight="700" fill="${g.col}">${g.name}</text>`;
+    s+=`<line x1="${sx(a)}" y1="${y}" x2="${sx(b)}" y2="${y}" stroke="#1c2230" stroke-width="2"/><line x1="${sx(d)}" y1="${y}" x2="${sx(e)}" y2="${y}" stroke="#1c2230" stroke-width="2"/>`;
+    s+=`<line x1="${sx(a)}" y1="${y-9}" x2="${sx(a)}" y2="${y+9}" stroke="#1c2230" stroke-width="2"/><line x1="${sx(e)}" y1="${y-9}" x2="${sx(e)}" y2="${y+9}" stroke="#1c2230" stroke-width="2"/>`;
+    s+=`<rect x="${sx(b)}" y="${y-16}" width="${sx(d)-sx(b)}" height="32" fill="${g.col}" fill-opacity=".18" stroke="${g.col}" stroke-width="2.5"/>`;
+    s+=`<line x1="${sx(c)}" y1="${y-16}" x2="${sx(c)}" y2="${y+16}" stroke="${g.col}" stroke-width="3.5"/>`;
+    if(g.dots)g.dots.forEach((v,j)=>{const rep=g.dots.slice(0,j).filter(w=>w===v).length;s+=`<circle cx="${sx(v)}" cy="${y-24-rep*9}" r="4.5" fill="${g.col}"/>`});
+  });
+  const ay=H-56;s+=`<line x1="${L}" y1="${ay}" x2="${Rr}" y2="${ay}" stroke="#5b6475"/>`;
+  for(let v=lo;v<=hi+1e-9;v+=step){s+=`<line x1="${sx(v)}" y1="${ay}" x2="${sx(v)}" y2="${ay+5}" stroke="#5b6475"/><text x="${sx(v)}" y="${ay+23}" font-size="18" text-anchor="middle" fill="#5b6475">${+v.toFixed(2)}</text>`}
+  s+=`<text x="${Rr}" y="${H-1}" font-size="16" text-anchor="end" fill="#5b6475">${label}</text></svg>`;return s;
+}
+function five(xs){xs=[...xs].sort((a,b)=>a-b);const n=xs.length,med=a=>{const m=a.length;return m%2?a[(m-1)/2]:(a[m/2-1]+a[m/2])/2};
+  const lo=xs.slice(0,Math.floor(n/2)),hi=xs.slice(Math.ceil(n/2));return [xs[0],med(lo),med(xs),med(hi),xs[n-1]]}
+
+/* ================= WIDGET 1 ================= */
+function w1(){
+  const cats=[['Fruit',28,'var(--c1)'],['Nuts',20,'var(--c2)'],['Crackers',24,'var(--c3)'],['Popcorn',8,'var(--c4)']];
+  const box=$('#w1s');box.innerHTML=cats.map((c,i)=>`<label>${c[0]} <input type="range" min="0" max="40" value="${c[1]}" data-i="${i}"> <b id="w1v${i}">${c[1]}</b></label>`).join('');
+  box.querySelectorAll('input').forEach(inp=>inp.oninput=()=>{cats[inp.dataset.i][1]=+inp.value;$('#w1v'+inp.dataset.i).textContent=inp.value;upd()});
+  function upd(){
+    const T=cats.reduce((a,c)=>a+c[1],0)||1;
+    // bar
+    const mx=Math.max(10,Math.ceil(Math.max(...cats.map(c=>c[1]))/10)*10);
+    let b=`<svg viewBox="0 0 300 220"><text x="150" y="14" text-anchor="middle" font-size="13" font-weight="700">Snack packs sold</text>`;
+    for(let v=0;v<=mx;v+=10){const y=190-v/mx*160;b+=`<line x1="34" y1="${y}" x2="292" y2="${y}" stroke="#eee"/><text x="28" y="${y+4}" font-size="11" text-anchor="end" fill="#5b6475">${v}</text>`}
+    cats.forEach((c,i)=>{const h=c[1]/mx*160,x=46+i*62;b+=`<rect x="${x}" y="${190-h}" width="44" height="${h}" fill="${c[2]}" rx="3"/><text x="${x+22}" y="206" font-size="11" text-anchor="middle">${c[0]}</text>`});
+    b+=`<line x1="34" y1="190" x2="292" y2="190" stroke="#1c2230"/></svg>`;$('#w1bar').innerHTML=b;
+    // pie
+    let p=`<svg viewBox="0 0 300 220"><text x="150" y="14" text-anchor="middle" font-size="13" font-weight="700">Share of all sales</text>`,a0=-Math.PI/2;const cx=150,cy=118,r=90;
+    cats.forEach(c=>{const ang=c[1]/T*2*Math.PI;if(c[1]===0)return;const a1=a0+ang;
+      if(c[1]===T){p+=`<circle cx="${cx}" cy="${cy}" r="${r}" fill="${c[2]}"/>`}
+      else p+=`<path d="M${cx},${cy} L${cx+r*Math.cos(a0)},${cy+r*Math.sin(a0)} A${r},${r} 0 ${ang>Math.PI?1:0} 1 ${cx+r*Math.cos(a1)},${cy+r*Math.sin(a1)} Z" fill="${c[2]}" stroke="#fff" stroke-width="2"/>`;
+      const am=a0+ang/2;if(ang>0.35)p+=`<text x="${cx+r*0.62*Math.cos(am)}" y="${cy+r*0.62*Math.sin(am)+4}" font-size="11" text-anchor="middle" fill="#fff" font-weight="700">${c[0]}</text>`;a0=a1});
+    p+=`<line x1="${cx}" y1="${cy-r-4}" x2="${cx}" y2="${cy+r+4}" stroke="#1c2230" stroke-dasharray="3 3" opacity=".35"/></svg>`;$('#w1pie').innerHTML=p;
+    // table
+    let t=`<tr><th>Type</th><th>Number</th><th>Percentage</th><th>Angle</th></tr>`;
+    cats.forEach(c=>{t+=`<tr><td>${c[0]}</td><td>${c[1]}</td><td>${r1(c[1]/T*100)}%</td><td>${r1(c[1]/T*360)}°</td></tr>`});
+    t+=`<tr><th>Total</th><th>${T}</th><th>100%</th><th>360°</th></tr>`;$('#w1t').innerHTML=t;
+    const big=cats.reduce((a,c)=>c[1]>a[1]?c:a),sh=big[1]/T*100;
+    html($('#w1r'),`Largest group: <b>${big[0]}</b> with $\\frac{${big[1]}}{${T}}\\times100\\%\\approx${r1(sh)}\\%$. `+(sh>50?`That is <b>more than half</b>, so it is a majority: its sector is bigger than the dashed half-line.`:`That is <b>not</b> more than half. The biggest group is not automatically a majority.`));
+  }
+  upd();
+}
+/* ================= WIDGET 2 ================= */
+function w2(){
+  const sets={'Class A bags':[2,2.5,3,3,3.5,4,4.5,5,5,6,7],'Class B bags':[3,3.5,4,4,4.5,5.5,6,6.5,6.5,7,8]};
+  let cur=sets['Class A bags'];
+  const rnd=n=>Array.from({length:n},()=>1+Math.floor(Math.random()*20)).sort((a,b)=>a-b);
+  const bx=$('#w2b');
+  const btns=[['Class A bags',()=>sets['Class A bags']],['Class B bags',()=>sets['Class B bags']],['Random, odd n',()=>rnd([9,11,13][Math.floor(Math.random()*3)])],['Random, even n',()=>rnd([8,10,12][Math.floor(Math.random()*3)])]];
+  bx.innerHTML=btns.map((b,i)=>`<button class="btn${i===0?' on':''}" type="button" data-i="${i}">${b[0]}</button>`).join('');
+  bx.querySelectorAll('button').forEach(b=>b.onclick=()=>{bx.querySelectorAll('button').forEach(x=>x.classList.remove('on'));b.classList.add('on');cur=btns[b.dataset.i][1]();upd()});
+  function upd(){
+    const xs=[...cur].sort((a,b)=>a-b),n=xs.length,odd=n%2===1,f=five(xs);
+    const loEnd=Math.floor(n/2),hiStart=Math.ceil(n/2),hl=loEnd;
+    const qIdx=h=>h%2?[(h-1)/2]:[h/2-1,h/2];
+    const lq=qIdx(hl),uq=qIdx(hl).map(i=>i+hiStart);
+    let c='';xs.forEach((v,i)=>{
+      let cls=i<loEnd?'lo':i>=hiStart?'hi':'md';if(!odd&&(i===n/2-1||i===n/2))cls+=' md';
+      if(lq.includes(i)||uq.includes(i))cls+=' qq';
+      c+=`<span class="${cls}">${v}</span>`;
+      if(!odd&&i===n/2-1)c+='<span class="mk">|</span>';
+      if(!odd&&lq.length===2&&i===lq[0]) {} });
+    $('#w2c').innerHTML=c;
+    const lo=Math.floor(Math.min(...xs)),hi=Math.ceil(Math.max(...xs));
+    const step=hi-lo>12?2:1;
+    $('#w2svg').innerHTML=boxPlotsSVG([{name:'',v:f,col:'var(--c1)',dots:xs}],Math.max(0,lo-1),hi+1,step,'value');
+    const pos=(n+1)/2;
+    const L=x=>+x.toFixed(2);
+    html($('#w2r'),`$n=${n}$ (${odd?'odd':'even'}). Median position $\\frac{${n}+1}{2}=${pos}$, so median $=${L(f[2])}$ (dark).<br>`+
+      (odd?`Odd: leave the median out. Each half has $${hl}$ values.`:`Even: split exactly in two (at the bar). Each half has $${hl}$ values.`)+
+      `<br>$\\text{LQ}=${L(f[1])}$ and $\\text{UQ}=${L(f[3])}$ (gold rings). Five-number summary: $${f.map(L).join(',\\ ')}$.<br>$\\text{IQR}=${L(f[3])}-${L(f[1])}=${L(f[3]-f[1])}$.`);
+  }
+  upd();
+}
+/* ================= WIDGET 3 ================= */
+function w3(){
+  const A=[2,2.5,3,3,3.5,4,4.5,5,5,6,7],B0=[3,3.5,4,4,4.5,5.5,6,6.5,6.5,7,8];
+  const sl=$('#w3s');sl.oninput=upd;
+  function upd(){
+    const sh=+sl.value;$('#w3v').textContent=(sh>0?'+':'')+sh+' kg';
+    const B=B0.map(v=>v+sh),fa=five(A),fb=five(B),uq=fa[3];
+    let svg=boxPlotsSVG([{name:'A',v:fa,col:'var(--c3)',dots:A},{name:'B',v:fb,col:'var(--c4)',dots:B}],-1,12,1,'Bag mass (kg)');
+    const sx=v=>40+(v+1)/13*540;
+    svg=svg.replace('</svg>',`<line x1="${sx(uq)}" y1="6" x2="${sx(uq)}" y2="${2*66+22}" stroke="#3a5ba0" stroke-dasharray="5 4" stroke-width="2"/><text x="${sx(uq)+4}" y="16" font-size="17" fill="#3a5ba0">A's UQ = ${uq}</text></svg>`);
+    $('#w3svg').innerHTML=svg;
+    const k=B.filter(v=>v>uq).length,pc=k/11*100;
+    html($('#w3r'),`B values above A's UQ ($${uq}$ kg): $${k}$ of $11$, so $\\frac{${k}}{11}\\times100\\%\\approx${r1(pc)}\\%$. B's median is $${fb[2]}$ kg.<br>`+
+      (pc>50?`<b>More than 50%</b> → “Class B tends to carry heavier bags.”`:`<b>Not more than 50%</b> → the rule does not support “B tends to be heavier”.`)+
+      (Math.min(...B)<Math.max(...A)?` The groups still overlap, so “every B bag is heavier” is false.`:` Now even the lightest B bag is heavier than every A bag.`));
+  }
+  upd();
+}
+/* ================= WIDGET 4 ================= */
+const LEAF=[[4,2],[5,2],[5,3],[6,3],[6,3],[7,3],[7,4],[8,4],[8,5],[9,5],[10,4],[10,5],[11,6],[12,6],[12,6],[13,7],[14,7],[15,3],[16,8],[17,9]];
+function scatterSVG(pts,o){
+  const W=600,H=o.H||340,L=52,B=H-48,Rr=W-16,T=16,sx=x=>L+(x-o.x0)/(o.x1-o.x0)*(Rr-L),sy=y=>B-(y-o.y0)/(o.y1-o.y0)*(B-T);
+  let s=`<svg viewBox="0 0 ${W} ${H}">`;
+  if(o.range)s+=`<rect x="${sx(o.range[0])}" y="${T}" width="${sx(o.range[1])-sx(o.range[0])}" height="${B-T}" fill="#e2f2f0" opacity=".7"/><text x="${(sx(o.range[0])+sx(o.range[1]))/2}" y="${T+18}" font-size="16" text-anchor="middle" fill="#0e7c74">data range</text>`;
+  for(let x=o.x0;x<=o.x1;x+=o.xs){s+=`<line x1="${sx(x)}" y1="${T}" x2="${sx(x)}" y2="${B}" stroke="#f0ede6"/><text x="${sx(x)}" y="${B+20}" font-size="17" text-anchor="middle" fill="#5b6475">${x}</text>`}
+  for(let y=o.y0;y<=o.y1;y+=o.ys){s+=`<line x1="${L}" y1="${sy(y)}" x2="${Rr}" y2="${sy(y)}" stroke="#f0ede6"/><text x="${L-6}" y="${sy(y)+6}" font-size="17" text-anchor="end" fill="#5b6475">${y}</text>`}
+  s+=`<line x1="${L}" y1="${B}" x2="${Rr}" y2="${B}" stroke="#1c2230"/><line x1="${L}" y1="${T}" x2="${L}" y2="${B}" stroke="#1c2230"/>`;
+  s+=`<text x="${(L+Rr)/2}" y="${H-4}" font-size="18" text-anchor="middle">${o.xl}</text><text x="14" y="${(T+B)/2}" font-size="18" text-anchor="middle" transform="rotate(-90 14 ${(T+B)/2})">${o.yl}</text>`;
+  if(o.line){const [m,c]=o.line,xa=o.x0,xb=o.x1;s+=`<clipPath id="cp${o.id}"><rect x="${L}" y="${T}" width="${Rr-L}" height="${B-T}"/></clipPath><line clip-path="url(#cp${o.id})" x1="${sx(xa)}" y1="${sy(m*xa+c)}" x2="${sx(xb)}" y2="${sy(m*xb+c)}" stroke="#c4512a" stroke-width="2.5"/>`}
+  const seen={};pts.forEach(p=>{const k=p.join(',');seen[k]=(seen[k]||0)+1});
+  Object.keys(seen).forEach(k=>{const [x,y]=k.split(',').map(Number),hl=o.hl&&o.hl[0]===x&&o.hl[1]===y;
+    s+=`<circle cx="${sx(x)}" cy="${sy(y)}" r="${hl?9:6}" fill="${hl?'#c0392b':'#1c2230'}" ${hl?'fill-opacity=".85"':''}/>`;
+    if(seen[k]>1)s+=`<text x="${sx(x)+8}" y="${sy(y)-7}" font-size="18" font-weight="700" fill="#0e7c74">${seen[k]}</text>`});
+  if(o.pred){const [x,y]=o.pred;if(x<=o.x1){s+=`<line x1="${sx(x)}" y1="${B}" x2="${sx(x)}" y2="${sy(Math.min(y,o.y1))}" stroke="#b7791f" stroke-dasharray="4 3" stroke-width="2"/>`;if(y<=o.y1&&y>=o.y0)s+=`<line x1="${sx(x)}" y1="${sy(y)}" x2="${L}" y2="${sy(y)}" stroke="#b7791f" stroke-dasharray="4 3" stroke-width="2"/><circle cx="${sx(x)}" cy="${sy(y)}" r="5" fill="#b7791f"/>`}}
+  return s+'</svg>';
+}
+function w4(){
+  const m=$('#w4m'),c=$('#w4c'),x=$('#w4x');let hl=false;
+  [m,c,x].forEach(e=>e.oninput=upd);
+  $('#w4ex').onclick=()=>{m.value=0.5;c.value=0.25;upd()};
+  $('#w4out').onclick=()=>{hl=!hl;upd()};
+  function upd(){
+    const M=+m.value,C=+c.value,X=+x.value,Y=M*X+C;
+    $('#w4mv').textContent=M.toFixed(2);$('#w4cv').textContent=C.toFixed(2);$('#w4xv').textContent=X+' cm';
+    $('#w4svg').innerHTML=scatterSVG(LEAF,{id:'a',x0:0,x1:32,xs:4,y0:0,y1:16,ys:2,xl:'Leaf length (cm)',yl:'Leaf width (cm)',range:[4,17],line:[M,C],pred:[X,Y],hl:hl?[15,3]:null});
+    const above=LEAF.filter(p=>p[1]>M*p[0]+C).length,below=LEAF.filter(p=>p[1]<M*p[0]+C).length;
+    const inside=X>=4&&X<=17;
+    html($('#w4r'),`Your line: $\\text{width}=${M.toFixed(2)}\\times\\text{length}${C<0?'-':'+'}${Math.abs(C).toFixed(2)}$. Points above: $${above}$, below: $${below}$`+(Math.abs(above-below)<=3?' (well balanced).':' (try to balance them).')+
+      `<br>At length $${X}$ cm: width $\\approx${M.toFixed(2)}\\times${X}${C<0?'-':'+'}${Math.abs(C).toFixed(2)}=${r1(Y)}$ cm. `+(inside?'<b>Inside</b> the data range (4 to 17 cm): a reasonable estimate.':'<b>Outside</b> the data range (4 to 17 cm): extrapolation, so it is unreliable.')+
+      (hl?`<br>The red point $(15,\\,3)$ is unusual: that leaf is far narrower than the trend.`:''));
+  }
+  upd();
+}
+const STUDY=[[1,42],[2,48],[2,50],[3,55],[4,58],[4,61],[5,66],[6,70],[6,30],[7,77],[8,80],[9,86]];
+/* ================= WIDGET 5 ================= */
+function barPair(v,s,labels,title){
+  const W=300,H=220,B=180,T=24,mx=Math.ceil(Math.max(...v)/10)*10+2,sy=y=>B-(y-s)/(mx-s)*(B-T);
+  let g=`<svg viewBox="0 0 ${W} ${H}"><text x="${W/2}" y="14" text-anchor="middle" font-size="13" font-weight="700">${title}</text>`;
+  const ticks=5;for(let i=0;i<=ticks;i++){const y=s+(mx-s)*i/ticks;g+=`<line x1="44" y1="${sy(y)}" x2="290" y2="${sy(y)}" stroke="#eee"/><text x="38" y="${sy(y)+4}" font-size="11" text-anchor="end" fill="#5b6475">${r1(y)}</text>`}
+  v.forEach((val,i)=>{const x=80+i*110;g+=`<rect x="${x}" y="${sy(val)}" width="60" height="${B-sy(val)}" fill="${i?'var(--c4)':'var(--c3)'}" rx="3"/><text x="${x+30}" y="${B+16}" font-size="12" text-anchor="middle">${labels[i]}</text>`});
+  g+=`<line x1="44" y1="${B}" x2="290" y2="${B}" stroke="#1c2230"/><line x1="44" y1="${T}" x2="44" y2="${B}" stroke="#1c2230"/>`;
+  if(s>0)g+=`<path d="M38,${B-4} l6,-4 l6,4 l6,-4" fill="none" stroke="#c0392b" stroke-width="1.5"/>`;
+  return g+'</svg>';
+}
+function w5(){
+  const sl=$('#w5s');sl.oninput=upd;
+  function upd(){const s=+sl.value;$('#w5v').textContent=s;
+    $('#w5svg').innerHTML=`<div class="two"><div>${barPair([34,38],0,['Week 1','Week 2'],'Axis from 0 (honest)')}</div><div>${barPair([34,38],s,['Week 1','Week 2'],'Axis from '+s)}</div></div>`;
+    const look=(38-s)/(34-s);
+    html($('#w5r'),`With the axis from $${s}$, the visible bars are $34-${s}=${34-s}$ and $38-${s}=${38-s}$ tall, so Week 2 <b>looks</b> $${r1(look)}\\times$ as big.<br>Really: $\\frac{38}{34}\\approx1.12$, an increase of $\\frac{4}{34}\\times100\\%\\approx11.8\\%$.`);}
+  upd();
+}
+/* ================= WIDGET 6 ================= */
+function w6(){
+  const shaded=new Set([2,3,6]);let ev='or';
+  const evs={odd:'Odd',sh:'Shaded',or:'Odd or shaded',and:'Odd and shaded',not:'Not shaded'};
+  const eb=$('#w6e');eb.innerHTML=Object.keys(evs).map(k=>`<button class="btn${k===ev?' on':''}" type="button" data-e="${k}">${evs[k]}</button>`).join('');
+  eb.querySelectorAll('button').forEach(b=>b.onclick=()=>{ev=b.dataset.e;eb.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));upd()});
+  const fit=n=>{const o=n%2===1,s=shaded.has(n);return ev==='odd'?o:ev==='sh'?s:ev==='or'?(o||s):ev==='and'?(o&&s):!s};
+  function upd(){
+    const cx=130,cy=130,r=112;let s=`<svg viewBox="0 0 260 260">`;
+    for(let i=0;i<8;i++){const n=i+1,a0=-Math.PI/2+i*Math.PI/4,a1=a0+Math.PI/4,am=(a0+a1)/2,f=fit(n);
+      s+=`<path data-n="${n}" style="cursor:pointer" d="M${cx},${cy} L${cx+r*Math.cos(a0)},${cy+r*Math.sin(a0)} A${r},${r} 0 0 1 ${cx+r*Math.cos(a1)},${cy+r*Math.sin(a1)} Z" fill="${shaded.has(n)?'#9aa1ad':'#fff'}" stroke="${f?'#c4512a':'#1c2230'}" stroke-width="${f?5:1.5}"/>`;
+      s+=`<text x="${cx+r*.68*Math.cos(am)}" y="${cy+r*.68*Math.sin(am)+7}" font-size="20" font-weight="700" text-anchor="middle" fill="${f?'#c4512a':'#1c2230'}" pointer-events="none">${n}</text>`}
+    s+=`<polygon points="${cx-8},4 ${cx+8},4 ${cx},22" fill="#1c2230"/></svg>`;
+    $('#w6svg').innerHTML=s;$$('#w6svg path').forEach(p=>p.onclick=()=>{const n=+p.dataset.n;shaded.has(n)?shaded.delete(n):shaded.add(n);upd()});
+    const list=[1,2,3,4,5,6,7,8].filter(fit),k=list.length;
+    const a=4,b=shaded.size,c=[...shaded].filter(n=>n%2).length;
+    let t=`Favourable sectors: ${list.length?list.join(', '):'none'}.<br>$P(\\text{${evs[ev].toLowerCase()}})=${frFull(k,8)}$`;
+    if(ev==='or')t+=`<br>Rule check: $\\frac{${a}}{8}+\\frac{${b}}{8}-\\frac{${c}}{8}=\\frac{${a+b-c}}{8}$ (the $${c}$ sector${c===1?' that is':'s that are'} both odd and shaded counted once).`;
+    if(ev==='not')t+=`<br>Check: $1-P(\\text{shaded})=1-\\frac{${b}}{8}=\\frac{${8-b}}{8}$.`;
+    html($('#w6r'),t);
+    // scale
+    const W=600,L=30,Rr=570,x=L+(k/8)*(Rr-L);
+    let sc=`<svg viewBox="0 0 ${W} 80"><line x1="${L}" y1="30" x2="${Rr}" y2="30" stroke="#1c2230" stroke-width="2"/>`;
+    for(let i=0;i<=8;i++){const xx=L+i/8*(Rr-L);sc+=`<line x1="${xx}" y1="24" x2="${xx}" y2="36" stroke="#1c2230"/>`}
+    sc+=`<text x="${L-20}" y="64" font-size="17" text-anchor="start">0 impossible</text><text x="${(L+Rr)/2}" y="64" font-size="17" text-anchor="middle">½ even chance</text><text x="${Rr}" y="64" font-size="17" text-anchor="end">certain 1</text>`;
+    sc+=`<circle cx="${x}" cy="30" r="9" fill="#c4512a"/><text x="${Math.min(Math.max(x,40),560)}" y="15" font-size="17" text-anchor="middle" fill="#c4512a" font-weight="700">${k}/8 = ${+(k/8).toFixed(3)}</text></svg>`;
+    $('#w6scale').innerHTML=sc;
+  }
+  upd();
+}
+/* ================= WIDGET 7 ================= */
+function w7(){
+  let n=0,w=0,hist=[];const p=$('#w7p');
+  p.oninput=()=>{$('#w7pv').textContent=(+p.value).toFixed(2);draw()};
+  $$('#w7 [data-n]').forEach(b=>b.onclick=()=>{const k=+b.dataset.n,pp=+p.value;for(let i=0;i<k;i++){n++;if(Math.random()<pp)w++;if(n<=50||n%Math.ceil(n/200)===0)hist.push([n,w/n])}draw()});
+  $('#w7reset').onclick=()=>{n=0;w=0;hist=[];draw()};
+  function draw(){
+    $('#w7pv').textContent=(+p.value).toFixed(2);
+    const W=600,H=250,L=52,B=200,T=14,Rr=584,N=Math.max(n,10),sx=x=>L+Math.log10(x)/Math.log10(N)*(Rr-L)*(N>1?1:0),sy=y=>B-y*(B-T);
+    let s=`<svg viewBox="0 0 ${W} ${H}">`;
+    [0,0.25,0.5,0.75,1].forEach(v=>{s+=`<line x1="${L}" y1="${sy(v)}" x2="${Rr}" y2="${sy(v)}" stroke="#f0ede6"/><text x="${L-6}" y="${sy(v)+4}" font-size="17" text-anchor="end" fill="#5b6475">${v}</text>`});
+    s+=`<line x1="${L}" y1="${sy(+p.value)}" x2="${Rr}" y2="${sy(+p.value)}" stroke="#0e7c74" stroke-dasharray="6 4" stroke-width="2"/><text x="${Rr}" y="${sy(+p.value)-6}" font-size="17" text-anchor="end" fill="#0e7c74">true chance</text>`;
+    if(hist.length>1)s+=`<polyline fill="none" stroke="#c4512a" stroke-width="2.5" points="${hist.map(h=>sx(h[0])+','+sy(h[1])).join(' ')}"/>`;
+    [1,10,100,1000,10000].filter(v=>v<=N).forEach(v=>{s+=`<text x="${sx(v)}" y="${B+22}" font-size="17" text-anchor="middle" fill="#5b6475">${v}</text>`});
+    s+=`<line x1="${L}" y1="${B}" x2="${Rr}" y2="${B}" stroke="#1c2230"/><text x="${(L+Rr)/2}" y="${H-4}" font-size="17" text-anchor="middle">number of tries (log scale)</text></svg>`;
+    $('#w7svg').innerHTML=s;
+    if(!n){html($('#w7r'),'Press a button to start the robot.');return}
+    const rf=w/n;
+    html($('#w7r'),`Wins: $${w}$ out of $${n}$ tries, so $P(\\text{win})\\approx\\frac{${w}}{${n}}\\approx${rf.toFixed(3)}$.<br>Expected wins in $150$ more tries $\\approx${rf.toFixed(3)}\\times150\\approx${Math.round(rf*150)}$.<br><span class="small">Watch the red line: it jumps around at first, then settles near the true chance as the tries add up.</span>`);
+  }
+  draw();
+}
+/* ================= WIDGET 8 ================= */
+function w8(){
+  let ev='sum',k=8;
+  const evs={sum:'Sum =',less:'Sum <',five:'At least one 5',dbl:'A double',a711:'Sum 7 or 11'};
+  const eb=$('#w8e');
+  eb.innerHTML=Object.keys(evs).map(e=>`<button class="btn${e===ev?' on':''}" type="button" data-e="${e}">${evs[e]}</button>`).join('')+`<label>k <select id="w8k">${[2,3,4,5,6,7,8,9,10,11,12].map(v=>`<option${v===k?' selected':''}>${v}</option>`).join('')}</select></label>`;
+  eb.querySelectorAll('button').forEach(b=>b.onclick=()=>{ev=b.dataset.e;eb.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));upd()});
+  $('#w8k').onchange=e=>{k=+e.target.value;upd()};
+  const fit=(a,b)=>ev==='sum'?a+b===k:ev==='less'?a+b<k:ev==='five'?(a===5||b===5):ev==='dbl'?a===b:(a+b===7||a+b===11);
+  function upd(){
+    $('#w8k').disabled=!(ev==='sum'||ev==='less');
+    let g='<div class="dgrid"><div class="h">+</div>'+[1,2,3,4,5,6].map(v=>`<div class="h">${v}</div>`).join('');let c=0;
+    for(let a=1;a<=6;a++){g+=`<div class="h">${a}</div>`;for(let b=1;b<=6;b++){const f=fit(a,b);if(f)c++;g+=`<div class="${f?'on':''}">${a+b}</div>`}}
+    $('#w8g').innerHTML=g+'</div>';
+    const name=ev==='sum'?`\\text{sum}=${k}`:ev==='less'?`\\text{sum}<${k}`:ev==='five'?`\\text{at least one }5`:ev==='dbl'?`\\text{double}`:`\\text{sum }7\\text{ or }11`;
+    html($('#w8r'),`$${c}$ of the $36$ cells fit, so $P(${name})=${c?frFull(c,36):'0'}$.`+(ev==='five'?` That is $6+6-1$, with $(5,5)$ counted once.`:'')+(ev==='dbl'?` Each double, such as $(4,4)$, is one cell.`:''));
+  }
+  upd();
+  function sim(N){const f=Array(13).fill(0);for(let i=0;i<N;i++){f[1+Math.ceil(Math.random()*6)+Math.floor(Math.random()*6)]++}
+    const exp=s=>(6-Math.abs(7-s))/36*N,mx=Math.max(...f.slice(2),exp(7))*1.1;
+    const W=600,H=220,L=40,B=190,T=10,bw=40,sy=v=>B-v/mx*(B-T);
+    let s=`<svg viewBox="0 0 ${W} ${H}">`;
+    for(let t=2;t<=12;t++){const x=L+(t-2)*49;s+=`<rect x="${x}" y="${sy(f[t])}" width="${bw}" height="${B-sy(f[t])}" fill="#c4512a" fill-opacity=".75"/><rect x="${x}" y="${sy(exp(t))}" width="${bw}" height="${B-sy(exp(t))}" fill="none" stroke="#1c2230" stroke-width="1.5" stroke-dasharray="4 3"/><text x="${x+bw/2}" y="${B+22}" font-size="17" text-anchor="middle">${t}</text><text x="${x+bw/2}" y="${sy(Math.max(f[t],exp(t)))-4}" font-size="14" text-anchor="middle" fill="#5b6475">${f[t]}</text>`}
+    s+=`<line x1="${L-4}" y1="${B}" x2="${W-8}" y2="${B}" stroke="#1c2230"/></svg>`;$('#w8sim').innerHTML=s;
+    html($('#w8sr'),`$${N}$ rolls. Sum of 8: $${f[8]}$ times, so experimental $P\\approx\\frac{${f[8]}}{${N}}\\approx${(f[8]/N).toFixed(3)}$. The model says $\\frac{5}{36}\\approx0.139$, so it expects $${r1(5/36*N)}$.`+(N<100?' With only 36 rolls, big differences are normal.':' With many rolls, the bars hug the outlines.'));}
+  $$('#w8 [data-roll]').forEach(b=>b.onclick=()=>sim(+b.dataset.roll));
+}
+/* ================= WIDGET 9 ================= */
+function w9(){
+  const st={a:5,b:7,rep:false};
+  $$('#w9 [data-k]').forEach(b=>b.onclick=()=>{const key=b.dataset.k;st[key]=Math.min(9,Math.max(1,st[key]+(+b.dataset.d)));upd()});
+  $('#w9rep').onclick=()=>{st.rep=!st.rep;upd()};
+  function upd(){
+    const {a,b,rep}=st,n=a+b,m=rep?n:n-1;
+    $('#w9a').textContent=a;$('#w9b').textContent=b;$('#w9rep').textContent=rep?'With replacement (put back)':'Without replacement';$('#w9rep').classList.toggle('on',rep);
+    const second={C:rep?[a,b]:[a-1,b],P:rep?[a,b]:[a,b-1]};
+    const box=$('#w9tree');
+    const P0=[6,50],P1={C:[46,22],P:[46,78]},P2={CC:[88,9],CP:[88,35],PC:[88,65],PP:[88,91]};
+    let svg=`<svg viewBox="0 0 100 100" preserveAspectRatio="none">`;
+    const ln=(p,q)=>`<line x1="${p[0]}" y1="${p[1]}" x2="${q[0]}" y2="${q[1]}" stroke="#1c2230" stroke-width="1.6" vector-effect="non-scaling-stroke"/>`;
+    svg+=ln(P0,P1.C)+ln(P0,P1.P);['C','P'].forEach(f=>{svg+=ln(P1[f],P2[f+'C'])+ln(P1[f],P2[f+'P'])});svg+='</svg>';
+    let h=svg;
+    const lab=(p,q,t)=>`<div class="lb" style="left:${(p[0]+q[0])/2}%;top:${(p[1]+q[1])/2}%">${texStr(t)}</div>`;
+    h+=lab(P0,P1.C,R`\frac{${a}}{${n}}`)+lab(P0,P1.P,R`\frac{${b}}{${n}}`);
+    ['C','P'].forEach(f=>{const [c2,p2]=second[f];h+=lab(P1[f],P2[f+'C'],R`\frac{${c2}}{${m}}`)+lab(P1[f],P2[f+'P'],R`\frac{${p2}}{${m}}`)});
+    h+=`<div class="nd" style="left:${P1.C[0]}%;top:${P1.C[1]}%">C</div><div class="nd" style="left:${P1.P[0]}%;top:${P1.P[1]}%">P</div>`;
+    Object.keys(P2).forEach(k=>{h+=`<div class="nd" style="left:${P2[k][0]}%;top:${P2[k][1]}%">${k[1]}</div>`});
+    box.innerHTML=h;
+    const paths={CC:[a,second.C[0]],CP:[a,second.C[1]],PC:[b,second.P[0]],PP:[b,second.P[1]]};
+    const den=n*m;let t='<b>Multiply along each path:</b><br>';
+    Object.keys(paths).forEach(k=>{const [x,y]=paths[k],f1=k[0]==='C'?a:b;t+=`$P(${k[0]}${k[1]})=\\frac{${f1}}{${n}}\\times\\frac{${y}}{${m}}=${frFull(f1*y,den)}$<br>`});
+    const one=paths.CP[0]*paths.CP[1]+paths.PC[0]*paths.PC[1];
+    t+=`Exactly one C: $P(CP)+P(PC)=${frFull(one,den)}$.<br><span class="small">All four paths add to $1$. `+(rep?'With replacement, the second-draw branches match the first.':'Without replacement, the second-draw denominator is one less, and the branches depend on the first ticket.')+'</span>';
+    html($('#w9r'),t);
+  }
+  upd();
+}
+/* ================= WIDGET 10 ================= */
+function w10(){
+  const rows=['None','One','Two or more'],cols=['1 language','2 languages','3 or more'],D=[[8,6,4],[5,10,3],[2,6,4]];
+  let given=null,pick=null;
+  const rt=i=>D[i].reduce((a,b)=>a+b,0),ct=j=>D.reduce((a,r)=>a+r[j],0),G=48;
+  function upd(){
+    let t=`<table class="t tw"><tr><th>Instruments / Languages</th>${cols.map((c,j)=>`<th class="sel${given&&given[0]==='c'&&given[1]===j?' selh':''}" data-g="c${j}">${c}</th>`).join('')}<th>Total</th></tr>`;
+    D.forEach((r,i)=>{t+=`<tr><th class="sel${given&&given[0]==='r'&&given[1]===i?' selh':''}" data-g="r${i}">${rows[i]}</th>`;
+      r.forEach((v,j)=>{const inG=given&&((given[0]==='r'&&given[1]===i)||(given[0]==='c'&&given[1]===j));const pk=pick&&pick[0]===i&&pick[1]===j;
+        t+=`<td class="cell${inG?' given':''}${pk?' pick':''}" data-c="${i},${j}">${v}</td>`});t+=`<td>${rt(i)}</td></tr>`});
+    t+=`<tr><th>Total</th>${cols.map((c,j)=>`<td>${ct(j)}</td>`).join('')}<td>${G}</td></tr></table>`;
+    $('#w10t').innerHTML=t;
+    $$('#w10t [data-g]').forEach(th=>th.onclick=()=>{const g=[th.dataset.g[0],+th.dataset.g.slice(1)];given=(given&&given[0]===g[0]&&given[1]===g[1])?null:g;upd()});
+    $$('#w10t [data-c]').forEach(td=>td.onclick=()=>{pick=td.dataset.c.split(',').map(Number);upd()});
+    let r;
+    if(!pick)r=given?`Group restricted to <b>${given[0]==='r'?rows[given[1]]+' instrument(s)':cols[given[1]]}</b> (total ${given[0]==='r'?rt(given[1]):ct(given[1])}). Now click a cell inside it.`:'Click a cell to find a probability out of all 48 students.';
+    else{const [i,j]=pick,v=D[i][j],ev=`\\text{${rows[i].toLowerCase()} instr.}\\ \\&\\ \\text{${cols[j]}}`;
+      if(!given)r=`$P(${ev})=${frFull(v,G)}$: one cell, out of the grand total.`;
+      else if(given[0]==='r'){if(given[1]!==i)r='That cell is outside the highlighted group. Pick a cell in the highlighted row.';else r=`$P(\\text{${cols[j]}}\\mid\\text{${rows[i].toLowerCase()} instr.})=${frFull(v,rt(i))}$: only the ${rt(i)} students in that row count.`;}
+      else{if(given[1]!==j)r='That cell is outside the highlighted group. Pick a cell in the highlighted column.';else r=`$P(\\text{${rows[i].toLowerCase()} instr.}\\mid\\text{${cols[j]}})=${frFull(v,ct(j))}$: only the ${ct(j)} students in that column count.`;}}
+    html($('#w10r'),r);
+  }
+  upd();
+}
+
+/* ================= STATIC FIGURES ================= */
+function staticFigs(){
+  $('#q4plot').innerHTML=scatterSVG(STUDY,{id:'b',x0:0,x1:10,xs:1,y0:0,y1:100,ys:20,xl:'Hours of study',yl:'Test score',H:300});
+  $('#q5plot').innerHTML=`<div style="max-width:340px">${barPair([120,150],110,['January','February'],'Ice creams sold')}</div>`;
+}
+
+/* ================= BOOT ================= */
+function boot(){
+  initState();buildTabs();renderQuestions();staticFigs();
+  [w1,w2,w3,w4,w5,w6,w7,w8,w9,w10].forEach(f=>{try{f()}catch(e){console.error(e)}});
+  $$('details.why').forEach((d,i)=>{d.dataset.k='why'+i;d.addEventListener('toggle',()=>{if(d.open){WHY[d.dataset.k]=1;save()}})});
+  $('#resetBtn').onclick=()=>{if(confirmReset()){try{localStorage.removeItem(KEY)}catch(e){}initState();renderQuestions();refreshProgress();}};
+  mathify(document.querySelector('main'));
+  refreshProgress();
+  const h=location.hash.slice(1);show(ORDER.includes(h)?h:'start');
+}
+function confirmReset(){const b=$('#resetBtn');if(b.dataset.armed){delete b.dataset.armed;b.textContent='Start again';return true}b.dataset.armed=1;b.textContent='Tap again to clear all answers';setTimeout(()=>{delete b.dataset.armed;b.textContent='Start again'},4000);return false}
+let booted=false;function tryBoot(){if(booted)return;booted=true;boot()}
+window.addEventListener('load',tryBoot);
+</script>
+</body>
+</html>
