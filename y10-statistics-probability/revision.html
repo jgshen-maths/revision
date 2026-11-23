@@ -182,10 +182,17 @@ details.why[open]{padding-bottom:.8rem}
 .shen-print-mark{display:flex!important;position:fixed;right:0;bottom:0;align-items:center;gap:1.5mm;font:500 7.5pt/1 Inter,Arial,sans-serif;color:#555;opacity:.75;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 .shen-print-mark svg{width:4mm;height:4mm}}
 </style>
+<style id="home-link">
+.homebtn{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 12px;border:1px solid var(--line,#ddd);border-radius:999px;background:#fff;color:var(--ink,#1c2230);text-decoration:none;font:600 .88rem/1 Inter,system-ui,sans-serif;white-space:nowrap;flex-shrink:0}
+.homebtn:hover{background:#f1eff6}
+.homebtn svg{width:16px;height:16px}
+@media print{.homebtn{display:none!important}}
+</style>
 </head>
 <body>
 <header class="top">
   <div class="topin">
+    <a class="homebtn" href="../index.html" aria-label="Back to the Maths Atlas home page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>Home</a>
     <div class="brand">Year 10 Statistics &amp; Probability<small>Exam revision · concepts first, then practice</small></div>
     <div class="prog"><span id="progtxt">0 / 0 answered</span><div class="bar"><i id="progbar"></i></div></div>
   </div>
