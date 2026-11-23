@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Year 8 Number Part A · Integers, Primes and Powers</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<style>
+:root{
+  --ink:#1c2230;--muted:#5b6475;--paper:#f7f6fb;--card:#fff;--line:#e2e0ea;
+  --a:#3b4fa8;--a-soft:#e8ebf8;--b:#b5487a;--b-soft:#f8e7ef;
+  --good:#2f8a4c;--good-soft:#e5f4ea;--warn:#b7791f;--warn-soft:#fbf1dc;--bad:#c0392b;--bad-soft:#fbe5e2;--grey:#9aa1ad;
+  --xt:#5b6fd8;--ct:#e09f3e;--neg:#c0392b;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font:18px/1.65 "Avenir Next","Segoe UI",system-ui,-apple-system,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.25;font-weight:600}
+h2{font-size:1.6rem;margin:.2rem 0 .6rem}
+h3{font-size:1.15rem;margin:1.6rem 0 .5rem}
+p{margin:.55rem 0}
+header.top{position:sticky;top:0;z-index:20;background:rgba(247,246,251,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.topin{max-width:940px;margin:0 auto;padding:.55rem 1rem .35rem;display:flex;align-items:center;gap:.8rem;flex-wrap:wrap}
+.brand{font-family:Georgia,serif;font-weight:600;font-size:1.02rem;flex:1;min-width:180px}
+.brand small{display:block;font-family:inherit;font-weight:400;color:var(--muted);font-size:.84rem}
+.prog{font-size:.82rem;color:var(--muted);text-align:right}
+.bar{height:6px;background:var(--line);border-radius:4px;overflow:hidden;width:150px;margin-top:3px}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--a),var(--b));width:0;transition:width .4s}
+nav.tabs{max-width:940px;margin:0 auto;display:flex;gap:.35rem;overflow-x:auto;padding:.1rem 1rem .6rem;scrollbar-width:thin}
+nav.tabs button{flex:0 0 auto;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;padding:.32rem .8rem;font:inherit;font-size:.9rem;cursor:pointer;white-space:nowrap}
+nav.tabs button.ga{border-color:#c9d0ef}
+nav.tabs button.gb{border-color:#eccbdb}
+nav.tabs button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+nav.tabs button .tick{color:var(--good);font-weight:700;margin-left:.25rem}
+nav.tabs button.on .tick{color:#9be3b0}
+main{max-width:940px;margin:0 auto;padding:1.2rem 1rem 4rem}
+section.tab{display:none}
+section.tab.on{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.kicker{font-size:.84rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--a)}
+.gb-sec .kicker{color:var(--b)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1rem 1.1rem;margin:1rem 0}
+.idea{border-left:5px solid var(--a)}
+.gb-sec .idea{border-left-color:var(--b)}
+.box-title{font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:.3rem}
+.key{background:var(--a-soft);border-radius:10px;padding:.6rem .8rem;margin:.6rem 0}
+.gb-sec .key{background:var(--b-soft)}
+.trap{background:var(--warn-soft);border-radius:10px;padding:.6rem .8rem;margin:.6rem 0}
+.trap b{color:#8a5a0c}
+.steps{margin:.3rem 0;padding-left:1.3rem}
+.steps li{margin:.4rem 0}
+.tblwrap{overflow-x:auto;max-width:100%}
+table.t{border-collapse:collapse;margin:.5rem 0;font-size:1rem}
+table.t th,table.t td{border:1px solid var(--line);padding:.35rem .6rem;text-align:center}
+table.t th{background:#efedf5;font-weight:600}
+.widget{background:#fdfcff;border:1px dashed #c9c5d8;border-radius:14px;padding:.9rem;margin:1rem 0}
+.widget .box-title{color:var(--a)}
+.gb-sec .widget .box-title{color:var(--b)}
+.ctrl{display:flex;flex-wrap:wrap;gap:.5rem .8rem;align-items:center;margin:.45rem 0}
+.ctrl label{font-size:.98rem;display:flex;align-items:center;gap:.4rem}
+.ctrl input[type=range]{width:150px}
+.ctrl input[type=text],.ctrl select{font:inherit;padding:.3rem .5rem;border:1px solid #c9c3d6;border-radius:8px}
+.btn{border:1px solid var(--ink);background:#fff;color:var(--ink);border-radius:8px;padding:.36rem .8rem;font:inherit;font-size:.95rem;cursor:pointer}
+.btn:hover{background:#efedf5}
+.btn.primary,.btn.on{background:var(--ink);color:#fff}
+.btn.small{padding:.24rem .6rem;font-size:.9rem}
+.readout{background:#fff;border:1px solid var(--line);border-radius:10px;padding:.55rem .75rem;margin-top:.5rem;font-size:1rem}
+svg{max-width:100%;height:auto;display:block}
+svg text{font-family:"Avenir Next","Segoe UI",system-ui,sans-serif}
+.wex{border-left:5px solid #7a6f8c}
+.wex .box-title{color:#7a6f8c}
+details.why{background:#f1eff6;border-radius:12px;padding:.5rem .9rem;margin:1rem 0}
+details.why summary{cursor:pointer;font-weight:600}
+details.why[open]{padding-bottom:.8rem}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+@media(max-width:640px){.two{grid-template-columns:1fr}h2{font-size:1.35rem}}
+.qhead{display:flex;align-items:baseline;gap:.6rem;margin-top:1.8rem}
+.qhead h3{margin:0}
+.qhead span{font-size:.92rem;color:var(--muted)}
+.q{background:#fff;border:1px solid var(--line);border-radius:14px;padding:.9rem 1rem;margin:.8rem 0}
+.q .qn{font-weight:700;color:var(--muted);font-size:.88rem;letter-spacing:.05em;display:flex;align-items:center;gap:.4rem;flex-wrap:wrap}
+.lvltag{font-size:.74rem;letter-spacing:.08em;border-radius:999px;padding:.05rem .5rem;font-weight:700}
+.lvltag.Focus{background:#e6f2ea;color:#2f7a46}.lvltag.Practice{background:#e8ebf8;color:#3b4fa8}.lvltag.Challenge{background:#f8e7ef;color:#a3376a}
+.q .prompt{margin:.3rem 0 .6rem}
+.q.done-3{border-color:#9ed1ae}.q.done-2,.q.done-1{border-color:#e7c98d}.q.done-0{border-color:#e5a69e}
+.opts{display:grid;gap:.4rem}
+.opt{text-align:left;border:1px solid var(--line);background:#fbfaff;border-radius:10px;padding:.45rem .7rem;font:inherit;cursor:pointer;color:var(--ink)}
+.opt:hover:not(:disabled){border-color:var(--ink)}
+.opt.wrong{background:var(--bad-soft);border-color:#e5a69e}
+.opt.right{background:var(--good-soft);border-color:#9ed1ae}
+.opt:disabled{cursor:default}
+.ansrow{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
+.ansrow input{font:inherit;padding:.35rem .6rem;border:1px solid #c9c3d6;border-radius:8px;width:190px}
+.preview{min-height:1.8rem;color:var(--muted);font-size:1rem;margin-top:.2rem}
+.fmt{font-size:.9rem;color:var(--muted);margin-top:.2rem}
+.dots{display:inline-flex;gap:4px;margin-left:.2rem;vertical-align:middle}
+.dots i{width:10px;height:10px;border-radius:50%;border:1.5px solid var(--grey);display:inline-block}
+.dots i.x{background:var(--bad);border-color:var(--bad)}
+.dots i.ok{background:var(--good);border-color:var(--good)}
+.fb{margin-top:.5rem;font-size:1rem}
+.fb.ok{color:var(--good)}.fb.no{color:var(--bad)}.fb.info{color:#8a5a0c}
+.hint{background:var(--warn-soft);border-radius:10px;padding:.5rem .7rem;margin-top:.5rem;font-size:1rem}
+.sol{background:#eef0fa;border-radius:10px;padding:.55rem .8rem;margin-top:.55rem;font-size:1rem}
+.gb-sec .sol{background:#faeef4}
+.next{display:flex;justify-content:flex-end;margin-top:2rem}
+.hero{padding:1.2rem 0 .4rem}
+.hero h1{font-size:2.1rem;margin:.2rem 0}
+.hero p{color:var(--muted);max-width:640px}
+.route{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.6rem;margin:1rem 0}
+.stop{background:#fff;border:1px solid var(--line);border-radius:12px;padding:.65rem .8rem;cursor:pointer;text-align:left;font:inherit;color:var(--ink)}
+.stop:hover{border-color:var(--ink)}
+.stop .n{font-size:.75rem;font-weight:700;letter-spacing:.08em;color:var(--a)}
+.stop.gb .n{color:var(--b)}.stop.rv .n{color:#6b5ca5}
+.stop .tt{font-weight:600;display:block}
+.stop .mm{font-size:.86rem;color:var(--muted)}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;margin:.6rem 0}
+.flow div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:.5rem .6rem;font-size:.95rem}
+.flow b{display:block;font-size:.95rem}
+@media(max-width:640px){.flow{grid-template-columns:1fr 1fr}.hero h1{font-size:1.6rem}}
+/* report */
+.rbar{margin:.45rem 0}
+.rbar .lab{display:flex;justify-content:space-between;font-size:.9rem;gap:.5rem}
+.rbar .tr{height:10px;background:#e9e6f0;border-radius:6px;overflow:hidden}
+.rbar .tr i{display:block;height:100%}
+.skill{display:flex;justify-content:space-between;gap:.6rem;padding:.35rem 0;border-bottom:1px solid #eeebf3;font-size:1rem}
+.lvl{font-size:.78rem;border-radius:999px;padding:.05rem .55rem;white-space:nowrap;align-self:center}
+.lvl.g{background:var(--good-soft);color:var(--good)}.lvl.a{background:var(--warn-soft);color:#8a5a0c}.lvl.r{background:var(--bad-soft);color:var(--bad)}.lvl.n{background:#eee;color:#777}
+.score{font-family:Georgia,serif;font-size:2.4rem;text-align:center;margin:.3rem 0}
+.legend{display:flex;flex-wrap:wrap;gap:.4rem 1rem;font-size:.9rem;justify-content:center;margin-top:.4rem}
+.legend span{display:inline-flex;align-items:center;gap:.35rem}
+.legend i{width:12px;height:12px;border-radius:50%;display:inline-block}
+.adv{border-left:4px solid var(--warn);padding:.3rem .8rem;margin:.6rem 0;background:#fff;border-radius:0 10px 10px 0}
+.small{font-size:.92rem;color:var(--muted)}
+/* widgets */
+.chain{display:flex;flex-wrap:wrap;gap:.35rem;align-items:center;margin:.4rem 0}
+.chain span.op{background:var(--a-soft);color:var(--a);border-radius:8px;padding:.15rem .5rem;font-weight:700;font-size:.9rem}
+.chain span.ar{color:var(--muted)}
+.flowbox{display:flex;flex-wrap:wrap;align-items:center;gap:.3rem;margin:.35rem 0}
+.flowbox .fbx{border:1.5px solid var(--ink);border-radius:8px;padding:.15rem .5rem;background:#fff;min-width:38px;text-align:center}
+.flowbox .fop{border-radius:999px;padding:.12rem .55rem;font-weight:700;font-size:.88rem}
+.flowbox.fwd .fop{background:var(--a-soft);color:var(--a)}
+.flowbox.back .fop{background:var(--b-soft);color:var(--b)}
+.flowbox .arr{color:var(--muted)}
+.tiles{display:flex;flex-wrap:wrap;gap:4px;align-items:center;margin:.25rem 0}
+.tile{min-width:30px;height:30px;padding:0 .35rem;border-radius:7px;border:1.5px solid #c9c5d8;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:.92rem}
+.tile.common{background:var(--a);border-color:var(--a);color:#fff}
+.tile.sign{border:none;background:none;min-width:12px}
+.factor-row{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin:.35rem 0}
+.factor-row .lab{min-width:70px;font-weight:600}
+.log{font-size:.9rem;color:var(--muted);margin:.4rem 0 0;padding-left:1.2rem}
+.fig{position:relative;margin:.5rem 0}
+.fig .lb{position:absolute;transform:translate(-50%,-50%);background:rgba(255,255,255,.85);padding:0 3px;white-space:nowrap;font-size:.95rem}
+.katex{font-size:1.04em}
+.katex-display{overflow-x:auto;overflow-y:hidden;padding:.15rem 0}
+.credit{text-align:center;color:var(--muted);font-size:.86rem;padding:1rem 0 2rem}
+
+/* number part A */
+#w2r table.t{font-size:.95rem}#w2r table.t th,#w2r table.t td{padding:.3rem .4rem;line-height:1.25}
+.itbl{border-collapse:collapse;margin:.5rem 0;font-size:1.05rem}
+.itbl th,.itbl td{border:1px solid var(--line);padding:.4rem .55rem;text-align:center;vertical-align:middle}
+.itbl th{background:#efedf5;font-weight:600;font-size:.9rem;line-height:1.25}
+.itbl tr.oprow td{border:none;background:none;color:var(--b);font-weight:700;padding:.05rem .3rem;font-size:.95rem;line-height:1.3}
+.itbl td input{font:inherit;width:84px;padding:.25rem .4rem;border:1px solid #c9c3d6;border-radius:7px;text-align:center}
+.itbl td{min-width:64px}.itbl .katex{font-size:1.1em}
+.itbl td.okc{background:var(--good-soft)}.itbl td.noc{background:var(--bad-soft)}
+.itbl tr.new td{animation:fade .35s ease}
+.divbtn{border:1.5px solid var(--b);color:var(--b);background:#fff;border-radius:999px;padding:.15rem .6rem;font:inherit;font-weight:700;cursor:pointer;white-space:nowrap}
+.divbtn:hover{background:var(--b-soft)}
+.note{background:var(--good-soft);border-radius:10px;padding:.55rem .8rem;margin:.5rem 0}
+.tree svg{max-width:100%}
+.tree .nd{cursor:pointer}
+.pairs{display:flex;flex-wrap:wrap;gap:.35rem;margin:.4rem 0}
+.tileb{min-width:34px;height:34px;padding:0 .3rem;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:1rem;border:2px solid #3b4fa8;background:#e8ebf8;color:#3b4fa8;position:relative}
+.tileb.p{border-color:#b5487a;background:#f8e7ef;color:#b5487a}
+.tileb.x{opacity:.45}
+.tileb.x::after{content:"";position:absolute;left:-3px;right:-3px;top:50%;border-top:2.5px solid #c0392b;transform:rotate(-35deg)}
+.trow{display:flex;flex-wrap:wrap;gap:5px;align-items:center;margin:.3rem 0}
+.grpb{display:inline-flex;gap:4px;padding:4px;border:2px dashed #b9b3c9;border-radius:10px}
+.fracbox{display:inline-flex;flex-direction:column;align-items:flex-start;gap:6px}
+.fracbox .barl{border-top:2.5px solid #1c2230;align-self:stretch}
+.pyr{display:flex;flex-direction:column;align-items:center;gap:6px;margin:.5rem 0}
+.pyr div{display:flex;gap:6px}
+.pyr span{min-width:58px;height:40px;border:1.5px solid #1c2230;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;font-weight:600;background:#fff}
+.pyr span.q{background:#f1eff6;color:#7a6f8c}
+
+/* sample: friendly style */
+.hook{background:linear-gradient(135deg,#fff7e6,#eef3ff);border:none;border-radius:18px;padding:1.2rem 1.2rem 1rem}
+.hook .big{font-family:Georgia,serif;font-size:1.35rem;font-weight:600;margin:.1rem 0 .5rem}
+.hookfig{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin:.7rem 0}
+.hookfig .num{font-family:Georgia,serif;font-size:2.2rem;font-weight:700}
+.hookfig .eq{font-size:1.6rem;color:var(--muted)}
+.brick{--c:#6b5ca5;display:inline-flex;align-items:center;justify-content:center;min-width:46px;height:40px;padding:0 .45rem;border-radius:7px;background:var(--c);color:#fff;font-weight:800;font-size:1.2rem;position:relative;margin:10px 3px 0;box-shadow:inset 0 -5px rgba(0,0,0,.18)}
+.brick::before{content:"";position:absolute;top:-8px;left:7px;right:7px;height:9px;background:radial-gradient(circle at 22% 100%,var(--c) 5px,transparent 5.6px),radial-gradient(circle at 78% 100%,var(--c) 5px,transparent 5.6px)}
+.brick.sm{min-width:36px;height:32px;font-size:1rem;margin:8px 2px 0}
+.tray{display:flex;flex-wrap:wrap;align-items:flex-end;gap:2px;min-height:48px}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin:.6rem 0}
+.chip{min-width:56px;height:50px;border-radius:12px;border:2px solid #c9c5d8;background:#fff;font:inherit;font-size:1.3rem;font-weight:700;cursor:pointer;color:var(--ink)}
+.chip.yes{border-color:#2f9e5b;background:#e5f4ea;color:#2f7a46}
+.chip.no{border-color:#e5a69e;background:#fbe5e2;color:#c0392b;animation:shake .3s}
+@keyframes shake{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+.tutor{border:2px solid #3b4fa8;border-radius:18px;background:#fff;padding:1rem}
+.tutor .who{font-size:.85rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#3b4fa8}
+.tq{font-size:1.15rem;margin:.6rem 0 .4rem}
+.tbtns{display:flex;flex-wrap:wrap;gap:.5rem;margin:.3rem 0}
+.tbtns .btn{font-size:1.05rem;padding:.45rem .9rem;border-radius:10px}
+.tfb{border-radius:10px;padding:.45rem .7rem;margin:.4rem 0;font-size:1.02rem}
+.tfb.ok{background:var(--good-soft);color:#24683b}.tfb.no{background:var(--warn-soft);color:#7a4e0a}
+.wow{background:#fdf3ff;border:2px dashed #b5487a;border-radius:18px}
+.wow .box-title{color:#b5487a}
+.shortcut{background:#1c2230;color:#fff;border-radius:16px;padding:1rem 1.1rem}
+.shortcut .box-title{color:#ffd27a}
+.shortcut .katex{color:#fff}
+details.pad{background:#f1eff6;border-radius:12px;padding:.5rem .9rem;margin:1rem 0}
+details.pad summary{cursor:pointer;font-weight:600}
+.tries{margin:.5rem 0;padding-left:0;list-style:none}
+.tries li{display:flex;align-items:flex-end;gap:.5rem;flex-wrap:wrap;margin:.2rem 0}
+.tries li span.l{font-size:.95rem;color:var(--muted);min-width:100px}
+.zones{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin:.6rem 0}
+.zone{border-radius:14px;min-height:96px;padding:.4rem .3rem;text-align:center}
+.zone .zl{font-size:.82rem;font-weight:700;line-height:1.2}
+.zone .tray{justify-content:center}
+.zone.l{background:#e8ebf8;color:#3b4fa8}.zone.m{background:#efe4f3;color:#6b3a87}.zone.r{background:#f8e7ef;color:#b5487a}
+.brow{display:flex;align-items:flex-end;gap:.4rem;flex-wrap:wrap;margin:.2rem 0}
+.brow .lab{font-weight:700;min-width:44px;font-family:Georgia,serif;font-size:1.25rem}
+.brow button.brick{border:none;cursor:pointer;font-family:inherit}
+.brow button.brick:disabled{opacity:.2;cursor:default}
+.steps-dots{display:flex;gap:5px;margin:.2rem 0 .4rem}
+.steps-dots i{width:22px;height:6px;border-radius:3px;background:#dcd8e6}
+.steps-dots i.on{background:#3b4fa8}
+.nest{border:2.5px solid #6b5ca5;border-radius:16px;padding:.5rem;background:#f6f3fb}
+.nest .nest{border-color:#3b4fa8;background:#eef1fb;margin-top:.4rem}
+.nest .nest .nest{border-color:#2f9e5b;background:#eaf6ee}
+.nest .nl{font-size:.85rem;font-weight:700}
+.nest .tray{min-height:40px;gap:6px}
+.ncard{display:inline-flex;align-items:center;justify-content:center;min-width:48px;height:38px;border-radius:10px;background:#fff;border:2px solid #1c2230;font-weight:700;font-size:1.1rem;padding:0 .4rem}
+.cotbl td,.cotbl th{padding:.3rem .45rem}
+.cotbl td.eq{background:var(--good-soft);font-weight:700}
+.printonly{display:none}
+@media print{
+  @page{size:A4;margin:12mm}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{background:#fff!important}
+  header.top,nav.tabs,.noprint,.next,section.tab:not(#tab-report){display:none!important}
+  section#tab-report{display:block!important;animation:none!important}
+  main{padding:0!important;max-width:none!important}
+  .printonly{display:block}
+  .rephead{border:2px solid #1c2230}
+  .skill,.rbar,.adv,.rephead,#kmap,.score{break-inside:avoid;page-break-inside:avoid}
+  #kmap svg{max-height:240mm}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="topin">
+    <div class="brand">Year 8 Number · Part A<small>Integers, primes and powers</small></div>
+    <div class="prog"><span id="progtxt"></span><div class="bar"><i id="progbar"></i></div></div>
+  </div>
+  <nav class="tabs" id="tabs"></nav>
+</header>
+
+<main>
+<!-- ================= START ================= -->
+<section class="tab" id="tab-start">
+  <div class="hero">
+    <div class="kicker">Cambridge · Year 8 · Number revision</div>
+    <h1>Integers, Primes and Powers</h1>
+    <p>Six short missions, about 55 minutes in all (fine to split over two lessons). Each one starts with a puzzle, then we work through an example together, then it's your turn.</p>
+  </div>
+  <div class="card">
+    <div class="box-title">Typing answers</div>
+    <p>Negative: <code>-6</code>. Fraction: <code>1/8</code>. Power: <code>2^3</code> for $2^3$. Bricks: <code>2^2*3*5</code>. A preview shows what you typed.</p>
+  </div>
+  <div class="route" id="route"></div>
+  <div class="card">
+    <div class="box-title">Points</div>
+    <p>Right first try: 3 points. Second try: 2. Third try: 1. Stuck twice? A hint appears.</p>
+    <p class="small">Your progress is saved on this device. <button class="btn small" id="resetBtn" type="button">Start again</button></p>
+  </div>
+  <div class="next"><button class="btn primary" data-go="n1">Start Mission A1 →</button></div>
+</section>
+
+<!-- ================= A1 ================= -->
+<section class="tab" id="tab-n1">
+  <div class="kicker">Mission A1</div>
+  <h2>Prime building blocks</h2>
+
+  <div class="card hook">
+    <div class="big">Every number is built from bricks.</div>
+    <div class="hookfig"><span class="num">60</span><span class="eq">=</span><span class="tray" id="hookTray"></span></div>
+    <p>The bricks are <b>prime numbers</b>. Today you'll find the bricks of any number.</p>
+  </div>
+
+  <div class="card">
+    <div class="box-title">Warm-up · spot the primes</div>
+    <p>A prime number can only be divided by $1$ and itself. Tap all the primes.</p>
+    <div class="chips" id="pchips"></div>
+    <div class="readout" id="pfb">Find the 5 primes.</div>
+  </div>
+
+  <div class="tutor" id="tut">
+    <div class="who">Let's do one together</div>
+    <div id="tsvg"></div>
+    <div id="tbody"></div>
+  </div>
+
+  <div class="card wow">
+    <div class="box-title">Wow · does it matter how you start?</div>
+    <p>Split $60$ a different way first. Try at least two.</p>
+    <div class="tbtns" id="wowbtns"></div>
+    <div id="wowsvg"></div>
+    <ul class="tries" id="wowtries"></ul>
+    <div id="wowmsg"></div>
+  </div>
+
+  <div class="shortcut card">
+    <div class="box-title">Shortcut card</div>
+    <p>Same brick more than once? Use a power.</p>
+    <p>$2\times2=2^2 \qquad 5\times5\times5=5^3$</p>
+    <p>So $60=2\times2\times3\times5=2^2\times3\times5$.</p>
+  </div>
+
+  <div class="qhead"><h3>Your turn</h3><span>5 questions</span></div>
+  <details class="pad" id="padbox"><summary>Need help? Open your tree pad</summary>
+    <div class="ctrl"><label>Number <input type="text" id="padn" value="36" size="6"></label><button class="btn small" id="padgo" type="button">New tree</button><button class="btn small" id="padauto" type="button">Finish it for me</button></div>
+    <p class="small">Tap a white box, then choose how to split it.</p>
+    <div id="padsvg"></div>
+    <div class="pairs" id="padpairs"></div>
+    <div class="readout" id="padr"></div>
+  </details>
+  <div class="qs" data-part="n1"></div>
+  <div class="next"><button class="btn primary" data-go="n2">Next mission: HCF and LCM →</button></div>
+</section>
+
+<!-- ================= A2 ================= -->
+<section class="tab" id="tab-n2">
+  <div class="kicker">Mission A2</div>
+  <h2>HCF and LCM</h2>
+  <div class="card hook">
+    <div class="big">Party time!</div>
+    <p>You have <b>24 sweets</b> and <b>36 chocolates</b>. You want party bags that are all the same, with nothing left over. How many bags can you make?</p>
+    <p>The bricks will tell us.</p>
+  </div>
+  <div class="tutor" id="t2">
+    <div class="who">Let's do one together</div>
+    <div id="t2body"></div>
+  </div>
+  <div class="shortcut card">
+    <div class="box-title">Shortcut card</div>
+    <p><b>HCF</b> (highest common factor): multiply the <b>middle</b> bricks.</p>
+    <p><b>LCM</b> (lowest common multiple): multiply <b>all</b> the bricks.</p>
+  </div>
+  <div class="card wow">
+    <div class="box-title">Wow · the coincidence machine</div>
+    <p>Pick two numbers. The machine finds the HCF and the LCM. Then look at the last two columns…</p>
+    <div class="ctrl"><label>$a$ <input type="text" id="coa" value="4" size="4"></label><label>$b$ <input type="text" id="cob" value="6" size="4"></label><button class="btn small primary" id="cogo" type="button">Go</button></div>
+    <div class="tblwrap"><table class="t cotbl" id="cotbl"></table></div>
+    <div id="comsg"></div>
+  </div>
+  <div class="qhead"><h3>Your turn</h3><span>6 questions</span></div>
+  <div class="qs" data-part="n2"></div>
+  <div class="next"><button class="btn primary" data-go="n3">Next mission: negatives →</button></div>
+</section>
+
+<!-- ================= A3 ================= -->
+<section class="tab gb-sec" id="tab-n3">
+  <div class="kicker">Mission A3</div>
+  <h2>Multiplying and dividing negatives</h2>
+  <div class="card hook">
+    <div class="big">Which way will it go?</div>
+    <p>In $3\times2$, the $3$ is a machine that <b>stretches</b> the arrow for $2$ to three times as long. A minus sign makes the machine <b>flip</b> the arrow to the other side of $0$.</p>
+  </div>
+  <div class="tutor" id="t3">
+    <div class="who">Guess, then watch</div>
+    <div id="t3body"></div>
+  </div>
+  <div class="shortcut card">
+    <div class="box-title">Shortcut card</div>
+    <p>Count the minus signs.</p>
+    <p><b>Even</b> (0, 2, …) → positive. &nbsp; <b>Odd</b> (1, 3, …) → negative.</p>
+    <p>Dividing works the same way: $42\div-7=-6$.</p>
+  </div>
+  <details class="pad"><summary>Play: try your own numbers on the number line</summary>
+    <div class="ctrl">
+      <label><select id="w3m" aria-label="operation"><option value="mul">multiply</option><option value="div">divide</option></select></label>
+      <label>machine <input type="range" id="w3k" min="-4" max="4" step="1" value="-3"><b id="w3kv"></b></label>
+      <label>number <input type="range" id="w3b" min="-5" max="5" step="1" value="2"><b id="w3bv"></b></label>
+    </div>
+    <div id="w3svg"></div>
+    <div class="readout" id="w3r"></div>
+  </details>
+  <div class="qhead"><h3>Your turn</h3><span>6 questions</span></div>
+  <div class="qs" data-part="n3"></div>
+  <div class="next"><button class="btn primary" data-go="n4">Next mission: squares and roots →</button></div>
+</section>
+
+<!-- ================= A4 ================= -->
+<section class="tab gb-sec" id="tab-n4">
+  <div class="kicker">Mission A4</div>
+  <h2>Squares, cubes and roots</h2>
+  <div class="card hook">
+    <div class="big">The calculator trap</div>
+    <div class="hookfig"><span class="ncard">−6²</span><span class="eq">→</span><span class="num" style="font-size:1.6rem">−36</span></div>
+    <div class="hookfig"><span class="ncard">(−6)²</span><span class="eq">→</span><span class="num" style="font-size:1.6rem">36</span></div>
+    <p>Same digits, different answers. Which one is right? Both! Let's find out why.</p>
+  </div>
+  <div class="tutor" id="t4">
+    <div class="who">Step by step</div>
+    <div id="t4body"></div>
+  </div>
+  <div class="card wow">
+    <div class="box-title">Wow · a square is never negative</div>
+    <p>Drag $x$. Watch the red zone.</p>
+    <div class="ctrl"><label>$x=$ <input type="range" id="w4x" min="-5" max="5" step="1" value="-3"><b id="w4xv"></b></label></div>
+    <div id="w4svg"></div>
+    <div class="readout" id="w4r"></div>
+  </div>
+  <div class="card">
+    <div class="box-title">Number families · boxes inside boxes</div>
+    <p>Tap the <b>smallest</b> box each number fits in.</p>
+    <div id="famq"></div>
+    <div class="nest"><div class="nl">Rational: any fraction</div><div class="tray" id="famR"></div>
+      <div class="nest"><div class="nl">Integers: add 0 and negatives</div><div class="tray" id="famI"></div>
+        <div class="nest"><div class="nl">Natural: 1, 2, 3, …</div><div class="tray" id="famN"></div></div></div></div>
+  </div>
+  <div class="qhead"><h3>Your turn</h3><span>6 questions</span></div>
+  <div class="qs" data-part="n4"></div>
+  <div class="next"><button class="btn primary" data-go="n5">Next mission: power shortcuts →</button></div>
+</section>
+
+<!-- ================= A5 ================= -->
+<section class="tab gb-sec" id="tab-n5">
+  <div class="kicker">Mission A5</div>
+  <h2>Power shortcuts</h2>
+  <div class="card hook">
+    <div class="big">Too long to write!</div>
+    <p>$2\times2\times2\times2\times2\times2\times2$ … just write $2^7$: “seven 2s”. The small number counts the bricks.</p>
+    <p>Now let's find some shortcuts by counting.</p>
+  </div>
+  <div class="tutor" id="t5">
+    <div class="who">Count and discover</div>
+    <div id="t5body"></div>
+  </div>
+  <div class="shortcut card">
+    <div class="box-title">Shortcut card (same big number only!)</div>
+    <p>Multiply → <b>add</b> the small numbers: $\;3^2\times3^4=3^6$</p>
+    <p>Divide → <b>subtract</b>: $\;5^6\div5^2=5^4$</p>
+    <p>Power of a power → <b>multiply</b>: $\;(7^3)^2=7^6$</p>
+  </div>
+  <div class="qhead"><h3>Your turn</h3><span>6 questions</span></div>
+  <div class="qs" data-part="n5"></div>
+  <div class="next"><button class="btn primary" data-go="n6">Next mission: power 0 and below →</button></div>
+</section>
+
+<!-- ================= A6 ================= -->
+<section class="tab gb-sec" id="tab-n6">
+  <div class="kicker">Mission A6</div>
+  <h2>Power 0 and negative powers</h2>
+  <div class="card hook">
+    <div class="big">What is $2^0$?</div>
+    <p>Most people guess $0$. Let's build a table and see what the numbers say.</p>
+  </div>
+  <div class="tutor" id="w6">
+    <div class="who">Build the table, row by row</div>
+    <div class="ctrl"><label>number <select id="w6base"><option selected>2</option><option>3</option><option>5</option><option>10</option></select></label><button class="btn small" id="w6reset" type="button">Start again</button><button class="btn small" id="w6all" type="button">Show all rows</button></div>
+    <p class="small">Tap the pink <b>÷</b> button. A new row appears: fill in its three boxes, working from the row above.</p>
+    <div class="tblwrap" id="w6tbl"></div>
+    <div class="preview" id="w6pv"></div>
+    <div id="w6msg"></div>
+  </div>
+  <div class="shortcut card">
+    <div class="box-title">Shortcut card</div>
+    <p>Power $0$ → always $1$: $\;7^0=1$</p>
+    <p>Negative power → a fraction: $\;2^{-3}=\dfrac{1}{2\times2\times2}=\dfrac18$</p>
+  </div>
+  <div class="qhead"><h3>Your turn</h3><span>6 questions</span></div>
+  <div class="qs" data-part="n6"></div>
+  <div class="next"><button class="btn primary" data-go="rv">Boss review →</button></div>
+</section>
+
+<!-- ================= REVIEW ================= -->
+<section class="tab" id="tab-rv">
+  <div class="kicker" style="color:#6b5ca5">Boss review</div>
+  <h2>One from each mission</h2>
+  <p>Mixed up! First decide which mission's trick you need.</p>
+  <div class="qs" data-part="rv"></div>
+  <div class="next"><button class="btn primary" data-go="report">See my report →</button></div>
+</section>
+
+<!-- ================= REPORT ================= -->
+<section class="tab" id="tab-report">
+  <div class="kicker">My report</div>
+  <h2>How did your missions go?</h2>
+  <div id="report"></div>
+</section>
+</main>
+<script>
+/* ===== tiny algebra engine: parse, evaluate, LaTeX, equivalence ===== */
+const ALG = (function(){
+  function tokenize(s){
+    s=String(s).replace(/[−–]/g,'-').replace(/[×·]/g,'*').replace(/÷/g,'/').replace(/\s+/g,'');
+    const out=[];let i=0;
+    while(i<s.length){const c=s[i];
+      if(/[0-9.]/.test(c)){let j=i;while(j<s.length&&/[0-9.]/.test(s[j]))j++;const t=s.slice(i,j);if((t.match(/\./g)||[]).length>1||t==='.')throw 'num';out.push({k:'num',v:parseFloat(t),raw:t});i=j;continue}
+      if(/[a-zA-Z]/.test(c)){out.push({k:'var',v:c});i++;continue}
+      if('+-*/^()'.includes(c)){out.push({k:c});i++;continue}
+      throw 'char';
+    }
+    // implicit multiplication
+    const r=[];for(let k=0;k<out.length;k++){const a=out[k-1],b=out[k];
+      if(a&&(a.k==='num'||a.k==='var'||a.k===')')&&(b.k==='var'||b.k==='('||(b.k==='num'&&a.k!=='num')))r.push({k:'*',imp:true});
+      r.push(b)}
+    return r;
+  }
+  function parse(s){
+    const T=tokenize(s);let p=0;if(!T.length)throw 'empty';
+    const peek=()=>T[p],eat=k=>{if(!T[p]||T[p].k!==k)throw 'expect '+k;return T[p++]};
+    function expr(){let n=term();while(peek()&&(peek().k==='+'||peek().k==='-')){const o=T[p++].k;const m=term();n={t:o==='+'?'add':'sub',a:n,b:m}}return n}
+    function term(){let n=unary();while(peek()&&(peek().k==='*'||peek().k==='/')){const tk=T[p++];const m=unary();n=tk.k==='*'?{t:'mul',a:n,b:m,imp:!!tk.imp}:{t:'div',a:n,b:m}}return n}
+    function unary(){if(peek()&&peek().k==='-'){p++;return {t:'neg',a:unary()}}if(peek()&&peek().k==='+'){p++;return unary()}return power()}
+    function power(){let b=atom();if(peek()&&peek().k==='^'){p++;const e=unary();return {t:'pow',a:b,b:e}}return b}
+    function atom(){const k=peek();if(!k)throw 'end';
+      if(k.k==='num'){p++;return {t:'num',v:k.v,raw:k.raw}}
+      if(k.k==='var'){p++;return {t:'var',v:k.v}}
+      if(k.k==='('){p++;const e=expr();eat(')');return {t:'grp',a:e}}
+      throw 'unexpected'}
+    const n=expr();if(p!==T.length)throw 'trailing';return n;
+  }
+  function ev(n,env){switch(n.t){
+    case 'num':return n.v;case 'var':if(!(n.v in env))throw 'var';return env[n.v];
+    case 'add':return ev(n.a,env)+ev(n.b,env);case 'sub':return ev(n.a,env)-ev(n.b,env);
+    case 'mul':return ev(n.a,env)*ev(n.b,env);case 'div':return ev(n.a,env)/ev(n.b,env);
+    case 'pow':return Math.pow(ev(n.a,env),ev(n.b,env));case 'neg':return -ev(n.a,env);case 'grp':return ev(n.a,env)}}
+  function vars(n,set=new Set()){if(!n)return set;if(n.t==='var')set.add(n.v);['a','b'].forEach(k=>{if(n[k]&&typeof n[k]==='object')vars(n[k],set)});return set}
+  const strip=n=>n.t==='grp'?strip(n.a):n;
+  function tex(n){switch(n.t){
+    case 'num':return n.raw||String(n.v);case 'var':return n.v;
+    case 'add':return tex(n.a)+'+'+tex(n.b);
+    case 'sub':return tex(n.a)+'-'+tex(n.b);
+    case 'neg':return '-'+tex(n.a);
+    case 'grp':return '\\left('+tex(n.a)+'\\right)';
+    case 'div':return '\\frac{'+tex(strip(n.a))+'}{'+tex(strip(n.b))+'}';
+    case 'pow':return (n.a.t==='var'||n.a.t==='num'||n.a.t==='grp'?tex(n.a):'{'+tex(n.a)+'}')+'^{'+tex(strip(n.b))+'}';
+    case 'mul':{const A=tex(n.a),B=tex(n.b);const bStart=n.b.t==='num'||(n.b.t==='pow'&&n.b.a.t==='num')||n.b.t==='neg'||n.b.t==='div';
+      return bStart?A+'\\times '+B:A+B}}}
+  function toTex(s){try{return tex(parse(s))}catch(e){return null}}
+  const PTS=[1.37,-2.21,0.63,3.08,-0.71,2.49,-1.53];
+  function equiv(a,b,extra){
+    let A,B;try{A=typeof a==='string'?parse(a):a;B=typeof b==='string'?parse(b):b}catch(e){return false}
+    const vs=[...new Set([...vars(A),...vars(B),...(extra||[])])];
+    for(let t=0;t<6;t++){const env={};vs.forEach((v,i)=>env[v]=PTS[(t+i*3)%PTS.length]+0.11*i);
+      let x,y;try{x=ev(A,env);y=ev(B,env)}catch(e){return false}
+      if(!isFinite(x)||!isFinite(y)){continue}
+      if(Math.abs(x-y)>1e-7*Math.max(1,Math.abs(x),Math.abs(y)))return false}
+    return true;
+  }
+  // number of top-level terms (split on + and - outside brackets)
+  function topTerms(n){n=n;if(n.t==='add'||n.t==='sub')return topTerms(n.a)+topTerms(n.b);return 1}
+  function hasGrp(n){if(!n||typeof n!=='object')return false;if(n.t==='grp')return true;return hasGrp(n.a)||hasGrp(n.b)}
+  return {parse,ev,tex,toTex,equiv,vars,topTerms,hasGrp};
+})();
+
+
+const R = String.raw;
+const UI = {
+  tabs:{start:'Start',n1:'A1 Prime bricks',n2:'A2 HCF & LCM',n3:'A3 Negatives',n4:'A4 Squares & roots',n5:'A5 Power shortcuts',n6:'A6 Power 0 & below',rv:'Boss review',report:'My report'},
+  mins:{n1:9,n2:9,n3:8,n4:8,n5:7,n6:8,rv:5},
+  lvlName:{Focus:'WARM-UP',Practice:'PRACTICE',Challenge:'⭐ BOSS LEVEL'},
+  check:'Check', attempt:'Try', of:'of',
+  fmt:{
+    num:R`Type a number, e.g. 14 or -3 or 1/8.`,
+    list:R`Type every answer, separated by commas, e.g. -9, 9`,
+    pow:R`Type one power, e.g. 3^5 for $3^5$.`,
+    tbl:R`Power: 3^-1 for $3^{-1}$. Repeated multiplication: 3*3 or 1/(3*3). Value: 9 or 1/9. Fill every empty box.`,
+    pf:R`Type it like 2^2*3*5 for $2^2\times3\times5$. You can use * or x for $\times$.`
+  },
+  tblHead:['Power','Repeated multiplication','Value'],
+  previewPre:'Your answer: ',
+  right:['Brilliant, first try! ✓','Got it on the second try ✓','Got there on the third try ✓'],
+  wrong:'Not yet. Have another go.',
+  wrongLast:"That's OK. Read the solution, then try the next one.",
+  info:{bad:'I could not read that. Check the * signs and the ^ signs.',
+    notprime:'So close! One of your numbers can still be split. Keep breaking until every number is a prime brick.',
+    useindex:R`Right bricks! Now write it the short way: $2\times2\times2$ is $2^3.$`,
+    single:R`Right value! Now write it as one power, like $3^5$.`,base:'Check which big number (base) the question asks for.'},
+  hint:'Hint', sol:'Solution',
+  prog:(a,t,p)=>`${a} / ${t} done · ${p} pts`,
+  done:'done',
+  report:{
+    empty:'Nothing answered yet. Do some missions, then come back here.',
+    byPart:'By station', bySkill:'My skills', how:'How I worked', advice:'What to do next', map:'How the ideas connect', total:'My score',
+    lv:{g:'got it',a:'nearly there',r:'look again',n:'not tried'},
+    firstTry:n=>`<b>${n}</b> right on the first try.`,
+    fast:n=>!n?'You took your time on every question.':`<b>${n}</b> answered right very quickly. Great if you really knew it!`,
+    rushed:n=>n?`<b>${n}</b> question(s) had three wrong tries in under 20 seconds. After a wrong answer, slow down: draw the tree, count the minus signs, or count the bricks.`:'No rushing: you stopped to think after wrong answers. Well done.',
+    notDone:n=>n?`<b>${n}</b> question(s) still to do.`:'You finished every question!',
+    why:(o,t)=>'',
+    allGood:'Every skill you tried is a “got it”. Well done! Next up: Number Part B.',
+    advIntro:'Have another look at:',
+    note:'3 points for right first try, 2 for second try, 1 for third try, 0 if all three tries are wrong.',
+    centre:['Bricks, signs','and powers'],
+    avg:a=>a==null?'–':a.toFixed(1)+' / 3'
+  }
+};
+const GROUPS = {fp:'Prime bricks, HCF & LCM', ip:'Negatives & powers'};
+const GCOL = {fp:'#3b4fa8', ip:'#b5487a'};
+const SEC = {n1:'A1 Prime building blocks',n2:'A2 HCF and LCM',n3:'A3 Multiplying & dividing negatives',n4:'A4 Squares, cubes & roots',n5:'A5 Power shortcuts',n6:'A6 Power 0 and negative powers',rv:'Boss review'};
+const LABEL = {n1:'A1',n2:'A2',n3:'A3',n4:'A4',n5:'A5',n6:'A6'};
+const SKILLS = {
+  split:{n:'Breaking a number into prime bricks',g:'fp',adv:R`Start with any two numbers that multiply to make it. Easy starts: $2\times\ldots$ for even numbers, $10\times\ldots$ for numbers ending in 0. Keep splitting until every number is prime. The tree pad in A1 does this with you.`},
+  power:{n:'Writing bricks with powers',g:'fp',adv:R`Count each kind of brick. Two 2s make $2^2$, three 5s make $5^3$. Write the smallest brick first, then multiply back to check.`},
+  square:{n:'Spotting square numbers',g:'fp',adv:R`Try to share the bricks into two identical teams. If you can, the number is a square number.`},
+  hcf:{n:'HCF: the shared bricks',g:'fp',adv:R`Put both numbers' bricks side by side. Pair up the bricks they both have: those go in the middle. Multiply the middle bricks to get the HCF.`},
+  lcm:{n:'LCM: all the bricks',g:'fp',adv:R`Put the shared bricks in the middle once, and every other brick on its own side. Multiply <b>all</b> the bricks in the picture to get the LCM. Check: both numbers should divide into it.`},
+  sign:{n:'Multiplying & dividing negatives',g:'ip',adv:R`Work out the size first, then the sign. Count the minus signs: an even number (0, 2, …) gives a positive answer, an odd number gives a negative answer. Each minus sign is one flip on the number line.`},
+  bracket:{n:'Powers of negative numbers',g:'ip',adv:R`Look for the bracket. $(-6)^2=(-6)\times(-6)=36$, but $-6^2$ means “square 6, then put a minus in front”: $-36$.`},
+  roots:{n:'Square & cube roots',g:'ip',adv:R`For $x^2=81$, look for <b>two</b> answers: $9$ and $-9$. A square is never negative, so $x^2=-49$ has no answer. A cube root keeps the sign: $\sqrt[3]{-125}=-5$.`},
+  numsets:{n:'Natural, integer, rational',g:'ip',adv:R`Think of boxes inside boxes. Counting numbers $1, 2, 3, \ldots$ are natural. Add 0 and the negatives: integers. Add fractions and decimals: rational.`},
+  idx:{n:'Multiplying & dividing powers',g:'ip',adv:R`Count the factors, or use the shortcut: multiplying adds the small numbers, dividing subtracts them. It only works when the big numbers (bases) are the same. Remember $12=12^1$.`},
+  powpow:{n:'Power of a power',g:'ip',adv:R`$(3^4)^5$ is five groups of $3^4$. Five groups of four 3s is $5\times4=20$ threes: $3^{20}$.`},
+  zero:{n:'Power 0 & negative powers',g:'ip',adv:R`Build the table: each row down, divide by the base once. After $2^1=2$ comes $2^0=1$, then $2^{-1}=\frac12$, then $2^{-2}=\frac14$. A negative power makes a fraction, not a negative number.`}
+};
+const LINKS=[['split','power'],['power','square'],['split','hcf'],['split','lcm'],['hcf','lcm'],['sign','bracket'],['bracket','roots'],['roots','numsets'],['power','idx'],['idx','powpow'],['idx','zero'],['square','roots']];
+const FIG = {pyr:()=>pyrFig()};
+const BKC={2:'#3b6fd8',3:'#e8902a',5:'#2f9e5b',7:'#8b5cc7',11:'#d14f8a',13:'#1f9aa3'};
+const bkRow=l=>`<span class="tray" style="display:inline-flex;vertical-align:middle">${bk(l)}</span>`;
+const pyrFig=()=>`<div class="pyr"><div><span class="q">?</span></div><div><span class="q"></span><span class="q"></span></div><div><span class="q"></span><span class="q"></span><span class="q"></span></div><div><span>3</span><span>−2</span><span>−1</span><span>4</span></div></div>`;
+const bk=l=>l.map(p=>`<span class="brick sm" style="--c:${BKC[p]}">${p}</span>`).join('');
+const Q = [
+ {id:'n1a',part:'n1',lvl:'Focus',tags:['split','power'],type:'pf',ans:36,key:'2^2*3^2',src:'WB8 1.1 Q8a',
+  prompt:R`Break $36$ into prime bricks. Write it the short way, with powers.`,
+  hint:R`Start with $36=6\times6$. Then split each 6.`,
+  sol:R`$36=6\times6=2\times3\times2\times3$. That is two 2s and two 3s, so $36=2^2\times3^2$.`},
+ {id:'n1b',part:'n1',lvl:'Focus',tags:['split','power'],type:'pf',ans:250,key:'2*5^3',src:'WB8 1.1 Q1',
+  prompt:R`Break $250$ into prime bricks. Write it the short way.`,
+  hint:R`$250=2\times125$. Then $125=5\times25$.`,
+  sol:R`$250=2\times125=2\times5\times25=2\times5\times5\times5$. One 2 and three 5s: $250=2\times5^3$.`},
+ {id:'n1c',part:'n1',lvl:'Focus',tags:['split','power'],type:'pf',ans:98,key:'2*7^2',src:'WB8 1.1 Q6c',
+  prompt:R`Break $98$ into prime bricks. Write it the short way.`,
+  hint:R`$98$ is even, so start with $2\times49$.`,
+  sol:R`$98=2\times49=2\times7\times7=2\times7^2$.`},
+ {id:'n1d',part:'n1',lvl:'Practice',tags:['split','power'],type:'pf',ans:300,key:'2^2*3*5^2',src:'WB8 1.1 Q2',
+  prompt:R`Mia starts her tree for $300$ with $3\times100$. Finish the job and write $300$ the short way.`,
+  hint:R`$100=10\times10$, and each $10=2\times5$.`,
+  sol:R`$300=3\times10\times10=3\times2\times5\times2\times5$. Two 2s, one 3, two 5s: $300=2^2\times3\times5^2$.`},
+ {id:'n1e',part:'n1',lvl:'Challenge',tags:['square'],type:'mc',ans:1,src:'WB8 1.1 Q8',
+  prompt:`$36=6\\times6$ is a <b>square number</b>. Its bricks share into two identical teams:<div class="tray" style="margin:.3rem 0 .5rem">${bk([2,3])}<span style="width:22px"></span>${bk([2,3])}</div>Which of these is a square number?`,
+  opts:[[2,2,2,3,3],[2,2,5,5],[3,3,3,5],[2,3,5,7]].map(l=>`<span class="tray" style="display:inline-flex;vertical-align:middle">${bk(l)}</span>`),
+  hint:'Try to share the bricks into two identical teams.',
+  sol:R`$2\times2\times5\times5$ shares into $(2\times5)$ and $(2\times5)$, so it is $10\times10=100$. The others always have one brick left over.`},
+ // A2
+ {id:'n2a',part:'n2',lvl:'Focus',tags:['hcf'],type:'num',ans:12,tol:1e-9,src:'original',
+  prompt:R`Party time! You have $24$ sweets and $36$ chocolates. You want bags that are all the same, with nothing left over.<br>What is the <b>most</b> bags you can make?`,
+  hint:R`You need the HCF of $24$ and $36$. Bricks: $24$ is $2,2,2,3$ and $36$ is $2,2,3,3$. Which bricks do they share?`,
+  sol:R`Shared bricks: $2, 2, 3$. HCF $=2\times2\times3=12$ bags (each bag: 2 sweets and 3 chocolates).`},
+ {id:'n2b',part:'n2',lvl:'Focus',tags:['lcm'],type:'num',ans:36,tol:1e-9,src:'original',
+  prompt:R`Two lighthouses flash together. One flashes every $12$ seconds, the other every $18$ seconds.<br>After how many seconds do they flash together again?`,
+  hint:R`You need the LCM. Bricks: $12$ is $2,2,3$ and $18$ is $2,3,3$. Multiply all the bricks, counting shared ones once.`,
+  sol:R`Shared: $2, 3$. Left over: $2$ (from 12) and $3$ (from 18). LCM $=2\times3\times2\times3=36$ seconds.`},
+ {id:'n2c',part:'n2',lvl:'Practice',tags:['hcf'],type:'num',ans:63,tol:1e-9,src:'WB8 1.1 Q9a',
+  prompt:`Find the HCF of $315$ and $252$.<div class="brow"><span class="lab">315</span>${bk([3,3,5,7])}</div><div class="brow"><span class="lab">252</span>${bk([2,2,3,3,7])}</div>`,
+  hint:R`Pair up the bricks both numbers have: two 3s and a 7.`,
+  sol:R`Shared bricks: $3, 3, 7$. HCF $=3\times3\times7=63$.`},
+ {id:'n2d',part:'n2',lvl:'Practice',tags:['lcm'],type:'num',ans:360,tol:1e-9,src:'WB8 1.1 Q10a',
+  prompt:`Find the LCM of $60$ and $72$.<div class="brow"><span class="lab">60</span>${bk([2,2,3,5])}</div><div class="brow"><span class="lab">72</span>${bk([2,2,2,3,3])}</div>`,
+  hint:R`Shared bricks: $2,2,3$. Extra bricks: $5$ from 60, and $2,3$ from 72. Multiply them all.`,
+  sol:R`Middle: $2,2,3$. Left: $5$. Right: $2,3$. LCM $=2\times2\times3\times5\times2\times3=360$.`},
+ {id:'n2e',part:'n2',lvl:'Practice',tags:['hcf','split'],type:'num',ans:26,tol:1e-9,src:'WB8 1.1 Q11',
+  prompt:R`Find the HCF of $104$ and $130$.`,
+  hint:R`Bricks first: $104=2\times2\times2\times13$ and $130=2\times5\times13$.`,
+  sol:R`Shared bricks: $2$ and $13$. HCF $=2\times13=26$.`},
+ {id:'n2f',part:'n2',lvl:'Challenge',tags:['hcf','lcm'],type:'list',ans:[18,24],src:'WB8 1.1 Q17',
+  prompt:R`Two numbers have HCF $=6$ and LCM $=72$. Both numbers are between $10$ and $30$.<br>What are the two numbers?`,
+  hint:R`Remember the coincidence machine: the two numbers multiply to $6\times72=432$. Both are in the 6 times table.`,
+  sol:R`They multiply to $6\times72=432$. Try multiples of 6: $18\times24=432$ ✓. Check: HCF of 18 and 24 is 6, LCM is 72.`},
+ // A3
+ {id:'n3a',part:'n3',lvl:'Focus',tags:['sign'],type:'num',ans:-40,tol:1e-9,src:'WB8 1.2 Q2a',
+  prompt:R`Work out $-5\times8$.`,hint:R`$5\times8=40$. One minus sign: is it positive or negative?`,sol:R`One minus sign, so negative: $-40$.`},
+ {id:'n3b',part:'n3',lvl:'Focus',tags:['sign'],type:'num',ans:99,tol:1e-9,src:'WB8 1.2 Q2c',
+  prompt:R`Work out $-9\times-11$.`,hint:R`Two minus signs: two flips.`,sol:R`$9\times11=99$. Two minus signs, so positive: $99$.`},
+ {id:'n3c',part:'n3',lvl:'Focus',tags:['sign'],type:'num',ans:-6,tol:1e-9,src:'WB8 1.2 Q11a',
+  prompt:R`Work out $42\div-7$.`,hint:R`$42\div7=6$. One minus sign.`,sol:R`$42\div-7=-6$. Check: $-6\times-7=42$ ✓.`},
+ {id:'n3d',part:'n3',lvl:'Practice',tags:['sign'],type:'num',ans:5,tol:1e-9,src:'WB8 1.2 Q5d',
+  prompt:R`Work out $(3+-4)\times-5$.`,hint:R`Bracket first: $3+-4=-1$.`,sol:R`$(3+-4)\times-5=-1\times-5=5$.`},
+ {id:'n3e',part:'n3',lvl:'Practice',tags:['sign'],type:'list',ans:[-6,-3,-2,-1,1,2,3,6],src:'WB8 1.2 Q9a',
+  prompt:R`Two integers multiply to make $-6$. List <b>every</b> integer that could be one of them.`,
+  hint:R`One is positive, one is negative. Pairs like $1\times-6$ and $-1\times6$. There are two more pairs.`,
+  sol:R`Pairs: $1\times-6$, $-1\times6$, $2\times-3$, $-2\times3$. So $-6,-3,-2,-1,1,2,3,6$.`},
+ {id:'n3f',part:'n3',lvl:'Challenge',tags:['sign'],type:'num',ans:96,tol:1e-9,fig:'pyr',src:'WB8 1.2 Q8a',
+  prompt:R`Multiplication pyramid: each box is the two boxes below it multiplied. What number goes at the top?`,
+  hint:R`Next row up: $3\times-2=-6$, then $-2\times-1=2$, then $-1\times4=-4$.`,
+  sol:R`Row 2: $-6,\ 2,\ -4$. Row 3: $-12,\ -8$. Top: $-12\times-8=96$.`},
+ // A4
+ {id:'n4a',part:'n4',lvl:'Focus',tags:['bracket'],type:'num',ans:400,tol:1e-9,src:'WB8 1.3 Q1c',
+  prompt:R`Work out $(-20)^2$.`,hint:R`$(-20)\times(-20)$: two minus signs.`,sol:R`$(-20)\times(-20)=400$.`},
+ {id:'n4b',part:'n4',lvl:'Focus',tags:['bracket'],type:'mc',ans:2,src:'original',
+  prompt:R`Which one is equal to $-36$?`,opts:[R`$(-6)^2$`,R`$6^2$`,R`$-6^2$`,R`$(-6)\times(-6)$`],
+  hint:'Which one has no bracket?',sol:R`$-6^2$: square 6 first ($36$), then the minus: $-36$. The others all make $36$.`},
+ {id:'n4c',part:'n4',lvl:'Focus',tags:['roots'],type:'num',ans:-5,tol:1e-9,src:'WB8 1.3 Q3c',
+  prompt:R`Work out $\sqrt[3]{-125}$.`,hint:R`Which number times itself times itself makes $-125$? Try a negative number.`,sol:R`$(-5)\times(-5)\times(-5)=-125$, so the answer is $-5$.`},
+ {id:'n4d',part:'n4',lvl:'Practice',tags:['roots'],type:'list',ans:[-9,9],src:'WB8 1.3 Q4c',
+  prompt:R`Solve $x^2=81$. Give <b>both</b> answers.`,hint:R`$9^2=81$. Which other number squares to 81?`,sol:R`$x=9$ or $x=-9$.`},
+ {id:'n4e',part:'n4',lvl:'Practice',tags:['roots'],type:'mc',ans:0,src:'WB8 1.3 Q4d',
+  prompt:R`How many answers does $x^2=-49$ have?`,opts:['None','One: $x=-7$','One: $x=7$','Two: $x=7$ or $x=-7$'],
+  hint:R`Try $7^2$ and $(-7)^2$. Are they $-49$?`,sol:R`$7^2=49$ and $(-7)^2=49$. A square is never negative, so there is no answer.`},
+ {id:'n4f',part:'n4',lvl:'Challenge',tags:['numsets'],type:'mc',ans:3,src:'WB8 1.3 Q7',
+  prompt:'Which sentence is <b>false</b>?',opts:[R`$9$ is a rational number.`,R`$99$ is an integer.`,R`$-999$ is an integer and a rational number.`,R`$-9$ is a natural number.`],
+  hint:'Natural numbers are the counting numbers 1, 2, 3, …',sol:R`$-9$ is not natural: you can't count to $-9$. It is an integer, and it is rational.`},
+ // A5
+ {id:'n5a',part:'n5',lvl:'Focus',tags:['idx'],type:'pow',base:10,exp:7,src:'WB8 1.4 Q2b',
+  prompt:R`Write $10^5\times10^2$ as one power.`,hint:R`Multiplying: add the small numbers.`,sol:R`$10^{5+2}=10^7$.`},
+ {id:'n5b',part:'n5',lvl:'Focus',tags:['idx'],type:'pow',base:12,exp:6,src:'WB8 1.4 Q1c',
+  prompt:R`Write $12\times12^5$ as one power.`,hint:R`$12$ on its own is $12^1$.`,sol:R`$12^1\times12^5=12^6$.`},
+ {id:'n5c',part:'n5',lvl:'Focus',tags:['idx'],type:'pow',base:2,exp:8,src:'WB8 1.4 Q8c',
+  prompt:R`Write $2^{10}\div2^2$ as one power.`,hint:R`Dividing: two 2s cancel. Subtract the small numbers.`,sol:R`$2^{10-2}=2^8$.`},
+ {id:'n5d',part:'n5',lvl:'Practice',tags:['powpow'],type:'pow',base:3,exp:20,src:'WB8 1.4 Q4d',
+  prompt:R`Write $(3^4)^5$ as one power.`,hint:R`Five groups of four 3s.`,sol:R`$5\times4=20$ threes: $3^{20}$.`},
+ {id:'n5e',part:'n5',lvl:'Practice',tags:['idx'],type:'num',ans:4,tol:1e-9,src:'WB8 1.4 Q9b',
+  prompt:R`Find the missing number: $6^8\div6^{\,?}=6^4$.`,hint:R`$8-?=4$.`,sol:R`$8-4=4$, so it is $4$.`},
+ {id:'n5f',part:'n5',lvl:'Challenge',tags:['idx'],type:'mc',ans:1,src:'WB8 1.4 Q13',
+  prompt:R`Marcus says: “$2^4=4^2$, so $3^4=4^3$.” Is he right?`,
+  opts:['Yes: you can always swap the two numbers.',R`No: $3^4=81$ but $4^3=64$.`,'Yes: the shortcut says so.',R`No, because $2^4$ is not equal to $4^2$.`],
+  hint:R`Work out $3^4=3\times3\times3\times3$ and $4^3=4\times4\times4$.`,sol:R`$2^4=16=4^2$ is a lucky one-off. $3^4=81$ and $4^3=64$ are different.`},
+ // A6
+ {id:'n6a',part:'n6',lvl:'Focus',tags:['zero'],type:'tbl',base:3,rows:[2,1,0,-1,-2],show:['111','100','100','001','010'],src:'original',
+  prompt:R`Fill in the table. Each row is the row above divided by $3$.`,
+  hint:R`Keep dividing by 3: $9\to3\to1\to\frac13\to\frac19$. The power goes down by 1 each row.`,
+  sol:R`$3^1=3$, $3^0=1$, $3^{-1}=\frac13$, $3^{-2}=\frac{1}{3\times3}=\frac19$.`},
+ {id:'n6b',part:'n6',lvl:'Focus',tags:['zero'],type:'num',ans:1,tol:1e-9,src:'original',
+  prompt:R`Work out $7^0$.`,hint:R`Think of the table: $7^1=7$, then divide by 7.`,sol:R`$7^0=7\div7=1$.`},
+ {id:'n6c',part:'n6',lvl:'Practice',tags:['zero'],type:'mc',ans:2,src:'original',
+  prompt:R`What is $2^{-3}$?`,opts:[R`$-8$`,R`$-6$`,R`$\frac18$`,R`$\frac16$`],
+  hint:'A negative power makes a fraction, not a negative number.',sol:R`$2^{-3}=\frac{1}{2\times2\times2}=\frac18$.`},
+ {id:'n6d',part:'n6',lvl:'Practice',tags:['zero'],type:'num',ans:0.0625,tol:1e-9,src:'original',
+  prompt:R`Work out $4^{-2}$ as a fraction.`,hint:R`$4^{-2}=\frac{1}{4\times4}$.`,sol:R`$\frac{1}{4\times4}=\frac1{16}$.`},
+ {id:'n6e',part:'n6',lvl:'Practice',tags:['zero'],type:'tbl',base:10,rows:[2,1,0,-1,-2],show:['111','010','001','100','010'],src:'original',
+  prompt:R`Powers of $10$: fill in the table. Each row is the row above divided by $10$.`,
+  hint:R`$100\to10\to1\to\frac1{10}\to\frac1{100}$. You can type 0.1 or 1/10.`,
+  sol:R`$10^1=10$, $10^0=1$, $10^{-1}=\frac1{10}=0.1$, $10^{-2}=\frac1{10\times10}=0.01$.`},
+ {id:'n6f',part:'n6',lvl:'Challenge',tags:['zero'],type:'tbl',base:4,rows:[1,0,-1,-2],show:['111','000','000','000'],src:'original',
+  prompt:R`Powers of $4$: you get the first row only. Fill in the rest. Each row is the row above divided by $4$.`,
+  hint:R`$4\div4=1$, so $4^0=1$. Then $\frac14$, then $\frac1{16}$.`,
+  sol:R`$4^0=1$, $4^{-1}=\frac14$, $4^{-2}=\frac{1}{4\times4}=\frac1{16}$.`},
+ // Review
+ {id:'rv1',part:'rv',lvl:'Practice',tags:['split','power'],type:'pf',ans:168,key:'2^3*3*7',src:'WB8 1.1 Q15',
+  prompt:R`Break $168$ into prime bricks. Write it the short way.`,hint:R`Halve three times: $168\to84\to42\to21$.`,sol:R`$168=2\times2\times2\times3\times7=2^3\times3\times7$.`},
+ {id:'rv2',part:'rv',lvl:'Practice',tags:['hcf'],type:'num',ans:6,tol:1e-9,src:'WB8 1.1 Q14',
+  prompt:R`Find the HCF of $42$ and $90$.`,hint:R`$42$: $2,3,7$. $90$: $2,3,3,5$.`,sol:R`Shared bricks $2,3$: HCF $=6$.`},
+ {id:'rv3',part:'rv',lvl:'Practice',tags:['sign'],type:'num',ans:-24,tol:1e-9,src:'original',
+  prompt:R`Work out $-3\times-4\times-2$.`,hint:'Three minus signs: odd or even?',sol:R`$3\times4\times2=24$. Three minus signs (odd), so $-24$.`},
+ {id:'rv4',part:'rv',lvl:'Challenge',tags:['powpow','idx'],type:'pow',base:6,exp:2,src:'original',
+  prompt:R`Write $(6^2)^3\div6^4$ as one power.`,hint:R`$(6^2)^3=6^6$ first.`,sol:R`$(6^2)^3=6^6$, then $6^6\div6^4=6^2$.`},
+ {id:'rv5',part:'rv',lvl:'Challenge',tags:['zero'],type:'num',ans:1.5,tol:1e-9,src:'original',
+  prompt:R`Work out $2^0+2^{-1}$.`,hint:R`$2^0=1$ and $2^{-1}=\frac12$.`,sol:R`$1+\frac12=1\frac12$.`}
+];
+
+/* ================= HELPERS ================= */
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const gcd=(a,b)=>{a=Math.abs(a);b=Math.abs(b);while(b){[a,b]=[b,a%b]}return a||1};
+function mathify(el){ if(window.renderMathInElement){ try{renderMathInElement(el,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});}catch(e){} } }
+function texStr(t,disp){ if(window.katex){ try{return katex.renderToString(t,{throwOnError:false,displayMode:!!disp});}catch(e){} } return t; }
+function html(el,s){el.innerHTML=s;mathify(el);}
+function store(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+function load(k){try{return JSON.parse(localStorage.getItem(k))}catch(e){return null}}
+const fmtN=v=>{const r=Math.round(v*1000)/1000;return Object.is(r,-0)?'0':String(r)};
+
+(function(){const used=new Set();Q.forEach(q=>q.tags.forEach(t=>{if(!SKILLS[t])console.error('Missing skill',t);used.add(t)}));
+Object.keys(SKILLS).forEach(k=>{if(!used.has(k))console.error('Unused skill',k)});})();
+
+/* ================= STATE ================= */
+const KEY='cam-y8-num-a2';
+let S={}, WHY={};
+function blank(){return {att:0,done:false,pts:0,t0:null,tFirst:null,tLast:null,fastFirst:false,hist:[],wrongOpts:[]}}
+function initState(){const saved=load(KEY);Q.forEach(q=>{S[q.id]=Object.assign(blank(),saved&&saved.S&&saved.S[q.id]?saved.S[q.id]:{})});WHY=(saved&&saved.WHY)||{};}
+function save(){store(KEY,{S,WHY})}
+
+/* ================= TABS ================= */
+const ORDER=['start','n1','n2','n3','n4','n5','n6','rv','report'];
+const grpOf=k=>['n3','n4','n5','n6'].includes(k)?'gb':(k==='rv'?'rv':'ga');
+function buildTabs(){
+  const nav=$('#tabs');nav.innerHTML='';
+  ORDER.forEach(k=>{const b=document.createElement('button');b.type='button';b.dataset.tab=k;
+    if(SEC[k]&&k!=='rv')b.className=grpOf(k);
+    b.innerHTML=UI.tabs[k]+'<span class="tick"></span>';b.onclick=()=>show(k);nav.appendChild(b)});
+  const route=$('#route');route.innerHTML='';
+  Object.keys(SEC).forEach(k=>{const b=document.createElement('button');b.type='button';b.className='stop '+grpOf(k);
+    b.innerHTML=`<span class="n">${k==='rv'?'REVIEW':'STATION '+LABEL[k]}</span><span class="tt">${SEC[k].replace(/^A\d /,'')}</span><span class="mm" data-mm="${k}"></span>`;
+    b.onclick=()=>show(k);route.appendChild(b)});
+  $$('[data-go]').forEach(b=>b.onclick=()=>show(b.dataset.go));
+}
+function show(k){
+  $$('section.tab').forEach(s=>s.classList.toggle('on',s.id==='tab-'+k));
+  $$('#tabs button').forEach(b=>b.classList.toggle('on',b.dataset.tab===k));
+  const b=$(`#tabs button[data-tab="${k}"]`);if(b)try{b.scrollIntoView({block:'nearest',inline:'center'})}catch(e){}
+  if(k==='report')renderReport();
+  try{if(location.hash!=='#'+k)history.replaceState(null,'','#'+k);}catch(e){}
+  window.scrollTo({top:0});
+}
+function refreshProgress(){
+  let a=0,p=0;Q.forEach(q=>{if(S[q.id].done){a++;p+=S[q.id].pts}});
+  $('#progtxt').textContent=UI.prog(a,Q.length,p);$('#progbar').style.width=(100*a/Q.length)+'%';
+  Object.keys(SEC).forEach(k=>{const qs=Q.filter(q=>q.part===k),d=qs.filter(q=>S[q.id].done).length;
+    const t=$(`#tabs button[data-tab="${k}"] .tick`);if(t)t.textContent=d===qs.length?'✓':'';
+    const m=$(`[data-mm="${k}"]`);if(m)m.textContent=`≈ ${UI.mins[k]} min · ${d}/${qs.length} ${UI.done}`;});
+}
+
+/* ================= ANSWER CHECKING ================= */
+function cleanAlg(s){return String(s).trim().replace(/²/g,'^2').replace(/³/g,'^3').replace(/[−–]/g,'-').replace(/[×·]/g,'*').replace(/÷/g,'/').replace(/\s+/g,'').replace(/(\d)[xX](?=[\d(\-])/g,'$1*').replace(/(\))[xX](?=[\d(\-])/g,'$1*')}
+function judge(q,input){
+  if(q.type==='mc')return input===q.ans?'ok':'no';
+  if(q.type==='tbl'){const r=tblJudge(q,input);return r.res}
+  if(q.type==='pf')return pfJudge(q,input);
+  if(q.type==='pow')return powJudge(q,input);
+  if(q.type==='nums'){
+    const parts=String(input).replace(/[−–]/g,'-').split(/[,;]+/).map(x=>x.trim()).filter(Boolean);if(!parts.length)return 'bad';
+    const vals=[];for(const p of parts){try{const n=ALG.parse(cleanAlg(p));if(ALG.vars(n).size)return 'bad';vals.push(ALG.ev(n,{}))}catch(err){return 'bad'}}
+    if(vals.length!==q.ans.length)return 'no';
+    return vals.every((v,i)=>Math.abs(v-q.ans[i])<=(q.tol||1e-9)+1e-9)?'ok':'no';
+  }
+  if(q.type==='point'){
+    const m=String(input).replace(/[−–]/g,'-').replace(/\s+/g,'').match(/^\(?([^,()]+),([^,()]+)\)?$/);if(!m)return 'bad';
+    let a,b;try{a=ALG.ev(ALG.parse(m[1]),{});b=ALG.ev(ALG.parse(m[2]),{})}catch(err){return 'bad'}
+    return Math.abs(a-q.ans[0])<1e-9&&Math.abs(b-q.ans[1])<1e-9?'ok':'no';
+  }
+  if(q.type==='list'){
+    const s=String(input);if(/\d\.\d/.test(s))return 'no';
+    const nums=(s.replace(/[−–]/g,'-').match(/-?\d+/g)||[]).map(Number);if(!nums.length)return 'bad';
+    const a=[...new Set(nums)].sort((x,y)=>x-y),b=[...q.ans].sort((x,y)=>x-y);
+    return a.length===b.length&&a.every((v,i)=>v===b[i])?'ok':'no';
+  }
+  let s=cleanAlg(input);if(!s)return 'bad';
+  if(q.strip)s=s.replace(/^[a-zA-Z]=/,'');
+  if(q.type==='num'){s=s.replace(/^[a-zA-Z]=/,'');let v;try{const n=ALG.parse(s);if(ALG.vars(n).size)return 'bad';v=ALG.ev(n,{})}catch(e){return 'bad'}
+    return Math.abs(v-q.ans)<=q.tol+1e-9?'ok':'no';}
+  let node;try{node=ALG.parse(s)}catch(e){return 'bad'}
+  if(!ALG.equiv(node,q.ans))return 'no';
+  if(q.type==='expr')return 'ok';
+  if(q.type==='expand'||q.type==='simp'){
+    if(q.type==='simp'&&ALG.topTerms(node)<=ALG.topTerms(ALG.parse(q.ans))&&!termList(node).every(monoOK))return 'monomial';
+    if(ALG.hasGrp(node))return 'brackets';
+    if(ALG.topTerms(node)>ALG.topTerms(ALG.parse(q.ans)))return 'collect';
+    if(!termList(node).every(monoOK))return 'monomial';
+    return 'ok';}
+  if(q.type==='factor'){
+    let n=node,neg=false;if(n.t==='neg'){neg=true;n=n.a}
+    if(!(n.t==='mul'&&n.b.t==='grp'))return 'formfactor';
+    const outer=n.a;
+    if(ALG.equiv(outer,q.hcf)||ALG.equiv(outer,ALG.parse('-('+q.hcf+')')))return 'ok';
+    return 'notfully';}
+  return 'no';
+}
+
+/* ===== number-specific judges ===== */
+const isPrime=n=>{if(!Number.isInteger(n)||n<2)return false;for(let d=2;d*d<=n;d++)if(n%d===0)return false;return true};
+const strip0=n=>n.t==='grp'?strip0(n.a):n;
+function factorsOf(n){n=strip0(n);if(n.t==='mul'&&!n.imp)return factorsOf(n.a).concat(factorsOf(n.b));if(n.t==='mul')return factorsOf(n.a).concat(factorsOf(n.b));return [n]}
+function pfJudge(q,input){
+  const s=cleanAlg(input);if(!s)return 'bad';let node;try{node=ALG.parse(s);if(ALG.vars(node).size)return 'bad'}catch(e){return 'bad'}
+  const v=ALG.ev(node,{});if(Math.abs(v-q.ans)>1e-9)return 'no';
+  const fs=factorsOf(node),bases=[];
+  for(const f of fs){let b,ex=1;if(f.t==='num')b=f.v;else if(f.t==='pow'&&strip0(f.a).t==='num'&&strip0(f.b).t==='num'){b=strip0(f.a).v;ex=strip0(f.b).v}else return 'notprime';
+    if(!isPrime(b)||!Number.isInteger(ex)||ex<1)return 'notprime';bases.push(b)}
+  if(fs.length<2&&!(fs[0].t==='pow'))return 'notprime';
+  if(new Set(bases).size<bases.length)return 'useindex';
+  return 'ok';
+}
+function powJudge(q,input){
+  const s=cleanAlg(input);if(!s)return 'bad';let node;try{node=ALG.parse(s);if(ALG.vars(node).size)return 'bad'}catch(e){return 'bad'}
+  const n=strip0(node);
+  if(n.t==='pow'&&strip0(n.a).t==='num'&&ALG.vars(n.b).size===0){const b=strip0(n.a).v,ex=ALG.ev(n.b,{});
+    if(b===q.base)return Math.abs(ex-q.exp)<1e-9?'ok':'no';
+    const want=Math.pow(q.base,q.exp),got=Math.pow(b,ex);return Math.abs(got-want)<=1e-9*Math.max(1,Math.abs(want))?'base':'no';}
+  let v;try{v=ALG.ev(node,{})}catch(e){return 'bad'}
+  const want=Math.pow(q.base,q.exp);
+  return Math.abs(v-want)<=1e-9*Math.max(1,Math.abs(want))?'single':'no';
+}
+/* table of powers: cells p (power), e (expanded), v (value) */
+function expTex(b,n){if(n===0)return '1';const f=Array(Math.abs(n)).fill(b).join('\\times ');return n>0?f:'\\dfrac{1}{'+f+'}'}
+function expKey(b,n){if(n===0)return '1';const f=Array(Math.abs(n)).fill(b).join('*');return n>0?f:(Math.abs(n)===1?'1/'+b:'1/('+f+')')}
+function valTex(b,n){return n>=0?String(Math.pow(b,n)):'\\dfrac{1}{'+Math.pow(b,-n)+'}'}
+function valKey(b,n){return n>=0?String(Math.pow(b,n)):'1/'+Math.pow(b,-n)}
+function tblCells(q){const out=[];q.rows.forEach((n,i)=>{['p','e','v'].forEach((k,j)=>{const shown=q.show[i][j]==='1';
+  out.push({row:i,col:j,n,kind:k,shown,tex:k==='p'?q.base+'^{'+n+'}':k==='e'?expTex(q.base,n):valTex(q.base,n),key:k==='p'?q.base+'^'+(n<0?'('+n+')':n):k==='e'?expKey(q.base,n):valKey(q.base,n)})})});return out}
+function cellJudge(b,n,kind,str){
+  const s=cleanAlg(str);if(!s)return 'bad';let node;try{node=ALG.parse(s);if(ALG.vars(node).size)return 'bad'}catch(e){return 'bad'}
+  const want=Math.pow(b,n);let v;try{v=ALG.ev(node,{})}catch(e){return 'bad'}
+  const eq=Math.abs(v-want)<=1e-9*Math.max(1,Math.abs(want));
+  if(kind==='v')return eq?'ok':'no';
+  if(kind==='p'){const m=strip0(node);if(m.t!=='pow'||strip0(m.a).t!=='num'||strip0(m.a).v!==b)return 'no';return Math.abs(ALG.ev(m.b,{})-n)<1e-9?'ok':'no'}
+  if(!eq)return 'no';if(n===0)return 'ok';
+  const toks=(s.match(/\d+(\.\d+)?/g)||[]).filter(t=>Number(t)===b).length;
+  return toks===Math.abs(n)?'ok':'no';
+}
+function tblJudge(q,input){const blanks=tblCells(q).filter(c=>!c.shown);const arr=Array.isArray(input)?input:[];
+  const per=blanks.map((c,i)=>cellJudge(q.base,c.n,c.kind,arr[i]||''));
+  if(per.some(r=>r==='bad'))return {res:'bad',per};return {res:per.every(r=>r==='ok')?'ok':'no',per}}
+function termList(n){if(n.t==='add'||n.t==='sub')return termList(n.a).concat(termList(n.b));return [n]}
+function monoOK(t){let nums=0,ok=true;const vs={};
+  (function walk(n){if(n.t==='neg')return walk(n.a);if(n.t==='mul'){walk(n.a);walk(n.b);return}
+    if(n.t==='pow'){if(n.a.t==='var'&&n.b.t==='num')vs[n.a.v]=(vs[n.a.v]||0)+1;else if(n.a.t==='num'&&n.b.t==='num')nums++;else ok=false;return}
+    if(n.t==='num'){nums++;return}if(n.t==='var'){vs[n.v]=(vs[n.v]||0)+1;return}ok=false})(t);
+  return ok&&nums<=1&&Object.values(vs).every(c=>c===1)}
+function correct(q,ans){return judge(q,ans)==='ok'}
+function storedAnswer(q){if(q.type==='mc')return q.ans;if(q.type==='tbl')return tblCells(q).filter(c=>!c.shown).map(c=>c.key);if(q.type==='pow')return q.base+'^'+q.exp;if(q.type==='pf')return q.key;if(q.type==='list'||q.type==='nums')return q.ans.join(', ');if(q.type==='point')return '('+q.ans.join(',')+')';return String(q.ans)}
+
+/* ================= FIGURES IN QUESTIONS ================= */
+/* ================= REPORT → PDF ================= */
+function repHead(){let nm='';try{nm=localStorage.getItem('report-name')||''}catch(e){}
+  const d=new Date().toLocaleDateString('en-NZ',{day:'numeric',month:'long',year:'numeric'});
+  const safe=nm.replace(/[<>&"]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]));
+  return `<div class="card rephead"><div class="printonly"><div style="font-family:Georgia,serif;font-size:1.3rem;font-weight:600">${document.title}</div><div>Learning report · ${d}</div><div>Name: <b id="repNameOut">${safe||'________________'}</b></div></div>`+
+    `<div class="ctrl noprint"><label>Your name <input type="text" id="repName" value="${safe}" placeholder="Type your name" style="font:inherit;padding:.3rem .5rem;border:1px solid #c9c3d6;border-radius:8px"></label><button class="btn primary" id="repPdf" type="button">⬇ Download report as PDF</button></div>`+
+    `<p class="small noprint" style="margin:.3rem 0 0">A print window opens: choose <b>Save as PDF</b> as the printer.</p></div>`}
+function wireRep(){const n=document.getElementById('repName'),b=document.getElementById('repPdf');if(!n||!b)return;
+  n.oninput=()=>{try{localStorage.setItem('report-name',n.value)}catch(e){}const o=document.getElementById('repNameOut');if(o)o.textContent=n.value||'________________'};
+  b.onclick=()=>{try{window.print()}catch(e){alert('Printing is blocked here. Open the page in a normal browser tab.')}};}
+
+function numberLineSVG(lo,hi,a,b,ai,bi,step){
+  const W=600,L=30,Rr=570,sx=v=>L+(v-lo)/(hi-lo)*(Rr-L);
+  let s=`<svg viewBox="0 0 ${W} 74" style="max-width:520px"><line x1="${L-14}" y1="44" x2="${Rr+14}" y2="44" stroke="#1c2230" stroke-width="2"/>`;
+  for(let v=lo;v<=hi+1e-9;v+=step){s+=`<line x1="${sx(v)}" y1="38" x2="${sx(v)}" y2="50" stroke="#1c2230" stroke-width="1.5"/><text x="${sx(v)}" y="70" font-size="18" text-anchor="middle">${fmtN(v).replace('-','−')}</text>`}
+  s+=`<line x1="${sx(a)}" y1="22" x2="${sx(b)}" y2="22" stroke="#b5487a" stroke-width="4"/>`;
+  s+=`<circle cx="${sx(a)}" cy="22" r="8" fill="${ai?'#b5487a':'#fff'}" stroke="#b5487a" stroke-width="3"/><circle cx="${sx(b)}" cy="22" r="8" fill="${bi?'#b5487a':'#fff'}" stroke="#b5487a" stroke-width="3"/>`;
+  return s+'</svg>';
+}
+
+/* ================= QUESTIONS UI ================= */
+function tblHTML(q){const cells=tblCells(q);let h=`<div class="tblwrap"><table class="itbl"><tr><th>${UI.tblHead[0]}</th><th>${UI.tblHead[1]}</th><th>${UI.tblHead[2]}</th></tr>`;
+  q.rows.forEach((n,i)=>{h+='<tr>';cells.filter(c=>c.row===i).forEach(c=>{h+=c.shown?`<td>$${c.tex}$</td>`:`<td data-c="${i}-${c.col}"><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="row ${i+1} ${UI.tblHead[c.col]}"></td>`});
+    h+='</tr>';if(i<q.rows.length-1)h+=`<tr class="oprow"><td colspan="3">$\\div ${q.base}$ ↓</td></tr>`});return h+'</table></div>'}
+
+function renderQuestions(){
+  $$('.qs').forEach(box=>{
+    const part=box.dataset.part;box.innerHTML='';
+    Q.filter(q=>q.part===part).forEach((q,i)=>{
+      const d=document.createElement('div');d.className='q';d.id='Q-'+q.id;
+      const label=part==='rv'?('R'+(i+1)):(LABEL[part]+String.fromCharCode(97+i));
+      let body=`<div class="qn">QUESTION ${label}<span class="lvltag ${q.lvl}">${UI.lvlName[q.lvl]}</span><span class="dots">${'<i></i>'.repeat(3)}</span></div><div class="prompt">${q.prompt}</div>`;
+      if(q.fig)body+=FIG[q.fig]();
+      if(q.type==='tbl'){body+=tblHTML(q)+`<div class="ansrow"><button type="button" class="btn primary chk">${UI.check}</button></div><div class="preview"></div><div class="fmt">${UI.fmt.tbl}</div>`;}
+      else if(q.type==='mc'){body+=`<div class="opts">${q.opts.map((o,j)=>`<button type="button" class="opt" data-j="${j}">${String.fromCharCode(65+j)}. ${o}</button>`).join('')}</div>`;}
+      else{body+=`<div class="ansrow"><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="answer"><button type="button" class="btn primary chk">${UI.check}</button></div><div class="preview"></div><div class="fmt">${UI.fmt[q.type]}</div>`;}
+      body+=`<div class="fb"></div><div class="hint" hidden></div><div class="sol" hidden></div>`;
+      d.innerHTML=body;box.appendChild(d);mathify(d);
+      if(q.type==='tbl'){const ins=[...d.querySelectorAll('td input')],pv=d.querySelector('.preview');
+        ins.forEach(inp=>{const upd=()=>{const v=inp.value.trim();if(!v){pv.innerHTML='';return}const t=ALG.toTex(cleanAlg(v));pv.innerHTML=t?UI.previewPre+texStr(t):'<span style="color:#c0392b">…</span>'};
+          inp.addEventListener('input',upd);inp.addEventListener('focus',upd);inp.addEventListener('keydown',ev=>{if(ev.key==='Enter')submit(q,ins.map(x=>x.value))})});
+        d.querySelector('.chk').onclick=()=>submit(q,ins.map(x=>x.value));}
+      else if(q.type==='mc'){d.querySelectorAll('.opt').forEach(b=>b.onclick=()=>submit(q,Number(b.dataset.j)));}
+      else{const inp=d.querySelector('input'),pv=d.querySelector('.preview');
+        inp.addEventListener('input',()=>{const v=inp.value.trim();if(!v){pv.innerHTML='';return}
+          if(q.type==='list'){pv.innerHTML=UI.previewPre+texStr((v.replace(/[−–]/g,'-').match(/-?\d+(\.\d+)?/g)||[]).join(',\\ '));return}
+          if(q.type==='nums'||q.type==='point'){const ps=v.replace(/[()]/g,'').split(/[,;]+/).map(x=>x.trim()).filter(Boolean).map(x=>ALG.toTex(cleanAlg(x)));
+            if(!ps.length||ps.some(x=>x==null)){pv.innerHTML='<span style="color:#c0392b">…</span>';return}
+            pv.innerHTML=UI.previewPre+texStr(q.type==='point'?'\\left('+ps.join(',\\,')+'\\right)':ps.join(',\\ '));return}
+          let s=cleanAlg(v),pre='';const m=s.match(/^([a-zA-Z])=(.*)$/);if(m&&q.strip){pre=m[1]+'=';s=m[2]}
+          const t=ALG.toTex(s);pv.innerHTML=t?UI.previewPre+texStr(pre+t):'<span style="color:#c0392b">…</span>'});
+        inp.addEventListener('keydown',e=>{if(e.key==='Enter')submit(q,inp.value)});
+        d.querySelector('.chk').onclick=()=>submit(q,inp.value);}
+      paint(q);
+    });
+  });
+  if('IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const id=e.target.id.slice(2);if(S[id]&&S[id].t0==null)S[id].t0=Date.now()}}),{threshold:0.6});
+    $$('.q').forEach(el=>io.observe(el));}
+}
+function submit(q,input){
+  const st=S[q.id];if(st.done)return;
+  const res=judge(q,input), el=$('#Q-'+q.id), fb=el.querySelector('.fb');
+  if(UI.info[res]){fb.className='fb info';html(fb,UI.info[res]);return}
+  const now=Date.now();if(st.t0==null)st.t0=now;
+  if(st.att===0)st.tFirst=now-st.t0;
+  st.tLast=now;st.att++;st.hist.push(input);
+  if(res==='ok'){st.done=true;st.pts=4-st.att;if(st.att===1)st.fastFirst=st.tFirst<(q.type==='mc'?4000:7000);}
+  else{if(q.type==='mc')st.wrongOpts.push(input);if(st.att>=3){st.done=true;st.pts=0;}}
+  if(q.type==='tbl'){const r=tblJudge(q,input),ins=[...el.querySelectorAll('td input')];ins.forEach((inp,i)=>{const td=inp.parentNode;td.classList.toggle('okc',r.per[i]==='ok');td.classList.toggle('noc',r.per[i]!=='ok')})}
+  save();paint(q);refreshProgress();
+}
+function paint(q){
+  const st=S[q.id],el=$('#Q-'+q.id);if(!el)return;
+  el.querySelectorAll('.dots i').forEach((d,i)=>{d.className='';if(i<st.att)d.className=(st.done&&st.pts>0&&i===st.att-1)?'ok':'x'});
+  const fb=el.querySelector('.fb');
+  if(st.att===0)fb.textContent='';
+  else if(st.done&&st.pts>0){fb.className='fb ok';fb.textContent=UI.right[st.att-1];}
+  else if(st.done){fb.className='fb no';fb.textContent=UI.wrongLast;}
+  else{fb.className='fb no';fb.textContent=UI.wrong+` (${UI.attempt} ${st.att+1} ${UI.of} 3)`;}
+  const wrongs=st.att-((st.done&&st.pts>0)?1:0),h=el.querySelector('.hint');
+  if(wrongs>=2&&h.hidden){h.hidden=false;html(h,`<b>${UI.hint}:</b> ${q.hint}`);}
+  const s=el.querySelector('.sol');if(st.done&&s.hidden){s.hidden=false;html(s,`<b>${UI.sol}:</b> ${q.sol}`);}
+  el.classList.remove('done-0','done-1','done-2','done-3');if(st.done)el.classList.add('done-'+st.pts);
+  if(q.type==='mc'){el.querySelectorAll('.opt').forEach(b=>{const j=Number(b.dataset.j);b.classList.toggle('wrong',st.wrongOpts.includes(j));
+      if(st.done){b.disabled=true;if(j===q.ans)b.classList.add('right');}else if(st.wrongOpts.includes(j))b.disabled=true;});}
+  else if(q.type==='tbl'){const ins=[...el.querySelectorAll('td input')],btn=el.querySelector('.chk');if(st.done){btn.disabled=true;const last=st.hist[st.hist.length-1]||[];
+      const r=tblJudge(q,last);ins.forEach((inp,i)=>{inp.disabled=true;if(last[i]!=null)inp.value=last[i];const td=inp.parentNode;td.classList.toggle('okc',r.per[i]==='ok');td.classList.toggle('noc',r.per[i]!=='ok')})}}
+  else{const inp=el.querySelector('input'),btn=el.querySelector('.chk');if(st.done){inp.disabled=true;btn.disabled=true;if(st.hist.length)inp.value=st.hist[st.hist.length-1];}}
+}
+
+/* ================= REPORT ================= */
+function renderReport(){
+  const T=UI.report, box=$('#report');
+  const answered=Q.filter(q=>S[q.id].done);
+  if(!Q.some(q=>S[q.id].att>0)){box.innerHTML=`<div class="card">${T.empty}</div>`;return}
+  let __h=repHead();
+  let h=__h+`<div class="card"><div class="box-title">${T.byPart}</div>`;
+  Object.keys(SEC).forEach(k=>{const qs=Q.filter(q=>q.part===k),d=qs.filter(q=>S[q.id].done),pts=d.reduce((a,q)=>a+S[q.id].pts,0);
+    const GK=Object.keys(GROUPS);const col=k==='rv'?'#6b5ca5':(grpOf(k)==='gb'?GCOL[GK[1]]:GCOL[GK[0]]);
+    h+=`<div class="rbar"><div class="lab"><span>${SEC[k]}</span><span>${d.length} / ${qs.length} · ${pts} pts</span></div><div class="tr"><i style="width:${100*pts/(qs.length*3)}%;background:${col}"></i></div></div>`});
+  h+='</div>';
+  const avg={};Object.keys(SKILLS).forEach(k=>{const qs=answered.filter(q=>q.tags.includes(k));avg[k]=qs.length?qs.reduce((a,q)=>a+S[q.id].pts,0)/qs.length:null});
+  const lev=a=>a==null?'n':a<1.5?'r':a<2.5?'a':'g';
+  h+=`<div class="card"><div class="box-title">${T.bySkill}</div>`;
+  Object.keys(GROUPS).forEach(g=>{h+=`<h3 style="margin:.8rem 0 .3rem">${GROUPS[g]}</h3>`;
+    Object.keys(SKILLS).filter(k=>SKILLS[k].g===g).forEach(k=>{h+=`<div class="skill"><span>${SKILLS[k].n}</span><span><span class="small">${T.avg(avg[k])}</span> <span class="lvl ${lev(avg[k])}">${T.lv[lev(avg[k])]}</span></span></div>`})});
+  h+='</div>';
+  const first=answered.filter(q=>S[q.id].pts===3).length, fast=answered.filter(q=>S[q.id].fastFirst).length;
+  const rushed=Q.filter(q=>{const s=S[q.id];return s.done&&s.pts===0&&s.att>=3&&s.t0!=null&&(s.tLast-s.t0)<20000}).length;
+  const whyTotal=$$('details.why').length, whyOpen=Object.keys(WHY).length;
+  h+=`<div class="card"><div class="box-title">${T.how}</div><ul class="steps"><li>${T.firstTry(first)}</li><li>${T.fast(fast)}</li><li>${T.rushed(rushed)}</li><li>${T.notDone(Q.length-answered.length)}</li>${whyTotal?`<li>${T.why(whyOpen,whyTotal)}</li>`:''}</ul></div>`;
+  const weak=Object.keys(SKILLS).filter(k=>avg[k]!=null&&avg[k]<2.5).sort((a,b)=>avg[a]-avg[b]).slice(0,3);
+  h+=`<div class="card"><div class="box-title">${T.advice}</div>`;
+  if(weak.length){h+=`<p>${T.advIntro}</p>`;weak.forEach(k=>{h+=`<div class="adv"><b>${SKILLS[k].n}</b> <span class="small">(${T.avg(avg[k])})</span><br>${SKILLS[k].adv}</div>`})}
+  else h+=`<p>${T.allGood}</p>`;
+  h+='</div>';
+  h+=`<div class="card"><div class="box-title">${T.map}</div><div id="kmap"></div><div class="legend"><span><i style="background:var(--good)"></i>${T.lv.g}</span><span><i style="background:var(--warn)"></i>${T.lv.a}</span><span><i style="background:var(--bad)"></i>${T.lv.r}</span><span><i style="background:var(--grey)"></i>${T.lv.n}</span></div></div>`;
+  const tot=answered.reduce((a,q)=>a+S[q.id].pts,0);
+  h+=`<div class="card"><div class="box-title">${T.total}</div><div class="score">${tot} / ${Q.length*3}</div><p class="small" style="text-align:center">${Math.round(100*tot/(Q.length*3))}%</p><p class="small">${T.note}</p></div>`;
+  box.innerHTML=h;mathify(box);drawMap(avg,lev);wireRep();
+}
+function drawMap(avg,lev){
+  const box=$('#kmap'), narrow=box.clientWidth<620;
+  const col={g:'#2f8a4c',a:'#b7791f',r:'#c0392b',n:'#9aa1ad'};
+  const G=Object.keys(GROUPS),left=Object.keys(SKILLS).filter(k=>SKILLS[k].g===G[0]),right=Object.keys(SKILLS).filter(k=>SKILLS[k].g===G[1]);
+  const rows=Math.max(left.length,right.length);
+  let W,H,cx,cy,xL,xR,bw,bh,gap,top,fs;
+  if(narrow){W=600;bw=250;bh=74;gap=98;top=170;fs=19;xL=140;xR=460;H=top+rows*gap;cx=300;cy=62;}
+  else{W=1000;bw=290;bh=54;gap=68;top=70;fs=16;xL=175;xR=825;H=top+rows*gap;cx=500;cy=top+(rows-1)*gap/2;}
+  const pos={};left.forEach((k,i)=>pos[k]=[xL,top+i*gap]);right.forEach((k,i)=>pos[k]=[xR,top+i*gap]);
+  const inner=k=>[pos[k][0]+(SKILLS[k].g===G[0]?bw/2:-bw/2),pos[k][1]];
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="knowledge map">`;
+  s+=`<text x="${xL}" y="${narrow?top-46:top-38}" text-anchor="middle" font-size="${fs}" font-weight="700" fill="${GCOL[G[0]]}">${GROUPS[G[0]]}</text><text x="${xR}" y="${narrow?top-46:top-38}" text-anchor="middle" font-size="${fs}" font-weight="700" fill="${GCOL[G[1]]}">${GROUPS[G[1]]}</text>`;
+  Object.keys(SKILLS).forEach(k=>{const [x,y]=inner(k);s+=`<line x1="${cx}" y1="${cy}" x2="${x}" y2="${y}" stroke="#e8e5ef" stroke-width="1.5"/>`});
+  LINKS.forEach(([a,b])=>{const A=inner(a),B=inner(b);
+    if(SKILLS[a].g===SKILLS[b].g){const dir=SKILLS[a].g===G[0]?1:-1,bow=Math.min(narrow?40:70,18+Math.abs(A[1]-B[1])*0.18);
+      s+=`<path d="M${A[0]},${A[1]} Q${(A[0]+B[0])/2+dir*bow},${(A[1]+B[1])/2} ${B[0]},${B[1]}" fill="none" stroke="#b9b3c9" stroke-width="2" stroke-dasharray="5 4"/>`;}
+    else s+=`<line x1="${A[0]}" y1="${A[1]}" x2="${B[0]}" y2="${B[1]}" stroke="#b9b3c9" stroke-width="2" stroke-dasharray="5 4"/>`;});
+  s+=`<ellipse cx="${cx}" cy="${cy}" rx="${narrow?150:118}" ry="${narrow?46:44}" fill="#1c2230"/><text x="${cx}" y="${cy-4}" text-anchor="middle" fill="#fff" font-size="${fs}" font-weight="700">${UI.report.centre[0]}</text><text x="${cx}" y="${cy+18}" text-anchor="middle" fill="#fff" font-size="${fs-2}">${UI.report.centre[1]}</text>`;
+  const split=t=>{if(t.length<=(narrow?20:40))return [t];let m=Math.floor(t.length/2),a=t.lastIndexOf(' ',m),b=t.indexOf(' ',m);let c=(a<0||(b>=0&&b-m<m-a))?b:a;return [t.slice(0,c),t.slice(c+1)]};
+  Object.keys(SKILLS).forEach(k=>{const [x,y]=pos[k],L=lev(avg[k]),c=col[L],lines=split(SKILLS[k].n.replace('&','&amp;'));
+    s+=`<rect x="${x-bw/2}" y="${y-bh/2}" width="${bw}" height="${bh}" rx="12" fill="#fff" stroke="${c}" stroke-width="3"/><rect x="${x-bw/2}" y="${y-bh/2}" width="8" height="${bh}" rx="3" fill="${GCOL[SKILLS[k].g]}"/>`;
+    const lh=fs+3,y0=y-(lines.length*lh)/2+fs*0.35-4;
+    lines.forEach((ln,i)=>{s+=`<text x="${x+4}" y="${y0+i*lh}" text-anchor="middle" font-size="${fs-1}" font-weight="600" fill="#1c2230" ${ln.length*(fs-1)*0.55>bw-24?`textLength="${bw-24}" lengthAdjust="spacingAndGlyphs"`:''}>${ln}</text>`});
+    s+=`<text x="${x+4}" y="${y0+lines.length*lh}" text-anchor="middle" font-size="${fs-2}" fill="${c}" font-weight="700">${UI.report.avg(avg[k])}</text>`;});
+  box.innerHTML=s+'</svg>';
+}
+
+
+const minus=s=>String(s).replace(/-/g,"−");
+/* ================= BRICKS & TREES ================= */
+const BCOL={2:'#3b6fd8',3:'#e8902a',5:'#2f9e5b',7:'#8b5cc7',11:'#d14f8a',13:'#1f9aa3',17:'#b5762a',19:'#5b6475'};
+const bcol=p=>BCOL[p]||'#6b5ca5';
+const brick=(p,sm)=>`<span class="brick${sm?' sm':''}" style="--c:${bcol(p)}">${p}</span>`;
+const primeList=n=>{const r=[];let d=2;while(d*d<=n){while(n%d===0){r.push(d);n/=d}d++}if(n>1)r.push(n);return r};
+const pfTexL=l=>{const c={};l.forEach(p=>c[p]=(c[p]||0)+1);return Object.keys(c).map(Number).sort((a,b)=>a-b).map(p=>c[p]>1?p+'^{'+c[p]+'}':String(p)).join('\\times ')};
+let UID=0;const tnode=(v,known)=>({v,id:UID++,kids:null,known:known||null});
+const leavesOf=n=>n.kids?leavesOf(n.kids[0]).concat(leavesOf(n.kids[1])):[n];
+const depthOf=n=>n.kids?1+Math.max(depthOf(n.kids[0]),depthOf(n.kids[1])):0;
+const findN=(n,id)=>n.id===id?n:(n.kids?findN(n.kids[0],id)||findN(n.kids[1],id):null);
+const pairsOf=v=>{const ps=[];for(let d=2;d*d<=v;d++)if(v%d===0)ps.push([d,v/d]);return ps};
+function autoFinish(root){let l;while((l=leavesOf(root).find(x=>!isPrime(x.v)))){let d=Math.floor(Math.sqrt(l.v));while(l.v%d)d--;l.kids=[tnode(d),tnode(l.v/d)];l.known='comp'}
+  leavesOf(root).forEach(x=>x.known='prime');return root}
+/* draw: prime leaves whose known==='prime' are bricks; others white boxes. active = highlighted node id; click = ids clickable */
+function treeSVG(root,o){o=o||{};
+  const L=leavesOf(root),D=depthOf(root),U=Math.max(70,...L.map(l=>String(l.v).length*15+34)),W=Math.max(L.length*U,280),DY=82,H=(D+1)*DY+24;
+  let k=0;const pos={};
+  (function place(n,d){if(!n.kids){pos[n.id]=[U/2+(k++)*U+(W-L.length*U)/2,46+d*DY];return}
+    place(n.kids[0],d+1);place(n.kids[1],d+1);pos[n.id]=[(pos[n.kids[0].id][0]+pos[n.kids[1].id][0])/2,46+d*DY]})(root,0);
+  let s=`<svg viewBox="0 0 ${W} ${H}" style="max-width:${Math.min(W,o.max||560)}px;margin:0 auto">`;
+  (function edges(n){if(!n.kids)return;n.kids.forEach(c=>{s+=`<line x1="${pos[n.id][0]}" y1="${pos[n.id][1]+22}" x2="${pos[c.id][0]}" y2="${pos[c.id][1]-24}" stroke="#9a93ab" stroke-width="2.5"/>`;edges(c)})})(root);
+  (function draw(n){const [x,y]=pos[n.id],w=Math.max(54,String(n.v).length*16+24);
+    if(n.known==='prime'&&!n.kids){const c=bcol(n.v);
+      s+=`<rect x="${x-w/2+9}" y="${y-29}" width="12" height="9" rx="3" fill="${c}"/><rect x="${x+w/2-21}" y="${y-29}" width="12" height="9" rx="3" fill="${c}"/><rect x="${x-w/2}" y="${y-22}" width="${w}" height="44" rx="8" fill="${c}"/><rect x="${x-w/2}" y="${y+16}" width="${w}" height="6" rx="3" fill="#000" opacity=".18"/>`;
+      s+=`<text x="${x}" y="${y+9}" text-anchor="middle" font-size="25" font-weight="800" fill="#fff">${n.v}</text>`}
+    else{const act=o.active===n.id,cl=o.click&&!n.kids&&!isPrime(n.v);
+      s+=`<g ${cl?`class="nd" data-id="${n.id}" style="cursor:pointer"`:''}><rect x="${x-w/2}" y="${y-22}" width="${w}" height="44" rx="10" fill="${act?'#fff4d6':'#fff'}" stroke="${act?'#e8902a':'#1c2230'}" stroke-width="${act?3.5:2}" ${!n.kids&&n.known!=='comp'?'stroke-dasharray="6 4"':''}/>`;
+      s+=`<text x="${x}" y="${y+9}" text-anchor="middle" font-size="25" font-weight="700" fill="#1c2230">${n.v}</text></g>`}
+    if(n.kids)n.kids.forEach(draw)})(root);
+  return s+'</svg>'}
+
+/* ---------- hook bricks ---------- */
+function hook(){$('#hookTray').innerHTML=[2,2,3,5].map(p=>brick(p)).join('')}
+
+/* ---------- warm-up: spot the primes ---------- */
+function warm(){
+  const NUMS=[9,2,15,5,1,11,21,7,4,13];let found=0;const total=NUMS.filter(isPrime).length;
+  const why={1:'1 is not prime: it has only one factor.',4:'4 = 2 × 2',9:'9 = 3 × 3',15:'15 = 3 × 5',21:'21 = 3 × 7'};
+  $('#pchips').innerHTML=NUMS.map(n=>`<button type="button" class="chip" data-n="${n}">${n}</button>`).join('');
+  $$('#pchips .chip').forEach(b=>b.onclick=()=>{const n=+b.dataset.n;if(b.classList.contains('yes'))return;
+    if(isPrime(n)){b.classList.add("yes");found++;
+      html($('#pfb'),found===total?`All 5 found: $2, 5, 7, 11, 13$. These are your bricks! ✓`:`Yes, ${n} is prime. ${total-found} to go.`)}
+    else{b.classList.remove('no');void b.offsetWidth;b.classList.add('no');html($('#pfb'),`Not prime: ${why[n]}${n===1?'':' — it can be split.'}`)}});
+}
+
+/* ---------- guided example ---------- */
+function tutorial(){
+  const LIST=[60,84,90];let li=0,root,phase,cur,ask=[],cnt=[],ci=0,fb='',fbok=true;
+  function start(N){root=tnode(N,'comp');cur=root;phase='split';fb='';ask=[];render()}
+  const nextComp=()=>leavesOf(root).find(l=>l.known==='comp'&&!l.kids);
+  function advance(){if(ask.length){cur=ask.shift();phase='ask';return}
+    const n=nextComp();if(n){cur=n;phase='split';return}
+    const pl=leavesOf(root).map(l=>l.v);const c={};pl.forEach(p=>c[p]=(c[p]||0)+1);
+    cnt=Object.keys(c).map(Number).filter(p=>c[p]>1).map(p=>[p,c[p]]);ci=0;cur=null;phase=cnt.length?'count':'write'}
+  function say(t,ok){fb=t;fbok=ok}
+  function render(){
+    $('#tsvg').innerHTML=treeSVG(root,{active:cur?cur.id:null});
+    const N=root.v;let h=fb?`<div class="tfb ${fbok?'ok':'no'}">${fb}</div>`:'';
+    if(phase==='split'){h+=`<div class="tq">${cur===root?`Let's break <b>${N}</b>. `:''}Split <b>${cur.v}</b> into two numbers that multiply to make it.</div><div class="tbtns">`+
+        pairsOf(cur.v).slice(0,5).map(([a,b])=>`<button type="button" class="btn" data-a="${a}">${a} × ${b}</button>`).join('')+'</div>';}
+    else if(phase==='ask'){h+=`<div class="tq">Is <b>${cur.v}</b> a prime brick?</div><div class="tbtns"><button type="button" class="btn" data-y="1">Yes, it's prime</button><button type="button" class="btn" data-y="0">No, I can split it</button></div>`}
+    else if(phase==='count'){const [p,c]=cnt[ci];h+=`<div class="tq">All bricks found! <span class="tray" style="display:inline-flex">${leavesOf(root).map(l=>l.v).sort((a,b)=>a-b).map(v=>brick(v,1)).join('')}</span></div><div class="tq">How many ${brick(p,1)} bricks are there?</div><div class="tbtns">`+[1,2,3,4].map(k=>`<button type="button" class="btn" data-c="${k}">${k}</button>`).join('')+'</div>'}
+    else if(phase==='write'){const pl=leavesOf(root).map(l=>l.v).sort((a,b)=>a-b);const right=pfTexL(pl);
+      const wrong1=[...new Set(pl)].join('\\times '),big=pl[pl.length-1]*pl[pl.length-2];
+      const wrong2=pfTexL(pl.slice(0,-2))+'\\times '+big;
+      const opts=[[right,1],[wrong1,0],[wrong2,0]];const order=[[1,0,2],[2,1,0],[0,2,1]][li%3].map(i=>opts[i]);
+      h+=`<div class="tq">$${N}=${pl.join('\\times ')}$. Now write it the short way. Which one is right?</div><div class="tbtns">`+order.map(([t,ok])=>`<button type="button" class="btn" data-w="${ok}" data-t="${t}">$${t}$</button>`).join('')+'</div>'}
+    else if(phase==='done'){const pl=leavesOf(root).map(l=>l.v).sort((a,b)=>a-b);
+      h=`<div class="tfb ok"><b>You did it!</b> $${N}=${pfTexL(pl)}$</div><p>Check: $${pl.join('\\times ')}=${N}$ ✓</p>`+(li<LIST.length-1?`<div class="tbtns"><button type="button" class="btn primary" id="tnext">Do another: ${LIST[li+1]} →</button></div>`:`<p class="small">That's three numbers. Now try “Wow” below.</p>`)}
+    html($('#tbody'),h);
+    $$('#tbody [data-a]').forEach(b=>b.onclick=()=>{const a=+b.dataset.a;cur.kids=[tnode(a),tnode(cur.v/a)];ask=[...cur.kids];say(`${cur.v} = ${a} × ${cur.v/a}. Good split!`,true);advance();render()});
+    $$('#tbody [data-y]').forEach(b=>b.onclick=()=>{const y=b.dataset.y==='1',p=isPrime(cur.v);
+      if(y===p)say(p?`Yes! ${cur.v} is prime. It becomes a brick.`:`Right: ${cur.v} can still be split.`,true);
+      else say(p?`Look again: only 1 and ${cur.v} divide ${cur.v}, so it <b>is</b> a prime brick.`:`Not quite: ${cur.v} = ${pairsOf(cur.v)[0].join(' × ')}, so it can still be split.`,false);
+      cur.known=p?'prime':'comp';advance();render()});
+    $$('#tbody [data-c]').forEach(b=>b.onclick=()=>{const [p,c]=cnt[ci];
+      if(+b.dataset.c===c){say(`Yes, ${c} of them. ${c} bricks of ${p} is written $${p}^{${c}}$.`,true);ci++;if(ci>=cnt.length)phase='write'}else say(`Count again: look for every ${p} at the bottom of the tree.`,false);render()});
+    $$('#tbody [data-w]').forEach(b=>b.onclick=()=>{if(b.dataset.w==='1'){fb='';phase='done'}else say('Not that one. Did you keep every brick, and is every number a prime brick?',false);render()});
+    const tn=$('#tnext');if(tn)tn.onclick=()=>{li++;start(LIST[li])};
+  }
+  start(LIST[0]);
+}
+
+/* ---------- wow: same bricks every time ---------- */
+function wow(){
+  const N=60,tries=[];
+  $('#wowbtns').innerHTML=pairsOf(N).map(([a,b])=>`<button type="button" class="btn" data-a="${a}">${a} × ${b}</button>`).join('');
+  $$('#wowbtns .btn').forEach(b=>b.onclick=()=>{const a=+b.dataset.a;b.disabled=true;
+    const root=tnode(N,'comp');root.kids=[tnode(a),tnode(N/a)];autoFinish(root);
+    $('#wowsvg').innerHTML=treeSVG(root,{max:420});
+    tries.push([a,N/a]);
+    $('#wowtries').innerHTML=tries.map(([x,y],i)=>`<li><span class="l">Start ${x} × ${y}:</span><span class="tray">${primeList(N).map(p=>brick(p,1)).join('')}</span></li>`).join('');
+    html($('#wowmsg'),tries.length>=2?`<div class="tfb ok"><b>Same bricks every time!</b> However you start, $60$ is always built from $2, 2, 3, 5$. Every number has its own brick recipe.</div>`:'');
+  });
+}
+
+/* ---------- tree pad (free builder) ---------- */
+function pad(){
+  let root,sel=null;
+  function start(){const v=parseInt($('#padn').value,10);
+    if(!(v>=4&&v<=100000)){html($('#padr'),'Choose a whole number from 4 to 100 000.');$('#padsvg').innerHTML='';$('#padpairs').innerHTML='';return}
+    root=tnode(v,isPrime(v)?'prime':'comp');sel=isPrime(v)?null:root.id;render()}
+  function render(){
+    leavesOf(root).forEach(l=>{if(isPrime(l.v))l.known='prime'});
+    $('#padsvg').innerHTML=treeSVG(root,{active:sel,click:true});
+    $$('#padsvg .nd').forEach(g=>g.onclick=()=>{sel=+g.dataset.id;render()});
+    const sn=sel!=null?findN(root,sel):null;
+    if(sn&&!sn.kids&&!isPrime(sn.v)){$('#padpairs').innerHTML=`<span class="small">Split ${sn.v}:</span>`+pairsOf(sn.v).slice(0,6).map(([a,b])=>`<button type="button" class="btn small" data-a="${a}">${a} × ${b}</button>`).join('');
+      $$('#padpairs button').forEach(b=>b.onclick=()=>{const a=+b.dataset.a;sn.kids=[tnode(a),tnode(sn.v/a)];sn.known='comp';const nx=leavesOf(root).find(l=>!isPrime(l.v));sel=nx?nx.id:null;render()})}
+    else $('#padpairs').innerHTML='';
+    const lv=leavesOf(root).map(l=>l.v);
+    if(lv.every(isPrime))html($('#padr'),`<span class="tray" style="display:inline-flex">${lv.sort((a,b)=>a-b).map(p=>brick(p,1)).join('')}</span><br>$${root.v}=${pfTexL(lv)}$`);
+    else html($('#padr'),`Still to split: ${lv.filter(v=>!isPrime(v)).join(', ')}`);
+  }
+  $('#padgo').onclick=start;$('#padn').addEventListener('keydown',e=>{if(e.key==='Enter')start()});
+  $('#padauto').onclick=()=>{if(!root)return;autoFinish(root);sel=null;render()};
+  start();
+}
+
+
+/* ---------- generic stepper ---------- */
+function stepper(box,steps,endHtml){
+  let i=0,fb='',fbok=true,solved=false;
+  function render(){
+    if(i>=steps.length){html(box,endHtml);return}
+    const st=steps[i];
+    let h=`<div class="steps-dots">${steps.map((_,j)=>`<i class="${j<=i?'on':''}"></i>`).join('')}</div>`;
+    if(st.vis)h+=`<div style="margin:.4rem 0">${typeof st.vis==='function'?st.vis():st.vis}</div>`;
+    h+=`<div class="tq">${st.q}</div>`;
+    if(fb)h+=`<div class="tfb ${fbok?'ok':'no'}">${fb}</div>`;
+    if(!solved)h+=`<div class="tbtns">${st.opts.map((o,j)=>`<button type="button" class="btn" data-j="${j}">${o[0]}</button>`).join('')}</div>`;
+    else h+=`<div class="tbtns"><button type="button" class="btn primary" id="snext">${i<steps.length-1?'Next →':'Finish ✓'}</button></div>`;
+    html(box,h);
+    box.querySelectorAll('[data-j]').forEach(b=>b.onclick=()=>{const o=st.opts[+b.dataset.j];
+      if(o[1]){fb=st.ok;fbok=true;solved=true}else{fb=o[2]||'Not quite. Have another look.';fbok=false;b.disabled=true;
+        render();const bb=box.querySelector(`[data-j="${b.dataset.j}"]`);if(bb)bb.disabled=true;return}
+      render()});
+    const n=box.querySelector('#snext');if(n)n.onclick=()=>{i++;fb='';solved=false;render()};
+  }
+  render();
+}
+const tiles=(b,n,cls,cross)=>Array.from({length:n},(_,i)=>`<span class="tileb${cls?' '+cls:''}${cross&&i<cross?' x':''}">${b}</span>`).join('');
+
+/* ---------- A2 HCF/LCM tutor with brick zones ---------- */
+function hcfTutor(){
+  const CASES=[{a:24,b:36,story:'party',hcfOpts:[12,6,4],lcmOpts:[72,864,36]},{a:12,b:18,story:'light',hcfOpts:[6,3,36],lcmOpts:[36,216,6]}];
+  let ci=0,A,B,L,M,Rr,phase,fb,fbok;
+  function start(){const c=CASES[ci];A=primeList(c.a).map((v,i)=>({v,i,used:false}));B=primeList(c.b).map((v,i)=>({v,i,used:false}));L=[];M=[];Rr=[];phase='pair';fb='';render()}
+  function render(){const c=CASES[ci];
+    let h=`<div class="tq">${ci===0?'Bricks for the party:':'Now the lighthouses: one flashes every 12 s, the other every 18 s.'}</div>`;
+    h+=`<div class="brow"><span class="lab">${c.a}</span>${A.map(x=>`<button type="button" class="brick" style="--c:${bcol(x.v)}" data-i="${x.i}" ${x.used||phase!=='pair'?'disabled':''}>${x.v}</button>`).join('')}</div>`;
+    h+=`<div class="brow"><span class="lab">${c.b}</span>${B.map(x=>`<span class="brick" style="--c:${bcol(x.v)};${x.used?'opacity:.2':''}">${x.v}</span>`).join('')}</div>`;
+    h+=`<div class="zones"><div class="zone l"><div class="zl">only in ${c.a}</div><div class="tray">${L.map(v=>brick(v,1)).join('')}</div></div><div class="zone m"><div class="zl">in both</div><div class="tray">${M.map(v=>brick(v,1)).join('')}</div></div><div class="zone r"><div class="zl">only in ${c.b}</div><div class="tray">${Rr.map(v=>brick(v,1)).join('')}</div></div></div>`;
+    if(fb)h+=`<div class="tfb ${fbok?'ok':'no'}">${fb}</div>`;
+    if(phase==='pair')h+=`<div class="tq">Tap each brick of <b>${c.a}</b>. If ${c.b} has the same brick, the pair goes in the middle.</div>`;
+    if(phase==='hcf')h+=`<div class="tq">The <b>HCF</b> is the middle bricks multiplied. What is it?</div><div class="tbtns">${c.hcfOpts.slice().sort((x,y)=>x-y).map(v=>`<button type="button" class="btn" data-h="${v}">${v}</button>`).join('')}</div>`;
+    if(phase==='lcm')h+=`<div class="tq">The <b>LCM</b> is <b>all</b> the bricks in the picture multiplied. What is it?</div><div class="tbtns">${c.lcmOpts.slice().sort((x,y)=>x-y).map(v=>`<button type="button" class="btn" data-l="${v}">${v}</button>`).join('')}</div>`;
+    if(phase==='done')h+=ci<CASES.length-1?`<div class="tbtns"><button type="button" class="btn primary" id="t2next">Do another: the lighthouses →</button></div>`:`<p class="small">Two done! Now try the coincidence machine below.</p>`;
+    html($('#t2body'),h);
+    $$('#t2body .brow button.brick').forEach(bt=>bt.onclick=()=>{const x=A[+bt.dataset.i];x.used=true;const m=B.find(y=>!y.used&&y.v===x.v);
+      if(m){m.used=true;M.push(x.v);fb=`Both have a ${x.v}: the pair goes in the middle.`}else{L.push(x.v);fb=`${c.b} has no ${x.v} left, so it stays on the left.`}fbok=true;
+      if(A.every(y=>y.used)){B.filter(y=>!y.used).forEach(y=>{y.used=true;Rr.push(y.v)});fb+=` The rest of ${c.b}'s bricks go on the right.`;phase='hcf'}render()});
+    $$('#t2body [data-h]').forEach(bt=>bt.onclick=()=>{const hcf=M.reduce((p,q)=>p*q,1);
+      if(+bt.dataset.h===hcf){fb=`Yes! HCF $=${M.join('\\times ')}=${hcf}$. `+(c.story==='party'?`So you can make <b>${hcf} bags</b>, each with ${c.a/hcf} sweets and ${c.b/hcf} chocolates.`:`It is the biggest number that goes into both ${c.a} and ${c.b}.`);fbok=true;phase='lcm'}
+      else{fb=`Multiply only the middle bricks: $${M.join('\\times ')}$.`;fbok=false}render()});
+    $$('#t2body [data-l]').forEach(bt=>bt.onclick=()=>{const all=[...L,...M,...Rr],lcm=all.reduce((p,q)=>p*q,1);
+      if(+bt.dataset.l===lcm){fb=`Yes! LCM $=${all.join('\\times ')}=${lcm}$. `+(c.story==='light'?`The lighthouses flash together again after <b>${lcm} seconds</b>.`:`It is the smallest number that both ${c.a} and ${c.b} go into.`);fbok=true;phase='done'}
+      else{fb=`Multiply every brick in the three boxes, but each middle brick only once.`;fbok=false}render()});
+    const nx=$('#t2next');if(nx)nx.onclick=()=>{ci++;start()};
+  }
+  start();
+}
+
+/* ---------- A2 coincidence machine ---------- */
+function coincidence(){
+  const rows=[];
+  function go(){const a=parseInt($('#coa').value,10),b=parseInt($('#cob').value,10);
+    if(!(a>=2&&b>=2&&a<=1000&&b<=1000)){html($('#comsg'),'Pick two whole numbers from 2 to 1000.');return}
+    const h=gcd(a,b),l=a*b/h;rows.unshift([a,b,h,l]);if(rows.length>5)rows.pop();
+    html($('#cotbl'),`<tr><th>$a$</th><th>$b$</th><th>HCF</th><th>LCM</th><th>HCF × LCM</th><th>$a\\times b$</th></tr>`+rows.map(([a,b,h,l])=>`<tr><td>${a}</td><td>${b}</td><td>${h}</td><td>${l}</td><td class="eq">${h*l}</td><td class="eq">${a*b}</td></tr>`).join(''));
+    html($('#comsg'),rows.length<2?'<p class="small">Try another pair.</p>':`<div class="tfb ok"><b>Oh!</b> HCF × LCM is always the same as the two numbers multiplied. Try a few more and see if you can break it. (You can't!)</div>`)}
+  $('#cogo').onclick=go;['#coa','#cob'].forEach(k=>$(k).addEventListener('keydown',e=>{if(e.key==='Enter')go()}));
+}
+
+/* ---------- A3 operator number line ---------- */
+function opSVG(mode,k,b,full){
+  const fr=(p,q)=>{if(q<0){p=-p;q=-q}const g=gcd(p,q);p/=g;q/=g;return q===1?minus(p):minus(p)+'/'+q};
+  const R=mode==='mul'?20:5,W=640,L=34,Rt=606,sx=v=>L+(v+R)/(2*R)*(Rt-L);
+  const st=mode==='mul'?Math.abs(k)*b:b/Math.abs(k),res=mode==='mul'?k*b:b/k;
+  const rows=[[b,'number',fr(b,1),'#3b4fa8'],[st,mode==='mul'?`stretch × ${Math.abs(k)}`:`shrink ÷ ${Math.abs(k)}`,mode==='mul'?fr(Math.abs(k)*b,1):fr(b,Math.abs(k)),'#7a6f8c'],[res,k<0?'flip!':'no flip',mode==='mul'?fr(k*b,1):fr(b,k),'#b5487a']];
+  const Y0=46,DY=74,AX=Y0+2*DY+48;
+  let s=`<svg viewBox="0 0 ${W} ${AX+40}"><defs>`+['#3b4fa8','#7a6f8c','#b5487a'].map((c,i)=>`<marker id="ah${i}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="3.2" markerHeight="3.2" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" fill="${c}"/></marker>`).join('')+'</defs>';
+  rows.forEach(([v,lab,vs,c],i)=>{if(!full&&i>0)return;const y=Y0+i*DY;s+=`<text x="${L-8}" y="${y-18}" font-size="22" fill="${c}" font-weight="700">${lab}</text>`;
+    if(Math.abs(v)>1e-9)s+=`<line x1="${sx(0)}" y1="${y}" x2="${sx(v)}" y2="${y}" stroke="${c}" stroke-width="7" marker-end="url(#ah${i})"/>`;else s+=`<circle cx="${sx(0)}" cy="${y}" r="7" fill="${c}"/>`;
+    s+=`<line x1="${sx(v)}" y1="${y+8}" x2="${sx(v)}" y2="${AX}" stroke="${c}" stroke-dasharray="3 4" stroke-width="1.5"/>`;
+    const lx=Math.min(Math.max(sx(v)+(v>=0?18:-18),L+30),Rt-30);
+    s+=`<text x="${lx}" y="${y+8}" text-anchor="${v>=0?'start':'end'}" font-size="24" font-weight="700" fill="${c}">${vs}</text>`;
+    if(i===2&&k<0&&Math.abs(v)>1e-9){const x1=sx(rows[1][0]),x2=sx(v);s+=`<path d="M${x1},${y-DY+10} Q${(x1+x2)/2},${y-DY/2-26} ${x2},${y-12}" fill="none" stroke="#b5487a" stroke-width="2.2" stroke-dasharray="6 4" marker-end="url(#ah2)" opacity=".75"/>`}});
+  if(!full)s+=`<text x="${W/2}" y="${Y0+DY+30}" text-anchor="middle" font-size="40" fill="#c9c5d8" font-weight="700">?</text>`;
+  s+=`<line x1="${L-10}" y1="${AX}" x2="${Rt+10}" y2="${AX}" stroke="#1c2230" stroke-width="2"/>`;
+  for(let v=-R;v<=R;v++){const big=mode==='mul'?v%5===0:true;s+=`<line x1="${sx(v)}" y1="${AX-(big?10:6)}" x2="${sx(v)}" y2="${AX+(big?10:6)}" stroke="#1c2230" stroke-width="${big?2:1}"/>`;
+    if(big)s+=`<text x="${sx(v)}" y="${AX+36}" text-anchor="middle" font-size="22" ${v===0?'font-weight="700"':''}>${minus(v)}</text>`}
+  return s+'</svg>'}
+function signTutor(){
+  const RD=[[3,2],[-3,2],[3,-2],[-3,-2]];let i=0,shown=false,fb='',right=0;
+  const ex=(k,b)=>`${k}\\times${b<0?'('+b+')':b}`;
+  function render(){const box=$('#t3body');
+    if(i<RD.length){const [k,b]=RD[i],res=k*b;
+      let h=`<div class="steps-dots">${RD.map((_,j)=>`<i class="${j<=i?'on':''}"></i>`).concat(['<i></i>']).join('')}</div><div class="tq">Round ${i+1}: $${ex(k,b)}$</div>${opSVG('mul',k,b,shown)}`;
+      if(!shown)h+=`<div class="tq">Where will the answer land?</div><div class="tbtns"><button type="button" class="btn" data-s="-1">⬅ left of 0 (negative)</button><button type="button" class="btn" data-s="1">right of 0 (positive) ➡</button></div>`;
+      else h+=`<div class="tfb ${fb[0]==='Y'?'ok':'no'}">${fb}</div><div class="tbtns"><button type="button" class="btn primary" id="t3next">${i<RD.length-1?'Next round →':'What did we learn? →'}</button></div>`;
+      html(box,h);
+      box.querySelectorAll('[data-s]').forEach(bt=>bt.onclick=()=>{const g=+bt.dataset.s,ok=g===Math.sign(res);if(ok)right++;
+        const neg=(k<0?1:0)+(b<0?1:0);
+        fb=(ok?'Yes! ':'Not this time. ')+`$${ex(k,b)}=${res}$. `+(k<0?`The machine $${k}$ stretches, then flips.`:`The machine $${k}$ only stretches: no flip.`)+` Minus signs: ${neg}.`;shown=true;render()});
+      const n=box.querySelector('#t3next');if(n)n.onclick=()=>{i++;shown=false;render()};}
+    else if(i===RD.length){html(box,`<div class="tfb ok">You got ${right} of 4. Look at the minus signs:</div><div class="tblwrap"><table class="t"><tr><th>sum</th><th>minus signs</th><th>answer</th></tr><tr><td>$3\\times2$</td><td>0</td><td>$6$</td></tr><tr><td>$-3\\times2$</td><td>1</td><td>$-6$</td></tr><tr><td>$3\\times(-2)$</td><td>1</td><td>$-6$</td></tr><tr><td>$-3\\times(-2)$</td><td>2</td><td>$6$</td></tr></table></div><div class="tq">Two flips bring the arrow back. So an <b>even</b> number of minus signs → positive, <b>odd</b> → negative.</div><div class="tbtns"><button type="button" class="btn primary" id="t3div">Now dividing →</button></div>`);
+      $('#t3div').onclick=()=>{i++;render()}}
+    else stepper(box,[
+      {q:R`$42\div-7=\;?$ &nbsp; Size first: $42\div7=6$. Then count the minus signs.`,opts:[['$6$',0,'One minus sign is odd, so the answer is negative.'],['$-6$',1]],ok:R`Yes: $-6$. Check by multiplying back: $-6\times-7=42$ ✓`},
+      {q:R`$-50\div-10=\;?$`,opts:[['$-5$',0,'Two minus signs is even.'],['$5$',1]],ok:R`Yes: $5$. Check: $5\times-10=-50$ ✓`},
+      {q:R`$-3\times-4\times-2=\;?$ &nbsp; ($3\times4\times2=24$)`,opts:[['$24$',0,'Count again: there are three minus signs.'],['$-24$',1]],ok:R`Yes: three minus signs is odd, so $-24$.`}],
+      `<div class="tfb ok"><b>Done!</b> Size first, then count the minus signs.</div>`);
+  }
+  render();
+}
+function w3(){
+  function draw(){const mode=$('#w3m').value;let k=+$('#w3k').value;const b=+$('#w3b').value;
+    if(mode==='div'&&k===0){k=1;$('#w3k').value=1}
+    $('#w3kv').textContent=minus(k);$('#w3bv').textContent=minus(b);
+    $('#w3svg').innerHTML=opSVG(mode,k,b,true);
+    const res=mode==='mul'?k*b:b/k,neg=(k<0?1:0)+(b<0?1:0);
+    html($('#w3r'),`$${k}${mode==='mul'?'\\times':'\\div'}${b<0?'('+b+')':b}=${Number.isInteger(res)?res:(res<0?'-':'')+'\\frac{'+Math.abs(b)/gcd(b,k)+'}{'+Math.abs(k)/gcd(b,k)+'}'}$`+(k&&b?` &nbsp; Minus signs: ${neg} → ${neg%2?'negative':'positive'}.`:''))}
+  ['#w3m','#w3k','#w3b'].forEach(k=>$(k).addEventListener('input',draw));draw();
+}
+
+/* ---------- A4 ---------- */
+function sqTutor(){
+  stepper($('#t4body'),[
+    {q:R`$(-6)^2$ means $(-6)\times(-6)$. Two minus signs, so…`,opts:[['$36$',1],['$-36$',0,'Two minus signs is even, so the answer is positive.'],['$-12$',0,'Squaring means multiplying, not adding.']],ok:R`Yes: $(-6)^2=36$.`},
+    {q:R`$-6^2$ has <b>no bracket</b>. Square the 6 first ($6^2=36$), then put the minus in front:`,opts:[['$36$',0,'The minus is still there at the end.'],['$-36$',1]],ok:R`Yes: $-6^2=-36$. Trap solved: the bracket makes the difference!`},
+    {q:R`Going backwards: $x^2=25$. We know $5^2=25$. Which <b>other</b> number squares to $25$?`,opts:[['$-5$',1],['$0$',0,'$0^2=0$.'],['There is no other one',0,R`Try $(-5)\times(-5)$.`]],ok:R`Yes! $(-5)^2=25$ too. So $x^2=25$ has <b>two</b> answers: $5$ and $-5$.`},
+    {q:R`$x^2=-25$. Which number squared gives $-25$?`,opts:[['$-5$',0,R`$(-5)^2=+25$.`],['$5$',0,R`$5^2=+25$.`],['None at all',1]],ok:'Right: a square is never negative, so there is no answer. (See the wow box below.)'},
+    {q:R`Cubes: $x^3=-64$. Try $(-4)^3=(-4)\times(-4)\times(-4)$. It equals…`,opts:[['$-64$',1],['$64$',0,'Three minus signs is odd.']],ok:R`Yes! So $x=-4$, written $\sqrt[3]{-64}=-4$. A cube keeps the minus sign: just one answer.`}],
+    `<div class="tfb ok"><b>Done!</b> Brackets matter, squares have two roots, cubes keep the sign.</div>`);
+}
+function w4(){
+  function panel(ox,f,ymax,lab,x){const W=290,H=250,cx=ox+W/2,cy=125,sxu=(W-40)/10,syu=(H-50)/2/ymax;let s='';
+    s+=`<rect x="${ox+20}" y="${cy}" width="${W-40}" height="${(H-50)/2}" fill="#fbe5e2" opacity=".7"/><text x="${ox+W-24}" y="${cy+(H-50)/2-6}" text-anchor="end" font-size="18" fill="#c0392b">red zone: negative</text>`;
+    s+=`<line x1="${ox+20}" y1="${cy}" x2="${ox+W-20}" y2="${cy}" stroke="#1c2230" stroke-width="1.5"/><line x1="${cx}" y1="25" x2="${cx}" y2="${H-25}" stroke="#1c2230" stroke-width="1.5"/>`;
+    let d='';for(let t=-5;t<=5.001;t+=0.1){const X=cx+t*sxu,Y=cy-f(t)*syu;d+=(d?'L':'M')+X.toFixed(1)+','+Y.toFixed(1)}
+    s+=`<path d="${d}" fill="none" stroke="#3b4fa8" stroke-width="2.5"/>`;
+    const X=cx+x*sxu,Y=cy-f(x)*syu;s+=`<line x1="${X}" y1="${cy}" x2="${X}" y2="${Y}" stroke="#b5487a" stroke-dasharray="4 3" stroke-width="2"/><circle cx="${X}" cy="${Y}" r="8" fill="#b5487a"/>`;
+    s+=`<text x="${ox+24}" y="22" font-size="24" font-weight="700" fill="#3b4fa8">${lab}</text><text x="${X+(x>0?-12:12)}" y="${Y+(f(x)>=0?-12:28)}" text-anchor="${x>0?'end':'start'}" font-size="25" font-weight="700" fill="#b5487a">${minus(f(x))}</text>`;
+    return s}
+  function draw(){const x=+$('#w4x').value;$('#w4xv').textContent=minus(x);
+    $('#w4svg').innerHTML=`<svg viewBox="0 0 600 250">${panel(0,t=>t*t,25,'square x²',x)}${panel(310,t=>t*t*t,125,'cube x³',x)}</svg>`;
+    const xt=x<0?`(${x})`:x;
+    html($('#w4r'),`$${xt}^2=${x*x}$ &nbsp; and &nbsp; $${xt}^3=${x*x*x}$.`+(x<0?' The square jumps out of the red zone. The cube stays in it.':' Now drag $x$ below zero.'))}
+  $('#w4x').addEventListener('input',draw);draw();
+}
+function families(){
+  const NUMS=[['7','N'],['-3','I'],['\\frac12','R'],['0','I'],['-2.5','R'],['12','N']];let i=0,fb='',fbok=true;
+  const name={N:'Natural',I:'Integer',R:'Rational'};const placed={N:[],I:[],R:[]};
+  function render(){['N','I','R'].forEach(k=>html($('#fam'+k),placed[k].map(t=>`<span class="ncard">$${t}$</span>`).join('')));
+    let h=fb?`<div class="tfb ${fbok?'ok':'no'}">${fb}</div>`:'';
+    if(i<NUMS.length)h+=`<div class="tq">Where does <span class="ncard">$${NUMS[i][0]}$</span> go?</div><div class="tbtns">${['N','I','R'].map(k=>`<button type="button" class="btn" data-k="${k}">${name[k]}</button>`).join('')}</div>`;
+    else h+=`<p class="small">All sorted! $7$ is natural, so it is also an integer and rational: the boxes are inside each other.</p>`;
+    html($('#famq'),h);
+    $$('#famq [data-k]').forEach(b=>b.onclick=()=>{const [t,k]=NUMS[i];const why={N:'It is a counting number.',I:'It is a whole number, but you cannot count to it.',R:'It is not a whole number, but it is a fraction.'};
+      if(b.dataset.k===k){placed[k].push(t);fb=`Yes! ${why[k]}`;fbok=true;i++}else{fb=`Not quite. ${b.dataset.k==='R'&&k!=='R'?'It does fit in the rational box, but there is a smaller box it fits.':why[k]}`;fbok=false}render()});
+  }
+  render();
+}
+
+/* ---------- A5 ---------- */
+function idxTutor(){
+  stepper($('#t5body'),[
+    {vis:`<div class="trow">${tiles(3,2)}<b style="margin:0 .3rem">×</b>${tiles(3,4,'p')}</div>`,q:R`$3^2\times3^4$: how many 3s altogether?`,opts:[['$6$',1],['$8$',0,'Count the tiles: 2 and 4.'],['$5$',0,'Count again.']],ok:R`Six 3s: $3^2\times3^4=3^6$.`},
+    {vis:`<div class="trow">${tiles(2,3)}<b style="margin:0 .3rem">×</b>${tiles(2,5,'p')}</div>`,q:R`$2^3\times2^5=2^{\,?}$`,opts:[['$2^{15}$',0,'Count the tiles: 3 and 5 make…'],['$2^8$',1],['$4^8$',0,'The tiles are all still 2s.']],ok:R`Eight 2s: $2^8$.`},
+    {q:'Spot the shortcut! When you multiply, the small numbers…',opts:[['get added',1],['get multiplied',0,R`$3\times5=15$, but there were 8 tiles.`],['stay the same',0,'Look: 3 and 5 became 8.']],ok:R`Yes: <b>add</b> them. $10^5\times10^2=10^7$.`},
+    {vis:`<div class="fracbox"><div class="trow">${tiles(5,6,'',2)}</div><div class="barl"></div><div class="trow">${tiles(5,2,'p',2)}</div></div>`,q:R`$5^6\div5^2$: two 5s cancel. How many 5s are left?`,opts:[['$4$',1],['$3$',0,'6 tiles on top, 2 crossed out.'],['$8$',0,'Dividing makes fewer tiles, not more.']],ok:R`Four: $5^6\div5^2=5^4$. Dividing → <b>subtract</b>.`},
+    {vis:`<div class="trow"><span class="grpb">${tiles(7,3)}</span><span class="grpb">${tiles(7,3)}</span></div>`,q:R`$(7^3)^2$ means two groups of $7^3$. How many 7s?`,opts:[['$5$',0,'Two groups of three…'],['$6$',1],['$9$',0,'Count the tiles.']],ok:R`Six: $(7^3)^2=7^6$. Groups → <b>multiply</b> $3\times2$.`},
+    {q:R`Careful! Can you use a shortcut on $2^3\times3^2$?`,opts:[['Yes: $5^5$',0,'The tiles are different: 2s and 3s.'],['Yes: $6^5$',0,'Try it: $2^3\times3^2=8\times9=72$, not $6^5$.'],['No: the big numbers are different',1]],ok:'Right! Shortcuts only work when the big numbers (bases) are the same.'}],
+    `<div class="tfb ok"><b>Done!</b> You found all three shortcuts yourself.</div>`);
+}
+
+/* ---------- A6 build the table row by row ---------- */
+function w6(){
+  let b,rows,pending,tries,guess;const LOW=-3;
+  function reset(){b=+$('#w6base').value;rows=[3];pending=null;tries=0;guess={};$('#w6msg').innerHTML='';render()}
+  const cellT=(n,k)=>k===0?`${b}^{${n}}`:k===1?expTex(b,n):valTex(b,n);
+  function msgFor(n){const big={1:`One ${b} is left. What happens when you divide $${b}$ by $${b}$?`,
+      0:`$${b}^0=1$, not $0$! No ${b}s are left, but $${b}\\div${b}=1$.`,
+      [-1]:`$${b}^{-1}=\\frac{1}{${b}}$. The ${b} has moved <b>under</b> the line. A negative power makes a fraction, not a negative number.`,
+      [LOW]:`Table done! Going down: divide by ${b} each time. Going up: multiply by ${b}.`}[n];
+    if(big){const d=document.createElement('div');d.className='note';html(d,big);$('#w6msg').appendChild(d)}}
+  function render(){
+    let h=`<table class="itbl"><tr><th>${UI.tblHead[0]}</th><th>${UI.tblHead[1]}</th><th>${UI.tblHead[2]}</th></tr>`;
+    rows.forEach((n,i)=>{h+=`<tr>${[0,1,2].map(k=>`<td>$${cellT(n,k)}$</td>`).join('')}</tr>`;
+      if(i<rows.length-1||pending!=null)h+=`<tr class="oprow"><td colspan="3">$\\div ${b}$ ↓</td></tr>`;
+      else if(n>LOW)h+=`<tr class="oprow"><td colspan="3"><button type="button" class="divbtn" id="w6div">÷ ${b} ↓</button></td></tr>`});
+    const needGuess=pending!=null&&(pending===0||pending===-1)&&guess[pending]==null;
+    if(needGuess){const opts=pending===0?[['0','0'],['1','1'],[String(b),String(b)]]:[[`-${b}`,`-${b}`],[`\\frac1{${b}}`,'f'],['0','0']];
+      h+=`<tr class="oprow"><td colspan="3"><div class="tq" style="font-weight:400">First, guess! $${b}^{${pending}}=\\;?$</div><div class="tbtns" style="justify-content:center">${opts.map(([t,v])=>`<button type="button" class="btn" data-g="${v}">$${t}$</button>`).join('')}</div></td></tr>`}
+    else if(pending!=null){h+=`<tr class="new">${[0,1,2].map(k=>`<td data-k="${k}"><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="${UI.tblHead[k]}"></td>`).join('')}</tr>`;
+      h+=`<tr class="oprow"><td colspan="3"><button type="button" class="btn small primary" id="w6chk">Check row</button> <button type="button" class="btn small" id="w6show">Show me</button><span id="w6fb" class="small" style="display:block;font-weight:400;text-align:left;margin-top:.3rem"></span></td></tr>`}
+    $('#w6tbl').innerHTML=h+'</table>';mathify($('#w6tbl'));
+    $$('#w6tbl [data-g]').forEach(bt=>bt.onclick=()=>{guess[pending]=bt.dataset.g;render();const f=$('#w6tbl input');if(f)f.focus();
+      html($('#w6fb'),'Good guess! Now work it out from the row above.')});
+    const dv=$('#w6div');if(dv)dv.onclick=()=>{pending=rows[rows.length-1]-1;tries=0;render();const f=$('#w6tbl input');if(f)f.focus()};
+    if(pending!=null&&!needGuess){const ins=$$('#w6tbl input'),pv=$('#w6pv');
+      ins.forEach(inp=>{const upd=()=>{const v=inp.value.trim();const t=v?ALG.toTex(cleanAlg(v)):'';pv.innerHTML=v?(t?UI.previewPre+texStr(t):'<span style="color:#c0392b">…</span>'):''};
+        inp.addEventListener('input',upd);inp.addEventListener('focus',upd);inp.addEventListener('keydown',e=>{if(e.key==='Enter')check()})});
+      $('#w6chk').onclick=check;$('#w6show').onclick=()=>finish(true);}
+  }
+  function check(){const ins=$$('#w6tbl input');const kinds=['p','e','v'];let all=true;
+    ins.forEach((inp,k)=>{const r=cellJudge(b,pending,kinds[k],inp.value);inp.parentNode.classList.toggle('okc',r==='ok');inp.parentNode.classList.toggle('noc',r!=='ok');if(r!=='ok')all=false});
+    if(all){finish(false);return}
+    tries++;const hints=[`The power is one less than the row above.`,`Value: the row above ÷ ${b}. Repeated multiplication: one fewer ${b}${pending<0?', or one more under the line':''}.`];
+    html($('#w6fb'),'Not yet. '+hints[Math.min(tries-1,1)]);}
+  function finish(shown){rows.push(pending);const n=pending;pending=null;$('#w6pv').innerHTML='';render();msgFor(n);
+    if(shown){const d=document.createElement('div');d.className='small';d.textContent='(Shown for you. Try the next row yourself.)';$('#w6msg').appendChild(d)}}
+  $('#w6base').addEventListener('input',reset);$('#w6reset').onclick=reset;
+  $('#w6all').onclick=()=>{pending=null;guess={0:1,'-1':1};$('#w6msg').innerHTML='';rows=[3];for(let n=2;n>=LOW;n--)rows.push(n);render();[1,0,-1,LOW].forEach(msgFor)};
+  reset();
+}
+
+/* ================= BOOT ================= */
+function boot(){
+  initState();buildTabs();renderQuestions();
+  [hook,warm,tutorial,wow,pad,hcfTutor,coincidence,signTutor,w3,sqTutor,w4,families,idxTutor,w6].forEach(f=>{try{f()}catch(e){console.error(f.name,e)}});
+  $('#resetBtn').onclick=()=>{const b=$('#resetBtn');if(!b.dataset.armed){b.dataset.armed=1;b.textContent='Tap again to clear all answers';setTimeout(()=>{delete b.dataset.armed;b.textContent='Start again'},4000);return}
+    delete b.dataset.armed;b.textContent='Start again';try{localStorage.removeItem(KEY)}catch(e){}initState();renderQuestions();refreshProgress();};
+  mathify(document.querySelector('main'));
+  refreshProgress();
+  const h=location.hash.slice(1);show(ORDER.includes(h)?h:'start');
+}
+let booted=false;window.addEventListener('load',()=>{if(!booted){booted=true;boot()}});
+
+</script>
+</body>
+</html>
