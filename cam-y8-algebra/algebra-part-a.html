@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Year 8 Algebra Part A · Expressions, Formulae and Equations</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<style>
+:root{
+  --ink:#1c2230;--muted:#5b6475;--paper:#f7f6fb;--card:#fff;--line:#e2e0ea;
+  --a:#3b4fa8;--a-soft:#e8ebf8;--b:#b5487a;--b-soft:#f8e7ef;
+  --good:#2f8a4c;--good-soft:#e5f4ea;--warn:#b7791f;--warn-soft:#fbf1dc;--bad:#c0392b;--bad-soft:#fbe5e2;--grey:#9aa1ad;
+  --xt:#5b6fd8;--ct:#e09f3e;--neg:#c0392b;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font:16px/1.6 "Avenir Next","Segoe UI",system-ui,-apple-system,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.25;font-weight:600}
+h2{font-size:1.6rem;margin:.2rem 0 .6rem}
+h3{font-size:1.15rem;margin:1.6rem 0 .5rem}
+p{margin:.55rem 0}
+header.top{position:sticky;top:0;z-index:20;background:rgba(247,246,251,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.topin{max-width:940px;margin:0 auto;padding:.55rem 1rem .35rem;display:flex;align-items:center;gap:.8rem;flex-wrap:wrap}
+.brand{font-family:Georgia,serif;font-weight:600;font-size:1.02rem;flex:1;min-width:180px}
+.brand small{display:block;font-family:inherit;font-weight:400;color:var(--muted);font-size:.78rem}
+.prog{font-size:.82rem;color:var(--muted);text-align:right}
+.bar{height:6px;background:var(--line);border-radius:4px;overflow:hidden;width:150px;margin-top:3px}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--a),var(--b));width:0;transition:width .4s}
+nav.tabs{max-width:940px;margin:0 auto;display:flex;gap:.35rem;overflow-x:auto;padding:.1rem 1rem .6rem;scrollbar-width:thin}
+nav.tabs button{flex:0 0 auto;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;padding:.3rem .75rem;font:inherit;font-size:.84rem;cursor:pointer;white-space:nowrap}
+nav.tabs button.ga{border-color:#c9d0ef}
+nav.tabs button.gb{border-color:#eccbdb}
+nav.tabs button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+nav.tabs button .tick{color:var(--good);font-weight:700;margin-left:.25rem}
+nav.tabs button.on .tick{color:#9be3b0}
+main{max-width:940px;margin:0 auto;padding:1.2rem 1rem 4rem}
+section.tab{display:none}
+section.tab.on{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.kicker{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--a)}
+.gb-sec .kicker{color:var(--b)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1rem 1.1rem;margin:1rem 0}
+.idea{border-left:5px solid var(--a)}
+.gb-sec .idea{border-left-color:var(--b)}
+.box-title{font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:.3rem}
+.key{background:var(--a-soft);border-radius:10px;padding:.6rem .8rem;margin:.6rem 0}
+.gb-sec .key{background:var(--b-soft)}
+.trap{background:var(--warn-soft);border-radius:10px;padding:.6rem .8rem;margin:.6rem 0}
+.trap b{color:#8a5a0c}
+.steps{margin:.3rem 0;padding-left:1.3rem}
+.steps li{margin:.4rem 0}
+.tblwrap{overflow-x:auto;max-width:100%}
+table.t{border-collapse:collapse;margin:.5rem 0;font-size:.92rem}
+table.t th,table.t td{border:1px solid var(--line);padding:.35rem .6rem;text-align:center}
+table.t th{background:#efedf5;font-weight:600}
+.widget{background:#fdfcff;border:1px dashed #c9c5d8;border-radius:14px;padding:.9rem;margin:1rem 0}
+.widget .box-title{color:var(--a)}
+.gb-sec .widget .box-title{color:var(--b)}
+.ctrl{display:flex;flex-wrap:wrap;gap:.5rem .8rem;align-items:center;margin:.45rem 0}
+.ctrl label{font-size:.9rem;display:flex;align-items:center;gap:.4rem}
+.ctrl input[type=range]{width:150px}
+.ctrl input[type=text],.ctrl select{font:inherit;padding:.3rem .5rem;border:1px solid #c9c3d6;border-radius:8px}
+.btn{border:1px solid var(--ink);background:#fff;color:var(--ink);border-radius:8px;padding:.32rem .75rem;font:inherit;font-size:.88rem;cursor:pointer}
+.btn:hover{background:#efedf5}
+.btn.primary,.btn.on{background:var(--ink);color:#fff}
+.btn.small{padding:.2rem .55rem;font-size:.82rem}
+.readout{background:#fff;border:1px solid var(--line);border-radius:10px;padding:.55rem .75rem;margin-top:.5rem;font-size:.95rem}
+svg{max-width:100%;height:auto;display:block}
+svg text{font-family:"Avenir Next","Segoe UI",system-ui,sans-serif}
+.wex{border-left:5px solid #7a6f8c}
+.wex .box-title{color:#7a6f8c}
+details.why{background:#f1eff6;border-radius:12px;padding:.5rem .9rem;margin:1rem 0}
+details.why summary{cursor:pointer;font-weight:600}
+details.why[open]{padding-bottom:.8rem}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+@media(max-width:640px){.two{grid-template-columns:1fr}h2{font-size:1.35rem}}
+.qhead{display:flex;align-items:baseline;gap:.6rem;margin-top:1.8rem}
+.qhead h3{margin:0}
+.qhead span{font-size:.85rem;color:var(--muted)}
+.q{background:#fff;border:1px solid var(--line);border-radius:14px;padding:.9rem 1rem;margin:.8rem 0}
+.q .qn{font-weight:700;color:var(--muted);font-size:.82rem;letter-spacing:.05em;display:flex;align-items:center;gap:.4rem;flex-wrap:wrap}
+.lvltag{font-size:.68rem;letter-spacing:.08em;border-radius:999px;padding:.05rem .5rem;font-weight:700}
+.lvltag.Focus{background:#e6f2ea;color:#2f7a46}.lvltag.Practice{background:#e8ebf8;color:#3b4fa8}.lvltag.Challenge{background:#f8e7ef;color:#a3376a}
+.q .prompt{margin:.3rem 0 .6rem}
+.q.done-3{border-color:#9ed1ae}.q.done-2,.q.done-1{border-color:#e7c98d}.q.done-0{border-color:#e5a69e}
+.opts{display:grid;gap:.4rem}
+.opt{text-align:left;border:1px solid var(--line);background:#fbfaff;border-radius:10px;padding:.45rem .7rem;font:inherit;cursor:pointer;color:var(--ink)}
+.opt:hover:not(:disabled){border-color:var(--ink)}
+.opt.wrong{background:var(--bad-soft);border-color:#e5a69e}
+.opt.right{background:var(--good-soft);border-color:#9ed1ae}
+.opt:disabled{cursor:default}
+.ansrow{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
+.ansrow input{font:inherit;padding:.35rem .6rem;border:1px solid #c9c3d6;border-radius:8px;width:190px}
+.preview{min-height:1.7rem;color:var(--muted);font-size:.95rem;margin-top:.2rem}
+.fmt{font-size:.83rem;color:var(--muted);margin-top:.2rem}
+.dots{display:inline-flex;gap:4px;margin-left:.2rem;vertical-align:middle}
+.dots i{width:10px;height:10px;border-radius:50%;border:1.5px solid var(--grey);display:inline-block}
+.dots i.x{background:var(--bad);border-color:var(--bad)}
+.dots i.ok{background:var(--good);border-color:var(--good)}
+.fb{margin-top:.5rem;font-size:.93rem}
+.fb.ok{color:var(--good)}.fb.no{color:var(--bad)}.fb.info{color:#8a5a0c}
+.hint{background:var(--warn-soft);border-radius:10px;padding:.5rem .7rem;margin-top:.5rem;font-size:.93rem}
+.sol{background:#eef0fa;border-radius:10px;padding:.55rem .8rem;margin-top:.55rem;font-size:.93rem}
+.gb-sec .sol{background:#faeef4}
+.next{display:flex;justify-content:flex-end;margin-top:2rem}
+.hero{padding:1.2rem 0 .4rem}
+.hero h1{font-size:2.1rem;margin:.2rem 0}
+.hero p{color:var(--muted);max-width:640px}
+.route{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.6rem;margin:1rem 0}
+.stop{background:#fff;border:1px solid var(--line);border-radius:12px;padding:.65rem .8rem;cursor:pointer;text-align:left;font:inherit;color:var(--ink)}
+.stop:hover{border-color:var(--ink)}
+.stop .n{font-size:.75rem;font-weight:700;letter-spacing:.08em;color:var(--a)}
+.stop.gb .n{color:var(--b)}.stop.rv .n{color:#6b5ca5}
+.stop .tt{font-weight:600;display:block}
+.stop .mm{font-size:.8rem;color:var(--muted)}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;margin:.6rem 0}
+.flow div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:.5rem .6rem;font-size:.88rem}
+.flow b{display:block;font-size:.95rem}
+@media(max-width:640px){.flow{grid-template-columns:1fr 1fr}.hero h1{font-size:1.6rem}}
+/* report */
+.rbar{margin:.45rem 0}
+.rbar .lab{display:flex;justify-content:space-between;font-size:.9rem;gap:.5rem}
+.rbar .tr{height:10px;background:#e9e6f0;border-radius:6px;overflow:hidden}
+.rbar .tr i{display:block;height:100%}
+.skill{display:flex;justify-content:space-between;gap:.6rem;padding:.35rem 0;border-bottom:1px solid #eeebf3;font-size:.92rem}
+.lvl{font-size:.78rem;border-radius:999px;padding:.05rem .55rem;white-space:nowrap;align-self:center}
+.lvl.g{background:var(--good-soft);color:var(--good)}.lvl.a{background:var(--warn-soft);color:#8a5a0c}.lvl.r{background:var(--bad-soft);color:var(--bad)}.lvl.n{background:#eee;color:#777}
+.score{font-family:Georgia,serif;font-size:2.4rem;text-align:center;margin:.3rem 0}
+.legend{display:flex;flex-wrap:wrap;gap:.4rem 1rem;font-size:.82rem;justify-content:center;margin-top:.4rem}
+.legend span{display:inline-flex;align-items:center;gap:.35rem}
+.legend i{width:12px;height:12px;border-radius:50%;display:inline-block}
+.adv{border-left:4px solid var(--warn);padding:.3rem .8rem;margin:.6rem 0;background:#fff;border-radius:0 10px 10px 0}
+.small{font-size:.85rem;color:var(--muted)}
+/* widgets */
+.chain{display:flex;flex-wrap:wrap;gap:.35rem;align-items:center;margin:.4rem 0}
+.chain span.op{background:var(--a-soft);color:var(--a);border-radius:8px;padding:.15rem .5rem;font-weight:700;font-size:.9rem}
+.chain span.ar{color:var(--muted)}
+.flowbox{display:flex;flex-wrap:wrap;align-items:center;gap:.3rem;margin:.35rem 0}
+.flowbox .fbx{border:1.5px solid var(--ink);border-radius:8px;padding:.15rem .5rem;background:#fff;min-width:38px;text-align:center}
+.flowbox .fop{border-radius:999px;padding:.12rem .55rem;font-weight:700;font-size:.88rem}
+.flowbox.fwd .fop{background:var(--a-soft);color:var(--a)}
+.flowbox.back .fop{background:var(--b-soft);color:var(--b)}
+.flowbox .arr{color:var(--muted)}
+.tiles{display:flex;flex-wrap:wrap;gap:4px;align-items:center;margin:.25rem 0}
+.tile{min-width:30px;height:30px;padding:0 .35rem;border-radius:7px;border:1.5px solid #c9c5d8;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:.92rem}
+.tile.common{background:var(--a);border-color:var(--a);color:#fff}
+.tile.sign{border:none;background:none;min-width:12px}
+.factor-row{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin:.35rem 0}
+.factor-row .lab{min-width:70px;font-weight:600}
+.log{font-size:.9rem;color:var(--muted);margin:.4rem 0 0;padding-left:1.2rem}
+.fig{position:relative;margin:.5rem 0}
+.fig .lb{position:absolute;transform:translate(-50%,-50%);background:rgba(255,255,255,.85);padding:0 3px;white-space:nowrap;font-size:.95rem}
+.katex{font-size:1.04em}
+.katex-display{overflow-x:auto;overflow-y:hidden;padding:.15rem 0}
+.credit{text-align:center;color:var(--muted);font-size:.8rem;padding:1rem 0 2rem}
+.printonly{display:none}
+@media print{
+  @page{size:A4;margin:12mm}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{background:#fff!important}
+  header.top,nav.tabs,.noprint,.next,section.tab:not(#tab-report){display:none!important}
+  section#tab-report{display:block!important;animation:none!important}
+  main{padding:0!important;max-width:none!important}
+  .printonly{display:block}
+  .rephead{border:2px solid #1c2230}
+  .skill,.rbar,.adv,.rephead,#kmap,.score{break-inside:avoid;page-break-inside:avoid}
+  #kmap svg{max-height:240mm}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="topin">
+    <div class="brand">Year 8 Algebra · Part A<small>Expressions, formulae, equations and inequalities</small></div>
+    <div class="prog"><span id="progtxt"></span><div class="bar"><i id="progbar"></i></div></div>
+  </div>
+  <nav class="tabs" id="tabs"></nav>
+</header>
+
+<main>
+<!-- ================= START ================= -->
+<section class="tab" id="tab-start">
+  <div class="hero">
+    <div class="kicker">Cambridge · Year 8 · Algebra revision</div>
+    <h1>Expressions, Formulae and Equations</h1>
+    <p>Seven stations cover the whole of the expressions and equations work in Year 8. At each station you first see <b>what the idea means</b>, play with it, study a worked example, then try new questions. Questions come in three levels: Focus, Practice and Challenge.</p>
+  </div>
+  <div class="card">
+    <div class="box-title">How each station works</div>
+    <div class="flow">
+      <div><b>1 · The idea</b>What it is and why it works.</div>
+      <div><b>2 · Play</b>Build, stretch, balance and watch.</div>
+      <div><b>3 · Worked example</b>Every step written out.</div>
+      <div><b>4 · Your turn</b>Focus → Practice → Challenge.</div>
+    </div>
+    <p class="small">Scoring: right on the first try = 3 points, second try = 2, third try = 1, three wrong = 0. A hint appears after your second wrong try. Your report at the end shows which skills to look at again.</p>
+  </div>
+  <h3>Your route (about 50 minutes)</h3>
+  <div class="route" id="route"></div>
+  <div class="card">
+    <div class="box-title">Typing algebra</div>
+    <ul class="steps">
+      <li>Type <code>3x^2-5x</code> for $3x^{2}-5x$, and <code>(n+5)/3</code> for $\frac{n+5}{3}$.</li>
+      <li>Brackets work as normal: <code>4h(2-h)</code> gives $4h(2-h)$.</li>
+      <li>Numbers can be fractions: <code>7/2</code> gives $\frac72$.</li>
+      <li>A live preview under the box shows how your answer reads. Check it before you press Check.</li>
+    </ul>
+    <p class="small">Your progress is saved on this device. <button class="btn small" id="resetBtn" type="button">Start again</button></p>
+  </div>
+</section>
+
+<!-- ================= A1 ================= -->
+<section class="tab" id="tab-a1">
+  <div class="kicker">Station A1 · Expressions and formulae</div>
+  <h2>Writing expressions from words</h2>
+  <div class="card idea">
+    <div class="box-title">The idea</div>
+    <p>A letter stands for a number we don't know yet. Words describe a set of operations, applied <b>in order</b>. To write the expression, apply each operation to everything you have so far.</p>
+    <div class="key">
+      <p>“Multiply $n$ by 3, then add 8” gives $3n+8$.</p>
+      <p>“Add 8, then multiply by 3” gives $3(n+8)$. The bracket shows that the whole of $n+8$ is multiplied.</p>
+      <p>“Two-thirds of $y$, add 5” gives $\frac{2y}{3}+5$. Only $y$ is divided by 3.</p>
+    </div>
+    <p>Three words to keep apart:</p>
+    <div class="tblwrap"><table class="t">
+      <tr><th>Word</th><th>What it is</th><th>Example</th></tr>
+      <tr><td>Expression</td><td>Letters and numbers, but <b>no</b> equals sign</td><td>$3x-7$</td></tr>
+      <tr><td>Formula</td><td>A rule linking two or more quantities</td><td>$v=u+10t$</td></tr>
+      <tr><td>Equation</td><td>Has an equals sign, and can be solved for the unknown</td><td>$3x-7=14$</td></tr>
+    </table></div>
+    <div class="trap"><b>Trap:</b> $\frac{x+7}{5}$ means “add 7, <i>then</i> divide by 5”. “One-fifth of $x$, add 7” is $\frac{x}{5}+7$.</div>
+  </div>
+  <div class="widget" id="w1">
+    <div class="box-title">Play · the expression machine</div>
+    <p class="small">Start with $n$. Add operations one at a time and watch the expression grow. Try the same operations in a different order.</p>
+    <div class="ctrl">
+      <select id="w1op" aria-label="operation"><option value="*">multiply by</option><option value="+">add</option><option value="-">subtract</option><option value="/">divide by</option></select>
+      <input type="text" id="w1k" value="3" size="4" aria-label="number">
+      <button class="btn primary" id="w1add" type="button">Apply</button>
+      <button class="btn" id="w1undo" type="button">Undo</button>
+      <button class="btn" id="w1reset" type="button">Reset</button>
+    </div>
+    <div class="chain" id="w1chain"></div>
+    <div class="ctrl"><label>Test with $n=$ <input type="range" id="w1n" min="-5" max="10" step="1" value="4"> <b id="w1nv"></b></label></div>
+    <div class="readout" id="w1r"></div>
+  </div>
+  <div class="card wex">
+    <div class="box-title">Worked example</div>
+    <p>Lena thinks of a number $n$. Write an expression for her result when she:</p>
+    <ol class="steps">
+      <li>multiplies by 4, then subtracts 7. Multiply first: $4n$. Then subtract: $4n-7$.</li>
+      <li>subtracts 7, then multiplies by 4. The whole of $n-7$ is multiplied: $4(n-7)$.</li>
+      <li>takes two-thirds of the number, then adds 5. Two-thirds of $n$ is $\frac{2n}{3}$, so the result is $\frac{2n}{3}+5$.</li>
+      <li>adds 5, then divides by 3. The whole of $n+5$ is divided: $\frac{n+5}{3}$.</li>
+    </ol>
+    <p>Check with $n=6$: $4\times6-7=17$, $4(6-7)=-4$, $\frac{2\times6}{3}+5=9$, $\frac{6+5}{3}=\frac{11}{3}$. Same operations, different order, different answers.</p>
+  </div>
+  <div class="qhead"><h3>Your turn</h3><span>4 questions</span></div>
+  <div class="qs" data-part="a1"></div>
+  <div class="next"><button class="btn primary" data-go="a2">Next: Substitution and formulae →</button></div>
+</section>
+
+<!-- ================= A2 ================= -->
+<section class="tab" id="tab-a2">
+  <div class="kicker">Station A2 · Expressions and formulae</div>
+  <h2>Substitution and changing the subject</h2>
+  <div class="card idea">
+    <div class="box-title">The idea</div>
+    <p><b>Substitute</b> means replace each letter with its value, then work it out using the order of operations: brackets, indices, then $\times$ and $\div$, then $+$ and $-$.</p>
+    <div class="key">
+      <p>Put negative numbers in brackets: when $x=-3$, $x^2=(-3)^2=9$.</p>
+      <p>$3p^2$ means $3\times p^2$: square first, then multiply.</p>
+      <p>$Ah$ means $A\times h$.</p>
+    </div>
+    <p>The <b>subject</b> of a formula is the letter on its own, such as $y$ in $y=2x+t$. To make a different letter the subject, list what is done to that letter, then <b>undo the steps in reverse order</b>.</p>
+    <div class="trap"><b>Trap:</b> $-3^2$ and $(-3)^2$ are different. Always put brackets around the value you substitute.</div>
+  </div>
+  <div class="widget" id="w2">
+    <div class="box-title">Play · substitute step by step</div>
+    <div class="ctrl"><label>Expression <select id="w2e"></select></label><label>$x=$ <input type="range" id="w2x" min="-5" max="6" step="1" value="-3"> <b id="w2xv"></b></label></div>
+    <div class="readout" id="w2r"></div>
+    <h3 style="margin-top:1.2rem">Changing the subject with a flow chart</h3>
+    <div class="ctrl"><label>Formula <select id="w2f"></select></label></div>
+    <div id="w2flow"></div>
+  </div>
+  <div class="card wex">
+    <div class="box-title">Worked example</div>
+    <ol class="steps">
+      <li>Find $2x^2-5$ when $x=-3$. Substitute: $2\times(-3)^2-5$. Index first: $2\times9-5$. Then multiply: $18-5=13$.</li>
+      <li>Use $V=\frac{Ah}{3}$ with $A=6$ and $h=12$. $Ah=6\times12=72$, so $V=\frac{72}{3}=24$. (Writing $6+12$ is a common mistake.)</li>
+      <li>Make $p$ the subject of $D=wp+4$. To get $D$ from $p$: multiply by $w$, then add 4. Undo in reverse: subtract 4, then divide by $w$. So $p=\frac{D-4}{w}$.</li>
+      <li>Check: with $w=12$ and $p=8$, $D=12\times8+4=100$, and $\frac{100-4}{12}=8$. ✓</li>
+    </ol>
+  </div>
+  <div class="qhead"><h3>Your turn</h3><span>4 questions</span></div>
+  <div class="qs" data-part="a2"></div>
+  <div class="next"><button class="btn primary" data-go="as">Next: Simplifying →</button></div>
+</section>
+
+<!-- ================= A3 SIMPLIFY ================= -->
+<section class="tab" id="tab-as">
+  <div class="kicker">Station A3 · Expressions and formulae</div>
+  <h2>Simplifying: like terms and index laws</h2>
+  <div class="card idea">
+    <div class="box-title">The idea</div>
+    <p><b>Like terms</b> have exactly the same letters raised to the same powers. Only like terms can be added or subtracted. Add or subtract their numbers and keep the letters:</p>
+    <div class="tblwrap"><table class="t">
+      <tr><th>Like terms</th><th>Not like terms</th></tr>
+      <tr><td>$3x$ and $-5x$</td><td>$3x$ and $3y$</td></tr>
+      <tr><td>$4a^2$ and $a^2$</td><td>$a^2$ and $a$</td></tr>
+      <tr><td>$2ab$ and $7ba$</td><td>$ab$ and $a^2b$</td></tr>
+    </table></div>
+    <p>A term keeps the sign in front of it. In $5x+3y-2x+4y$, the $x$-terms are $5x$ and $-2x$, so $5x-2x=3x$. The $y$-terms give $3y+4y=7y$. The answer is $3x+7y$.</p>
+    <div class="key">
+      <p><b>Multiplying terms:</b> multiply the numbers, then multiply the letters. A power counts how many times a letter is multiplied:</p>
+      <p>$$\begin{gathered}m\times m=m^2\qquad 3m\times4mn=12m^2n\\[4pt] x^2\times x=x\cdot x\cdot x=x^3\end{gathered}$$</p>
+      <p><b>Dividing terms:</b> divide the numbers, then cancel the letters that match:</p>
+      <p>$$\frac{12x^3}{4x}=\frac{12\cdot x\cdot x\cdot x}{4\cdot x}=3x^2$$</p>
+    </div>
+    <p>You use these every time you expand or factorise. Expanding $2x(3x-4)$ needs $2x\times3x=6x^2$. Factorising $6x^2-8x$ needs $6x^2\div2x=3x$.</p>
+    <div class="trap"><b>Trap:</b> $x+x=2x$, but $x\times x=x^2$. And $x^2+x^2=2x^2$, not $x^4$: adding like terms never changes the power.</div>
+  </div>
+  <div class="widget" id="w7">
+    <div class="box-title">Play · sort the like terms</div>
+    <div class="ctrl"><label>Expression <select id="w7e"></select></label><button class="btn primary" id="w7go" type="button">Sort into groups</button></div>
+    <div id="w7terms"></div>
+    <div class="readout" id="w7r"></div>
+    <h3 style="margin-top:1.2rem">Multiplying and dividing terms</h3>
+    <div class="ctrl"><b>First term</b>
+      <label>number <input type="range" id="w7a" min="1" max="6" step="1" value="2"> <b id="w7av"></b></label>
+      <label>power of $x$ <input type="range" id="w7m" min="1" max="3" step="1" value="2"> <b id="w7mv"></b></label>
+    </div>
+    <div class="ctrl">
+      <select id="w7op" aria-label="operation"><option value="*">multiply by</option><option value="/">divide by</option></select>
+    </div>
+    <div class="ctrl"><b>Second term</b>
+      <label>number <input type="range" id="w7b" min="1" max="6" step="1" value="3"> <b id="w7bv"></b></label>
+      <label>power of $x$ <input type="range" id="w7n" min="1" max="3" step="1" value="1"> <b id="w7nv"></b></label>
+    </div>
+    <div id="w7tiles"></div>
+    <div class="readout" id="w7r2"></div>
+  </div>
+  <div class="card wex">
+    <div class="box-title">Worked example</div>
+    <ol class="steps">
+      <li>$7a+2b-3a+b$. Group the like terms: $(7a-3a)+(2b+b)=4a+3b$.</li>
+      <li>$5x^2+2x-3x^2-x$. $x^2$ and $x$ are different, so collect each kind: $(5x^2-3x^2)+(2x-x)=2x^2+x$.</li>
+      <li>$4p\times3pq$. Numbers: $4\times3=12$. Letters: $p\times p\times q=p^2q$. So $12p^2q$.</li>
+      <li>$15y^3\div5y$. Numbers: $15\div5=3$. Letters: $\frac{y\cdot y\cdot y}{y}=y^2$. So $3y^2$.</li>
+    </ol>
+  </div>
+  <details class="why"><summary>Why do these rules work? (the index laws)</summary>
+    <p><b>Like terms.</b> $3x+5x=(3+5)x=8x$. This is the distributive law used in reverse: taking out the common factor $x$. Terms like $3x$ and $5y$ have no common letter to take out, so they stay separate.</p>
+    <p><b>Multiplication law.</b> For whole numbers $m$ and $n$: $x^m\times x^n=x^{m+n}$.</p>
+    <p><b>Proof.</b> $x^m$ is $m$ factors of $x$, and $x^n$ is $n$ more factors. Multiplying puts all of them in one row, which is $m+n$ factors of $x$.</p>
+    <p><b>Division law.</b> When $m>n$: $x^m\div x^n=x^{m-n}$.</p>
+    <p><b>Proof.</b> Write $\frac{x^m}{x^n}$ with $m$ factors on top and $n$ underneath. Each $x$ underneath cancels one $x$ on top, which leaves $m-n$ factors.</p>
+    <p><b>What the laws do:</b></p>
+    <ul class="steps">
+      <li>Numbers: $2^3\times2^2=8\times4=32=2^5$ ✓ and $10^5\div10^2=1000=10^3$ ✓.</li>
+      <li>Terms: $3m\times2m=6m^2$, $2x^2\times5x=10x^3$, $\frac{18a^3}{6a^2}=3a$.</li>
+      <li>Expanding: $3x(x^2+2)=3x^3+6x$.</li>
+      <li>Factorising: $12x^3-8x^2$ has HCF $4x^2$, because $\frac{12x^3}{4x^2}=3x$ and $\frac{8x^2}{4x^2}=2$. So $12x^3-8x^2=4x^2(3x-2)$.</li>
+      <li>Looking ahead to Year 9: $(x^2)^3=x^2\times x^2\times x^2=x^6$.</li>
+    </ul>
+  </details>
+  <div class="qhead"><h3>Your turn</h3><span>5 questions</span></div>
+  <div class="qs" data-part="as"></div>
+  <div class="next"><button class="btn primary" data-go="a3">Next: Expanding brackets →</button></div>
+</section>
+
+<!-- ================= A3 ================= -->
+<section class="tab" id="tab-a3">
+  <div class="kicker">Station A4 · Expressions and formulae</div>
+  <h2>Expanding brackets</h2>
+  <div class="card idea">
+    <div class="box-title">The idea</div>
+    <p>Think of the number outside the bracket as an <b>operator</b>. In $3(x+5)$, the operator 3 stretches the whole length $x+5$ to three times its length. Stretching a path made of two pieces stretches <b>each piece</b>:</p>
+    <p>$$3(x+5)=3x+15$$</p>
+    <p>A <b>negative</b> operator also flips the direction, so every sign changes: $-2(x-3)=-2x+6$.</p>
+    <div class="key">Multiply <b>every</b> term inside the bracket by the term outside. A grid (box method) keeps track:
+      <div class="tblwrap"><table class="t"><tr><th>$\times$</th><th>$2x$</th><th>$-7$</th></tr><tr><th>$3$</th><td>$6x$</td><td>$-21$</td></tr></table></div>
+      so $3(2x-7)=6x-21$.</div>
+    <p>A letter outside works the same way: $x(4x+1)=4x^2+x$. Then <b>collect like terms</b>: $6(a+7)-2(a+9)=6a+42-2a-18=4a+24$.</p>
+    <div class="trap"><b>Trap:</b> with a minus in front of a bracket, multiply every term by the negative number. $-2(a+9)$ gives $-2a-18$, not $-2a+18$.</div>
+  </div>
+  <div class="widget" id="w3">
+    <div class="box-title">Play · stretch the bracket</div>
+    <div class="ctrl"><label>Bracket <select id="w3e"></select></label><label>Operator $k=$ <input type="range" id="w3k" min="-3" max="4" step="1" value="3"> <b id="w3kv"></b></label></div>
+    <div id="w3svg"></div>
+    <div class="readout" id="w3r"></div>
+    <h3 style="margin-top:1.2rem">A letter as the operator: the area model</h3>
+    <div class="ctrl"><label>Expression <select id="w3a"></select></label></div>
+    <div id="w3area"></div>
+    <div class="readout" id="w3ar"></div>
+  </div>
+  <div class="card wex">
+    <div class="box-title">Worked example</div>
+    <ol class="steps">
+      <li>$4(3x-2)$: $4\times3x=12x$ and $4\times(-2)=-8$, so $12x-8$.</li>
+      <li>$-3(2y-5)$: $-3\times2y=-6y$ and $-3\times(-5)=+15$, so $-6y+15$.</li>
+      <li>$6(a+7)-2(a+9)=6a+42-2a-18=4a+24$.</li>
+      <li>$3m(m+2)$: $3m\times m=3m^2$ and $3m\times2=6m$, so $3m^2+6m$.</li>
+    </ol>
+  </div>
+  <details class="why"><summary>Why does expanding work? (the distributive law)</summary>
+    <p><b>Claim.</b> For any numbers $k$, $a$ and $b$: $k(a+b)=ka+kb$.</p>
+    <p><b>Proof with lengths.</b> Put a piece of length $a$ and then a piece of length $b$ end to end on a number line, giving a total length of $a+b$. The operator $k$ stretches every length to $k$ times itself. The first piece becomes $ka$ and the second becomes $kb$, still end to end. So the whole stretched length is $ka+kb$, and it is also $k(a+b)$. If $k$ is negative, every piece is flipped as well as stretched, so the same equality holds with both signs changed.</p>
+    <p><b>Proof with area.</b> A rectangle $k$ wide and $(a+b)$ long splits into two rectangles, $k$ by $a$ and $k$ by $b$. The areas add: $k(a+b)=ka+kb$.</p>
+    <p><b>What it can do: mental arithmetic.</b></p>
+    <ul class="steps">
+      <li>$6\times58=6(60-2)=360-12=348$</li>
+      <li>$7\times1.99=7(2-0.01)=14-0.07=13.93$</li>
+      <li>$25\times44=25(40+4)=1000+100=1100$</li>
+    </ul>
+  </details>
+  <div class="qhead"><h3>Your turn</h3><span>4 questions</span></div>
+  <div class="qs" data-part="a3"></div>
+  <div class="next"><button class="btn primary" data-go="a4">Next: Factorising →</button></div>
+</section>
+
+<!-- ================= A4 ================= -->
+<section class="tab" id="tab-a4">
+  <div class="kicker">Station A5 · Expressions and formulae</div>
+  <h2>Factorising: expanding in reverse</h2>
+  <div class="card idea">
+    <div class="box-title">The idea</div>
+    <p>Factorising undoes expanding: $3(x+8)\;\to\;3x+24$ is expanding, and $3x+24\;\to\;3(x+8)$ is factorising.</p>
+    <div class="key">
+      <p><b>Step 1.</b> Find the <b>highest common factor (HCF)</b> of all the terms: the biggest number, and the highest powers of letters, that go into every term.</p>
+      <p><b>Step 2.</b> Write the HCF outside the bracket, and inside it write what is left of each term.</p>
+      <p><b>Step 3.</b> Check by expanding.</p>
+    </div>
+    <p>$12x^2-30x$: the HCF of 12 and 30 is 6, and both terms contain $x$, so the HCF is $6x$. Then $12x^2\div6x=2x$ and $30x\div6x=5$, giving $6x(2x-5)$.</p>
+    <div class="trap"><b>Trap:</b> $2(6x^2-15x)$ is equivalent but <b>not fully factorised</b>: 3 and $x$ can still come out of the bracket. Always use the <i>highest</i> common factor.</div>
+  </div>
+  <div class="widget" id="w4">
+    <div class="box-title">Play · find the common factor</div>
+    <div class="ctrl"><label>Expression <select id="w4e"></select></label></div>
+    <div id="w4tiles"></div>
+    <p class="small">Choose what to take out of the bracket:</p>
+    <div class="ctrl" id="w4c"></div>
+    <div class="readout" id="w4r"></div>
+  </div>
+  <div class="card wex">
+    <div class="box-title">Worked example</div>
+    <ol class="steps">
+      <li>$18x+24$. HCF of 18 and 24 is 6; $x$ is not in every term. So $6(3x+4)$. Check: $6\times3x+6\times4=18x+24$ ✓.</li>
+      <li>$8h-4h^2$. HCF of 8 and 4 is 4; both terms contain $h$. So $4h(2-h)$.</li>
+      <li>$14cd-7c$. HCF is $7c$. So $7c(2d-1)$. The 1 matters: $7c\times1=7c$.</li>
+      <li>$12tu+16u-20$. The HCF is 4 ($u$ is not in the last term). So $4(3tu+4u-5)$.</li>
+    </ol>
+  </div>
+  <details class="why"><summary>Why does the HCF give the full factorisation?</summary>
+    <p><b>Claim.</b> If you take out the highest common factor $H$, the terms left inside the bracket have no common factor except 1.</p>
+    <p><b>Proof.</b> Suppose the terms inside still shared a factor $f$ bigger than 1. Then every original term would be divisible by $H\times f$, which is bigger than $H$. That contradicts $H$ being the <i>highest</i> common factor. So nothing more can come out.</p>
+    <p><b>Examples.</b></p>
+    <ul class="steps">
+      <li>$24x+32x^2$ can be written as $2(12x+16x^2)$, $4x(6+8x)$ or $x(24+32x)$. Only $8x(3+4x)$ is fully factorised, because 3 and $4x$ share no factor.</li>
+      <li>$15e+6i$: the HCF is 3 (no letter is in both terms), so $3(5e+2i)$.</li>
+      <li>Area use: a rectangle has area $12b^2-30b$ and width $6b$. Since $12b^2-30b=6b(2b-5)$, its length is $2b-5$.</li>
+    </ul>
+  </details>
+  <div class="qhead"><h3>Your turn</h3><span>4 questions</span></div>
+  <div class="qs" data-part="a4"></div>
+  <div class="next"><button class="btn primary" data-go="a5">Next: Solving equations →</button></div>
+</section>
+
+<!-- ================= A5 ================= -->
+<section class="tab gb-sec" id="tab-a5">
+  <div class="kicker">Station A6 · Equations and inequalities</div>
+  <h2>Constructing and solving equations</h2>
+  <div class="card idea">
+    <div class="box-title">The idea</div>
+    <p>An equation is a balance: both sides have the same value. Do the <b>same thing to both sides</b> and it stays balanced. Aim to get the unknown on its own.</p>
+    <div class="key">
+      <p><b>One unknown term:</b> undo the operations in reverse order, like a flow chart. For $3x+5=17$: subtract 5, then divide by 3, so $x=4$.</p>
+      <p><b>Unknown on both sides:</b> first subtract the smaller $x$-term from both sides. $5x+8=3x+20$ becomes $2x+8=20$.</p>
+      <p><b>Fractions:</b> multiply both sides to clear them. $\frac{x+4}{6}=3$ becomes $x+4=18$.</p>
+    </div>
+    <p><b>Constructing:</b> turn the words or the diagram into an equation first. For example, the two equal sides of an isosceles triangle give $3a-4=20$.</p>
+    <div class="trap"><b>Trap:</b> do each step to the <b>whole</b> of both sides, and check your answer by substituting it back.</div>
+  </div>
+  <div class="widget" id="w5">
+    <div class="box-title">Play · keep the balance</div>
+    <div class="ctrl"><label>Equation <select id="w5e"></select></label><button class="btn" id="w5reset" type="button">Start again</button></div>
+    <div id="w5svg"></div>
+    <div class="readout" id="w5eq"></div>
+    <div class="ctrl">Do to both sides:
+      <select id="w5op" aria-label="operation"><option value="-">subtract</option><option value="+">add</option><option value="/">divide by</option><option value="*">multiply by</option></select>
+      <input type="text" id="w5amt" value="3x" size="5" aria-label="amount">
+      <button class="btn primary" id="w5go" type="button">Apply</button>
+    </div>
+    <p class="small">You can type an amount like <code>3x</code>, <code>x</code> or <code>8</code>.</p>
+    <ol class="log" id="w5log"></ol>
+  </div>
+  <div class="card wex">
+    <div class="box-title">Worked example</div>
+    <ol class="steps">
+      <li>$3(x+4)=27$. Divide both sides by 3: $x+4=9$, so $x=5$. (Or expand first: $3x+12=27$, then $3x=15$.)</li>
+      <li>$5x+8=3x+20$. Subtract $3x$: $2x+8=20$. Subtract 8: $2x=12$. Divide by 2: $x=6$. Check: $5\times6+8=38$ and $3\times6+20=38$ ✓.</li>
+      <li>$\frac{x+4}{6}=3$. Multiply by 6: $x+4=18$, so $x=14$.</li>
+      <li>“I multiply my number by 4 and subtract 1. I get the same as 3 times my number plus 6.” So $4n-1=3n+6$. Subtract $3n$: $n-1=6$, so $n=7$.</li>
+    </ol>
+  </div>
+  <details class="why"><summary>Why can we do the same thing to both sides?</summary>
+    <p><b>Claim.</b> If $a=b$, then $a+c=b+c$, $a-c=b-c$, $a\times c=b\times c$, and $\frac ac=\frac bc$ as long as $c\neq0$.</p>
+    <p><b>Reason.</b> $a$ and $b$ are the <i>same number</i> written two ways. Doing one operation to the same number gives the same result, whichever way it is written.</p>
+    <p><b>Why not divide by 0?</b> $2\times0=3\times0$ is true, but dividing both sides by 0 would “prove” $2=3$. Dividing by 0 has no meaning, so it is never allowed.</p>
+    <p><b>Examples.</b></p>
+    <ul class="steps">
+      <li>Rectangle: opposite sides $4(x+2)$ and 40 must be equal, so $4(x+2)=40$, $x+2=10$, $x=8$.</li>
+      <li>Isosceles trapezium with equal sides $7(x-2)$ and $3x+6$: $7x-14=3x+6$, $4x=20$, $x=5$.</li>
+    </ul>
+  </details>
+  <div class="qhead"><h3>Your turn</h3><span>5 questions</span></div>
+  <div class="qs" data-part="a5"></div>
+  <div class="next"><button class="btn primary" data-go="a6">Next: Inequalities →</button></div>
+</section>
+
+<!-- ================= A6 ================= -->
+<section class="tab gb-sec" id="tab-a6">
+  <div class="kicker">Station A7 · Equations and inequalities</div>
+  <h2>Inequalities and the number line</h2>
+  <div class="card idea">
+    <div class="box-title">The idea</div>
+    <p>An inequality describes a <b>range</b> of values, not just one value.</p>
+    <div class="tblwrap"><table class="t">
+      <tr><th>Symbol</th><td>$&lt;$</td><td>$\le$</td><td>$&gt;$</td><td>$\ge$</td></tr>
+      <tr><th>Meaning</th><td>less than</td><td>less than or equal to</td><td>greater than</td><td>greater than or equal to</td></tr>
+      <tr><th>Number line</th><td>open ○</td><td>closed ●</td><td>open ○</td><td>closed ●</td></tr>
+    </table></div>
+    <div class="key">$-3&lt;x\le2$ means $x$ is greater than $-3$ <b>and</b> less than or equal to 2. On a number line: an open circle at $-3$, a closed circle at 2, and a line joining them. The integers it allows are $-2,-1,0,1,2$.</div>
+    <p>Reading in the other direction is fine: $8&gt;y&gt;2$ means the same as $2&lt;y&lt;8$.</p>
+    <div class="trap"><b>Trap:</b> with $&lt;$, the end value is <b>not</b> included. For $-3&lt;x&lt;3$ the smallest integer is $-2$, not $-3$.</div>
+  </div>
+  <div class="widget" id="w6">
+    <div class="box-title">Play · build an inequality</div>
+    <div class="ctrl">
+      <label>Left end <input type="range" id="w6a" min="-8" max="8" step="0.25" value="-3"> <b id="w6av"></b></label>
+      <label><input type="checkbox" id="w6ai"> include</label>
+    </div>
+    <div class="ctrl">
+      <label>Right end <input type="range" id="w6b" min="-8" max="8" step="0.25" value="2"> <b id="w6bv"></b></label>
+      <label><input type="checkbox" id="w6bi" checked> include</label>
+    </div>
+    <div id="w6svg"></div>
+    <div class="readout" id="w6r"></div>
+  </div>
+  <div class="card wex">
+    <div class="box-title">Worked example</div>
+    <ol class="steps">
+      <li>Write “$x$ is greater than or equal to 8 and less than 12” as $8\le x&lt;12$.</li>
+      <li>For $24&lt;y\le27$: 24 is not included and 27 is. The smallest integer is 25, the largest is 27, and the integers are $25,26,27$.</li>
+      <li>For $5.2&lt;n\le8.75$, the integers are $6,7,8$. The ends are not integers, so look at the first and last whole numbers <i>inside</i> the range.</li>
+      <li>$x&gt;4$ is equivalent to $2x&gt;8$: multiplying both sides by a positive number keeps the inequality the same way round.</li>
+    </ol>
+  </div>
+  <details class="why"><summary>Why does multiplying by a positive number keep the inequality?</summary>
+    <p><b>Claim.</b> If $a&lt;b$ and $c&gt;0$, then $ca&lt;cb$.</p>
+    <p><b>Reason.</b> On the number line, $b$ is to the right of $a$. The operator $c$ stretches every distance from 0 by the same amount without flipping, so $cb$ stays to the right of $ca$.</p>
+    <p><b>Preview.</b> A <i>negative</i> operator flips the number line, so the order reverses. $2&lt;5$, but $-2&gt;-5$. You will use this in later years.</p>
+    <p><b>Examples.</b> $x&lt;9 \iff 7x&lt;63$. $y\ge1 \iff y+9\ge10$. $y\le1 \iff y-5\le-4$. Adding or subtracting never flips the sign.</p>
+  </details>
+  <div class="qhead"><h3>Your turn</h3><span>4 questions</span></div>
+  <div class="qs" data-part="a6"></div>
+  <div class="next"><button class="btn primary" data-go="rv">Next: Mixed review →</button></div>
+</section>
+
+<!-- ================= REVIEW ================= -->
+<section class="tab" id="tab-rv">
+  <div class="kicker" style="color:#6b5ca5">Mixed review</div>
+  <h2>Put it all together</h2>
+  <p>The questions are mixed up. For each one, first decide <b>which station's idea</b> you need, then work it out.</p>
+  <div class="qs" data-part="rv"></div>
+  <div class="next"><button class="btn primary" data-go="report">See my learning report →</button></div>
+</section>
+
+<!-- ================= REPORT ================= -->
+<section class="tab" id="tab-report">
+  <div class="kicker">Learning report</div>
+  <h2>How did your revision go?</h2>
+  <div id="report"></div>
+</section>
+</main>
+<script>
+/* ===== tiny algebra engine: parse, evaluate, LaTeX, equivalence ===== */
+const ALG = (function(){
+  function tokenize(s){
+    s=String(s).replace(/[−–]/g,'-').replace(/[×·]/g,'*').replace(/÷/g,'/').replace(/\s+/g,'');
+    const out=[];let i=0;
+    while(i<s.length){const c=s[i];
+      if(/[0-9.]/.test(c)){let j=i;while(j<s.length&&/[0-9.]/.test(s[j]))j++;const t=s.slice(i,j);if((t.match(/\./g)||[]).length>1||t==='.')throw 'num';out.push({k:'num',v:parseFloat(t),raw:t});i=j;continue}
+      if(/[a-zA-Z]/.test(c)){out.push({k:'var',v:c});i++;continue}
+      if('+-*/^()'.includes(c)){out.push({k:c});i++;continue}
+      throw 'char';
+    }
+    // implicit multiplication
+    const r=[];for(let k=0;k<out.length;k++){const a=out[k-1],b=out[k];
+      if(a&&(a.k==='num'||a.k==='var'||a.k===')')&&(b.k==='var'||b.k==='('||(b.k==='num'&&a.k!=='num')))r.push({k:'*',imp:true});
+      r.push(b)}
+    return r;
+  }
+  function parse(s){
+    const T=tokenize(s);let p=0;if(!T.length)throw 'empty';
+    const peek=()=>T[p],eat=k=>{if(!T[p]||T[p].k!==k)throw 'expect '+k;return T[p++]};
+    function expr(){let n=term();while(peek()&&(peek().k==='+'||peek().k==='-')){const o=T[p++].k;const m=term();n={t:o==='+'?'add':'sub',a:n,b:m}}return n}
+    function term(){let n=unary();while(peek()&&(peek().k==='*'||peek().k==='/')){const tk=T[p++];const m=unary();n=tk.k==='*'?{t:'mul',a:n,b:m,imp:!!tk.imp}:{t:'div',a:n,b:m}}return n}
+    function unary(){if(peek()&&peek().k==='-'){p++;return {t:'neg',a:unary()}}if(peek()&&peek().k==='+'){p++;return unary()}return power()}
+    function power(){let b=atom();if(peek()&&peek().k==='^'){p++;const e=unary();return {t:'pow',a:b,b:e}}return b}
+    function atom(){const k=peek();if(!k)throw 'end';
+      if(k.k==='num'){p++;return {t:'num',v:k.v,raw:k.raw}}
+      if(k.k==='var'){p++;return {t:'var',v:k.v}}
+      if(k.k==='('){p++;const e=expr();eat(')');return {t:'grp',a:e}}
+      throw 'unexpected'}
+    const n=expr();if(p!==T.length)throw 'trailing';return n;
+  }
+  function ev(n,env){switch(n.t){
+    case 'num':return n.v;case 'var':if(!(n.v in env))throw 'var';return env[n.v];
+    case 'add':return ev(n.a,env)+ev(n.b,env);case 'sub':return ev(n.a,env)-ev(n.b,env);
+    case 'mul':return ev(n.a,env)*ev(n.b,env);case 'div':return ev(n.a,env)/ev(n.b,env);
+    case 'pow':return Math.pow(ev(n.a,env),ev(n.b,env));case 'neg':return -ev(n.a,env);case 'grp':return ev(n.a,env)}}
+  function vars(n,set=new Set()){if(!n)return set;if(n.t==='var')set.add(n.v);['a','b'].forEach(k=>{if(n[k]&&typeof n[k]==='object')vars(n[k],set)});return set}
+  const strip=n=>n.t==='grp'?strip(n.a):n;
+  function tex(n){switch(n.t){
+    case 'num':return n.raw||String(n.v);case 'var':return n.v;
+    case 'add':return tex(n.a)+'+'+tex(n.b);
+    case 'sub':return tex(n.a)+'-'+tex(n.b);
+    case 'neg':return '-'+tex(n.a);
+    case 'grp':return '\\left('+tex(n.a)+'\\right)';
+    case 'div':return '\\frac{'+tex(strip(n.a))+'}{'+tex(strip(n.b))+'}';
+    case 'pow':return (n.a.t==='var'||n.a.t==='num'||n.a.t==='grp'?tex(n.a):'{'+tex(n.a)+'}')+'^{'+tex(strip(n.b))+'}';
+    case 'mul':{const A=tex(n.a),B=tex(n.b);const bStart=n.b.t==='num'||(n.b.t==='pow'&&n.b.a.t==='num')||n.b.t==='neg'||n.b.t==='div';
+      return bStart?A+'\\times '+B:A+B}}}
+  function toTex(s){try{return tex(parse(s))}catch(e){return null}}
+  const PTS=[1.37,-2.21,0.63,3.08,-0.71,2.49,-1.53];
+  function equiv(a,b,extra){
+    let A,B;try{A=typeof a==='string'?parse(a):a;B=typeof b==='string'?parse(b):b}catch(e){return false}
+    const vs=[...new Set([...vars(A),...vars(B),...(extra||[])])];
+    for(let t=0;t<6;t++){const env={};vs.forEach((v,i)=>env[v]=PTS[(t+i*3)%PTS.length]+0.11*i);
+      let x,y;try{x=ev(A,env);y=ev(B,env)}catch(e){return false}
+      if(!isFinite(x)||!isFinite(y)){continue}
+      if(Math.abs(x-y)>1e-7*Math.max(1,Math.abs(x),Math.abs(y)))return false}
+    return true;
+  }
+  // number of top-level terms (split on + and - outside brackets)
+  function topTerms(n){n=n;if(n.t==='add'||n.t==='sub')return topTerms(n.a)+topTerms(n.b);return 1}
+  function hasGrp(n){if(!n||typeof n!=='object')return false;if(n.t==='grp')return true;return hasGrp(n.a)||hasGrp(n.b)}
+  return {parse,ev,tex,toTex,equiv,vars,topTerms,hasGrp};
+})();
+
+
+const R = String.raw;
+/* ================= TEXT ================= */
+const UI = {
+  tabs:{start:'Start',a1:'A1 Words',a2:'A2 Substitute',as:'A3 Simplify',a3:'A4 Expand',a4:'A5 Factorise',a5:'A6 Equations',a6:'A7 Inequalities',rv:'Review',report:'Report'},
+  mins:{a1:6,a2:6,as:7,a3:6,a4:7,a5:7,a6:5,rv:6},
+  check:'Check', attempt:'Try', of:'of',
+  fmt:{
+    expr:R`Type algebra, e.g. (n+5)/3 for $\frac{n+5}{3}$, or 3x^2 for $3x^{2}$.`,
+    expand:R`Type the expanded, simplified answer, e.g. 12x-8 for $12x-8$.`,
+    simp:R`Type the simplified answer, e.g. 12m^2n for $12m^{2}n$.`,
+    factor:R`Type it factorised, e.g. 6x(2x-5) for $6x(2x-5)$.`,
+    num:'Type a number, e.g. 14 or -3 or 7/2.',
+    list:'Type the integers separated by commas, e.g. 3, 4, 5'
+  },
+  previewPre:'Your answer: ',
+  right:['Correct, first try!','Correct, on the second try.','Correct, on the third try.'],
+  wrong:'Not yet. Check your working and try again.',
+  wrongLast:'That was your last try. Read the solution below.',
+  info:{
+    bad:'I could not read that. Check the brackets and the symbols.',
+    brackets:'That is equivalent, but the brackets are still there. Expand them. (This did not use a try.)',
+    collect:'That is equivalent, but some like terms can still be collected. (This did not use a try.)',
+    formfactor:'That is equivalent. Now write it as one factor times a bracket, like 6x(2x-5). (This did not use a try.)',
+    monomial:'That is equivalent, but not fully simplified: multiply the numbers together and write repeated letters as a power (m×m = m²). (This did not use a try.)',
+    notfully:'That is a correct factorisation, but not a full one: a common factor is still inside the bracket. (This did not use a try.)'
+  },
+  hint:'Hint', sol:'Solution',
+  prog:(a,t,p)=>`${a} / ${t} answered · ${p} pts`,
+  done:'done',
+  report:{
+    empty:'Nothing answered yet. Work through the stations, then come back here.',
+    byPart:'By station', bySkill:'By skill', how:'How you worked', advice:'What to do next', map:'Knowledge map', total:'Total score',
+    lv:{g:'steady',a:'practise',r:'needs work',n:'not answered'},
+    firstTry:n=>`<b>${n}</b> questions right on the first try.`,
+    fast:n=>!n?'No questions were answered right within a few seconds.':`<b>${n}</b> answered right very quickly. That is great if you saw the idea at once. If you guessed, go back and make sure you can explain each step.`,
+    rushed:n=>n?`<b>${n}</b> questions had three wrong tries in under 20 seconds. That looks like rushing. After a wrong answer, stop and ask: <i>Which operation comes first? Did I multiply every term in the bracket? Did I do the same to both sides? Is the end value included?</i>`:'No rushing: you took time to think after wrong answers. Well done.',
+    notDone:n=>n?`<b>${n}</b> questions are not finished yet.`:'Every question is finished.',
+    why:(o,t)=>`You opened <b>${o}</b> of the <b>${t}</b> “why does it work?” sections.`,
+    allGood:'Every skill you tried is steady. Next, revise Part B: sequences, functions and graphs.',
+    advIntro:'Look at these skills again, weakest first:',
+    note:'Each question scores 3 (right first try), 2 (second try), 1 (third try) or 0 (three wrong). Skill levels use the average: under 1.5 needs work, 1.5 to 2.5 practise, 2.5 and above steady.',
+    centre:['Algebra:','letters as numbers'],
+    avg:a=>a==null?'–':a.toFixed(1)+' / 3'
+  }
+};
+const GROUPS = {ef:'Expressions & formulae', eq:'Equations & inequalities'};
+const GCOL = {ef:'#3b4fa8', eq:'#b5487a'};
+const SEC = {a1:'A1 Writing expressions',a2:'A2 Substitution & formulae',as:'A3 Simplifying',a3:'A4 Expanding brackets',a4:'A5 Factorising',a5:'A6 Solving equations',a6:'A7 Inequalities',rv:'Mixed review'};
+const LABEL = {a1:'A1',a2:'A2',as:'A3',a3:'A4',a4:'A5',a5:'A6',a6:'A7'};
+const SKILLS = {
+  words:{n:'Words → expressions',g:'ef',adv:R`Read the words one operation at a time and apply each one to <i>everything so far</i>. “Add 5, then divide by 3” divides the whole of $n+5$: $\frac{n+5}{3}$. Test your expression with a number such as $n=6$ and compare it with the words.`},
+  classify:{n:'Expression, formula or equation',g:'ef',adv:'Look for the equals sign first. No equals sign: expression. An equals sign linking quantities that can each change: formula. An equals sign with one unknown you can solve for: equation.'},
+  subst:{n:'Substitution & order of operations',g:'ef',adv:R`Write the substituted line first, with every value in brackets, then work through brackets, indices, × ÷, + −. Remember that $Ah$ means $A\times h$.`},
+  negpow:{n:'Negatives & powers',g:'ef',adv:R`Square or cube first, then multiply: $3p^2=3\times p^2$. A negative squared is positive, $(-4)^2=16$; a negative cubed is negative, $(-2)^3=-8$.`},
+  subject:{n:'Changing the subject',g:'ef',adv:R`Write the flow chart for the letter you want: what is done to it, in order. Undo in reverse order. For $D=wp+4$: $p\xrightarrow{\times w}\xrightarrow{+4}D$, so $p=\frac{D-4}{w}$.`},
+  liketerm:{n:'Recognising like terms',g:'ef',adv:R`Like terms have the <i>same letters with the same powers</i>; the number in front does not matter. $2ab$ and $-7ba$ are like terms, but $a^2$ and $a$ are not. Write each term with its letters in alphabetical order to compare them.`},
+  indexmul:{n:'Multiplying terms (powers)',g:'ef',adv:R`Multiply the numbers first, then count each letter: $3m\times4mn$ has $m$ twice and $n$ once, so $12m^2n$. Remember $x\times x=x^2$ but $x+x=2x$.`},
+  indexdiv:{n:'Dividing terms (powers)',g:'ef',adv:R`Write the letters out as factors and cancel: $\frac{12x^3}{4x}=\frac{12\cdot x\cdot x\cdot x}{4\cdot x}=3x^2$. Divide the numbers, then subtract the powers.`},
+  collect:{n:'Collecting like terms',g:'ef',adv:R`After expanding, underline the like terms (same letters, same powers) before adding them. $4e^2$ and $-5e^2$ combine, but $e^2$ and $e$ never do.`},
+  expand:{n:'Expanding a bracket',g:'ef',adv:R`Use the grid: the term outside times <i>every</i> term inside. Watch the signs: $-3\times(-5)=+15$. A letter outside gives squares: $3m\times m=3m^2$.`},
+  hcf:{n:'Factorising (number HCF)',g:'ef',adv:'Find the biggest number that divides every coefficient. Divide each term by it and write the results inside the bracket. Then expand to check.'},
+  hcfalg:{n:'Factorising (letter in HCF)',g:'ef',adv:R`Check the letters too: if every term contains $x$, then $x$ goes outside. $12x^2-30x=6x(2x-5)$. If you can still take something out of the bracket, you have not used the <i>highest</i> common factor.`},
+  inverse:{n:'Solving with inverse operations',g:'eq',adv:'Draw the flow chart of what happens to x, then undo each step in reverse order. Check by substituting your answer back into the equation.'},
+  bothsides:{n:'Unknown on both sides',g:'eq',adv:R`First subtract the smaller $x$-term from both sides, so that $x$ is on one side only. Then solve as usual. Write each new line underneath the last one.`},
+  fraceq:{n:'Equations with brackets & fractions',g:'eq',adv:R`To clear a fraction, multiply both sides by the denominator: $\frac{3x-1}{2}=7$ becomes $3x-1=14$. With a bracket, either divide both sides by the number outside or expand first.`},
+  model:{n:'Writing equations from situations',g:'eq',adv:'Ask: what two things are equal? Equal sides of a shape, or the two results described in words. Write “left side = right side” before solving.'},
+  ineqmean:{n:'Reading inequality notation',g:'eq',adv:R`Read $a\lt x\le b$ from $x$ outwards: “$x$ is greater than $a$ and less than or equal to $b$”. The line under the sign means “or equal to”.`},
+  ineqline:{n:'Inequalities on number lines',g:'eq',adv:R`A closed circle ● means the end value is included ($\le$, $\ge$). An open circle ○ means it is not ($<$, $>$). Read the left circle, then the right circle.`},
+  ineqint:{n:'Integer values in a range',g:'eq',adv:'Look at each end. If it is included and is an integer, keep it. Otherwise move inward to the next integer. Then list every integer between the two ends.'}
+};
+const LINKS=[['liketerm','collect'],['indexmul','expand'],['indexdiv','hcfalg'],['indexmul','indexdiv'],['words','classify'],['subst','negpow'],['subst','subject'],['expand','collect'],['expand','hcf'],['hcf','hcfalg'],['collect','bothsides'],['inverse','subject'],['inverse','bothsides'],['inverse','fraceq'],['model','words'],['ineqmean','ineqline'],['ineqline','ineqint'],['classify','model'],['expand','fraceq']];
+
+/* ================= QUESTIONS =================
+   src = where the idea comes from in Workbook 8 (numbers are changed) */
+const Q = [
+ // A1
+ {id:'a1a',part:'a1',lvl:'Focus',tags:['words'],type:'expr',ans:'9n-2',src:'WB8 2.1 Q5–6',
+  prompt:R`Mia thinks of a number $n$. She multiplies it by 9, then subtracts 2. Write an expression for her result.`,
+  hint:R`Multiply first: $9n$. Then subtract 2 from that.`, sol:R`$9n-2$`},
+ {id:'a1b',part:'a1',lvl:'Practice',tags:['words'],type:'expr',ans:'(n+5)/3',src:'WB8 2.1 Q6',
+  prompt:R`Mia adds 5 to her number $n$, then divides by 3. Write an expression for her result.`,
+  hint:R`The <i>whole</i> of $n+5$ is divided by 3, so put $n+5$ on top of the fraction.`, sol:R`$\dfrac{n+5}{3}$. Type it as (n+5)/3.`},
+ {id:'a1c',part:'a1',lvl:'Focus',tags:['classify'],type:'mc',ans:2,src:'WB8 2.5 Q1',
+  prompt:'Which one of these is an <b>equation</b>?',
+  opts:[R`$8(x-8)$`,R`$m=2b-3g^2$`,R`$2x+5=13$`,R`$ab+7c$`],
+  hint:'An equation has an equals sign and one unknown that can be solved for.',
+  sol:R`$2x+5=13$ is an equation (it solves to $x=4$). $m=2b-3g^2$ is a formula, linking three quantities. The other two are expressions: they have no equals sign.`},
+ {id:'a1d',part:'a1',lvl:'Challenge',tags:['words','collect'],type:'expand',ans:'4a+6b+10',src:'WB8 2.1 Q10',
+  prompt:R`A rectangle is $(2a+5)$ cm long and $3b$ cm wide. Write an expression for its perimeter in its simplest form.`,
+  hint:R`Perimeter $=2\times\text{length}+2\times\text{width}=2(2a+5)+2\times3b$. Expand, then simplify.`,
+  sol:R`$2(2a+5)+2(3b)=4a+10+6b$, which is $4a+6b+10$.`},
+ // A2
+ {id:'a2a',part:'a2',lvl:'Focus',tags:['subst','negpow'],type:'num',ans:14,tol:1e-9,src:'WB8 2.2 Q4',
+  prompt:R`Find the value of $5e+2f$ when $e=4$ and $f=-3$.`,
+  hint:R`$5\times4+2\times(-3)$. Multiply before adding.`, sol:R`$20+(-6)=14$`},
+ {id:'a2b',part:'a2',lvl:'Practice',tags:['negpow','subst'],type:'num',ans:38,tol:1e-9,src:'WB8 2.2 Q6',
+  prompt:R`Find the value of $2(m^2+3)$ when $m=-4$.`,
+  hint:R`Bracket first, and inside it the index first: $(-4)^2=16$.`, sol:R`$2\left((-4)^2+3\right)=2(16+3)=2\times19=38$`},
+ {id:'a2c',part:'a2',lvl:'Practice',tags:['subject'],type:'expr',ans:'(D-4)/w',strip:true,src:'WB8 2.2 Q15',
+  prompt:R`Make $p$ the subject of $D=wp+4$. (Type the right-hand side, e.g. <code>(D-4)/w</code>.)`,
+  hint:R`To get $D$ from $p$: multiply by $w$, then add 4. Undo in reverse order.`,
+  sol:R`$D-4=wp$, so $p=\dfrac{D-4}{w}$.`},
+ {id:'a2d',part:'a2',lvl:'Challenge',tags:['negpow','subst'],type:'mc',ans:3,src:'WB8 2.2 Q13',
+  prompt:R`When $x=-2$, all of these expressions except one have the same value. Which is the odd one out?`,
+  opts:[R`$x^2+5$`,R`$(x-1)^2$`,R`$-\dfrac{18}{x}$`,R`$5-x$`,R`$2x+13$`],
+  hint:R`Work out each one carefully with $x=-2$ in brackets. Most of them give the same number.`,
+  sol:R`$(-2)^2+5=9$, $(-3)^2=9$, $-\frac{18}{-2}=9$, $2(-2)+13=9$, but $5-(-2)=7$. The odd one out is $5-x$.`},
+ // A3 Simplify (new station; original questions, not from Workbook 8 Chapter 2)
+ {id:'asa',part:'as',lvl:'Focus',tags:['liketerm'],type:'mc',ans:2,src:'original',
+  prompt:R`Which term is a like term with $3x^2y$?`,
+  opts:[R`$3xy^2$`,R`$3x^2$`,R`$-5yx^2$`,R`$x^2y^2$`],
+  hint:R`Look only at the letters and their powers: you need $x^2$ and $y$, nothing more.`,
+  sol:R`$-5yx^2$ is the same as $-5x^2y$: it has $x^2$ and $y$. The number in front and the order of the letters do not matter.`},
+ {id:'asb',part:'as',lvl:'Focus',tags:['collect'],type:'simp',ans:'3x+7y',src:'original',
+  prompt:R`Simplify $5x+3y-2x+4y$.`,
+  hint:R`Collect the $x$-terms ($5x-2x$) and the $y$-terms ($3y+4y$) separately.`, sol:R`$(5x-2x)+(3y+4y)=3x+7y$`},
+ {id:'asc',part:'as',lvl:'Practice',tags:['collect','liketerm'],type:'simp',ans:'3a^2+8a',src:'original',
+  prompt:R`Simplify $4a^2+3a-a^2+5a$.`,
+  hint:R`$a^2$-terms: $4a^2-a^2$. $a$-terms: $3a+5a$. They cannot be combined with each other.`, sol:R`$(4a^2-a^2)+(3a+5a)=3a^2+8a$`},
+ {id:'asd',part:'as',lvl:'Practice',tags:['indexmul'],type:'simp',ans:'12m^2n',src:'original',
+  prompt:R`Simplify $3m\times4mn$.`,
+  hint:R`Numbers: $3\times4$. Letters: $m\times m\times n$.`, sol:R`$3\times4=12$ and $m\times m\times n=m^2n$, so $12m^2n$.`},
+ {id:'ase',part:'as',lvl:'Challenge',tags:['indexdiv'],type:'simp',ans:'3x^2',src:'original',
+  prompt:R`Simplify $\dfrac{12x^3}{4x}$.`,
+  hint:R`$12\div4$, then cancel one $x$ from $x\cdot x\cdot x$.`, sol:R`$\dfrac{12\cdot x\cdot x\cdot x}{4\cdot x}=3x^2$`},
+ // A3
+ {id:'a3a',part:'a3',lvl:'Focus',tags:['expand'],type:'expand',ans:'20x+45',src:'WB8 2.3 Q4',
+  prompt:R`Expand $5(4x+9)$.`, hint:R`$5\times4x$ and $5\times9$.`, sol:R`$5\times4x+5\times9=20x+45$`},
+ {id:'a3b',part:'a3',lvl:'Practice',tags:['expand','collect'],type:'expand',ans:'10d+1',src:'WB8 2.3 Q8',
+  prompt:R`Expand and simplify $7(2d+3)-4(d+5)$.`,
+  hint:R`$-4(d+5)=-4d-20$. Then collect the $d$ terms and the numbers.`,
+  sol:R`$14d+21-4d-20=10d+1$`},
+ {id:'a3c',part:'a3',lvl:'Practice',tags:['expand'],type:'expand',ans:'3m^2+6mx',src:'WB8 2.3 Q9',
+  prompt:R`Expand $3m(m+2x)$.`, hint:R`$3m\times m=3m^2$ and $3m\times2x=6mx$.`, sol:R`$3m^2+6mx$`},
+ {id:'a3d',part:'a3',lvl:'Challenge',tags:['expand','collect'],type:'expand',ans:'9e-e^2',src:'WB8 2.3 Q12',
+  prompt:R`Expand and simplify $e(3+4e)-e(5e-6)$.`,
+  hint:R`$-e(5e-6)=-5e^2+6e$. Collect the $e^2$ terms, then the $e$ terms.`,
+  sol:R`$3e+4e^2-5e^2+6e=9e-e^2$`},
+ // A4
+ {id:'a4a',part:'a4',lvl:'Focus',tags:['hcf'],type:'factor',ans:'5(y-5)',hcf:'5',src:'WB8 2.4 Q3',
+  prompt:R`Factorise $5y-25$.`, hint:'5 goes into both 5 and 25.', sol:R`$5(y-5)$. Check: $5y-25$ ✓`},
+ {id:'a4b',part:'a4',lvl:'Practice',tags:['hcfalg'],type:'factor',ans:'5a(a-3)',hcf:'5a',src:'WB8 2.4 Q9',
+  prompt:R`Factorise fully $5a^2-15a$.`,
+  hint:R`The HCF of 5 and 15 is 5, and both terms contain $a$.`, sol:R`$5a(a-3)$`},
+ {id:'a4c',part:'a4',lvl:'Practice',tags:['hcf'],type:'factor',ans:'4(3tu+4u-5)',hcf:'4',src:'WB8 2.4 Q11',
+  prompt:R`Factorise $12tu+16u-20$.`,
+  hint:R`$u$ is not in the last term, so only a number comes out. What is the HCF of 12, 16 and 20?`,
+  sol:R`$4(3tu+4u-5)$`},
+ {id:'a4d',part:'a4',lvl:'Challenge',tags:['collect','hcf'],type:'factor',ans:'7(x+1)',hcf:'7',src:'WB8 2.4 Q13',
+  prompt:R`Expand and simplify $4(2x+3)+5(x-4)+3(5-2x)$, then factorise your answer.`,
+  hint:R`$8x+12+5x-20+15-6x$. Collect, then look for the HCF.`,
+  sol:R`$8x+12+5x-20+15-6x=7x+7=7(x+1)$`},
+ // A5
+ {id:'a5a',part:'a5',lvl:'Focus',tags:['inverse','fraceq'],type:'num',ans:5,tol:1e-9,src:'WB8 2.5 Q2',
+  prompt:R`Solve $3(x+4)=27$.`, hint:R`Divide both sides by 3 first: $x+4=9$.`, sol:R`$x+4=9$, so $x=5$.`},
+ {id:'a5b',part:'a5',lvl:'Practice',tags:['bothsides'],type:'num',ans:6,tol:1e-9,src:'WB8 2.5 Q5',
+  prompt:R`Solve $6x+5=2x+29$.`, hint:R`Subtract $2x$ from both sides: $4x+5=29$.`, sol:R`$4x+5=29$, $4x=24$, so $x=6$.`},
+ {id:'a5c',part:'a5',lvl:'Practice',tags:['fraceq'],type:'num',ans:5,tol:1e-9,src:'WB8 2.5 Q13',
+  prompt:R`Solve $\dfrac{3x-1}{2}=7$.`, hint:R`Multiply both sides by 2: $3x-1=14$.`, sol:R`$3x-1=14$, $3x=15$, so $x=5$.`},
+ {id:'a5d',part:'a5',lvl:'Practice',tags:['model','bothsides'],type:'num',ans:7,tol:1e-9,src:'WB8 2.5 Q10',
+  prompt:R`Han thinks of a number. She multiplies it by 5, then subtracts 3. The answer is the same as 3 times the number plus 11. What is her number?`,
+  hint:R`Write $5n-3=3n+11$, then subtract $3n$ from both sides.`, sol:R`$5n-3=3n+11$, so $2n-3=11$, $2n=14$ and $n=7$.`},
+ {id:'a5e',part:'a5',lvl:'Challenge',tags:['model','bothsides'],type:'num',ans:6,tol:1e-9,src:'WB8 2.5 Q7',fig:'tri',
+  prompt:R`This isosceles triangle has two equal sides, $(4a-7)$ cm and $(a+11)$ cm. Find $a$.`,
+  hint:R`The equal sides give $4a-7=a+11$. Subtract $a$ from both sides.`,
+  sol:R`$4a-7=a+11$, so $3a-7=11$, $3a=18$ and $a=6$. Check: both sides are $17$ cm.`},
+ // A6
+ {id:'a6a',part:'a6',lvl:'Focus',tags:['ineqmean'],type:'mc',ans:1,src:'WB8 2.6 Q1–3',
+  prompt:R`Which inequality means “$x$ is greater than 4 and less than or equal to 9”?`,
+  opts:[R`$4\le x<9$`,R`$4\lt x\le9$`,R`$4\lt x<9$`,R`$4\le x\le9$`],
+  hint:'“Greater than 4” does not include 4. “Less than or equal to 9” does include 9.',
+  sol:R`$4\lt x\le9$`},
+ {id:'a6b',part:'a6',lvl:'Practice',tags:['ineqint'],type:'list',ans:[25,26,27],src:'WB8 2.6 Q10',
+  prompt:R`List all the integers $y$ for which $24\lt y\le27$.`,
+  hint:'24 is not included (<). 27 is included (≤).', sol:R`$25,\ 26,\ 27$`},
+ {id:'a6c',part:'a6',lvl:'Practice',tags:['ineqline'],type:'mc',ans:3,src:'WB8 2.6 Q7',fig:'nl',
+  prompt:'Which inequality does this number line show?',
+  opts:[R`$-3\le x<2$`,R`$-3\lt x<2$`,R`$-3\le x\le2$`,R`$-3\lt x\le2$`],
+  hint:'Open circle: the value is not included. Closed circle: it is included.',
+  sol:R`Open at $-3$ and closed at $2$: $-3\lt x\le2$.`},
+ {id:'a6d',part:'a6',lvl:'Challenge',tags:['ineqint'],type:'list',ans:[3,4,5,6,7],src:'WB8 2.6 Q13',
+  prompt:R`List all the integers $x$ for which $2.95\le x<7.85$.`,
+  hint:'The ends are not integers. Find the first whole number at or above 2.95, and the last one below 7.85.',
+  sol:R`$3,\ 4,\ 5,\ 6,\ 7$`},
+ // Review
+ {id:'rv1',part:'rv',lvl:'Practice',tags:['collect','expand'],type:'expand',ans:'11a+3',src:'WB8 2.3 Q8',
+  prompt:R`Expand and simplify $2(3a+4)+5(a-1)$.`, hint:R`$6a+8+5a-5$.`, sol:R`$6a+8+5a-5=11a+3$`},
+ {id:'rv2',part:'rv',lvl:'Practice',tags:['hcfalg'],type:'factor',ans:'4h(2-h)',hcf:'4h',src:'WB8 2.4 Q9',
+  prompt:R`Factorise fully $8h-4h^2$.`, hint:R`The HCF of 8 and 4 is 4, and both terms contain $h$.`, sol:R`$4h(2-h)$`},
+ {id:'rv3',part:'rv',lvl:'Practice',tags:['collect','inverse'],type:'num',ans:5,tol:1e-9,src:'WB8 2.5 Q15',
+  prompt:R`Solve $5x+3-2x-1=17$.`, hint:R`Collect like terms first: $3x+2=17$.`, sol:R`$3x+2=17$, $3x=15$, $x=5$.`},
+ {id:'rv4',part:'rv',lvl:'Challenge',tags:['words','collect'],type:'expr',ans:'(5a-3b)/2',src:'WB8 2.1 Q11',
+  prompt:R`The longest side of a triangle is $a$ cm. The second side is $b$ cm shorter than the first. The third side is half as long as the second. Write an expression for the perimeter.`,
+  hint:R`The sides are $a$, $a-b$ and $\frac{a-b}{2}$. Add them.`,
+  sol:R`$a+(a-b)+\frac{a-b}{2}=\frac{5a-3b}{2}$ (any equivalent form is fine, e.g. $2.5a-1.5b$).`},
+ {id:'rv5',part:'rv',lvl:'Practice',tags:['ineqint'],type:'list',ans:[-2,-1,0,1],src:'WB8 2.6 Q9',
+  prompt:R`List all the integers $x$ for which $-3\lt x\le1$.`, hint:R`$-3$ is not included; $1$ is.`, sol:R`$-2,\ -1,\ 0,\ 1$`},
+ {id:'rv6',part:'rv',lvl:'Challenge',tags:['subject'],type:'expr',ans:'(y-t)/2',strip:true,src:'WB8 2.2 Q12',
+  prompt:R`Make $x$ the subject of $y=2x+t$.`, hint:R`$x\xrightarrow{\times2}\xrightarrow{+t}y$. Undo in reverse: subtract $t$, then divide by 2.`,
+  sol:R`$x=\dfrac{y-t}{2}$`}
+];
+
+/* ================= HELPERS ================= */
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const gcd=(a,b)=>{a=Math.abs(a);b=Math.abs(b);while(b){[a,b]=[b,a%b]}return a||1};
+function mathify(el){ if(window.renderMathInElement){ try{renderMathInElement(el,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});}catch(e){} } }
+function texStr(t,disp){ if(window.katex){ try{return katex.renderToString(t,{throwOnError:false,displayMode:!!disp});}catch(e){} } return t; }
+function html(el,s){el.innerHTML=s;mathify(el);}
+function store(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+function load(k){try{return JSON.parse(localStorage.getItem(k))}catch(e){return null}}
+const fmtN=v=>{const r=Math.round(v*1000)/1000;return Object.is(r,-0)?'0':String(r)};
+
+(function(){const used=new Set();Q.forEach(q=>q.tags.forEach(t=>{if(!SKILLS[t])console.error('Missing skill',t);used.add(t)}));
+Object.keys(SKILLS).forEach(k=>{if(!used.has(k))console.error('Unused skill',k)});})();
+
+/* ================= STATE ================= */
+const KEY='cam-y8-alg-a';
+let S={}, WHY={};
+function blank(){return {att:0,done:false,pts:0,t0:null,tFirst:null,tLast:null,fastFirst:false,hist:[],wrongOpts:[]}}
+function initState(){const saved=load(KEY);Q.forEach(q=>{S[q.id]=Object.assign(blank(),saved&&saved.S&&saved.S[q.id]?saved.S[q.id]:{})});WHY=(saved&&saved.WHY)||{};}
+function save(){store(KEY,{S,WHY})}
+
+/* ================= TABS ================= */
+const ORDER=['start','a1','a2','as','a3','a4','a5','a6','rv','report'];
+const grpOf=k=>['a5','a6'].includes(k)?'gb':(k==='rv'?'rv':'ga');
+function buildTabs(){
+  const nav=$('#tabs');nav.innerHTML='';
+  ORDER.forEach(k=>{const b=document.createElement('button');b.type='button';b.dataset.tab=k;
+    if(SEC[k]&&k!=='rv')b.className=grpOf(k);
+    b.innerHTML=UI.tabs[k]+'<span class="tick"></span>';b.onclick=()=>show(k);nav.appendChild(b)});
+  const route=$('#route');route.innerHTML='';
+  Object.keys(SEC).forEach(k=>{const b=document.createElement('button');b.type='button';b.className='stop '+grpOf(k);
+    b.innerHTML=`<span class="n">${k==='rv'?'REVIEW':'STATION '+LABEL[k]}</span><span class="tt">${SEC[k].replace(/^A\d /,'')}</span><span class="mm" data-mm="${k}"></span>`;
+    b.onclick=()=>show(k);route.appendChild(b)});
+  $$('[data-go]').forEach(b=>b.onclick=()=>show(b.dataset.go));
+}
+function show(k){
+  $$('section.tab').forEach(s=>s.classList.toggle('on',s.id==='tab-'+k));
+  $$('#tabs button').forEach(b=>b.classList.toggle('on',b.dataset.tab===k));
+  const b=$(`#tabs button[data-tab="${k}"]`);if(b)try{b.scrollIntoView({block:'nearest',inline:'center'})}catch(e){}
+  if(k==='report')renderReport();
+  try{if(location.hash!=='#'+k)history.replaceState(null,'','#'+k);}catch(e){}
+  window.scrollTo({top:0});
+}
+function refreshProgress(){
+  let a=0,p=0;Q.forEach(q=>{if(S[q.id].done){a++;p+=S[q.id].pts}});
+  $('#progtxt').textContent=UI.prog(a,Q.length,p);$('#progbar').style.width=(100*a/Q.length)+'%';
+  Object.keys(SEC).forEach(k=>{const qs=Q.filter(q=>q.part===k),d=qs.filter(q=>S[q.id].done).length;
+    const t=$(`#tabs button[data-tab="${k}"] .tick`);if(t)t.textContent=d===qs.length?'✓':'';
+    const m=$(`[data-mm="${k}"]`);if(m)m.textContent=`≈ ${UI.mins[k]} min · ${d}/${qs.length} ${UI.done}`;});
+}
+
+/* ================= ANSWER CHECKING ================= */
+function cleanAlg(s){return String(s).trim().replace(/[−–]/g,'-').replace(/\s+/g,'')}
+function judge(q,input){
+  if(q.type==='mc')return input===q.ans?'ok':'no';
+  if(q.type==='list'){
+    const s=String(input);if(/\d\.\d/.test(s))return 'no';
+    const nums=(s.replace(/[−–]/g,'-').match(/-?\d+/g)||[]).map(Number);if(!nums.length)return 'bad';
+    const a=[...new Set(nums)].sort((x,y)=>x-y),b=[...q.ans].sort((x,y)=>x-y);
+    return a.length===b.length&&a.every((v,i)=>v===b[i])?'ok':'no';
+  }
+  let s=cleanAlg(input);if(!s)return 'bad';
+  if(q.strip)s=s.replace(/^[a-zA-Z]=/,'');
+  if(q.type==='num'){s=s.replace(/^[a-zA-Z]=/,'');let v;try{const n=ALG.parse(s);if(ALG.vars(n).size)return 'bad';v=ALG.ev(n,{})}catch(e){return 'bad'}
+    return Math.abs(v-q.ans)<=q.tol+1e-9?'ok':'no';}
+  let node;try{node=ALG.parse(s)}catch(e){return 'bad'}
+  if(!ALG.equiv(node,q.ans))return 'no';
+  if(q.type==='expr')return 'ok';
+  if(q.type==='expand'||q.type==='simp'){
+    if(q.type==='simp'&&ALG.topTerms(node)<=ALG.topTerms(ALG.parse(q.ans))&&!termList(node).every(monoOK))return 'monomial';
+    if(ALG.hasGrp(node))return 'brackets';
+    if(ALG.topTerms(node)>ALG.topTerms(ALG.parse(q.ans)))return 'collect';
+    if(!termList(node).every(monoOK))return 'monomial';
+    return 'ok';}
+  if(q.type==='factor'){
+    let n=node,neg=false;if(n.t==='neg'){neg=true;n=n.a}
+    if(!(n.t==='mul'&&n.b.t==='grp'))return 'formfactor';
+    const outer=n.a;
+    if(ALG.equiv(outer,q.hcf)||ALG.equiv(outer,ALG.parse('-('+q.hcf+')')))return 'ok';
+    return 'notfully';}
+  return 'no';
+}
+function termList(n){if(n.t==='add'||n.t==='sub')return termList(n.a).concat(termList(n.b));return [n]}
+function monoOK(t){let nums=0,ok=true;const vs={};
+  (function walk(n){if(n.t==='neg')return walk(n.a);if(n.t==='mul'){walk(n.a);walk(n.b);return}
+    if(n.t==='pow'){if(n.a.t==='var'&&n.b.t==='num')vs[n.a.v]=(vs[n.a.v]||0)+1;else if(n.a.t==='num'&&n.b.t==='num')nums++;else ok=false;return}
+    if(n.t==='num'){nums++;return}if(n.t==='var'){vs[n.v]=(vs[n.v]||0)+1;return}ok=false})(t);
+  return ok&&nums<=1&&Object.values(vs).every(c=>c===1)}
+function correct(q,ans){return judge(q,ans)==='ok'}
+function storedAnswer(q){if(q.type==='mc')return q.ans;if(q.type==='list')return q.ans.join(', ');return String(q.ans)}
+
+/* ================= FIGURES IN QUESTIONS ================= */
+const FIG={
+ tri:()=>`<div class="fig" style="max-width:320px"><svg viewBox="0 0 320 170"><polygon points="160,14 30,156 290,156" fill="#f8e7ef" stroke="#1c2230" stroke-width="2"/><line x1="88" y1="78" x2="100" y2="88" stroke="#1c2230" stroke-width="2"/><line x1="220" y1="88" x2="232" y2="78" stroke="#1c2230" stroke-width="2"/></svg><span class="lb" style="left:20%;top:42%">$(4a-7)$ cm</span><span class="lb" style="left:80%;top:42%">$(a+11)$ cm</span></div>`,
+ nl:()=>numberLineSVG(-5,4,-3,2,false,true,1)
+};
+function numberLineSVG(lo,hi,a,b,ai,bi,step){
+  const W=600,L=30,Rr=570,sx=v=>L+(v-lo)/(hi-lo)*(Rr-L);
+  let s=`<svg viewBox="0 0 ${W} 74" style="max-width:520px"><line x1="${L-14}" y1="44" x2="${Rr+14}" y2="44" stroke="#1c2230" stroke-width="2"/>`;
+  for(let v=lo;v<=hi+1e-9;v+=step){s+=`<line x1="${sx(v)}" y1="38" x2="${sx(v)}" y2="50" stroke="#1c2230" stroke-width="1.5"/><text x="${sx(v)}" y="70" font-size="18" text-anchor="middle">${fmtN(v).replace('-','−')}</text>`}
+  s+=`<line x1="${sx(a)}" y1="22" x2="${sx(b)}" y2="22" stroke="#b5487a" stroke-width="4"/>`;
+  s+=`<circle cx="${sx(a)}" cy="22" r="8" fill="${ai?'#b5487a':'#fff'}" stroke="#b5487a" stroke-width="3"/><circle cx="${sx(b)}" cy="22" r="8" fill="${bi?'#b5487a':'#fff'}" stroke="#b5487a" stroke-width="3"/>`;
+  return s+'</svg>';
+}
+
+/* ================= QUESTIONS UI ================= */
+function renderQuestions(){
+  $$('.qs').forEach(box=>{
+    const part=box.dataset.part;box.innerHTML='';
+    Q.filter(q=>q.part===part).forEach((q,i)=>{
+      const d=document.createElement('div');d.className='q';d.id='Q-'+q.id;
+      const label=part==='rv'?('R'+(i+1)):(LABEL[part]+String.fromCharCode(97+i));
+      let body=`<div class="qn">QUESTION ${label}<span class="lvltag ${q.lvl}">${q.lvl.toUpperCase()}</span><span class="dots">${'<i></i>'.repeat(3)}</span></div><div class="prompt">${q.prompt}</div>`;
+      if(q.fig)body+=FIG[q.fig]();
+      if(q.type==='mc'){body+=`<div class="opts">${q.opts.map((o,j)=>`<button type="button" class="opt" data-j="${j}">${String.fromCharCode(65+j)}. ${o}</button>`).join('')}</div>`;}
+      else{body+=`<div class="ansrow"><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="answer"><button type="button" class="btn primary chk">${UI.check}</button></div><div class="preview"></div><div class="fmt">${UI.fmt[q.type]}</div>`;}
+      body+=`<div class="fb"></div><div class="hint" hidden></div><div class="sol" hidden></div>`;
+      d.innerHTML=body;box.appendChild(d);mathify(d);
+      if(q.type==='mc'){d.querySelectorAll('.opt').forEach(b=>b.onclick=()=>submit(q,Number(b.dataset.j)));}
+      else{const inp=d.querySelector('input'),pv=d.querySelector('.preview');
+        inp.addEventListener('input',()=>{const v=inp.value.trim();if(!v){pv.innerHTML='';return}
+          if(q.type==='list'){pv.innerHTML=UI.previewPre+texStr((v.replace(/[−–]/g,'-').match(/-?\d+(\.\d+)?/g)||[]).join(',\\ '));return}
+          let s=cleanAlg(v),pre='';const m=s.match(/^([a-zA-Z])=(.*)$/);if(m&&q.strip){pre=m[1]+'=';s=m[2]}
+          const t=ALG.toTex(s);pv.innerHTML=t?UI.previewPre+texStr(pre+t):'<span style="color:#c0392b">…</span>'});
+        inp.addEventListener('keydown',e=>{if(e.key==='Enter')submit(q,inp.value)});
+        d.querySelector('.chk').onclick=()=>submit(q,inp.value);}
+      paint(q);
+    });
+  });
+  if('IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const id=e.target.id.slice(2);if(S[id]&&S[id].t0==null)S[id].t0=Date.now()}}),{threshold:0.6});
+    $$('.q').forEach(el=>io.observe(el));}
+}
+function submit(q,input){
+  const st=S[q.id];if(st.done)return;
+  const res=judge(q,input), el=$('#Q-'+q.id), fb=el.querySelector('.fb');
+  if(UI.info[res]){fb.className='fb info';fb.textContent=UI.info[res];return}
+  const now=Date.now();if(st.t0==null)st.t0=now;
+  if(st.att===0)st.tFirst=now-st.t0;
+  st.tLast=now;st.att++;st.hist.push(input);
+  if(res==='ok'){st.done=true;st.pts=4-st.att;if(st.att===1)st.fastFirst=st.tFirst<(q.type==='mc'?4000:7000);}
+  else{if(q.type==='mc')st.wrongOpts.push(input);if(st.att>=3){st.done=true;st.pts=0;}}
+  save();paint(q);refreshProgress();
+}
+function paint(q){
+  const st=S[q.id],el=$('#Q-'+q.id);if(!el)return;
+  el.querySelectorAll('.dots i').forEach((d,i)=>{d.className='';if(i<st.att)d.className=(st.done&&st.pts>0&&i===st.att-1)?'ok':'x'});
+  const fb=el.querySelector('.fb');
+  if(st.att===0)fb.textContent='';
+  else if(st.done&&st.pts>0){fb.className='fb ok';fb.textContent=UI.right[st.att-1];}
+  else if(st.done){fb.className='fb no';fb.textContent=UI.wrongLast;}
+  else{fb.className='fb no';fb.textContent=UI.wrong+` (${UI.attempt} ${st.att+1} ${UI.of} 3)`;}
+  const wrongs=st.att-((st.done&&st.pts>0)?1:0),h=el.querySelector('.hint');
+  if(wrongs>=2&&h.hidden){h.hidden=false;html(h,`<b>${UI.hint}:</b> ${q.hint}`);}
+  const s=el.querySelector('.sol');if(st.done&&s.hidden){s.hidden=false;html(s,`<b>${UI.sol}:</b> ${q.sol}`);}
+  el.classList.remove('done-0','done-1','done-2','done-3');if(st.done)el.classList.add('done-'+st.pts);
+  if(q.type==='mc'){el.querySelectorAll('.opt').forEach(b=>{const j=Number(b.dataset.j);b.classList.toggle('wrong',st.wrongOpts.includes(j));
+      if(st.done){b.disabled=true;if(j===q.ans)b.classList.add('right');}else if(st.wrongOpts.includes(j))b.disabled=true;});}
+  else{const inp=el.querySelector('input'),btn=el.querySelector('.chk');if(st.done){inp.disabled=true;btn.disabled=true;if(st.hist.length)inp.value=st.hist[st.hist.length-1];}}
+}
+
+/* ================= REPORT ================= */
+function renderReport(){
+  const T=UI.report, box=$('#report');
+  const answered=Q.filter(q=>S[q.id].done);
+  if(!Q.some(q=>S[q.id].att>0)){box.innerHTML=`<div class="card">${T.empty}</div>`;return}
+  let __h=repHead();
+  let h=__h+`<div class="card"><div class="box-title">${T.byPart}</div>`;
+  Object.keys(SEC).forEach(k=>{const qs=Q.filter(q=>q.part===k),d=qs.filter(q=>S[q.id].done),pts=d.reduce((a,q)=>a+S[q.id].pts,0);
+    const col=k==='rv'?'#6b5ca5':(grpOf(k)==='gb'?GCOL.eq:GCOL.ef);
+    h+=`<div class="rbar"><div class="lab"><span>${SEC[k]}</span><span>${d.length} / ${qs.length} · ${pts} pts</span></div><div class="tr"><i style="width:${100*pts/(qs.length*3)}%;background:${col}"></i></div></div>`});
+  h+='</div>';
+  const avg={};Object.keys(SKILLS).forEach(k=>{const qs=answered.filter(q=>q.tags.includes(k));avg[k]=qs.length?qs.reduce((a,q)=>a+S[q.id].pts,0)/qs.length:null});
+  const lev=a=>a==null?'n':a<1.5?'r':a<2.5?'a':'g';
+  h+=`<div class="card"><div class="box-title">${T.bySkill}</div>`;
+  Object.keys(GROUPS).forEach(g=>{h+=`<h3 style="margin:.8rem 0 .3rem">${GROUPS[g]}</h3>`;
+    Object.keys(SKILLS).filter(k=>SKILLS[k].g===g).forEach(k=>{h+=`<div class="skill"><span>${SKILLS[k].n}</span><span><span class="small">${T.avg(avg[k])}</span> <span class="lvl ${lev(avg[k])}">${T.lv[lev(avg[k])]}</span></span></div>`})});
+  h+='</div>';
+  const first=answered.filter(q=>S[q.id].pts===3).length, fast=answered.filter(q=>S[q.id].fastFirst).length;
+  const rushed=Q.filter(q=>{const s=S[q.id];return s.done&&s.pts===0&&s.att>=3&&s.t0!=null&&(s.tLast-s.t0)<20000}).length;
+  const whyTotal=$$('details.why').length, whyOpen=Object.keys(WHY).length;
+  h+=`<div class="card"><div class="box-title">${T.how}</div><ul class="steps"><li>${T.firstTry(first)}</li><li>${T.fast(fast)}</li><li>${T.rushed(rushed)}</li><li>${T.notDone(Q.length-answered.length)}</li><li>${T.why(whyOpen,whyTotal)}</li></ul></div>`;
+  const weak=Object.keys(SKILLS).filter(k=>avg[k]!=null&&avg[k]<2.5).sort((a,b)=>avg[a]-avg[b]).slice(0,3);
+  h+=`<div class="card"><div class="box-title">${T.advice}</div>`;
+  if(weak.length){h+=`<p>${T.advIntro}</p>`;weak.forEach(k=>{h+=`<div class="adv"><b>${SKILLS[k].n}</b> <span class="small">(${T.avg(avg[k])})</span><br>${SKILLS[k].adv}</div>`})}
+  else h+=`<p>${T.allGood}</p>`;
+  h+='</div>';
+  h+=`<div class="card"><div class="box-title">${T.map}</div><div id="kmap"></div><div class="legend"><span><i style="background:var(--good)"></i>${T.lv.g}</span><span><i style="background:var(--warn)"></i>${T.lv.a}</span><span><i style="background:var(--bad)"></i>${T.lv.r}</span><span><i style="background:var(--grey)"></i>${T.lv.n}</span></div></div>`;
+  const tot=answered.reduce((a,q)=>a+S[q.id].pts,0);
+  h+=`<div class="card"><div class="box-title">${T.total}</div><div class="score">${tot} / ${Q.length*3}</div><p class="small" style="text-align:center">${Math.round(100*tot/(Q.length*3))}%</p><p class="small">${T.note}</p></div>`;
+  box.innerHTML=h;mathify(box);drawMap(avg,lev);wireRep();
+}
+function drawMap(avg,lev){
+  const box=$('#kmap'), narrow=box.clientWidth<620;
+  const col={g:'#2f8a4c',a:'#b7791f',r:'#c0392b',n:'#9aa1ad'};
+  const G=Object.keys(GROUPS),left=Object.keys(SKILLS).filter(k=>SKILLS[k].g===G[0]),right=Object.keys(SKILLS).filter(k=>SKILLS[k].g===G[1]);
+  const rows=Math.max(left.length,right.length);
+  let W,H,cx,cy,xL,xR,bw,bh,gap,top,fs;
+  if(narrow){W=600;bw=250;bh=74;gap=98;top=170;fs=19;xL=140;xR=460;H=top+rows*gap;cx=300;cy=62;}
+  else{W=1000;bw=290;bh=54;gap=68;top=70;fs=16;xL=175;xR=825;H=top+rows*gap;cx=500;cy=top+(rows-1)*gap/2;}
+  const pos={};left.forEach((k,i)=>pos[k]=[xL,top+i*gap]);right.forEach((k,i)=>pos[k]=[xR,top+i*gap]);
+  const inner=k=>[pos[k][0]+(SKILLS[k].g===G[0]?bw/2:-bw/2),pos[k][1]];
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="knowledge map">`;
+  s+=`<text x="${xL}" y="${narrow?top-46:top-38}" text-anchor="middle" font-size="${fs}" font-weight="700" fill="${GCOL[G[0]]}">${GROUPS[G[0]]}</text><text x="${xR}" y="${narrow?top-46:top-38}" text-anchor="middle" font-size="${fs}" font-weight="700" fill="${GCOL[G[1]]}">${GROUPS[G[1]]}</text>`;
+  Object.keys(SKILLS).forEach(k=>{const [x,y]=inner(k);s+=`<line x1="${cx}" y1="${cy}" x2="${x}" y2="${y}" stroke="#e8e5ef" stroke-width="1.5"/>`});
+  LINKS.forEach(([a,b])=>{const A=inner(a),B=inner(b);
+    if(SKILLS[a].g===SKILLS[b].g){const dir=SKILLS[a].g===G[0]?1:-1,bow=Math.min(narrow?40:70,18+Math.abs(A[1]-B[1])*0.18);
+      s+=`<path d="M${A[0]},${A[1]} Q${(A[0]+B[0])/2+dir*bow},${(A[1]+B[1])/2} ${B[0]},${B[1]}" fill="none" stroke="#b9b3c9" stroke-width="2" stroke-dasharray="5 4"/>`;}
+    else s+=`<line x1="${A[0]}" y1="${A[1]}" x2="${B[0]}" y2="${B[1]}" stroke="#b9b3c9" stroke-width="2" stroke-dasharray="5 4"/>`;});
+  s+=`<ellipse cx="${cx}" cy="${cy}" rx="${narrow?150:118}" ry="${narrow?46:44}" fill="#1c2230"/><text x="${cx}" y="${cy-4}" text-anchor="middle" fill="#fff" font-size="${fs}" font-weight="700">${UI.report.centre[0]}</text><text x="${cx}" y="${cy+18}" text-anchor="middle" fill="#fff" font-size="${fs-2}">${UI.report.centre[1]}</text>`;
+  const split=t=>{if(t.length<=(narrow?20:40))return [t];let m=Math.floor(t.length/2),a=t.lastIndexOf(' ',m),b=t.indexOf(' ',m);let c=(a<0||(b>=0&&b-m<m-a))?b:a;return [t.slice(0,c),t.slice(c+1)]};
+  Object.keys(SKILLS).forEach(k=>{const [x,y]=pos[k],L=lev(avg[k]),c=col[L],lines=split(SKILLS[k].n.replace('&','&amp;'));
+    s+=`<rect x="${x-bw/2}" y="${y-bh/2}" width="${bw}" height="${bh}" rx="12" fill="#fff" stroke="${c}" stroke-width="3"/><rect x="${x-bw/2}" y="${y-bh/2}" width="8" height="${bh}" rx="3" fill="${GCOL[SKILLS[k].g]}"/>`;
+    const lh=fs+3,y0=y-(lines.length*lh)/2+fs*0.35-4;
+    lines.forEach((ln,i)=>{s+=`<text x="${x+4}" y="${y0+i*lh}" text-anchor="middle" font-size="${fs-1}" font-weight="600" fill="#1c2230" ${ln.length*(fs-1)*0.55>bw-24?`textLength="${bw-24}" lengthAdjust="spacingAndGlyphs"`:''}>${ln}</text>`});
+    s+=`<text x="${x+4}" y="${y0+lines.length*lh}" text-anchor="middle" font-size="${fs-2}" fill="${c}" font-weight="700">${UI.report.avg(avg[k])}</text>`;});
+  box.innerHTML=s+'</svg>';
+}
+
+/* ================= REPORT → PDF ================= */
+function repHead(){let nm='';try{nm=localStorage.getItem('report-name')||''}catch(e){}
+  const d=new Date().toLocaleDateString('en-NZ',{day:'numeric',month:'long',year:'numeric'});
+  const safe=nm.replace(/[<>&"]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]));
+  return `<div class="card rephead"><div class="printonly"><div style="font-family:Georgia,serif;font-size:1.3rem;font-weight:600">${document.title}</div><div>Learning report · ${d}</div><div>Name: <b id="repNameOut">${safe||'________________'}</b></div></div>`+
+    `<div class="ctrl noprint"><label>Your name <input type="text" id="repName" value="${safe}" placeholder="Type your name" style="font:inherit;padding:.3rem .5rem;border:1px solid #c9c3d6;border-radius:8px"></label><button class="btn primary" id="repPdf" type="button">⬇ Download report as PDF</button></div>`+
+    `<p class="small noprint" style="margin:.3rem 0 0">A print window opens: choose <b>Save as PDF</b> as the printer.</p></div>`}
+function wireRep(){const n=document.getElementById('repName'),b=document.getElementById('repPdf');if(!n||!b)return;
+  n.oninput=()=>{try{localStorage.setItem('report-name',n.value)}catch(e){}const o=document.getElementById('repNameOut');if(o)o.textContent=n.value||'________________'};
+  b.onclick=()=>{try{window.print()}catch(e){alert('Printing is blocked here. Open the page in a normal browser tab.')}};}
+
+/* ================= WIDGET A1: expression machine ================= */
+function w1(){
+  let steps=[];
+  const build=()=>{let s='n',sum=false,desc=[];
+    steps.forEach(([op,k])=>{const K=String(k);
+      if(op==='*'){s=sum?`${K}(${s})`:(s==='n'?`${K}n`:`${K}*${s}`);sum=false;desc.push(`multiply by ${K}`)}
+      if(op==='/'){s=`(${s})/${K}`;sum=false;desc.push(`divide by ${K}`)}
+      if(op==='+'){s=`${s}+${K}`;sum=true;desc.push(`add ${K}`)}
+      if(op==='-'){s=`${s}-${K}`;sum=true;desc.push(`subtract ${K}`)}});
+    return {s,desc}};
+  const upd=()=>{
+    const {s,desc}=build(),n=+$('#w1n').value;$('#w1nv').textContent=n;
+    $('#w1chain').innerHTML='<span class="op" style="background:#1c2230;color:#fff">n</span>'+steps.map(([op,k])=>`<span class="ar">→</span><span class="op">${{'*':'×','/':'÷','+':'+','-':'−'}[op]} ${k}</span>`).join('');
+    let v=n,vals=[n];steps.forEach(([op,k])=>{v=op==='*'?v*k:op==='/'?v/k:op==='+'?v+k:v-k;vals.push(v)});
+    const tex=ALG.toTex(s);
+    let r=`<b>Expression:</b> $${tex}$<br><span class="small">In words: start with $n$${desc.length?', '+desc.join(', then '):''}.</span><br>`;
+    r+=`<b>Test with $n=${n}$:</b> ${vals.map(fmtN).join(' → ')}. The expression gives $${fmtN(ALG.ev(ALG.parse(s),{n}))}$ ✓`;
+    if(steps.length>=2){const sw=[...steps];[sw[0],sw[1]]=[sw[1],sw[0]];const keep=steps;steps=sw;const o=build();steps=keep;
+      if(!ALG.equiv(o.s,s))r+=`<br><span class="small">Swap the first two steps and you get $${ALG.toTex(o.s)}$, a different expression: order matters.</span>`;}
+    html($('#w1r'),r);
+  };
+  $('#w1add').onclick=()=>{const k=Number($('#w1k').value);if(!isFinite(k)||($('#w1op').value==='/'&&k===0)||steps.length>=5)return;steps.push([$('#w1op').value,k]);upd()};
+  $('#w1undo').onclick=()=>{steps.pop();upd()};
+  $('#w1reset').onclick=()=>{steps=[];upd()};
+  $('#w1n').oninput=upd;
+  steps=[['+',8],['*',3]];upd();
+}
+/* ================= WIDGET A2: substitution stepper + flow charts ================= */
+function w2(){
+  const E=['2x^2-5','3x^2','(3x)^2','10-x/3','2(x+4)','x^2-7','5-x','x^3+1'];
+  $('#w2e').innerHTML=E.map((e,i)=>`<option value="${i}">${e}</option>`).join('');
+  function subst(n,x){if(n.t==='var')return {t:'num',v:x,sub:true};const m=Object.assign({},n);['a','b'].forEach(k=>{if(n[k]&&typeof n[k]==='object')m[k]=subst(n[k],x)});return m}
+  const isNum=n=>n.t==='num';
+  function reduce(n){
+    if(n.t==='grp'){if(isNum(n.a))return {t:'num',v:n.a.v};return Object.assign({},n,{a:reduce(n.a)})}
+    if(n.t==='neg'){if(isNum(n.a))return {t:'num',v:-n.a.v};return Object.assign({},n,{a:reduce(n.a)})}
+    if(n.a&&n.b){if(isNum(n.a)&&isNum(n.b))return {t:'num',v:ALG.ev(n,{})};
+      if(!isNum(n.a))return Object.assign({},n,{a:reduce(n.a)});return Object.assign({},n,{b:reduce(n.b)})}
+    return n}
+  function tx(n){switch(n.t){
+    case 'num':{const s=fmtN(n.v);return n.sub?(n.v<0?`\\color{#b5487a}{(${s})}`:`\\color{#b5487a}{${s}}`):(n.v<0?`(${s})`:s)}
+    case 'var':return n.v;case 'add':return tx(n.a)+'+'+tx(n.b);case 'sub':return tx(n.a)+'-'+tx(n.b);case 'neg':return '-'+tx(n.a);
+    case 'grp':return '\\left('+tx(n.a)+'\\right)';case 'div':return '\\frac{'+tx(n.a.t==='grp'?n.a.a:n.a)+'}{'+tx(n.b)+'}';
+    case 'pow':return tx(n.a)+'^{'+tx(n.b)+'}';
+    case 'mul':{const ab=n.a.t==='num'&&(n.b.t==='num'||n.b.t==='pow'&&n.b.a.t==='num'||n.b.t==='grp');return tx(n.a)+(ab||n.b.t==='num'?'\\times ':'')+tx(n.b)}}}
+  function upd(){const e=E[$('#w2e').value],x=+$('#w2x').value;$('#w2xv').textContent=x;
+    let n=subst(ALG.parse(e),x),lines=[`${ALG.toTex(e)}`,tx(n)];let guard=0;
+    while(n.t!=='num'&&guard++<12){n=reduce(n);lines.push(tx(n))}
+    const out=lines.map((l,i)=>i===0?`$${l}$`:`$=${l}$`).join('<br>');
+    let note='';if(e==='3x^2')note='Square first, then multiply by 3.';if(e==='(3x)^2')note='The bracket comes first: multiply by 3, then square. Compare with $3x^2$.';
+    if(e==='5-x'&&x<0)note='Subtracting a negative is the same as adding.';
+    html($('#w2r'),`<b>Substitute $x=${x}$</b> (value shown in colour, negatives in brackets):<br>${out}${note?'<br><span class="small">'+note+'</span>':''}`);}
+  $('#w2e').onchange=upd;$('#w2x').oninput=upd;upd();
+  const F=[
+    {f:'y=2x+t',v:'x',out:'y',fw:[['×','2'],['+','t']],ans:'x=\\frac{y-t}{2}'},
+    {f:'D=wp+4',v:'p',out:'D',fw:[['×','w'],['+','4']],ans:'p=\\frac{D-4}{w}'},
+    {f:'y=\\frac{x}{r}',v:'x',out:'y',fw:[['÷','r']],ans:'x=ry'},
+    {f:'V=\\frac{Ah}{3}',v:'h',out:'V',fw:[['×','A'],['÷','3']],ans:'h=\\frac{3V}{A}'},
+    {f:'y=5(x-3)',v:'x',out:'y',fw:[['−','3'],['×','5']],ans:'x=\\frac{y}{5}+3'}];
+  $('#w2f').innerHTML=F.map((o,i)=>`<option value="${i}">${o.f.replace(/\\frac\{(\w+)\}\{(\w+)\}/g,'$1/$2')}</option>`).join('');
+  const inv={'×':'÷','÷':'×','+':'−','−':'+'};
+  function flow(){const o=F[$('#w2f').value];
+    let a=`<div class="small">Make $${o.v}$ the subject of $${o.f}$.</div><div class="flowbox fwd"><span class="fbx">$${o.v}$</span>`+o.fw.map(([op,k])=>`<span class="arr">→</span><span class="fop">${op} $${k}$</span>`).join('')+`<span class="arr">→</span><span class="fbx">$${o.out}$</span></div>`;
+    a+=`<div class="flowbox back"><span class="fbx">$${o.v}$</span>`+[...o.fw].reverse().map(([op,k])=>`<span class="arr">←</span><span class="fop">${inv[op]} $${k}$</span>`).join('')+`<span class="arr">←</span><span class="fbx">$${o.out}$</span></div>`;
+    a+=`<div class="readout">Undo in reverse order: $${o.ans}$</div>`;html($('#w2flow'),a)}
+  $('#w2f').onchange=flow;flow();
+}
+/* ================= WIDGET A3: stretch + area ================= */
+function w3(){
+  const P=[{a:1,b:5,v:'x'},{a:3,b:-7,v:'y'},{a:1,b:-3,v:'x'},{a:2,b:1,v:'x'}];
+  $('#w3e').innerHTML=P.map((p,i)=>`<option value="${i}">(${p.a===1?'':p.a}${p.v}${p.b<0?'−':'+'}${Math.abs(p.b)})</option>`).join('');
+  const X=4; // drawn length of the letter
+  function seg(x0,len,y,col,label,h){const x1=x0+len,l=Math.min(x0,x1),w=Math.abs(len);
+    const inside=w>48;return `<rect x="${l}" y="${y}" width="${Math.max(w,2)}" height="${h}" rx="5" fill="${col}"/>`+
+      `<text x="${inside?l+w/2:(len>=0?x1+6:x1-6)}" y="${y+h/2+7}" font-size="20" text-anchor="${inside?'middle':(len>=0?'start':'end')}" fill="${inside?'#fff':col}" font-weight="700">${label}</text>`+
+      `<polygon points="${x1},${y+h/2} ${x1-(len>=0?1:-1)*Math.min(9,w)},${y+2} ${x1-(len>=0?1:-1)*Math.min(9,w)},${y+h-2}" fill="#1c2230" opacity=".35"/>`}
+  function upd(){const p=P[$('#w3e').value],k=+$('#w3k').value;$('#w3kv').textContent=k;
+    const A=p.a*X,B=p.b,s1=k*A,s2=k*B;
+    const pts=[0,A,A+B,s1,s1+s2],mn=Math.min(...pts),mx=Math.max(...pts);const W=600,u=440/Math.max(mx-mn,1),X0=v=>120+(v-mn)*u,cx=X0(0);
+    const nm=c=>c===1?'':c===-1?'−':String(c).replace('-','−');
+    let s=`<svg viewBox="0 0 ${W} 214"><line x1="${cx}" y1="8" x2="${cx}" y2="210" stroke="#9aa1ad" stroke-dasharray="5 5"/><text x="${cx+6}" y="20" font-size="18" fill="#5b6475">0</text>`;
+    s+=`<text x="4" y="66" font-size="20" font-weight="700" fill="#5b6475">start</text>`;
+    s+=seg(X0(0),A*u,28,'#5b6fd8',nm(p.a)+p.v,30)+seg(X0(A),B*u,62,B<0?'#c0392b':'#e09f3e',String(B).replace('-','−'),30);
+    s+=`<text x="4" y="172" font-size="20" font-weight="700" fill="#5b6475">× ${String(k).replace('-','−')}</text>`;
+    if(k!==0){s+=seg(X0(0),s1*u,134,'#5b6fd8',nm(k*p.a)+p.v,30)+seg(X0(s1),s2*u,168,s2<0?'#c0392b':'#e09f3e',String(s2).replace('-','−'),30)}
+    else s+=`<text x="${Math.min(cx+12,330)}" y="172" font-size="20" fill="#5b6475">everything shrinks to 0</text>`;
+    $('#w3svg').innerHTML=s+'</svg>';
+    const term=(c,v)=>c===0?'0':(v?(c===1?v:c===-1?'-'+v:c+v):String(c));
+    const inside=ALG.toTex(term(p.a,p.v)+(p.b<0?'':'+')+p.b);
+    const t1=term(k*p.a,p.v),t2=k*p.b,res=k===0?'0':ALG.toTex(t1+(t2<0?'':'+')+t2);
+    html($('#w3r'),`$${k}(${inside})$: the operator $${k}$ multiplies <b>each</b> term.`+
+      `<div class="tblwrap"><table class="t"><tr><th>$\\times$</th><th>$${ALG.toTex(term(p.a,p.v))}$</th><th>$${p.b}$</th></tr><tr><th>$${k}$</th><td>$${ALG.toTex(t1)}$</td><td>$${t2}$</td></tr></table></div>`+
+      `Result: $${k}(${inside})=${res}$`+(k<0?'<br><span class="small">A negative operator flips the direction, so both signs change.</span>':''));
+  }
+  $('#w3e').onchange=upd;$('#w3k').oninput=upd;upd();
+  // area model with a letter operator
+  const AM=[{o:'x',a:4,v:'x',b:1},{o:'3m',a:1,v:'m',b:2},{o:'2a',a:3,v:'a',b:5}];
+  $('#w3a').innerHTML=AM.map((m,i)=>`<option value="${i}">${m.o}(${m.a===1?'':m.a}${m.v}+${m.b})</option>`).join('');
+  function area(){const m=AM[$('#w3a').value];
+    const W=600,H=190,L=70,T=20,hgt=110,w1=300,w2=120;
+    let s=`<svg viewBox="0 0 ${W} ${H}"><rect x="${L}" y="${T}" width="${w1}" height="${hgt}" fill="#e8ebf8" stroke="#3b4fa8" stroke-width="2"/><rect x="${L+w1}" y="${T}" width="${w2}" height="${hgt}" fill="#fbf1dc" stroke="#b7791f" stroke-width="2"/>`;
+    s+=`<text x="${L-10}" y="${T+hgt/2+6}" font-size="20" text-anchor="end" font-weight="700">${m.o}</text><text x="${L+w1/2}" y="${T+hgt+28}" font-size="20" text-anchor="middle" font-weight="700">${m.a===1?'':m.a}${m.v}</text><text x="${L+w1+w2/2}" y="${T+hgt+28}" font-size="20" text-anchor="middle" font-weight="700">${m.b}</text>`;
+    const coef=(m.o.match(/^\d+/)||['1'])[0]*1;const p1=`${coef*m.a===1?'':coef*m.a}${m.v}^2`,p2=`${coef*m.b===1?'':coef*m.b}${m.v}`;
+    s+=`<text x="${L+w1/2}" y="${T+hgt/2+7}" font-size="22" text-anchor="middle" fill="#3b4fa8" font-weight="700">${p1.replace('^2','²')}</text><text x="${L+w1+w2/2}" y="${T+hgt/2+7}" font-size="22" text-anchor="middle" fill="#8a5a0c" font-weight="700">${p2}</text></svg>`;
+    $('#w3area').innerHTML=s;
+    html($('#w3ar'),`$${m.o}(${m.a===1?'':m.a}${m.v}+${m.b})=${p1}+${p2}$<br><span class="small">The rectangle is $${m.o}$ wide; the two parts of the length make two smaller rectangles, and their areas add.</span>`);}
+  $('#w3a').onchange=area;area();
+}
+/* ================= WIDGET A4: HCF tiles ================= */
+function w4(){
+  const P=[{terms:[[12,{x:2}],[-30,{x:1}]]},{terms:[[18,{x:1}],[24,{}]]},{terms:[[8,{h:1}],[-4,{h:2}]]},{terms:[[14,{c:1,d:1}],[-7,{c:1}]]},{terms:[[24,{x:1}],[32,{x:2}]]}];
+  const primes=n=>{n=Math.abs(n);const f=[];for(let p=2;p*p<=n;p++)while(n%p===0){f.push(p);n/=p}if(n>1)f.push(n);return f};
+  const mono=(c,vars)=>{const v=Object.keys(vars).sort().map(k=>vars[k]===1?k:`${k}^${vars[k]}`).join('');if(!v)return String(c);return (c===1?'':c===-1?'-':String(c))+v};
+  const exprOf=t=>t.map(([c,v],i)=>{const m=mono(c,v);return i&&c>0?'+'+m:m}).join('');
+  $('#w4e').innerHTML=P.map((p,i)=>`<option value="${i}">${exprOf(p.terms).replace(/\^2/g,'²')}</option>`).join('');
+  let choice=null;
+  function upd(){const p=P[$('#w4e').value],T=p.terms;
+    const g=T.reduce((a,[c])=>gcd(a,c),0);const vs={};Object.keys(T[0][1]).forEach(v=>{const m=Math.min(...T.map(([,vv])=>vv[v]||0));if(m>0)vs[v]=m});
+    const gp=primes(g);let tl='';
+    T.forEach(([c,v])=>{const used=[...gp],used2=Object.assign({},vs);
+      let tiles=(c<0?'<span class="tile sign">−</span>':'')+primes(c).map(f=>{const i=used.indexOf(f);if(i>=0){used.splice(i,1);return `<span class="tile common">${f}</span>`}return `<span class="tile">${f}</span>`}).join('');
+      Object.keys(v).sort().forEach(k=>{for(let j=0;j<v[k];j++){if(used2[k]){used2[k]--;tiles+=`<span class="tile common">${k}</span>`}else tiles+=`<span class="tile">${k}</span>`}});
+      tl+=`<div class="factor-row"><span class="lab">$${ALG.toTex(mono(c,v))}$</span><span class="tiles">${tiles}</span></div>`});
+    html($('#w4tiles'),tl+`<p class="small">Shaded tiles are in <b>every</b> term. Together they make the HCF.</p>`);
+    // candidate factors
+    const cands=[];const divs=[];for(let d=1;d<=g;d++)if(g%d===0)divs.push(d);
+    const vks=Object.keys(vs);const vopts=[{}];vks.forEach(k=>{const n=vopts.length;for(let i=0;i<n;i++)for(let e=1;e<=vs[k];e++){const o=Object.assign({},vopts[i]);o[k]=e;vopts.push(o)}});
+    divs.forEach(d=>vopts.forEach(vo=>{if(d===1&&!Object.keys(vo).length)return;cands.push([d,vo])}));
+    $('#w4c').innerHTML=cands.map(([d,vo],i)=>`<button type="button" class="btn small${choice===i?' on':''}" data-i="${i}">${mono(d,vo).replace(/\^2/g,'²')}</button>`).join('');
+    $$('#w4c button').forEach(b=>b.onclick=()=>{choice=+b.dataset.i;upd()});
+    if(choice==null||!cands[choice]){html($('#w4r'),'Pick a factor to take out.');return}
+    const [d,vo]=cands[choice];const inner=T.map(([c,v])=>{const nv={};Object.keys(v).forEach(k=>{const e=v[k]-(vo[k]||0);if(e>0)nv[k]=e});return [c/d,nv]});
+    const out=mono(d,vo),inn=exprOf(inner);const full=d===g&&vks.every(k=>vo[k]===vs[k]);
+    html($('#w4r'),`$${ALG.toTex(exprOf(T))}=${ALG.toTex(out)}\\left(${ALG.toTex(inn)}\\right)$<br>`+(full?'<b style="color:#2f8a4c">Fully factorised.</b> Nothing else is common to the terms inside the bracket.':'<b style="color:#b7791f">Correct, but not fully factorised.</b> The terms inside still share a factor. Try a bigger one.')+
+      `<br><span class="small">Check by expanding: $${ALG.toTex(out)}\\times$ each term inside gives back $${ALG.toTex(exprOf(T))}$.</span>`);
+  }
+  $('#w4e').onchange=()=>{choice=null;upd()};upd();
+}
+/* ================= WIDGET A5: balance ================= */
+function w5(){
+  const P=[{l:[5,8],r:[3,20]},{l:[4,5],r:[1,17]},{l:[6,-4],r:[2,12]},{l:[3,12],r:[0,27],note:'This is 3(x+4)=27 expanded.'},{l:[2,3],r:[0,11]}];
+  const side=([a,b])=>ALG.toTex(((a?(a===1?'x':a===-1?'-x':a+'x'):'')+(b?(b>0&&a?'+':'')+b:(a?'':'0'))));
+  $('#w5e').innerHTML=P.map((p,i)=>`<option value="${i}">${(side(p.l)+' = '+side(p.r)).replace(/\\/g,'')}</option>`).join('');
+  let L,Rt,log,orig;
+  function reset(){const p=P[$('#w5e').value];L=[...p.l];Rt=[...p.r];orig={l:[...p.l],r:[...p.r]};log=[];draw()}
+  function pan(x0,[a,b],col){let s='';const tiles=[];
+    if(a>=0&&a<=8)for(let i=0;i<a;i++)tiles.push('x');
+    if(b>=0&&b<=24)for(let i=0;i<b;i++)tiles.push('1');
+    const ok=a>=0&&a<=8&&b>=0&&b<=24&&Number.isInteger(a)&&Number.isInteger(b);
+    if(!ok)return `<text x="${x0+110}" y="96" font-size="18" text-anchor="middle" fill="${col}">(too many to draw)</text>`;
+    let cx=x0+8,cy=104;tiles.forEach((t,i)=>{if(t==='x'){s+=`<rect x="${cx}" y="${cy-34}" width="26" height="34" rx="5" fill="#5b6fd8"/><text x="${cx+13}" y="${cy-11}" font-size="16" fill="#fff" text-anchor="middle" font-weight="700">x</text>`;cx+=30}
+      else{s+=`<rect x="${cx}" y="${cy-14}" width="14" height="14" rx="3" fill="#e09f3e"/>`;cx+=17}
+      if(cx>x0+205){cx=x0+8;cy-=38}});return s}
+  function draw(){
+    let s=`<svg viewBox="0 0 600 170"><polygon points="300,150 280,166 320,166" fill="#1c2230"/><line x1="300" y1="112" x2="300" y2="150" stroke="#1c2230" stroke-width="4"/><line x1="50" y1="112" x2="550" y2="112" stroke="#1c2230" stroke-width="4"/>`;
+    s+=`<rect x="50" y="104" width="230" height="8" fill="#b5487a"/><rect x="320" y="104" width="230" height="8" fill="#b5487a"/>`;
+    s+=pan(55,L,'#5b6475')+pan(325,Rt,'#5b6475')+'</svg>';
+    $('#w5svg').innerHTML=s;
+    const solved=L[0]===1&&L[1]===0&&Rt[0]===0;
+    const solvedR=Rt[0]===1&&Rt[1]===0&&L[0]===0;
+    let t=`$$${side(L)}=${side(Rt)}$$`;
+    if(solved||solvedR){const x=solved?Rt[1]:L[1];const lv=orig.l[0]*x+orig.l[1],rv=orig.r[0]*x+orig.r[1];
+      t+=`<b style="color:#2f8a4c">Solved: $x=${fmtN(x)}$.</b> Check in the original: left $=${fmtN(lv)}$, right $=${fmtN(rv)}$ ✓`}
+    else if(L[0]&&Rt[0])t+='<span class="small">Tip: there is $x$ on both sides. Subtract the smaller $x$-term from both sides first.</span>';
+    else t+='<span class="small">Tip: undo the + or − first, then divide.</span>';
+    html($('#w5eq'),t);
+    html($('#w5log'),log.map(l=>`<li>${l}</li>`).join(''));
+  }
+  $('#w5go').onclick=()=>{
+    const op=$('#w5op').value,raw=cleanAlg($('#w5amt').value);let m=raw.match(/^(-?\d*\.?\d*)x$/),a=0,c=0;
+    if(m){a=m[1]===''?1:m[1]==='-'?-1:Number(m[1])}else if(/^-?\d+(\.\d+)?$/.test(raw))c=Number(raw);else{html($('#w5eq'),$('#w5eq').innerHTML+'<br><span style="color:#c0392b">Type an amount like 3x, x or 5.</span>');return}
+    if((op==='*'||op==='/')&&a){html($('#w5eq'),$('#w5eq').innerHTML+'<br><span style="color:#c0392b">Multiply or divide by a number, not by x.</span>');return}
+    if(op==='/'&&c===0)return;
+    const f=([p,q])=>op==='+'?[p+a,q+c]:op==='-'?[p-a,q-c]:op==='*'?[p*c,q*c]:[p/c,q/c];
+    L=f(L);Rt=f(Rt);L=L.map(v=>Math.round(v*1e6)/1e6);Rt=Rt.map(v=>Math.round(v*1e6)/1e6);
+    log.push(`${{'+':'Add','-':'Subtract','*':'Multiply by','/':'Divide by'}[op]} $${ALG.toTex(raw)}$ ${op==='+'||op==='-'?'to/from':'on'} both sides: $${side(L)}=${side(Rt)}$`);draw()};
+  $('#w5e').onchange=reset;$('#w5reset').onclick=reset;reset();
+}
+/* ================= WIDGET A6: number line ================= */
+function w6(){
+  const A=$('#w6a'),B=$('#w6b'),ai=$('#w6ai'),bi=$('#w6bi');
+  function upd(){let a=+A.value,b=+B.value;if(a>b){[a,b]=[b,a]}
+    $('#w6av').textContent=fmtN(+A.value);$('#w6bv').textContent=fmtN(+B.value);
+    const lo=-8,hi=8;$('#w6svg').innerHTML=numberLineSVG(lo,hi,a,b,ai.checked,bi.checked,1);
+    const s1=ai.checked?'\\le ':'\\lt ',s2=bi.checked?'\\le ':'\\lt ',r1=bi.checked?'\\ge ':'\\gt ',r2=ai.checked?'\\ge ':'\\gt ';
+    const lo2=ai.checked?Math.ceil(a):Math.floor(a)+1,hi2=bi.checked?Math.floor(b):Math.ceil(b)-1;
+    const ints=[];for(let k=lo2;k<=hi2;k++)ints.push(k);
+    if(a===b){html($('#w6r'),'Move the two ends apart.');return}
+    html($('#w6r'),`$${fmtN(a)}${s1}x${s2}${fmtN(b)}$, which can also be written $${fmtN(b)}${r1}x${r2}${fmtN(a)}$.<br>In words: $x$ is greater than ${ai.checked?'or equal to ':''}$${fmtN(a)}$ and less than ${bi.checked?'or equal to ':''}$${fmtN(b)}$.<br>Integers: ${ints.length?'$'+ints.join(',\\ ')+'$':'none'}${ints.length?` (smallest $${ints[0]}$, largest $${ints[ints.length-1]}$)`:''}`);}
+  [A,B,ai,bi].forEach(e=>e.oninput=upd);[ai,bi].forEach(e=>e.onchange=upd);upd();
+}
+
+/* ================= WIDGET A3: like terms + index laws ================= */
+function w7(){
+  const P=['5x+3y-2x+4y','4a^2+3a-a^2+5a+2','7p-3q+2p^2-p+5q','3ab+2a-ab+4b-a','x^2+x+x^2-3x+x^3'];
+  const COLS=['#5b6fd8','#e09f3e','#2f8a4c','#b5487a','#7a6f8c','#0e7c74'];
+  $('#w7e').innerHTML=P.map((p,i)=>`<option value="${i}">${p.replace(/\^2/g,'²').replace(/\^3/g,'³')}</option>`).join('');
+  function mono(n){let c=1;const v={};(function walk(n,sg){if(n.t==='neg'){c=-c;return walk(n.a)}if(n.t==='mul'){walk(n.a);walk(n.b);return}
+      if(n.t==='pow'){v[n.a.v]=(v[n.a.v]||0)+n.b.v;return}if(n.t==='num'){c*=n.v;return}if(n.t==='var'){v[n.v]=(v[n.v]||0)+1}})(n);return {c,v}}
+  function signed(n){const out=[];(function go(n,s){if(n.t==='add'){go(n.a,s);go(n.b,s);return}if(n.t==='sub'){go(n.a,s);go(n.b,-s);return}const m=mono(n);m.c*=s;out.push(m)})(n,1);return out}
+  const key=m=>Object.keys(m.v).sort().map(k=>k+(m.v[k]>1?'^'+m.v[k]:'')).join('')||'1';
+  const tex=(c,k,first)=>{const sign=c<0?'-':(first?'':'+');const a=Math.abs(c);const body=k==='1'?String(a):(a===1?'':a)+k;return sign+ALG.toTex(body)};
+  let grouped=false;
+  function upd(){const terms=signed(ALG.parse(P[$('#w7e').value]));const keys=[...new Set(terms.map(key))];
+    const col=k=>COLS[keys.indexOf(k)%COLS.length];
+    const chip=(m,i)=>`<span class="tile" style="border-color:${col(key(m))};color:${col(key(m))};min-width:44px">$${tex(m.c,key(m),i===0)}$</span>`;
+    let h='';
+    if(!grouped)h=`<div class="tiles">${terms.map((m,i)=>chip(m,i)).join('')}</div><p class="small">Each colour is one kind of term.</p>`;
+    else keys.forEach(k=>{const g=terms.filter(m=>key(m)===k),sum=g.reduce((a,m)=>a+m.c,0);
+      h+=`<div class="factor-row"><span class="tiles">${g.map((m,i)=>chip(m,i)).join('')}</span><span>→ <b style="color:${col(k)}">$${sum===0?'0':tex(sum,k,true)}$</b></span></div>`});
+    html($('#w7terms'),h);
+    const res=keys.map(k=>[k,terms.filter(m=>key(m)===k).reduce((a,m)=>a+m.c,0)]).filter(([,c])=>c!==0);
+    html($('#w7r'),grouped?`$${ALG.toTex(P[$('#w7e').value])}=${res.length?res.map(([k,c],i)=>tex(c,k,i===0)).join(''):'0'}$<br><span class="small">Different colours cannot be combined: they are different kinds of term.</span>`:'Press <b>Sort into groups</b> to collect the like terms.');
+    $('#w7go').textContent=grouped?'Mix them up again':'Sort into groups';}
+  $('#w7go').onclick=()=>{grouped=!grouped;upd()};$('#w7e').onchange=()=>{grouped=false;upd()};upd();
+  // multiply / divide terms
+  const ids=['a','m','b','n'];
+  function upd2(){const [a,m,b,n]=ids.map(k=>+$('#w7'+k).value);ids.forEach(k=>$('#w7'+k+'v').textContent=$('#w7'+k).value);
+    const op=$('#w7op').value,mt=(c,p)=>(c===1&&p?'':c)+(p?'x'+(p>1?'^'+p:''):'');
+    const xs=(k,cls)=>Array.from({length:k},()=>`<span class="tile ${cls||''}">x</span>`).join('');
+    if(op==='*'){
+      html($('#w7tiles'),`<div class="factor-row"><span class="tiles"><span class="tile common">${a}</span>${xs(m)}</span><span>×</span><span class="tiles"><span class="tile common">${b}</span>${xs(n)}</span></div>`+
+        `<div class="factor-row"><span class="tiles"><span class="tile common">${a*b}</span>${xs(m+n)}</span><span class="small">numbers multiplied, letters counted</span></div>`);
+      html($('#w7r2'),`$${ALG.toTex(mt(a,m))}\\times ${ALG.toTex(mt(b,n))}=${a}\\times${b}\\times x^{${m}+${n}}=${ALG.toTex(mt(a*b,m+n))}$`);
+    }else{
+      const g=gcd(a,b),c1=a/g,c2=b/g,k=Math.min(m,n),top=m-k,bot=n-k;
+      const strike=cnt=>Array.from({length:cnt},()=>`<span class="tile" style="text-decoration:line-through;opacity:.45">x</span>`).join('');
+      html($('#w7tiles'),`<div class="factor-row"><span class="lab">top</span><span class="tiles"><span class="tile common">${a}</span>${strike(k)}${xs(top)}</span></div><div class="factor-row"><span class="lab">bottom</span><span class="tiles"><span class="tile common">${b}</span>${strike(k)}${xs(bot)}</span></div><p class="small">Each $x$ on the bottom cancels one $x$ on the top.</p>`);
+      const num=mt(c1,top)||'1',den=mt(c2,bot);
+      const res=c2===1&&bot===0?ALG.toTex(num===''?'1':num):`\\dfrac{${ALG.toTex(num===''?'1':num)}}{${ALG.toTex(den||'1')}}`;
+      html($('#w7r2'),`$\\dfrac{${ALG.toTex(mt(a,m))}}{${ALG.toTex(mt(b,n))}}=${res}$`+(m>n?`<br><span class="small">Powers: $${m}-${n}=${m-n}$.</span>`:m===n?'<br><span class="small">The powers are equal, so every $x$ cancels.</span>':''));}
+  }
+  ids.forEach(k=>$('#w7'+k).oninput=upd2);$('#w7op').onchange=upd2;upd2();
+}
+
+/* ================= BOOT ================= */
+function boot(){
+  initState();buildTabs();renderQuestions();
+  [w1,w2,w7,w3,w4,w5,w6].forEach(f=>{try{f()}catch(e){console.error(e)}});
+  $$('details.why').forEach((d,i)=>{d.dataset.k='why'+i;d.addEventListener('toggle',()=>{if(d.open){WHY[d.dataset.k]=1;save()}})});
+  $('#resetBtn').onclick=()=>{const b=$('#resetBtn');if(!b.dataset.armed){b.dataset.armed=1;b.textContent='Tap again to clear all answers';setTimeout(()=>{delete b.dataset.armed;b.textContent='Start again'},4000);return}
+    delete b.dataset.armed;b.textContent='Start again';try{localStorage.removeItem(KEY)}catch(e){}initState();renderQuestions();refreshProgress();};
+  mathify(document.querySelector('main'));
+  refreshProgress();
+  const h=location.hash.slice(1);show(ORDER.includes(h)?h:'start');
+}
+let booted=false;window.addEventListener('load',()=>{if(!booted){booted=true;boot()}});
+
+</script>
+</body>
+</html>

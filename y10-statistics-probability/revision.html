@@ -158,6 +158,19 @@ details.why[open]{padding-bottom:.8rem}
 .chips span.mk{min-width:0;border:none;background:none;padding:0 1px;color:var(--c2);font-weight:800}
 .katex{font-size:1.04em}
 .katex-display{overflow-x:auto;overflow-y:hidden;padding:.15rem 0}
+.printonly{display:none}
+@media print{
+  @page{size:A4;margin:12mm}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{background:#fff!important}
+  header.top,nav.tabs,.noprint,.next,section.tab:not(#tab-report){display:none!important}
+  section#tab-report{display:block!important;animation:none!important}
+  main{padding:0!important;max-width:none!important}
+  .printonly{display:block}
+  .rephead{border:2px solid #1c2230}
+  .skill,.rbar,.adv,.rephead,#kmap,.score{break-inside:avoid;page-break-inside:avoid}
+  #kmap svg{max-height:240mm}
+}
 </style>
 </head>
 <body>
@@ -1020,7 +1033,8 @@ function renderReport(){
   const T=UI.report, box=$('#report');
   const answered=Q.filter(q=>S[q.id].done);
   if(!Q.some(q=>S[q.id].att>0)){box.innerHTML=`<div class="card">${T.empty}</div>`;return}
-  let h='';
+  let __h=repHead();
+  let h=__h+'';
   // by part
   h+=`<div class="card"><div class="box-title">${T.byPart}</div>`;
   Object.keys(SEC).forEach(k=>{const qs=Q.filter(q=>q.part===k),d=qs.filter(q=>S[q.id].done),pts=d.reduce((a,q)=>a+S[q.id].pts,0);
@@ -1051,7 +1065,7 @@ function renderReport(){
   const tot=answered.reduce((a,q)=>a+S[q.id].pts,0);
   h+=`<div class="card"><div class="box-title">${T.total}</div><div class="score">${tot} / ${Q.length*3}</div><p class="small" style="text-align:center">${Math.round(100*tot/(Q.length*3))}%</p><p class="small">${T.note}</p></div>`;
   box.innerHTML=h;mathify(box);
-  drawMap(avg,lev);
+  drawMap(avg,lev);wireRep();
 }
 function drawMap(avg,lev){
   const box=$('#kmap'), narrow=box.clientWidth<620;
@@ -1080,6 +1094,17 @@ function drawMap(avg,lev){
     s+=`<text x="${x+4}" y="${y0+lines.length*lh}" text-anchor="middle" font-size="${fs-2}" fill="${c}" font-weight="700">${UI.report.avg(avg[k])}</text>`;});
   s+='</svg>';box.innerHTML=s;
 }
+/* ================= REPORT → PDF ================= */
+function repHead(){let nm='';try{nm=localStorage.getItem('report-name')||''}catch(e){}
+  const d=new Date().toLocaleDateString('en-NZ',{day:'numeric',month:'long',year:'numeric'});
+  const safe=nm.replace(/[<>&"]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]));
+  return `<div class="card rephead"><div class="printonly"><div style="font-family:Georgia,serif;font-size:1.3rem;font-weight:600">${document.title}</div><div>Learning report · ${d}</div><div>Name: <b id="repNameOut">${safe||'________________'}</b></div></div>`+
+    `<div class="ctrl noprint"><label>Your name <input type="text" id="repName" value="${safe}" placeholder="Type your name" style="font:inherit;padding:.3rem .5rem;border:1px solid #c9c3d6;border-radius:8px"></label><button class="btn primary" id="repPdf" type="button">⬇ Download report as PDF</button></div>`+
+    `<p class="small noprint" style="margin:.3rem 0 0">A print window opens: choose <b>Save as PDF</b> as the printer.</p></div>`}
+function wireRep(){const n=document.getElementById('repName'),b=document.getElementById('repPdf');if(!n||!b)return;
+  n.oninput=()=>{try{localStorage.setItem('report-name',n.value)}catch(e){}const o=document.getElementById('repNameOut');if(o)o.textContent=n.value||'________________'};
+  b.onclick=()=>{try{window.print()}catch(e){alert('Printing is blocked here. Open the page in a normal browser tab.')}};}
+
 /* ================= SHARED DRAWING ================= */
 function boxPlotsSVG(groups,lo,hi,step,label,dots){
   const W=600,rowH=66,H=groups.length*rowH+78,L=40,Rr=W-20,sx=v=>L+(v-lo)/(hi-lo)*(Rr-L);

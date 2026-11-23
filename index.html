@@ -80,6 +80,8 @@ details.year[open] .chev{transform:rotate(90deg)}
 .res{display:flex;flex-direction:column;gap:.35rem;margin-top:.2rem}
 .res a{display:flex;align-items:center;gap:.5rem;text-decoration:none;color:var(--ink);font-size:.86rem;background:var(--c-soft);border-radius:9px;padding:.4rem .55rem;transition:transform .15s}
 .res a:hover{transform:translateX(3px)}
+.res .soon{display:flex;align-items:center;gap:.5rem;font-size:.86rem;color:#9aa1ad;border:1px dashed #d8d3c9;border-radius:9px;padding:.4rem .55rem}
+.res .soon .ty{font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;margin-left:auto;color:#b5b9c2}
 .res a .ty{font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--c);margin-left:auto}
 .hidden{display:none!important}
 .empty{color:var(--muted);font-size:.9rem;padding:1rem 0}
@@ -117,11 +119,16 @@ footer{text-align:center;color:var(--muted);font-size:.8rem;padding:1.5rem}
    Find the key below as  board/year/strand  and add a line, e.g.
      'cam/9/geometry': [ {title:'Angles revision', href:'cam-y9-geometry/revision.html', type:'interactive'} ],
    type: interactive | print | lesson | revision
+   A resource with soon:true (and no href) is listed as 'coming soon' and does not light the topic.
    A strand with at least one resource lights up automatically.
    ================================================================= */
 const RESOURCES = {
   'ncea/10/statprob': [
     {title:'Exam revision: concepts and practice', href:'y10-statistics-probability/revision.html', type:'interactive'}
+  ],
+  'cam/8/algebra': [
+    {title:'Part A · Expressions, formulae & equations', href:'cam-y8-algebra/algebra-part-a.html', type:'interactive'},
+    {title:'Part B · Sequences, functions & graphs', href:'cam-y8-algebra/algebra-part-b.html', type:'interactive'}
   ]
 };
 
@@ -167,7 +174,8 @@ let board='ncea';
 try{const b=localStorage.getItem('atlas-board');if(BOARDS[b])board=b}catch(e){}
 if(/^#(ncea|cam)/.test(location.hash))board=location.hash.slice(1).split('-')[0];
 const $=s=>document.querySelector(s);
-const res=(b,y,s)=>RESOURCES[`${b}/${y}/${s}`]||[];
+const all=(b,y,s)=>RESOURCES[`${b}/${y}/${s}`]||[];
+const res=(b,y,s)=>all(b,y,s).filter(r=>r.href&&!r.soon);
 const icon=k=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${ICON[k]||''}</svg>`;
 const yearsOf=b=>BOARDS[b].stages.flatMap(st=>st.years.map(y=>({y,st})));
 const countLive=b=>yearsOf(b).reduce((a,{y,st})=>a+st.strands.filter(s=>res(b,y,s).length).length,0);
@@ -197,9 +205,9 @@ function renderTree(){
     st.years.forEach(y=>{
       const live=st.strands.filter(s=>res(board,y,s).length).length;
       h+=`<details class="year${live?' has':''}" id="${board}-${y}" ${live?'open':''}><summary><span class="yn">${y}</span><span class="yt"><b>Year ${y}</b><small>${live?live+' of '+st.strands.length+' topics live':'Topics coming soon'}</small></span><span class="meter">${st.strands.map(s=>`<i class="${res(board,y,s).length?'on':''}"></i>`).join('')}</span><span class="chev">▸</span></summary><div class="strands">`;
-      st.strands.forEach(s=>{const R=res(board,y,s);
-        h+=`<div class="strand${R.length?' lit':''}" data-s="${s}" data-text="${(STRANDS[s].n+' year '+y+' '+R.map(r=>r.title).join(' ')).toLowerCase()}"><div class="si">${icon(s)}</div><div class="sn">${STRANDS[s].n}</div>`+
-          (R.length?`<div class="ss">${R.length} resource${R.length>1?'s':''}</div><div class="res">${R.map(r=>`<a href="${r.href}">${r.title}<span class="ty">${TYPE[r.type]||''}</span></a>`).join('')}</div>`:`<div class="ss">Coming soon</div>`)+`</div>`});
+      st.strands.forEach(s=>{const R=res(board,y,s),A=all(board,y,s);
+        h+=`<div class="strand${R.length?' lit':''}" data-s="${s}" data-text="${(STRANDS[s].n+' year '+y+' '+A.map(r=>r.title).join(' ')).toLowerCase()}"><div class="si">${icon(s)}</div><div class="sn">${STRANDS[s].n}</div>`+
+          (R.length?`<div class="ss">${R.length} live${A.length>R.length?' · '+(A.length-R.length)+' coming':''}</div><div class="res">${A.map(r=>r.href&&!r.soon?`<a href="${r.href}">${r.title}<span class="ty">${TYPE[r.type]||''}</span></a>`:`<span class="soon">${r.title}<span class="ty">Coming soon</span></span>`).join('')}</div>`:`<div class="ss">Coming soon</div>`)+`</div>`});
       h+=`</div></details>`;});
   });
   $('#tree').innerHTML=h+'<div class="empty hidden" id="empty">No topics match. Try another word.</div>';
