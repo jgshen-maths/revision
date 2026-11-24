@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Year 8 Number Part B · Decimals</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<style>
+:root{
+  --ink:#1c2230;--muted:#5b6475;--paper:#f7f6fb;--card:#fff;--line:#e2e0ea;
+  --a:#3b4fa8;--a-soft:#e8ebf8;--b:#b5487a;--b-soft:#f8e7ef;
+  --good:#2f8a4c;--good-soft:#e5f4ea;--warn:#b7791f;--warn-soft:#fbf1dc;--bad:#c0392b;--bad-soft:#fbe5e2;--grey:#9aa1ad;
+  --xt:#5b6fd8;--ct:#e09f3e;--neg:#c0392b;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font:18px/1.65 "Avenir Next","Segoe UI",system-ui,-apple-system,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.25;font-weight:600}
+h2{font-size:1.6rem;margin:.2rem 0 .6rem}
+h3{font-size:1.15rem;margin:1.6rem 0 .5rem}
+p{margin:.55rem 0}
+header.top{position:sticky;top:0;z-index:20;background:rgba(247,246,251,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.topin{max-width:940px;margin:0 auto;padding:.55rem 1rem .35rem;display:flex;align-items:center;gap:.8rem;flex-wrap:wrap}
+.brand{font-family:Georgia,serif;font-weight:600;font-size:1.02rem;flex:1;min-width:180px}
+.brand small{display:block;font-family:inherit;font-weight:400;color:var(--muted);font-size:.84rem}
+.prog{font-size:.82rem;color:var(--muted);text-align:right}
+.bar{height:6px;background:var(--line);border-radius:4px;overflow:hidden;width:150px;margin-top:3px}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--a),var(--b));width:0;transition:width .4s}
+nav.tabs{max-width:940px;margin:0 auto;display:flex;gap:.35rem;overflow-x:auto;padding:.1rem 1rem .6rem;scrollbar-width:thin}
+nav.tabs button{flex:0 0 auto;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;padding:.32rem .8rem;font:inherit;font-size:.9rem;cursor:pointer;white-space:nowrap}
+nav.tabs button.ga{border-color:#c9d0ef}
+nav.tabs button.gb{border-color:#eccbdb}
+nav.tabs button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+nav.tabs button .tick{color:var(--good);font-weight:700;margin-left:.25rem}
+nav.tabs button.on .tick{color:#9be3b0}
+main{max-width:940px;margin:0 auto;padding:1.2rem 1rem 4rem}
+section.tab{display:none}
+section.tab.on{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.kicker{font-size:.84rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--a)}
+.gb-sec .kicker{color:var(--b)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1rem 1.1rem;margin:1rem 0}
+.idea{border-left:5px solid var(--a)}
+.gb-sec .idea{border-left-color:var(--b)}
+.box-title{font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:.3rem}
+.key{background:var(--a-soft);border-radius:10px;padding:.6rem .8rem;margin:.6rem 0}
+.gb-sec .key{background:var(--b-soft)}
+.trap{background:var(--warn-soft);border-radius:10px;padding:.6rem .8rem;margin:.6rem 0}
+.trap b{color:#8a5a0c}
+.steps{margin:.3rem 0;padding-left:1.3rem}
+.steps li{margin:.4rem 0}
+.tblwrap{overflow-x:auto;max-width:100%}
+table.t{border-collapse:collapse;margin:.5rem 0;font-size:1rem}
+table.t th,table.t td{border:1px solid var(--line);padding:.35rem .6rem;text-align:center}
+table.t th{background:#efedf5;font-weight:600}
+.widget{background:#fdfcff;border:1px dashed #c9c5d8;border-radius:14px;padding:.9rem;margin:1rem 0}
+.widget .box-title{color:var(--a)}
+.gb-sec .widget .box-title{color:var(--b)}
+.ctrl{display:flex;flex-wrap:wrap;gap:.5rem .8rem;align-items:center;margin:.45rem 0}
+.ctrl label{font-size:.98rem;display:flex;align-items:center;gap:.4rem}
+.ctrl input[type=range]{width:150px}
+.ctrl input[type=text],.ctrl select{font:inherit;padding:.3rem .5rem;border:1px solid #c9c3d6;border-radius:8px}
+.btn{border:1px solid var(--ink);background:#fff;color:var(--ink);border-radius:8px;padding:.36rem .8rem;font:inherit;font-size:.95rem;cursor:pointer}
+.btn:hover{background:#efedf5}
+.btn.primary,.btn.on{background:var(--ink);color:#fff}
+.btn.small{padding:.24rem .6rem;font-size:.9rem}
+.readout{background:#fff;border:1px solid var(--line);border-radius:10px;padding:.55rem .75rem;margin-top:.5rem;font-size:1rem}
+svg{max-width:100%;height:auto;display:block}
+svg text{font-family:"Avenir Next","Segoe UI",system-ui,sans-serif}
+.wex{border-left:5px solid #7a6f8c}
+.wex .box-title{color:#7a6f8c}
+details.why{background:#f1eff6;border-radius:12px;padding:.5rem .9rem;margin:1rem 0}
+details.why summary{cursor:pointer;font-weight:600}
+details.why[open]{padding-bottom:.8rem}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+@media(max-width:640px){.two{grid-template-columns:1fr}h2{font-size:1.35rem}}
+.qhead{display:flex;align-items:baseline;gap:.6rem;margin-top:1.8rem}
+.qhead h3{margin:0}
+.qhead span{font-size:.92rem;color:var(--muted)}
+.q{background:#fff;border:1px solid var(--line);border-radius:14px;padding:.9rem 1rem;margin:.8rem 0}
+.q .qn{font-weight:700;color:var(--muted);font-size:.88rem;letter-spacing:.05em;display:flex;align-items:center;gap:.4rem;flex-wrap:wrap}
+.lvltag{font-size:.74rem;letter-spacing:.08em;border-radius:999px;padding:.05rem .5rem;font-weight:700}
+.lvltag.Focus{background:#e6f2ea;color:#2f7a46}.lvltag.Practice{background:#e8ebf8;color:#3b4fa8}.lvltag.Challenge{background:#f8e7ef;color:#a3376a}
+.q .prompt{margin:.3rem 0 .6rem}
+.q.done-3{border-color:#9ed1ae}.q.done-2,.q.done-1{border-color:#e7c98d}.q.done-0{border-color:#e5a69e}
+.opts{display:grid;gap:.4rem}
+.opt{text-align:left;border:1px solid var(--line);background:#fbfaff;border-radius:10px;padding:.45rem .7rem;font:inherit;cursor:pointer;color:var(--ink)}
+.opt:hover:not(:disabled){border-color:var(--ink)}
+.opt.wrong{background:var(--bad-soft);border-color:#e5a69e}
+.opt.right{background:var(--good-soft);border-color:#9ed1ae}
+.opt:disabled{cursor:default}
+.ansrow{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
+.ansrow input{font:inherit;padding:.35rem .6rem;border:1px solid #c9c3d6;border-radius:8px;width:190px}
+.preview{min-height:1.8rem;color:var(--muted);font-size:1rem;margin-top:.2rem}
+.fmt{font-size:.9rem;color:var(--muted);margin-top:.2rem}
+.dots{display:inline-flex;gap:4px;margin-left:.2rem;vertical-align:middle}
+.dots i{width:10px;height:10px;border-radius:50%;border:1.5px solid var(--grey);display:inline-block}
+.dots i.x{background:var(--bad);border-color:var(--bad)}
+.dots i.ok{background:var(--good);border-color:var(--good)}
+.fb{margin-top:.5rem;font-size:1rem}
+.fb.ok{color:var(--good)}.fb.no{color:var(--bad)}.fb.info{color:#8a5a0c}
+.hint{background:var(--warn-soft);border-radius:10px;padding:.5rem .7rem;margin-top:.5rem;font-size:1rem}
+.sol{background:#eef0fa;border-radius:10px;padding:.55rem .8rem;margin-top:.55rem;font-size:1rem}
+.gb-sec .sol{background:#faeef4}
+.next{display:flex;justify-content:flex-end;margin-top:2rem}
+.hero{padding:1.2rem 0 .4rem}
+.hero h1{font-size:2.1rem;margin:.2rem 0}
+.hero p{color:var(--muted);max-width:640px}
+.route{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.6rem;margin:1rem 0}
+.stop{background:#fff;border:1px solid var(--line);border-radius:12px;padding:.65rem .8rem;cursor:pointer;text-align:left;font:inherit;color:var(--ink)}
+.stop:hover{border-color:var(--ink)}
+.stop .n{font-size:.75rem;font-weight:700;letter-spacing:.08em;color:var(--a)}
+.stop.gb .n{color:var(--b)}.stop.rv .n{color:#6b5ca5}
+.stop .tt{font-weight:600;display:block}
+.stop .mm{font-size:.86rem;color:var(--muted)}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;margin:.6rem 0}
+.flow div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:.5rem .6rem;font-size:.95rem}
+.flow b{display:block;font-size:.95rem}
+@media(max-width:640px){.flow{grid-template-columns:1fr 1fr}.hero h1{font-size:1.6rem}}
+/* report */
+.rbar{margin:.45rem 0}
+.rbar .lab{display:flex;justify-content:space-between;font-size:.9rem;gap:.5rem}
+.rbar .tr{height:10px;background:#e9e6f0;border-radius:6px;overflow:hidden}
+.rbar .tr i{display:block;height:100%}
+.skill{display:flex;justify-content:space-between;gap:.6rem;padding:.35rem 0;border-bottom:1px solid #eeebf3;font-size:1rem}
+.lvl{font-size:.78rem;border-radius:999px;padding:.05rem .55rem;white-space:nowrap;align-self:center}
+.lvl.g{background:var(--good-soft);color:var(--good)}.lvl.a{background:var(--warn-soft);color:#8a5a0c}.lvl.r{background:var(--bad-soft);color:var(--bad)}.lvl.n{background:#eee;color:#777}
+.score{font-family:Georgia,serif;font-size:2.4rem;text-align:center;margin:.3rem 0}
+.legend{display:flex;flex-wrap:wrap;gap:.4rem 1rem;font-size:.9rem;justify-content:center;margin-top:.4rem}
+.legend span{display:inline-flex;align-items:center;gap:.35rem}
+.legend i{width:12px;height:12px;border-radius:50%;display:inline-block}
+.adv{border-left:4px solid var(--warn);padding:.3rem .8rem;margin:.6rem 0;background:#fff;border-radius:0 10px 10px 0}
+.small{font-size:.92rem;color:var(--muted)}
+/* widgets */
+.chain{display:flex;flex-wrap:wrap;gap:.35rem;align-items:center;margin:.4rem 0}
+.chain span.op{background:var(--a-soft);color:var(--a);border-radius:8px;padding:.15rem .5rem;font-weight:700;font-size:.9rem}
+.chain span.ar{color:var(--muted)}
+.flowbox{display:flex;flex-wrap:wrap;align-items:center;gap:.3rem;margin:.35rem 0}
+.flowbox .fbx{border:1.5px solid var(--ink);border-radius:8px;padding:.15rem .5rem;background:#fff;min-width:38px;text-align:center}
+.flowbox .fop{border-radius:999px;padding:.12rem .55rem;font-weight:700;font-size:.88rem}
+.flowbox.fwd .fop{background:var(--a-soft);color:var(--a)}
+.flowbox.back .fop{background:var(--b-soft);color:var(--b)}
+.flowbox .arr{color:var(--muted)}
+.tiles{display:flex;flex-wrap:wrap;gap:4px;align-items:center;margin:.25rem 0}
+.tile{min-width:30px;height:30px;padding:0 .35rem;border-radius:7px;border:1.5px solid #c9c5d8;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:.92rem}
+.tile.common{background:var(--a);border-color:var(--a);color:#fff}
+.tile.sign{border:none;background:none;min-width:12px}
+.factor-row{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin:.35rem 0}
+.factor-row .lab{min-width:70px;font-weight:600}
+.log{font-size:.9rem;color:var(--muted);margin:.4rem 0 0;padding-left:1.2rem}
+.fig{position:relative;margin:.5rem 0}
+.fig .lb{position:absolute;transform:translate(-50%,-50%);background:rgba(255,255,255,.85);padding:0 3px;white-space:nowrap;font-size:.95rem}
+.katex{font-size:1.04em}
+.katex-display{overflow-x:auto;overflow-y:hidden;padding:.15rem 0}
+.credit{text-align:center;color:var(--muted);font-size:.86rem;padding:1rem 0 2rem}
+
+/* number part A */
+#w2r table.t{font-size:.95rem}#w2r table.t th,#w2r table.t td{padding:.3rem .4rem;line-height:1.25}
+.itbl{border-collapse:collapse;margin:.5rem 0;font-size:1.05rem}
+.itbl th,.itbl td{border:1px solid var(--line);padding:.4rem .55rem;text-align:center;vertical-align:middle}
+.itbl th{background:#efedf5;font-weight:600;font-size:.9rem;line-height:1.25}
+.itbl tr.oprow td{border:none;background:none;color:var(--b);font-weight:700;padding:.05rem .3rem;font-size:.95rem;line-height:1.3}
+.itbl td input{font:inherit;width:84px;padding:.25rem .4rem;border:1px solid #c9c3d6;border-radius:7px;text-align:center}
+.itbl td{min-width:64px}.itbl .katex{font-size:1.1em}
+.itbl td.okc{background:var(--good-soft)}.itbl td.noc{background:var(--bad-soft)}
+.itbl tr.new td{animation:fade .35s ease}
+.divbtn{border:1.5px solid var(--b);color:var(--b);background:#fff;border-radius:999px;padding:.15rem .6rem;font:inherit;font-weight:700;cursor:pointer;white-space:nowrap}
+.divbtn:hover{background:var(--b-soft)}
+.note{background:var(--good-soft);border-radius:10px;padding:.55rem .8rem;margin:.5rem 0}
+.tree svg{max-width:100%}
+.tree .nd{cursor:pointer}
+.pairs{display:flex;flex-wrap:wrap;gap:.35rem;margin:.4rem 0}
+.tileb{min-width:34px;height:34px;padding:0 .3rem;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:1rem;border:2px solid #3b4fa8;background:#e8ebf8;color:#3b4fa8;position:relative}
+.tileb.p{border-color:#b5487a;background:#f8e7ef;color:#b5487a}
+.tileb.x{opacity:.45}
+.tileb.x::after{content:"";position:absolute;left:-3px;right:-3px;top:50%;border-top:2.5px solid #c0392b;transform:rotate(-35deg)}
+.trow{display:flex;flex-wrap:wrap;gap:5px;align-items:center;margin:.3rem 0}
+.grpb{display:inline-flex;gap:4px;padding:4px;border:2px dashed #b9b3c9;border-radius:10px}
+.fracbox{display:inline-flex;flex-direction:column;align-items:flex-start;gap:6px}
+.fracbox .barl{border-top:2.5px solid #1c2230;align-self:stretch}
+.pyr{display:flex;flex-direction:column;align-items:center;gap:6px;margin:.5rem 0}
+.pyr div{display:flex;gap:6px}
+.pyr span{min-width:58px;height:40px;border:1.5px solid #1c2230;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;font-weight:600;background:#fff}
+.pyr span.q{background:#f1eff6;color:#7a6f8c}
+
+/* sample: friendly style */
+.hook{background:linear-gradient(135deg,#fff7e6,#eef3ff);border:none;border-radius:18px;padding:1.2rem 1.2rem 1rem}
+.hook .big{font-family:Georgia,serif;font-size:1.35rem;font-weight:600;margin:.1rem 0 .5rem}
+.hookfig{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin:.7rem 0}
+.hookfig .num{font-family:Georgia,serif;font-size:2.2rem;font-weight:700}
+.hookfig .eq{font-size:1.6rem;color:var(--muted)}
+.brick{--c:#6b5ca5;display:inline-flex;align-items:center;justify-content:center;min-width:46px;height:40px;padding:0 .45rem;border-radius:7px;background:var(--c);color:#fff;font-weight:800;font-size:1.2rem;position:relative;margin:10px 3px 0;box-shadow:inset 0 -5px rgba(0,0,0,.18)}
+.brick::before{content:"";position:absolute;top:-8px;left:7px;right:7px;height:9px;background:radial-gradient(circle at 22% 100%,var(--c) 5px,transparent 5.6px),radial-gradient(circle at 78% 100%,var(--c) 5px,transparent 5.6px)}
+.brick.sm{min-width:36px;height:32px;font-size:1rem;margin:8px 2px 0}
+.tray{display:flex;flex-wrap:wrap;align-items:flex-end;gap:2px;min-height:48px}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin:.6rem 0}
+.chip{min-width:56px;height:50px;border-radius:12px;border:2px solid #c9c5d8;background:#fff;font:inherit;font-size:1.3rem;font-weight:700;cursor:pointer;color:var(--ink)}
+.chip.yes{border-color:#2f9e5b;background:#e5f4ea;color:#2f7a46}
+.chip.no{border-color:#e5a69e;background:#fbe5e2;color:#c0392b;animation:shake .3s}
+@keyframes shake{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+.tutor{border:2px solid #3b4fa8;border-radius:18px;background:#fff;padding:1rem}
+.tutor .who{font-size:.85rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#3b4fa8}
+.tq{font-size:1.15rem;margin:.6rem 0 .4rem}
+.tbtns{display:flex;flex-wrap:wrap;gap:.5rem;margin:.3rem 0}
+.tbtns .btn{font-size:1.05rem;padding:.45rem .9rem;border-radius:10px}
+.tfb{border-radius:10px;padding:.45rem .7rem;margin:.4rem 0;font-size:1.02rem}
+.tfb.ok{background:var(--good-soft);color:#24683b}.tfb.no{background:var(--warn-soft);color:#7a4e0a}
+.wow{background:#fdf3ff;border:2px dashed #b5487a;border-radius:18px}
+.wow .box-title{color:#b5487a}
+.shortcut{background:#1c2230;color:#fff;border-radius:16px;padding:1rem 1.1rem}
+.shortcut .box-title{color:#ffd27a}
+.shortcut .katex{color:#fff}
+details.pad{background:#f1eff6;border-radius:12px;padding:.5rem .9rem;margin:1rem 0}
+details.pad summary{cursor:pointer;font-weight:600}
+.tries{margin:.5rem 0;padding-left:0;list-style:none}
+.tries li{display:flex;align-items:flex-end;gap:.5rem;flex-wrap:wrap;margin:.2rem 0}
+.tries li span.l{font-size:.95rem;color:var(--muted);min-width:100px}
+.zones{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin:.6rem 0}
+.zone{border-radius:14px;min-height:96px;padding:.4rem .3rem;text-align:center}
+.zone .zl{font-size:.82rem;font-weight:700;line-height:1.2}
+.zone .tray{justify-content:center}
+.zone.l{background:#e8ebf8;color:#3b4fa8}.zone.m{background:#efe4f3;color:#6b3a87}.zone.r{background:#f8e7ef;color:#b5487a}
+.brow{display:flex;align-items:flex-end;gap:.4rem;flex-wrap:wrap;margin:.2rem 0}
+.brow .lab{font-weight:700;min-width:44px;font-family:Georgia,serif;font-size:1.25rem}
+.brow button.brick{border:none;cursor:pointer;font-family:inherit}
+.brow button.brick:disabled{opacity:.2;cursor:default}
+.steps-dots{display:flex;gap:5px;margin:.2rem 0 .4rem}
+.steps-dots i{width:22px;height:6px;border-radius:3px;background:#dcd8e6}
+.steps-dots i.on{background:#3b4fa8}
+.nest{border:2.5px solid #6b5ca5;border-radius:16px;padding:.5rem;background:#f6f3fb}
+.nest .nest{border-color:#3b4fa8;background:#eef1fb;margin-top:.4rem}
+.nest .nest .nest{border-color:#2f9e5b;background:#eaf6ee}
+.nest .nl{font-size:.85rem;font-weight:700}
+.nest .tray{min-height:40px;gap:6px}
+.ncard{display:inline-flex;align-items:center;justify-content:center;min-width:48px;height:38px;border-radius:10px;background:#fff;border:2px solid #1c2230;font-weight:700;font-size:1.1rem;padding:0 .4rem}
+.cotbl td,.cotbl th{padding:.3rem .45rem}
+.cotbl td.eq{background:var(--good-soft);font-weight:700}
+.pvt th,.pvt td{text-align:center;min-width:30px;padding:.3rem .35rem;font-size:1.05rem}
+.pvt th{font-size:.8rem}.pvt td.lab{text-align:right;color:#6b6458;font-size:.9rem;white-space:nowrap}
+.pvt .one{background:#eef1fb}.pvt .pt{min-width:8px;padding:0;font-weight:800;border-left:none;border-right:none}
+.pvt tr.new td{color:#b5487a;font-weight:700}
+.g10{display:grid;grid-template-columns:repeat(10,13px);grid-template-rows:repeat(10,13px);gap:1px;background:#c9c5d8;border:2px solid #1c2230;width:max-content}
+.g10 i{background:#fff}.g10 i.lt{background:#c7d0f2}.g10 i.dk{background:#b5487a}
+.chips2{display:flex;align-items:center;gap:4px;flex-wrap:wrap;margin:.3rem 0}
+.chips2 .dg{display:inline-flex;align-items:center;justify-content:center;width:34px;height:42px;border:2px solid #c9c5d8;border-radius:8px;font-size:1.3rem;font-weight:700;background:#fff}
+.chips2 .dg.sf{border-color:#3b4fa8;background:#e8ebf8;color:#3b4fa8}
+.chips2 .dg.nx{border-color:#e8902a;background:#fdf0dd;color:#b5650c}
+.chips2 .dg.lz{color:#b0aabd;border-style:dashed}
+.chips2 .dp{font-size:1.6rem;font-weight:800;margin:0 -1px}
+.chips2 .cut{display:inline-block;width:3px;height:52px;background:#c0392b;border-radius:2px;margin:0 1px}
+.strips{display:grid;gap:6px;max-width:320px}.strips span{display:block;height:20px;border:2px solid #1c2230;border-radius:4px;background:#fff}
+.strips b{display:block;height:100%;background:#3b4fa8}
+.lit{display:flex;gap:10px;flex-wrap:wrap}.lit span{display:flex;flex-direction:column-reverse;gap:3px;width:46px;height:96px;border:2.5px solid #1c2230;border-radius:6px 6px 10px 10px;padding:3px;box-sizing:border-box;background:#fff}
+.lit i{flex:1;background:#7fb3e6;border-radius:3px}
+.printonly{display:none}
+@media print{
+  @page{size:A4;margin:12mm}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{background:#fff!important}
+  header.top,nav.tabs,.noprint,.next,section.tab:not(#tab-report){display:none!important}
+  section#tab-report{display:block!important;animation:none!important}
+  main{padding:0!important;max-width:none!important}
+  .printonly{display:block}
+  .rephead{border:2px solid #1c2230}
+  .skill,.rbar,.adv,.rephead,#kmap,.score{break-inside:avoid;page-break-inside:avoid}
+  #kmap svg{max-height:240mm}
+}
+</style>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%20role%3D%22img%22%20aria-label%3D%22%E7%94%B3%20Shen%20Studio%22%3E%3Crect%20width%3D%22100%22%20height%3D%22100%22%20rx%3D%2212%22%20fill%3D%22%23B3261E%22/%3E%3Cpath%20d%3D%22M41.57%2027.7V42.46H27.58V27.7ZM15.1%2025.34V70.78H16.95C22.18%2070.78%2027.58%2067.91%2027.58%2066.65V62.18H41.57V90H44.01C48.82%2090%2054.3%2086.88%2054.3%2085.62V62.18H68.97V68.93H71.07C75.37%2068.93%2081.53%2066.65%2081.61%2065.89V29.64C83.38%2029.3%2084.39%2028.55%2084.9%2027.87L73.69%2019.19L68.12%2025.34H54.3V13.96C56.74%2013.62%2057.33%2012.7%2057.5%2011.52L41.57%2010V25.34H28.42L15.1%2020.2ZM54.3%2027.7H68.97V42.46H54.3ZM41.57%2059.82H27.58V44.82H41.57ZM54.3%2059.82V44.82H68.97V59.82Z%22%20fill%3D%22%23FFFFFF%22/%3E%3C/svg%3E">
+<style id="shen-brand">
+.shen-footer{display:flex;align-items:center;justify-content:center;gap:8px;padding:18px 12px 26px;font:500 13px/1.3 Inter,"Helvetica Neue",Arial,sans-serif;color:#6B6458;letter-spacing:.03em;text-align:center}
+.shen-footer svg{width:20px;height:20px;flex-shrink:0}
+.shen-footer b{font-weight:600;color:#1A1A1A}
+.shen-print-mark{display:none}
+@media print{.shen-footer{display:none!important}
+.shen-print-mark{display:flex!important;position:fixed;right:0;bottom:0;align-items:center;gap:1.5mm;font:500 7.5pt/1 Inter,Arial,sans-serif;color:#555;opacity:.75;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.shen-print-mark svg{width:4mm;height:4mm}}
+</style>
+<style id="home-link">
+.homebtn{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 12px;border:1px solid var(--line,#ddd);border-radius:999px;background:#fff;color:var(--ink,#1c2230);text-decoration:none;font:600 .88rem/1 Inter,system-ui,sans-serif;white-space:nowrap;flex-shrink:0}
+.homebtn:hover{background:#f1eff6}
+.homebtn svg{width:16px;height:16px}
+@media print{.homebtn{display:none!important}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="topin">
+    <a class="homebtn" href="../index.html" aria-label="Back to the Maths Atlas home page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>Home</a>
+    <div class="brand">Year 8 Number · Part B<small>Place value, rounding and decimals</small></div>
+    <div class="prog"><span id="progtxt"></span><div class="bar"><i id="progbar"></i></div></div>
+  </div>
+  <nav class="tabs" id="tabs"></nav>
+</header>
+
+<main>
+<!-- ================= START ================= -->
+<section class="tab" id="tab-start">
+  <div class="hero">
+    <div class="kicker">Cambridge · Year 8 · Number revision</div>
+    <h1>Decimals</h1>
+    <p>Six short missions about decimal numbers: moving digits, rounding, comparing, multiplying and dividing. Each mission starts with a puzzle, then we work through it together, then it's your turn.</p>
+  </div>
+  <div class="card">
+    <div class="box-title">Typing answers</div>
+    <p>Decimals: <code>0.25</code>. Negatives: <code>-1.4</code>. Lists: separate with commas, e.g. <code>5.08, 5.17</code>. A preview shows what you typed.</p>
+  </div>
+  <div class="route" id="route"></div>
+  <div class="card">
+    <div class="box-title">Points</div>
+    <p>Right first try: 3 points. Second try: 2. Third try: 1. Stuck twice? A hint appears.</p>
+    <p class="small">Your progress is saved on this device. <button class="btn small" id="resetBtn" type="button">Start again</button></p>
+  </div>
+  <div class="next"><button class="btn primary" data-go="b1">Start Mission B1 →</button></div>
+</section>
+
+<!-- ================= B1 ================= -->
+<section class="tab" id="tab-b1">
+  <div class="kicker">Mission B1</div>
+  <h2>Multiplying and dividing by 0.1 and 0.01</h2>
+  <div class="card hook">
+    <div class="big">Does multiplying always make a number bigger?</div>
+    <div class="hookfig"><span class="num" style="font-size:1.8rem">$20\times0.1=2$</span></div>
+    <p>The machine $0.1$ <b>shrinks</b> the number to a tenth of its size. Let's see what happens to the digits.</p>
+  </div>
+  <div class="tutor" id="t1">
+    <div class="who">Let's do it together</div>
+    <div id="t1body"></div>
+  </div>
+  <div class="shortcut card">
+    <div class="box-title">Shortcut card</div>
+    <p>$\times0.1$ is $\div10$ &nbsp;·&nbsp; $\times0.01$ is $\div100$: digits move <b>right</b>.</p>
+    <p>$\div0.1$ is $\times10$ &nbsp;·&nbsp; $\div0.01$ is $\times100$: digits move <b>left</b>.</p>
+  </div>
+  <details class="pad"><summary>Play: the place-value slider</summary>
+    <div class="ctrl"><label>Number <input type="text" id="pvn" value="45.6" size="7"></label></div>
+    <div class="tbtns" id="pvbtns"></div>
+    <div id="pvtbl"></div>
+    <div class="readout" id="pvr"></div>
+  </details>
+  <div class="qhead"><h3>Your turn</h3><span>6 questions</span></div>
+  <div class="qs" data-part="b1"></div>
+  <div class="next"><button class="btn primary" data-go="b2">Next mission: rounding →</button></div>
+</section>
+
+<!-- ================= B2 ================= -->
+<section class="tab" id="tab-b2">
+  <div class="kicker">Mission B2</div>
+  <h2>Rounding to significant figures</h2>
+  <div class="card hook">
+    <div class="big">“About 24 000 fans watched the match.”</div>
+    <p>The real number was $23\,850$. Nobody wants to read every digit in a headline, so the reporter kept just the <b>2 most important digits</b> and rounded. Those digits are called <b>significant figures</b>.</p>
+  </div>
+  <div class="tutor" id="t2">
+    <div class="who">The rounding machine, step by step</div>
+    <div id="t2body"></div>
+  </div>
+  <div class="shortcut card">
+    <div class="box-title">Shortcut card</div>
+    <p>1. Find the first non-zero digit. &nbsp;2. Count the figures you need and draw a line.</p>
+    <p>3. Next digit 5 or more → round up. &nbsp;4. Keep the size: fill with zeros.</p>
+  </div>
+  <details class="pad"><summary>Play: try any number in the rounding machine</summary>
+    <div class="ctrl"><label>Number <input type="text" id="rmn" value="0.004817" size="10"></label><label>s.f. <select id="rms"><option>1</option><option selected>2</option><option>3</option></select></label></div>
+    <div class="readout" id="rmr"></div>
+  </details>
+  <div class="qhead"><h3>Your turn</h3><span>6 questions</span></div>
+  <div class="qs" data-part="b2"></div>
+  <div class="next"><button class="btn primary" data-go="b3">Next mission: ordering →</button></div>
+</section>
+
+<!-- ================= B3 ================= -->
+<section class="tab gb-sec" id="tab-b3">
+  <div class="kicker">Mission B3</div>
+  <h2>Ordering decimals</h2>
+  <div class="card hook">
+    <div class="big">Which is bigger: $0.66$ or $0.606$?</div>
+    <p>Lots of people pick $0.606$ because it has more digits. Let's check.</p>
+  </div>
+  <div class="tutor" id="t3">
+    <div class="who">Step by step</div>
+    <div id="t3body"></div>
+  </div>
+  <div class="shortcut card">
+    <div class="box-title">Shortcut card</div>
+    <p>Line up the points, fill with zeros, compare digit by digit.</p>
+    <p>Negatives: further right on the number line is bigger. &nbsp;Units: make them the same first.</p>
+  </div>
+  <div class="qhead"><h3>Your turn</h3><span>6 questions</span></div>
+  <div class="qs" data-part="b3"></div>
+  <div class="next"><button class="btn primary" data-go="b4">Next mission: multiplying →</button></div>
+</section>
+
+<!-- ================= B4 ================= -->
+<section class="tab gb-sec" id="tab-b4">
+  <div class="kicker">Mission B4</div>
+  <h2>Multiplying decimals</h2>
+  <div class="card hook">
+    <div class="big">Trap: $0.3\times0.3=0.9$?</div>
+    <p>It looks right, but it isn't. Let's see why with a picture.</p>
+  </div>
+  <div class="tutor" id="t4">
+    <div class="who">Picture it, then count</div>
+    <div id="t4body"></div>
+  </div>
+  <div class="shortcut card">
+    <div class="box-title">Shortcut card</div>
+    <p>1. Ignore the points and multiply. &nbsp;2. Count the decimal places in the question.</p>
+    <p>3. Give the answer that many places. &nbsp;4. Estimate to check: round to 1 s.f.</p>
+  </div>
+  <div class="qhead"><h3>Your turn</h3><span>6 questions</span></div>
+  <div class="qs" data-part="b4"></div>
+  <div class="next"><button class="btn primary" data-go="b5">Next mission: dividing →</button></div>
+</section>
+
+<!-- ================= B5 ================= -->
+<section class="tab gb-sec" id="tab-b5">
+  <div class="kicker">Mission B5</div>
+  <h2>Dividing by a decimal</h2>
+  <div class="card hook">
+    <div class="big">How many glasses?</div>
+    <p>A bottle holds $3$ litres. Each glass holds $0.5$ litres. How many glasses can you fill? That is $3\div0.5$.</p>
+    <div class="hookfig" id="glasses"></div>
+  </div>
+  <div class="tutor" id="t5">
+    <div class="who">Step by step</div>
+    <div id="t5body"></div>
+  </div>
+  <div class="shortcut card">
+    <div class="box-title">Shortcut card</div>
+    <p>Make the number you divide by a whole number: multiply <b>both</b> numbers by 10 (or 100).</p>
+    <p>$1.8\div0.2\;\to\;18\div2=9$</p>
+  </div>
+  <div class="qhead"><h3>Your turn</h3><span>6 questions</span></div>
+  <div class="qs" data-part="b5"></div>
+  <div class="next"><button class="btn primary" data-go="b6">Next mission: mental tricks →</button></div>
+</section>
+
+<!-- ================= B6 ================= -->
+<section class="tab gb-sec" id="tab-b6">
+  <div class="kicker">Mission B6</div>
+  <h2>Mental maths tricks</h2>
+  <div class="card hook">
+    <div class="big">$48\times0.99$ without a calculator?</div>
+    <p>It sounds hard. With the right trick it takes five seconds. Here are three tricks.</p>
+  </div>
+  <div class="tutor" id="t6">
+    <div class="who">Learn the tricks</div>
+    <div id="t6body"></div>
+  </div>
+  <div class="shortcut card">
+    <div class="box-title">Shortcut card</div>
+    <p>Pairs that make 10: $2.5\times4$, $\;0.5\times2$. &nbsp;$\times0.9$: take away a tenth. &nbsp;$\times0.99$: take away a hundredth.</p>
+    <p>Split into easy factors: $0.35=0.5\times0.7$.</p>
+  </div>
+  <div class="qhead"><h3>Your turn</h3><span>6 questions</span></div>
+  <div class="qs" data-part="b6"></div>
+  <div class="next"><button class="btn primary" data-go="rv">Boss review →</button></div>
+</section>
+
+<!-- ================= REVIEW ================= -->
+<section class="tab" id="tab-rv">
+  <div class="kicker" style="color:#6b5ca5">Boss review</div>
+  <h2>One from each mission</h2>
+  <p>Mixed up! First decide which mission's trick you need.</p>
+  <div class="qs" data-part="rv"></div>
+  <div class="next"><button class="btn primary" data-go="report">See my report →</button></div>
+</section>
+
+<!-- ================= REPORT ================= -->
+<section class="tab" id="tab-report">
+  <div class="kicker">My report</div>
+  <h2>How did your missions go?</h2>
+  <div id="report"></div>
+</section>
+</main>
+<footer class="shen-footer"><svg viewBox="0 0 100 100" role="img" aria-label="申 Shen Studio"><rect width="100" height="100" rx="12" fill="#B3261E"/><path d="M41.57 27.7V42.46H27.58V27.7ZM15.1 25.34V70.78H16.95C22.18 70.78 27.58 67.91 27.58 66.65V62.18H41.57V90H44.01C48.82 90 54.3 86.88 54.3 85.62V62.18H68.97V68.93H71.07C75.37 68.93 81.53 66.65 81.61 65.89V29.64C83.38 29.3 84.39 28.55 84.9 27.87L73.69 19.19L68.12 25.34H54.3V13.96C56.74 13.62 57.33 12.7 57.5 11.52L41.57 10V25.34H28.42L15.1 20.2ZM54.3 27.7H68.97V42.46H54.3ZM41.57 59.82H27.58V44.82H41.57ZM54.3 59.82V44.82H68.97V59.82Z" fill="#FFFFFF"/></svg><span><b>Shen Studio</b> · Designed by Mr. Shen</span></footer>
+<div class="shen-print-mark" aria-hidden="true"><svg viewBox="0 0 100 100" role="img" aria-label="申 Shen Studio"><rect width="100" height="100" rx="12" fill="#B3261E"/><path d="M41.57 27.7V42.46H27.58V27.7ZM15.1 25.34V70.78H16.95C22.18 70.78 27.58 67.91 27.58 66.65V62.18H41.57V90H44.01C48.82 90 54.3 86.88 54.3 85.62V62.18H68.97V68.93H71.07C75.37 68.93 81.53 66.65 81.61 65.89V29.64C83.38 29.3 84.39 28.55 84.9 27.87L73.69 19.19L68.12 25.34H54.3V13.96C56.74 13.62 57.33 12.7 57.5 11.52L41.57 10V25.34H28.42L15.1 20.2ZM54.3 27.7H68.97V42.46H54.3ZM41.57 59.82H27.58V44.82H41.57ZM54.3 59.82V44.82H68.97V59.82Z" fill="#FFFFFF"/></svg><span>Shen Studio</span></div>
+
+<script>
+/* ===== tiny algebra engine: parse, evaluate, LaTeX, equivalence ===== */
+const ALG = (function(){
+  function tokenize(s){
+    s=String(s).replace(/[−–]/g,'-').replace(/[×·]/g,'*').replace(/÷/g,'/').replace(/\s+/g,'');
+    const out=[];let i=0;
+    while(i<s.length){const c=s[i];
+      if(/[0-9.]/.test(c)){let j=i;while(j<s.length&&/[0-9.]/.test(s[j]))j++;const t=s.slice(i,j);if((t.match(/\./g)||[]).length>1||t==='.')throw 'num';out.push({k:'num',v:parseFloat(t),raw:t});i=j;continue}
+      if(/[a-zA-Z]/.test(c)){out.push({k:'var',v:c});i++;continue}
+      if('+-*/^()'.includes(c)){out.push({k:c});i++;continue}
+      throw 'char';
+    }
+    // implicit multiplication
+    const r=[];for(let k=0;k<out.length;k++){const a=out[k-1],b=out[k];
+      if(a&&(a.k==='num'||a.k==='var'||a.k===')')&&(b.k==='var'||b.k==='('||(b.k==='num'&&a.k!=='num')))r.push({k:'*',imp:true});
+      r.push(b)}
+    return r;
+  }
+  function parse(s){
+    const T=tokenize(s);let p=0;if(!T.length)throw 'empty';
+    const peek=()=>T[p],eat=k=>{if(!T[p]||T[p].k!==k)throw 'expect '+k;return T[p++]};
+    function expr(){let n=term();while(peek()&&(peek().k==='+'||peek().k==='-')){const o=T[p++].k;const m=term();n={t:o==='+'?'add':'sub',a:n,b:m}}return n}
+    function term(){let n=unary();while(peek()&&(peek().k==='*'||peek().k==='/')){const tk=T[p++];const m=unary();n=tk.k==='*'?{t:'mul',a:n,b:m,imp:!!tk.imp}:{t:'div',a:n,b:m}}return n}
+    function unary(){if(peek()&&peek().k==='-'){p++;return {t:'neg',a:unary()}}if(peek()&&peek().k==='+'){p++;return unary()}return power()}
+    function power(){let b=atom();if(peek()&&peek().k==='^'){p++;const e=unary();return {t:'pow',a:b,b:e}}return b}
+    function atom(){const k=peek();if(!k)throw 'end';
+      if(k.k==='num'){p++;return {t:'num',v:k.v,raw:k.raw}}
+      if(k.k==='var'){p++;return {t:'var',v:k.v}}
+      if(k.k==='('){p++;const e=expr();eat(')');return {t:'grp',a:e}}
+      throw 'unexpected'}
+    const n=expr();if(p!==T.length)throw 'trailing';return n;
+  }
+  function ev(n,env){switch(n.t){
+    case 'num':return n.v;case 'var':if(!(n.v in env))throw 'var';return env[n.v];
+    case 'add':return ev(n.a,env)+ev(n.b,env);case 'sub':return ev(n.a,env)-ev(n.b,env);
+    case 'mul':return ev(n.a,env)*ev(n.b,env);case 'div':return ev(n.a,env)/ev(n.b,env);
+    case 'pow':return Math.pow(ev(n.a,env),ev(n.b,env));case 'neg':return -ev(n.a,env);case 'grp':return ev(n.a,env)}}
+  function vars(n,set=new Set()){if(!n)return set;if(n.t==='var')set.add(n.v);['a','b'].forEach(k=>{if(n[k]&&typeof n[k]==='object')vars(n[k],set)});return set}
+  const strip=n=>n.t==='grp'?strip(n.a):n;
+  function tex(n){switch(n.t){
+    case 'num':return n.raw||String(n.v);case 'var':return n.v;
+    case 'add':return tex(n.a)+'+'+tex(n.b);
+    case 'sub':return tex(n.a)+'-'+tex(n.b);
+    case 'neg':return '-'+tex(n.a);
+    case 'grp':return '\\left('+tex(n.a)+'\\right)';
+    case 'div':return '\\frac{'+tex(strip(n.a))+'}{'+tex(strip(n.b))+'}';
+    case 'pow':return (n.a.t==='var'||n.a.t==='num'||n.a.t==='grp'?tex(n.a):'{'+tex(n.a)+'}')+'^{'+tex(strip(n.b))+'}';
+    case 'mul':{const A=tex(n.a),B=tex(n.b);const bStart=n.b.t==='num'||(n.b.t==='pow'&&n.b.a.t==='num')||n.b.t==='neg'||n.b.t==='div';
+      return bStart?A+'\\times '+B:A+B}}}
+  function toTex(s){try{return tex(parse(s))}catch(e){return null}}
+  const PTS=[1.37,-2.21,0.63,3.08,-0.71,2.49,-1.53];
+  function equiv(a,b,extra){
+    let A,B;try{A=typeof a==='string'?parse(a):a;B=typeof b==='string'?parse(b):b}catch(e){return false}
+    const vs=[...new Set([...vars(A),...vars(B),...(extra||[])])];
+    for(let t=0;t<6;t++){const env={};vs.forEach((v,i)=>env[v]=PTS[(t+i*3)%PTS.length]+0.11*i);
+      let x,y;try{x=ev(A,env);y=ev(B,env)}catch(e){return false}
+      if(!isFinite(x)||!isFinite(y)){continue}
+      if(Math.abs(x-y)>1e-7*Math.max(1,Math.abs(x),Math.abs(y)))return false}
+    return true;
+  }
+  // number of top-level terms (split on + and - outside brackets)
+  function topTerms(n){n=n;if(n.t==='add'||n.t==='sub')return topTerms(n.a)+topTerms(n.b);return 1}
+  function hasGrp(n){if(!n||typeof n!=='object')return false;if(n.t==='grp')return true;return hasGrp(n.a)||hasGrp(n.b)}
+  return {parse,ev,tex,toTex,equiv,vars,topTerms,hasGrp};
+})();
+
+
+const R = String.raw;
+const UI = {
+  tabs:{start:'Start',b1:'B1 ×÷ 0.1',b2:'B2 Rounding',b3:'B3 Ordering',b4:'B4 Multiplying',b5:'B5 Dividing',b6:'B6 Tricks',rv:'Boss review',report:'My report'},
+  mins:{b1:8,b2:9,b3:8,b4:9,b5:8,b6:7,rv:5},
+  lvlName:{Focus:'WARM-UP',Practice:'PRACTICE',Challenge:'⭐ BOSS LEVEL'},
+  check:'Check', attempt:'Try', of:'of',
+  fmt:{
+    num:R`Type a number, e.g. 14 or 0.25 or -3.5`,
+    sf:R`Type the rounded number, e.g. 5000 or 0.0057. Keep any zeros that count.`,
+    nums:R`Type the numbers in order, separated by commas.`,
+    list:R`Type every answer, separated by commas, e.g. -9, 9`,
+    pow:R`Type one power, e.g. 3^5 for $3^5$.`,
+    tbl:R`Power: 3^-1 for $3^{-1}$. Repeated multiplication: 3*3 or 1/(3*3). Value: 9 or 1/9. Fill every empty box.`,
+    pf:R`Type it like 2^2*3*5 for $2^2\times3\times5$. You can use * or x for $\times$.`
+  },
+  tblHead:['Power','Repeated multiplication','Value'],
+  previewPre:'Your answer: ',
+  right:['Brilliant, first try! ✓','Got it on the second try ✓','Got there on the third try ✓'],
+  wrong:'Not yet. Have another go.',
+  wrongLast:"That's OK. Read the solution, then try the next one.",
+  info:{zeros:R`Right value! But show exactly the number of significant figures asked for. For example, $0.1954$ to 2 s.f. is $0.20$: the zero counts.`,bad:'I could not read that. Check the * signs and the ^ signs.',
+    notprime:'So close! One of your numbers can still be split. Keep breaking until every number is a prime brick.',
+    useindex:R`Right bricks! Now write it the short way: $2\times2\times2$ is $2^3.$`,
+    single:R`Right value! Now write it as one power, like $3^5$.`,base:'Check which big number (base) the question asks for.'},
+  hint:'Hint', sol:'Solution',
+  prog:(a,t,p)=>`${a} / ${t} done · ${p} pts`,
+  done:'done',
+  report:{
+    empty:'Nothing answered yet. Do some missions, then come back here.',
+    byPart:'By station', bySkill:'My skills', how:'How I worked', advice:'What to do next', map:'How the ideas connect', total:'My score',
+    lv:{g:'got it',a:'nearly there',r:'look again',n:'not tried'},
+    firstTry:n=>`<b>${n}</b> right on the first try.`,
+    fast:n=>!n?'You took your time on every question.':`<b>${n}</b> answered right very quickly. Great if you really knew it!`,
+    rushed:n=>n?`<b>${n}</b> question(s) had three wrong tries in under 20 seconds. After a wrong answer, slow down: line up the decimal points, count the decimal places, or estimate first.`:'No rushing: you stopped to think after wrong answers. Well done.',
+    notDone:n=>n?`<b>${n}</b> question(s) still to do.`:'You finished every question!',
+    why:(o,t)=>'',
+    allGood:'Every skill you tried is a “got it”. Well done! Next up: Number Part C (fractions).',
+    advIntro:'Have another look at:',
+    note:'3 points for right first try, 2 for second try, 1 for third try, 0 if all three tries are wrong.',
+    centre:['Decimals:','place value is key'],
+    avg:a=>a==null?'–':a.toFixed(1)+' / 3'
+  }
+};
+const GROUPS = {pv:'Place value & rounding', calc:'Calculating with decimals'};
+const GCOL = {pv:'#3b4fa8', calc:'#b5487a'};
+const SEC = {b1:'B1 Multiplying & dividing by 0.1 and 0.01',b2:'B2 Rounding to significant figures',b3:'B3 Ordering decimals',b4:'B4 Multiplying decimals',b5:'B5 Dividing by a decimal',b6:'B6 Mental maths tricks',rv:'Boss review'};
+const LABEL = {b1:'B1',b2:'B2',b3:'B3',b4:'B4',b5:'B5',b6:'B6'};
+const SKILLS = {
+  x01:{n:'Multiplying by 0.1 and 0.01',g:'pv',adv:R`$\times0.1$ is the same as $\div10$: every digit moves one place to the right. $\times0.01$ is $\div100$: two places.`},
+  d01:{n:'Dividing by 0.1 and 0.01',g:'pv',adv:R`$\div0.1$ is the same as $\times10$: ask “how many tenths fit in?” There are ten in every 1. $\div0.01$ is $\times100$.`},
+  sfbig:{n:'Rounding large numbers',g:'pv',adv:R`Find the first figure, count along, draw a line. Look at the next digit: 5 or more rounds up. Then fill the gaps with zeros so the number keeps its size: $23\,850\to24\,000$.`},
+  sfsmall:{n:'Rounding small decimals',g:'pv',adv:R`Zeros at the front do not count. Start counting at the first non-zero digit: in $0.005671$ that is the 5. A zero <i>after</i> it does count: $0.1954\to0.20$.`},
+  order:{n:'Ordering decimals',g:'pv',adv:R`Line up the decimal points and fill the gaps with zeros: $0.66=0.660$ is bigger than $0.606$. A longer decimal is not always bigger.`},
+  negdec:{n:'Negative decimals',g:'pv',adv:R`Picture the number line. The number further to the right is bigger: $-5.2$ is to the right of $-5.7$, so $-5.2$ is bigger.`},
+  units:{n:'Comparing with units',g:'pv',adv:R`Change both to the same unit first: $3.5$ kg $=3500$ g. Then compare.`},
+  mdec:{n:'Multiplying decimals',g:'calc',adv:R`Ignore the points and multiply the whole numbers. Then count the decimal places in the question and give the answer that many: $0.3\times0.3$: $3\times3=9$, two places, $0.09$.`},
+  estchk:{n:'Estimating to check',g:'calc',adv:R`Round each number to 1 significant figure and work it out in your head. Your exact answer should be close: $0.23\times6.9\approx0.2\times7=1.4$.`},
+  ddec:{n:'Dividing by a decimal',g:'calc',adv:R`Make the number you divide by a whole number: multiply <b>both</b> numbers by 10 (or 100). $1.8\div0.2$ becomes $18\div2=9$. The answer does not change.`},
+  tricks:{n:'Mental maths tricks',g:'calc',adv:R`Look for pairs that make 10 ($2.5\times4$), use “$\times0.9$ = $\times1$ then take away $\times0.1$”, or split a number into easy factors ($0.35=0.5\times0.7$).`}
+};
+const LINKS=[['x01','d01'],['x01','mdec'],['d01','ddec'],['sfbig','sfsmall'],['sfsmall','estchk'],['order','negdec'],['order','units'],['mdec','estchk'],['mdec','ddec'],['mdec','tricks'],['x01','units']];
+const FIG = {};
+const Q = [
+ // B1
+ {id:'b1a',part:'b1',lvl:'Focus',tags:['x01'],type:'num',ans:7,tol:1e-9,src:'WB8 3.1 Q1b',prompt:R`Work out $70\times0.1$.`,hint:R`$\times0.1$ is the same as $\div10$.`,sol:R`$70\div10=7$.`},
+ {id:'b1b',part:'b1',lvl:'Focus',tags:['x01'],type:'num',ans:3,tol:1e-9,src:'WB8 3.1 Q2a',prompt:R`Work out $300\times0.01$.`,hint:R`$\times0.01$ is the same as $\div100$.`,sol:R`$300\div100=3$.`},
+ {id:'b1c',part:'b1',lvl:'Focus',tags:['d01'],type:'num',ans:80,tol:1e-9,src:'WB8 3.1 Q4',prompt:R`Work out $8\div0.1$.`,hint:R`How many tenths fit into 8? There are 10 in every 1.`,sol:R`$\div0.1$ is $\times10$: $8\times10=80$.`},
+ {id:'b1d',part:'b1',lvl:'Practice',tags:['d01'],type:'num',ans:560,tol:1e-9,src:'WB8 3.1 Q8f',prompt:R`Work out $5.6\div0.01$.`,hint:R`$\div0.01$ is the same as $\times100$.`,sol:R`$5.6\times100=560$.`},
+ {id:'b1e',part:'b1',lvl:'Practice',tags:['x01','d01'],type:'mc',ans:0,src:'WB8 3.1 Q10b',prompt:R`Which sign goes in the box? $\quad46\;\square\;0.01=0.46$`,opts:[R`$\times$`,R`$\div$`],hint:'Did the number get bigger or smaller?',sol:R`It got smaller (100 times smaller), so it is $\times0.01$.`},
+ {id:'b1f',part:'b1',lvl:'Challenge',tags:['x01','d01'],type:'num',ans:2.34,tol:1e-9,src:'WB8 3.1 Q15',prompt:R`Alicia thinks of a number. She divides it by $0.01$, then multiplies by $0.1$, then divides by $0.01$. Her answer is $2340$.<br>What was her number?`,hint:R`Undo each step backwards: $\times0.01$, then $\div0.1$, then $\times0.01$.`,sol:R`Backwards: $2340\times0.01=23.4$, then $23.4\div0.1=234$, then $234\times0.01=2.34$.`},
+ // B2
+ {id:'b2a',part:'b2',lvl:'Focus',tags:['sfbig'],type:'sf',key:'5000',n:1,src:'WB8 3.2 Q1b',prompt:R`Round $4823$ to <b>1</b> significant figure.`,hint:R`The first figure is 4 (thousands). The next digit is 8.`,sol:R`$4\,|\,823$: the next digit is 8, so round up to $5000$.`},
+ {id:'b2b',part:'b2',lvl:'Focus',tags:['sfbig'],type:'sf',key:'24000',n:2,src:'WB8 3.2 Q2c',prompt:R`Round $23\,850$ to <b>2</b> significant figures.`,hint:R`Cut after 23. The next digit is 8.`,sol:R`$23\,|\,850$: round up to $24$, then fill with zeros: $24\,000$.`},
+ {id:'b2c',part:'b2',lvl:'Focus',tags:['sfsmall'],type:'sf',key:'0.02',n:1,src:'WB8 3.2 Q4a',prompt:R`Round $0.0231$ to <b>1</b> significant figure.`,hint:R`Skip the zeros at the front. The first figure is the 2.`,sol:R`$0.02\,|\,31$: the next digit is 3, so it stays: $0.02$.`},
+ {id:'b2d',part:'b2',lvl:'Practice',tags:['sfsmall'],type:'sf',key:'0.0057',n:2,src:'WB8 3.2 Q5b',prompt:R`Round $0.005671$ to <b>2</b> significant figures.`,hint:R`The first figure is the 5. Count two figures: 5 and 6.`,sol:R`$0.0056\,|\,71$: the next digit is 7, so round up: $0.0057$.`},
+ {id:'b2e',part:'b2',lvl:'Practice',tags:['sfsmall'],type:'sf',key:'0.20',n:2,src:'WB8 3.2 Q9e',prompt:R`Round $0.1954$ to <b>2</b> significant figures.`,hint:R`$0.19\,|\,54$: rounding up 19 gives 20. Keep that zero!`,sol:R`$0.19$ rounds up to $0.20$. Write the zero: it is the second significant figure.`},
+ {id:'b2f',part:'b2',lvl:'Challenge',tags:['sfsmall','sfbig'],type:'sf',key:'20.0',n:3,src:'WB8 3.2 Q9i',prompt:R`Round $19.985$ to <b>3</b> significant figures.`,hint:R`$19.9\,|\,85$: rounding up makes $19.9$ become $20.0$.`,sol:R`$19.9$ rounds up to $20.0$. Three figures: $2$, $0$, $0$.`},
+ // B3
+ {id:'b3a',part:'b3',lvl:'Focus',tags:['order'],type:'mc',ans:1,src:'WB8 4.1 Q8c',prompt:R`Which is bigger?`,opts:[R`$0.606$`,R`$0.66$`,'They are equal'],hint:R`Write $0.66$ as $0.660$ and compare.`,sol:R`$0.660>0.606$, so $0.66$ is bigger.`},
+ {id:'b3b',part:'b3',lvl:'Focus',tags:['order'],type:'nums',ans:[5.08,5.17,5.21,5.51],src:'WB8 4.1 Q1',prompt:R`Write in order, smallest first:<br>$5.51,\ 5.08,\ 5.21,\ 5.17$`,hint:'The whole number parts are the same, so compare the decimal parts: 51, 08, 21, 17.',sol:R`$5.08,\ 5.17,\ 5.21,\ 5.51$.`},
+ {id:'b3c',part:'b3',lvl:'Practice',tags:['negdec'],type:'mc',ans:0,src:'WB8 4.1 Q4a',prompt:R`Which is bigger?`,opts:[R`$-5.2$`,R`$-5.7$`],hint:'Which one is further to the right on the number line?',sol:R`$-5.2$ is to the right of $-5.7$, so $-5.2$ is bigger.`},
+ {id:'b3d',part:'b3',lvl:'Practice',tags:['order'],type:'nums',ans:[7.02,7.052,7.2,7.502],src:'WB8 4.1 Q6d',prompt:R`Write in order, smallest first:<br>$7.502,\ 7.052,\ 7.02,\ 7.2$`,hint:R`Fill with zeros: $7.502,\ 7.052,\ 7.020,\ 7.200$.`,sol:R`$7.020<7.052<7.200<7.502$.`},
+ {id:'b3e',part:'b3',lvl:'Practice',tags:['units'],type:'mc',ans:1,src:'WB8 4.1 Q8g',prompt:R`Which is heavier?`,opts:[R`$375$ g`,R`$3.5$ kg`,'They weigh the same'],hint:R`$1$ kg $=1000$ g.`,sol:R`$3.5$ kg $=3500$ g, which is more than $375$ g.`},
+ {id:'b3f',part:'b3',lvl:'Challenge',tags:['negdec','order'],type:'nums',ans:[-1.43,-1.42,-1.41,-1.4,-1.39],src:'WB8 4.1 Q14',prompt:R`$y$ has two decimal places and $-1.43\le y\lt -1.38$.<br>List every possible $y$, smallest first.`,hint:R`Start at $-1.43$ and count up by $0.01$. Stop before $-1.38$.`,sol:R`$-1.43,\ -1.42,\ -1.41,\ -1.40,\ -1.39$ ($-1.38$ is not allowed).`},
+ // B4
+ {id:'b4a',part:'b4',lvl:'Focus',tags:['mdec'],type:'num',ans:1.5,tol:1e-9,src:'WB8 4.2 Q6b',prompt:R`Work out $0.3\times5$.`,hint:R`$3\times5=15$. One decimal place.`,sol:R`$3\times5=15$, one decimal place: $1.5$.`},
+ {id:'b4b',part:'b4',lvl:'Focus',tags:['mdec'],type:'num',ans:0.09,tol:1e-9,src:'WB8 4.2 Q9a',prompt:R`Work out $0.3\times0.3$.`,hint:R`$3\times3=9$. How many decimal places altogether?`,sol:R`$3\times3=9$, two decimal places: $0.09$. (Not $0.9$!)`},
+ {id:'b4c',part:'b4',lvl:'Focus',tags:['mdec'],type:'num',ans:2.4,tol:1e-9,src:'WB8 4.2 Q2c',prompt:R`Work out $12\times0.2$.`,hint:R`$12\times2=24$, then $\div10$.`,sol:R`$12\times2=24$, one decimal place: $2.4$.`},
+ {id:'b4d',part:'b4',lvl:'Practice',tags:['mdec'],type:'num',ans:0.028,tol:1e-9,src:'WB8 4.2 Q9a',prompt:R`Work out $0.4\times0.07$.`,hint:R`$4\times7=28$. Count the decimal places: 1 + 2.`,sol:R`$4\times7=28$, three decimal places: $0.028$.`},
+ {id:'b4e',part:'b4',lvl:'Practice',tags:['mdec'],type:'num',ans:13.104,tol:1e-9,src:'WB8 4.2 Q11',prompt:R`You know that $234\times56=13\,104$.<br>Use it to work out $2.34\times5.6$.`,hint:R`Count the decimal places: 2 + 1 = 3.`,sol:R`Three decimal places: $13.104$. Check: $2\times6=12$ ✓.`},
+ {id:'b4f',part:'b4',lvl:'Challenge',tags:['estchk'],type:'mc',ans:2,src:'WB8 4.2 Q13',prompt:R`Tom works out $0.23\times6.9$. Estimate first: which answer could be right?`,opts:[R`$15.87$`,R`$158.7$`,R`$1.587$`,R`$0.1587$`],hint:R`Round to 1 s.f.: $0.2\times7$.`,sol:R`$0.2\times7=1.4$, so the answer is about $1.4$: $1.587$.`},
+ // B5
+ {id:'b5a',part:'b5',lvl:'Focus',tags:['ddec'],type:'num',ans:6,tol:1e-9,src:'original',prompt:R`A $3$ litre bottle fills glasses of $0.5$ litres.<br>How many glasses? $\;3\div0.5=\;?$`,hint:R`Each litre fills 2 glasses.`,sol:R`$3\div0.5=30\div5=6$ glasses.`},
+ {id:'b5b',part:'b5',lvl:'Focus',tags:['ddec'],type:'num',ans:9,tol:1e-9,src:'WB8 4.3 Q2A',prompt:R`Work out $1.8\div0.2$.`,hint:R`Multiply both by 10: $18\div2$.`,sol:R`$18\div2=9$.`},
+ {id:'b5c',part:'b5',lvl:'Focus',tags:['ddec'],type:'num',ans:5,tol:1e-9,src:'WB8 4.3 Q3a',prompt:R`Work out $2\div0.4$.`,hint:R`Multiply both by 10: $20\div4$.`,sol:R`$20\div4=5$.`},
+ {id:'b5d',part:'b5',lvl:'Practice',tags:['ddec'],type:'num',ans:2.6,tol:1e-9,src:'WB8 4.3 Q6a',prompt:R`Work out $0.78\div0.3$.`,hint:R`Multiply both by 10: $7.8\div3$.`,sol:R`$7.8\div3=2.6$.`},
+ {id:'b5e',part:'b5',lvl:'Practice',tags:['ddec'],type:'num',ans:4.3,tol:1e-9,src:'WB8 4.3 Q7',prompt:R`Harry pays $\$2.58$ for $0.6$ m of ribbon.<br>What is the cost per metre (in dollars)?`,hint:R`Cost per metre $=2.58\div0.6$. Multiply both by 10.`,sol:R`$25.8\div6=4.3$, so $\$4.30$ per metre.`},
+ {id:'b5f',part:'b5',lvl:'Challenge',tags:['ddec'],type:'mc',ans:3,src:'WB8 4.3 Q4',prompt:R`Mia writes: $\;40\div0.5=\dfrac{40}{0.5\times10}=\dfrac{40}{5}=8$.<br>What went wrong?`,opts:['Nothing: 8 is right.','She should divide by 10, not multiply.','She should have multiplied by 100.','She multiplied only the bottom by 10. Both must be multiplied: 400 ÷ 5 = 80.'],hint:'Is 8 glasses of 0.5 L really enough for 40 L?',sol:R`Multiply <b>both</b> numbers by 10: $400\div5=80$. Check: $80\times0.5=40$ ✓.`},
+ // B6
+ {id:'b6a',part:'b6',lvl:'Focus',tags:['tricks'],type:'num',ans:57,tol:1e-9,src:'WB8 4.4 Q3a',prompt:R`Work out $2.5\times5.7\times4$ in your head.`,hint:R`Do $2.5\times4$ first.`,sol:R`$2.5\times4=10$, and $10\times5.7=57$.`},
+ {id:'b6b',part:'b6',lvl:'Focus',tags:['tricks'],type:'num',ans:54,tol:1e-9,src:'WB8 4.4 Q2a',prompt:R`Work out $60\times0.9$.`,hint:R`$60\times1=60$, take away $60\times0.1=6$.`,sol:R`$60-6=54$.`},
+ {id:'b6c',part:'b6',lvl:'Practice',tags:['tricks'],type:'num',ans:37.8,tol:1e-9,src:'WB8 4.4 Q2b',prompt:R`Work out $42\times0.9$.`,hint:R`$42-4.2$.`,sol:R`$42\times0.9=42-4.2=37.8$.`},
+ {id:'b6d',part:'b6',lvl:'Practice',tags:['tricks'],type:'num',ans:5.6,tol:1e-9,src:'WB8 4.4 Q4a',prompt:R`Work out $16\times0.35$. Use $0.35=0.5\times0.7$.`,hint:R`$16\times0.5=8$, then $8\times0.7$.`,sol:R`$16\times0.5=8$, and $8\times0.7=5.6$.`},
+ {id:'b6e',part:'b6',lvl:'Practice',tags:['tricks'],type:'num',ans:47.52,tol:1e-9,src:'WB8 4.4 Q8b',prompt:R`Work out $48\times0.99$.`,hint:R`$0.99=1-0.01$. So $48-0.48$.`,sol:R`$48-0.48=47.52$.`},
+ {id:'b6f',part:'b6',lvl:'Challenge',tags:['tricks','mdec'],type:'num',ans:0.66,tol:1e-9,src:'WB8 4.4 Q5c',prompt:R`Work out $(0.9-0.3)\times1.1$.`,hint:R`Bracket first: $0.6$. Then $0.6\times1.1=0.6+0.06$.`,sol:R`$0.6\times1.1=0.6+0.06=0.66$.`},
+ // Review
+ {id:'rv1',part:'rv',lvl:'Practice',tags:['sfsmall'],type:'sf',key:'0.0046',n:2,src:'original',prompt:R`Round $0.00456$ to 2 significant figures.`,hint:R`The first figure is the 4.`,sol:R`$0.0045\,|\,6$: round up to $0.0046$.`},
+ {id:'rv2',part:'rv',lvl:'Practice',tags:['d01'],type:'num',ans:640,tol:1e-9,src:'original',prompt:R`Work out $6.4\div0.01$.`,hint:R`$\div0.01$ is $\times100$.`,sol:R`$6.4\times100=640$.`},
+ {id:'rv3',part:'rv',lvl:'Practice',tags:['order','units'],type:'mc',ans:2,src:'WB8 4.1 Q8h',prompt:R`Which is longer?`,opts:[R`$156.3$ cm`,'They are equal',R`$1634$ mm`],hint:R`$156.3$ cm $=1563$ mm.`,sol:R`$1563$ mm $<1634$ mm, so $1634$ mm is longer.`},
+ {id:'rv4',part:'rv',lvl:'Challenge',tags:['mdec'],type:'num',ans:0.03,tol:1e-9,src:'original',prompt:R`Work out $0.06\times0.5$.`,hint:R`$6\times5=30$, three decimal places.`,sol:R`$0.030=0.03$.`},
+ {id:'rv5',part:'rv',lvl:'Challenge',tags:['ddec','estchk'],type:'num',ans:5,tol:1e-9,src:'original',prompt:R`Work out $4.5\div0.9$.`,hint:R`Multiply both by 10: $45\div9$.`,sol:R`$45\div9=5$.`}
+];
+
+/* ================= HELPERS ================= */
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const gcd=(a,b)=>{a=Math.abs(a);b=Math.abs(b);while(b){[a,b]=[b,a%b]}return a||1};
+function mathify(el){ if(window.renderMathInElement){ try{renderMathInElement(el,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});}catch(e){} } }
+function texStr(t,disp){ if(window.katex){ try{return katex.renderToString(t,{throwOnError:false,displayMode:!!disp});}catch(e){} } return t; }
+function html(el,s){el.innerHTML=s;mathify(el);}
+function store(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+function load(k){try{return JSON.parse(localStorage.getItem(k))}catch(e){return null}}
+const fmtN=v=>{const r=Math.round(v*1000)/1000;return Object.is(r,-0)?'0':String(r)};
+
+(function(){const used=new Set();Q.forEach(q=>q.tags.forEach(t=>{if(!SKILLS[t])console.error('Missing skill',t);used.add(t)}));
+Object.keys(SKILLS).forEach(k=>{if(!used.has(k))console.error('Unused skill',k)});})();
+
+/* ================= STATE ================= */
+const KEY='cam-y8-num-b';
+let S={}, WHY={};
+function blank(){return {att:0,done:false,pts:0,t0:null,tFirst:null,tLast:null,fastFirst:false,hist:[],wrongOpts:[]}}
+function initState(){const saved=load(KEY);Q.forEach(q=>{S[q.id]=Object.assign(blank(),saved&&saved.S&&saved.S[q.id]?saved.S[q.id]:{})});WHY=(saved&&saved.WHY)||{};}
+function save(){store(KEY,{S,WHY})}
+
+/* ================= TABS ================= */
+const ORDER=['start','b1','b2','b3','b4','b5','b6','rv','report'];
+const grpOf=k=>['b3','b4','b5','b6'].includes(k)?'gb':(k==='rv'?'rv':'ga');
+function buildTabs(){
+  const nav=$('#tabs');nav.innerHTML='';
+  ORDER.forEach(k=>{const b=document.createElement('button');b.type='button';b.dataset.tab=k;
+    if(SEC[k]&&k!=='rv')b.className=grpOf(k);
+    b.innerHTML=UI.tabs[k]+'<span class="tick"></span>';b.onclick=()=>show(k);nav.appendChild(b)});
+  const route=$('#route');route.innerHTML='';
+  Object.keys(SEC).forEach(k=>{const b=document.createElement('button');b.type='button';b.className='stop '+grpOf(k);
+    b.innerHTML=`<span class="n">${k==='rv'?'REVIEW':'STATION '+LABEL[k]}</span><span class="tt">${SEC[k].replace(/^A\d /,'')}</span><span class="mm" data-mm="${k}"></span>`;
+    b.onclick=()=>show(k);route.appendChild(b)});
+  $$('[data-go]').forEach(b=>b.onclick=()=>show(b.dataset.go));
+}
+function show(k){
+  $$('section.tab').forEach(s=>s.classList.toggle('on',s.id==='tab-'+k));
+  $$('#tabs button').forEach(b=>b.classList.toggle('on',b.dataset.tab===k));
+  const b=$(`#tabs button[data-tab="${k}"]`);if(b)try{b.scrollIntoView({block:'nearest',inline:'center'})}catch(e){}
+  if(k==='report')renderReport();
+  try{if(location.hash!=='#'+k)history.replaceState(null,'','#'+k);}catch(e){}
+  window.scrollTo({top:0});
+}
+function refreshProgress(){
+  let a=0,p=0;Q.forEach(q=>{if(S[q.id].done){a++;p+=S[q.id].pts}});
+  $('#progtxt').textContent=UI.prog(a,Q.length,p);$('#progbar').style.width=(100*a/Q.length)+'%';
+  Object.keys(SEC).forEach(k=>{const qs=Q.filter(q=>q.part===k),d=qs.filter(q=>S[q.id].done).length;
+    const t=$(`#tabs button[data-tab="${k}"] .tick`);if(t)t.textContent=d===qs.length?'✓':'';
+    const m=$(`[data-mm="${k}"]`);if(m)m.textContent=`≈ ${UI.mins[k]} min · ${d}/${qs.length} ${UI.done}`;});
+}
+
+/* ================= ANSWER CHECKING ================= */
+function cleanAlg(s){return String(s).trim().replace(/²/g,'^2').replace(/³/g,'^3').replace(/[−–]/g,'-').replace(/[×·]/g,'*').replace(/÷/g,'/').replace(/\s+/g,'').replace(/(\d)[xX](?=[\d(\-])/g,'$1*').replace(/(\))[xX](?=[\d(\-])/g,'$1*')}
+function judge(q,input){
+  if(q.type==='mc')return input===q.ans?'ok':'no';
+  if(q.type==='tbl'){const r=tblJudge(q,input);return r.res}
+  if(q.type==='pf')return pfJudge(q,input);
+  if(q.type==='sf')return sfJudge(q,input);
+  if(q.type==='pow')return powJudge(q,input);
+  if(q.type==='nums'){
+    const parts=String(input).replace(/[−–]/g,'-').split(/[,;]+/).map(x=>x.trim()).filter(Boolean);if(!parts.length)return 'bad';
+    const vals=[];for(const p of parts){try{const n=ALG.parse(cleanAlg(p));if(ALG.vars(n).size)return 'bad';vals.push(ALG.ev(n,{}))}catch(err){return 'bad'}}
+    if(vals.length!==q.ans.length)return 'no';
+    return vals.every((v,i)=>Math.abs(v-q.ans[i])<=(q.tol||1e-9)+1e-9)?'ok':'no';
+  }
+  if(q.type==='point'){
+    const m=String(input).replace(/[−–]/g,'-').replace(/\s+/g,'').match(/^\(?([^,()]+),([^,()]+)\)?$/);if(!m)return 'bad';
+    let a,b;try{a=ALG.ev(ALG.parse(m[1]),{});b=ALG.ev(ALG.parse(m[2]),{})}catch(err){return 'bad'}
+    return Math.abs(a-q.ans[0])<1e-9&&Math.abs(b-q.ans[1])<1e-9?'ok':'no';
+  }
+  if(q.type==='list'){
+    const s=String(input);if(/\d\.\d/.test(s))return 'no';
+    const nums=(s.replace(/[−–]/g,'-').match(/-?\d+/g)||[]).map(Number);if(!nums.length)return 'bad';
+    const a=[...new Set(nums)].sort((x,y)=>x-y),b=[...q.ans].sort((x,y)=>x-y);
+    return a.length===b.length&&a.every((v,i)=>v===b[i])?'ok':'no';
+  }
+  let s=cleanAlg(input);if(!s)return 'bad';
+  if(q.strip)s=s.replace(/^[a-zA-Z]=/,'');
+  if(q.type==='num'){s=s.replace(/^[a-zA-Z]=/,'');let v;try{const n=ALG.parse(s);if(ALG.vars(n).size)return 'bad';v=ALG.ev(n,{})}catch(e){return 'bad'}
+    return Math.abs(v-q.ans)<=q.tol+1e-9?'ok':'no';}
+  let node;try{node=ALG.parse(s)}catch(e){return 'bad'}
+  if(!ALG.equiv(node,q.ans))return 'no';
+  if(q.type==='expr')return 'ok';
+  if(q.type==='expand'||q.type==='simp'){
+    if(q.type==='simp'&&ALG.topTerms(node)<=ALG.topTerms(ALG.parse(q.ans))&&!termList(node).every(monoOK))return 'monomial';
+    if(ALG.hasGrp(node))return 'brackets';
+    if(ALG.topTerms(node)>ALG.topTerms(ALG.parse(q.ans)))return 'collect';
+    if(!termList(node).every(monoOK))return 'monomial';
+    return 'ok';}
+  if(q.type==='factor'){
+    let n=node,neg=false;if(n.t==='neg'){neg=true;n=n.a}
+    if(!(n.t==='mul'&&n.b.t==='grp'))return 'formfactor';
+    const outer=n.a;
+    if(ALG.equiv(outer,q.hcf)||ALG.equiv(outer,ALG.parse('-('+q.hcf+')')))return 'ok';
+    return 'notfully';}
+  return 'no';
+}
+
+/* ===== number-specific judges ===== */
+function sfCount(str){return str.replace(/^-/,'').replace('.','').replace(/^0+/,'').length}
+function sfJudge(q,input){
+  const s=String(input).trim().replace(/[−–]/g,'-').replace(/[\s\u2009\u202f]/g,'').replace(/(\d),(?=\d{3}(\D|$))/g,'$1');
+  if(!/^-?(\d+\.?\d*|\.\d+)$/.test(s))return 'bad';
+  const v=parseFloat(s),want=parseFloat(q.key);
+  if(Math.abs(v-want)>1e-9*Math.max(1,Math.abs(want)))return 'no';
+  if(q.key.includes('.')){if(!s.includes('.')||sfCount(s.startsWith('.')?'0'+s:s)!==q.n)return 'zeros'}
+  return 'ok';
+}
+const isPrime=n=>{if(!Number.isInteger(n)||n<2)return false;for(let d=2;d*d<=n;d++)if(n%d===0)return false;return true};
+const strip0=n=>n.t==='grp'?strip0(n.a):n;
+function factorsOf(n){n=strip0(n);if(n.t==='mul'&&!n.imp)return factorsOf(n.a).concat(factorsOf(n.b));if(n.t==='mul')return factorsOf(n.a).concat(factorsOf(n.b));return [n]}
+function pfJudge(q,input){
+  const s=cleanAlg(input);if(!s)return 'bad';let node;try{node=ALG.parse(s);if(ALG.vars(node).size)return 'bad'}catch(e){return 'bad'}
+  const v=ALG.ev(node,{});if(Math.abs(v-q.ans)>1e-9)return 'no';
+  const fs=factorsOf(node),bases=[];
+  for(const f of fs){let b,ex=1;if(f.t==='num')b=f.v;else if(f.t==='pow'&&strip0(f.a).t==='num'&&strip0(f.b).t==='num'){b=strip0(f.a).v;ex=strip0(f.b).v}else return 'notprime';
+    if(!isPrime(b)||!Number.isInteger(ex)||ex<1)return 'notprime';bases.push(b)}
+  if(fs.length<2&&!(fs[0].t==='pow'))return 'notprime';
+  if(new Set(bases).size<bases.length)return 'useindex';
+  return 'ok';
+}
+function powJudge(q,input){
+  const s=cleanAlg(input);if(!s)return 'bad';let node;try{node=ALG.parse(s);if(ALG.vars(node).size)return 'bad'}catch(e){return 'bad'}
+  const n=strip0(node);
+  if(n.t==='pow'&&strip0(n.a).t==='num'&&ALG.vars(n.b).size===0){const b=strip0(n.a).v,ex=ALG.ev(n.b,{});
+    if(b===q.base)return Math.abs(ex-q.exp)<1e-9?'ok':'no';
+    const want=Math.pow(q.base,q.exp),got=Math.pow(b,ex);return Math.abs(got-want)<=1e-9*Math.max(1,Math.abs(want))?'base':'no';}
+  let v;try{v=ALG.ev(node,{})}catch(e){return 'bad'}
+  const want=Math.pow(q.base,q.exp);
+  return Math.abs(v-want)<=1e-9*Math.max(1,Math.abs(want))?'single':'no';
+}
+/* table of powers: cells p (power), e (expanded), v (value) */
+function expTex(b,n){if(n===0)return '1';const f=Array(Math.abs(n)).fill(b).join('\\times ');return n>0?f:'\\dfrac{1}{'+f+'}'}
+function expKey(b,n){if(n===0)return '1';const f=Array(Math.abs(n)).fill(b).join('*');return n>0?f:(Math.abs(n)===1?'1/'+b:'1/('+f+')')}
+function valTex(b,n){return n>=0?String(Math.pow(b,n)):'\\dfrac{1}{'+Math.pow(b,-n)+'}'}
+function valKey(b,n){return n>=0?String(Math.pow(b,n)):'1/'+Math.pow(b,-n)}
+function tblCells(q){const out=[];q.rows.forEach((n,i)=>{['p','e','v'].forEach((k,j)=>{const shown=q.show[i][j]==='1';
+  out.push({row:i,col:j,n,kind:k,shown,tex:k==='p'?q.base+'^{'+n+'}':k==='e'?expTex(q.base,n):valTex(q.base,n),key:k==='p'?q.base+'^'+(n<0?'('+n+')':n):k==='e'?expKey(q.base,n):valKey(q.base,n)})})});return out}
+function cellJudge(b,n,kind,str){
+  const s=cleanAlg(str);if(!s)return 'bad';let node;try{node=ALG.parse(s);if(ALG.vars(node).size)return 'bad'}catch(e){return 'bad'}
+  const want=Math.pow(b,n);let v;try{v=ALG.ev(node,{})}catch(e){return 'bad'}
+  const eq=Math.abs(v-want)<=1e-9*Math.max(1,Math.abs(want));
+  if(kind==='v')return eq?'ok':'no';
+  if(kind==='p'){const m=strip0(node);if(m.t!=='pow'||strip0(m.a).t!=='num'||strip0(m.a).v!==b)return 'no';return Math.abs(ALG.ev(m.b,{})-n)<1e-9?'ok':'no'}
+  if(!eq)return 'no';if(n===0)return 'ok';
+  const toks=(s.match(/\d+(\.\d+)?/g)||[]).filter(t=>Number(t)===b).length;
+  return toks===Math.abs(n)?'ok':'no';
+}
+function tblJudge(q,input){const blanks=tblCells(q).filter(c=>!c.shown);const arr=Array.isArray(input)?input:[];
+  const per=blanks.map((c,i)=>cellJudge(q.base,c.n,c.kind,arr[i]||''));
+  if(per.some(r=>r==='bad'))return {res:'bad',per};return {res:per.every(r=>r==='ok')?'ok':'no',per}}
+function termList(n){if(n.t==='add'||n.t==='sub')return termList(n.a).concat(termList(n.b));return [n]}
+function monoOK(t){let nums=0,ok=true;const vs={};
+  (function walk(n){if(n.t==='neg')return walk(n.a);if(n.t==='mul'){walk(n.a);walk(n.b);return}
+    if(n.t==='pow'){if(n.a.t==='var'&&n.b.t==='num')vs[n.a.v]=(vs[n.a.v]||0)+1;else if(n.a.t==='num'&&n.b.t==='num')nums++;else ok=false;return}
+    if(n.t==='num'){nums++;return}if(n.t==='var'){vs[n.v]=(vs[n.v]||0)+1;return}ok=false})(t);
+  return ok&&nums<=1&&Object.values(vs).every(c=>c===1)}
+function correct(q,ans){return judge(q,ans)==='ok'}
+function storedAnswer(q){if(q.type==='mc')return q.ans;if(q.type==='tbl')return tblCells(q).filter(c=>!c.shown).map(c=>c.key);if(q.type==='pow')return q.base+'^'+q.exp;if(q.type==='pf'||q.type==='sf')return q.key;if(q.type==='list'||q.type==='nums')return q.ans.join(', ');if(q.type==='point')return '('+q.ans.join(',')+')';return String(q.ans)}
+
+/* ================= FIGURES IN QUESTIONS ================= */
+/* ================= REPORT → PDF ================= */
+function repHead(){let nm='';try{nm=localStorage.getItem('report-name')||''}catch(e){}
+  const d=new Date().toLocaleDateString('en-NZ',{day:'numeric',month:'long',year:'numeric'});
+  const safe=nm.replace(/[<>&"]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]));
+  return `<div class="card rephead"><div class="printonly"><div style="font-family:Georgia,serif;font-size:1.3rem;font-weight:600">${document.title}</div><div>Learning report · ${d}</div><div>Name: <b id="repNameOut">${safe||'________________'}</b></div></div>`+
+    `<div class="ctrl noprint"><label>Your name <input type="text" id="repName" value="${safe}" placeholder="Type your name" style="font:inherit;padding:.3rem .5rem;border:1px solid #c9c3d6;border-radius:8px"></label><button class="btn primary" id="repPdf" type="button">⬇ Download report as PDF</button></div>`+
+    `<p class="small noprint" style="margin:.3rem 0 0">A print window opens: choose <b>Save as PDF</b> as the printer.</p></div>`}
+function wireRep(){const n=document.getElementById('repName'),b=document.getElementById('repPdf');if(!n||!b)return;
+  n.oninput=()=>{try{localStorage.setItem('report-name',n.value)}catch(e){}const o=document.getElementById('repNameOut');if(o)o.textContent=n.value||'________________'};
+  b.onclick=()=>{try{window.print()}catch(e){alert('Printing is blocked here. Open the page in a normal browser tab.')}};}
+
+function numberLineSVG(lo,hi,a,b,ai,bi,step){
+  const W=600,L=30,Rr=570,sx=v=>L+(v-lo)/(hi-lo)*(Rr-L);
+  let s=`<svg viewBox="0 0 ${W} 74" style="max-width:520px"><line x1="${L-14}" y1="44" x2="${Rr+14}" y2="44" stroke="#1c2230" stroke-width="2"/>`;
+  for(let v=lo;v<=hi+1e-9;v+=step){s+=`<line x1="${sx(v)}" y1="38" x2="${sx(v)}" y2="50" stroke="#1c2230" stroke-width="1.5"/><text x="${sx(v)}" y="70" font-size="18" text-anchor="middle">${fmtN(v).replace('-','−')}</text>`}
+  s+=`<line x1="${sx(a)}" y1="22" x2="${sx(b)}" y2="22" stroke="#b5487a" stroke-width="4"/>`;
+  s+=`<circle cx="${sx(a)}" cy="22" r="8" fill="${ai?'#b5487a':'#fff'}" stroke="#b5487a" stroke-width="3"/><circle cx="${sx(b)}" cy="22" r="8" fill="${bi?'#b5487a':'#fff'}" stroke="#b5487a" stroke-width="3"/>`;
+  return s+'</svg>';
+}
+
+/* ================= QUESTIONS UI ================= */
+function tblHTML(q){const cells=tblCells(q);let h=`<div class="tblwrap"><table class="itbl"><tr><th>${UI.tblHead[0]}</th><th>${UI.tblHead[1]}</th><th>${UI.tblHead[2]}</th></tr>`;
+  q.rows.forEach((n,i)=>{h+='<tr>';cells.filter(c=>c.row===i).forEach(c=>{h+=c.shown?`<td>$${c.tex}$</td>`:`<td data-c="${i}-${c.col}"><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="row ${i+1} ${UI.tblHead[c.col]}"></td>`});
+    h+='</tr>';if(i<q.rows.length-1)h+=`<tr class="oprow"><td colspan="3">$\\div ${q.base}$ ↓</td></tr>`});return h+'</table></div>'}
+
+function renderQuestions(){
+  $$('.qs').forEach(box=>{
+    const part=box.dataset.part;box.innerHTML='';
+    Q.filter(q=>q.part===part).forEach((q,i)=>{
+      const d=document.createElement('div');d.className='q';d.id='Q-'+q.id;
+      const label=part==='rv'?('R'+(i+1)):(LABEL[part]+String.fromCharCode(97+i));
+      let body=`<div class="qn">QUESTION ${label}<span class="lvltag ${q.lvl}">${UI.lvlName[q.lvl]}</span><span class="dots">${'<i></i>'.repeat(3)}</span></div><div class="prompt">${q.prompt}</div>`;
+      if(q.fig)body+=FIG[q.fig]();
+      if(q.type==='tbl'){body+=tblHTML(q)+`<div class="ansrow"><button type="button" class="btn primary chk">${UI.check}</button></div><div class="preview"></div><div class="fmt">${UI.fmt.tbl}</div>`;}
+      else if(q.type==='mc'){body+=`<div class="opts">${q.opts.map((o,j)=>`<button type="button" class="opt" data-j="${j}">${String.fromCharCode(65+j)}. ${o}</button>`).join('')}</div>`;}
+      else{body+=`<div class="ansrow"><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="answer"><button type="button" class="btn primary chk">${UI.check}</button></div><div class="preview"></div><div class="fmt">${UI.fmt[q.type]}</div>`;}
+      body+=`<div class="fb"></div><div class="hint" hidden></div><div class="sol" hidden></div>`;
+      d.innerHTML=body;box.appendChild(d);mathify(d);
+      if(q.type==='tbl'){const ins=[...d.querySelectorAll('td input')],pv=d.querySelector('.preview');
+        ins.forEach(inp=>{const upd=()=>{const v=inp.value.trim();if(!v){pv.innerHTML='';return}const t=ALG.toTex(cleanAlg(v));pv.innerHTML=t?UI.previewPre+texStr(t):'<span style="color:#c0392b">…</span>'};
+          inp.addEventListener('input',upd);inp.addEventListener('focus',upd);inp.addEventListener('keydown',ev=>{if(ev.key==='Enter')submit(q,ins.map(x=>x.value))})});
+        d.querySelector('.chk').onclick=()=>submit(q,ins.map(x=>x.value));}
+      else if(q.type==='mc'){d.querySelectorAll('.opt').forEach(b=>b.onclick=()=>submit(q,Number(b.dataset.j)));}
+      else{const inp=d.querySelector('input'),pv=d.querySelector('.preview');
+        inp.addEventListener('input',()=>{const v=inp.value.trim();if(!v){pv.innerHTML='';return}
+          if(q.type==='list'){pv.innerHTML=UI.previewPre+texStr((v.replace(/[−–]/g,'-').match(/-?\d+(\.\d+)?/g)||[]).join(',\\ '));return}
+          if(q.type==='nums'||q.type==='point'){const ps=v.replace(/[()]/g,'').split(/[,;]+/).map(x=>x.trim()).filter(Boolean).map(x=>ALG.toTex(cleanAlg(x)));
+            if(!ps.length||ps.some(x=>x==null)){pv.innerHTML='<span style="color:#c0392b">…</span>';return}
+            pv.innerHTML=UI.previewPre+texStr(q.type==='point'?'\\left('+ps.join(',\\,')+'\\right)':ps.join(',\\ '));return}
+          let s=cleanAlg(v),pre='';const m=s.match(/^([a-zA-Z])=(.*)$/);if(m&&q.strip){pre=m[1]+'=';s=m[2]}
+          const t=ALG.toTex(s);pv.innerHTML=t?UI.previewPre+texStr(pre+t):'<span style="color:#c0392b">…</span>'});
+        inp.addEventListener('keydown',e=>{if(e.key==='Enter')submit(q,inp.value)});
+        d.querySelector('.chk').onclick=()=>submit(q,inp.value);}
+      paint(q);
+    });
+  });
+  if('IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const id=e.target.id.slice(2);if(S[id]&&S[id].t0==null)S[id].t0=Date.now()}}),{threshold:0.6});
+    $$('.q').forEach(el=>io.observe(el));}
+}
+function submit(q,input){
+  const st=S[q.id];if(st.done)return;
+  const res=judge(q,input), el=$('#Q-'+q.id), fb=el.querySelector('.fb');
+  if(UI.info[res]){fb.className='fb info';html(fb,UI.info[res]);return}
+  const now=Date.now();if(st.t0==null)st.t0=now;
+  if(st.att===0)st.tFirst=now-st.t0;
+  st.tLast=now;st.att++;st.hist.push(input);
+  if(res==='ok'){st.done=true;st.pts=4-st.att;if(st.att===1)st.fastFirst=st.tFirst<(q.type==='mc'?4000:7000);}
+  else{if(q.type==='mc')st.wrongOpts.push(input);if(st.att>=3){st.done=true;st.pts=0;}}
+  if(q.type==='tbl'){const r=tblJudge(q,input),ins=[...el.querySelectorAll('td input')];ins.forEach((inp,i)=>{const td=inp.parentNode;td.classList.toggle('okc',r.per[i]==='ok');td.classList.toggle('noc',r.per[i]!=='ok')})}
+  save();paint(q);refreshProgress();
+}
+function paint(q){
+  const st=S[q.id],el=$('#Q-'+q.id);if(!el)return;
+  el.querySelectorAll('.dots i').forEach((d,i)=>{d.className='';if(i<st.att)d.className=(st.done&&st.pts>0&&i===st.att-1)?'ok':'x'});
+  const fb=el.querySelector('.fb');
+  if(st.att===0)fb.textContent='';
+  else if(st.done&&st.pts>0){fb.className='fb ok';fb.textContent=UI.right[st.att-1];}
+  else if(st.done){fb.className='fb no';fb.textContent=UI.wrongLast;}
+  else{fb.className='fb no';fb.textContent=UI.wrong+` (${UI.attempt} ${st.att+1} ${UI.of} 3)`;}
+  const wrongs=st.att-((st.done&&st.pts>0)?1:0),h=el.querySelector('.hint');
+  if(wrongs>=2&&h.hidden){h.hidden=false;html(h,`<b>${UI.hint}:</b> ${q.hint}`);}
+  const s=el.querySelector('.sol');if(st.done&&s.hidden){s.hidden=false;html(s,`<b>${UI.sol}:</b> ${q.sol}`);}
+  el.classList.remove('done-0','done-1','done-2','done-3');if(st.done)el.classList.add('done-'+st.pts);
+  if(q.type==='mc'){el.querySelectorAll('.opt').forEach(b=>{const j=Number(b.dataset.j);b.classList.toggle('wrong',st.wrongOpts.includes(j));
+      if(st.done){b.disabled=true;if(j===q.ans)b.classList.add('right');}else if(st.wrongOpts.includes(j))b.disabled=true;});}
+  else if(q.type==='tbl'){const ins=[...el.querySelectorAll('td input')],btn=el.querySelector('.chk');if(st.done){btn.disabled=true;const last=st.hist[st.hist.length-1]||[];
+      const r=tblJudge(q,last);ins.forEach((inp,i)=>{inp.disabled=true;if(last[i]!=null)inp.value=last[i];const td=inp.parentNode;td.classList.toggle('okc',r.per[i]==='ok');td.classList.toggle('noc',r.per[i]!=='ok')})}}
+  else{const inp=el.querySelector('input'),btn=el.querySelector('.chk');if(st.done){inp.disabled=true;btn.disabled=true;if(st.hist.length)inp.value=st.hist[st.hist.length-1];}}
+}
+
+/* ================= REPORT ================= */
+function renderReport(){
+  const T=UI.report, box=$('#report');
+  const answered=Q.filter(q=>S[q.id].done);
+  if(!Q.some(q=>S[q.id].att>0)){box.innerHTML=`<div class="card">${T.empty}</div>`;return}
+  let __h=repHead();
+  let h=__h+`<div class="card"><div class="box-title">${T.byPart}</div>`;
+  Object.keys(SEC).forEach(k=>{const qs=Q.filter(q=>q.part===k),d=qs.filter(q=>S[q.id].done),pts=d.reduce((a,q)=>a+S[q.id].pts,0);
+    const GK=Object.keys(GROUPS);const col=k==='rv'?'#6b5ca5':(grpOf(k)==='gb'?GCOL[GK[1]]:GCOL[GK[0]]);
+    h+=`<div class="rbar"><div class="lab"><span>${SEC[k]}</span><span>${d.length} / ${qs.length} · ${pts} pts</span></div><div class="tr"><i style="width:${100*pts/(qs.length*3)}%;background:${col}"></i></div></div>`});
+  h+='</div>';
+  const avg={};Object.keys(SKILLS).forEach(k=>{const qs=answered.filter(q=>q.tags.includes(k));avg[k]=qs.length?qs.reduce((a,q)=>a+S[q.id].pts,0)/qs.length:null});
+  const lev=a=>a==null?'n':a<1.5?'r':a<2.5?'a':'g';
+  h+=`<div class="card"><div class="box-title">${T.bySkill}</div>`;
+  Object.keys(GROUPS).forEach(g=>{h+=`<h3 style="margin:.8rem 0 .3rem">${GROUPS[g]}</h3>`;
+    Object.keys(SKILLS).filter(k=>SKILLS[k].g===g).forEach(k=>{h+=`<div class="skill"><span>${SKILLS[k].n}</span><span><span class="small">${T.avg(avg[k])}</span> <span class="lvl ${lev(avg[k])}">${T.lv[lev(avg[k])]}</span></span></div>`})});
+  h+='</div>';
+  const first=answered.filter(q=>S[q.id].pts===3).length, fast=answered.filter(q=>S[q.id].fastFirst).length;
+  const rushed=Q.filter(q=>{const s=S[q.id];return s.done&&s.pts===0&&s.att>=3&&s.t0!=null&&(s.tLast-s.t0)<20000}).length;
+  const whyTotal=$$('details.why').length, whyOpen=Object.keys(WHY).length;
+  h+=`<div class="card"><div class="box-title">${T.how}</div><ul class="steps"><li>${T.firstTry(first)}</li><li>${T.fast(fast)}</li><li>${T.rushed(rushed)}</li><li>${T.notDone(Q.length-answered.length)}</li>${whyTotal?`<li>${T.why(whyOpen,whyTotal)}</li>`:''}</ul></div>`;
+  const weak=Object.keys(SKILLS).filter(k=>avg[k]!=null&&avg[k]<2.5).sort((a,b)=>avg[a]-avg[b]).slice(0,3);
+  h+=`<div class="card"><div class="box-title">${T.advice}</div>`;
+  if(weak.length){h+=`<p>${T.advIntro}</p>`;weak.forEach(k=>{h+=`<div class="adv"><b>${SKILLS[k].n}</b> <span class="small">(${T.avg(avg[k])})</span><br>${SKILLS[k].adv}</div>`})}
+  else h+=`<p>${T.allGood}</p>`;
+  h+='</div>';
+  h+=`<div class="card"><div class="box-title">${T.map}</div><div id="kmap"></div><div class="legend"><span><i style="background:var(--good)"></i>${T.lv.g}</span><span><i style="background:var(--warn)"></i>${T.lv.a}</span><span><i style="background:var(--bad)"></i>${T.lv.r}</span><span><i style="background:var(--grey)"></i>${T.lv.n}</span></div></div>`;
+  const tot=answered.reduce((a,q)=>a+S[q.id].pts,0);
+  h+=`<div class="card"><div class="box-title">${T.total}</div><div class="score">${tot} / ${Q.length*3}</div><p class="small" style="text-align:center">${Math.round(100*tot/(Q.length*3))}%</p><p class="small">${T.note}</p></div>`;
+  box.innerHTML=h;mathify(box);drawMap(avg,lev);wireRep();
+}
+function drawMap(avg,lev){
+  const box=$('#kmap'), narrow=box.clientWidth<620;
+  const col={g:'#2f8a4c',a:'#b7791f',r:'#c0392b',n:'#9aa1ad'};
+  const G=Object.keys(GROUPS),left=Object.keys(SKILLS).filter(k=>SKILLS[k].g===G[0]),right=Object.keys(SKILLS).filter(k=>SKILLS[k].g===G[1]);
+  const rows=Math.max(left.length,right.length);
+  let W,H,cx,cy,xL,xR,bw,bh,gap,top,fs;
+  if(narrow){W=600;bw=250;bh=74;gap=98;top=170;fs=19;xL=140;xR=460;H=top+rows*gap;cx=300;cy=62;}
+  else{W=1000;bw=290;bh=54;gap=68;top=70;fs=16;xL=175;xR=825;H=top+rows*gap;cx=500;cy=top+(rows-1)*gap/2;}
+  const pos={};left.forEach((k,i)=>pos[k]=[xL,top+i*gap]);right.forEach((k,i)=>pos[k]=[xR,top+i*gap]);
+  const inner=k=>[pos[k][0]+(SKILLS[k].g===G[0]?bw/2:-bw/2),pos[k][1]];
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="knowledge map">`;
+  s+=`<text x="${xL}" y="${narrow?top-46:top-38}" text-anchor="middle" font-size="${fs}" font-weight="700" fill="${GCOL[G[0]]}">${GROUPS[G[0]]}</text><text x="${xR}" y="${narrow?top-46:top-38}" text-anchor="middle" font-size="${fs}" font-weight="700" fill="${GCOL[G[1]]}">${GROUPS[G[1]]}</text>`;
+  Object.keys(SKILLS).forEach(k=>{const [x,y]=inner(k);s+=`<line x1="${cx}" y1="${cy}" x2="${x}" y2="${y}" stroke="#e8e5ef" stroke-width="1.5"/>`});
+  LINKS.forEach(([a,b])=>{const A=inner(a),B=inner(b);
+    if(SKILLS[a].g===SKILLS[b].g){const dir=SKILLS[a].g===G[0]?1:-1,bow=Math.min(narrow?40:70,18+Math.abs(A[1]-B[1])*0.18);
+      s+=`<path d="M${A[0]},${A[1]} Q${(A[0]+B[0])/2+dir*bow},${(A[1]+B[1])/2} ${B[0]},${B[1]}" fill="none" stroke="#b9b3c9" stroke-width="2" stroke-dasharray="5 4"/>`;}
+    else s+=`<line x1="${A[0]}" y1="${A[1]}" x2="${B[0]}" y2="${B[1]}" stroke="#b9b3c9" stroke-width="2" stroke-dasharray="5 4"/>`;});
+  s+=`<ellipse cx="${cx}" cy="${cy}" rx="${narrow?150:118}" ry="${narrow?46:44}" fill="#1c2230"/><text x="${cx}" y="${cy-4}" text-anchor="middle" fill="#fff" font-size="${fs}" font-weight="700">${UI.report.centre[0]}</text><text x="${cx}" y="${cy+18}" text-anchor="middle" fill="#fff" font-size="${fs-2}">${UI.report.centre[1]}</text>`;
+  const split=t=>{if(t.length<=(narrow?20:40))return [t];let m=Math.floor(t.length/2),a=t.lastIndexOf(' ',m),b=t.indexOf(' ',m);let c=(a<0||(b>=0&&b-m<m-a))?b:a;return [t.slice(0,c),t.slice(c+1)]};
+  Object.keys(SKILLS).forEach(k=>{const [x,y]=pos[k],L=lev(avg[k]),c=col[L],lines=split(SKILLS[k].n.replace('&','&amp;'));
+    s+=`<rect x="${x-bw/2}" y="${y-bh/2}" width="${bw}" height="${bh}" rx="12" fill="#fff" stroke="${c}" stroke-width="3"/><rect x="${x-bw/2}" y="${y-bh/2}" width="8" height="${bh}" rx="3" fill="${GCOL[SKILLS[k].g]}"/>`;
+    const lh=fs+3,y0=y-(lines.length*lh)/2+fs*0.35-4;
+    lines.forEach((ln,i)=>{s+=`<text x="${x+4}" y="${y0+i*lh}" text-anchor="middle" font-size="${fs-1}" font-weight="600" fill="#1c2230" ${ln.length*(fs-1)*0.55>bw-24?`textLength="${bw-24}" lengthAdjust="spacingAndGlyphs"`:''}>${ln}</text>`});
+    s+=`<text x="${x+4}" y="${y0+lines.length*lh}" text-anchor="middle" font-size="${fs-2}" fill="${c}" font-weight="700">${UI.report.avg(avg[k])}</text>`;});
+  box.innerHTML=s+'</svg>';
+}
+
+
+const minus=s=>String(s).replace(/-/g,"−");
+/* ---------- generic stepper ---------- */
+function stepper(box,steps,endHtml){
+  let i=0,fb='',fbok=true,solved=false;
+  function render(){
+    if(i>=steps.length){html(box,endHtml);return}
+    const st=steps[i];
+    let h=`<div class="steps-dots">${steps.map((_,j)=>`<i class="${j<=i?'on':''}"></i>`).join('')}</div>`;
+    if(st.vis)h+=`<div style="margin:.4rem 0">${typeof st.vis==='function'?st.vis():st.vis}</div>`;
+    h+=`<div class="tq">${st.q}</div>`;
+    if(fb)h+=`<div class="tfb ${fbok?'ok':'no'}">${fb}</div>`;
+    if(!solved)h+=`<div class="tbtns">${st.opts.map((o,j)=>`<button type="button" class="btn" data-j="${j}">${o[0]}</button>`).join('')}</div>`;
+    else h+=`<div class="tbtns"><button type="button" class="btn primary" id="snext">${i<steps.length-1?'Next →':'Finish ✓'}</button></div>`;
+    html(box,h);
+    box.querySelectorAll('[data-j]').forEach(b=>b.onclick=()=>{const o=st.opts[+b.dataset.j];
+      if(o[1]){fb=st.ok;fbok=true;solved=true}else{fb=o[2]||'Not quite. Have another look.';fbok=false;b.disabled=true;
+        render();const bb=box.querySelector(`[data-j="${b.dataset.j}"]`);if(bb)bb.disabled=true;return}
+      render()});
+    const n=box.querySelector('#snext');if(n)n.onclick=()=>{i++;fb='';solved=false;render()};
+  }
+  render();
+}
+const tiles=(b,n,cls,cross)=>Array.from({length:n},(_,i)=>`<span class="tileb${cls?' '+cls:''}${cross&&i<cross?' x':''}">${b}</span>`).join('');
+
+
+/* ================= helpers ================= */
+function shiftStr(s,k){ // move decimal point k places right (k<0 left); s non-negative decimal string
+  let [a,b='']=s.split('.');let digs=a+b,p=a.length+k;
+  if(p<=0){digs='0'.repeat(1-p)+digs;p=1}
+  if(p>digs.length)digs=digs+'0'.repeat(p-digs.length);
+  let i=digs.slice(0,p).replace(/^0+(?=\d)/,''),f=digs.slice(p).replace(/0+$/,'');
+  return f?i+'.'+f:i}
+const PVH={3:'1000s',2:'100s',1:'10s',0:'1s','-1':'⅒','-2':'1⁄100','-3':'1⁄1000','-4':'1⁄10 000'};
+function pvTable(rows,lo,hi){ // rows: [{s,label,cls}]
+  const ex=[];for(let e=hi;e>=lo;e--)ex.push(e);
+  let h='<div class="tblwrap"><table class="t pvt"><tr><th></th>'+ex.map(e=>`<th${e===0?' class="one"':''}>${PVH[e]||''}</th>`+(e===0?'<th class="pt"></th>':'')).join('')+'</tr>';
+  rows.forEach(r=>{const [a,b='']=r.s.split('.');const d={};[...a].forEach((c,i)=>d[a.length-1-i]=c);[...b].forEach((c,i)=>d[-1-i]=c);
+    const top=a.length-1,bot=b?-b.length:0;
+    h+=`<tr class="${r.cls||''}"><td class="lab">${r.label||''}</td>`+ex.map(e=>`<td${e===0?' class="one"':''}>${(e<=top&&e>=bot)?(d[e]??''):''}</td>`+(e===0?`<td class="pt">${b?'.':''}</td>`:'')).join('')+'</tr>'});
+  return h+'</table></div>'}
+function grid10(cols,rows){let h='<div class="g10">';for(let r=0;r<10;r++)for(let c=0;c<10;c++){const a=c<cols,b=r<rows;h+=`<i class="${a&&b&&rows<10?'dk':a?'lt':''}"></i>`}return h+'</div>'}
+function digitChips(s,n,stage){ // stage 0 plain,1 first sf,2 n sf + next
+  const ch=[...s];let first=ch.findIndex(c=>/[1-9]/.test(c));let cnt=0,last=-1,next=-1;
+  ch.forEach((c,i)=>{if(i>=first&&/\d/.test(c)){cnt++;if(cnt===n)last=i;if(cnt===n+1&&next<0)next=i}});
+  return '<div class="chips2">'+ch.map((c,i)=>{let cls='';
+    if(stage>=1&&i===first)cls='sf';if(stage>=2&&i>=first&&i<=last&&/\d/.test(c))cls='sf';if(stage>=2&&i===next)cls='nx';
+    if(/\d/.test(c)&&i<first&&stage>=1)cls='lz';
+    const cut=stage>=2&&i===last?'<span class="cut"></span>':'';return c==='.'?'<span class="dp">.</span>':`<span class="dg ${cls}">${c}</span>${cut}`}).join('')+'</div>'}
+function sfRound(str,n){const v=Number(str);if(!isFinite(v)||v===0)return null;const r=Number(v.toPrecision(n));let s=v.toPrecision(n);
+  if(/e/.test(s))s=String(r);return s}
+function numLine(lo,hi,pts){const W=600,L=30,R=570,sx=v=>L+(v-lo)/(hi-lo)*(R-L);let s=`<svg viewBox="0 0 ${W} 90" style="max-width:520px"><line x1="${L-10}" y1="50" x2="${R+10}" y2="50" stroke="#1c2230" stroke-width="2"/>`;
+  for(let v=lo;v<=hi+1e-9;v=Math.round((v+0.1)*10)/10){const big=Math.abs(v*2-Math.round(v*2))<1e-9;s+=`<line x1="${sx(v)}" y1="${big?40:44}" x2="${sx(v)}" y2="${big?60:56}" stroke="#1c2230" stroke-width="${big?2:1}"/>`;if(big)s+=`<text x="${sx(v)}" y="82" text-anchor="middle" font-size="18">${minus(v.toFixed(1))}</text>`}
+  pts.forEach(([v,c])=>{s+=`<circle cx="${sx(v)}" cy="50" r="8" fill="${c}"/><text x="${sx(v)}" y="28" text-anchor="middle" font-size="19" font-weight="700" fill="${c}">${minus(v)}</text>`});return s+'</svg>'}
+
+/* ================= B1 ================= */
+function t1(){
+  stepper($('#t1body'),[
+    {vis:pvTable([{s:'70',label:'70'}],-2,2),q:R`$70\times0.1$ is the same as $70\div10$. Which way do the digits move?`,opts:[['One place right (smaller)',1],['One place left (bigger)',0,'Dividing by 10 makes it smaller.']],ok:'Yes! $70\\times0.1=7$.'+pvTable([{s:'70',label:'70'},{s:'7',label:'× 0.1',cls:'new'}],-2,2)},
+    {vis:pvTable([{s:'300',label:'300'}],-2,2),q:R`$300\times0.01$ is $300\div100$. How many places do the digits move right?`,opts:[['1',0,'÷100 is two steps of ÷10.'],['2',1],['3',0,'÷100 is two steps of ÷10.']],ok:'Two places: $300\\times0.01=3$.'+pvTable([{s:'300',label:'300'},{s:'3',label:'× 0.01',cls:'new'}],-2,2)},
+    {q:R`$8\div0.1$: how many tenths fit into $8$? (There are ten tenths in every 1.)`,opts:[['$0.8$',0,'Dividing by a small number gives a big answer.'],['$80$',1],['$8$',0,'Each 1 holds ten tenths.']],ok:R`Yes: $8\div0.1=80$. So $\div0.1$ is the same as $\times10$: the digits move <b>left</b>.`},
+    {q:R`Wow: $\times0.1$ made $20$ smaller, but $\div0.1$ made $8$ bigger! Which one makes $45.6$ bigger?`,opts:[[R`$45.6\times0.01$`,0,R`$\times0.01$ is $\div100$: smaller.`],[R`$45.6\div0.01$`,1]],ok:R`Right: $\div0.01$ is $\times100$, so $45.6\div0.01=4560$.`}],
+    `<div class="tfb ok"><b>Done!</b> Times by 0.1 or 0.01: digits go right. Divide by them: digits go left.</div>`);
+}
+function pvPlay(){let cur;
+  const ops=[['× 0.1',-1],['× 0.01',-2],['÷ 0.1',1],['÷ 0.01',2]];
+  $('#pvbtns').innerHTML=ops.map(([t,k],i)=>`<button type="button" class="btn" data-i="${i}">${t}</button>`).join('')+'<button type="button" class="btn" id="pvreset">Start again</button>';
+  function reset(){const v=$('#pvn').value.trim();if(!/^\d+(\.\d+)?$/.test(v)||v.length>9){html($('#pvr'),'Type a positive number, e.g. 45.6');return}cur=v;draw(null,null)}
+  function draw(prev,op){const rows=prev?[{s:prev,label:prev},{s:cur,label:op,cls:'new'}]:[{s:cur,label:cur}];
+    let hi=2,lo=-2;rows.forEach(r=>{const [a,b='']=r.s.split('.');hi=Math.max(hi,a.length-1);lo=Math.min(lo,-b.length)});
+    $('#pvtbl').innerHTML=pvTable(rows,Math.max(lo,-4),Math.min(hi,3));
+    html($('#pvr'),prev?`$${prev}\\;${op.replace('×','\\times').replace('÷','\\div')}=${cur}$`:'Press a button.')}
+  $$('#pvbtns [data-i]').forEach(b=>b.onclick=()=>{if(!cur)return;const [t,k]=ops[+b.dataset.i];const nx=shiftStr(cur,k);
+    const [na,nb='']=nx.split('.');if(na.length>4||nb.length>4){html($('#pvr'),'That goes off the chart. Press “Start again”.');return}const p=cur;cur=nx;draw(p,t)});
+  $('#pvreset').onclick=reset;$('#pvn').addEventListener('change',reset);reset();
+}
+
+/* ================= B2 ================= */
+function t2(){
+  stepper($('#t2body'),[
+    {vis:digitChips('23850',2,0),q:'Round $23\\,850$ to <b>2</b> significant figures. Which digit is the <b>first</b> significant figure?',opts:[['$2$',1],['$3$',0,'Start at the left: the first digit that is not zero.'],['$0$',0,'Zeros at the end do not start the count.']],ok:'Yes, the $2$. Now count 2 figures: $2$ and $3$.'+digitChips('23850',2,2)},
+    {vis:digitChips('23850',2,2),q:'Draw the line after the 3. The next digit is $8$. Round up or stay?',opts:[['Round up: 8 is 5 or more',1],['Stay the same',0,'5, 6, 7, 8 and 9 round up.']],ok:'$23$ becomes $24$.'},
+    {q:'Keep the number the same size. What is $23\\,850$ to 2 s.f.?',opts:[['$24$',0,'24 is far too small: the fans did not shrink!'],['$2400$',0,'Count the digits: 23 850 has five.'],['$24\\,000$',1]],ok:'$24\\,000$: the zeros keep it the right size.'},
+    {vis:digitChips('0.00381',1,0),q:'Now $0.00381$ to <b>1</b> s.f. Which is the first significant figure?',opts:[['$0$',0,'Zeros at the front never count. They just hold the place.'],['$3$',1],['$8$',0,'Look further left.']],ok:'The $3$. Zeros at the front just show where the decimal point is.'+digitChips('0.00381',1,2)},
+    {vis:digitChips('0.00381',1,2),q:'The next digit is $8$, so the $3$ rounds up. Answer?',opts:[['$0.004$',1],['$0.003$',0,'8 is 5 or more: round up.'],['$4$',0,'Keep the size: the zeros at the front stay.']],ok:'$0.00381\\approx0.004$ (1 s.f.).'},
+    {vis:digitChips('0.1954',2,2),q:'Careful one: $0.1954$ to 2 s.f. The $19$ rounds up to…',opts:[['$0.2$',0,'That shows only 1 significant figure.'],['$0.20$',1],['$0.19$',0,'The next digit is 5: round up.']],ok:'$0.20$. The zero is the second significant figure, so you must write it.'}],
+    `<div class="tfb ok"><b>Done!</b> First non-zero digit → count → look next door → round → keep the size.</div>`);
+}
+function rmPlay(){function go(){const v=$('#rmn').value.trim(),n=+$('#rms').value;
+    if(!/^\d+(\.\d+)?$/.test(v)||Number(v)===0){html($('#rmr'),'Type a positive number, e.g. 0.004817');return}
+    html($('#rmr'),digitChips(v,n,2)+`<div style="margin-top:.4rem">$${v}\\approx${sfRound(v,n)}$ &nbsp;(${n} s.f.)</div>`)}
+  $('#rmn').addEventListener('input',go);$('#rms').addEventListener('input',go);go()}
+
+/* ================= B3 ================= */
+function t3(){
+  stepper($('#t3body'),[
+    {vis:pvTable([{s:'0.66',label:'0.66'},{s:'0.606',label:'0.606'}],-3,0),q:'Line up the decimal points. $0.66$ has an empty space at the end. Fill it with a zero:',opts:[['$0.660$',1],['$0.066$',0,'The zero goes at the end, not the front.'],['$0.606$',0,'That changes the number.']],ok:'$0.66=0.660$: adding a zero at the end changes nothing.'},
+    {vis:pvTable([{s:'0.660',label:'0.660'},{s:'0.606',label:'0.606'}],-3,0),q:'Compare column by column. Tenths: $6=6$. Hundredths: $6$ and $0$. Which number is bigger?',opts:[['$0.66$',1],['$0.606$',0,'Look at the hundredths: 6 beats 0.']],ok:'$0.66$ is bigger. More digits does <b>not</b> mean bigger.'},
+    {vis:numLine(-6,-5,[[-5.7,'#3b4fa8'],[-5.2,'#b5487a']]),q:'Negatives: which is bigger, $-5.7$ or $-5.2$?',opts:[['$-5.7$',0,'Bigger means further right on the number line.'],['$-5.2$',1]],ok:'$-5.2$: it is further to the right.'},
+    {q:'Which is heavier, $3.5$ kg or $375$ g? First change kg to g: $3.5$ kg $=\\;?$',opts:[['$35$ g',0,'1 kg is 1000 g.'],['$350$ g',0,'1 kg is 1000 g.'],['$3500$ g',1]],ok:'$3500$ g is more than $375$ g, so $3.5$ kg is heavier.'}],
+    `<div class="tfb ok"><b>Done!</b> Same units, line up the points, fill with zeros, compare.</div>`);
+}
+
+/* ================= B4 ================= */
+function t4(){
+  const strips=n=>`<div class="strips">${Array(n).fill('<span><b style="width:30%"></b></span>').join('')}</div>`;
+  stepper($('#t4body'),[
+    {vis:strips(5),q:'$0.3\\times5$ means five lots of $0.3$. Each bar is 1 whole. What is the total?',opts:[['$1.5$',1],['$0.15$',0,'Five lots of 0.3: 0.3, 0.6, 0.9, …'],['$15$',0,'Each piece is less than 1.']],ok:'$3\\times5=15$ tenths, which is $1.5$.'},
+    {vis:`<div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center">${grid10(3,10)}<span>→</span>${grid10(3,3)}</div>`,q:'The square is $1$. Shade $0.3$ of it (3 columns). Now take $0.3$ of that (3 rows). The dark part is how many of the 100 tiny squares?',opts:[['$9$ of $100$: $0.09$',1],['$9$ of $10$: $0.9$',0,'Count the tiny squares in the whole square: there are 100.']],ok:'So $0.3\\times0.3=0.09$. Wow: multiplying by a number less than 1 makes it <b>smaller</b>.'},
+    {q:'The quick way: $0.4\\times0.07$. $4\\times7=28$. Decimal places in the question: $1+2=3$. Answer?',opts:[['$0.28$',0,'Count again: three places.'],['$0.028$',1],['$2.8$',0,'Count the decimal places: 1 + 2.']],ok:'$0.028$: three decimal places.'},
+    {q:'Estimate to check: $0.23\\times6.9\\approx0.2\\times7=\\;?$',opts:[['$1.4$',1],['$14$',0,'0.2 is a fifth of 1.'],['$0.14$',0,'0.2 × 7: two tenths, seven times.']],ok:'About $1.4$, so an exact answer of $1.587$ makes sense, but $15.87$ does not.'}],
+    `<div class="tfb ok"><b>Done!</b> Multiply, count the places, then estimate to check.</div>`);
+}
+
+/* ================= B5 ================= */
+const litres=(n,cut)=>`<div class="lit">${Array(n).fill(`<span>${Array(cut).fill('<i></i>').join('')}</span>`).join('')}</div>`;
+function t5(){
+  $('#glasses').innerHTML=litres(3,2)+'<span class="small">3 litres, each split into glasses of 0.5 litre</span>';
+  stepper($('#t5body'),[
+    {vis:litres(3,2),q:'Each litre fills 2 glasses of $0.5$ L. How many glasses from $3$ litres?',opts:[['$6$',1],['$1.5$',0,'Count the glasses in the picture.'],['$3$',0,'Each litre gives 2 glasses.']],ok:'$3\\div0.5=6$. Dividing by $0.5$ gave a <b>bigger</b> answer!'},
+    {q:'A faster way: multiply <b>both</b> numbers by 10. $\\;3\\div0.5$ becomes $30\\div5$. Same answer?',opts:[['Yes, $6$',1],['No',0,'Try it: 30 ÷ 5.']],ok:'Yes! Making both numbers 10 times bigger keeps the answer the same, and $5$ is easier than $0.5$.'},
+    {q:'$1.8\\div0.2$: multiply both by 10 → $18\\div2=\\;?$',opts:[['$9$',1],['$0.9$',0,'18 ÷ 2.'],['$90$',0,'18 ÷ 2.']],ok:'$1.8\\div0.2=9$.'},
+    {q:'Mia writes $40\\div0.5=\\dfrac{40}{0.5\\times10}=\\dfrac{40}{5}=8$. Is she right?',opts:[['Yes',0,'Check: 8 glasses of 0.5 L is only 4 L, not 40 L.'],['No: she multiplied only the bottom. $400\\div5=80$',1]],ok:'Right: multiply <b>both</b>. Check: $80\\times0.5=40$ ✓'}],
+    `<div class="tfb ok"><b>Done!</b> Make the divisor a whole number by multiplying both numbers by 10.</div>`);
+}
+
+/* ================= B6 ================= */
+function t6(){
+  stepper($('#t6body'),[
+    {q:'Trick 1 · pairs. $2.5\\times5.7\\times4$: which two should you multiply first?',opts:[['$2.5\\times4$',1],['$2.5\\times5.7$',0,'Look for a pair that makes 10.']],ok:'$2.5\\times4=10$, then $10\\times5.7=57$. Easy!'},
+    {q:'Trick 2 · take away a tenth. $60\\times0.9=60\\times1-60\\times0.1=60-\\;?$',opts:[['$6$',1],['$0.6$',0,'60 × 0.1 = 60 ÷ 10.'],['$9$',0,'60 × 0.1 = 60 ÷ 10.']],ok:'$60-6=54$.'},
+    {q:'Same idea: $48\\times0.99=48-0.48=\\;?$',opts:[['$47.52$',1],['$48.48$',0,'Take away, don\'t add.'],['$47.02$',0,'48 − 0.48: count carefully.']],ok:'$47.52$, done in your head!'},
+    {q:'Trick 3 · split. $16\\times0.35=16\\times0.5\\times0.7=8\\times0.7=\\;?$',opts:[['$5.6$',1],['$56$',0,'8 × 0.7 is less than 8.'],['$0.56$',0,'8 × 7 = 56, one decimal place.']],ok:'$5.6$. Halving first made it easy.'}],
+    `<div class="tfb ok"><b>Done!</b> Pairs, take-away and splitting: three tricks for your toolbox.</div>`);
+}
+
+/* ================= BOOT ================= */
+function boot(){
+  initState();buildTabs();renderQuestions();
+  [t1,pvPlay,t2,rmPlay,t3,t4,t5,t6].forEach(f=>{try{f()}catch(e){console.error(f.name,e)}});
+  $('#resetBtn').onclick=()=>{const b=$('#resetBtn');if(!b.dataset.armed){b.dataset.armed=1;b.textContent='Tap again to clear all answers';setTimeout(()=>{delete b.dataset.armed;b.textContent='Start again'},4000);return}
+    delete b.dataset.armed;b.textContent='Start again';try{localStorage.removeItem(KEY)}catch(e){}initState();renderQuestions();refreshProgress();};
+  mathify(document.querySelector('main'));
+  refreshProgress();
+  const h=location.hash.slice(1);show(ORDER.includes(h)?h:'start');
+}
+let booted=false;window.addEventListener('load',()=>{if(!booted){booted=true;boot()}});
+
+</script>
+</body>
+</html>
