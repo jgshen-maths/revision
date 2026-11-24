@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Year 8 Number Part D · Percentages and ratio</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<style>
+:root{
+  --ink:#1c2230;--muted:#5b6475;--paper:#f7f6fb;--card:#fff;--line:#e2e0ea;
+  --a:#3b4fa8;--a-soft:#e8ebf8;--b:#b5487a;--b-soft:#f8e7ef;
+  --good:#2f8a4c;--good-soft:#e5f4ea;--warn:#b7791f;--warn-soft:#fbf1dc;--bad:#c0392b;--bad-soft:#fbe5e2;--grey:#9aa1ad;
+  --xt:#5b6fd8;--ct:#e09f3e;--neg:#c0392b;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font:18px/1.65 "Avenir Next","Segoe UI",system-ui,-apple-system,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.25;font-weight:600}
+h2{font-size:1.6rem;margin:.2rem 0 .6rem}
+h3{font-size:1.15rem;margin:1.6rem 0 .5rem}
+p{margin:.55rem 0}
+header.top{position:sticky;top:0;z-index:20;background:rgba(247,246,251,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.topin{max-width:940px;margin:0 auto;padding:.55rem 1rem .35rem;display:flex;align-items:center;gap:.8rem;flex-wrap:wrap}
+.brand{font-family:Georgia,serif;font-weight:600;font-size:1.02rem;flex:1;min-width:180px}
+.brand small{display:block;font-family:inherit;font-weight:400;color:var(--muted);font-size:.84rem}
+.prog{font-size:.82rem;color:var(--muted);text-align:right}
+.bar{height:6px;background:var(--line);border-radius:4px;overflow:hidden;width:150px;margin-top:3px}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--a),var(--b));width:0;transition:width .4s}
+nav.tabs{max-width:940px;margin:0 auto;display:flex;gap:.35rem;overflow-x:auto;padding:.1rem 1rem .6rem;scrollbar-width:thin}
+nav.tabs button{flex:0 0 auto;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;padding:.32rem .8rem;font:inherit;font-size:.9rem;cursor:pointer;white-space:nowrap}
+nav.tabs button.ga{border-color:#c9d0ef}
+nav.tabs button.gb{border-color:#eccbdb}
+nav.tabs button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+nav.tabs button .tick{color:var(--good);font-weight:700;margin-left:.25rem}
+nav.tabs button.on .tick{color:#9be3b0}
+main{max-width:940px;margin:0 auto;padding:1.2rem 1rem 4rem}
+section.tab{display:none}
+section.tab.on{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.kicker{font-size:.84rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--a)}
+.gb-sec .kicker{color:var(--b)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1rem 1.1rem;margin:1rem 0}
+.idea{border-left:5px solid var(--a)}
+.gb-sec .idea{border-left-color:var(--b)}
+.box-title{font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:.3rem}
+.key{background:var(--a-soft);border-radius:10px;padding:.6rem .8rem;margin:.6rem 0}
+.gb-sec .key{background:var(--b-soft)}
+.trap{background:var(--warn-soft);border-radius:10px;padding:.6rem .8rem;margin:.6rem 0}
+.trap b{color:#8a5a0c}
+.steps{margin:.3rem 0;padding-left:1.3rem}
+.steps li{margin:.4rem 0}
+.tblwrap{overflow-x:auto;max-width:100%}
+table.t{border-collapse:collapse;margin:.5rem 0;font-size:1rem}
+table.t th,table.t td{border:1px solid var(--line);padding:.35rem .6rem;text-align:center}
+table.t th{background:#efedf5;font-weight:600}
+.widget{background:#fdfcff;border:1px dashed #c9c5d8;border-radius:14px;padding:.9rem;margin:1rem 0}
+.widget .box-title{color:var(--a)}
+.gb-sec .widget .box-title{color:var(--b)}
+.ctrl{display:flex;flex-wrap:wrap;gap:.5rem .8rem;align-items:center;margin:.45rem 0}
+.ctrl label{font-size:.98rem;display:flex;align-items:center;gap:.4rem}
+.ctrl input[type=range]{width:150px}
+.ctrl input[type=text],.ctrl select{font:inherit;padding:.3rem .5rem;border:1px solid #c9c3d6;border-radius:8px}
+.btn{border:1px solid var(--ink);background:#fff;color:var(--ink);border-radius:8px;padding:.36rem .8rem;font:inherit;font-size:.95rem;cursor:pointer}
+.btn:hover{background:#efedf5}
+.btn.primary,.btn.on{background:var(--ink);color:#fff}
+.btn.small{padding:.24rem .6rem;font-size:.9rem}
+.readout{background:#fff;border:1px solid var(--line);border-radius:10px;padding:.55rem .75rem;margin-top:.5rem;font-size:1rem}
+svg{max-width:100%;height:auto;display:block}
+svg text{font-family:"Avenir Next","Segoe UI",system-ui,sans-serif}
+.wex{border-left:5px solid #7a6f8c}
+.wex .box-title{color:#7a6f8c}
+details.why{background:#f1eff6;border-radius:12px;padding:.5rem .9rem;margin:1rem 0}
+details.why summary{cursor:pointer;font-weight:600}
+details.why[open]{padding-bottom:.8rem}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+@media(max-width:640px){.two{grid-template-columns:1fr}h2{font-size:1.35rem}}
+.qhead{display:flex;align-items:baseline;gap:.6rem;margin-top:1.8rem}
+.qhead h3{margin:0}
+.qhead span{font-size:.92rem;color:var(--muted)}
+.q{background:#fff;border:1px solid var(--line);border-radius:14px;padding:.9rem 1rem;margin:.8rem 0}
+.q .qn{font-weight:700;color:var(--muted);font-size:.88rem;letter-spacing:.05em;display:flex;align-items:center;gap:.4rem;flex-wrap:wrap}
+.lvltag{font-size:.74rem;letter-spacing:.08em;border-radius:999px;padding:.05rem .5rem;font-weight:700}
+.lvltag.Focus{background:#e6f2ea;color:#2f7a46}.lvltag.Practice{background:#e8ebf8;color:#3b4fa8}.lvltag.Challenge{background:#f8e7ef;color:#a3376a}
+.q .prompt{margin:.3rem 0 .6rem}
+.q.done-3{border-color:#9ed1ae}.q.done-2,.q.done-1{border-color:#e7c98d}.q.done-0{border-color:#e5a69e}
+.opts{display:grid;gap:.4rem}
+.opt{text-align:left;border:1px solid var(--line);background:#fbfaff;border-radius:10px;padding:.45rem .7rem;font:inherit;cursor:pointer;color:var(--ink)}
+.opt:hover:not(:disabled){border-color:var(--ink)}
+.opt.wrong{background:var(--bad-soft);border-color:#e5a69e}
+.opt.right{background:var(--good-soft);border-color:#9ed1ae}
+.opt:disabled{cursor:default}
+.ansrow{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
+.ansrow input{font:inherit;padding:.35rem .6rem;border:1px solid #c9c3d6;border-radius:8px;width:190px}
+.preview{min-height:1.8rem;color:var(--muted);font-size:1rem;margin-top:.2rem}
+.fmt{font-size:.9rem;color:var(--muted);margin-top:.2rem}
+.dots{display:inline-flex;gap:4px;margin-left:.2rem;vertical-align:middle}
+.dots i{width:10px;height:10px;border-radius:50%;border:1.5px solid var(--grey);display:inline-block}
+.dots i.x{background:var(--bad);border-color:var(--bad)}
+.dots i.ok{background:var(--good);border-color:var(--good)}
+.fb{margin-top:.5rem;font-size:1rem}
+.fb.ok{color:var(--good)}.fb.no{color:var(--bad)}.fb.info{color:#8a5a0c}
+.hint{background:var(--warn-soft);border-radius:10px;padding:.5rem .7rem;margin-top:.5rem;font-size:1rem}
+.sol{background:#eef0fa;border-radius:10px;padding:.55rem .8rem;margin-top:.55rem;font-size:1rem}
+.gb-sec .sol{background:#faeef4}
+.next{display:flex;justify-content:flex-end;margin-top:2rem}
+.hero{padding:1.2rem 0 .4rem}
+.hero h1{font-size:2.1rem;margin:.2rem 0}
+.hero p{color:var(--muted);max-width:640px}
+.route{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.6rem;margin:1rem 0}
+.stop{background:#fff;border:1px solid var(--line);border-radius:12px;padding:.65rem .8rem;cursor:pointer;text-align:left;font:inherit;color:var(--ink)}
+.stop:hover{border-color:var(--ink)}
+.stop .n{font-size:.75rem;font-weight:700;letter-spacing:.08em;color:var(--a)}
+.stop.gb .n{color:var(--b)}.stop.rv .n{color:#6b5ca5}
+.stop .tt{font-weight:600;display:block}
+.stop .mm{font-size:.86rem;color:var(--muted)}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;margin:.6rem 0}
+.flow div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:.5rem .6rem;font-size:.95rem}
+.flow b{display:block;font-size:.95rem}
+@media(max-width:640px){.flow{grid-template-columns:1fr 1fr}.hero h1{font-size:1.6rem}}
+/* report */
+.rbar{margin:.45rem 0}
+.rbar .lab{display:flex;justify-content:space-between;font-size:.9rem;gap:.5rem}
+.rbar .tr{height:10px;background:#e9e6f0;border-radius:6px;overflow:hidden}
+.rbar .tr i{display:block;height:100%}
+.skill{display:flex;justify-content:space-between;gap:.6rem;padding:.35rem 0;border-bottom:1px solid #eeebf3;font-size:1rem}
+.lvl{font-size:.78rem;border-radius:999px;padding:.05rem .55rem;white-space:nowrap;align-self:center}
+.lvl.g{background:var(--good-soft);color:var(--good)}.lvl.a{background:var(--warn-soft);color:#8a5a0c}.lvl.r{background:var(--bad-soft);color:var(--bad)}.lvl.n{background:#eee;color:#777}
+.score{font-family:Georgia,serif;font-size:2.4rem;text-align:center;margin:.3rem 0}
+.legend{display:flex;flex-wrap:wrap;gap:.4rem 1rem;font-size:.9rem;justify-content:center;margin-top:.4rem}
+.legend span{display:inline-flex;align-items:center;gap:.35rem}
+.legend i{width:12px;height:12px;border-radius:50%;display:inline-block}
+.adv{border-left:4px solid var(--warn);padding:.3rem .8rem;margin:.6rem 0;background:#fff;border-radius:0 10px 10px 0}
+.small{font-size:.92rem;color:var(--muted)}
+/* widgets */
+.chain{display:flex;flex-wrap:wrap;gap:.35rem;align-items:center;margin:.4rem 0}
+.chain span.op{background:var(--a-soft);color:var(--a);border-radius:8px;padding:.15rem .5rem;font-weight:700;font-size:.9rem}
+.chain span.ar{color:var(--muted)}
+.flowbox{display:flex;flex-wrap:wrap;align-items:center;gap:.3rem;margin:.35rem 0}
+.flowbox .fbx{border:1.5px solid var(--ink);border-radius:8px;padding:.15rem .5rem;background:#fff;min-width:38px;text-align:center}
+.flowbox .fop{border-radius:999px;padding:.12rem .55rem;font-weight:700;font-size:.88rem}
+.flowbox.fwd .fop{background:var(--a-soft);color:var(--a)}
+.flowbox.back .fop{background:var(--b-soft);color:var(--b)}
+.flowbox .arr{color:var(--muted)}
+.tiles{display:flex;flex-wrap:wrap;gap:4px;align-items:center;margin:.25rem 0}
+.tile{min-width:30px;height:30px;padding:0 .35rem;border-radius:7px;border:1.5px solid #c9c5d8;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:.92rem}
+.tile.common{background:var(--a);border-color:var(--a);color:#fff}
+.tile.sign{border:none;background:none;min-width:12px}
+.factor-row{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin:.35rem 0}
+.factor-row .lab{min-width:70px;font-weight:600}
+.log{font-size:.9rem;color:var(--muted);margin:.4rem 0 0;padding-left:1.2rem}
+.fig{position:relative;margin:.5rem 0}
+.fig .lb{position:absolute;transform:translate(-50%,-50%);background:rgba(255,255,255,.85);padding:0 3px;white-space:nowrap;font-size:.95rem}
+.katex{font-size:1.04em}
+.katex-display{overflow-x:auto;overflow-y:hidden;padding:.15rem 0}
+.credit{text-align:center;color:var(--muted);font-size:.86rem;padding:1rem 0 2rem}
+
+/* number part A */
+#w2r table.t{font-size:.95rem}#w2r table.t th,#w2r table.t td{padding:.3rem .4rem;line-height:1.25}
+.itbl{border-collapse:collapse;margin:.5rem 0;font-size:1.05rem}
+.itbl th,.itbl td{border:1px solid var(--line);padding:.4rem .55rem;text-align:center;vertical-align:middle}
+.itbl th{background:#efedf5;font-weight:600;font-size:.9rem;line-height:1.25}
+.itbl tr.oprow td{border:none;background:none;color:var(--b);font-weight:700;padding:.05rem .3rem;font-size:.95rem;line-height:1.3}
+.itbl td input{font:inherit;width:84px;padding:.25rem .4rem;border:1px solid #c9c3d6;border-radius:7px;text-align:center}
+.itbl td{min-width:64px}.itbl .katex{font-size:1.1em}
+.itbl td.okc{background:var(--good-soft)}.itbl td.noc{background:var(--bad-soft)}
+.itbl tr.new td{animation:fade .35s ease}
+.divbtn{border:1.5px solid var(--b);color:var(--b);background:#fff;border-radius:999px;padding:.15rem .6rem;font:inherit;font-weight:700;cursor:pointer;white-space:nowrap}
+.divbtn:hover{background:var(--b-soft)}
+.note{background:var(--good-soft);border-radius:10px;padding:.55rem .8rem;margin:.5rem 0}
+.tree svg{max-width:100%}
+.tree .nd{cursor:pointer}
+.pairs{display:flex;flex-wrap:wrap;gap:.35rem;margin:.4rem 0}
+.tileb{min-width:34px;height:34px;padding:0 .3rem;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:1rem;border:2px solid #3b4fa8;background:#e8ebf8;color:#3b4fa8;position:relative}
+.tileb.p{border-color:#b5487a;background:#f8e7ef;color:#b5487a}
+.tileb.x{opacity:.45}
+.tileb.x::after{content:"";position:absolute;left:-3px;right:-3px;top:50%;border-top:2.5px solid #c0392b;transform:rotate(-35deg)}
+.trow{display:flex;flex-wrap:wrap;gap:5px;align-items:center;margin:.3rem 0}
+.grpb{display:inline-flex;gap:4px;padding:4px;border:2px dashed #b9b3c9;border-radius:10px}
+.fracbox{display:inline-flex;flex-direction:column;align-items:flex-start;gap:6px}
+.fracbox .barl{border-top:2.5px solid #1c2230;align-self:stretch}
+.pyr{display:flex;flex-direction:column;align-items:center;gap:6px;margin:.5rem 0}
+.pyr div{display:flex;gap:6px}
+.pyr span{min-width:58px;height:40px;border:1.5px solid #1c2230;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;font-weight:600;background:#fff}
+.pyr span.q{background:#f1eff6;color:#7a6f8c}
+
+/* sample: friendly style */
+.hook{background:linear-gradient(135deg,#fff7e6,#eef3ff);border:none;border-radius:18px;padding:1.2rem 1.2rem 1rem}
+.hook .big{font-family:Georgia,serif;font-size:1.35rem;font-weight:600;margin:.1rem 0 .5rem}
+.hookfig{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin:.7rem 0}
+.hookfig .num{font-family:Georgia,serif;font-size:2.2rem;font-weight:700}
+.hookfig .eq{font-size:1.6rem;color:var(--muted)}
+.brick{--c:#6b5ca5;display:inline-flex;align-items:center;justify-content:center;min-width:46px;height:40px;padding:0 .45rem;border-radius:7px;background:var(--c);color:#fff;font-weight:800;font-size:1.2rem;position:relative;margin:10px 3px 0;box-shadow:inset 0 -5px rgba(0,0,0,.18)}
+.brick::before{content:"";position:absolute;top:-8px;left:7px;right:7px;height:9px;background:radial-gradient(circle at 22% 100%,var(--c) 5px,transparent 5.6px),radial-gradient(circle at 78% 100%,var(--c) 5px,transparent 5.6px)}
+.brick.sm{min-width:36px;height:32px;font-size:1rem;margin:8px 2px 0}
+.tray{display:flex;flex-wrap:wrap;align-items:flex-end;gap:2px;min-height:48px}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin:.6rem 0}
+.chip{min-width:56px;height:50px;border-radius:12px;border:2px solid #c9c5d8;background:#fff;font:inherit;font-size:1.3rem;font-weight:700;cursor:pointer;color:var(--ink)}
+.chip.yes{border-color:#2f9e5b;background:#e5f4ea;color:#2f7a46}
+.chip.no{border-color:#e5a69e;background:#fbe5e2;color:#c0392b;animation:shake .3s}
+@keyframes shake{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+.tutor{border:2px solid #3b4fa8;border-radius:18px;background:#fff;padding:1rem}
+.tutor .who{font-size:.85rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#3b4fa8}
+.tq{font-size:1.15rem;margin:.6rem 0 .4rem}
+.tbtns{display:flex;flex-wrap:wrap;gap:.5rem;margin:.3rem 0}
+.tbtns .btn{font-size:1.05rem;padding:.45rem .9rem;border-radius:10px}
+.tfb{border-radius:10px;padding:.45rem .7rem;margin:.4rem 0;font-size:1.02rem}
+.tfb.ok{background:var(--good-soft);color:#24683b}.tfb.no{background:var(--warn-soft);color:#7a4e0a}
+.wow{background:#fdf3ff;border:2px dashed #b5487a;border-radius:18px}
+.wow .box-title{color:#b5487a}
+.shortcut{background:#1c2230;color:#fff;border-radius:16px;padding:1rem 1.1rem}
+.shortcut .box-title{color:#ffd27a}
+.shortcut .katex{color:#fff}
+details.pad{background:#f1eff6;border-radius:12px;padding:.5rem .9rem;margin:1rem 0}
+details.pad summary{cursor:pointer;font-weight:600}
+.tries{margin:.5rem 0;padding-left:0;list-style:none}
+.tries li{display:flex;align-items:flex-end;gap:.5rem;flex-wrap:wrap;margin:.2rem 0}
+.tries li span.l{font-size:.95rem;color:var(--muted);min-width:100px}
+.zones{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin:.6rem 0}
+.zone{border-radius:14px;min-height:96px;padding:.4rem .3rem;text-align:center}
+.zone .zl{font-size:.82rem;font-weight:700;line-height:1.2}
+.zone .tray{justify-content:center}
+.zone.l{background:#e8ebf8;color:#3b4fa8}.zone.m{background:#efe4f3;color:#6b3a87}.zone.r{background:#f8e7ef;color:#b5487a}
+.brow{display:flex;align-items:flex-end;gap:.4rem;flex-wrap:wrap;margin:.2rem 0}
+.brow .lab{font-weight:700;min-width:44px;font-family:Georgia,serif;font-size:1.25rem}
+.brow button.brick{border:none;cursor:pointer;font-family:inherit}
+.brow button.brick:disabled{opacity:.2;cursor:default}
+.steps-dots{display:flex;gap:5px;margin:.2rem 0 .4rem}
+.steps-dots i{width:22px;height:6px;border-radius:3px;background:#dcd8e6}
+.steps-dots i.on{background:#3b4fa8}
+.nest{border:2.5px solid #6b5ca5;border-radius:16px;padding:.5rem;background:#f6f3fb}
+.nest .nest{border-color:#3b4fa8;background:#eef1fb;margin-top:.4rem}
+.nest .nest .nest{border-color:#2f9e5b;background:#eaf6ee}
+.nest .nl{font-size:.85rem;font-weight:700}
+.nest .tray{min-height:40px;gap:6px}
+.ncard{display:inline-flex;align-items:center;justify-content:center;min-width:48px;height:38px;border-radius:10px;background:#fff;border:2px solid #1c2230;font-weight:700;font-size:1.1rem;padding:0 .4rem}
+.cotbl td,.cotbl th{padding:.3rem .45rem}
+.cotbl td.eq{background:var(--good-soft);font-weight:700}
+.pbar{display:flex;height:40px;border:2px solid #1c2230;border-radius:8px;overflow:hidden;max-width:360px;margin:.3rem 0}
+.pbar i{flex:1;border-right:1.5px solid #1c2230;background:#fff;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-style:normal;color:#5b6475}.pbar i:last-child{border-right:none}
+.pbar i.on{background:#7fb3e6;color:#1c2230}.pbar i.ex{background:#f3b3cd;color:#1c2230}.pbar i.off{background:#eee;text-decoration:line-through}
+.bm{display:flex;flex-wrap:wrap;gap:4px;margin:.3rem 0}.bm .row{display:flex;align-items:center;gap:.5rem;width:100%}
+.bm .row b{min-width:58px;font-size:.95rem}.bm .box{width:38px;height:32px;border:2px solid #1c2230;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:.82rem;font-weight:700}
+.g100{display:grid;gap:2px;margin:.4rem 0}.g100 i{width:14px;height:14px;background:#e8e6ef;border-radius:2px}.g100 i.on{background:#3b4fa8}
+.bgrp.take{border-color:#e8902a;border-style:solid}
+.scards{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin:.4rem 0}
+.scard{border:2px solid #cfd3e4;border-radius:12px;padding:.4rem .5rem;text-align:center;background:#fff}.scard b{display:block;font-size:1.15rem}
+.scard.done{border-color:#2f8a4c;background:#e5f4ea}
+.sub{border-left:5px solid #3b4fa8;padding-left:.7rem;margin:1.6rem 0 .6rem}.sub .n{font-size:.8rem;font-weight:800;letter-spacing:.06em;color:#3b4fa8}.sub h3{margin:.1rem 0}
+details.secret{background:linear-gradient(135deg,#2b2350,#4b3a8a);color:#fff;border-radius:18px;padding:.8rem 1rem;margin:1.6rem 0}
+details.secret>summary{cursor:pointer;font-weight:800;font-size:1.15rem;list-style:none}details.secret>summary::-webkit-details-marker{display:none}
+details.secret[open]{background:#f4f1ff;color:inherit;border:3px solid #4b3a8a}details.secret[open]>summary{color:#4b3a8a}
+.bead{display:inline-block;width:20px;height:20px;border-radius:50%;margin:2px}.bgrp{display:inline-flex;flex-wrap:wrap;border:2px dashed #9aa1ad;border-radius:12px;padding:3px;margin:3px;max-width:140px}
+.tins{display:flex;flex-wrap:wrap;gap:4px;align-items:center}.tin{width:26px;height:32px;border:2px solid #1c2230;border-radius:4px 4px 6px 6px}
+.swatch{width:70px;height:70px;border-radius:14px;border:2px solid #1c2230;flex:none}
+.fbar{display:flex;height:30px;border:2px solid #1c2230;border-radius:6px;overflow:hidden;max-width:340px;margin:.25rem 0}
+.fbar i{flex:1;border-right:1.5px solid #1c2230;background:#fff}.fbar i:last-child{border-right:none}
+.fbar i.on{background:#7fb3e6}.fbar i.on2{background:#f3b3cd}.fbar i.on3{background:#ffd27a}
+.fbrow{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}.fbrow .lab{min-width:58px;font-weight:700;font-size:1.05rem}
+.fbrow .fbar{flex:1;min-width:180px}
+.divm{font-family:Georgia,serif;font-size:1.2rem;line-height:1.6}
+.divm .rem{display:inline-flex;align-items:center;justify-content:center;min-width:30px;height:30px;border-radius:50%;border:2px solid #3b4fa8;margin:2px;font-weight:700;font-family:inherit;font-size:1rem}
+.divm .rem.rep{border-color:#c0392b;background:#fbe5e2;color:#c0392b}
+.divm .rem.zero{border-color:#2f8a4c;background:#e5f4ea;color:#2f8a4c}
+.dchips{display:flex;flex-wrap:wrap;gap:6px;margin:.4rem 0}
+.dchips button{min-width:56px;padding:.35rem .5rem;border-radius:10px;border:2px solid #cfd3e4;background:#fff;font:inherit;font-size:1rem;cursor:pointer}
+.dchips button.stop{border-color:#2f8a4c;background:#e5f4ea}.dchips button.rep{border-color:#c0392b;background:#fbe5e2}
+.dchips button .katex{font-size:1.3em}.sort2 .katex{font-size:1.2em}
+.dchips button small{display:block;font-size:.78rem;color:#5b6475}
+.sort2{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin:.5rem 0}
+.sort2>div{border-radius:12px;padding:.5rem .6rem;min-height:60px}
+.sort2 .s{background:#e5f4ea}.sort2 .r{background:#fbe5e2}
+.sort2 b{display:block;font-size:.9rem;margin-bottom:.2rem}
+.pies{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:.3rem 0}
+.strip3{display:flex;flex-wrap:wrap;gap:8px}.strip3 span{display:flex;width:96px;height:34px;border:2px solid #1c2230;border-radius:6px;overflow:hidden}
+.strip3 i{flex:1;border-right:1.5px solid #1c2230;background:#fff}.strip3 i:last-child{border-right:none}
+.fcard{display:inline-flex;align-items:center;justify-content:center;min-width:66px;min-height:58px;padding:.2rem .5rem;border-radius:12px;border:2px solid #cfd3e4;background:#fff;font-size:1.15rem;cursor:pointer;font:inherit}
+.fcard.sel{border-color:#3b4fa8;background:#e8ebf8}.fcard.used{opacity:.35;cursor:default}
+.fcards{display:flex;flex-wrap:wrap;gap:8px;margin:.4rem 0}
+.printonly{display:none}
+@media print{
+  @page{size:A4;margin:12mm}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{background:#fff!important}
+  header.top,nav.tabs,.noprint,.next,section.tab:not(#tab-report){display:none!important}
+  section#tab-report{display:block!important;animation:none!important}
+  main{padding:0!important;max-width:none!important}
+  .printonly{display:block}
+  .rephead{border:2px solid #1c2230}
+  .skill,.rbar,.adv,.rephead,#kmap,.score{break-inside:avoid;page-break-inside:avoid}
+  #kmap svg{max-height:240mm}
+}
+</style>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%20role%3D%22img%22%20aria-label%3D%22%E7%94%B3%20Shen%20Studio%22%3E%3Crect%20width%3D%22100%22%20height%3D%22100%22%20rx%3D%2212%22%20fill%3D%22%23B3261E%22/%3E%3Cpath%20d%3D%22M41.57%2027.7V42.46H27.58V27.7ZM15.1%2025.34V70.78H16.95C22.18%2070.78%2027.58%2067.91%2027.58%2066.65V62.18H41.57V90H44.01C48.82%2090%2054.3%2086.88%2054.3%2085.62V62.18H68.97V68.93H71.07C75.37%2068.93%2081.53%2066.65%2081.61%2065.89V29.64C83.38%2029.3%2084.39%2028.55%2084.9%2027.87L73.69%2019.19L68.12%2025.34H54.3V13.96C56.74%2013.62%2057.33%2012.7%2057.5%2011.52L41.57%2010V25.34H28.42L15.1%2020.2ZM54.3%2027.7H68.97V42.46H54.3ZM41.57%2059.82H27.58V44.82H41.57ZM54.3%2059.82V44.82H68.97V59.82Z%22%20fill%3D%22%23FFFFFF%22/%3E%3C/svg%3E">
+<style id="shen-brand">
+.shen-footer{display:flex;align-items:center;justify-content:center;gap:8px;padding:18px 12px 26px;font:500 13px/1.3 Inter,"Helvetica Neue",Arial,sans-serif;color:#6B6458;letter-spacing:.03em;text-align:center}
+.shen-footer svg{width:20px;height:20px;flex-shrink:0}
+.shen-footer b{font-weight:600;color:#1A1A1A}
+.shen-print-mark{display:none}
+@media print{.shen-footer{display:none!important}
+.shen-print-mark{display:flex!important;position:fixed;right:0;bottom:0;align-items:center;gap:1.5mm;font:500 7.5pt/1 Inter,Arial,sans-serif;color:#555;opacity:.75;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.shen-print-mark svg{width:4mm;height:4mm}}
+</style>
+<style id="home-link">
+.homebtn{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 12px;border:1px solid var(--line,#ddd);border-radius:999px;background:#fff;color:var(--ink,#1c2230);text-decoration:none;font:600 .88rem/1 Inter,system-ui,sans-serif;white-space:nowrap;flex-shrink:0}
+.homebtn:hover{background:#f1eff6}
+.homebtn svg{width:16px;height:16px}
+@media print{.homebtn{display:none!important}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="topin">
+    <a class="homebtn" href="../index.html" aria-label="Back to the Maths Atlas home page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>Home</a>
+    <div class="brand">Year 8 Number · Part D<small>Percentages and ratio</small></div>
+    <div class="prog"><span id="progtxt"></span><div class="bar"><i id="progbar"></i></div></div>
+  </div>
+  <nav class="tabs" id="tabs"></nav>
+</header>
+
+<main>
+<!-- ================= START ================= -->
+<section class="tab" id="tab-start">
+  <div class="hero">
+    <div class="kicker">Cambridge · Year 8 · Number revision</div>
+    <h1>Percentages and ratio</h1>
+    <p>Six missions: parts of an amount, multipliers, percentage change, simplifying ratios, sharing fairly and comparing mixes. Look out for the secret level in D1! Each mission starts with a puzzle, then we work through it together, then it's your turn.</p>
+  </div>
+  <div class="card">
+    <div class="box-title">Typing answers</div>
+    <p>Numbers: <code>156</code> or <code>62.5</code> (you can leave out $ and %). Ratios: <code>2:3:4</code>. Lists: separate with commas, e.g. <code>36, 9, 27</code>. A preview shows what you typed.</p>
+  </div>
+  <div class="route" id="route"></div>
+  <div class="card">
+    <div class="box-title">Points</div>
+    <p>Right first try: 3 points. Second try: 2. Third try: 1. Stuck twice? A hint appears.</p>
+    <p class="small">Your progress is saved on this device. <button class="btn small" id="resetBtn" type="button">Start again</button></p>
+  </div>
+  <div class="next"><button class="btn primary" data-go="d1">Start Mission D1 →</button></div>
+</section>
+
+<!-- ================= D1 ================= -->
+<section class="tab" id="tab-d1">
+  <div class="kicker">Mission D1</div>
+  <h2>Fractions and percentages of an amount</h2>
+  <div class="card hook">
+    <div class="big">A bag of 20 sweets.</div>
+    <p>Would you rather have $\dfrac34$ of the bag, or $70\%$ of the bag? By the end of this mission you'll know, and you'll know <b>why</b>.</p>
+  </div>
+
+  <div class="sub"><div class="n">PART A</div><h3>A fraction of an amount</h3></div>
+  <div class="tutor"><div class="who">Let's do it together</div><div id="t1abody"></div></div>
+  <details class="pad"><summary>Play: the “of” machine</summary>
+    <div class="ctrl"><label>Fraction <select id="ofF"><option>1/2</option><option>1/3</option><option>2/3</option><option>1/4</option><option selected>3/4</option><option>2/5</option><option>3/5</option><option>3/8</option><option>5/6</option></select></label>
+      <label>Amount <input type="range" id="ofN" min="4" max="60" step="4" value="20"> <b id="ofNv"></b></label></div>
+    <div id="ofvis"></div>
+    <div class="readout" id="ofr"></div>
+  </details>
+  <div class="shortcut card">
+    <div class="box-title">Shortcut card</div>
+    <p><b>“Of” means ×.</b> $\dfrac34$ of $20=\dfrac34\times20$: divide by the bottom ($20\div4=5$), multiply by the top ($5\times3=15$).</p>
+  </div>
+  <div class="qs" data-part="d1" data-ids="d1a,d1b"></div>
+
+  <div class="sub"><div class="n">PART B</div><h3>A percentage of an amount</h3></div>
+  <div class="tutor"><div class="who">Let's do it together</div><div id="t1bbody"></div></div>
+  <details class="pad"><summary>Play: the 10% blocks</summary>
+    <div class="ctrl"><label>Amount <input type="text" id="pa" value="120" size="6"></label>
+      <label>Percent <input type="range" id="pp" min="10" max="100" step="10" value="30"> <b id="ppv"></b></label></div>
+    <div id="pvis"></div>
+    <div class="readout" id="pr"></div>
+  </details>
+  <div class="shortcut card">
+    <div class="box-title">Shortcut card</div>
+    <p>$30\%=\dfrac{30}{100}=0.3$, and “of” means ×: $30\%$ of $120=120\times0.3=36$.</p>
+    <p>No calculator? $10\%$ is one block ($\div10$). $5\%$ is half a block.</p>
+  </div>
+  <div class="qs" data-part="d1" data-ids="d1c,d1d,d1e"></div>
+
+  <div class="sub"><div class="n">PART C</div><h3>One amount as a percentage of another</h3></div>
+  <div class="tutor"><div class="who">Let's do it together</div><div id="t1cbody"></div></div>
+  <details class="pad"><summary>Play: the score converter</summary>
+    <div class="ctrl"><label>I got <input type="text" id="scp" value="18" size="4"></label><label>out of <input type="text" id="scw" value="25" size="4"></label></div>
+    <div id="scvis"></div>
+    <div class="readout" id="scr"></div>
+  </details>
+  <div class="shortcut card">
+    <div class="box-title">Shortcut card</div>
+    <p>Part as a percentage of whole: $\dfrac{\text{part}}{\text{whole}}$, then make it out of 100, or do part $\div$ whole $\times100$.</p>
+  </div>
+  <div class="qs" data-part="d1" data-ids="d1f,d1g,d1h"></div>
+
+  <details class="secret"><summary>🔒 Secret level: run it backwards (tap to unlock)</summary>
+    <p>So far we went <b>forwards</b>: number → percentage of it. Can you go <b>backwards</b>? If $30\%$ of a number is $36$, what is the number?</p>
+    <div class="tutor"><div class="who">Three ways to crack it</div><div id="t1xbody"></div></div>
+    <div class="shortcut card">
+      <div class="box-title">Shortcut card</div>
+      <p>Way 1 · blocks: $30\%=36$ → $10\%=12$ → $100\%=120$.</p>
+      <p>Way 2 · undo: forwards was $\times0.3$, so backwards is $\div0.3$: $36\div0.3=120$.</p>
+      <p>Way 3 · check forwards: $30\%$ of $120=36$ ✓. After an increase, the new amount is more than $100\%$ (e.g. $120\%$)!</p>
+    </div>
+    <div class="qs" data-part="dx"></div>
+  </details>
+  <div class="next"><button class="btn primary" data-go="d2">Next mission: multipliers →</button></div>
+</section>
+
+<!-- ================= D2 ================= -->
+<section class="tab" id="tab-d2">
+  <div class="kicker">Mission D2</div>
+  <h2>Increase, decrease and multipliers</h2>
+  <div class="card hook">
+    <div class="big">One button does it all.</div>
+    <p>Prices go up $30\%$. You could find $30\%$ and add it on: two steps. Or press <b>× 1.3</b>: one step. Where does $1.3$ come from?</p>
+  </div>
+  <div class="sub"><div class="n">PART A</div><h3>Going up</h3></div>
+  <div class="tutor"><div class="who">Let's do it together</div><div id="t2abody"></div></div>
+  <div class="sub"><div class="n">PART B</div><h3>Going down</h3></div>
+  <div class="tutor"><div class="who">Let's do it together</div><div id="t2bbody"></div></div>
+  <details class="pad"><summary>Play: the multiplier machine</summary>
+    <div class="ctrl"><label><select id="mdir"><option value="up">up</option><option value="down">down</option></select> <input type="range" id="mp" min="10" max="90" step="10" value="30"> <b id="mpv"></b></label></div>
+    <div id="mvis"></div>
+    <div class="readout" id="mres"></div>
+  </details>
+  <div class="card">
+    <div class="box-title">Game: grow or shrink?</div>
+    <div class="scards" id="sortc"></div>
+    <div class="readout" id="sortr"></div>
+  </div>
+  <div class="sub"><div class="n">PART C</div><h3>Two changes in a row</h3></div>
+  <div class="tutor"><div class="who">Let's do it together</div><div id="t2cbody"></div></div>
+  <details class="pad"><summary>Play: two changes in a row</summary>
+    <div class="ctrl"><label><select id="m1s"><option value="up">up</option><option value="down">down</option></select> <input type="range" id="m1" min="5" max="90" step="5" value="10"> <b id="m1v"></b></label></div>
+    <div class="ctrl"><label>then <select id="m2s"><option value="up">up</option><option value="down">down</option></select> <input type="range" id="m2" min="5" max="90" step="5" value="50"> <b id="m2v"></b></label></div>
+    <div class="readout" id="mr"></div>
+  </details>
+  <div class="shortcut card">
+    <div class="box-title">Shortcut card</div>
+    <p>Up $x\%$: $100\%+x\%$, e.g. up $5\%$ → $\times1.05$. Down $x\%$: $100\%-x\%$, e.g. down $30\%$ → $\times0.7$.</p>
+    <p>Bigger than 1 grows, smaller than 1 shrinks. Two changes: multiply the multipliers.</p>
+  </div>
+  <div class="qhead"><h3>Your turn</h3><span>8 questions</span></div>
+  <div class="qs" data-part="d2"></div>
+  <div class="next"><button class="btn primary" data-go="d3">Next mission: percentage change →</button></div>
+</section>
+
+<!-- ================= D3 ================= -->
+<section class="tab" id="tab-d3">
+  <div class="kicker">Mission D3</div>
+  <h2>Percentage change</h2>
+  <div class="card hook">
+    <div class="big">Both went up by <span>$</span>30. Which is the bigger rise?</div>
+    <p>A jacket: <span>$</span>245 → <span>$</span>275. A hat: <span>$</span>42 → <span>$</span>72. Same dollars, but the <b>percentage</b> tells a different story.</p>
+  </div>
+  <div class="sub"><div class="n">WAY 1</div><h3>The change as a percentage of the original</h3></div>
+  <div class="tutor"><div class="who">Let's do it together</div><div id="t3abody"></div></div>
+  <div class="sub"><div class="n">WAY 2</div><h3>New ÷ old gives the multiplier</h3></div>
+  <div class="tutor"><div class="who">Let's do it together</div><div id="t3bbody"></div></div>
+  <details class="pad"><summary>Play: the change explorer</summary>
+    <div class="ctrl"><label>Original <input type="range" id="co" min="20" max="100" step="10" value="40"> <b id="cov"></b></label>
+      <label>New <input type="range" id="cn" min="10" max="150" step="10" value="50"> <b id="cnv"></b></label></div>
+    <div id="cvis"></div>
+    <div class="readout" id="cres"></div>
+  </details>
+  <div class="shortcut card">
+    <div class="box-title">Shortcut card</div>
+    <p>Way 1: $\dfrac{\text{change}}{\text{original}}\times100$. Way 2: new $\div$ old $=$ multiplier, e.g. $1.25$ → up $25\%$.</p>
+    <p>Always compare with the <b>original</b>: it is the $100\%$.</p>
+  </div>
+  <div class="qhead"><h3>Your turn</h3><span>7 questions</span></div>
+  <div class="qs" data-part="d3"></div>
+  <div class="next"><button class="btn primary" data-go="d4">Next mission: ratios →</button></div>
+</section>
+
+<!-- ================= D4 ================= -->
+<section class="tab gb-sec" id="tab-d4">
+  <div class="kicker">Mission D4</div>
+  <h2>Simplifying ratios</h2>
+  <div class="card hook">
+    <div class="big">8 blue beads, 12 orange beads.</div>
+    <p>Can you make identical bracelets with nothing left over? A <b>ratio</b> like $8:12$ compares the amounts. Simplifying it shows one bracelet.</p>
+  </div>
+  <div class="tutor" id="t4">
+    <div class="who">Let's do it together</div>
+    <div id="t4body"></div>
+  </div>
+  <details class="pad"><summary>Play: the bead grouper</summary>
+    <div class="ctrl"><label>Blue <input type="text" id="ra" value="12" size="3"></label><label>Orange <input type="text" id="rb" value="18" size="3"></label></div>
+    <div id="rvis"></div>
+    <div class="readout" id="rr"></div>
+  </details>
+  <div class="shortcut card">
+    <div class="box-title">Shortcut card</div>
+    <p>Divide every part by the same number until you can't any more: $8:12:16=2:3:4$.</p>
+    <p>Units? Make them the same first. Decimals? $\times10$ first.</p>
+  </div>
+  <div class="qhead"><h3>Your turn</h3><span>8 questions</span></div>
+  <div class="qs" data-part="d4"></div>
+  <div class="next"><button class="btn primary" data-go="d5">Next mission: sharing →</button></div>
+</section>
+
+<!-- ================= D5 ================= -->
+<section class="tab gb-sec" id="tab-d5">
+  <div class="kicker">Mission D5</div>
+  <h2>Sharing in a ratio</h2>
+  <div class="card hook">
+    <div class="big">Three friends, <span>$</span>72, ratio 4 : 1 : 3.</div>
+    <p>Ali worked 4 days, Bob 1 day, Carl 3 days. Sharing equally isn't fair. Let's share it in the ratio, using <b>boxes</b>.</p>
+  </div>
+  <div class="tutor" id="t5">
+    <div class="who">Let's do it together</div>
+    <div id="t5body"></div>
+  </div>
+  <details class="pad"><summary>Play: the box sharer</summary>
+    <div class="ctrl"><label>Amount <input type="text" id="st" value="72" size="5"></label><label>Ratio <input type="text" id="sr" value="4:1:3" size="7"></label></div>
+    <div id="svis"></div>
+    <div class="readout" id="sres"></div>
+  </details>
+  <div class="shortcut card">
+    <div class="box-title">Shortcut card</div>
+    <p>1. Add the parts. 2. One part $=$ total $\div$ parts. 3. Multiply. 4. Check the shares add up.</p>
+  </div>
+  <div class="qhead"><h3>Your turn</h3><span>8 questions</span></div>
+  <div class="qs" data-part="d5"></div>
+  <div class="next"><button class="btn primary" data-go="d6">Next mission: comparing →</button></div>
+</section>
+
+<!-- ================= D6 ================= -->
+<section class="tab gb-sec" id="tab-d6">
+  <div class="kicker">Mission D6</div>
+  <h2>Comparing with ratios</h2>
+  <div class="card hook">
+    <div class="big">Whose paint is darker?</div>
+    <p>Harry mixes 2 white with 8 black. Misha mixes 3 white with 9 black. Misha used more black… but is his paint darker?</p>
+  </div>
+  <div class="tutor" id="t6">
+    <div class="who">Let's do it together</div>
+    <div id="t6body"></div>
+  </div>
+  <details class="pad"><summary>Play: the paint mixer</summary>
+    <div class="ctrl"><label>White tins <input type="range" id="pw" min="1" max="8" value="2"> <b id="pwv"></b></label><label>Red tins <input type="range" id="pc" min="1" max="12" value="6"> <b id="pcv"></b></label></div>
+    <div id="pvis2"></div>
+    <div class="readout" id="pres"></div>
+  </details>
+  <div class="shortcut card">
+    <div class="box-title">Shortcut card</div>
+    <p>Compare mixes: change both to $1:n$.</p>
+    <p>Fraction: in $2:3$ there are $5$ parts, so $\dfrac25$ and $\dfrac35$.</p>
+    <p>Best value: find the size or price of <b>one</b>.</p>
+  </div>
+  <div class="qhead"><h3>Your turn</h3><span>7 questions</span></div>
+  <div class="qs" data-part="d6"></div>
+  <div class="next"><button class="btn primary" data-go="rv">Boss review →</button></div>
+</section>
+<!-- ================= REVIEW ================= -->
+<section class="tab" id="tab-rv">
+  <div class="kicker" style="color:#6b5ca5">Boss review</div>
+  <h2>One from each mission</h2>
+  <p>Mixed up! First decide which mission's trick you need.</p>
+  <div class="qs" data-part="rv"></div>
+  <div class="next"><button class="btn primary" data-go="report">See my report →</button></div>
+</section>
+
+<!-- ================= REPORT ================= -->
+<section class="tab" id="tab-report">
+  <div class="kicker">My report</div>
+  <h2>How did your missions go?</h2>
+  <div id="report"></div>
+</section>
+</main>
+</main>
+<footer class="shen-footer"><svg viewBox="0 0 100 100" role="img" aria-label="申 Shen Studio"><rect width="100" height="100" rx="12" fill="#B3261E"/><path d="M41.57 27.7V42.46H27.58V27.7ZM15.1 25.34V70.78H16.95C22.18 70.78 27.58 67.91 27.58 66.65V62.18H41.57V90H44.01C48.82 90 54.3 86.88 54.3 85.62V62.18H68.97V68.93H71.07C75.37 68.93 81.53 66.65 81.61 65.89V29.64C83.38 29.3 84.39 28.55 84.9 27.87L73.69 19.19L68.12 25.34H54.3V13.96C56.74 13.62 57.33 12.7 57.5 11.52L41.57 10V25.34H28.42L15.1 20.2ZM54.3 27.7H68.97V42.46H54.3ZM41.57 59.82H27.58V44.82H41.57ZM54.3 59.82V44.82H68.97V59.82Z" fill="#FFFFFF"/></svg><span><b>Shen Studio</b> · Designed by Mr. Shen</span></footer>
+<div class="shen-print-mark" aria-hidden="true"><svg viewBox="0 0 100 100" role="img" aria-label="申 Shen Studio"><rect width="100" height="100" rx="12" fill="#B3261E"/><path d="M41.57 27.7V42.46H27.58V27.7ZM15.1 25.34V70.78H16.95C22.18 70.78 27.58 67.91 27.58 66.65V62.18H41.57V90H44.01C48.82 90 54.3 86.88 54.3 85.62V62.18H68.97V68.93H71.07C75.37 68.93 81.53 66.65 81.61 65.89V29.64C83.38 29.3 84.39 28.55 84.9 27.87L73.69 19.19L68.12 25.34H54.3V13.96C56.74 13.62 57.33 12.7 57.5 11.52L41.57 10V25.34H28.42L15.1 20.2ZM54.3 27.7H68.97V42.46H54.3ZM41.57 59.82H27.58V44.82H41.57ZM54.3 59.82V44.82H68.97V59.82Z" fill="#FFFFFF"/></svg><span>Shen Studio</span></div>
+
+<script>
+/* ===== tiny algebra engine: parse, evaluate, LaTeX, equivalence ===== */
+const ALG = (function(){
+  function tokenize(s){
+    s=String(s).replace(/[−–]/g,'-').replace(/[×·]/g,'*').replace(/÷/g,'/').replace(/\s+/g,'');
+    const out=[];let i=0;
+    while(i<s.length){const c=s[i];
+      if(/[0-9.]/.test(c)){let j=i;while(j<s.length&&/[0-9.]/.test(s[j]))j++;const t=s.slice(i,j);if((t.match(/\./g)||[]).length>1||t==='.')throw 'num';out.push({k:'num',v:parseFloat(t),raw:t});i=j;continue}
+      if(/[a-zA-Z]/.test(c)){out.push({k:'var',v:c});i++;continue}
+      if('+-*/^()'.includes(c)){out.push({k:c});i++;continue}
+      throw 'char';
+    }
+    // implicit multiplication
+    const r=[];for(let k=0;k<out.length;k++){const a=out[k-1],b=out[k];
+      if(a&&(a.k==='num'||a.k==='var'||a.k===')')&&(b.k==='var'||b.k==='('||(b.k==='num'&&a.k!=='num')))r.push({k:'*',imp:true});
+      r.push(b)}
+    return r;
+  }
+  function parse(s){
+    const T=tokenize(s);let p=0;if(!T.length)throw 'empty';
+    const peek=()=>T[p],eat=k=>{if(!T[p]||T[p].k!==k)throw 'expect '+k;return T[p++]};
+    function expr(){let n=term();while(peek()&&(peek().k==='+'||peek().k==='-')){const o=T[p++].k;const m=term();n={t:o==='+'?'add':'sub',a:n,b:m}}return n}
+    function term(){let n=unary();while(peek()&&(peek().k==='*'||peek().k==='/')){const tk=T[p++];const m=unary();n=tk.k==='*'?{t:'mul',a:n,b:m,imp:!!tk.imp}:{t:'div',a:n,b:m}}return n}
+    function unary(){if(peek()&&peek().k==='-'){p++;return {t:'neg',a:unary()}}if(peek()&&peek().k==='+'){p++;return unary()}return power()}
+    function power(){let b=atom();if(peek()&&peek().k==='^'){p++;const e=unary();return {t:'pow',a:b,b:e}}return b}
+    function atom(){const k=peek();if(!k)throw 'end';
+      if(k.k==='num'){p++;return {t:'num',v:k.v,raw:k.raw}}
+      if(k.k==='var'){p++;return {t:'var',v:k.v}}
+      if(k.k==='('){p++;const e=expr();eat(')');return {t:'grp',a:e}}
+      throw 'unexpected'}
+    const n=expr();if(p!==T.length)throw 'trailing';return n;
+  }
+  function ev(n,env){switch(n.t){
+    case 'num':return n.v;case 'var':if(!(n.v in env))throw 'var';return env[n.v];
+    case 'add':return ev(n.a,env)+ev(n.b,env);case 'sub':return ev(n.a,env)-ev(n.b,env);
+    case 'mul':return ev(n.a,env)*ev(n.b,env);case 'div':return ev(n.a,env)/ev(n.b,env);
+    case 'pow':return Math.pow(ev(n.a,env),ev(n.b,env));case 'neg':return -ev(n.a,env);case 'grp':return ev(n.a,env)}}
+  function vars(n,set=new Set()){if(!n)return set;if(n.t==='var')set.add(n.v);['a','b'].forEach(k=>{if(n[k]&&typeof n[k]==='object')vars(n[k],set)});return set}
+  const strip=n=>n.t==='grp'?strip(n.a):n;
+  function tex(n){switch(n.t){
+    case 'num':return n.raw||String(n.v);case 'var':return n.v;
+    case 'add':return tex(n.a)+'+'+tex(n.b);
+    case 'sub':return tex(n.a)+'-'+tex(n.b);
+    case 'neg':return '-'+tex(n.a);
+    case 'grp':return '\\left('+tex(n.a)+'\\right)';
+    case 'div':return '\\frac{'+tex(strip(n.a))+'}{'+tex(strip(n.b))+'}';
+    case 'pow':return (n.a.t==='var'||n.a.t==='num'||n.a.t==='grp'?tex(n.a):'{'+tex(n.a)+'}')+'^{'+tex(strip(n.b))+'}';
+    case 'mul':{const A=tex(n.a),B=tex(n.b);const bStart=n.b.t==='num'||(n.b.t==='pow'&&n.b.a.t==='num')||n.b.t==='neg'||n.b.t==='div';
+      return bStart?A+'\\times '+B:A+B}}}
+  function toTex(s){try{return tex(parse(s))}catch(e){return null}}
+  const PTS=[1.37,-2.21,0.63,3.08,-0.71,2.49,-1.53];
+  function equiv(a,b,extra){
+    let A,B;try{A=typeof a==='string'?parse(a):a;B=typeof b==='string'?parse(b):b}catch(e){return false}
+    const vs=[...new Set([...vars(A),...vars(B),...(extra||[])])];
+    for(let t=0;t<6;t++){const env={};vs.forEach((v,i)=>env[v]=PTS[(t+i*3)%PTS.length]+0.11*i);
+      let x,y;try{x=ev(A,env);y=ev(B,env)}catch(e){return false}
+      if(!isFinite(x)||!isFinite(y)){continue}
+      if(Math.abs(x-y)>1e-7*Math.max(1,Math.abs(x),Math.abs(y)))return false}
+    return true;
+  }
+  // number of top-level terms (split on + and - outside brackets)
+  function topTerms(n){n=n;if(n.t==='add'||n.t==='sub')return topTerms(n.a)+topTerms(n.b);return 1}
+  function hasGrp(n){if(!n||typeof n!=='object')return false;if(n.t==='grp')return true;return hasGrp(n.a)||hasGrp(n.b)}
+  return {parse,ev,tex,toTex,equiv,vars,topTerms,hasGrp};
+})();
+
+
+const R = String.raw;
+const UI = {
+  tabs:{start:'Start',d1:'D1 Part of an amount',d2:'D2 Multipliers',d3:'D3 % change',d4:'D4 Simplify ratios',d5:'D5 Sharing',d6:'D6 Comparing',rv:'Boss review',report:'My report'},
+  mins:{d1:14,d2:11,d3:10,d4:9,d5:9,d6:9,rv:5,dx:5},
+  lvlName:{Focus:'WARM-UP',Practice:'PRACTICE',Challenge:'⭐ BOSS LEVEL'},
+  check:'Check', attempt:'Try', of:'of',
+  fmt:{
+    num:R`Type a number, e.g. 36 or 62.5 or 0.85`,
+    nums:R`Type the amounts in order, separated by commas, e.g. 36, 9, 27`,
+    frac:R`Type a fraction like 2/5.`,
+    ratio:R`Type the ratio with colons, e.g. 2:3:4`
+  },
+  previewPre:'Your answer: ',
+  right:['Brilliant, first try! ✓','Got it on the second try ✓','Got there on the third try ✓'],
+  wrong:'Not yet. Have another go.',
+  wrongLast:"That's OK. Read the solution, then try the next one.",
+  info:{simplest:R`Right ratio! But it can be simplified more: divide every number by the same number until you can't any more.`,
+    onen:R`Right ratio! Now write it in the form $1:n$: divide both parts by the first number.`,
+    mixed:R`Right value! Now write it as a mixed number.`,
+    bad:'I could not read that. Type numbers like 36 or 62.5, and ratios like 2:3.'},
+  hint:'Hint', sol:'Solution',
+  prog:(a,t,p)=>`${a} / ${t} done · ${p} pts`,
+  done:'done',
+  report:{
+    empty:'Nothing answered yet. Do some missions, then come back here.',
+    byPart:'By station', bySkill:'My skills', how:'How I worked', advice:'What to do next', map:'How the ideas connect', total:'My score',
+    lv:{g:'got it',a:'nearly there',r:'look again',n:'not tried'},
+    firstTry:n=>`<b>${n}</b> right on the first try.`,
+    fast:n=>!n?'You took your time on every question.':`<b>${n}</b> answered right very quickly. Great if you really knew it!`,
+    rushed:n=>n?`<b>${n}</b> question(s) had three wrong tries in under 20 seconds. After a wrong answer, slow down: say the question with the word “of”, draw the 10% blocks, or ask “what is one part worth?”`:'No rushing: you stopped to think after wrong answers. Well done.',
+    notDone:n=>n?`<b>${n}</b> question(s) still to do.`:'You finished every question!',
+    why:(o,t)=>'',
+    allGood:'Every skill you tried is a “got it”. Well done! That is the whole Number strand finished.',
+    advIntro:'Have another look at:',
+    note:'3 points for right first try, 2 for second try, 1 for third try, 0 if all three tries are wrong.',
+    centre:['Parts of','a whole'],
+    avg:a=>a==null?'–':a.toFixed(1)+' / 3'
+  }
+};
+const GROUPS = {pct:'Percentages', rat:'Ratio and proportion'};
+const GCOL = {pct:'#3b4fa8', rat:'#b5487a'};
+const SEC = {d1:'D1 Fractions and percentages of an amount',dx:'D1★ Secret level: going backwards',d2:'D2 Increase, decrease and multipliers',d3:'D3 Percentage change',d4:'D4 Simplifying ratios',d5:'D5 Sharing in a ratio',d6:'D6 Comparing and proportion',rv:'Boss review'};
+const LABEL = {d1:'D1',dx:'D1★',d2:'D2',d3:'D3',d4:'D4',d5:'D5',d6:'D6'};
+const SKILLS = {
+  fofa:{n:'Fraction of an amount',g:'pct',adv:R`“Of” means ×. $\dfrac34$ of $20$: share $20$ into $4$ groups ($5$ each), take $3$ groups: $15$. That is $20\div4\times3=\dfrac34\times20$.`},
+  pof:{n:'Percentage of an amount',g:'pct',adv:R`A percentage is a fraction out of 100, and “of” means ×. Find $10\%$ (one block) and build, or multiply: $30\%$ of $120=120\times0.3=36$.`},
+  aspct:{n:'One amount as a percentage',g:'pct',adv:R`Write “part out of whole” as a fraction, then make the bottom 100 (or do part $\div$ whole $\times100$): $18$ out of $25=\dfrac{72}{100}=72\%$.`},
+  rev:{n:'Going backwards',g:'pct',adv:R`If $30\%$ is $36$, then one block ($10\%$) is $36\div3=12$, and $100\%$ is $120$. Or undo the multiplication: $36\div0.3=120$. Check by going forwards.`},
+  incdec:{n:'Increase and decrease',g:'pct',adv:R`Find the percentage part, then add it on (increase) or take it away (decrease). An increase must make the number bigger.`},
+  mult:{n:'Multipliers',g:'pct',adv:R`Start from $100\%$. Up $30\%$ → $130\%$ → $\times1.3$. Down $30\%$ → $70\%$ → $\times0.7$. Bigger than 1 grows, smaller than 1 shrinks.`},
+  pchg:{n:'Percentage change',g:'pct',adv:R`The change is what percentage of the <b>original</b>? Change $\div$ original $\times100$. Or: new $\div$ old gives the multiplier ($1.25$ → up $25\%$).`},
+  repeat:{n:'Changes one after another',g:'pct',adv:R`Multiply the multipliers: $+10\%$ then $+50\%$ is $\times1.1\times1.5=\times1.65$, so $+65\%$. Never just add the percentages.`},
+  rsimp:{n:'Simplifying ratios',g:'rat',adv:R`Divide every part by the same number, again and again, until nothing divides them all: $8:12:16\to2:3:4$.`},
+  runits:{n:'Ratios with units or decimals',g:'rat',adv:R`Make the units the same first ($1$ minute $=60$ seconds). Decimals? Multiply every part by 10 or 100. Then simplify.`},
+  share:{n:'Sharing in a ratio',g:'rat',adv:R`Add the parts, find what <b>one part</b> is worth, then multiply. Check: the shares add back to the total.`},
+  share1:{n:'Working from one share',g:'rat',adv:R`Draw the boxes. If Ali's 3 boxes hold 12, one box is 4. Then count the boxes you need. For a difference, count the <b>extra</b> boxes.`},
+  rfrac:{n:'Ratio to fraction',g:'rat',adv:R`The total number of parts goes on the bottom: in $2:3$ there are $5$ parts, so the first share is $\dfrac25$.`},
+  rcmp:{n:'Comparing with ratios',g:'rat',adv:R`Make one side the same, e.g. change both to $1:n$, or find the size or price of <b>one</b>. Then compare like with like.`},
+  prop:{n:'Direct proportion',g:'rat',adv:R`Find <b>one</b> first, then scale up: $300$ g for $4$ people → $75$ g for $1$ → $450$ g for $6$.`}
+};
+const LINKS=[['fofa','pof'],['pof','aspct'],['pof','rev'],['pof','incdec'],['incdec','mult'],['mult','repeat'],['aspct','pchg'],['mult','pchg'],['rev','mult'],['rsimp','runits'],['rsimp','share'],['share','share1'],['share','rfrac'],['rfrac','fofa'],['rfrac','rcmp'],['rcmp','prop']];
+const FIG = {};
+const Q = [
+ // D1
+ {id:'d1a',part:'d1',lvl:'Focus',tags:['fofa'],type:'num',ans:15,tol:1e-9,src:'original',prompt:R`Find $\dfrac34$ of $20$ sweets.`,hint:R`Share $20$ into $4$ groups. Take $3$ groups.`,sol:R`$20\div4=5$, and $3\times5=15$. So $\dfrac34\times20=15$.`},
+ {id:'d1b',part:'d1',lvl:'Focus',tags:['fofa'],type:'num',ans:14,tol:1e-9,src:'original',prompt:R`Find $\dfrac25$ of $35$.`,hint:R`One fifth of $35$ is $7$.`,sol:R`$35\div5=7$, and $2\times7=14$.`},
+ {id:'d1c',part:'d1',lvl:'Focus',tags:['pof'],type:'num',ans:36,tol:1e-9,src:'WB8 10.1 Q1a',prompt:R`Find $30\%$ of $120$ kg.`,hint:R`$10\%$ of $120$ is $12$.`,sol:R`$10\%=12$, so $30\%=36$ kg. Or $120\times0.3=36$.`},
+ {id:'d1d',part:'d1',lvl:'Practice',tags:['pof'],type:'num',ans:42,tol:1e-9,src:'WB8 10.1 Q5',prompt:R`Find $15\%$ of $280$.`,hint:R`$10\%=28$, and $5\%$ is half of that.`,sol:R`$28+14=42$. Or $280\times0.15=42$.`},
+ {id:'d1e',part:'d1',lvl:'Practice',tags:['pof','fofa'],type:'mc',ans:2,src:'original',prompt:R`Which calculation finds $35\%$ of $80$?`,opts:[R`$80\div35$`,R`$80\times35$`,R`$80\times0.35$`,R`$35\div80$`],hint:R`“Of” means ×, and $35\%=\dfrac{35}{100}=0.35$.`,sol:R`$35\%$ of $80=0.35\times80=28$.`},
+ {id:'d1f',part:'d1',lvl:'Focus',tags:['aspct'],type:'num',ans:72,tol:1e-9,src:'WB8 7.2 Q9',prompt:R`Amina scored $18$ out of $25$ in a test.<br>What percentage is that?`,hint:R`$25\times4=100$. Do the same to $18$.`,sol:R`$\dfrac{18}{25}=\dfrac{72}{100}=72\%$.`},
+ {id:'d1g',part:'d1',lvl:'Practice',tags:['aspct'],type:'num',ans:62.5,tol:1e-9,src:'WB8 10.1 Q7a',prompt:R`What percentage of $400$ is $250$?`,hint:R`$250\div400$, then $\times100$.`,sol:R`$250\div400=0.625$, and $0.625\times100=62.5\%$.`},
+ {id:'d1h',part:'d1',lvl:'Challenge',tags:['aspct'],type:'num',ans:38.5,tol:0.051,src:'WB8 10.1 Q8a',prompt:R`A car costs $\$24\,700$ and a motorbike costs $\$9500$.<br>The motorbike costs what percentage of the car? Give 1 decimal place.`,hint:R`Part $=9500$, whole $=24\,700$.`,sol:R`$9500\div24\,700\times100=38.46\ldots\approx38.5\%$.`},
+ // D1 secret level
+ {id:'dxa',part:'dx',lvl:'Practice',tags:['rev'],type:'num',ans:70,tol:1e-9,src:'original',prompt:R`$20\%$ of a number is $14$. What is the number?`,hint:R`$20\%$ is 2 blocks. One block ($10\%$) is $7$.`,sol:R`$10\%=7$, so $100\%=70$. Or $14\div0.2=70$. Check: $20\%$ of $70=14$ ✓.`},
+ {id:'dxb',part:'dx',lvl:'Practice',tags:['rev'],type:'num',ans:30,tol:1e-9,src:'original',prompt:R`$12$ students walk to school. That is $40\%$ of the class.<br>How many students are in the class?`,hint:R`$40\%$ is 4 blocks $=12$.`,sol:R`One block ($10\%$) $=3$, so $100\%=30$. Or $12\div0.4=30$.`},
+ {id:'dxc',part:'dx',lvl:'Challenge',tags:['rev','mult'],type:'num',ans:40,tol:1e-9,src:'original',prompt:R`After a $25\%$ increase, a game costs $\$50$.<br>What did it cost before?`,hint:R`$\$50$ is $125\%$ of the old price, not $100\%$. Undo $\times1.25$.`,sol:R`$50\div1.25=40$. Check: $40\times1.25=50$ ✓. (Not $50-12.50$!)`},
+ // D2
+ {id:'d2a',part:'d2',lvl:'Focus',tags:['incdec'],type:'num',ans:156,tol:1e-9,src:'WB8 10.1 Q1b',prompt:R`Increase $120$ kg by $30\%$.`,hint:R`$30\%$ of $120$ is $36$. Add it on, or use $\times1.3$.`,sol:R`$120+36=156$ kg, or $120\times1.3=156$.`},
+ {id:'d2b',part:'d2',lvl:'Focus',tags:['incdec'],type:'num',ans:12,tol:1e-9,src:'WB8 10.1 Q2b',prompt:R`Decrease $\$40$ by $70\%$.`,hint:R`$70\%$ off leaves $30\%$.`,sol:R`$30\%$ is left: $40\times0.3=\$12$.`},
+ {id:'d2c',part:'d2',lvl:'Focus',tags:['mult'],type:'mc',ans:2,src:'WB8 10.2 Q1a',prompt:R`What is the multiplier for an <b>increase</b> of $5\%$?`,opts:[R`$\times0.05$`,R`$\times1.5$`,R`$\times1.05$`,R`$\times0.95$`],hint:R`$100\%+5\%=105\%$.`,sol:R`$105\%=1.05$, so $\times1.05$.`},
+ {id:'d2d',part:'d2',lvl:'Focus',tags:['mult'],type:'num',ans:0.7,tol:1e-9,src:'WB8 10.2 Q2',prompt:R`What is the multiplier for a <b>decrease</b> of $30\%$?<br>Type just the number, e.g. 1.3`,hint:R`$100\%-30\%=70\%$.`,sol:R`$70\%=0.7$, so $\times0.7$.`},
+ {id:'d2e',part:'d2',lvl:'Practice',tags:['mult','incdec'],type:'num',ans:350,tol:1e-9,src:'WB8 10.2 Q4a',prompt:R`Use a multiplier to increase $200$ by $75\%$.`,hint:R`$175\%$ → $\times1.75$.`,sol:R`$200\times1.75=350$.`},
+ {id:'d2f',part:'d2',lvl:'Practice',tags:['incdec','mult'],type:'num',ans:92,tol:1e-9,src:'WB8 10.1 Q9',prompt:R`In a sale, a $\$230$ phone is $60\%$ off.<br>What is the sale price (in dollars)?`,hint:R`$60\%$ off leaves $40\%$: $\times0.4$.`,sol:R`$230\times0.4=\$92$.`},
+ {id:'d2g',part:'d2',lvl:'Practice',tags:['mult'],type:'mc',ans:1,src:'WB8 10.2 Q5',prompt:R`Multiplying by $0.85$ is the same as…`,opts:['an increase of 85%','a decrease of 15%','a decrease of 85%','an increase of 15%'],hint:R`$0.85=85\%$. How far is that from $100\%$?`,sol:R`$85\%$ is $15\%$ less than $100\%$: a decrease of $15\%$.`},
+ {id:'d2h',part:'d2',lvl:'Challenge',tags:['repeat','mult'],type:'num',ans:65,tol:1e-9,src:'WB8 10.2 Q10',prompt:R`$320$ people are in a room. The number goes up by $10\%$, then up by $50\%$.<br>What is the overall percentage increase?`,hint:R`Multiply the multipliers: $1.1\times1.5$.`,sol:R`$1.1\times1.5=1.65$, so up $65\%$ (not $60\%$!). Check: $320\times1.65=528$.`},
+ // D3
+ {id:'d3a',part:'d3',lvl:'Focus',tags:['pchg'],type:'num',ans:25,tol:1e-9,src:'original',prompt:R`A ticket goes up from $\$40$ to $\$50$.<br>What is the percentage increase?`,hint:R`Change $=10$. $10$ out of the <b>original</b> $40$.`,sol:R`$\dfrac{10}{40}=\dfrac14=25\%$. Or $50\div40=1.25$ → up $25\%$.`},
+ {id:'d3b',part:'d3',lvl:'Focus',tags:['pchg'],type:'num',ans:25,tol:1e-9,src:'original',prompt:R`A bike's price drops from $\$80$ to $\$60$.<br>What is the percentage decrease?`,hint:R`Change $=20$, out of the original $80$.`,sol:R`$\dfrac{20}{80}=\dfrac14=25\%$. Or $60\div80=0.75$ → down $25\%$.`},
+ {id:'d3c',part:'d3',lvl:'Practice',tags:['pchg'],type:'mc',ans:2,src:'original',prompt:R`A price goes from $\$40$ to $\$50$. Leo says: “$10\div50=0.2$, so it went up $20\%$.” What went wrong?`,opts:['Nothing: 20% is right.','He should add: 10 + 50.',R`He divided by the new price. Divide by the original $\$40$: $25\%$.`],hint:'Which price is the 100% bar: the start or the end?',sol:R`The original price is $100\%$. $10\div40=0.25$: up $25\%$.`},
+ {id:'d3d',part:'d3',lvl:'Practice',tags:['pchg'],type:'num',ans:27.9,tol:0.051,src:'WB8 10.2 Q8b',prompt:R`A price is cut from $\$680$ to $\$490$.<br>What is the percentage decrease? Give 1 decimal place.`,hint:R`Change $=190$. Then $190\div680\times100$.`,sol:R`$190\div680\times100=27.94\ldots\approx27.9\%$.`},
+ {id:'d3e',part:'d3',lvl:'Practice',tags:['pchg'],type:'num',ans:150,tol:1e-9,src:'WB8 10.2 Q9',prompt:R`Money in a bank account grows from $\$400$ to $\$1000$.<br>What is the percentage increase?`,hint:R`Change $=600$. Or $1000\div400=\;?$`,sol:R`$600\div400=1.5=150\%$. Or $1000\div400=2.5$ → up $150\%$.`},
+ {id:'d3f',part:'d3',lvl:'Practice',tags:['pchg'],type:'mc',ans:1,src:'WB8 10.1 Q13',prompt:R`A jacket goes up from $\$245$ to $\$275$. A hat goes up from $\$42$ to $\$72$.<br>Which had the bigger <b>percentage</b> increase?`,opts:['The jacket','The hat','They are the same'],hint:R`$\$30$ out of $\$245$, or $\$30$ out of $\$42$?`,sol:R`Hat: $30\div42\approx71\%$. Jacket: $30\div245\approx12\%$.`},
+ {id:'d3g',part:'d3',lvl:'Challenge',tags:['repeat'],type:'mc',ans:2,src:'WB8 10.1 Q16b',prompt:R`Is decreasing $\$80$ by $50\%$ the same as decreasing it by $25\%$ and then by $20\%$?`,opts:[R`Yes: $25\%+20\%=45\%$, close enough.`,R`Yes: both give $\$40$.`,R`No: $80\times0.75\times0.8=\$48$, but $80\times0.5=\$40$.`],hint:R`Use multipliers: $\times0.75$ then $\times0.8$.`,sol:R`$80\times0.75=60$, then $60\times0.8=48$. Half of $80$ is $40$. Not the same!`},
+ // D4
+ {id:'d4a',part:'d4',lvl:'Focus',tags:['rsimp'],type:'ratio',ans:[2,3,4],key:'2:3:4',src:'WB8 12.1 Q3b',prompt:R`Simplify $8:12:16$.`,hint:'Every number is in the 4 times table.',sol:R`Divide by $4$: $2:3:4$.`},
+ {id:'d4b',part:'d4',lvl:'Focus',tags:['rsimp'],type:'ratio',ans:[3,10,5],key:'3:10:5',src:'WB8 12.1 Q5',prompt:R`Karen simplified $6:20:10$ and got $3:10:2:1$. That has 4 numbers: wrong!<br>Simplify $6:20:10$ correctly.`,hint:'Divide all three numbers by the same number.',sol:R`All three are even: $\div2$ gives $3:10:5$.`},
+ {id:'d4c',part:'d4',lvl:'Practice',tags:['runits'],type:'ratio',ans:[4,1],key:'4:1',src:'WB8 12.1 Q6d',prompt:R`Simplify $2.4$ kg $:600$ g.`,hint:R`Same units first: $2.4$ kg $=2400$ g.`,sol:R`$2400:600$, divide by $600$: $4:1$.`},
+ {id:'d4d',part:'d4',lvl:'Practice',tags:['runits'],type:'ratio',ans:[21,10],key:'21:10',src:'WB8 12.1 Q6c',prompt:R`Simplify $\$1.26:60$ cents.`,hint:R`$\$1.26=126$ cents. Then divide both by $6$.`,sol:R`$126:60$, divide by $6$: $21:10$.`},
+ {id:'d4e',part:'d4',lvl:'Practice',tags:['runits'],type:'ratio',ans:[1,5],key:'1:5',src:'WB8 12.1 Q11a',prompt:R`Simplify $0.4:2$.`,hint:R`$\times10$ first: $4:20$.`,sol:R`$4:20$, divide by $4$: $1:5$.`},
+ {id:'d4f',part:'d4',lvl:'Challenge',tags:['runits','rsimp'],type:'ratio',ans:[7,5],key:'7:5',src:'WB8 12.1 Q11f',prompt:R`Simplify $2.1:1.5$.`,hint:R`$\times10$: $21:15$. Which number divides both?`,sol:R`$21:15$, divide by $3$: $7:5$.`},
+ {id:'d4g',part:'d4',lvl:'Practice',tags:['runits'],type:'ratio',ans:[10,7],key:'10:7',src:'WB8 12.1 Q6e',prompt:R`Simplify $1$ minute $:42$ seconds.`,hint:R`$1$ minute $=60$ seconds. Then divide both by $6$.`,sol:R`$60:42$, divide by $6$: $10:7$.`},
+ {id:'d4h',part:'d4',lvl:'Challenge',tags:['rsimp'],type:'ratio',form1:true,ans:[1,2.5],key:'1:2.5',src:'WB8 12.1 Q13',prompt:R`Write $4:10$ in the form $1:n$.`,hint:R`Divide <b>both</b> parts by $4$ (the first number).`,sol:R`$4\div4=1$ and $10\div4=2.5$: $1:2.5$.`},
+ // D5
+ {id:'d5a',part:'d5',lvl:'Focus',tags:['share'],type:'nums',ans:[36,9,27],src:'WB8 12.2 Q1',prompt:R`Share $\$72$ between Ali, Bob and Carl in the ratio $4:1:3$.<br>Give Ali's, Bob's and Carl's shares in order.`,hint:R`$4+1+3=8$ parts. One part $=72\div8=9$.`,sol:R`One part $=\$9$. Ali $4\times9=36$, Bob $9$, Carl $3\times9=27$. Check: $36+9+27=72$ ✓.`},
+ {id:'d5b',part:'d5',lvl:'Focus',tags:['share'],type:'nums',ans:[10,30,50],src:'WB8 12.2 Q2a',prompt:R`Share $\$90$ in the ratio $1:3:5$.<br>Give the three shares in order.`,hint:R`$9$ parts. One part $=90\div9$.`,sol:R`One part $=10$: $10,\ 30,\ 50$.`},
+ {id:'d5c',part:'d5',lvl:'Practice',tags:['share'],type:'nums',ans:[40,60,80],src:'WB8 12.2 Q5',prompt:R`The angles in a triangle are in the ratio $2:3:4$.<br>Find the three angles, smallest first.`,hint:R`The angles add up to $180^\circ$. $9$ parts.`,sol:R`One part $=180\div9=20^\circ$: $40^\circ,\ 60^\circ,\ 80^\circ$.`},
+ {id:'d5d',part:'d5',lvl:'Practice',tags:['share'],type:'nums',ans:[60,48,132],src:'WB8 12.2 Q4',prompt:R`A garden club has men, women and children in the ratio $5:4:11$. There are $240$ members.<br>How many men, women and children? (In that order.)`,hint:R`$20$ parts. One part $=240\div20=12$.`,sol:R`One part $=12$: men $60$, women $48$, children $132$. Check: $240$ ✓.`},
+ {id:'d5e',part:'d5',lvl:'Practice',tags:['share'],type:'num',ans:300,tol:1e-9,src:'WB8 12.2 Q7',prompt:R`Four friends share $\$750$ in the ratio of hours worked:<br>Zara $5$ h, Sofia $12$ h, Arun $4$ h, Marcus $9$ h.<br>How much does Sofia get?`,hint:R`$5+12+4+9=30$ parts. One part $=750\div30$.`,sol:R`One part $=\$25$. Sofia: $12\times25=\$300$.`},
+ {id:'d5f',part:'d5',lvl:'Challenge',tags:['share'],type:'num',ans:1625,tol:1e-9,src:'WB8 12.2 Q8',prompt:R`Four children aged $6$, $8$, $11$ and $13$ sell a painting for $\$4750$. They share the money in the ratio of their ages.<br>How much does the oldest child get?`,hint:R`$6+8+11+13=38$ parts. One part $=4750\div38$.`,sol:R`One part $=\$125$. Oldest: $13\times125=\$1625$.`},
+ {id:'d5g',part:'d5',lvl:'Practice',tags:['share1'],type:'num',ans:20,tol:1e-9,src:'original',prompt:R`Ali and Bob share sweets in the ratio $3:5$. Ali gets $12$ sweets.<br>How many does Bob get?`,hint:R`Ali's $3$ boxes hold $12$. One box $=4$.`,sol:R`One box $=12\div3=4$. Bob has $5$ boxes: $20$.`},
+ {id:'d5h',part:'d5',lvl:'Challenge',tags:['share1'],type:'num',ans:63,tol:1e-9,src:'original',prompt:R`Sam and Tia share money in the ratio $2:7$. Tia gets $\$35$ more than Sam.<br>How much money is there altogether?`,hint:R`Tia has $5$ more boxes than Sam. Those $5$ boxes are worth $\$35$.`,sol:R`One box $=35\div5=\$7$. Total $9$ boxes $=\$63$.`},
+ // D6
+ {id:'d6a',part:'d6',lvl:'Focus',tags:['rcmp'],type:'mc',ans:1,src:'WB8 12.3 Q1',prompt:R`Pink paint: Arshan mixes white : red $=3:6$. Oditi mixes white : red $=4:12$.<br>Who has the darker (redder) paint?`,opts:['Arshan','Oditi','They are the same'],hint:R`Change both to $1:n$. $3:6=1:2$ and $4:12=1:\;?$`,sol:R`Arshan $1:2$, Oditi $1:3$. Oditi has more red for each tin of white.`},
+ {id:'d6b',part:'d6',lvl:'Focus',tags:['rfrac'],type:'frac',ans:[2,5],key:'2/5',src:'WB8 12.3 Q3a',prompt:R`Brazil nuts and almonds are in the ratio $2:3$.<br>What fraction of the nuts are brazil nuts?`,hint:R`Total parts $=2+3=5$.`,sol:R`$2$ parts out of $5$: $\dfrac25$.`},
+ {id:'d6c',part:'d6',lvl:'Practice',tags:['rcmp'],type:'mc',ans:0,src:'WB8 12.3 Q2',prompt:R`Light blue paint: Jake mixes white : blue $=4:20$. Razi mixes white : blue $=5:15$.<br>Who has the darker paint?`,opts:['Jake','Razi','They are the same'],hint:R`Change both to $1:n$.`,sol:R`Jake $1:5$, Razi $1:3$. Jake has more blue for each tin of white.`},
+ {id:'d6d',part:'d6',lvl:'Practice',tags:['rcmp'],type:'mc',ans:1,src:'WB8 12.1 Q10a',prompt:R`Two cups hold $450$ ml. Five mugs hold $1.25$ litres.<br>Which holds more, one cup or one mug?`,opts:['One cup','One mug','They hold the same'],hint:R`Find <b>one</b> of each. $1.25$ litres $=1250$ ml.`,sol:R`One cup $=450\div2=225$ ml. One mug $=1250\div5=250$ ml. The mug holds more.`},
+ {id:'d6e',part:'d6',lvl:'Practice',tags:['rcmp'],type:'mc',ans:0,src:'WB8 12.1 Q10c',prompt:R`Jules texts $16$ words in $48$ seconds. Sion texts $10$ words in $35$ seconds.<br>Who texts faster?`,opts:['Jules','Sion','The same speed'],hint:'How many seconds does each person take for one word?',sol:R`Jules: $48\div16=3$ s per word. Sion: $35\div10=3.5$ s per word. Jules is faster.`},
+ {id:'d6f',part:'d6',lvl:'Challenge',tags:['rfrac','rcmp'],type:'mc',ans:2,src:'WB8 12.3 Q4',prompt:R`Orange sunset paint is orange : white $=3:2$. Orange flame is orange : white $=5:3$.<br>Which paint has the bigger fraction of orange?`,opts:['Orange sunset','They are the same','Orange flame'],hint:R`Sunset: $\dfrac35$. Flame: $\dfrac58$. Change both to 40ths.`,sol:R`$\dfrac35=\dfrac{24}{40}$ and $\dfrac58=\dfrac{25}{40}$. Orange flame has a little more orange.`},
+ {id:'d6g',part:'d6',lvl:'Practice',tags:['prop'],type:'num',ans:450,tol:1e-9,src:'WB8 12.3',prompt:R`A recipe for $4$ people uses $300$ g of flour.<br>How much flour is needed for $6$ people?`,hint:R`Find the flour for <b>one</b> person first.`,sol:R`$300\div4=75$ g each, and $75\times6=450$ g.`},
+ // Review
+ {id:'rv1',part:'rv',lvl:'Practice',tags:['incdec'],type:'num',ans:72,tol:1e-9,src:'original',prompt:R`Increase $\$60$ by $20\%$.`,hint:R`$10\%=6$, so $20\%=12$.`,sol:R`$60+12=\$72$ (or $60\times1.2$).`},
+ {id:'rv2',part:'rv',lvl:'Practice',tags:['runits'],type:'ratio',ans:[9,40],key:'9:40',src:'WB8 12.1 Q8d',prompt:R`Simplify $45$ cents $:\$2$.`,hint:R`$\$2=200$ cents. Then divide both by $5$.`,sol:R`$45:200$, divide by $5$: $9:40$.`},
+ {id:'rv3',part:'rv',lvl:'Practice',tags:['share'],type:'nums',ans:[42,98,140],src:'WB8 12.2 Q9',prompt:R`Patrick shares $280$ oranges between his children in the ratio of their ages: $3$, $7$ and $10$.<br>How many does each child get? (In that order.)`,hint:R`$20$ parts. One part $=14$.`,sol:R`$3\times14=42$, $7\times14=98$, $10\times14=140$.`},
+ {id:'rv4',part:'rv',lvl:'Challenge',tags:['mult'],type:'num',ans:0.875,tol:1e-9,src:'WB8 10.2 Q2',prompt:R`What is the multiplier for a decrease of $12.5\%$?`,hint:R`$100-12.5=87.5\%$.`,sol:R`$87.5\%=0.875$.`},
+ {id:'rv5',part:'rv',lvl:'Challenge',tags:['pchg'],type:'num',ans:60,tol:1e-9,src:'original',prompt:R`A plant grows from $25$ cm to $40$ cm.<br>What is the percentage increase?`,hint:R`Change $=15$. Divide by the original, $25$.`,sol:R`$15\div25=0.6=60\%$.`}
+];
+
+/* ================= HELPERS ================= */
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const gcd=(a,b)=>{a=Math.abs(a);b=Math.abs(b);while(b){[a,b]=[b,a%b]}return a||1};
+function mathify(el){ if(window.renderMathInElement){ try{renderMathInElement(el,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});}catch(e){} } }
+function texStr(t,disp){ if(window.katex){ try{return katex.renderToString(t,{throwOnError:false,displayMode:!!disp});}catch(e){} } return t; }
+function html(el,s){el.innerHTML=s;mathify(el);}
+function store(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+function load(k){try{return JSON.parse(localStorage.getItem(k))}catch(e){return null}}
+const fmtN=v=>{const r=Math.round(v*1000)/1000;return Object.is(r,-0)?'0':String(r)};
+
+(function(){const used=new Set();Q.forEach(q=>q.tags.forEach(t=>{if(!SKILLS[t])console.error('Missing skill',t);used.add(t)}));
+Object.keys(SKILLS).forEach(k=>{if(!used.has(k))console.error('Unused skill',k)});})();
+
+/* ================= STATE ================= */
+const KEY='cam-y8-num-d';
+let S={}, WHY={};
+function blank(){return {att:0,done:false,pts:0,t0:null,tFirst:null,tLast:null,fastFirst:false,hist:[],wrongOpts:[]}}
+function initState(){const saved=load(KEY);Q.forEach(q=>{S[q.id]=Object.assign(blank(),saved&&saved.S&&saved.S[q.id]?saved.S[q.id]:{})});WHY=(saved&&saved.WHY)||{};}
+function save(){store(KEY,{S,WHY})}
+
+/* ================= TABS ================= */
+const ORDER=['start','d1','d2','d3','d4','d5','d6','rv','report'];
+const grpOf=k=>['d4','d5','d6'].includes(k)?'gb':(k==='rv'?'rv':'ga');
+function buildTabs(){
+  const nav=$('#tabs');nav.innerHTML='';
+  ORDER.forEach(k=>{const b=document.createElement('button');b.type='button';b.dataset.tab=k;
+    if(SEC[k]&&k!=='rv')b.className=grpOf(k);
+    b.innerHTML=UI.tabs[k]+'<span class="tick"></span>';b.onclick=()=>show(k);nav.appendChild(b)});
+  const route=$('#route');route.innerHTML='';
+  Object.keys(SEC).filter(k=>ORDER.includes(k)).forEach(k=>{const b=document.createElement('button');b.type='button';b.className='stop '+grpOf(k);
+    b.innerHTML=`<span class="n">${k==='rv'?'REVIEW':'STATION '+LABEL[k]}</span><span class="tt">${SEC[k].replace(/^A\d /,'')}</span><span class="mm" data-mm="${k}"></span>`;
+    b.onclick=()=>show(k);route.appendChild(b)});
+  $$('[data-go]').forEach(b=>b.onclick=()=>show(b.dataset.go));
+}
+function show(k){
+  $$('section.tab').forEach(s=>s.classList.toggle('on',s.id==='tab-'+k));
+  $$('#tabs button').forEach(b=>b.classList.toggle('on',b.dataset.tab===k));
+  const b=$(`#tabs button[data-tab="${k}"]`);if(b)try{b.scrollIntoView({block:'nearest',inline:'center'})}catch(e){}
+  if(k==='report')renderReport();
+  try{if(location.hash!=='#'+k)history.replaceState(null,'','#'+k);}catch(e){}
+  window.scrollTo({top:0});
+}
+function refreshProgress(){
+  let a=0,p=0;Q.forEach(q=>{if(S[q.id].done){a++;p+=S[q.id].pts}});
+  $('#progtxt').textContent=UI.prog(a,Q.length,p);$('#progbar').style.width=(100*a/Q.length)+'%';
+  Object.keys(SEC).forEach(k=>{const qs=Q.filter(q=>q.part===k),d=qs.filter(q=>S[q.id].done).length;
+    const t=$(`#tabs button[data-tab="${k}"] .tick`);if(t)t.textContent=d===qs.length?'✓':'';
+    const m=$(`[data-mm="${k}"]`);if(m)m.textContent=`≈ ${UI.mins[k]} min · ${d}/${qs.length} ${UI.done}`;});
+}
+
+/* ================= ANSWER CHECKING ================= */
+function cleanAlg(s){return String(s).trim().replace(/²/g,'^2').replace(/³/g,'^3').replace(/[−–]/g,'-').replace(/[×·]/g,'*').replace(/÷/g,'/').replace(/\s+/g,'').replace(/(\d)[xX](?=[\d(\-])/g,'$1*').replace(/(\))[xX](?=[\d(\-])/g,'$1*')}
+function judge(q,input){
+  if(q.type==='mc')return input===q.ans?'ok':'no';
+  if(q.type==='tbl'){const r=tblJudge(q,input);return r.res}
+  if(q.type==='pf')return pfJudge(q,input);
+  if(q.type==='sf')return sfJudge(q,input);
+  if(q.type==='frac')return fracJudge(q,input);
+  if(q.type==='ratio')return ratioJudge(q,input);
+  if(q.type==='num'||q.type==='nums')input=String(input).replace(/[%$]/g,'').replace(/(\d),(?=\d{3}(\D|$))/g,'$1');
+  if(q.type==='fnums')return fnumsJudge(q,input);
+  if(q.type==='pow')return powJudge(q,input);
+  if(q.type==='nums'){
+    const parts=String(input).replace(/[−–]/g,'-').split(/[,;]+/).map(x=>x.trim()).filter(Boolean);if(!parts.length)return 'bad';
+    const vals=[];for(const p of parts){try{const n=ALG.parse(cleanAlg(p));if(ALG.vars(n).size)return 'bad';vals.push(ALG.ev(n,{}))}catch(err){return 'bad'}}
+    if(vals.length!==q.ans.length)return 'no';
+    return vals.every((v,i)=>Math.abs(v-q.ans[i])<=(q.tol||1e-9)+1e-9)?'ok':'no';
+  }
+  if(q.type==='point'){
+    const m=String(input).replace(/[−–]/g,'-').replace(/\s+/g,'').match(/^\(?([^,()]+),([^,()]+)\)?$/);if(!m)return 'bad';
+    let a,b;try{a=ALG.ev(ALG.parse(m[1]),{});b=ALG.ev(ALG.parse(m[2]),{})}catch(err){return 'bad'}
+    return Math.abs(a-q.ans[0])<1e-9&&Math.abs(b-q.ans[1])<1e-9?'ok':'no';
+  }
+  if(q.type==='list'){
+    const s=String(input);if(/\d\.\d/.test(s))return 'no';
+    const nums=(s.replace(/[−–]/g,'-').match(/-?\d+/g)||[]).map(Number);if(!nums.length)return 'bad';
+    const a=[...new Set(nums)].sort((x,y)=>x-y),b=[...q.ans].sort((x,y)=>x-y);
+    return a.length===b.length&&a.every((v,i)=>v===b[i])?'ok':'no';
+  }
+  let s=cleanAlg(input);if(!s)return 'bad';
+  if(q.strip)s=s.replace(/^[a-zA-Z]=/,'');
+  if(q.type==='num'){s=s.replace(/^[a-zA-Z]=/,'');let v;try{const n=ALG.parse(s);if(ALG.vars(n).size)return 'bad';v=ALG.ev(n,{})}catch(e){return 'bad'}
+    return Math.abs(v-q.ans)<=q.tol+1e-9?'ok':'no';}
+  let node;try{node=ALG.parse(s)}catch(e){return 'bad'}
+  if(!ALG.equiv(node,q.ans))return 'no';
+  if(q.type==='expr')return 'ok';
+  if(q.type==='expand'||q.type==='simp'){
+    if(q.type==='simp'&&ALG.topTerms(node)<=ALG.topTerms(ALG.parse(q.ans))&&!termList(node).every(monoOK))return 'monomial';
+    if(ALG.hasGrp(node))return 'brackets';
+    if(ALG.topTerms(node)>ALG.topTerms(ALG.parse(q.ans)))return 'collect';
+    if(!termList(node).every(monoOK))return 'monomial';
+    return 'ok';}
+  if(q.type==='factor'){
+    let n=node,neg=false;if(n.t==='neg'){neg=true;n=n.a}
+    if(!(n.t==='mul'&&n.b.t==='grp'))return 'formfactor';
+    const outer=n.a;
+    if(ALG.equiv(outer,q.hcf)||ALG.equiv(outer,ALG.parse('-('+q.hcf+')')))return 'ok';
+    return 'notfully';}
+  return 'no';
+}
+
+/* ===== number-specific judges ===== */
+const gcdI=(a,b)=>{a=Math.abs(a);b=Math.abs(b);while(b){[a,b]=[b,a%b]}return a};
+function parseFrac(str){ // returns {n,d,form:'int'|'frac'|'mixed',reduced}
+  const s=String(str).trim().replace(/[−–]/g,'-').replace(/\s+/g,' ');let m;
+  if((m=s.match(/^(-?)(\d+)$/)))return {n:(m[1]?-1:1)*+m[2],d:1,form:'int',reduced:true};
+  if((m=s.match(/^(-?)(\d+)\s?\/\s?(\d+)$/))){const n=+m[2],d=+m[3];if(!d)return null;return {n:(m[1]?-1:1)*n,d,form:n>=d?'improper':'frac',reduced:gcdI(n,d)===1}}
+  if((m=s.match(/^(-?)(\d+) (\d+)\s?\/\s?(\d+)$/))){const w=+m[2],n=+m[3],d=+m[4];if(!d||n>=d)return n>=d&&d?{n:(m[1]?-1:1)*(w*d+n),d,form:'badmixed',reduced:false}:null;return {n:(m[1]?-1:1)*(w*d+n),d,form:'mixed',reduced:gcdI(n,d)===1}}
+  return null}
+const fracEq=(a,[n,d])=>a.n*d===n*a.d;
+function fracJudge(q,input){const a=parseFrac(input);if(!a)return 'bad';if(!fracEq(a,q.ans))return 'no';
+  if(!a.reduced&&a.form!=='int')return 'simplest';
+  if(a.form==='improper'&&q.mixed!==false&&q.ans[1]>1&&Math.abs(q.ans[0])>q.ans[1])return 'mixed';
+  if(a.form==='badmixed')return 'simplest';
+  return 'ok'}
+function fnumsJudge(q,input){const parts=String(input).split(',').map(s=>s.trim()).filter(Boolean);if(parts.length!==q.ans.length)return parts.length?'no':'bad';
+  const v=parts.map(parseFrac);if(v.some(x=>!x))return 'bad';return v.every((x,i)=>fracEq(x,q.ans[i]))?'ok':'no'}
+function ratioJudge(q,input){const s=String(input).replace(/\s+/g,'');if(!/^\d+(\.\d+)?(:\d+(\.\d+)?)+$/.test(s))return 'bad';
+  const a=s.split(':').map(Number),b=q.ans;if(a.length!==b.length)return 'no';
+  if(a.every((x,i)=>x===b[i]))return 'ok';
+  if(a.every((x,i)=>Math.abs(x*b[0]-b[i]*a[0])<1e-9))return q.form1?'onen':'simplest';return 'no'}
+function fracTexStr(str){return String(str).split(',').map(p=>{const s=p.trim().replace(/[−–]/g,'-');let m;
+  if((m=s.match(/^(-?)(\d+) (\d+)\/(\d+)$/)))return `${m[1]}${m[2]}\\dfrac{${m[3]}}{${m[4]}}`;
+  if((m=s.match(/^(-?)(\d+)\/(\d+)$/)))return `${m[1]}\\dfrac{${m[2]}}{${m[3]}}`;return s.replace(/-/g,'-')}).join(',\\ ')}
+
+function sfCount(str){return str.replace(/^-/,'').replace('.','').replace(/^0+/,'').length}
+function sfJudge(q,input){
+  const s=String(input).trim().replace(/[−–]/g,'-').replace(/[\s\u2009\u202f]/g,'').replace(/(\d),(?=\d{3}(\D|$))/g,'$1');
+  if(!/^-?(\d+\.?\d*|\.\d+)$/.test(s))return 'bad';
+  const v=parseFloat(s),want=parseFloat(q.key);
+  if(Math.abs(v-want)>1e-9*Math.max(1,Math.abs(want)))return 'no';
+  if(q.key.includes('.')){if(!s.includes('.')||sfCount(s.startsWith('.')?'0'+s:s)!==q.n)return 'zeros'}
+  return 'ok';
+}
+const isPrime=n=>{if(!Number.isInteger(n)||n<2)return false;for(let d=2;d*d<=n;d++)if(n%d===0)return false;return true};
+const strip0=n=>n.t==='grp'?strip0(n.a):n;
+function factorsOf(n){n=strip0(n);if(n.t==='mul'&&!n.imp)return factorsOf(n.a).concat(factorsOf(n.b));if(n.t==='mul')return factorsOf(n.a).concat(factorsOf(n.b));return [n]}
+function pfJudge(q,input){
+  const s=cleanAlg(input);if(!s)return 'bad';let node;try{node=ALG.parse(s);if(ALG.vars(node).size)return 'bad'}catch(e){return 'bad'}
+  const v=ALG.ev(node,{});if(Math.abs(v-q.ans)>1e-9)return 'no';
+  const fs=factorsOf(node),bases=[];
+  for(const f of fs){let b,ex=1;if(f.t==='num')b=f.v;else if(f.t==='pow'&&strip0(f.a).t==='num'&&strip0(f.b).t==='num'){b=strip0(f.a).v;ex=strip0(f.b).v}else return 'notprime';
+    if(!isPrime(b)||!Number.isInteger(ex)||ex<1)return 'notprime';bases.push(b)}
+  if(fs.length<2&&!(fs[0].t==='pow'))return 'notprime';
+  if(new Set(bases).size<bases.length)return 'useindex';
+  return 'ok';
+}
+function powJudge(q,input){
+  const s=cleanAlg(input);if(!s)return 'bad';let node;try{node=ALG.parse(s);if(ALG.vars(node).size)return 'bad'}catch(e){return 'bad'}
+  const n=strip0(node);
+  if(n.t==='pow'&&strip0(n.a).t==='num'&&ALG.vars(n.b).size===0){const b=strip0(n.a).v,ex=ALG.ev(n.b,{});
+    if(b===q.base)return Math.abs(ex-q.exp)<1e-9?'ok':'no';
+    const want=Math.pow(q.base,q.exp),got=Math.pow(b,ex);return Math.abs(got-want)<=1e-9*Math.max(1,Math.abs(want))?'base':'no';}
+  let v;try{v=ALG.ev(node,{})}catch(e){return 'bad'}
+  const want=Math.pow(q.base,q.exp);
+  return Math.abs(v-want)<=1e-9*Math.max(1,Math.abs(want))?'single':'no';
+}
+/* table of powers: cells p (power), e (expanded), v (value) */
+function expTex(b,n){if(n===0)return '1';const f=Array(Math.abs(n)).fill(b).join('\\times ');return n>0?f:'\\dfrac{1}{'+f+'}'}
+function expKey(b,n){if(n===0)return '1';const f=Array(Math.abs(n)).fill(b).join('*');return n>0?f:(Math.abs(n)===1?'1/'+b:'1/('+f+')')}
+function valTex(b,n){return n>=0?String(Math.pow(b,n)):'\\dfrac{1}{'+Math.pow(b,-n)+'}'}
+function valKey(b,n){return n>=0?String(Math.pow(b,n)):'1/'+Math.pow(b,-n)}
+function tblCells(q){const out=[];q.rows.forEach((n,i)=>{['p','e','v'].forEach((k,j)=>{const shown=q.show[i][j]==='1';
+  out.push({row:i,col:j,n,kind:k,shown,tex:k==='p'?q.base+'^{'+n+'}':k==='e'?expTex(q.base,n):valTex(q.base,n),key:k==='p'?q.base+'^'+(n<0?'('+n+')':n):k==='e'?expKey(q.base,n):valKey(q.base,n)})})});return out}
+function cellJudge(b,n,kind,str){
+  const s=cleanAlg(str);if(!s)return 'bad';let node;try{node=ALG.parse(s);if(ALG.vars(node).size)return 'bad'}catch(e){return 'bad'}
+  const want=Math.pow(b,n);let v;try{v=ALG.ev(node,{})}catch(e){return 'bad'}
+  const eq=Math.abs(v-want)<=1e-9*Math.max(1,Math.abs(want));
+  if(kind==='v')return eq?'ok':'no';
+  if(kind==='p'){const m=strip0(node);if(m.t!=='pow'||strip0(m.a).t!=='num'||strip0(m.a).v!==b)return 'no';return Math.abs(ALG.ev(m.b,{})-n)<1e-9?'ok':'no'}
+  if(!eq)return 'no';if(n===0)return 'ok';
+  const toks=(s.match(/\d+(\.\d+)?/g)||[]).filter(t=>Number(t)===b).length;
+  return toks===Math.abs(n)?'ok':'no';
+}
+function tblJudge(q,input){const blanks=tblCells(q).filter(c=>!c.shown);const arr=Array.isArray(input)?input:[];
+  const per=blanks.map((c,i)=>cellJudge(q.base,c.n,c.kind,arr[i]||''));
+  if(per.some(r=>r==='bad'))return {res:'bad',per};return {res:per.every(r=>r==='ok')?'ok':'no',per}}
+function termList(n){if(n.t==='add'||n.t==='sub')return termList(n.a).concat(termList(n.b));return [n]}
+function monoOK(t){let nums=0,ok=true;const vs={};
+  (function walk(n){if(n.t==='neg')return walk(n.a);if(n.t==='mul'){walk(n.a);walk(n.b);return}
+    if(n.t==='pow'){if(n.a.t==='var'&&n.b.t==='num')vs[n.a.v]=(vs[n.a.v]||0)+1;else if(n.a.t==='num'&&n.b.t==='num')nums++;else ok=false;return}
+    if(n.t==='num'){nums++;return}if(n.t==='var'){vs[n.v]=(vs[n.v]||0)+1;return}ok=false})(t);
+  return ok&&nums<=1&&Object.values(vs).every(c=>c===1)}
+function correct(q,ans){return judge(q,ans)==='ok'}
+function storedAnswer(q){if(q.type==='mc')return q.ans;if(q.type==='tbl')return tblCells(q).filter(c=>!c.shown).map(c=>c.key);if(q.type==='pow')return q.base+'^'+q.exp;if(q.type==='pf'||q.type==='sf'||q.type==='frac'||q.type==='fnums'||q.type==='ratio')return q.key;if(q.type==='list'||q.type==='nums')return q.ans.join(', ');if(q.type==='point')return '('+q.ans.join(',')+')';return String(q.ans)}
+
+/* ================= FIGURES IN QUESTIONS ================= */
+/* ================= REPORT → PDF ================= */
+function repHead(){let nm='';try{nm=localStorage.getItem('report-name')||''}catch(e){}
+  const d=new Date().toLocaleDateString('en-NZ',{day:'numeric',month:'long',year:'numeric'});
+  const safe=nm.replace(/[<>&"]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]));
+  return `<div class="card rephead"><div class="printonly"><div style="font-family:Georgia,serif;font-size:1.3rem;font-weight:600">${document.title}</div><div>Learning report · ${d}</div><div>Name: <b id="repNameOut">${safe||'________________'}</b></div></div>`+
+    `<div class="ctrl noprint"><label>Your name <input type="text" id="repName" value="${safe}" placeholder="Type your name" style="font:inherit;padding:.3rem .5rem;border:1px solid #c9c3d6;border-radius:8px"></label><button class="btn primary" id="repPdf" type="button">⬇ Download report as PDF</button></div>`+
+    `<p class="small noprint" style="margin:.3rem 0 0">A print window opens: choose <b>Save as PDF</b> as the printer.</p></div>`}
+function wireRep(){const n=document.getElementById('repName'),b=document.getElementById('repPdf');if(!n||!b)return;
+  n.oninput=()=>{try{localStorage.setItem('report-name',n.value)}catch(e){}const o=document.getElementById('repNameOut');if(o)o.textContent=n.value||'________________'};
+  b.onclick=()=>{try{window.print()}catch(e){alert('Printing is blocked here. Open the page in a normal browser tab.')}};}
+
+function numberLineSVG(lo,hi,a,b,ai,bi,step){
+  const W=600,L=30,Rr=570,sx=v=>L+(v-lo)/(hi-lo)*(Rr-L);
+  let s=`<svg viewBox="0 0 ${W} 74" style="max-width:520px"><line x1="${L-14}" y1="44" x2="${Rr+14}" y2="44" stroke="#1c2230" stroke-width="2"/>`;
+  for(let v=lo;v<=hi+1e-9;v+=step){s+=`<line x1="${sx(v)}" y1="38" x2="${sx(v)}" y2="50" stroke="#1c2230" stroke-width="1.5"/><text x="${sx(v)}" y="70" font-size="18" text-anchor="middle">${fmtN(v).replace('-','−')}</text>`}
+  s+=`<line x1="${sx(a)}" y1="22" x2="${sx(b)}" y2="22" stroke="#b5487a" stroke-width="4"/>`;
+  s+=`<circle cx="${sx(a)}" cy="22" r="8" fill="${ai?'#b5487a':'#fff'}" stroke="#b5487a" stroke-width="3"/><circle cx="${sx(b)}" cy="22" r="8" fill="${bi?'#b5487a':'#fff'}" stroke="#b5487a" stroke-width="3"/>`;
+  return s+'</svg>';
+}
+
+/* ================= QUESTIONS UI ================= */
+function tblHTML(q){const cells=tblCells(q);let h=`<div class="tblwrap"><table class="itbl"><tr><th>${UI.tblHead[0]}</th><th>${UI.tblHead[1]}</th><th>${UI.tblHead[2]}</th></tr>`;
+  q.rows.forEach((n,i)=>{h+='<tr>';cells.filter(c=>c.row===i).forEach(c=>{h+=c.shown?`<td>$${c.tex}$</td>`:`<td data-c="${i}-${c.col}"><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="row ${i+1} ${UI.tblHead[c.col]}"></td>`});
+    h+='</tr>';if(i<q.rows.length-1)h+=`<tr class="oprow"><td colspan="3">$\\div ${q.base}$ ↓</td></tr>`});return h+'</table></div>'}
+
+function renderQuestions(){
+  $$('.qs').forEach(box=>{
+    const part=box.dataset.part,ids=box.dataset.ids?box.dataset.ids.split(','):null;box.innerHTML='';
+    Q.filter(q=>q.part===part).forEach((q,i)=>{if(ids&&!ids.includes(q.id))return;
+      const d=document.createElement('div');d.className='q';d.id='Q-'+q.id;
+      const label=part==='rv'?('R'+(i+1)):(LABEL[part]+String.fromCharCode(97+i));
+      let body=`<div class="qn">QUESTION ${label}<span class="lvltag ${q.lvl}">${UI.lvlName[q.lvl]}</span><span class="dots">${'<i></i>'.repeat(3)}</span></div><div class="prompt">${q.prompt}</div>`;
+      if(q.fig)body+=FIG[q.fig]();
+      if(q.type==='tbl'){body+=tblHTML(q)+`<div class="ansrow"><button type="button" class="btn primary chk">${UI.check}</button></div><div class="preview"></div><div class="fmt">${UI.fmt.tbl}</div>`;}
+      else if(q.type==='mc'){body+=`<div class="opts">${q.opts.map((o,j)=>`<button type="button" class="opt" data-j="${j}">${String.fromCharCode(65+j)}. ${o}</button>`).join('')}</div>`;}
+      else{body+=`<div class="ansrow"><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="answer"><button type="button" class="btn primary chk">${UI.check}</button></div><div class="preview"></div><div class="fmt">${UI.fmt[q.type]}</div>`;}
+      body+=`<div class="fb"></div><div class="hint" hidden></div><div class="sol" hidden></div>`;
+      d.innerHTML=body;box.appendChild(d);mathify(d);
+      if(q.type==='tbl'){const ins=[...d.querySelectorAll('td input')],pv=d.querySelector('.preview');
+        ins.forEach(inp=>{const upd=()=>{const v=inp.value.trim();if(!v){pv.innerHTML='';return}const t=ALG.toTex(cleanAlg(v));pv.innerHTML=t?UI.previewPre+texStr(t):'<span style="color:#c0392b">…</span>'};
+          inp.addEventListener('input',upd);inp.addEventListener('focus',upd);inp.addEventListener('keydown',ev=>{if(ev.key==='Enter')submit(q,ins.map(x=>x.value))})});
+        d.querySelector('.chk').onclick=()=>submit(q,ins.map(x=>x.value));}
+      else if(q.type==='mc'){d.querySelectorAll('.opt').forEach(b=>b.onclick=()=>submit(q,Number(b.dataset.j)));}
+      else{const inp=d.querySelector('input'),pv=d.querySelector('.preview');
+        inp.addEventListener('input',()=>{const v=inp.value.trim();if(!v){pv.innerHTML='';return}
+          if(q.type==='ratio'){pv.innerHTML=UI.previewPre+texStr(v.split(':').map(x=>x.trim()).join('\\,:\\,'));return}
+          if(q.type==='frac'||q.type==='fnums'){pv.innerHTML=UI.previewPre+texStr(fracTexStr(v));return}
+          if(q.type==='list'){pv.innerHTML=UI.previewPre+texStr((v.replace(/[−–]/g,'-').match(/-?\d+(\.\d+)?/g)||[]).join(',\\ '));return}
+          if(q.type==='nums'||q.type==='point'){const ps=v.replace(/[()]/g,'').split(/[,;]+/).map(x=>x.trim()).filter(Boolean).map(x=>ALG.toTex(cleanAlg(x)));
+            if(!ps.length||ps.some(x=>x==null)){pv.innerHTML='<span style="color:#c0392b">…</span>';return}
+            pv.innerHTML=UI.previewPre+texStr(q.type==='point'?'\\left('+ps.join(',\\,')+'\\right)':ps.join(',\\ '));return}
+          let s=cleanAlg(v),pre='';const m=s.match(/^([a-zA-Z])=(.*)$/);if(m&&q.strip){pre=m[1]+'=';s=m[2]}
+          const t=ALG.toTex(s);pv.innerHTML=t?UI.previewPre+texStr(pre+t):'<span style="color:#c0392b">…</span>'});
+        inp.addEventListener('keydown',e=>{if(e.key==='Enter')submit(q,inp.value)});
+        d.querySelector('.chk').onclick=()=>submit(q,inp.value);}
+      paint(q);
+    });
+  });
+  if('IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const id=e.target.id.slice(2);if(S[id]&&S[id].t0==null)S[id].t0=Date.now()}}),{threshold:0.6});
+    $$('.q').forEach(el=>io.observe(el));}
+}
+function submit(q,input){
+  const st=S[q.id];if(st.done)return;
+  const res=judge(q,input), el=$('#Q-'+q.id), fb=el.querySelector('.fb');
+  if(UI.info[res]){fb.className='fb info';html(fb,UI.info[res]);return}
+  const now=Date.now();if(st.t0==null)st.t0=now;
+  if(st.att===0)st.tFirst=now-st.t0;
+  st.tLast=now;st.att++;st.hist.push(input);
+  if(res==='ok'){st.done=true;st.pts=4-st.att;if(st.att===1)st.fastFirst=st.tFirst<(q.type==='mc'?4000:7000);}
+  else{if(q.type==='mc')st.wrongOpts.push(input);if(st.att>=3){st.done=true;st.pts=0;}}
+  if(q.type==='tbl'){const r=tblJudge(q,input),ins=[...el.querySelectorAll('td input')];ins.forEach((inp,i)=>{const td=inp.parentNode;td.classList.toggle('okc',r.per[i]==='ok');td.classList.toggle('noc',r.per[i]!=='ok')})}
+  save();paint(q);refreshProgress();
+}
+function paint(q){
+  const st=S[q.id],el=$('#Q-'+q.id);if(!el)return;
+  el.querySelectorAll('.dots i').forEach((d,i)=>{d.className='';if(i<st.att)d.className=(st.done&&st.pts>0&&i===st.att-1)?'ok':'x'});
+  const fb=el.querySelector('.fb');
+  if(st.att===0)fb.textContent='';
+  else if(st.done&&st.pts>0){fb.className='fb ok';fb.textContent=UI.right[st.att-1];}
+  else if(st.done){fb.className='fb no';fb.textContent=UI.wrongLast;}
+  else{fb.className='fb no';fb.textContent=UI.wrong+` (${UI.attempt} ${st.att+1} ${UI.of} 3)`;}
+  const wrongs=st.att-((st.done&&st.pts>0)?1:0),h=el.querySelector('.hint');
+  if(wrongs>=2&&h.hidden){h.hidden=false;html(h,`<b>${UI.hint}:</b> ${q.hint}`);}
+  const s=el.querySelector('.sol');if(st.done&&s.hidden){s.hidden=false;html(s,`<b>${UI.sol}:</b> ${q.sol}`);}
+  el.classList.remove('done-0','done-1','done-2','done-3');if(st.done)el.classList.add('done-'+st.pts);
+  if(q.type==='mc'){el.querySelectorAll('.opt').forEach(b=>{const j=Number(b.dataset.j);b.classList.toggle('wrong',st.wrongOpts.includes(j));
+      if(st.done){b.disabled=true;if(j===q.ans)b.classList.add('right');}else if(st.wrongOpts.includes(j))b.disabled=true;});}
+  else if(q.type==='tbl'){const ins=[...el.querySelectorAll('td input')],btn=el.querySelector('.chk');if(st.done){btn.disabled=true;const last=st.hist[st.hist.length-1]||[];
+      const r=tblJudge(q,last);ins.forEach((inp,i)=>{inp.disabled=true;if(last[i]!=null)inp.value=last[i];const td=inp.parentNode;td.classList.toggle('okc',r.per[i]==='ok');td.classList.toggle('noc',r.per[i]!=='ok')})}}
+  else{const inp=el.querySelector('input'),btn=el.querySelector('.chk');if(st.done){inp.disabled=true;btn.disabled=true;if(st.hist.length)inp.value=st.hist[st.hist.length-1];}}
+}
+
+/* ================= REPORT ================= */
+function renderReport(){
+  const T=UI.report, box=$('#report');
+  const answered=Q.filter(q=>S[q.id].done);
+  if(!Q.some(q=>S[q.id].att>0)){box.innerHTML=`<div class="card">${T.empty}</div>`;return}
+  let __h=repHead();
+  let h=__h+`<div class="card"><div class="box-title">${T.byPart}</div>`;
+  Object.keys(SEC).forEach(k=>{const qs=Q.filter(q=>q.part===k),d=qs.filter(q=>S[q.id].done),pts=d.reduce((a,q)=>a+S[q.id].pts,0);
+    const GK=Object.keys(GROUPS);const col=k==='rv'?'#6b5ca5':(grpOf(k)==='gb'?GCOL[GK[1]]:GCOL[GK[0]]);
+    h+=`<div class="rbar"><div class="lab"><span>${SEC[k]}</span><span>${d.length} / ${qs.length} · ${pts} pts</span></div><div class="tr"><i style="width:${100*pts/(qs.length*3)}%;background:${col}"></i></div></div>`});
+  h+='</div>';
+  const avg={};Object.keys(SKILLS).forEach(k=>{const qs=answered.filter(q=>q.tags.includes(k));avg[k]=qs.length?qs.reduce((a,q)=>a+S[q.id].pts,0)/qs.length:null});
+  const lev=a=>a==null?'n':a<1.5?'r':a<2.5?'a':'g';
+  h+=`<div class="card"><div class="box-title">${T.bySkill}</div>`;
+  Object.keys(GROUPS).forEach(g=>{h+=`<h3 style="margin:.8rem 0 .3rem">${GROUPS[g]}</h3>`;
+    Object.keys(SKILLS).filter(k=>SKILLS[k].g===g).forEach(k=>{h+=`<div class="skill"><span>${SKILLS[k].n}</span><span><span class="small">${T.avg(avg[k])}</span> <span class="lvl ${lev(avg[k])}">${T.lv[lev(avg[k])]}</span></span></div>`})});
+  h+='</div>';
+  const first=answered.filter(q=>S[q.id].pts===3).length, fast=answered.filter(q=>S[q.id].fastFirst).length;
+  const rushed=Q.filter(q=>{const s=S[q.id];return s.done&&s.pts===0&&s.att>=3&&s.t0!=null&&(s.tLast-s.t0)<20000}).length;
+  const whyTotal=$$('details.why').length, whyOpen=Object.keys(WHY).length;
+  h+=`<div class="card"><div class="box-title">${T.how}</div><ul class="steps"><li>${T.firstTry(first)}</li><li>${T.fast(fast)}</li><li>${T.rushed(rushed)}</li><li>${T.notDone(Q.length-answered.length)}</li>${whyTotal?`<li>${T.why(whyOpen,whyTotal)}</li>`:''}</ul></div>`;
+  const weak=Object.keys(SKILLS).filter(k=>avg[k]!=null&&avg[k]<2.5).sort((a,b)=>avg[a]-avg[b]).slice(0,3);
+  h+=`<div class="card"><div class="box-title">${T.advice}</div>`;
+  if(weak.length){h+=`<p>${T.advIntro}</p>`;weak.forEach(k=>{h+=`<div class="adv"><b>${SKILLS[k].n}</b> <span class="small">(${T.avg(avg[k])})</span><br>${SKILLS[k].adv}</div>`})}
+  else h+=`<p>${T.allGood}</p>`;
+  h+='</div>';
+  h+=`<div class="card"><div class="box-title">${T.map}</div><div id="kmap"></div><div class="legend"><span><i style="background:var(--good)"></i>${T.lv.g}</span><span><i style="background:var(--warn)"></i>${T.lv.a}</span><span><i style="background:var(--bad)"></i>${T.lv.r}</span><span><i style="background:var(--grey)"></i>${T.lv.n}</span></div></div>`;
+  const tot=answered.reduce((a,q)=>a+S[q.id].pts,0);
+  h+=`<div class="card"><div class="box-title">${T.total}</div><div class="score">${tot} / ${Q.length*3}</div><p class="small" style="text-align:center">${Math.round(100*tot/(Q.length*3))}%</p><p class="small">${T.note}</p></div>`;
+  box.innerHTML=h;mathify(box);drawMap(avg,lev);wireRep();
+}
+function drawMap(avg,lev){
+  const box=$('#kmap'), narrow=box.clientWidth<620;
+  const col={g:'#2f8a4c',a:'#b7791f',r:'#c0392b',n:'#9aa1ad'};
+  const G=Object.keys(GROUPS),left=Object.keys(SKILLS).filter(k=>SKILLS[k].g===G[0]),right=Object.keys(SKILLS).filter(k=>SKILLS[k].g===G[1]);
+  const rows=Math.max(left.length,right.length);
+  let W,H,cx,cy,xL,xR,bw,bh,gap,top,fs;
+  if(narrow){W=600;bw=250;bh=74;gap=98;top=170;fs=19;xL=140;xR=460;H=top+rows*gap;cx=300;cy=62;}
+  else{W=1000;bw=290;bh=54;gap=68;top=70;fs=16;xL=175;xR=825;H=top+rows*gap;cx=500;cy=top+(rows-1)*gap/2;}
+  const pos={};left.forEach((k,i)=>pos[k]=[xL,top+i*gap]);right.forEach((k,i)=>pos[k]=[xR,top+i*gap]);
+  const inner=k=>[pos[k][0]+(SKILLS[k].g===G[0]?bw/2:-bw/2),pos[k][1]];
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="knowledge map">`;
+  s+=`<text x="${xL}" y="${narrow?top-46:top-38}" text-anchor="middle" font-size="${fs}" font-weight="700" fill="${GCOL[G[0]]}">${GROUPS[G[0]]}</text><text x="${xR}" y="${narrow?top-46:top-38}" text-anchor="middle" font-size="${fs}" font-weight="700" fill="${GCOL[G[1]]}">${GROUPS[G[1]]}</text>`;
+  Object.keys(SKILLS).forEach(k=>{const [x,y]=inner(k);s+=`<line x1="${cx}" y1="${cy}" x2="${x}" y2="${y}" stroke="#e8e5ef" stroke-width="1.5"/>`});
+  LINKS.forEach(([a,b])=>{const A=inner(a),B=inner(b);
+    if(SKILLS[a].g===SKILLS[b].g){const dir=SKILLS[a].g===G[0]?1:-1,bow=Math.min(narrow?40:70,18+Math.abs(A[1]-B[1])*0.18);
+      s+=`<path d="M${A[0]},${A[1]} Q${(A[0]+B[0])/2+dir*bow},${(A[1]+B[1])/2} ${B[0]},${B[1]}" fill="none" stroke="#b9b3c9" stroke-width="2" stroke-dasharray="5 4"/>`;}
+    else s+=`<line x1="${A[0]}" y1="${A[1]}" x2="${B[0]}" y2="${B[1]}" stroke="#b9b3c9" stroke-width="2" stroke-dasharray="5 4"/>`;});
+  s+=`<ellipse cx="${cx}" cy="${cy}" rx="${narrow?150:118}" ry="${narrow?46:44}" fill="#1c2230"/><text x="${cx}" y="${cy-4}" text-anchor="middle" fill="#fff" font-size="${fs}" font-weight="700">${UI.report.centre[0]}</text><text x="${cx}" y="${cy+18}" text-anchor="middle" fill="#fff" font-size="${fs-2}">${UI.report.centre[1]}</text>`;
+  const split=t=>{if(t.length<=(narrow?20:40))return [t];let m=Math.floor(t.length/2),a=t.lastIndexOf(' ',m),b=t.indexOf(' ',m);let c=(a<0||(b>=0&&b-m<m-a))?b:a;return [t.slice(0,c),t.slice(c+1)]};
+  Object.keys(SKILLS).forEach(k=>{const [x,y]=pos[k],L=lev(avg[k]),c=col[L],lines=split(SKILLS[k].n.replace('&','&amp;'));
+    s+=`<rect x="${x-bw/2}" y="${y-bh/2}" width="${bw}" height="${bh}" rx="12" fill="#fff" stroke="${c}" stroke-width="3"/><rect x="${x-bw/2}" y="${y-bh/2}" width="8" height="${bh}" rx="3" fill="${GCOL[SKILLS[k].g]}"/>`;
+    const lh=fs+3,y0=y-(lines.length*lh)/2+fs*0.35-4;
+    lines.forEach((ln,i)=>{s+=`<text x="${x+4}" y="${y0+i*lh}" text-anchor="middle" font-size="${fs-1}" font-weight="600" fill="#1c2230" ${ln.length*(fs-1)*0.55>bw-24?`textLength="${bw-24}" lengthAdjust="spacingAndGlyphs"`:''}>${ln}</text>`});
+    s+=`<text x="${x+4}" y="${y0+lines.length*lh}" text-anchor="middle" font-size="${fs-2}" fill="${c}" font-weight="700">${UI.report.avg(avg[k])}</text>`;});
+  box.innerHTML=s+'</svg>';
+}
+
+
+const minus=s=>String(s).replace(/-/g,"−");
+/* ---------- generic stepper ---------- */
+function stepper(box,steps,endHtml){
+  let i=0,fb='',fbok=true,solved=false;
+  function render(){
+    if(i>=steps.length){html(box,endHtml);return}
+    const st=steps[i];
+    let h=`<div class="steps-dots">${steps.map((_,j)=>`<i class="${j<=i?'on':''}"></i>`).join('')}</div>`;
+    if(st.vis)h+=`<div style="margin:.4rem 0">${typeof st.vis==='function'?st.vis():st.vis}</div>`;
+    h+=`<div class="tq">${st.q}</div>`;
+    if(fb)h+=`<div class="tfb ${fbok?'ok':'no'}">${fb}</div>`;
+    if(!solved){const n=st.opts.length,k=(i*2+1)%n,ord=st.opts.map((_,j)=>(j+k)%n);h+=`<div class="tbtns">${ord.map(j=>`<button type="button" class="btn" data-j="${j}">${st.opts[j][0]}</button>`).join('')}</div>`}
+    else h+=`<div class="tbtns"><button type="button" class="btn primary" id="snext">${i<steps.length-1?'Next →':'Finish ✓'}</button></div>`;
+    html(box,h);
+    box.querySelectorAll('[data-j]').forEach(b=>b.onclick=()=>{const o=st.opts[+b.dataset.j];
+      if(o[1]){fb=st.ok;fbok=true;solved=true}else{fb=o[2]||'Not quite. Have another look.';fbok=false;b.disabled=true;
+        render();const bb=box.querySelector(`[data-j="${b.dataset.j}"]`);if(bb)bb.disabled=true;return}
+      render()});
+    const n=box.querySelector('#snext');if(n)n.onclick=()=>{i++;fb='';solved=false;render()};
+  }
+  render();
+}
+const tiles=(b,n,cls,cross)=>Array.from({length:n},(_,i)=>`<span class="tileb${cls?' '+cls:''}${cross&&i<cross?' x':''}">${b}</span>`).join('');
+
+
+/* ================= helpers ================= */
+const gcd2=(a,b)=>{a=Math.abs(a);b=Math.abs(b);while(b){[a,b]=[b,a%b]}return a};
+const nice=v=>String(Math.round(v*1000)/1000);
+/* 10 blocks of 10%; k blocks on; mode: 'on' | 'ex' extra blocks after | 'off' crossed out */
+function pbar(amount,k,mode,txt){const blk=(cls)=>`<i class="${cls}">${txt||nice(amount/10)}</i>`;
+  const fs=mode==='ex'&&k?';font-size:.6rem':'';let h=mode==='ex'?`<div class="pbar" style="flex:none;width:calc(${1000/(10+k)}% - 2px);max-width:none;margin:0${fs}">`:'<div class="pbar">';for(let i=0;i<10;i++)h+=blk(mode==='off'?(i>=10-k?'off':'on'):mode==='ex'?'on':(i<k?'on':''));h+='</div>';
+  if(mode==='ex'&&k){let e=`<div class="pbar" style="width:calc(${100*k/(10+k)}% - 2px);flex:none;max-width:none;margin:0${fs}">`;for(let i=0;i<k;i++)e+=blk('ex');h=`<div style="display:flex;gap:4px;align-items:center;max-width:400px;margin:.3rem 0">${h}${e}</div></div>`}
+  return h}
+/* bar model: rows [[name,parts]], value per part (or '?') */
+function barModel(rows,val,cols){const C=cols||['#7fb3e6','#f3b3cd','#ffd27a','#b7e1a1'];
+  return '<div class="bm">'+rows.map(([n,p],r)=>`<div class="row"><b>${n}</b>${Array(p).fill(`<span class="box" style="background:${C[r%4]}">${val}</span>`).join('')}</div>`).join('')+'</div>'}
+function beads(a,b,g){const C=['#3b4fa8','#e8902a'];let h='<div>';
+  const per=[a/g,b/g];for(let k=0;k<g;k++){h+='<span class="bgrp">'+[0,1].map(s=>Array(per[s]).fill(`<i class="bead" style="background:${C[s]}"></i>`).join('')).join('')+'</span>'}
+  return h+'</div>'}
+function tins(w,c,col){return '<div class="tins">'+Array(w).fill('<span class="tin" style="background:#fff"></span>').join('')+Array(c).fill(`<span class="tin" style="background:${col}"></span>`).join('')+'</div>'}
+function mixCol(w,c,rgb){const f=c/(w+c);return `rgb(${rgb.map(v=>Math.round(255+(v-255)*f)).join(',')})`}
+
+/* ---------- extra helpers ---------- */
+function sweets(n,g,on){const per=n/g;let h='<div>';for(let k=0;k<g;k++){h+=`<span class="bgrp${k<on?' take':''}">`+Array(per).fill(`<i class="bead" style="background:${k<on?'#e8902a':'#c7cbe0'}"></i>`).join('')+'</span>'}return h+'</div>'}
+/* operator bars: start bar and result bar from 0 (multiplication as a stretch) */
+function stretch(base,f,label){const mx=Math.max(base,base*f),W=230,sx=v=>14+v/mx*W,r=base*f;
+  return `<svg viewBox="0 0 ${W+150} 74" style="width:100%;max-width:400px"><rect x="14" y="8" width="${sx(base)-14}" height="20" rx="4" fill="#7fb3e6"/><text x="${sx(base)+6}" y="23" font-size="15">${nice(base)}</text>`+
+   `<rect x="14" y="40" width="${sx(r)-14}" height="20" rx="4" fill="#f3b3cd"/><text x="${sx(r)+6}" y="55" font-size="15" font-weight="700">${label||'× '+nice(f)} → ${nice(r)}</text>`+
+   `<line x1="14" y1="2" x2="14" y2="68" stroke="#1c2230" stroke-width="2"/></svg>`}
+function grid100(p,cols){let h=`<div class="g100" style="grid-template-columns:repeat(${cols||10},14px)">`;const n=(cols||10)**2;for(let i=0;i<n;i++)h+=`<i class="${i<Math.round(p)?'on':''}"></i>`;return h+'</div>'}
+function tableRows(rows){return '<div class="tblwrap"><table class="t">'+rows.map((r,i)=>'<tr>'+r.map(c=>`<td${i===rows.length-1?' style="background:#fdf0dd;font-weight:700"':''}>${c}</td>`).join('')+'</tr>').join('')+'</table></div>'}
+
+/* ================= D1 · A fraction of an amount ================= */
+function t1a(){
+  stepper($('#t1abody'),[
+    {vis:sweets(20,1,0),q:R`$\dfrac14$ of $20$ sweets: share the $20$ sweets into $4$ equal groups. How many in each group?`,opts:[['5',1],['4',0,'4 is the number of groups. How many sweets go in each?'],['16',0,'Share them out: 20 ÷ 4.']],ok:R`$20\div4=5$. So $\dfrac14$ of $20$ is $5$.`+sweets(20,4,1)},
+    {vis:sweets(20,4,0),q:R`$\dfrac34$ of $20$ means take $3$ of those groups. How many sweets?`,opts:[['15',1],['5',0,'That is one group. Take three.'],['12',0,'Each group has 5 sweets, not 4.']],ok:R`$3\times5=15$.`+sweets(20,4,3)+R`$\dfrac34$ of $20=20\div4\times3=15$.`},
+    {vis:tableRows([['3 lots of 20','$3\\times20$','60'],['2 lots of 20','$2\\times20$','40'],['1 lot of 20','$1\\times20$','20'],['$\\dfrac12$ of 20','$\\dfrac12\\times20$','?']]),q:R`Spot the pattern. “3 lots of 20” is $3\times20$. So $\dfrac12$ of $20$ is $\dfrac12\times20=\;?$`,opts:[['10',1],['40',0,'Half of 20, not double.'],['20.5',0,'Half a lot of 20.']],ok:R`<b>“Of” means ×.</b> $\dfrac12$ of $20=\dfrac12\times20=10$, and $\dfrac34$ of $20=\dfrac34\times20=15$.`},
+    {vis:stretch(20,3,'× 3'),q:R`Think of × as a stretch: $\times3$ stretches $20$ to $60$. What does $\times\dfrac34$ do to $20$?`,opts:[['Shrinks it to 15',1],['Stretches it to 23',0,'× 3/4 is less than × 1.'],['Makes it 3/4 bigger',0,'It takes 3 parts out of 4, so it gets smaller.']],ok:R`Multiplying by a fraction smaller than 1 <b>shrinks</b>. That is why $\dfrac34$ <i>of</i> something is less than the whole thing.`+stretch(20,0.75,'× ¾')}],
+    `<div class="tfb ok"><b>Got it!</b> Fraction of an amount $=$ fraction $\times$ amount. Do it as: $\div$ bottom, $\times$ top.</div>`);
+}
+function ofPlay(){function go(){const [a,b]=$('#ofF').value.split('/').map(Number);const sl=$('#ofN');sl.step=b;sl.min=b;sl.max=b*Math.floor(60/b);
+    let N=Math.round(+sl.value/b)*b;if(N<b)N=b;sl.value=N;$('#ofNv').textContent=N;
+    html($('#ofvis'),sweets(N,b,a)+stretch(N,a/b,`× ${a}/${b}`));
+    html($('#ofr'),`$\\dfrac{${a}}{${b}}$ of $${N}=${N}\\div${b}\\times${a}=${N/b}\\times${a}=${N/b*a}$<br>Same as $\\dfrac{${a}}{${b}}\\times${N}=${N/b*a}$`)}
+  ['#ofF','#ofN'].forEach(s=>$(s).addEventListener('input',go));go()}
+
+/* ================= D1 · B percentage of an amount ================= */
+function t1b(){
+  stepper($('#t1bbody'),[
+    {vis:grid100(30),q:R`<b>Per cent</b> means “out of 100”. $30\%$ is $30$ squares out of $100$. As a fraction, $30\%=\;?$`,opts:[[R`$\dfrac{30}{100}$`,1],[R`$\dfrac{30}{10}$`,0,'Per cent: out of 100.'],[R`$\dfrac{3}{100}$`,0,'30 squares are coloured, not 3.']],ok:R`$30\%=\dfrac{30}{100}=0.3$. So $30\%$ of $120$ is just a fraction of an amount!`},
+    {vis:pbar(120,0,'','10%'),q:R`Easy way: cut $120$ into $10$ blocks. Each block is $10\%$. How much is $10\%$ of $120$?`,opts:[['12',1],['10',0,'10% is not 10. Divide 120 by 10.'],['1.2',0,'120 ÷ 10.']],ok:R`$10\%=12$.`+pbar(120,0)},
+    {vis:pbar(120,3),q:R`$30\%$ is $3$ blocks. So $30\%$ of $120=\;?$`,opts:[['36',1],['30',0,'Three blocks of 12.'],['40',0,'Three blocks of 12.']],ok:R`$3\times12=36$.`},
+    {q:R`Calculator way: “of” means ×, and $30\%=0.3$. So $30\%$ of $120=120\times0.3=\;?$`,opts:[['36',1],['360',0,'× 0.3 makes it smaller, not bigger.'],['3.6',0,'120 × 3 = 360, then ÷ 10.']],ok:R`$36$ again. <b>Two ways, same answer ✓</b>`},
+    {q:R`Back to the sweets: is $70\%$ of $20$ more or less than $\dfrac34$ of $20$ ($=15$)? $70\%$ of $20=20\times0.7=\;?$`,opts:[['14, so ¾ is more',1],['15, the same',0,'20 × 0.7: 2 × 7 = 14.'],['70, so 70% is more',0,'70% of 20 must be less than 20.']],ok:R`$14<15$. That makes sense: $\dfrac34=75\%$, which is more than $70\%$.`}],
+    `<div class="tfb ok"><b>Got it!</b> Percentage of an amount $=$ percentage (as a decimal) $\times$ amount. Or build it from $10\%$ blocks.</div>`);
+}
+function d1Play(){function go(){const A=+$('#pa').value||0,p=+$('#pp').value;$('#ppv').textContent=p+'%';const part=A*p/100;
+    html($('#pvis'),pbar(A,Math.round(p/10)));
+    html($('#pr'),`$10\\%$ of $${nice(A)}=${nice(A/10)}$ (one block)<br>$${p}\\%$ of $${nice(A)}=${p/10}\\times${nice(A/10)}=${nice(part)}$<br>Check: $${nice(A)}\\times${nice(p/100)}=${nice(part)}$ ✓`)}
+  ['#pa','#pp'].forEach(s=>$(s).addEventListener('input',go));go()}
+
+/* ================= D1 · C one amount as a percentage of another ================= */
+function t1c(){
+  stepper($('#t1cbody'),[
+    {q:R`Amina got $18$ out of $25$ in a test. Write it as a fraction:`,opts:[[R`$\dfrac{18}{25}$`,1],[R`$\dfrac{25}{18}$`,0,'The part goes on top, the whole on the bottom.'],[R`$\dfrac{18}{100}$`,0,'The test was out of 25, not 100.']],ok:R`$\dfrac{18}{25}$: the part on top, the whole on the bottom.`+grid100(18,5)},
+    {vis:grid100(18,5),q:R`Percent means “out of 100”. What do you multiply $25$ by to get $100$?`,opts:[['4',1],['75',0,'That is what you add. We need to multiply.'],['2',0,'25 × 2 = 50.']],ok:R`$25\times4=100$. Every square in the small grid becomes $4$ squares in the big grid.`},
+    {q:R`Do the same to the top: $18\times4=\;?$`,opts:[['72',1],['22',0,'Multiply, do not add.'],['18',0,'The top must change too.']],ok:R`$\dfrac{18}{25}=\dfrac{72}{100}=72\%$.`+grid100(72)},
+    {q:R`Harder: $250$ out of $400$. $400$ does not turn into $100$ easily, so divide: $250\div400=0.625$. As a percentage that is…`,opts:[[R`$62.5\%$`,1],[R`$0.625\%$`,0,'A decimal × 100 gives the percentage.'],[R`$6.25\%$`,0,'0.625 × 100.']],ok:R`$0.625\times100=62.5\%$. Rule: <b>part $\div$ whole $\times100$</b>.`},
+    {q:R`Close the loop: check backwards. $62.5\%$ of $400=400\times0.625=\;?$`,opts:[['250 ✓',1],['640',0,'× 0.625 makes it smaller.'],['25',0,'400 × 0.625: half of 400 is 200, plus 50.']],ok:R`$250$: we got back to where we started. ✓`}],
+    `<div class="tfb ok"><b>Got it!</b> Part as a percentage of whole $=$ part $\div$ whole $\times100$.</div>`);
+}
+function scPlay(){function go(){const p=+$('#scp').value||0,w=+$('#scw').value||0;if(!w||p<0||p>w){html($('#scr'),'The part must be between 0 and the whole.');$('#scvis').innerHTML='';return}
+    const pc=p/w*100;html($('#scvis'),grid100(pc));
+    html($('#scr'),`$\\dfrac{${p}}{${w}}=${nice(p)}\\div${nice(w)}=${nice(p/w)}$<br>$${nice(p/w)}\\times100=<b>${nice(pc)}\\%</b>$${100%w===0?`<br>Or: $\\times${100/w}$ top and bottom: $\\dfrac{${p*100/w}}{100}$`:''}`)}
+  ['#scp','#scw'].forEach(s=>$(s).addEventListener('input',go));go()}
+
+/* ================= D1 ★ secret: going backwards ================= */
+function t1x(){
+  const q10=(k,txt)=>{let h='<div class="pbar">';for(let i=0;i<10;i++)h+=`<i class="${i<k?'on':''}">${i<k?txt:'?'}</i>`;return h+'</div>'};
+  stepper($('#t1xbody'),[
+    {vis:q10(3,'?'),q:R`$30\%$ of a mystery number is $36$. $30\%$ is $3$ blocks, and they hold $36$. How much is one block ($10\%$)?`,opts:[['12',1],['36',0,'36 is all three blocks together.'],['108',0,'Share 36 between 3 blocks.']],ok:R`$36\div3=12$.`+q10(3,'12')},
+    {q:R`The whole number is $10$ blocks ($100\%$). So the mystery number is…`,opts:[['120',1],['48',0,'Count all 10 blocks.'],['360',0,'10 blocks of 12.']],ok:R`$10\times12=120$.`+pbar(120,3)},
+    {q:R`Why does <b>dividing</b> work? Going forwards we did: number $\times0.3=36$. To go backwards we undo the $\times0.3$. The opposite of $\times0.3$ is…`,opts:[[R`$\div0.3$`,1],[R`$\times3$`,0,'Undo a × with a ÷.'],[R`$-0.3$`,0,'Undo a × with a ÷.']],ok:R`$36\div0.3=360\div3=120$. Same answer as the blocks! 🎉`},
+    {q:R`Third way: always <b>check forwards</b>. $30\%$ of $120=\;?$`,opts:[['36 ✓',1],['40',0,'120 × 0.3.']],ok:R`$36$ ✓. The mystery number really is $120$.`},
+    {vis:pbar(60,2,'ex'),q:R`Trap! After a $20\%$ increase, a jacket costs $\$72$. Lily says: “$20\%$ of $72$ is $14.40$, so it was $72-14.40=\$57.60$.” Check: $57.60\times1.2=\;?$`,opts:[['69.12, so Lily is wrong',1],['72, so Lily is right',0,'Work it out: 57.6 × 1.2.']],ok:R`Not $72$! $\$72$ is <b>$120\%$</b> of the old price: $12$ blocks. One block $=72\div12=6$, so $100\%=\$60$. Or $72\div1.2=60$. Check: $60\times1.2=72$ ✓`}],
+    `<div class="tfb ok"><b>Secret unlocked!</b> Going backwards: find one block, or divide by the multiplier. Then check forwards.</div>`);
+}
+
+/* ================= D2 ================= */
+function t2a(){
+  stepper($('#t2abody'),[
+    {vis:pbar(120,3,'ex'),q:R`A $\$120$ coat goes up $30\%$. Way 1: $30\%$ of $120$ is $36$. The new price is…`,opts:[['$156',1],['$36',0,'That is only the increase. Add it on.'],['$84',0,'Up means add.']],ok:R`$120+36=\$156$.`},
+    {vis:pbar(120,3,'ex','10%'),q:R`Look at the bar: the new price is the <b>whole</b> old price ($100\%$) plus $30\%$. So the new price is what percentage of the old price?`,opts:[[R`$130\%$`,1],[R`$30\%$`,0,'You keep the 100% you started with.'],[R`$103\%$`,0,'100% + 30%.']],ok:R`$130\%$ of the old price.`},
+    {q:R`From D1: “of” means ×, and $130\%=1.3$. So $130\%$ of $120=120\times1.3=\;?$`,opts:[['156',1],['15.6',0,'× 1.3 makes it a bit bigger.'],['1560',0,'120 × 13 = 1560, then ÷ 10.']],ok:R`$156$ again, in <b>one step</b>. The number $1.3$ is called the <b>multiplier</b>.`+stretch(120,1.3,'× 1.3')},
+    {q:R`Why does it work? $120\times1.3=120\times1+120\times0.3$: the old price plus the increase. What is the multiplier for <b>up $45\%$</b>?`,opts:[[R`$1.45$`,1],[R`$0.45$`,0,'That gives only the increase. Keep the 100%.'],[R`$45$`,0,'45% = 0.45, then add the 1.']],ok:R`$100\%+45\%=145\%=1.45$.`}],
+    `<div class="tfb ok"><b>Got it!</b> Up $x\%$: multiplier $=100\%+x\%$, e.g. up $30\%$ → $\times1.3$.</div>`);
+}
+function t2b(){
+  stepper($('#t2bbody'),[
+    {vis:pbar(40,7,'off'),q:R`A $\$40$ bag is $70\%$ off. What percentage of the price is <b>left</b>?`,opts:[[R`$30\%$`,1],[R`$70\%$`,0,'70% is crossed out. What is left?'],[R`$130\%$`,0,'Off means take away.']],ok:R`$100\%-70\%=30\%$ is left.`},
+    {q:R`So the sale price is $30\%$ of $40=40\times\;?$`,opts:[[R`$0.3$`,1],[R`$0.7$`,0,'0.7 is the part you take away.'],[R`$1.3$`,0,'Bigger than 1 would make it grow.']],ok:R`$40\times0.3=\$12$. Multiplier $0.3$.`+stretch(40,0.3,'× 0.3')},
+    {q:R`Which multiplier means <b>down $15\%$</b>?`,opts:[[R`$\times0.85$`,1],[R`$\times0.15$`,0,'That leaves only 15%.'],[R`$\times1.15$`,0,'That is up 15%.']],ok:R`$100\%-15\%=85\%=0.85$.`},
+    {q:R`Read it backwards: $\times1.08$ means…`,opts:[['up 8%',1],['down 8%',0,'1.08 is bigger than 1.'],['up 108%',0,'1.08 = 108% = 100% + 8%.']],ok:R`Bigger than $1$: grows. Smaller than $1$: shrinks.`}],
+    `<div class="tfb ok"><b>Got it!</b> Down $x\%$: multiplier $=100\%-x\%$, e.g. down $30\%$ → $\times0.7$.</div>`);
+}
+function t2c(){
+  stepper($('#t2cbody'),[
+    {q:R`Up $10\%$, then up $50\%$. Is that up $60\%$? Try $100$: $100\times1.1=110$. Then $110\times1.5=\;?$`,opts:[['165',1],['160',0,'50% of 110 is 55, not 50.'],['150',0,'Start from 110, not 100.']],ok:R`$165$: up <b>$65\%$</b>, not $60\%$! The second $50\%$ is $50\%$ of a bigger number. 🤯`},
+    {q:R`So for two changes, multiply the multipliers: $1.1\times1.5=\;?$`,opts:[['1.65',1],['1.6',0,'Multiply, do not add.'],['2.6',0,'1.1 × 1.5.']],ok:R`$\times1.65$ → up $65\%$.`}],
+    `<div class="tfb ok"><b>Got it!</b> Two changes: multiply the multipliers. Never just add the percentages.</div>`);
+}
+function mPlay(){function go(){const p=+$('#mp').value,up=$('#mdir').value==='up';$('#mpv').textContent=p+'%';const M=up?1+p/100:1-p/100;
+    html($('#mvis'),pbar(100,p/10,up?'ex':'off','10%')+stretch(200,M,`× ${nice(M)}`));
+    html($('#mres'),`${up?'Up':'Down'} ${p}%: $100\\%${up?'+':'-'}${p}\\%=${up?100+p:100-p}\\%$ → multiplier $\\times${nice(M)}$<br>$200\\times${nice(M)}=${nice(200*M)}$ (${M>1?'bigger than 1: grows':'smaller than 1: shrinks'})`)}
+  ['#mp','#mdir'].forEach(s=>$(s).addEventListener('input',go));go()}
+function sortPlay(){const C=[1.2,0.8,1.05,0.95,2,0.5,1.5,0.25];let score=0;const done=new Set();
+  function draw(){html($('#sortc'),C.map((m,i)=>`<div class="scard${done.has(i)?' done':''}" id="sc${i}"><b>$\\times${m}$</b>${done.has(i)?`<span>${m>1?'up':'down'} ${nice(Math.abs(m-1)*100)}%</span>`:`<span><button type="button" class="btn small" data-i="${i}" data-g="1">grows</button> <button type="button" class="btn small" data-i="${i}" data-g="0">shrinks</button></span>`}</div>`).join(''));
+    $('#sortc').querySelectorAll('button').forEach(b=>b.onclick=()=>{const i=+b.dataset.i,m=C[i],ok=(m>1)===(b.dataset.g==='1');
+      if(ok){done.add(i);score++;draw();html($('#sortr'),done.size<C.length?`✓ $\\times${m}=${nice(m*100)}\\%$, so ${m>1?'up':'down'} ${nice(Math.abs(m-1)*100)}%. (${done.size}/${C.length})`:'<b>All sorted!</b> Bigger than 1 grows, smaller than 1 shrinks.')}
+      else html($('#sortr'),`Not quite: $\\times${m}$ is ${m>1?'bigger':'smaller'} than $1$.`)})}
+  draw();html($('#sortr'),'Does each multiplier make a number grow or shrink?')}
+function d2Play(){function go(){const a=+$('#m1').value,b=+$('#m2').value,s1=$('#m1s').value==='up'?1:-1,s2=$('#m2s').value==='up'?1:-1;
+    $('#m1v').textContent=a+'%';$('#m2v').textContent=b+'%';const M1=1+s1*a/100,M2=1+s2*b/100,M=M1*M2,ov=Math.round((M-1)*10000)/100;
+    html($('#mr'),`Change 1: $\\times${nice(M1)}$ &nbsp; Change 2: $\\times${nice(M2)}$<br>Together: $${nice(M1)}\\times${nice(M2)}=${nice(M)}$<br><b>Overall: ${ov>=0?'up':'down'} ${nice(Math.abs(ov))}%</b> &nbsp;(just adding gives ${s1*a+s2*b>=0?'up':'down'} ${Math.abs(s1*a+s2*b)}%${Math.abs(ov-(s1*a+s2*b))>1e-9?' ✗':' ✓'})`)}
+  ['#m1','#m2','#m1s','#m2s'].forEach(s=>$(s).addEventListener('input',go));go()}
+
+/* ================= D3 ================= */
+const tag=(p,c)=>`<span style="display:inline-block;padding:.2rem .6rem;border-radius:8px;background:${c};font-weight:700;margin:2px">$${p}</span>`;
+function chgBar(o,n){const k=Math.round(o/10),m=Math.round(n/10),mx=Math.max(k,m),pc=x=>(x/mx*100)+'%';
+  let h=`<div style="max-width:380px"><div class="small">Original $${o} = 100%</div><div class="pbar" style="width:${pc(k)};max-width:none">`;for(let i=0;i<k;i++)h+=`<i class="on">${k<=8?nice(100/k)+'%':''}</i>`;h+='</div>';
+  h+=`<div class="small">New $${n}</div><div style="display:flex;gap:3px;width:100%">`;
+  h+=`<div class="pbar" style="width:${pc(Math.min(k,m))};max-width:none;flex:none;margin:0">`;for(let i=0;i<Math.min(k,m);i++)h+='<i class="on"></i>';h+='</div>';
+  if(m!==k){h+=`<div class="pbar" style="width:calc(${pc(Math.abs(m-k))} - 3px);max-width:none;flex:none;margin:0">`;for(let i=0;i<Math.abs(m-k);i++)h+=m>k?'<i class="ex">+</i>':'<i class="off">−</i>';h+='</div>'}
+  return h+'</div></div>'}
+function t3a(){
+  stepper($('#t3abody'),[
+    {vis:`${tag(40,'#e8ebf8')} → ${tag(50,'#f8e7ef')}`,q:R`A ticket goes from $\$40$ to $\$50$. How much did it go up?`,opts:[['$10',1],['$50',0,'That is the new price.'],['$90',0,'Take away, do not add.']],ok:R`The change is $\$10$.`},
+    {vis:chgBar(40,50),q:R`The <b>original</b> price is the $100\%$ bar. Cut it into $\$10$ blocks: $4$ blocks, so each is $25\%$. The extra block is the change. What percentage is it?`,opts:[[R`$25\%$`,1],[R`$20\%$`,0,'Each block of the ORIGINAL bar is 25%.'],[R`$10\%$`,0,'$10 is not 10%. It is one block of four.']],ok:R`Up $25\%$.`},
+    {q:R`This is D1's “one amount as a percentage”: the <b>change</b> as a percentage of the <b>original</b>. $10\div40\times100=\;?$`,opts:[[R`$25\%$`,1],[R`$20\%$`,0,'Divide by 40, the original.'],[R`$4\%$`,0,'10 ÷ 40 = 0.25.']],ok:R`Percentage change $=\dfrac{\text{change}}{\text{original}}\times100$.`},
+    {q:R`Why divide by the <b>original</b> ($40$), not the new price ($50$)?`,opts:[['The original is the 100% we started from',1],['Because 40 is smaller',0,'Size is not the reason. Which one is the 100% bar?'],["It doesn't matter",0,'It does: 10 ÷ 50 gives 20%, a different answer.']],ok:R`“Up $25\%$” means up $25\%$ <i>of what it was</i>. Check: $40\times1.25=50$ ✓`}],
+    `<div class="tfb ok"><b>Got it!</b> Change $\div$ original $\times100$.</div>`);
+}
+function t3b(){
+  stepper($('#t3bbody'),[
+    {q:R`Second way, with multipliers from D2: new $\div$ old $=50\div40=\;?$`,opts:[['1.25',1],['0.8',0,'That is 40 ÷ 50. Do new ÷ old.'],['10',0,'Divide, do not take away.']],ok:R`$1.25$: the multiplier that turns $40$ into $50$.`+stretch(40,1.25,'× 1.25')},
+    {q:R`$\times1.25$ means…`,opts:[['up 25%',1],['up 125%',0,'1.25 = 125% = 100% + 25%.'],['down 25%',0,'Bigger than 1 grows.']],ok:R`Up $25\%$. Both ways agree ✓`},
+    {vis:`${tag(80,'#e8ebf8')} → ${tag(60,'#f8e7ef')}`+chgBar(80,60),q:R`A decrease: $\$80\to\$60$. $60\div80=0.75$. That means…`,opts:[['down 25%',1],['down 75%',0,'75% is what is left.'],['up 75%',0,'Smaller than 1 shrinks.']],ok:R`$0.75=75\%$ is left, so down $25\%$. Way 1 agrees: $20\div80=25\%$ ✓`},
+    {q:R`Wow test: a $\$100$ game goes up $50\%$, then down $50\%$. Is it back to $\$100$?`,opts:[['No: it ends at $75',1],['Yes: back to $100',0,'Try it: 100 → 150 → half of 150?'],['No: it ends at $50',0,'Half of 150, not half of 100.']],ok:R`$100\to150\to75$. The $50\%$ down was $50\%$ of a <b>bigger</b> number. $1.5\times0.5=0.75$.`}],
+    `<div class="tfb ok"><b>Got it!</b> Two ways: change $\div$ original $\times100$, or new $\div$ old $=$ multiplier.</div>`);
+}
+function chPlay(){function go(){const o=+$('#co').value,n=+$('#cn').value;$('#cov').textContent='$'+o;$('#cnv').textContent='$'+n;
+    html($('#cvis'),chgBar(o,n));const c=n-o,p=c/o*100,M=n/o;
+    html($('#cres'),`Change $=${nice(n)}-${nice(o)}=${nice(c)}$<br>Way 1: $${nice(Math.abs(c))}\\div${nice(o)}\\times100=${nice(Math.abs(p))}\\%$<br>Way 2: $${nice(n)}\\div${nice(o)}=${nice(M)}$ → ${M>=1?'up':'down'} ${nice(Math.abs(M-1)*100)}%<br><b>${c===0?'No change':(c>0?'Up ':'Down ')+nice(Math.abs(p))+'%'}</b>`)}
+  ['#co','#cn'].forEach(s=>$(s).addEventListener('input',go));go()}
+
+/* ================= D4 ================= */
+function t4(){
+  stepper($('#t4body'),[
+    {vis:beads(8,12,1),q:R`8 blue beads and 12 orange beads: ratio $8:12$. Can we put them into equal groups with nothing left over? The biggest number of groups is…`,opts:[['4',1],['2',0,'2 works, but you can make even more groups.'],['3',0,'8 does not split into 3 equal groups.']],ok:R`4 groups, each with 2 blue and 3 orange.`+beads(8,12,4)},
+    {q:R`So $8:12$ simplifies to…`,opts:[[R`$2:3$`,1],[R`$4:6$`,0,'Still both even: keep going.'],[R`$1:1.5$`,0,'Ratios use whole numbers.']],ok:R`$8:12=2:3$. Every group looks the same.`},
+    {q:R`$2.4$ kg of flour $:600$ g of sugar. What must you do first?`,opts:[['Make the units the same: 2400 g : 600 g',1],['Divide 2.4 by 600',0,'Different units cannot be compared yet.'],['Nothing, just simplify 2.4 : 600',0,'kg and g are different sizes.']],ok:R`$2400:600$. Divide by $600$: $4:1$.`},
+    {q:R`Sometimes we want the form $1:n$. $4:10$: divide <b>both</b> parts by $4$ to get…`,opts:[[R`$1:2.5$`,1],[R`$1:10$`,0,'Divide the 10 by 4 as well.'],[R`$1:6$`,0,'Divide, do not take away.']],ok:R`$1:2.5$. Now it says: for every $1$ of the first, there are $2.5$ of the second.`},
+    {q:R`Decimals: $0.4:2$. Multiply both by 10 to get…`,opts:[[R`$4:20$`,1],[R`$4:2$`,0,'Multiply both parts by 10.'],[R`$40:200$`,0,'That is × 100. It works, but × 10 is enough.']],ok:R`$4:20=1:5$.`}],
+    `<div class="tfb ok"><b>Done!</b> Same units, whole numbers, then divide every part by the same number.</div>`);
+}
+function d4Play(){function go(){const a=Math.min(30,Math.max(1,+$('#ra').value||1)),b=Math.min(30,Math.max(1,+$('#rb').value||1)),g=gcd2(a,b);
+    html($('#rvis'),beads(a,b,g));html($('#rr'),`$${a}:${b}$ → ${g} equal groups → <b>$${a/g}:${b/g}$</b>${g===1?' (already as simple as it gets)':''}`)}
+  ['#ra','#rb'].forEach(s=>$(s).addEventListener('input',go));go()}
+
+/* ================= D5 ================= */
+function t5(){
+  const rows=[['Ali',4],['Bob',1],['Carl',3]];
+  stepper($('#t5body'),[
+    {vis:barModel(rows,''),q:R`$\$72$ shared in the ratio $4:1:3$. Draw a box for each part. How many boxes altogether?`,opts:[['8',1],['3',0,'Count every box, not the people.'],['12',0,'4 + 1 + 3.']],ok:R`8 boxes share $\$72$.`},
+    {q:R`What is one box worth?`,opts:[['$9',1],['$8',0,'72 ÷ 8.'],['$24',0,'That is 72 ÷ 3 (people). Divide by the boxes.']],ok:R`$72\div8=\$9$ per box.`+barModel(rows,'$9')},
+    {q:R`Ali has 4 boxes. Ali gets…`,opts:[['$36',1],['$9',0,'Ali has 4 boxes.'],['$18',0,'4 × 9.']],ok:R`Ali $\$36$, Bob $\$9$, Carl $3\times9=\$27$.`},
+    {q:R`Check: do the shares add back to $\$72$? $36+9+27=\;?$`,opts:[['72 ✓',1],['70',0,'Add again: 36 + 9 = 45.']],ok:R`Yes! A quick check catches mistakes.`},
+    {vis:barModel([['Ali',3],['Bob',5]],''),q:R`New puzzle: Ali and Bob share sweets $3:5$. Ali gets $12$. We don't know the total, but Ali's $3$ boxes hold $12$. One box $=\;?$`,opts:[['4',1],['12',0,'12 is all three of Ali\'s boxes.'],['36',0,'Share 12 between 3 boxes.']],ok:R`One box $=4$.`+barModel([['Ali',3],['Bob',5]],'4')},
+    {q:R`Bob has $5$ boxes. Bob gets…`,opts:[['20',1],['12',0,'Bob has 5 boxes of 4.'],['8',0,'5 boxes of 4.']],ok:R`$5\times4=20$. Find one box first, then it's easy.`}],
+    `<div class="tfb ok"><b>Done!</b> Count the boxes → one box → each share → check the total.</div>`);
+}
+function d5Play(){function go(){const T=+$('#st').value||0,r=$('#sr').value.split(':').map(x=>Math.round(+x)).filter(x=>x>0);
+    if(r.length<2||r.length>4||r.some(x=>x>12)){html($('#sres'),'Type 2 to 4 parts, each from 1 to 12, like 4:1:3.');$('#svis').innerHTML='';return}
+    const n=r.reduce((a,b)=>a+b,0),one=T/n;const names=['A','B','C','D'];
+    html($('#svis'),barModel(r.map((p,i)=>[names[i],p]),nice(one)));
+    html($('#sres'),`${n} boxes. One box $=${nice(T)}\\div${n}=${nice(one)}$<br>`+r.map((p,i)=>`${names[i]}: $${p}\\times${nice(one)}=${nice(p*one)}$`).join('<br>'))}
+  ['#st','#sr'].forEach(s=>$(s).addEventListener('input',go));go()}
+
+/* ================= D6 ================= */
+function t6(){
+  const red=[200,30,60];
+  stepper($('#t6body'),[
+    {vis:`<div style="display:flex;gap:1rem;flex-wrap:wrap"><div>Harry $2:8$${tins(2,8,'#555')}</div><div>Misha $3:9$${tins(3,9,'#555')}</div></div>`,q:R`Grey paint. Harry mixes white : black $=2:8$, Misha $3:9$. Change Harry's to “1 tin of white”: $2:8=1:\;?$`,opts:[['4',1],['8',0,'Divide both by 2.'],['6',0,'Divide both by 2.']],ok:R`Harry $1:4$.`},
+    {q:R`And Misha: $3:9=1:\;?$`,opts:[['3',1],['6',0,'Divide both by 3.'],['9',0,'Divide both by 3.']],ok:R`Misha $1:3$. Harry has 4 black for each white, Misha only 3. Harry's is darker!`+`<div style="display:flex;gap:1rem;margin-top:.3rem;text-align:center"><div><span class="swatch" style="display:block;background:${mixCol(1,4,[40,40,40])}"></span>Harry</div><div><span class="swatch" style="display:block;background:${mixCol(1,3,[40,40,40])}"></span>Misha</div></div>`},
+    {q:R`Ratio to fraction: nuts are brazil : almond $=2:3$. What fraction are brazil nuts?`,opts:[[R`$\dfrac25$`,1],[R`$\dfrac23$`,0,'Out of ALL the parts: 2 + 3 = 5.'],[R`$\dfrac35$`,0,'That is the almonds.']],ok:R`5 parts in total, 2 are brazil nuts: $\dfrac25$.`},
+    {q:R`Best value: 2 cups hold $450$ ml, 5 mugs hold $1250$ ml. Find <b>one</b> of each. One mug holds…`,opts:[['250 ml',1],['225 ml',0,'That is one cup.'],['1250 ml',0,'That is 5 mugs.']],ok:R`Mug $250$ ml, cup $450\div2=225$ ml. The mug holds more.`},
+    {q:R`Recipe: $300$ g of flour for $4$ people. How much for <b>one</b> person?`,opts:[['75 g',1],['1200 g',0,'One person needs less than four people.'],['296 g',0,'Divide by 4.']],ok:R`$75$ g each.`},
+    {q:R`So for $6$ people you need…`,opts:[['450 g',1],['302 g',0,'Multiply by 6, do not add.'],['1800 g',0,'75 × 6.']],ok:R`$75\times6=450$ g. Find <b>one</b>, then scale up: that is <b>direct proportion</b>.`}],
+    `<div class="tfb ok"><b>Done!</b> To compare, make one side the same: $1:n$, or “one item”.</div>`);
+}
+function d6Play(){function go(){const w=+$('#pw').value,c=+$('#pc').value;$('#pwv').textContent=w;$('#pcv').textContent=c;
+    const g=gcd2(w,c);html($('#pvis2'),`<div style="display:flex;gap:1rem;align-items:center;flex-wrap:wrap">${tins(w,c,'#c0392b')}<span class="swatch" style="background:${mixCol(w,c,[192,57,43])}"></span></div>`);
+    const ch=[...new Set([`${w}:${c}`,`${w/g}:${c/g}`,`1:${nice(c/w)}`])].join('=');
+    html($('#pres'),`white : red $=${ch}$<br>Fraction red $=\\dfrac{${c}}{${w+c}}${g>1||gcd2(c,w+c)>1?'='+'\\dfrac{'+c/gcd2(c,w+c)+'}{'+(w+c)/gcd2(c,w+c)+'}':''}$`)}
+  ['#pw','#pc'].forEach(s=>$(s).addEventListener('input',go));go()}
+
+/* ================= BOOT ================= */
+function boot(){
+  initState();buildTabs();renderQuestions();
+  [t1a,ofPlay,t1b,d1Play,t1c,scPlay,t1x,t2a,t2b,mPlay,sortPlay,t2c,d2Play,t3a,t3b,chPlay,t4,d4Play,t5,d5Play,t6,d6Play].forEach(f=>{try{f()}catch(e){console.error(f.name,e)}});
+  $('#resetBtn').onclick=()=>{const b=$('#resetBtn');if(!b.dataset.armed){b.dataset.armed=1;b.textContent='Tap again to clear all answers';setTimeout(()=>{delete b.dataset.armed;b.textContent='Start again'},4000);return}
+    delete b.dataset.armed;b.textContent='Start again';try{localStorage.removeItem(KEY)}catch(e){}initState();renderQuestions();refreshProgress();};
+  mathify(document.querySelector('main'));
+  refreshProgress();
+  const h=location.hash.slice(1);show(ORDER.includes(h)?h:'start');
+}
+let booted=false;window.addEventListener('load',()=>{if(!booted){booted=true;boot()}});
+
+</script>
+</body>
+</html>
