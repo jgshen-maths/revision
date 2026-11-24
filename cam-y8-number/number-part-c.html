@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Year 8 Number Part C · Fractions</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<style>
+:root{
+  --ink:#1c2230;--muted:#5b6475;--paper:#f7f6fb;--card:#fff;--line:#e2e0ea;
+  --a:#3b4fa8;--a-soft:#e8ebf8;--b:#b5487a;--b-soft:#f8e7ef;
+  --good:#2f8a4c;--good-soft:#e5f4ea;--warn:#b7791f;--warn-soft:#fbf1dc;--bad:#c0392b;--bad-soft:#fbe5e2;--grey:#9aa1ad;
+  --xt:#5b6fd8;--ct:#e09f3e;--neg:#c0392b;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font:18px/1.65 "Avenir Next","Segoe UI",system-ui,-apple-system,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.25;font-weight:600}
+h2{font-size:1.6rem;margin:.2rem 0 .6rem}
+h3{font-size:1.15rem;margin:1.6rem 0 .5rem}
+p{margin:.55rem 0}
+header.top{position:sticky;top:0;z-index:20;background:rgba(247,246,251,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.topin{max-width:940px;margin:0 auto;padding:.55rem 1rem .35rem;display:flex;align-items:center;gap:.8rem;flex-wrap:wrap}
+.brand{font-family:Georgia,serif;font-weight:600;font-size:1.02rem;flex:1;min-width:180px}
+.brand small{display:block;font-family:inherit;font-weight:400;color:var(--muted);font-size:.84rem}
+.prog{font-size:.82rem;color:var(--muted);text-align:right}
+.bar{height:6px;background:var(--line);border-radius:4px;overflow:hidden;width:150px;margin-top:3px}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--a),var(--b));width:0;transition:width .4s}
+nav.tabs{max-width:940px;margin:0 auto;display:flex;gap:.35rem;overflow-x:auto;padding:.1rem 1rem .6rem;scrollbar-width:thin}
+nav.tabs button{flex:0 0 auto;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;padding:.32rem .8rem;font:inherit;font-size:.9rem;cursor:pointer;white-space:nowrap}
+nav.tabs button.ga{border-color:#c9d0ef}
+nav.tabs button.gb{border-color:#eccbdb}
+nav.tabs button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+nav.tabs button .tick{color:var(--good);font-weight:700;margin-left:.25rem}
+nav.tabs button.on .tick{color:#9be3b0}
+main{max-width:940px;margin:0 auto;padding:1.2rem 1rem 4rem}
+section.tab{display:none}
+section.tab.on{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.kicker{font-size:.84rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--a)}
+.gb-sec .kicker{color:var(--b)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1rem 1.1rem;margin:1rem 0}
+.idea{border-left:5px solid var(--a)}
+.gb-sec .idea{border-left-color:var(--b)}
+.box-title{font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:.3rem}
+.key{background:var(--a-soft);border-radius:10px;padding:.6rem .8rem;margin:.6rem 0}
+.gb-sec .key{background:var(--b-soft)}
+.trap{background:var(--warn-soft);border-radius:10px;padding:.6rem .8rem;margin:.6rem 0}
+.trap b{color:#8a5a0c}
+.steps{margin:.3rem 0;padding-left:1.3rem}
+.steps li{margin:.4rem 0}
+.tblwrap{overflow-x:auto;max-width:100%}
+table.t{border-collapse:collapse;margin:.5rem 0;font-size:1rem}
+table.t th,table.t td{border:1px solid var(--line);padding:.35rem .6rem;text-align:center}
+table.t th{background:#efedf5;font-weight:600}
+.widget{background:#fdfcff;border:1px dashed #c9c5d8;border-radius:14px;padding:.9rem;margin:1rem 0}
+.widget .box-title{color:var(--a)}
+.gb-sec .widget .box-title{color:var(--b)}
+.ctrl{display:flex;flex-wrap:wrap;gap:.5rem .8rem;align-items:center;margin:.45rem 0}
+.ctrl label{font-size:.98rem;display:flex;align-items:center;gap:.4rem}
+.ctrl input[type=range]{width:150px}
+.ctrl input[type=text],.ctrl select{font:inherit;padding:.3rem .5rem;border:1px solid #c9c3d6;border-radius:8px}
+.btn{border:1px solid var(--ink);background:#fff;color:var(--ink);border-radius:8px;padding:.36rem .8rem;font:inherit;font-size:.95rem;cursor:pointer}
+.btn:hover{background:#efedf5}
+.btn.primary,.btn.on{background:var(--ink);color:#fff}
+.btn.small{padding:.24rem .6rem;font-size:.9rem}
+.readout{background:#fff;border:1px solid var(--line);border-radius:10px;padding:.55rem .75rem;margin-top:.5rem;font-size:1rem}
+svg{max-width:100%;height:auto;display:block}
+svg text{font-family:"Avenir Next","Segoe UI",system-ui,sans-serif}
+.wex{border-left:5px solid #7a6f8c}
+.wex .box-title{color:#7a6f8c}
+details.why{background:#f1eff6;border-radius:12px;padding:.5rem .9rem;margin:1rem 0}
+details.why summary{cursor:pointer;font-weight:600}
+details.why[open]{padding-bottom:.8rem}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+@media(max-width:640px){.two{grid-template-columns:1fr}h2{font-size:1.35rem}}
+.qhead{display:flex;align-items:baseline;gap:.6rem;margin-top:1.8rem}
+.qhead h3{margin:0}
+.qhead span{font-size:.92rem;color:var(--muted)}
+.q{background:#fff;border:1px solid var(--line);border-radius:14px;padding:.9rem 1rem;margin:.8rem 0}
+.q .qn{font-weight:700;color:var(--muted);font-size:.88rem;letter-spacing:.05em;display:flex;align-items:center;gap:.4rem;flex-wrap:wrap}
+.lvltag{font-size:.74rem;letter-spacing:.08em;border-radius:999px;padding:.05rem .5rem;font-weight:700}
+.lvltag.Focus{background:#e6f2ea;color:#2f7a46}.lvltag.Practice{background:#e8ebf8;color:#3b4fa8}.lvltag.Challenge{background:#f8e7ef;color:#a3376a}
+.q .prompt{margin:.3rem 0 .6rem}
+.q.done-3{border-color:#9ed1ae}.q.done-2,.q.done-1{border-color:#e7c98d}.q.done-0{border-color:#e5a69e}
+.opts{display:grid;gap:.4rem}
+.opt{text-align:left;border:1px solid var(--line);background:#fbfaff;border-radius:10px;padding:.45rem .7rem;font:inherit;cursor:pointer;color:var(--ink)}
+.opt:hover:not(:disabled){border-color:var(--ink)}
+.opt.wrong{background:var(--bad-soft);border-color:#e5a69e}
+.opt.right{background:var(--good-soft);border-color:#9ed1ae}
+.opt:disabled{cursor:default}
+.ansrow{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
+.ansrow input{font:inherit;padding:.35rem .6rem;border:1px solid #c9c3d6;border-radius:8px;width:190px}
+.preview{min-height:1.8rem;color:var(--muted);font-size:1rem;margin-top:.2rem}
+.fmt{font-size:.9rem;color:var(--muted);margin-top:.2rem}
+.dots{display:inline-flex;gap:4px;margin-left:.2rem;vertical-align:middle}
+.dots i{width:10px;height:10px;border-radius:50%;border:1.5px solid var(--grey);display:inline-block}
+.dots i.x{background:var(--bad);border-color:var(--bad)}
+.dots i.ok{background:var(--good);border-color:var(--good)}
+.fb{margin-top:.5rem;font-size:1rem}
+.fb.ok{color:var(--good)}.fb.no{color:var(--bad)}.fb.info{color:#8a5a0c}
+.hint{background:var(--warn-soft);border-radius:10px;padding:.5rem .7rem;margin-top:.5rem;font-size:1rem}
+.sol{background:#eef0fa;border-radius:10px;padding:.55rem .8rem;margin-top:.55rem;font-size:1rem}
+.gb-sec .sol{background:#faeef4}
+.next{display:flex;justify-content:flex-end;margin-top:2rem}
+.hero{padding:1.2rem 0 .4rem}
+.hero h1{font-size:2.1rem;margin:.2rem 0}
+.hero p{color:var(--muted);max-width:640px}
+.route{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.6rem;margin:1rem 0}
+.stop{background:#fff;border:1px solid var(--line);border-radius:12px;padding:.65rem .8rem;cursor:pointer;text-align:left;font:inherit;color:var(--ink)}
+.stop:hover{border-color:var(--ink)}
+.stop .n{font-size:.75rem;font-weight:700;letter-spacing:.08em;color:var(--a)}
+.stop.gb .n{color:var(--b)}.stop.rv .n{color:#6b5ca5}
+.stop .tt{font-weight:600;display:block}
+.stop .mm{font-size:.86rem;color:var(--muted)}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;margin:.6rem 0}
+.flow div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:.5rem .6rem;font-size:.95rem}
+.flow b{display:block;font-size:.95rem}
+@media(max-width:640px){.flow{grid-template-columns:1fr 1fr}.hero h1{font-size:1.6rem}}
+/* report */
+.rbar{margin:.45rem 0}
+.rbar .lab{display:flex;justify-content:space-between;font-size:.9rem;gap:.5rem}
+.rbar .tr{height:10px;background:#e9e6f0;border-radius:6px;overflow:hidden}
+.rbar .tr i{display:block;height:100%}
+.skill{display:flex;justify-content:space-between;gap:.6rem;padding:.35rem 0;border-bottom:1px solid #eeebf3;font-size:1rem}
+.lvl{font-size:.78rem;border-radius:999px;padding:.05rem .55rem;white-space:nowrap;align-self:center}
+.lvl.g{background:var(--good-soft);color:var(--good)}.lvl.a{background:var(--warn-soft);color:#8a5a0c}.lvl.r{background:var(--bad-soft);color:var(--bad)}.lvl.n{background:#eee;color:#777}
+.score{font-family:Georgia,serif;font-size:2.4rem;text-align:center;margin:.3rem 0}
+.legend{display:flex;flex-wrap:wrap;gap:.4rem 1rem;font-size:.9rem;justify-content:center;margin-top:.4rem}
+.legend span{display:inline-flex;align-items:center;gap:.35rem}
+.legend i{width:12px;height:12px;border-radius:50%;display:inline-block}
+.adv{border-left:4px solid var(--warn);padding:.3rem .8rem;margin:.6rem 0;background:#fff;border-radius:0 10px 10px 0}
+.small{font-size:.92rem;color:var(--muted)}
+/* widgets */
+.chain{display:flex;flex-wrap:wrap;gap:.35rem;align-items:center;margin:.4rem 0}
+.chain span.op{background:var(--a-soft);color:var(--a);border-radius:8px;padding:.15rem .5rem;font-weight:700;font-size:.9rem}
+.chain span.ar{color:var(--muted)}
+.flowbox{display:flex;flex-wrap:wrap;align-items:center;gap:.3rem;margin:.35rem 0}
+.flowbox .fbx{border:1.5px solid var(--ink);border-radius:8px;padding:.15rem .5rem;background:#fff;min-width:38px;text-align:center}
+.flowbox .fop{border-radius:999px;padding:.12rem .55rem;font-weight:700;font-size:.88rem}
+.flowbox.fwd .fop{background:var(--a-soft);color:var(--a)}
+.flowbox.back .fop{background:var(--b-soft);color:var(--b)}
+.flowbox .arr{color:var(--muted)}
+.tiles{display:flex;flex-wrap:wrap;gap:4px;align-items:center;margin:.25rem 0}
+.tile{min-width:30px;height:30px;padding:0 .35rem;border-radius:7px;border:1.5px solid #c9c5d8;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:.92rem}
+.tile.common{background:var(--a);border-color:var(--a);color:#fff}
+.tile.sign{border:none;background:none;min-width:12px}
+.factor-row{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin:.35rem 0}
+.factor-row .lab{min-width:70px;font-weight:600}
+.log{font-size:.9rem;color:var(--muted);margin:.4rem 0 0;padding-left:1.2rem}
+.fig{position:relative;margin:.5rem 0}
+.fig .lb{position:absolute;transform:translate(-50%,-50%);background:rgba(255,255,255,.85);padding:0 3px;white-space:nowrap;font-size:.95rem}
+.katex{font-size:1.04em}
+.katex-display{overflow-x:auto;overflow-y:hidden;padding:.15rem 0}
+.credit{text-align:center;color:var(--muted);font-size:.86rem;padding:1rem 0 2rem}
+
+/* number part A */
+#w2r table.t{font-size:.95rem}#w2r table.t th,#w2r table.t td{padding:.3rem .4rem;line-height:1.25}
+.itbl{border-collapse:collapse;margin:.5rem 0;font-size:1.05rem}
+.itbl th,.itbl td{border:1px solid var(--line);padding:.4rem .55rem;text-align:center;vertical-align:middle}
+.itbl th{background:#efedf5;font-weight:600;font-size:.9rem;line-height:1.25}
+.itbl tr.oprow td{border:none;background:none;color:var(--b);font-weight:700;padding:.05rem .3rem;font-size:.95rem;line-height:1.3}
+.itbl td input{font:inherit;width:84px;padding:.25rem .4rem;border:1px solid #c9c3d6;border-radius:7px;text-align:center}
+.itbl td{min-width:64px}.itbl .katex{font-size:1.1em}
+.itbl td.okc{background:var(--good-soft)}.itbl td.noc{background:var(--bad-soft)}
+.itbl tr.new td{animation:fade .35s ease}
+.divbtn{border:1.5px solid var(--b);color:var(--b);background:#fff;border-radius:999px;padding:.15rem .6rem;font:inherit;font-weight:700;cursor:pointer;white-space:nowrap}
+.divbtn:hover{background:var(--b-soft)}
+.note{background:var(--good-soft);border-radius:10px;padding:.55rem .8rem;margin:.5rem 0}
+.tree svg{max-width:100%}
+.tree .nd{cursor:pointer}
+.pairs{display:flex;flex-wrap:wrap;gap:.35rem;margin:.4rem 0}
+.tileb{min-width:34px;height:34px;padding:0 .3rem;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:1rem;border:2px solid #3b4fa8;background:#e8ebf8;color:#3b4fa8;position:relative}
+.tileb.p{border-color:#b5487a;background:#f8e7ef;color:#b5487a}
+.tileb.x{opacity:.45}
+.tileb.x::after{content:"";position:absolute;left:-3px;right:-3px;top:50%;border-top:2.5px solid #c0392b;transform:rotate(-35deg)}
+.trow{display:flex;flex-wrap:wrap;gap:5px;align-items:center;margin:.3rem 0}
+.grpb{display:inline-flex;gap:4px;padding:4px;border:2px dashed #b9b3c9;border-radius:10px}
+.fracbox{display:inline-flex;flex-direction:column;align-items:flex-start;gap:6px}
+.fracbox .barl{border-top:2.5px solid #1c2230;align-self:stretch}
+.pyr{display:flex;flex-direction:column;align-items:center;gap:6px;margin:.5rem 0}
+.pyr div{display:flex;gap:6px}
+.pyr span{min-width:58px;height:40px;border:1.5px solid #1c2230;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;font-weight:600;background:#fff}
+.pyr span.q{background:#f1eff6;color:#7a6f8c}
+
+/* sample: friendly style */
+.hook{background:linear-gradient(135deg,#fff7e6,#eef3ff);border:none;border-radius:18px;padding:1.2rem 1.2rem 1rem}
+.hook .big{font-family:Georgia,serif;font-size:1.35rem;font-weight:600;margin:.1rem 0 .5rem}
+.hookfig{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin:.7rem 0}
+.hookfig .num{font-family:Georgia,serif;font-size:2.2rem;font-weight:700}
+.hookfig .eq{font-size:1.6rem;color:var(--muted)}
+.brick{--c:#6b5ca5;display:inline-flex;align-items:center;justify-content:center;min-width:46px;height:40px;padding:0 .45rem;border-radius:7px;background:var(--c);color:#fff;font-weight:800;font-size:1.2rem;position:relative;margin:10px 3px 0;box-shadow:inset 0 -5px rgba(0,0,0,.18)}
+.brick::before{content:"";position:absolute;top:-8px;left:7px;right:7px;height:9px;background:radial-gradient(circle at 22% 100%,var(--c) 5px,transparent 5.6px),radial-gradient(circle at 78% 100%,var(--c) 5px,transparent 5.6px)}
+.brick.sm{min-width:36px;height:32px;font-size:1rem;margin:8px 2px 0}
+.tray{display:flex;flex-wrap:wrap;align-items:flex-end;gap:2px;min-height:48px}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin:.6rem 0}
+.chip{min-width:56px;height:50px;border-radius:12px;border:2px solid #c9c5d8;background:#fff;font:inherit;font-size:1.3rem;font-weight:700;cursor:pointer;color:var(--ink)}
+.chip.yes{border-color:#2f9e5b;background:#e5f4ea;color:#2f7a46}
+.chip.no{border-color:#e5a69e;background:#fbe5e2;color:#c0392b;animation:shake .3s}
+@keyframes shake{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+.tutor{border:2px solid #3b4fa8;border-radius:18px;background:#fff;padding:1rem}
+.tutor .who{font-size:.85rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#3b4fa8}
+.tq{font-size:1.15rem;margin:.6rem 0 .4rem}
+.tbtns{display:flex;flex-wrap:wrap;gap:.5rem;margin:.3rem 0}
+.tbtns .btn{font-size:1.05rem;padding:.45rem .9rem;border-radius:10px}
+.tfb{border-radius:10px;padding:.45rem .7rem;margin:.4rem 0;font-size:1.02rem}
+.tfb.ok{background:var(--good-soft);color:#24683b}.tfb.no{background:var(--warn-soft);color:#7a4e0a}
+.wow{background:#fdf3ff;border:2px dashed #b5487a;border-radius:18px}
+.wow .box-title{color:#b5487a}
+.shortcut{background:#1c2230;color:#fff;border-radius:16px;padding:1rem 1.1rem}
+.shortcut .box-title{color:#ffd27a}
+.shortcut .katex{color:#fff}
+details.pad{background:#f1eff6;border-radius:12px;padding:.5rem .9rem;margin:1rem 0}
+details.pad summary{cursor:pointer;font-weight:600}
+.tries{margin:.5rem 0;padding-left:0;list-style:none}
+.tries li{display:flex;align-items:flex-end;gap:.5rem;flex-wrap:wrap;margin:.2rem 0}
+.tries li span.l{font-size:.95rem;color:var(--muted);min-width:100px}
+.zones{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin:.6rem 0}
+.zone{border-radius:14px;min-height:96px;padding:.4rem .3rem;text-align:center}
+.zone .zl{font-size:.82rem;font-weight:700;line-height:1.2}
+.zone .tray{justify-content:center}
+.zone.l{background:#e8ebf8;color:#3b4fa8}.zone.m{background:#efe4f3;color:#6b3a87}.zone.r{background:#f8e7ef;color:#b5487a}
+.brow{display:flex;align-items:flex-end;gap:.4rem;flex-wrap:wrap;margin:.2rem 0}
+.brow .lab{font-weight:700;min-width:44px;font-family:Georgia,serif;font-size:1.25rem}
+.brow button.brick{border:none;cursor:pointer;font-family:inherit}
+.brow button.brick:disabled{opacity:.2;cursor:default}
+.steps-dots{display:flex;gap:5px;margin:.2rem 0 .4rem}
+.steps-dots i{width:22px;height:6px;border-radius:3px;background:#dcd8e6}
+.steps-dots i.on{background:#3b4fa8}
+.nest{border:2.5px solid #6b5ca5;border-radius:16px;padding:.5rem;background:#f6f3fb}
+.nest .nest{border-color:#3b4fa8;background:#eef1fb;margin-top:.4rem}
+.nest .nest .nest{border-color:#2f9e5b;background:#eaf6ee}
+.nest .nl{font-size:.85rem;font-weight:700}
+.nest .tray{min-height:40px;gap:6px}
+.ncard{display:inline-flex;align-items:center;justify-content:center;min-width:48px;height:38px;border-radius:10px;background:#fff;border:2px solid #1c2230;font-weight:700;font-size:1.1rem;padding:0 .4rem}
+.cotbl td,.cotbl th{padding:.3rem .45rem}
+.cotbl td.eq{background:var(--good-soft);font-weight:700}
+.fbar{display:flex;height:30px;border:2px solid #1c2230;border-radius:6px;overflow:hidden;max-width:340px;margin:.25rem 0}
+.fbar i{flex:1;border-right:1.5px solid #1c2230;background:#fff}.fbar i:last-child{border-right:none}
+.fbar i.on{background:#7fb3e6}.fbar i.on2{background:#f3b3cd}.fbar i.on3{background:#ffd27a}
+.fbrow{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}.fbrow .lab{min-width:58px;font-weight:700;font-size:1.05rem}
+.fbrow .fbar{flex:1;min-width:180px}
+.divm{font-family:Georgia,serif;font-size:1.2rem;line-height:1.6}
+.divm .rem{display:inline-flex;align-items:center;justify-content:center;min-width:30px;height:30px;border-radius:50%;border:2px solid #3b4fa8;margin:2px;font-weight:700;font-family:inherit;font-size:1rem}
+.divm .rem.rep{border-color:#c0392b;background:#fbe5e2;color:#c0392b}
+.divm .rem.zero{border-color:#2f8a4c;background:#e5f4ea;color:#2f8a4c}
+.dchips{display:flex;flex-wrap:wrap;gap:6px;margin:.4rem 0}
+.dchips button{min-width:56px;padding:.35rem .5rem;border-radius:10px;border:2px solid #cfd3e4;background:#fff;font:inherit;font-size:1rem;cursor:pointer}
+.dchips button.stop{border-color:#2f8a4c;background:#e5f4ea}.dchips button.rep{border-color:#c0392b;background:#fbe5e2}
+.dchips button .katex{font-size:1.3em}.sort2 .katex{font-size:1.2em}
+.dchips button small{display:block;font-size:.78rem;color:#5b6475}
+.sort2{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin:.5rem 0}
+.sort2>div{border-radius:12px;padding:.5rem .6rem;min-height:60px}
+.sort2 .s{background:#e5f4ea}.sort2 .r{background:#fbe5e2}
+.sort2 b{display:block;font-size:.9rem;margin-bottom:.2rem}
+.pies{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:.3rem 0}
+.strip3{display:flex;flex-wrap:wrap;gap:8px}.strip3 span{display:flex;width:96px;height:34px;border:2px solid #1c2230;border-radius:6px;overflow:hidden}
+.strip3 i{flex:1;border-right:1.5px solid #1c2230;background:#fff}.strip3 i:last-child{border-right:none}
+.fcard{display:inline-flex;align-items:center;justify-content:center;min-width:66px;min-height:58px;padding:.2rem .5rem;border-radius:12px;border:2px solid #cfd3e4;background:#fff;font-size:1.15rem;cursor:pointer;font:inherit}
+.fcard.sel{border-color:#3b4fa8;background:#e8ebf8}.fcard.used{opacity:.35;cursor:default}
+.fcards{display:flex;flex-wrap:wrap;gap:8px;margin:.4rem 0}
+.printonly{display:none}
+@media print{
+  @page{size:A4;margin:12mm}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{background:#fff!important}
+  header.top,nav.tabs,.noprint,.next,section.tab:not(#tab-report){display:none!important}
+  section#tab-report{display:block!important;animation:none!important}
+  main{padding:0!important;max-width:none!important}
+  .printonly{display:block}
+  .rephead{border:2px solid #1c2230}
+  .skill,.rbar,.adv,.rephead,#kmap,.score{break-inside:avoid;page-break-inside:avoid}
+  #kmap svg{max-height:240mm}
+}
+</style>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%20role%3D%22img%22%20aria-label%3D%22%E7%94%B3%20Shen%20Studio%22%3E%3Crect%20width%3D%22100%22%20height%3D%22100%22%20rx%3D%2212%22%20fill%3D%22%23B3261E%22/%3E%3Cpath%20d%3D%22M41.57%2027.7V42.46H27.58V27.7ZM15.1%2025.34V70.78H16.95C22.18%2070.78%2027.58%2067.91%2027.58%2066.65V62.18H41.57V90H44.01C48.82%2090%2054.3%2086.88%2054.3%2085.62V62.18H68.97V68.93H71.07C75.37%2068.93%2081.53%2066.65%2081.61%2065.89V29.64C83.38%2029.3%2084.39%2028.55%2084.9%2027.87L73.69%2019.19L68.12%2025.34H54.3V13.96C56.74%2013.62%2057.33%2012.7%2057.5%2011.52L41.57%2010V25.34H28.42L15.1%2020.2ZM54.3%2027.7H68.97V42.46H54.3ZM41.57%2059.82H27.58V44.82H41.57ZM54.3%2059.82V44.82H68.97V59.82Z%22%20fill%3D%22%23FFFFFF%22/%3E%3C/svg%3E">
+<style id="shen-brand">
+.shen-footer{display:flex;align-items:center;justify-content:center;gap:8px;padding:18px 12px 26px;font:500 13px/1.3 Inter,"Helvetica Neue",Arial,sans-serif;color:#6B6458;letter-spacing:.03em;text-align:center}
+.shen-footer svg{width:20px;height:20px;flex-shrink:0}
+.shen-footer b{font-weight:600;color:#1A1A1A}
+.shen-print-mark{display:none}
+@media print{.shen-footer{display:none!important}
+.shen-print-mark{display:flex!important;position:fixed;right:0;bottom:0;align-items:center;gap:1.5mm;font:500 7.5pt/1 Inter,Arial,sans-serif;color:#555;opacity:.75;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.shen-print-mark svg{width:4mm;height:4mm}}
+</style>
+<style id="home-link">
+.homebtn{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 12px;border:1px solid var(--line,#ddd);border-radius:999px;background:#fff;color:var(--ink,#1c2230);text-decoration:none;font:600 .88rem/1 Inter,system-ui,sans-serif;white-space:nowrap;flex-shrink:0}
+.homebtn:hover{background:#f1eff6}
+.homebtn svg{width:16px;height:16px}
+@media print{.homebtn{display:none!important}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="topin">
+    <a class="homebtn" href="../index.html" aria-label="Back to the Maths Atlas home page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>Home</a>
+    <div class="brand">Year 8 Number · Part C<small>Fractions</small></div>
+    <div class="prog"><span id="progtxt"></span><div class="bar"><i id="progbar"></i></div></div>
+  </div>
+  <nav class="tabs" id="tabs"></nav>
+</header>
+
+<main>
+<!-- ================= START ================= -->
+<section class="tab" id="tab-start">
+  <div class="hero">
+    <div class="kicker">Cambridge · Year 8 · Number revision</div>
+    <h1>Fractions</h1>
+    <p>Six short missions about fractions: turning them into decimals, putting them in order, and taking away, multiplying and dividing. Each mission starts with a puzzle, then we work through it together, then it's your turn.</p>
+  </div>
+  <div class="card">
+    <div class="box-title">Typing answers</div>
+    <p>Fractions: <code>3/4</code>. Mixed numbers: <code>1 3/4</code> (whole number, space, fraction). Negatives: <code>-29/36</code>. A preview shows what you typed.</p>
+    <p class="small">Always give the simplest form: <code>3/4</code>, not <code>6/8</code>. Top-heavy answers go as mixed numbers.</p>
+  </div>
+  <div class="route" id="route"></div>
+  <div class="card">
+    <div class="box-title">Points</div>
+    <p>Right first try: 3 points. Second try: 2. Third try: 1. Stuck twice? A hint appears.</p>
+    <p class="small">Your progress is saved on this device. <button class="btn small" id="resetBtn" type="button">Start again</button></p>
+  </div>
+  <div class="next"><button class="btn primary" data-go="c1">Start Mission C1 →</button></div>
+</section>
+
+<!-- ================= C1 ================= -->
+<section class="tab" id="tab-c1">
+  <div class="kicker">Mission C1</div>
+  <h2>Fractions as decimals</h2>
+  <div class="card hook">
+    <div class="big">Type 1 ÷ 3 into a calculator.</div>
+    <div class="hookfig"><span class="num" style="font-size:1.7rem">0.3333333333</span></div>
+    <p>Does it ever stop? And why does $\dfrac18$ stop at $0.125$? Let's find out.</p>
+  </div>
+  <div class="tutor" id="t1">
+    <div class="who">Let's do it together</div>
+    <div id="t1body"></div>
+  </div>
+  <div class="card">
+    <div class="box-title">Detective game: stop or repeat?</div>
+    <p>Tap each fraction. It goes green if its decimal stops, red if it repeats.</p>
+    <div class="dchips" id="dch"></div>
+    <div class="readout" id="dread">Tap a fraction to see its remainders.</div>
+    <div class="sort2" id="dsort"></div>
+    <div class="wow card" id="dwow" hidden>
+      <div class="box-title">Spot the pattern 🤔</div>
+      <p>Break the bottom numbers into prime bricks:</p>
+      <p>Stops: $4=2\times2$<br>$8=2\times2\times2$<br>$20=2\times2\times5$</p>
+      <p>Only <b>2s and 5s</b>: the same bricks as $10=2\times5$!</p>
+      <p>Repeats: $6=2\times3$<br>$15=3\times5$<br>$7$ and $11$<br>A <b>3, 7 or 11</b> is hiding inside. That is why they never stop.</p>
+    </div>
+  </div>
+  <div class="shortcut card">
+    <div class="box-title">Shortcut card</div>
+    <p>$\dfrac38=3\div8$: write $3.000$ and divide, carrying remainders.</p>
+    <p>Bottom number only 2s and 5s → <b>stops</b>. Anything else inside → <b>repeats</b>: $\dfrac23=0.\dot6$, $\dfrac17=0.\dot14285\dot7$.</p>
+  </div>
+  <div class="qhead"><h3>Your turn</h3><span>6 questions</span></div>
+  <div class="qs" data-part="c1"></div>
+  <div class="next"><button class="btn primary" data-go="c2">Next mission: ordering →</button></div>
+</section>
+
+<!-- ================= C2 ================= -->
+<section class="tab" id="tab-c2">
+  <div class="kicker">Mission C2</div>
+  <h2>Ordering fractions</h2>
+  <div class="card hook">
+    <div class="big">Amina scored $\dfrac{18}{25}$. Ben scored $\dfrac{37}{50}$.</div>
+    <p>Who did better? The pieces are different sizes, so we can't just compare the top numbers. We need <b>same-size pieces</b>.</p>
+  </div>
+  <div class="tutor" id="t2">
+    <div class="who">Let's do it together</div>
+    <div id="t2body"></div>
+  </div>
+  <details class="pad"><summary>Play: the fraction-bar comparer</summary>
+    <div class="ctrl"><label>First <input type="text" id="f1n" value="3" size="2"> / <input type="text" id="f1d" value="5" size="2"></label>
+      <label>Second <input type="text" id="f2n" value="5" size="2"> / <input type="text" id="f2d" value="8" size="2"></label></div>
+    <div id="cmpb"></div>
+    <div class="readout" id="cmpr"></div>
+  </details>
+  <div class="shortcut card">
+    <div class="box-title">Shortcut card</div>
+    <p>Same top number? The smaller bottom number is bigger: $\dfrac7{11}>\dfrac7{13}$.</p>
+    <p>Different bottoms? Make them the same: $\dfrac34=\dfrac9{12}$, $\dfrac23=\dfrac8{12}$. Percentages? Make the bottom 100.</p>
+    <p>Negatives: closer to zero is bigger.</p>
+  </div>
+  <div class="qhead"><h3>Your turn</h3><span>6 questions</span></div>
+  <div class="qs" data-part="c2"></div>
+  <div class="next"><button class="btn primary" data-go="c3">Next mission: subtracting →</button></div>
+</section>
+
+<!-- ================= C3 ================= -->
+<section class="tab gb-sec" id="tab-c3">
+  <div class="kicker">Mission C3</div>
+  <h2>Subtracting mixed numbers</h2>
+  <div class="card hook">
+    <div class="big">Bim ran $8\dfrac58$ km. Yolander ran $10\dfrac34$ km.</div>
+    <p>How much further did Yolander run? Mixed numbers have two parts: wholes and pieces. We deal with each part on its own.</p>
+  </div>
+  <div class="tutor" id="t3">
+    <div class="who">Let's do it together</div>
+    <div id="t3body"></div>
+  </div>
+  <div class="shortcut card">
+    <div class="box-title">Shortcut card</div>
+    <p>1. Make the pieces the same size. 2. Wholes take away wholes. 3. Pieces take away pieces.</p>
+    <p>Not enough pieces? <b>Break a whole</b>: $4\dfrac24=3\dfrac64$. Then check by adding back.</p>
+  </div>
+  <div class="qhead"><h3>Your turn</h3><span>6 questions</span></div>
+  <div class="qs" data-part="c3"></div>
+  <div class="next"><button class="btn primary" data-go="c4">Next mission: multiplying →</button></div>
+</section>
+
+<!-- ================= C4 ================= -->
+<section class="tab gb-sec" id="tab-c4">
+  <div class="kicker">Mission C4</div>
+  <h2>Whole number × mixed number</h2>
+  <div class="card hook">
+    <div class="big">How much carpet for a $4\dfrac35$ m by $3$ m floor?</div>
+    <p>One hard multiplication… or two easy ones? Cut the rectangle into a <b>whole part</b> and a <b>fraction part</b>.</p>
+  </div>
+  <div class="tutor" id="t4">
+    <div class="who">Let's do it together</div>
+    <div id="t4body"></div>
+  </div>
+  <details class="pad"><summary>Play: the area splitter</summary>
+    <div class="ctrl"><label>Whole <input type="range" id="aw" min="1" max="6" value="3"> <b id="awv"></b></label>
+      <label>Fraction <select id="af"><option>1/2</option><option>1/3</option><option selected>2/3</option><option>1/4</option><option>3/4</option><option>2/5</option><option>3/5</option></select></label>
+      <label>× <input type="range" id="an" min="2" max="12" value="6"> <b id="anv"></b></label></div>
+    <div id="asvg"></div>
+    <div class="readout" id="ar"></div>
+  </details>
+  <div class="shortcut card">
+    <div class="box-title">Shortcut card</div>
+    <p>$3\dfrac23\times12=3\times12+\dfrac23\times12=36+8=44$.</p>
+    <p>Estimate first: $3\dfrac23\approx4$, so about $48$. Close? ✓</p>
+  </div>
+  <div class="qhead"><h3>Your turn</h3><span>6 questions</span></div>
+  <div class="qs" data-part="c4"></div>
+  <div class="next"><button class="btn primary" data-go="c5">Next mission: dividing →</button></div>
+</section>
+
+<!-- ================= C5 ================= -->
+<section class="tab gb-sec" id="tab-c5">
+  <div class="kicker">Mission C5</div>
+  <h2>Dividing by a fraction</h2>
+  <div class="card hook">
+    <div class="big">3 pizzas. Everyone eats half a pizza.</div>
+    <div class="pies" id="hookpies"></div>
+    <p>How many people can eat? That is $3\div\dfrac12$. Dividing can make a number <b>bigger</b>!</p>
+  </div>
+  <div class="tutor" id="t5">
+    <div class="who">Let's do it together</div>
+    <div id="t5body"></div>
+  </div>
+  <details class="pad"><summary>Play: how many pieces fit?</summary>
+    <div class="ctrl"><label>Wholes <input type="range" id="sn" min="1" max="6" value="4"> <b id="snv"></b></label>
+      <label>÷ <select id="sf"><option>1/2</option><option>1/3</option><option selected>2/3</option><option>1/4</option><option>3/4</option><option>2/5</option><option>3/5</option></select></label></div>
+    <div id="ssv"></div>
+    <div class="readout" id="sr"></div>
+  </details>
+  <div class="shortcut card">
+    <div class="box-title">Shortcut card</div>
+    <p>$4\div\dfrac23$: “how many $\dfrac23$ fit into 4?”</p>
+    <p><b>Flip and multiply</b>: $4\div\dfrac23=4\times\dfrac32=6$.</p>
+  </div>
+  <div class="qhead"><h3>Your turn</h3><span>6 questions</span></div>
+  <div class="qs" data-part="c5"></div>
+  <div class="next"><button class="btn primary" data-go="c6">Next mission: shortcuts →</button></div>
+</section>
+
+<!-- ================= C6 ================= -->
+<section class="tab gb-sec" id="tab-c6">
+  <div class="kicker">Mission C6</div>
+  <h2>Fraction shortcuts</h2>
+  <div class="card hook">
+    <div class="big">Can you do $\dfrac38+\dfrac23+\dfrac58$ in your head?</div>
+    <p>Yes, if you look before you start! Some fractions are best friends: together they make <b>1 whole</b>.</p>
+  </div>
+  <div class="tutor" id="t6">
+    <div class="who">Let's do it together</div>
+    <div id="t6body"></div>
+  </div>
+  <div class="card">
+    <div class="box-title">Game: make a whole</div>
+    <div class="fcards" id="mcards"></div>
+    <div class="readout" id="mr"></div>
+    <p class="small"><button class="btn small" id="mreset" type="button">Play again</button></p>
+  </div>
+  <div class="shortcut card">
+    <div class="box-title">Shortcut card</div>
+    <p>Look first: find pairs that make 1 ($\dfrac38+\dfrac58$, $\dfrac45+\dfrac15$).</p>
+    <p>Taking away two numbers? Add them first: $6-1\dfrac38-2\dfrac58=6-4$.</p>
+  </div>
+  <div class="qhead"><h3>Your turn</h3><span>6 questions</span></div>
+  <div class="qs" data-part="c6"></div>
+  <div class="next"><button class="btn primary" data-go="rv">Boss review →</button></div>
+</section>
+
+<!-- ================= REVIEW ================= -->
+<section class="tab" id="tab-rv">
+  <div class="kicker" style="color:#6b5ca5">Boss review</div>
+  <h2>One from each mission</h2>
+  <p>Mixed up! First decide which mission's trick you need.</p>
+  <div class="qs" data-part="rv"></div>
+  <div class="next"><button class="btn primary" data-go="report">See my report →</button></div>
+</section>
+
+<!-- ================= REPORT ================= -->
+<section class="tab" id="tab-report">
+  <div class="kicker">My report</div>
+  <h2>How did your missions go?</h2>
+  <div id="report"></div>
+</section>
+</main>
+</main>
+<footer class="shen-footer"><svg viewBox="0 0 100 100" role="img" aria-label="申 Shen Studio"><rect width="100" height="100" rx="12" fill="#B3261E"/><path d="M41.57 27.7V42.46H27.58V27.7ZM15.1 25.34V70.78H16.95C22.18 70.78 27.58 67.91 27.58 66.65V62.18H41.57V90H44.01C48.82 90 54.3 86.88 54.3 85.62V62.18H68.97V68.93H71.07C75.37 68.93 81.53 66.65 81.61 65.89V29.64C83.38 29.3 84.39 28.55 84.9 27.87L73.69 19.19L68.12 25.34H54.3V13.96C56.74 13.62 57.33 12.7 57.5 11.52L41.57 10V25.34H28.42L15.1 20.2ZM54.3 27.7H68.97V42.46H54.3ZM41.57 59.82H27.58V44.82H41.57ZM54.3 59.82V44.82H68.97V59.82Z" fill="#FFFFFF"/></svg><span><b>Shen Studio</b> · Designed by Mr. Shen</span></footer>
+<div class="shen-print-mark" aria-hidden="true"><svg viewBox="0 0 100 100" role="img" aria-label="申 Shen Studio"><rect width="100" height="100" rx="12" fill="#B3261E"/><path d="M41.57 27.7V42.46H27.58V27.7ZM15.1 25.34V70.78H16.95C22.18 70.78 27.58 67.91 27.58 66.65V62.18H41.57V90H44.01C48.82 90 54.3 86.88 54.3 85.62V62.18H68.97V68.93H71.07C75.37 68.93 81.53 66.65 81.61 65.89V29.64C83.38 29.3 84.39 28.55 84.9 27.87L73.69 19.19L68.12 25.34H54.3V13.96C56.74 13.62 57.33 12.7 57.5 11.52L41.57 10V25.34H28.42L15.1 20.2ZM54.3 27.7H68.97V42.46H54.3ZM41.57 59.82H27.58V44.82H41.57ZM54.3 59.82V44.82H68.97V59.82Z" fill="#FFFFFF"/></svg><span>Shen Studio</span></div>
+
+<script>
+/* ===== tiny algebra engine: parse, evaluate, LaTeX, equivalence ===== */
+const ALG = (function(){
+  function tokenize(s){
+    s=String(s).replace(/[−–]/g,'-').replace(/[×·]/g,'*').replace(/÷/g,'/').replace(/\s+/g,'');
+    const out=[];let i=0;
+    while(i<s.length){const c=s[i];
+      if(/[0-9.]/.test(c)){let j=i;while(j<s.length&&/[0-9.]/.test(s[j]))j++;const t=s.slice(i,j);if((t.match(/\./g)||[]).length>1||t==='.')throw 'num';out.push({k:'num',v:parseFloat(t),raw:t});i=j;continue}
+      if(/[a-zA-Z]/.test(c)){out.push({k:'var',v:c});i++;continue}
+      if('+-*/^()'.includes(c)){out.push({k:c});i++;continue}
+      throw 'char';
+    }
+    // implicit multiplication
+    const r=[];for(let k=0;k<out.length;k++){const a=out[k-1],b=out[k];
+      if(a&&(a.k==='num'||a.k==='var'||a.k===')')&&(b.k==='var'||b.k==='('||(b.k==='num'&&a.k!=='num')))r.push({k:'*',imp:true});
+      r.push(b)}
+    return r;
+  }
+  function parse(s){
+    const T=tokenize(s);let p=0;if(!T.length)throw 'empty';
+    const peek=()=>T[p],eat=k=>{if(!T[p]||T[p].k!==k)throw 'expect '+k;return T[p++]};
+    function expr(){let n=term();while(peek()&&(peek().k==='+'||peek().k==='-')){const o=T[p++].k;const m=term();n={t:o==='+'?'add':'sub',a:n,b:m}}return n}
+    function term(){let n=unary();while(peek()&&(peek().k==='*'||peek().k==='/')){const tk=T[p++];const m=unary();n=tk.k==='*'?{t:'mul',a:n,b:m,imp:!!tk.imp}:{t:'div',a:n,b:m}}return n}
+    function unary(){if(peek()&&peek().k==='-'){p++;return {t:'neg',a:unary()}}if(peek()&&peek().k==='+'){p++;return unary()}return power()}
+    function power(){let b=atom();if(peek()&&peek().k==='^'){p++;const e=unary();return {t:'pow',a:b,b:e}}return b}
+    function atom(){const k=peek();if(!k)throw 'end';
+      if(k.k==='num'){p++;return {t:'num',v:k.v,raw:k.raw}}
+      if(k.k==='var'){p++;return {t:'var',v:k.v}}
+      if(k.k==='('){p++;const e=expr();eat(')');return {t:'grp',a:e}}
+      throw 'unexpected'}
+    const n=expr();if(p!==T.length)throw 'trailing';return n;
+  }
+  function ev(n,env){switch(n.t){
+    case 'num':return n.v;case 'var':if(!(n.v in env))throw 'var';return env[n.v];
+    case 'add':return ev(n.a,env)+ev(n.b,env);case 'sub':return ev(n.a,env)-ev(n.b,env);
+    case 'mul':return ev(n.a,env)*ev(n.b,env);case 'div':return ev(n.a,env)/ev(n.b,env);
+    case 'pow':return Math.pow(ev(n.a,env),ev(n.b,env));case 'neg':return -ev(n.a,env);case 'grp':return ev(n.a,env)}}
+  function vars(n,set=new Set()){if(!n)return set;if(n.t==='var')set.add(n.v);['a','b'].forEach(k=>{if(n[k]&&typeof n[k]==='object')vars(n[k],set)});return set}
+  const strip=n=>n.t==='grp'?strip(n.a):n;
+  function tex(n){switch(n.t){
+    case 'num':return n.raw||String(n.v);case 'var':return n.v;
+    case 'add':return tex(n.a)+'+'+tex(n.b);
+    case 'sub':return tex(n.a)+'-'+tex(n.b);
+    case 'neg':return '-'+tex(n.a);
+    case 'grp':return '\\left('+tex(n.a)+'\\right)';
+    case 'div':return '\\frac{'+tex(strip(n.a))+'}{'+tex(strip(n.b))+'}';
+    case 'pow':return (n.a.t==='var'||n.a.t==='num'||n.a.t==='grp'?tex(n.a):'{'+tex(n.a)+'}')+'^{'+tex(strip(n.b))+'}';
+    case 'mul':{const A=tex(n.a),B=tex(n.b);const bStart=n.b.t==='num'||(n.b.t==='pow'&&n.b.a.t==='num')||n.b.t==='neg'||n.b.t==='div';
+      return bStart?A+'\\times '+B:A+B}}}
+  function toTex(s){try{return tex(parse(s))}catch(e){return null}}
+  const PTS=[1.37,-2.21,0.63,3.08,-0.71,2.49,-1.53];
+  function equiv(a,b,extra){
+    let A,B;try{A=typeof a==='string'?parse(a):a;B=typeof b==='string'?parse(b):b}catch(e){return false}
+    const vs=[...new Set([...vars(A),...vars(B),...(extra||[])])];
+    for(let t=0;t<6;t++){const env={};vs.forEach((v,i)=>env[v]=PTS[(t+i*3)%PTS.length]+0.11*i);
+      let x,y;try{x=ev(A,env);y=ev(B,env)}catch(e){return false}
+      if(!isFinite(x)||!isFinite(y)){continue}
+      if(Math.abs(x-y)>1e-7*Math.max(1,Math.abs(x),Math.abs(y)))return false}
+    return true;
+  }
+  // number of top-level terms (split on + and - outside brackets)
+  function topTerms(n){n=n;if(n.t==='add'||n.t==='sub')return topTerms(n.a)+topTerms(n.b);return 1}
+  function hasGrp(n){if(!n||typeof n!=='object')return false;if(n.t==='grp')return true;return hasGrp(n.a)||hasGrp(n.b)}
+  return {parse,ev,tex,toTex,equiv,vars,topTerms,hasGrp};
+})();
+
+
+const R = String.raw;
+const UI = {
+  tabs:{start:'Start',c1:'C1 Decimals',c2:'C2 Ordering',c3:'C3 Subtracting',c4:'C4 Multiplying',c5:'C5 Dividing',c6:'C6 Shortcuts',rv:'Boss review',report:'My report'},
+  mins:{c1:9,c2:9,c3:9,c4:8,c5:8,c6:7,rv:5},
+  lvlName:{Focus:'WARM-UP',Practice:'PRACTICE',Challenge:'⭐ BOSS LEVEL'},
+  check:'Check', attempt:'Try', of:'of',
+  fmt:{
+    num:R`Type a number, e.g. 0.375 or 12`,
+    frac:R`Type a fraction like 3/4, a mixed number like 1 3/4 (with a space), or a whole number.`,
+    fnums:R`Type the fractions in order, separated by commas, e.g. 1/2, 2/3, 3/4`
+  },
+  previewPre:'Your answer: ',
+  right:['Brilliant, first try! ✓','Got it on the second try ✓','Got there on the third try ✓'],
+  wrong:'Not yet. Have another go.',
+  wrongLast:"That's OK. Read the solution, then try the next one.",
+  info:{simplest:R`Right value! Now simplify it: divide the top and bottom by the same number, e.g. $\dfrac{6}{8}=\dfrac{3}{4}$.`,
+    mixed:R`Right value! Now write it as a mixed number, e.g. $\dfrac{7}{4}=1\dfrac{3}{4}$ (type 1 3/4).`,
+    bad:'I could not read that. Type fractions like 3/4 and mixed numbers like 1 3/4 (whole number, space, fraction).'},
+  hint:'Hint', sol:'Solution',
+  prog:(a,t,p)=>`${a} / ${t} done · ${p} pts`,
+  done:'done',
+  report:{
+    empty:'Nothing answered yet. Do some missions, then come back here.',
+    byPart:'By station', bySkill:'My skills', how:'How I worked', advice:'What to do next', map:'How the ideas connect', total:'My score',
+    lv:{g:'got it',a:'nearly there',r:'look again',n:'not tried'},
+    firstTry:n=>`<b>${n}</b> right on the first try.`,
+    fast:n=>!n?'You took your time on every question.':`<b>${n}</b> answered right very quickly. Great if you really knew it!`,
+    rushed:n=>n?`<b>${n}</b> question(s) had three wrong tries in under 20 seconds. After a wrong answer, slow down: draw the fraction bars, make the denominators the same, or estimate first.`:'No rushing: you stopped to think after wrong answers. Well done.',
+    notDone:n=>n?`<b>${n}</b> question(s) still to do.`:'You finished every question!',
+    why:(o,t)=>'',
+    allGood:'Every skill you tried is a “got it”. Well done! Next up: Number Part D (percentages and ratio).',
+    advIntro:'Have another look at:',
+    note:'3 points for right first try, 2 for second try, 1 for third try, 0 if all three tries are wrong.',
+    centre:['Fractions:','same-size pieces'],
+    avg:a=>a==null?'–':a.toFixed(1)+' / 3'
+  }
+};
+const GROUPS = {see:'Seeing and comparing fractions', calc:'Calculating with fractions'};
+const GCOL = {see:'#3b4fa8', calc:'#b5487a'};
+const SEC = {c1:'C1 Fractions as decimals',c2:'C2 Ordering fractions',c3:'C3 Subtracting mixed numbers',c4:'C4 Whole number × mixed number',c5:'C5 Dividing by a fraction',c6:'C6 Fraction shortcuts',rv:'Boss review'};
+const LABEL = {c1:'C1',c2:'C2',c3:'C3',c4:'C4',c5:'C5',c6:'C6'};
+const SKILLS = {
+  fdec:{n:'Fraction to decimal',g:'see',adv:R`A fraction is a division: $\dfrac38=3\div8$. Write $3.000$ and divide by 8 one digit at a time, carrying the remainder: $0.375$.`},
+  recur:{n:'Stops or repeats?',g:'see',adv:R`Simplify, then look at the bottom number. Made only of 2s and 5s (like 4, 8, 20, 25)? It stops. A 3, 7, 11… hiding inside (like 6, 9, 12, 15)? It repeats forever.`},
+  cmp:{n:'Comparing fractions',g:'see',adv:R`Make the bottom numbers the same, then compare the tops: $\dfrac34=\dfrac{9}{12}$ and $\dfrac23=\dfrac{8}{12}$. For top-heavy fractions, change to mixed numbers first.`},
+  negf:{n:'Negative fractions',g:'see',adv:R`Picture the number line. The one closer to zero is further right, so it is bigger: $-2\dfrac58>-2\dfrac68$.`},
+  pct:{n:'Fractions as percentages',g:'see',adv:R`Make the bottom number 100: $\dfrac{18}{25}=\dfrac{72}{100}=72\%$. Then all the scores are easy to compare.`},
+  submix:{n:'Subtracting mixed numbers',g:'calc',adv:R`Wholes first, then the fraction parts (same bottom number first). Check by adding back: answer + the number you took away should give the start.`},
+  borrow:{n:'Breaking a whole',g:'calc',adv:R`If the fraction part is too small to take away from, break one whole into pieces: $4\dfrac24=3\dfrac64$. Now you can take away $\dfrac34$.`},
+  mulmix:{n:'Whole number × mixed number',g:'calc',adv:R`Split the mixed number: $3\dfrac23\times12=3\times12+\dfrac23\times12=36+8$. Two easy jobs instead of one hard one.`},
+  est:{n:'Estimating to check',g:'calc',adv:R`Round the mixed number to the nearest whole number first: $21\times3\dfrac23\approx21\times4=84$. Your exact answer should be a bit less than that.`},
+  divf:{n:'Dividing by a fraction',g:'calc',adv:R`Read $4\div\dfrac23$ as “how many $\dfrac23$-pieces fit into 4?” Cut 4 into thirds (12 pieces), then group them in twos: 6.`},
+  flip:{n:'The flip trick',g:'calc',adv:R`Dividing by $\dfrac23$ gives the same answer as multiplying by $\dfrac32$: flip the fraction and multiply. $6\div\dfrac35=6\times\dfrac53=10$.`},
+  smart:{n:'Smart grouping',g:'calc',adv:R`Before you start, look for fractions that make a whole: $\dfrac38+\dfrac58=1$. Group them first, and the rest is easy.`}
+};
+const LINKS=[['fdec','recur'],['fdec','cmp'],['cmp','negf'],['cmp','pct'],['pct','fdec'],['submix','borrow'],['cmp','submix'],['mulmix','est'],['mulmix','divf'],['divf','flip'],['smart','submix'],['smart','borrow']];
+const FIG = {};
+const Q = [
+ // C1
+ {id:'c1a',part:'c1',lvl:'Focus',tags:['fdec'],type:'num',ans:0.375,tol:1e-9,src:'WB8 7.1 Q2g',prompt:R`Write $\dfrac38$ as a decimal.`,hint:R`$3\div8$: write $3.000$ and divide. $8$ into $30$ is $3$ remainder $6$…`,sol:R`$30\div8=3$ r $6$, $60\div8=7$ r $4$, $40\div8=5$ r $0$. So $\dfrac38=0.375$.`},
+ {id:'c1b',part:'c1',lvl:'Focus',tags:['fdec'],type:'num',ans:0.35,tol:1e-9,src:'WB8 7.1 Q7b',prompt:R`Write $\dfrac{7}{20}$ as a decimal.`,hint:R`Make the bottom number 100: $\times5$ top and bottom.`,sol:R`$\dfrac{7}{20}=\dfrac{35}{100}=0.35$.`},
+ {id:'c1c',part:'c1',lvl:'Focus',tags:['recur'],type:'mc',ans:1,src:'WB8 7.1 Q5',prompt:R`Does $\dfrac{5}{12}$ give a decimal that stops, or one that repeats forever?`,opts:['It stops (terminating)','It repeats forever (recurring)'],hint:R`$12=2\times2\times3$. Is there anything other than 2s and 5s?`,sol:R`$12$ has a $3$ inside, so it repeats: $\dfrac{5}{12}=0.41666\ldots=0.41\dot6$.`},
+ {id:'c1d',part:'c1',lvl:'Practice',tags:['recur'],type:'mc',ans:2,src:'WB8 7.1 Q4–5',prompt:R`Only one of these gives a decimal that stops. Which one?`,opts:[R`$\dfrac{4}{15}$`,R`$\dfrac59$`,R`$\dfrac{3}{20}$`,R`$\dfrac27$`],hint:'Look for a bottom number made only of 2s and 5s.',sol:R`$20=2\times2\times5$: only 2s and 5s. $\dfrac{3}{20}=\dfrac{15}{100}=0.15$. The others have a 3 or a 7 inside.`},
+ {id:'c1e',part:'c1',lvl:'Practice',tags:['fdec','recur'],type:'mc',ans:1,src:'WB8 7.1 Q2e',prompt:R`Which is $\dfrac56$ written as a decimal?`,opts:[R`$0.\dot8\dot3$ (that is $0.838383\ldots$)`,R`$0.8\dot3$ (that is $0.83333\ldots$)`,R`$0.83$`,R`$0.\dot5$`],hint:R`Work out $5\div6$: $50\div6=8$ r $2$, then $20\div6=3$ r $2$, then…`,sol:R`The remainder $2$ keeps coming back, so only the $3$ repeats: $0.8333\ldots=0.8\dot3$.`},
+ {id:'c1f',part:'c1',lvl:'Challenge',tags:['recur'],type:'mc',ans:2,src:'WB8 7.1 Q10',prompt:R`Zara's calculator shows $7\div9=0.7777777778$.<br>She says: “The 7s stop, because there is an 8 at the end. So $\dfrac79$ is not recurring.” Who is right?`,opts:['Zara: the 8 shows the 7s stop.','Nobody: 7 ÷ 9 is exactly 0.7777777778.',R`Not Zara: the screen ran out of space and rounded the last 7 up. $\dfrac79=0.\dot7$ goes on forever.`],hint:R`Do the division yourself: $70\div9=7$ r $7$… what is the remainder every time?`,sol:R`The remainder is always $7$, so the 7s never stop: $\dfrac79=0.\dot7$. The calculator only has 10 spaces, so it rounds the last digit.`},
+ // C2
+ {id:'c2a',part:'c2',lvl:'Focus',tags:['cmp'],type:'mc',ans:0,src:'WB8 7.2 Q7c',prompt:R`Which is bigger?`,opts:[R`$\dfrac{7}{11}$`,R`$\dfrac{7}{13}$`,'They are equal'],hint:'7 pizzas shared by 11 people, or by 13 people. Who gets more?',sol:R`Same top number: the smaller bottom number gives bigger pieces. $\dfrac{7}{11}>\dfrac{7}{13}$.`},
+ {id:'c2b',part:'c2',lvl:'Focus',tags:['cmp'],type:'mc',ans:1,src:'WB8 7.2 Q1a',prompt:R`Which is bigger?`,opts:[R`$\dfrac{13}{4}$`,R`$3\dfrac38$`,'They are equal'],hint:R`$\dfrac{13}{4}=3\dfrac14$. Now change the quarters into eighths.`,sol:R`$\dfrac{13}{4}=3\dfrac14=3\dfrac28$, which is less than $3\dfrac38$. So $3\dfrac38$ is bigger.`},
+ {id:'c2c',part:'c2',lvl:'Practice',tags:['cmp'],type:'fnums',ans:[[7,12],[2,3],[3,4],[5,6]],key:'7/12, 2/3, 3/4, 5/6',src:'original',prompt:R`Write in order, smallest first:<br>$\dfrac34,\ \dfrac23,\ \dfrac56,\ \dfrac{7}{12}$`,hint:R`Change them all to twelfths: $\dfrac{9}{12},\ \dfrac{8}{12},\ \dfrac{10}{12},\ \dfrac{7}{12}$.`,sol:R`In twelfths: $7<8<9<10$. So $\dfrac{7}{12},\ \dfrac23,\ \dfrac34,\ \dfrac56$.`},
+ {id:'c2d',part:'c2',lvl:'Practice',tags:['pct'],type:'mc',ans:1,src:'WB8 7.2 Q9',prompt:R`In a Spanish test, Amina scored $\dfrac{18}{25}$, Ben scored $\dfrac{37}{50}$ and Cynthia scored $73\%$.<br>Who had the highest score?`,opts:['Amina','Ben','Cynthia'],hint:R`Make each bottom number 100: $\dfrac{18}{25}=\dfrac{?}{100}$.`,sol:R`Amina $\dfrac{72}{100}=72\%$, Ben $\dfrac{74}{100}=74\%$, Cynthia $73\%$. Ben wins.`},
+ {id:'c2e',part:'c2',lvl:'Practice',tags:['negf'],type:'mc',ans:1,src:'WB8 7.2 Q4a',prompt:R`Which is bigger?`,opts:[R`$-\dfrac{11}{4}$`,R`$-2\dfrac58$`],hint:R`$-\dfrac{11}{4}=-2\dfrac34=-2\dfrac68$. Which is closer to zero?`,sol:R`$-2\dfrac68$ is further from zero than $-2\dfrac58$. So $-2\dfrac58$ is bigger.`},
+ {id:'c2f',part:'c2',lvl:'Challenge',tags:['negf','cmp'],type:'frac',ans:[-29,36],key:'-29/36',src:'WB8 7.2 Q14',prompt:R`Which fraction is exactly halfway between $-\dfrac89$ and $-\dfrac{13}{18}$ on the number line?`,hint:R`Change both to 36ths: $-\dfrac{32}{36}$ and $-\dfrac{26}{36}$. What is halfway between 32 and 26?`,sol:R`$-\dfrac{32}{36}$ and $-\dfrac{26}{36}$: halfway is $-\dfrac{29}{36}$.`},
+ // C3
+ {id:'c3a',part:'c3',lvl:'Focus',tags:['submix'],type:'frac',ans:[4,3],key:'1 1/3',src:'WB8 7.3 Q1a',prompt:R`Work out $4\dfrac23-3\dfrac13$.`,hint:R`Wholes: $4-3$. Parts: $\dfrac23-\dfrac13$.`,sol:R`$4-3=1$ and $\dfrac23-\dfrac13=\dfrac13$. Answer $1\dfrac13$.`},
+ {id:'c3b',part:'c3',lvl:'Focus',tags:['submix'],type:'frac',ans:[7,5],key:'1 2/5',src:'WB8 7.3 Q2a',prompt:R`Work out $2\dfrac35-1\dfrac15$.`,hint:R`Wholes: $2-1$. Parts: $\dfrac35-\dfrac15$.`,sol:R`$1$ and $\dfrac25$: $1\dfrac25$.`},
+ {id:'c3c',part:'c3',lvl:'Focus',tags:['borrow','submix'],type:'frac',ans:[7,4],key:'1 3/4',src:'WB8 7.3 Q3a',prompt:R`Work out $4\dfrac12-2\dfrac34$.`,hint:R`$4\dfrac12=4\dfrac24$. You can't take $\dfrac34$ from $\dfrac24$, so break a whole: $3\dfrac64$.`,sol:R`$3\dfrac64-2\dfrac34=1\dfrac34$. Check: $2\dfrac34+1\dfrac34=4\dfrac24=4\dfrac12$ ✓.`},
+ {id:'c3d',part:'c3',lvl:'Practice',tags:['borrow','submix'],type:'frac',ans:[11,6],key:'1 5/6',src:'WB8 7.3 Q4d',prompt:R`Work out $5\dfrac14-3\dfrac{5}{12}$.`,hint:R`$\dfrac14=\dfrac{3}{12}$. Then break a whole: $5\dfrac{3}{12}=4\dfrac{15}{12}$.`,sol:R`$4\dfrac{15}{12}-3\dfrac{5}{12}=1\dfrac{10}{12}=1\dfrac56$.`},
+ {id:'c3e',part:'c3',lvl:'Practice',tags:['submix'],type:'frac',ans:[17,8],key:'2 1/8',src:'WB8 7.3 Q6',prompt:R`Bim ran $8\dfrac58$ km. Yolander ran $10\dfrac34$ km.<br>How much further did Yolander run (in km)?`,hint:R`$10\dfrac34-8\dfrac58$. Change $\dfrac34$ to eighths.`,sol:R`$10\dfrac68-8\dfrac58=2\dfrac18$ km.`},
+ {id:'c3f',part:'c3',lvl:'Challenge',tags:['borrow'],type:'mc',ans:2,src:'WB8 7.3 Q12',prompt:R`Beth wrote:<br>$3\dfrac49-1\dfrac34=3\dfrac{16}{36}-1\dfrac{27}{36}=2\dfrac{11}{36}$<br>What went wrong?`,opts:['Nothing: the answer is right.','She should have used 12ths, not 36ths.',R`She did $27-16$ the wrong way round. She needed to break a whole: $2\dfrac{52}{36}-1\dfrac{27}{36}=1\dfrac{25}{36}$.`,R`She should have added the fractions: $3\dfrac{43}{36}$.`],hint:R`Can you take $\dfrac{27}{36}$ away from $\dfrac{16}{36}$?`,sol:R`$\dfrac{16}{36}$ is too small, so break a whole: $3\dfrac{16}{36}=2\dfrac{52}{36}$. Then $2\dfrac{52}{36}-1\dfrac{27}{36}=1\dfrac{25}{36}$.`},
+ // C4
+ {id:'c4a',part:'c4',lvl:'Focus',tags:['mulmix'],type:'frac',ans:[15,1],key:'15',src:'WB8 7.4 Q1a',prompt:R`Work out $2\dfrac12\times6$.`,hint:R`$2\times6$, plus half of 6.`,sol:R`$2\times6=12$ and $\dfrac12\times6=3$. $12+3=15$.`},
+ {id:'c4b',part:'c4',lvl:'Focus',tags:['mulmix'],type:'frac',ans:[26,1],key:'26',src:'WB8 7.4 Q1b',prompt:R`Work out $3\dfrac14\times8$.`,hint:R`$3\times8$, plus a quarter of 8.`,sol:R`$24+2=26$.`},
+ {id:'c4c',part:'c4',lvl:'Focus',tags:['mulmix'],type:'frac',ans:[44,1],key:'44',src:'WB8 7.4 Q3a',prompt:R`Work out $3\dfrac23\times12$.`,hint:R`$\dfrac13$ of 12 is 4, so $\dfrac23$ of 12 is…`,sol:R`$3\times12=36$ and $\dfrac23\times12=8$. $36+8=44$.`},
+ {id:'c4d',part:'c4',lvl:'Practice',tags:['mulmix'],type:'frac',ans:[49,2],key:'24 1/2',src:'WB8 7.4 Q5a',prompt:R`Work out $3\dfrac12\times7$.`,hint:R`$3\times7=21$, and half of 7 is $3\dfrac12$.`,sol:R`$21+3\dfrac12=24\dfrac12$.`},
+ {id:'c4e',part:'c4',lvl:'Practice',tags:['mulmix','est'],type:'frac',ans:[69,5],key:'13 4/5',src:'WB8 7.4 Q7',prompt:R`Rosa's bedroom floor is $4\dfrac35$ m long and $3$ m wide.<br>Estimate first ($\approx5\times3$), then work out the area in m².`,hint:R`$4\times3=12$, and $\dfrac35\times3=\dfrac95=1\dfrac45$.`,sol:R`$12+1\dfrac45=13\dfrac45$ m². A bit less than the estimate $15$ ✓.`},
+ {id:'c4f',part:'c4',lvl:'Challenge',tags:['mulmix'],type:'mc',ans:3,src:'WB8 7.4 Q11',prompt:R`Alec packs one box in $3\dfrac34$ minutes.<br>How long does he take to pack $60$ boxes?`,opts:['3 hours','2 hours 25 minutes','3 hours 15 minutes','3 hours 45 minutes'],hint:R`$3\times60=180$ minutes, plus $\dfrac34$ of 60 minutes.`,sol:R`$180+45=225$ minutes $=3$ hours $45$ minutes.`},
+ // C5
+ {id:'c5a',part:'c5',lvl:'Focus',tags:['divf'],type:'frac',ans:[6,1],key:'6',src:'WB8 7.5 Q1',prompt:R`Work out $3\div\dfrac12$.`,hint:'How many halves are there in 3?',sol:R`Each whole has 2 halves: $3\times2=6$.`},
+ {id:'c5b',part:'c5',lvl:'Focus',tags:['divf'],type:'frac',ans:[12,1],key:'12',src:'WB8 7.5 Q2',prompt:R`Work out $4\div\dfrac13$.`,hint:'How many thirds are there in 4?',sol:R`Each whole has 3 thirds: $4\times3=12$.`},
+ {id:'c5c',part:'c5',lvl:'Focus',tags:['divf','flip'],type:'frac',ans:[6,1],key:'6',src:'WB8 7.5 Q6',prompt:R`Work out $4\div\dfrac23$.`,hint:R`4 has 12 thirds. How many groups of 2 thirds?`,sol:R`$12$ thirds $\div2=6$. Or flip: $4\times\dfrac32=6$.`},
+ {id:'c5d',part:'c5',lvl:'Practice',tags:['flip'],type:'frac',ans:[10,1],key:'10',src:'WB8 7.5 Q7',prompt:R`Work out $6\div\dfrac35$.`,hint:R`Flip and multiply: $6\times\dfrac53$.`,sol:R`$6\times\dfrac53=\dfrac{30}{3}=10$.`},
+ {id:'c5e',part:'c5',lvl:'Practice',tags:['flip'],type:'frac',ans:[20,3],key:'6 2/3',src:'WB8 7.5 Q8',prompt:R`Work out $5\div\dfrac34$. Give a mixed number.`,hint:R`Flip and multiply: $5\times\dfrac43=\dfrac{20}{3}$.`,sol:R`$\dfrac{20}{3}=6\dfrac23$.`},
+ {id:'c5f',part:'c5',lvl:'Challenge',tags:['flip','divf'],type:'frac',ans:[45,2],key:'22 1/2',src:'WB8 7.5 Q9',prompt:R`A rectangle has area $18$ m². Its width is $\dfrac45$ m.<br>How long is it (in m)?`,hint:R`Length $=$ area $\div$ width $=18\div\dfrac45$. Flip and multiply.`,sol:R`$18\times\dfrac54=\dfrac{90}{4}=22\dfrac12$ m.`},
+ // C6
+ {id:'c6a',part:'c6',lvl:'Focus',tags:['smart'],type:'frac',ans:[5,3],key:'1 2/3',src:'WB8 7.6 Q1',prompt:R`Work out in your head: $\dfrac38+\dfrac23+\dfrac58$.`,hint:R`Which two make a whole?`,sol:R`$\dfrac38+\dfrac58=1$, so the total is $1\dfrac23$.`},
+ {id:'c6b',part:'c6',lvl:'Focus',tags:['smart'],type:'frac',ans:[4,1],key:'4',src:'WB8 7.6 Q1',prompt:R`Work out $\dfrac74+\dfrac94$.`,hint:R`Same bottom number: just add the tops. $7+9=16$.`,sol:R`$\dfrac{16}{4}=4$.`},
+ {id:'c6c',part:'c6',lvl:'Practice',tags:['smart'],type:'frac',ans:[2,1],key:'2',src:'WB8 7.6 Q6',prompt:R`Work out $\dfrac45+\dfrac{3}{10}+\dfrac15+\dfrac{7}{10}$.`,hint:R`Pair the fifths and pair the tenths.`,sol:R`$\dfrac45+\dfrac15=1$ and $\dfrac{3}{10}+\dfrac{7}{10}=1$. Total $2$.`},
+ {id:'c6d',part:'c6',lvl:'Practice',tags:['smart'],type:'frac',ans:[7,20],key:'7/20',src:'WB8 7.6 Q5',prompt:R`In a tennis club, $\dfrac14$ of the members are women and $\dfrac25$ are men. The rest are children.<br>What fraction are children?`,hint:R`Use 20ths: $\dfrac14=\dfrac{5}{20}$, $\dfrac25=\dfrac{8}{20}$. The whole club is $\dfrac{20}{20}$.`,sol:R`$\dfrac{20}{20}-\dfrac{5}{20}-\dfrac{8}{20}=\dfrac{7}{20}$.`},
+ {id:'c6e',part:'c6',lvl:'Practice',tags:['smart'],type:'frac',ans:[19,4],key:'4 3/4',src:'original',prompt:R`Work out $2\dfrac56+1\dfrac34+\dfrac16$.`,hint:R`$2\dfrac56+\dfrac16$ makes a whole number.`,sol:R`$2\dfrac56+\dfrac16=3$, and $3+1\dfrac34=4\dfrac34$.`},
+ {id:'c6f',part:'c6',lvl:'Challenge',tags:['smart','submix'],type:'frac',ans:[2,1],key:'2',src:'original',prompt:R`Work out $6-1\dfrac38-2\dfrac58$.`,hint:R`Add the two numbers you take away first.`,sol:R`$1\dfrac38+2\dfrac58=4$, and $6-4=2$.`},
+ // Review
+ {id:'rv1',part:'rv',lvl:'Practice',tags:['fdec'],type:'num',ans:0.55,tol:1e-9,src:'original',prompt:R`Write $\dfrac{11}{20}$ as a decimal.`,hint:R`Make the bottom number 100.`,sol:R`$\dfrac{11}{20}=\dfrac{55}{100}=0.55$.`},
+ {id:'rv2',part:'rv',lvl:'Practice',tags:['negf'],type:'mc',ans:0,src:'WB8 7.2 Q8',prompt:R`Which is the smallest?`,opts:[R`$-4\dfrac13$`,R`$-\dfrac{14}{3}$`,R`$-4\dfrac15$`,R`$-\dfrac{22}{5}$`],hint:R`Change to mixed numbers: $-\dfrac{14}{3}=-4\dfrac23$, $-\dfrac{22}{5}=-4\dfrac25$. The smallest is furthest left.`,sol:R`$-4\dfrac23$ is furthest from zero, so $-\dfrac{14}{3}$ is the smallest.`},
+ {id:'rv3',part:'rv',lvl:'Practice',tags:['borrow','submix'],type:'frac',ans:[43,12],key:'3 7/12',src:'original',prompt:R`Work out $6\dfrac14-2\dfrac23$.`,hint:R`Twelfths: $6\dfrac{3}{12}-2\dfrac{8}{12}$. Break a whole.`,sol:R`$5\dfrac{15}{12}-2\dfrac{8}{12}=3\dfrac{7}{12}$.`},
+ {id:'rv4',part:'rv',lvl:'Challenge',tags:['est','mulmix'],type:'mc',ans:1,src:'WB8 7.4 Q4',prompt:R`Archie works out $21\times3\dfrac23$ and gets $77$. Is he right?`,opts:[R`No: $21\times4=84$, so it must be more than $84$.`,R`Yes: $21\times3=63$ and $\dfrac23\times21=14$. $63+14=77$.`,R`No: it should be $63\dfrac23$.`],hint:R`Estimate $21\times4=84$; the answer should be a bit less. Then split.`,sol:R`$63+14=77$ ✓, a bit less than the estimate $84$.`},
+ {id:'rv5',part:'rv',lvl:'Challenge',tags:['flip'],type:'frac',ans:[20,1],key:'20',src:'original',prompt:R`Work out $8\div\dfrac25$.`,hint:R`Flip and multiply: $8\times\dfrac52$.`,sol:R`$8\times\dfrac52=20$.`}
+];
+
+/* ================= HELPERS ================= */
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const gcd=(a,b)=>{a=Math.abs(a);b=Math.abs(b);while(b){[a,b]=[b,a%b]}return a||1};
+function mathify(el){ if(window.renderMathInElement){ try{renderMathInElement(el,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});}catch(e){} } }
+function texStr(t,disp){ if(window.katex){ try{return katex.renderToString(t,{throwOnError:false,displayMode:!!disp});}catch(e){} } return t; }
+function html(el,s){el.innerHTML=s;mathify(el);}
+function store(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+function load(k){try{return JSON.parse(localStorage.getItem(k))}catch(e){return null}}
+const fmtN=v=>{const r=Math.round(v*1000)/1000;return Object.is(r,-0)?'0':String(r)};
+
+(function(){const used=new Set();Q.forEach(q=>q.tags.forEach(t=>{if(!SKILLS[t])console.error('Missing skill',t);used.add(t)}));
+Object.keys(SKILLS).forEach(k=>{if(!used.has(k))console.error('Unused skill',k)});})();
+
+/* ================= STATE ================= */
+const KEY='cam-y8-num-c';
+let S={}, WHY={};
+function blank(){return {att:0,done:false,pts:0,t0:null,tFirst:null,tLast:null,fastFirst:false,hist:[],wrongOpts:[]}}
+function initState(){const saved=load(KEY);Q.forEach(q=>{S[q.id]=Object.assign(blank(),saved&&saved.S&&saved.S[q.id]?saved.S[q.id]:{})});WHY=(saved&&saved.WHY)||{};}
+function save(){store(KEY,{S,WHY})}
+
+/* ================= TABS ================= */
+const ORDER=['start','c1','c2','c3','c4','c5','c6','rv','report'];
+const grpOf=k=>['c3','c4','c5','c6'].includes(k)?'gb':(k==='rv'?'rv':'ga');
+function buildTabs(){
+  const nav=$('#tabs');nav.innerHTML='';
+  ORDER.forEach(k=>{const b=document.createElement('button');b.type='button';b.dataset.tab=k;
+    if(SEC[k]&&k!=='rv')b.className=grpOf(k);
+    b.innerHTML=UI.tabs[k]+'<span class="tick"></span>';b.onclick=()=>show(k);nav.appendChild(b)});
+  const route=$('#route');route.innerHTML='';
+  Object.keys(SEC).forEach(k=>{const b=document.createElement('button');b.type='button';b.className='stop '+grpOf(k);
+    b.innerHTML=`<span class="n">${k==='rv'?'REVIEW':'STATION '+LABEL[k]}</span><span class="tt">${SEC[k].replace(/^A\d /,'')}</span><span class="mm" data-mm="${k}"></span>`;
+    b.onclick=()=>show(k);route.appendChild(b)});
+  $$('[data-go]').forEach(b=>b.onclick=()=>show(b.dataset.go));
+}
+function show(k){
+  $$('section.tab').forEach(s=>s.classList.toggle('on',s.id==='tab-'+k));
+  $$('#tabs button').forEach(b=>b.classList.toggle('on',b.dataset.tab===k));
+  const b=$(`#tabs button[data-tab="${k}"]`);if(b)try{b.scrollIntoView({block:'nearest',inline:'center'})}catch(e){}
+  if(k==='report')renderReport();
+  try{if(location.hash!=='#'+k)history.replaceState(null,'','#'+k);}catch(e){}
+  window.scrollTo({top:0});
+}
+function refreshProgress(){
+  let a=0,p=0;Q.forEach(q=>{if(S[q.id].done){a++;p+=S[q.id].pts}});
+  $('#progtxt').textContent=UI.prog(a,Q.length,p);$('#progbar').style.width=(100*a/Q.length)+'%';
+  Object.keys(SEC).forEach(k=>{const qs=Q.filter(q=>q.part===k),d=qs.filter(q=>S[q.id].done).length;
+    const t=$(`#tabs button[data-tab="${k}"] .tick`);if(t)t.textContent=d===qs.length?'✓':'';
+    const m=$(`[data-mm="${k}"]`);if(m)m.textContent=`≈ ${UI.mins[k]} min · ${d}/${qs.length} ${UI.done}`;});
+}
+
+/* ================= ANSWER CHECKING ================= */
+function cleanAlg(s){return String(s).trim().replace(/²/g,'^2').replace(/³/g,'^3').replace(/[−–]/g,'-').replace(/[×·]/g,'*').replace(/÷/g,'/').replace(/\s+/g,'').replace(/(\d)[xX](?=[\d(\-])/g,'$1*').replace(/(\))[xX](?=[\d(\-])/g,'$1*')}
+function judge(q,input){
+  if(q.type==='mc')return input===q.ans?'ok':'no';
+  if(q.type==='tbl'){const r=tblJudge(q,input);return r.res}
+  if(q.type==='pf')return pfJudge(q,input);
+  if(q.type==='sf')return sfJudge(q,input);
+  if(q.type==='frac')return fracJudge(q,input);
+  if(q.type==='fnums')return fnumsJudge(q,input);
+  if(q.type==='pow')return powJudge(q,input);
+  if(q.type==='nums'){
+    const parts=String(input).replace(/[−–]/g,'-').split(/[,;]+/).map(x=>x.trim()).filter(Boolean);if(!parts.length)return 'bad';
+    const vals=[];for(const p of parts){try{const n=ALG.parse(cleanAlg(p));if(ALG.vars(n).size)return 'bad';vals.push(ALG.ev(n,{}))}catch(err){return 'bad'}}
+    if(vals.length!==q.ans.length)return 'no';
+    return vals.every((v,i)=>Math.abs(v-q.ans[i])<=(q.tol||1e-9)+1e-9)?'ok':'no';
+  }
+  if(q.type==='point'){
+    const m=String(input).replace(/[−–]/g,'-').replace(/\s+/g,'').match(/^\(?([^,()]+),([^,()]+)\)?$/);if(!m)return 'bad';
+    let a,b;try{a=ALG.ev(ALG.parse(m[1]),{});b=ALG.ev(ALG.parse(m[2]),{})}catch(err){return 'bad'}
+    return Math.abs(a-q.ans[0])<1e-9&&Math.abs(b-q.ans[1])<1e-9?'ok':'no';
+  }
+  if(q.type==='list'){
+    const s=String(input);if(/\d\.\d/.test(s))return 'no';
+    const nums=(s.replace(/[−–]/g,'-').match(/-?\d+/g)||[]).map(Number);if(!nums.length)return 'bad';
+    const a=[...new Set(nums)].sort((x,y)=>x-y),b=[...q.ans].sort((x,y)=>x-y);
+    return a.length===b.length&&a.every((v,i)=>v===b[i])?'ok':'no';
+  }
+  let s=cleanAlg(input);if(!s)return 'bad';
+  if(q.strip)s=s.replace(/^[a-zA-Z]=/,'');
+  if(q.type==='num'){s=s.replace(/^[a-zA-Z]=/,'');let v;try{const n=ALG.parse(s);if(ALG.vars(n).size)return 'bad';v=ALG.ev(n,{})}catch(e){return 'bad'}
+    return Math.abs(v-q.ans)<=q.tol+1e-9?'ok':'no';}
+  let node;try{node=ALG.parse(s)}catch(e){return 'bad'}
+  if(!ALG.equiv(node,q.ans))return 'no';
+  if(q.type==='expr')return 'ok';
+  if(q.type==='expand'||q.type==='simp'){
+    if(q.type==='simp'&&ALG.topTerms(node)<=ALG.topTerms(ALG.parse(q.ans))&&!termList(node).every(monoOK))return 'monomial';
+    if(ALG.hasGrp(node))return 'brackets';
+    if(ALG.topTerms(node)>ALG.topTerms(ALG.parse(q.ans)))return 'collect';
+    if(!termList(node).every(monoOK))return 'monomial';
+    return 'ok';}
+  if(q.type==='factor'){
+    let n=node,neg=false;if(n.t==='neg'){neg=true;n=n.a}
+    if(!(n.t==='mul'&&n.b.t==='grp'))return 'formfactor';
+    const outer=n.a;
+    if(ALG.equiv(outer,q.hcf)||ALG.equiv(outer,ALG.parse('-('+q.hcf+')')))return 'ok';
+    return 'notfully';}
+  return 'no';
+}
+
+/* ===== number-specific judges ===== */
+const gcdI=(a,b)=>{a=Math.abs(a);b=Math.abs(b);while(b){[a,b]=[b,a%b]}return a};
+function parseFrac(str){ // returns {n,d,form:'int'|'frac'|'mixed',reduced}
+  const s=String(str).trim().replace(/[−–]/g,'-').replace(/\s+/g,' ');let m;
+  if((m=s.match(/^(-?)(\d+)$/)))return {n:(m[1]?-1:1)*+m[2],d:1,form:'int',reduced:true};
+  if((m=s.match(/^(-?)(\d+)\s?\/\s?(\d+)$/))){const n=+m[2],d=+m[3];if(!d)return null;return {n:(m[1]?-1:1)*n,d,form:n>=d?'improper':'frac',reduced:gcdI(n,d)===1}}
+  if((m=s.match(/^(-?)(\d+) (\d+)\s?\/\s?(\d+)$/))){const w=+m[2],n=+m[3],d=+m[4];if(!d||n>=d)return n>=d&&d?{n:(m[1]?-1:1)*(w*d+n),d,form:'badmixed',reduced:false}:null;return {n:(m[1]?-1:1)*(w*d+n),d,form:'mixed',reduced:gcdI(n,d)===1}}
+  return null}
+const fracEq=(a,[n,d])=>a.n*d===n*a.d;
+function fracJudge(q,input){const a=parseFrac(input);if(!a)return 'bad';if(!fracEq(a,q.ans))return 'no';
+  if(!a.reduced&&a.form!=='int')return 'simplest';
+  if(a.form==='improper'&&q.mixed!==false&&q.ans[1]>1&&Math.abs(q.ans[0])>q.ans[1])return 'mixed';
+  if(a.form==='badmixed')return 'simplest';
+  return 'ok'}
+function fnumsJudge(q,input){const parts=String(input).split(',').map(s=>s.trim()).filter(Boolean);if(parts.length!==q.ans.length)return parts.length?'no':'bad';
+  const v=parts.map(parseFrac);if(v.some(x=>!x))return 'bad';return v.every((x,i)=>fracEq(x,q.ans[i]))?'ok':'no'}
+function fracTexStr(str){return String(str).split(',').map(p=>{const s=p.trim().replace(/[−–]/g,'-');let m;
+  if((m=s.match(/^(-?)(\d+) (\d+)\/(\d+)$/)))return `${m[1]}${m[2]}\\dfrac{${m[3]}}{${m[4]}}`;
+  if((m=s.match(/^(-?)(\d+)\/(\d+)$/)))return `${m[1]}\\dfrac{${m[2]}}{${m[3]}}`;return s.replace(/-/g,'-')}).join(',\\ ')}
+
+function sfCount(str){return str.replace(/^-/,'').replace('.','').replace(/^0+/,'').length}
+function sfJudge(q,input){
+  const s=String(input).trim().replace(/[−–]/g,'-').replace(/[\s\u2009\u202f]/g,'').replace(/(\d),(?=\d{3}(\D|$))/g,'$1');
+  if(!/^-?(\d+\.?\d*|\.\d+)$/.test(s))return 'bad';
+  const v=parseFloat(s),want=parseFloat(q.key);
+  if(Math.abs(v-want)>1e-9*Math.max(1,Math.abs(want)))return 'no';
+  if(q.key.includes('.')){if(!s.includes('.')||sfCount(s.startsWith('.')?'0'+s:s)!==q.n)return 'zeros'}
+  return 'ok';
+}
+const isPrime=n=>{if(!Number.isInteger(n)||n<2)return false;for(let d=2;d*d<=n;d++)if(n%d===0)return false;return true};
+const strip0=n=>n.t==='grp'?strip0(n.a):n;
+function factorsOf(n){n=strip0(n);if(n.t==='mul'&&!n.imp)return factorsOf(n.a).concat(factorsOf(n.b));if(n.t==='mul')return factorsOf(n.a).concat(factorsOf(n.b));return [n]}
+function pfJudge(q,input){
+  const s=cleanAlg(input);if(!s)return 'bad';let node;try{node=ALG.parse(s);if(ALG.vars(node).size)return 'bad'}catch(e){return 'bad'}
+  const v=ALG.ev(node,{});if(Math.abs(v-q.ans)>1e-9)return 'no';
+  const fs=factorsOf(node),bases=[];
+  for(const f of fs){let b,ex=1;if(f.t==='num')b=f.v;else if(f.t==='pow'&&strip0(f.a).t==='num'&&strip0(f.b).t==='num'){b=strip0(f.a).v;ex=strip0(f.b).v}else return 'notprime';
+    if(!isPrime(b)||!Number.isInteger(ex)||ex<1)return 'notprime';bases.push(b)}
+  if(fs.length<2&&!(fs[0].t==='pow'))return 'notprime';
+  if(new Set(bases).size<bases.length)return 'useindex';
+  return 'ok';
+}
+function powJudge(q,input){
+  const s=cleanAlg(input);if(!s)return 'bad';let node;try{node=ALG.parse(s);if(ALG.vars(node).size)return 'bad'}catch(e){return 'bad'}
+  const n=strip0(node);
+  if(n.t==='pow'&&strip0(n.a).t==='num'&&ALG.vars(n.b).size===0){const b=strip0(n.a).v,ex=ALG.ev(n.b,{});
+    if(b===q.base)return Math.abs(ex-q.exp)<1e-9?'ok':'no';
+    const want=Math.pow(q.base,q.exp),got=Math.pow(b,ex);return Math.abs(got-want)<=1e-9*Math.max(1,Math.abs(want))?'base':'no';}
+  let v;try{v=ALG.ev(node,{})}catch(e){return 'bad'}
+  const want=Math.pow(q.base,q.exp);
+  return Math.abs(v-want)<=1e-9*Math.max(1,Math.abs(want))?'single':'no';
+}
+/* table of powers: cells p (power), e (expanded), v (value) */
+function expTex(b,n){if(n===0)return '1';const f=Array(Math.abs(n)).fill(b).join('\\times ');return n>0?f:'\\dfrac{1}{'+f+'}'}
+function expKey(b,n){if(n===0)return '1';const f=Array(Math.abs(n)).fill(b).join('*');return n>0?f:(Math.abs(n)===1?'1/'+b:'1/('+f+')')}
+function valTex(b,n){return n>=0?String(Math.pow(b,n)):'\\dfrac{1}{'+Math.pow(b,-n)+'}'}
+function valKey(b,n){return n>=0?String(Math.pow(b,n)):'1/'+Math.pow(b,-n)}
+function tblCells(q){const out=[];q.rows.forEach((n,i)=>{['p','e','v'].forEach((k,j)=>{const shown=q.show[i][j]==='1';
+  out.push({row:i,col:j,n,kind:k,shown,tex:k==='p'?q.base+'^{'+n+'}':k==='e'?expTex(q.base,n):valTex(q.base,n),key:k==='p'?q.base+'^'+(n<0?'('+n+')':n):k==='e'?expKey(q.base,n):valKey(q.base,n)})})});return out}
+function cellJudge(b,n,kind,str){
+  const s=cleanAlg(str);if(!s)return 'bad';let node;try{node=ALG.parse(s);if(ALG.vars(node).size)return 'bad'}catch(e){return 'bad'}
+  const want=Math.pow(b,n);let v;try{v=ALG.ev(node,{})}catch(e){return 'bad'}
+  const eq=Math.abs(v-want)<=1e-9*Math.max(1,Math.abs(want));
+  if(kind==='v')return eq?'ok':'no';
+  if(kind==='p'){const m=strip0(node);if(m.t!=='pow'||strip0(m.a).t!=='num'||strip0(m.a).v!==b)return 'no';return Math.abs(ALG.ev(m.b,{})-n)<1e-9?'ok':'no'}
+  if(!eq)return 'no';if(n===0)return 'ok';
+  const toks=(s.match(/\d+(\.\d+)?/g)||[]).filter(t=>Number(t)===b).length;
+  return toks===Math.abs(n)?'ok':'no';
+}
+function tblJudge(q,input){const blanks=tblCells(q).filter(c=>!c.shown);const arr=Array.isArray(input)?input:[];
+  const per=blanks.map((c,i)=>cellJudge(q.base,c.n,c.kind,arr[i]||''));
+  if(per.some(r=>r==='bad'))return {res:'bad',per};return {res:per.every(r=>r==='ok')?'ok':'no',per}}
+function termList(n){if(n.t==='add'||n.t==='sub')return termList(n.a).concat(termList(n.b));return [n]}
+function monoOK(t){let nums=0,ok=true;const vs={};
+  (function walk(n){if(n.t==='neg')return walk(n.a);if(n.t==='mul'){walk(n.a);walk(n.b);return}
+    if(n.t==='pow'){if(n.a.t==='var'&&n.b.t==='num')vs[n.a.v]=(vs[n.a.v]||0)+1;else if(n.a.t==='num'&&n.b.t==='num')nums++;else ok=false;return}
+    if(n.t==='num'){nums++;return}if(n.t==='var'){vs[n.v]=(vs[n.v]||0)+1;return}ok=false})(t);
+  return ok&&nums<=1&&Object.values(vs).every(c=>c===1)}
+function correct(q,ans){return judge(q,ans)==='ok'}
+function storedAnswer(q){if(q.type==='mc')return q.ans;if(q.type==='tbl')return tblCells(q).filter(c=>!c.shown).map(c=>c.key);if(q.type==='pow')return q.base+'^'+q.exp;if(q.type==='pf'||q.type==='sf'||q.type==='frac'||q.type==='fnums')return q.key;if(q.type==='list'||q.type==='nums')return q.ans.join(', ');if(q.type==='point')return '('+q.ans.join(',')+')';return String(q.ans)}
+
+/* ================= FIGURES IN QUESTIONS ================= */
+/* ================= REPORT → PDF ================= */
+function repHead(){let nm='';try{nm=localStorage.getItem('report-name')||''}catch(e){}
+  const d=new Date().toLocaleDateString('en-NZ',{day:'numeric',month:'long',year:'numeric'});
+  const safe=nm.replace(/[<>&"]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]));
+  return `<div class="card rephead"><div class="printonly"><div style="font-family:Georgia,serif;font-size:1.3rem;font-weight:600">${document.title}</div><div>Learning report · ${d}</div><div>Name: <b id="repNameOut">${safe||'________________'}</b></div></div>`+
+    `<div class="ctrl noprint"><label>Your name <input type="text" id="repName" value="${safe}" placeholder="Type your name" style="font:inherit;padding:.3rem .5rem;border:1px solid #c9c3d6;border-radius:8px"></label><button class="btn primary" id="repPdf" type="button">⬇ Download report as PDF</button></div>`+
+    `<p class="small noprint" style="margin:.3rem 0 0">A print window opens: choose <b>Save as PDF</b> as the printer.</p></div>`}
+function wireRep(){const n=document.getElementById('repName'),b=document.getElementById('repPdf');if(!n||!b)return;
+  n.oninput=()=>{try{localStorage.setItem('report-name',n.value)}catch(e){}const o=document.getElementById('repNameOut');if(o)o.textContent=n.value||'________________'};
+  b.onclick=()=>{try{window.print()}catch(e){alert('Printing is blocked here. Open the page in a normal browser tab.')}};}
+
+function numberLineSVG(lo,hi,a,b,ai,bi,step){
+  const W=600,L=30,Rr=570,sx=v=>L+(v-lo)/(hi-lo)*(Rr-L);
+  let s=`<svg viewBox="0 0 ${W} 74" style="max-width:520px"><line x1="${L-14}" y1="44" x2="${Rr+14}" y2="44" stroke="#1c2230" stroke-width="2"/>`;
+  for(let v=lo;v<=hi+1e-9;v+=step){s+=`<line x1="${sx(v)}" y1="38" x2="${sx(v)}" y2="50" stroke="#1c2230" stroke-width="1.5"/><text x="${sx(v)}" y="70" font-size="18" text-anchor="middle">${fmtN(v).replace('-','−')}</text>`}
+  s+=`<line x1="${sx(a)}" y1="22" x2="${sx(b)}" y2="22" stroke="#b5487a" stroke-width="4"/>`;
+  s+=`<circle cx="${sx(a)}" cy="22" r="8" fill="${ai?'#b5487a':'#fff'}" stroke="#b5487a" stroke-width="3"/><circle cx="${sx(b)}" cy="22" r="8" fill="${bi?'#b5487a':'#fff'}" stroke="#b5487a" stroke-width="3"/>`;
+  return s+'</svg>';
+}
+
+/* ================= QUESTIONS UI ================= */
+function tblHTML(q){const cells=tblCells(q);let h=`<div class="tblwrap"><table class="itbl"><tr><th>${UI.tblHead[0]}</th><th>${UI.tblHead[1]}</th><th>${UI.tblHead[2]}</th></tr>`;
+  q.rows.forEach((n,i)=>{h+='<tr>';cells.filter(c=>c.row===i).forEach(c=>{h+=c.shown?`<td>$${c.tex}$</td>`:`<td data-c="${i}-${c.col}"><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="row ${i+1} ${UI.tblHead[c.col]}"></td>`});
+    h+='</tr>';if(i<q.rows.length-1)h+=`<tr class="oprow"><td colspan="3">$\\div ${q.base}$ ↓</td></tr>`});return h+'</table></div>'}
+
+function renderQuestions(){
+  $$('.qs').forEach(box=>{
+    const part=box.dataset.part;box.innerHTML='';
+    Q.filter(q=>q.part===part).forEach((q,i)=>{
+      const d=document.createElement('div');d.className='q';d.id='Q-'+q.id;
+      const label=part==='rv'?('R'+(i+1)):(LABEL[part]+String.fromCharCode(97+i));
+      let body=`<div class="qn">QUESTION ${label}<span class="lvltag ${q.lvl}">${UI.lvlName[q.lvl]}</span><span class="dots">${'<i></i>'.repeat(3)}</span></div><div class="prompt">${q.prompt}</div>`;
+      if(q.fig)body+=FIG[q.fig]();
+      if(q.type==='tbl'){body+=tblHTML(q)+`<div class="ansrow"><button type="button" class="btn primary chk">${UI.check}</button></div><div class="preview"></div><div class="fmt">${UI.fmt.tbl}</div>`;}
+      else if(q.type==='mc'){body+=`<div class="opts">${q.opts.map((o,j)=>`<button type="button" class="opt" data-j="${j}">${String.fromCharCode(65+j)}. ${o}</button>`).join('')}</div>`;}
+      else{body+=`<div class="ansrow"><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="answer"><button type="button" class="btn primary chk">${UI.check}</button></div><div class="preview"></div><div class="fmt">${UI.fmt[q.type]}</div>`;}
+      body+=`<div class="fb"></div><div class="hint" hidden></div><div class="sol" hidden></div>`;
+      d.innerHTML=body;box.appendChild(d);mathify(d);
+      if(q.type==='tbl'){const ins=[...d.querySelectorAll('td input')],pv=d.querySelector('.preview');
+        ins.forEach(inp=>{const upd=()=>{const v=inp.value.trim();if(!v){pv.innerHTML='';return}const t=ALG.toTex(cleanAlg(v));pv.innerHTML=t?UI.previewPre+texStr(t):'<span style="color:#c0392b">…</span>'};
+          inp.addEventListener('input',upd);inp.addEventListener('focus',upd);inp.addEventListener('keydown',ev=>{if(ev.key==='Enter')submit(q,ins.map(x=>x.value))})});
+        d.querySelector('.chk').onclick=()=>submit(q,ins.map(x=>x.value));}
+      else if(q.type==='mc'){d.querySelectorAll('.opt').forEach(b=>b.onclick=()=>submit(q,Number(b.dataset.j)));}
+      else{const inp=d.querySelector('input'),pv=d.querySelector('.preview');
+        inp.addEventListener('input',()=>{const v=inp.value.trim();if(!v){pv.innerHTML='';return}
+          if(q.type==='frac'||q.type==='fnums'){pv.innerHTML=UI.previewPre+texStr(fracTexStr(v));return}
+          if(q.type==='list'){pv.innerHTML=UI.previewPre+texStr((v.replace(/[−–]/g,'-').match(/-?\d+(\.\d+)?/g)||[]).join(',\\ '));return}
+          if(q.type==='nums'||q.type==='point'){const ps=v.replace(/[()]/g,'').split(/[,;]+/).map(x=>x.trim()).filter(Boolean).map(x=>ALG.toTex(cleanAlg(x)));
+            if(!ps.length||ps.some(x=>x==null)){pv.innerHTML='<span style="color:#c0392b">…</span>';return}
+            pv.innerHTML=UI.previewPre+texStr(q.type==='point'?'\\left('+ps.join(',\\,')+'\\right)':ps.join(',\\ '));return}
+          let s=cleanAlg(v),pre='';const m=s.match(/^([a-zA-Z])=(.*)$/);if(m&&q.strip){pre=m[1]+'=';s=m[2]}
+          const t=ALG.toTex(s);pv.innerHTML=t?UI.previewPre+texStr(pre+t):'<span style="color:#c0392b">…</span>'});
+        inp.addEventListener('keydown',e=>{if(e.key==='Enter')submit(q,inp.value)});
+        d.querySelector('.chk').onclick=()=>submit(q,inp.value);}
+      paint(q);
+    });
+  });
+  if('IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const id=e.target.id.slice(2);if(S[id]&&S[id].t0==null)S[id].t0=Date.now()}}),{threshold:0.6});
+    $$('.q').forEach(el=>io.observe(el));}
+}
+function submit(q,input){
+  const st=S[q.id];if(st.done)return;
+  const res=judge(q,input), el=$('#Q-'+q.id), fb=el.querySelector('.fb');
+  if(UI.info[res]){fb.className='fb info';html(fb,UI.info[res]);return}
+  const now=Date.now();if(st.t0==null)st.t0=now;
+  if(st.att===0)st.tFirst=now-st.t0;
+  st.tLast=now;st.att++;st.hist.push(input);
+  if(res==='ok'){st.done=true;st.pts=4-st.att;if(st.att===1)st.fastFirst=st.tFirst<(q.type==='mc'?4000:7000);}
+  else{if(q.type==='mc')st.wrongOpts.push(input);if(st.att>=3){st.done=true;st.pts=0;}}
+  if(q.type==='tbl'){const r=tblJudge(q,input),ins=[...el.querySelectorAll('td input')];ins.forEach((inp,i)=>{const td=inp.parentNode;td.classList.toggle('okc',r.per[i]==='ok');td.classList.toggle('noc',r.per[i]!=='ok')})}
+  save();paint(q);refreshProgress();
+}
+function paint(q){
+  const st=S[q.id],el=$('#Q-'+q.id);if(!el)return;
+  el.querySelectorAll('.dots i').forEach((d,i)=>{d.className='';if(i<st.att)d.className=(st.done&&st.pts>0&&i===st.att-1)?'ok':'x'});
+  const fb=el.querySelector('.fb');
+  if(st.att===0)fb.textContent='';
+  else if(st.done&&st.pts>0){fb.className='fb ok';fb.textContent=UI.right[st.att-1];}
+  else if(st.done){fb.className='fb no';fb.textContent=UI.wrongLast;}
+  else{fb.className='fb no';fb.textContent=UI.wrong+` (${UI.attempt} ${st.att+1} ${UI.of} 3)`;}
+  const wrongs=st.att-((st.done&&st.pts>0)?1:0),h=el.querySelector('.hint');
+  if(wrongs>=2&&h.hidden){h.hidden=false;html(h,`<b>${UI.hint}:</b> ${q.hint}`);}
+  const s=el.querySelector('.sol');if(st.done&&s.hidden){s.hidden=false;html(s,`<b>${UI.sol}:</b> ${q.sol}`);}
+  el.classList.remove('done-0','done-1','done-2','done-3');if(st.done)el.classList.add('done-'+st.pts);
+  if(q.type==='mc'){el.querySelectorAll('.opt').forEach(b=>{const j=Number(b.dataset.j);b.classList.toggle('wrong',st.wrongOpts.includes(j));
+      if(st.done){b.disabled=true;if(j===q.ans)b.classList.add('right');}else if(st.wrongOpts.includes(j))b.disabled=true;});}
+  else if(q.type==='tbl'){const ins=[...el.querySelectorAll('td input')],btn=el.querySelector('.chk');if(st.done){btn.disabled=true;const last=st.hist[st.hist.length-1]||[];
+      const r=tblJudge(q,last);ins.forEach((inp,i)=>{inp.disabled=true;if(last[i]!=null)inp.value=last[i];const td=inp.parentNode;td.classList.toggle('okc',r.per[i]==='ok');td.classList.toggle('noc',r.per[i]!=='ok')})}}
+  else{const inp=el.querySelector('input'),btn=el.querySelector('.chk');if(st.done){inp.disabled=true;btn.disabled=true;if(st.hist.length)inp.value=st.hist[st.hist.length-1];}}
+}
+
+/* ================= REPORT ================= */
+function renderReport(){
+  const T=UI.report, box=$('#report');
+  const answered=Q.filter(q=>S[q.id].done);
+  if(!Q.some(q=>S[q.id].att>0)){box.innerHTML=`<div class="card">${T.empty}</div>`;return}
+  let __h=repHead();
+  let h=__h+`<div class="card"><div class="box-title">${T.byPart}</div>`;
+  Object.keys(SEC).forEach(k=>{const qs=Q.filter(q=>q.part===k),d=qs.filter(q=>S[q.id].done),pts=d.reduce((a,q)=>a+S[q.id].pts,0);
+    const GK=Object.keys(GROUPS);const col=k==='rv'?'#6b5ca5':(grpOf(k)==='gb'?GCOL[GK[1]]:GCOL[GK[0]]);
+    h+=`<div class="rbar"><div class="lab"><span>${SEC[k]}</span><span>${d.length} / ${qs.length} · ${pts} pts</span></div><div class="tr"><i style="width:${100*pts/(qs.length*3)}%;background:${col}"></i></div></div>`});
+  h+='</div>';
+  const avg={};Object.keys(SKILLS).forEach(k=>{const qs=answered.filter(q=>q.tags.includes(k));avg[k]=qs.length?qs.reduce((a,q)=>a+S[q.id].pts,0)/qs.length:null});
+  const lev=a=>a==null?'n':a<1.5?'r':a<2.5?'a':'g';
+  h+=`<div class="card"><div class="box-title">${T.bySkill}</div>`;
+  Object.keys(GROUPS).forEach(g=>{h+=`<h3 style="margin:.8rem 0 .3rem">${GROUPS[g]}</h3>`;
+    Object.keys(SKILLS).filter(k=>SKILLS[k].g===g).forEach(k=>{h+=`<div class="skill"><span>${SKILLS[k].n}</span><span><span class="small">${T.avg(avg[k])}</span> <span class="lvl ${lev(avg[k])}">${T.lv[lev(avg[k])]}</span></span></div>`})});
+  h+='</div>';
+  const first=answered.filter(q=>S[q.id].pts===3).length, fast=answered.filter(q=>S[q.id].fastFirst).length;
+  const rushed=Q.filter(q=>{const s=S[q.id];return s.done&&s.pts===0&&s.att>=3&&s.t0!=null&&(s.tLast-s.t0)<20000}).length;
+  const whyTotal=$$('details.why').length, whyOpen=Object.keys(WHY).length;
+  h+=`<div class="card"><div class="box-title">${T.how}</div><ul class="steps"><li>${T.firstTry(first)}</li><li>${T.fast(fast)}</li><li>${T.rushed(rushed)}</li><li>${T.notDone(Q.length-answered.length)}</li>${whyTotal?`<li>${T.why(whyOpen,whyTotal)}</li>`:''}</ul></div>`;
+  const weak=Object.keys(SKILLS).filter(k=>avg[k]!=null&&avg[k]<2.5).sort((a,b)=>avg[a]-avg[b]).slice(0,3);
+  h+=`<div class="card"><div class="box-title">${T.advice}</div>`;
+  if(weak.length){h+=`<p>${T.advIntro}</p>`;weak.forEach(k=>{h+=`<div class="adv"><b>${SKILLS[k].n}</b> <span class="small">(${T.avg(avg[k])})</span><br>${SKILLS[k].adv}</div>`})}
+  else h+=`<p>${T.allGood}</p>`;
+  h+='</div>';
+  h+=`<div class="card"><div class="box-title">${T.map}</div><div id="kmap"></div><div class="legend"><span><i style="background:var(--good)"></i>${T.lv.g}</span><span><i style="background:var(--warn)"></i>${T.lv.a}</span><span><i style="background:var(--bad)"></i>${T.lv.r}</span><span><i style="background:var(--grey)"></i>${T.lv.n}</span></div></div>`;
+  const tot=answered.reduce((a,q)=>a+S[q.id].pts,0);
+  h+=`<div class="card"><div class="box-title">${T.total}</div><div class="score">${tot} / ${Q.length*3}</div><p class="small" style="text-align:center">${Math.round(100*tot/(Q.length*3))}%</p><p class="small">${T.note}</p></div>`;
+  box.innerHTML=h;mathify(box);drawMap(avg,lev);wireRep();
+}
+function drawMap(avg,lev){
+  const box=$('#kmap'), narrow=box.clientWidth<620;
+  const col={g:'#2f8a4c',a:'#b7791f',r:'#c0392b',n:'#9aa1ad'};
+  const G=Object.keys(GROUPS),left=Object.keys(SKILLS).filter(k=>SKILLS[k].g===G[0]),right=Object.keys(SKILLS).filter(k=>SKILLS[k].g===G[1]);
+  const rows=Math.max(left.length,right.length);
+  let W,H,cx,cy,xL,xR,bw,bh,gap,top,fs;
+  if(narrow){W=600;bw=250;bh=74;gap=98;top=170;fs=19;xL=140;xR=460;H=top+rows*gap;cx=300;cy=62;}
+  else{W=1000;bw=290;bh=54;gap=68;top=70;fs=16;xL=175;xR=825;H=top+rows*gap;cx=500;cy=top+(rows-1)*gap/2;}
+  const pos={};left.forEach((k,i)=>pos[k]=[xL,top+i*gap]);right.forEach((k,i)=>pos[k]=[xR,top+i*gap]);
+  const inner=k=>[pos[k][0]+(SKILLS[k].g===G[0]?bw/2:-bw/2),pos[k][1]];
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="knowledge map">`;
+  s+=`<text x="${xL}" y="${narrow?top-46:top-38}" text-anchor="middle" font-size="${fs}" font-weight="700" fill="${GCOL[G[0]]}">${GROUPS[G[0]]}</text><text x="${xR}" y="${narrow?top-46:top-38}" text-anchor="middle" font-size="${fs}" font-weight="700" fill="${GCOL[G[1]]}">${GROUPS[G[1]]}</text>`;
+  Object.keys(SKILLS).forEach(k=>{const [x,y]=inner(k);s+=`<line x1="${cx}" y1="${cy}" x2="${x}" y2="${y}" stroke="#e8e5ef" stroke-width="1.5"/>`});
+  LINKS.forEach(([a,b])=>{const A=inner(a),B=inner(b);
+    if(SKILLS[a].g===SKILLS[b].g){const dir=SKILLS[a].g===G[0]?1:-1,bow=Math.min(narrow?40:70,18+Math.abs(A[1]-B[1])*0.18);
+      s+=`<path d="M${A[0]},${A[1]} Q${(A[0]+B[0])/2+dir*bow},${(A[1]+B[1])/2} ${B[0]},${B[1]}" fill="none" stroke="#b9b3c9" stroke-width="2" stroke-dasharray="5 4"/>`;}
+    else s+=`<line x1="${A[0]}" y1="${A[1]}" x2="${B[0]}" y2="${B[1]}" stroke="#b9b3c9" stroke-width="2" stroke-dasharray="5 4"/>`;});
+  s+=`<ellipse cx="${cx}" cy="${cy}" rx="${narrow?150:118}" ry="${narrow?46:44}" fill="#1c2230"/><text x="${cx}" y="${cy-4}" text-anchor="middle" fill="#fff" font-size="${fs}" font-weight="700">${UI.report.centre[0]}</text><text x="${cx}" y="${cy+18}" text-anchor="middle" fill="#fff" font-size="${fs-2}">${UI.report.centre[1]}</text>`;
+  const split=t=>{if(t.length<=(narrow?20:40))return [t];let m=Math.floor(t.length/2),a=t.lastIndexOf(' ',m),b=t.indexOf(' ',m);let c=(a<0||(b>=0&&b-m<m-a))?b:a;return [t.slice(0,c),t.slice(c+1)]};
+  Object.keys(SKILLS).forEach(k=>{const [x,y]=pos[k],L=lev(avg[k]),c=col[L],lines=split(SKILLS[k].n.replace('&','&amp;'));
+    s+=`<rect x="${x-bw/2}" y="${y-bh/2}" width="${bw}" height="${bh}" rx="12" fill="#fff" stroke="${c}" stroke-width="3"/><rect x="${x-bw/2}" y="${y-bh/2}" width="8" height="${bh}" rx="3" fill="${GCOL[SKILLS[k].g]}"/>`;
+    const lh=fs+3,y0=y-(lines.length*lh)/2+fs*0.35-4;
+    lines.forEach((ln,i)=>{s+=`<text x="${x+4}" y="${y0+i*lh}" text-anchor="middle" font-size="${fs-1}" font-weight="600" fill="#1c2230" ${ln.length*(fs-1)*0.55>bw-24?`textLength="${bw-24}" lengthAdjust="spacingAndGlyphs"`:''}>${ln}</text>`});
+    s+=`<text x="${x+4}" y="${y0+lines.length*lh}" text-anchor="middle" font-size="${fs-2}" fill="${c}" font-weight="700">${UI.report.avg(avg[k])}</text>`;});
+  box.innerHTML=s+'</svg>';
+}
+
+
+const minus=s=>String(s).replace(/-/g,"−");
+/* ---------- generic stepper ---------- */
+function stepper(box,steps,endHtml){
+  let i=0,fb='',fbok=true,solved=false;
+  function render(){
+    if(i>=steps.length){html(box,endHtml);return}
+    const st=steps[i];
+    let h=`<div class="steps-dots">${steps.map((_,j)=>`<i class="${j<=i?'on':''}"></i>`).join('')}</div>`;
+    if(st.vis)h+=`<div style="margin:.4rem 0">${typeof st.vis==='function'?st.vis():st.vis}</div>`;
+    h+=`<div class="tq">${st.q}</div>`;
+    if(fb)h+=`<div class="tfb ${fbok?'ok':'no'}">${fb}</div>`;
+    if(!solved){const n=st.opts.length,k=(i*2+1)%n,ord=st.opts.map((_,j)=>(j+k)%n);h+=`<div class="tbtns">${ord.map(j=>`<button type="button" class="btn" data-j="${j}">${st.opts[j][0]}</button>`).join('')}</div>`}
+    else h+=`<div class="tbtns"><button type="button" class="btn primary" id="snext">${i<steps.length-1?'Next →':'Finish ✓'}</button></div>`;
+    html(box,h);
+    box.querySelectorAll('[data-j]').forEach(b=>b.onclick=()=>{const o=st.opts[+b.dataset.j];
+      if(o[1]){fb=st.ok;fbok=true;solved=true}else{fb=o[2]||'Not quite. Have another look.';fbok=false;b.disabled=true;
+        render();const bb=box.querySelector(`[data-j="${b.dataset.j}"]`);if(bb)bb.disabled=true;return}
+      render()});
+    const n=box.querySelector('#snext');if(n)n.onclick=()=>{i++;fb='';solved=false;render()};
+  }
+  render();
+}
+const tiles=(b,n,cls,cross)=>Array.from({length:n},(_,i)=>`<span class="tileb${cls?' '+cls:''}${cross&&i<cross?' x':''}">${b}</span>`).join('');
+
+
+/* ================= helpers ================= */
+const fr=(n,d)=>`\\dfrac{${n}}{${d}}`;
+const gcd2=(a,b)=>{a=Math.abs(a);b=Math.abs(b);while(b){[a,b]=[b,a%b]}return a};
+function mixTex(n,d){const s=n<0?'-':'';n=Math.abs(n);const g=gcd2(n,d);n/=g;d/=g;const w=Math.floor(n/d),r=n%d;
+  if(d===1)return s+n;return s+(w?w:'')+(r?fr(r,d):'')}
+function fbar(d,on,cls){let h='<div class="fbar">';for(let i=0;i<d;i++)h+=`<i class="${i<on?(cls||'on'):''}"></i>`;return h+'</div>'}
+function fbRow(lab,d,on,cls){return `<div class="fbrow"><span class="lab">${lab}</span>${fbar(d,on,cls)}</div>`}
+/* long division with remainders; returns {digits, rems, start} start = index where repeating begins (-1 if stops) */
+function longDiv(n,d,max=24){let r=n%d;const digits=[],rems=[],seen={};let start=-1;
+  while(digits.length<max){if(r===0)break;if(seen[r]!=null){start=seen[r];break}seen[r]=digits.length;rems.push(r);r*=10;digits.push(Math.floor(r/d));r%=d}
+  return {whole:Math.floor(n/d),digits,rems,start,end:r}}
+function recTex(n,d){const L=longDiv(n,d);if(L.start<0)return L.whole+(L.digits.length?'.'+L.digits.join(''):'');
+  const pre=L.digits.slice(0,L.start).join(''),cyc=L.digits.slice(L.start);
+  const c=cyc.length===1?`\\dot{${cyc[0]}}`:`\\dot{${cyc[0]}}${cyc.slice(1,-1).join('')}\\dot{${cyc[cyc.length-1]}}`;
+  return `${L.whole}.${pre}${c}`}
+function pie(parts,on,col){const r=26,c=30;let s=`<svg viewBox="0 0 60 60" width="56" height="56"><circle cx="${c}" cy="${c}" r="${r}" fill="#fff" stroke="#1c2230" stroke-width="2"/>`;
+  for(let i=0;i<parts;i++){const a0=-Math.PI/2+2*Math.PI*i/parts,a1=a0+2*Math.PI/parts;
+    if(i<on)s+=`<path d="M${c},${c} L${c+r*Math.cos(a0)},${c+r*Math.sin(a0)} A${r},${r} 0 0 1 ${c+r*Math.cos(a1)},${c+r*Math.sin(a1)} Z" fill="${col||'#ffd27a'}" stroke="#1c2230" stroke-width="1.5"/>`;
+    else s+=`<line x1="${c}" y1="${c}" x2="${c+r*Math.cos(a0)}" y2="${c+r*Math.sin(a0)}" stroke="#1c2230" stroke-width="1.5"/>`}
+  return s+'</svg>'}
+/* strips: n wholes cut into b pieces, coloured in groups of a */
+function strips(n,b,a){const cols=['#7fb3e6','#f3b3cd'];let h='<div class="strip3">',k=0;
+  for(let i=0;i<n;i++){h+='<span>';for(let j=0;j<b;j++){const g=a?Math.floor(k/a):-1;const full=a&&(g+1)*a<=n*b;h+=`<i style="background:${a?(full?cols[g%2]:'#e8e6ef'):'#fff'}"></i>`;k++}h+='</span>'}
+  return h+'</div>'}
+/* fraction number line between lo and hi (integers), denominator d, points [[num,label,colour]] */
+function fracLine(lo,hi,d,pts){const W=600,L=40,Rr=560,sx=v=>L+(v-lo)/(hi-lo)*(Rr-L);
+  let s=`<svg viewBox="0 0 ${W} 100" style="max-width:520px;width:100%"><line x1="${L-14}" y1="55" x2="${Rr+14}" y2="55" stroke="#1c2230" stroke-width="2"/>`;
+  for(let k=lo*d;k<=hi*d;k++){const v=k/d,big=k%d===0;s+=`<line x1="${sx(v)}" y1="${big?43:48}" x2="${sx(v)}" y2="${big?67:62}" stroke="#1c2230" stroke-width="${big?2.2:1.2}"/>`;
+    if(big)s+=`<text x="${sx(v)}" y="92" text-anchor="middle" font-size="20">${minus(v)}</text>`}
+  pts.forEach(([v,lab,c],i)=>{s+=`<circle cx="${sx(v)}" cy="55" r="8" fill="${c}"/><text x="${sx(v)+(i%2?6:-6)}" y="30" text-anchor="${i%2?'start':'end'}" font-size="18" font-weight="700" fill="${c}">${lab}</text>`});
+  return s+'</svg>'}
+/* area model: whole w + fraction a/b, by n */
+function areaSVG(w,a,b,n){const unit=Math.min(46,300/(w+1)),H=Math.min(150,unit*Math.min(n,4)),W1=w*unit,W2=unit*a/b,X=40,Y=20;
+  let s=`<svg viewBox="0 0 ${X+W1+W2+70} ${Y+H+48}" style="max-width:460px;width:100%">`;
+  s+=`<rect x="${X}" y="${Y}" width="${W1}" height="${H}" fill="#e8ebf8" stroke="#3b4fa8" stroke-width="2"/>`;
+  s+=`<rect x="${X+W1}" y="${Y}" width="${W2}" height="${H}" fill="#f8e7ef" stroke="#b5487a" stroke-width="2"/>`;
+  s+=`<text x="${X+W1/2}" y="${Y+H/2+7}" text-anchor="middle" font-size="20" font-weight="700" fill="#3b4fa8">${w} × ${n}</text>`;
+  s+=`<text x="${X+W1/2}" y="${Y+H+24}" text-anchor="middle" font-size="18">${w}</text>`;
+  s+=`<text x="${X+W1+W2/2}" y="${Y+H+24}" text-anchor="middle" font-size="18" fill="#b5487a">${a}/${b}</text>`;
+  s+=`<text x="${X-10}" y="${Y+H/2+6}" text-anchor="end" font-size="18">${n}</text>`;
+  s+=`<text x="${X+W1+W2+8}" y="${Y+H/2+6}" font-size="17" fill="#b5487a">${a}/${b} × ${n}</text>`;
+  return s+'</svg>'}
+
+/* ================= C1 ================= */
+function t1(){
+  stepper($('#t1body'),[
+    {q:R`$\dfrac38$ means $3\div8$. $8$ does not go into $3$, so write $3.000$. How many 8s go into $30$?`,opts:[['3, remainder 6',1],['4',0,'4 × 8 = 32, too big.'],['2, remainder 14',0,'You can fit one more 8 in.']],ok:R`$0.3\ldots$ Carry the $6$: next we divide $60$.`},
+    {q:R`How many 8s go into $60$?`,opts:[['7, remainder 4',1],['8',0,'8 × 8 = 64, too big.'],['6, remainder 12',0,'One more 8 fits.']],ok:R`$0.37\ldots$ Carry the $4$: next we divide $40$.`},
+    {q:R`How many 8s go into $40$?`,opts:[['5, remainder 0',1],['4, remainder 8',0,'One more 8 fits.']],ok:R`Remainder $0$: the division <b>stops</b>. $\dfrac38=0.375$.`},
+    {q:R`Now $\dfrac23=2\div3$. $20\div3=6$ remainder $2$. Then $20\div3$ again… What happens?`,opts:[['It stops at 0.6',0,'Is the remainder ever 0?'],['The 6s go on forever',1],['It becomes 0.67',0,'That is a rounded answer, not the real one.']],ok:R`The remainder $2$ keeps coming back, so the 6s never stop. We write $0.\dot6$: the dot means “repeats forever”.`}],
+    `<div class="tfb ok"><b>Done!</b> Remainder 0: the decimal <b>stops</b>. A remainder comes back: the decimal <b>repeats</b>.</div>`);
+}
+function c1Play(){const ds=[2,3,4,5,6,7,8,9,10,11,12,15,16,20,25];const tapped=new Set();
+  const box=$('#dch');html(box,ds.map(d=>`<button type="button" data-d="${d}">$\\tfrac{1}{${d}}$<small>tap</small></button>`).join(''));
+  function sortBoxes(){const st=[...tapped].filter(d=>longDiv(1,d).start<0).sort((a,b)=>a-b),rp=[...tapped].filter(d=>longDiv(1,d).start>=0).sort((a,b)=>a-b);
+    html($('#dsort'),`<div class="s"><b>Stops ✓</b>${st.map(d=>`$\\tfrac1{${d}}$`).join(' ')||'…'}</div><div class="r"><b>Repeats ∞</b>${rp.map(d=>`$\\tfrac1{${d}}$`).join(' ')||'…'}</div>`);
+    $('#dwow').hidden=tapped.size<6}
+  box.querySelectorAll('button').forEach(b=>b.onclick=()=>{const d=+b.dataset.d,L=longDiv(1,d);tapped.add(d);b.className=L.start<0?'stop':'rep';
+    b.querySelector('small').textContent=L.start<0?'stops':'repeats';
+    const rem=L.rems.map((r,i)=>`<span class="rem${L.start>=0&&i===L.start?' rep':''}">${r}</span>`).join('')+(L.start<0?'<span class="rem zero">0</span>':`<span class="rem rep">${L.rems[L.start]}</span>`);
+    html($('#dread'),`<div class="divm">$\\dfrac1{${d}}=1\\div${d}=${recTex(1,d)}$<div class="small">Remainders: ${rem} ${L.start<0?'→ remainder 0, it stops.':'→ a remainder came back, so it repeats forever.'}</div></div>`);sortBoxes()});
+  sortBoxes()}
+
+/* ================= C2 ================= */
+function t2(){
+  stepper($('#t2body'),[
+    {vis:`<div class="pies">${pie(11,7)}<span>or</span>${pie(13,7)}</div>`,q:R`Which is bigger: $\dfrac{7}{11}$ or $\dfrac{7}{13}$? (7 slices, but cut 11 ways or 13 ways.)`,opts:[[R`$\dfrac{7}{11}$`,1],[R`$\dfrac{7}{13}$`,0,'13 people share each pizza: smaller slices.']],ok:'Fewer pieces means bigger pieces. Same top number: the smaller bottom number wins.'},
+    {vis:fbRow('3/4',4,3)+fbRow('2/3',3,2,'on2'),q:R`$\dfrac34$ or $\dfrac23$? Cut both bars into twelfths. $\dfrac34=\dfrac{?}{12}$`,opts:[['9',1],['8',0,'Each quarter becomes 3 twelfths.'],['7',0,'Each quarter becomes 3 twelfths.']],ok:R`$\dfrac34=\dfrac{9}{12}$ and $\dfrac23=\dfrac{8}{12}$. Same-size pieces now: $9>8$.`+fbRow('9/12',12,9)+fbRow('8/12',12,8,'on2')},
+    {q:R`$\dfrac{13}{4}$ or $3\dfrac38$? First make $\dfrac{13}{4}$ a mixed number: $\dfrac{13}{4}=3\dfrac{?}{4}$`,opts:[['1',1],['3',0,'Three 4s make 12. What is left over from 13?'],['4',0,'Three 4s make 12. What is left over from 13?']],ok:R`$\dfrac{13}{4}=3\dfrac14=3\dfrac28$. That is less than $3\dfrac38$. So $3\dfrac38$ is bigger.`},
+    {vis:fracLine(-3,-2,8,[[-22/8,'−2 6/8','#b5487a'],[-21/8,'−2 5/8','#3b4fa8']]),q:R`Negatives: which is bigger, $-2\dfrac68$ or $-2\dfrac58$?`,opts:[[R`$-2\dfrac68$`,0,'6 is bigger than 5, but for negatives look at the number line: which is further right?'],[R`$-2\dfrac58$`,1]],ok:R`$-2\dfrac58$ is closer to zero, so it is further right and <b>bigger</b>.`}],
+    `<div class="tfb ok"><b>Done!</b> Make the pieces the same size, then compare. For negatives, think “closer to zero is bigger”.</div>`);
+}
+function c2Play(){function go(){const v=['#f1n','#f1d','#f2n','#f2d'].map(s=>Math.max(0,Math.floor(+$(s).value||0)));let [a,b,c,d]=v;
+    if(!b||!d||b>24||d>24||a>b||c>d){html($('#cmpr'),'Use bottom numbers from 1 to 24, and tops no bigger than the bottoms.');$('#cmpb').innerHTML='';return}
+    const L=b*d/gcd2(b,d);const A=a*L/b,C=c*L/d;
+    html($('#cmpb'),fbRow(`${a}/${b}`,b,a)+fbRow(`${c}/${d}`,d,c,'on2')+(L<=60?`<div class="small" style="margin-top:.4rem">Same-size pieces (${L}ths):</div>`+fbRow(`${A}/${L}`,L,A)+fbRow(`${C}/${L}`,L,C,'on2'):''));
+    html($('#cmpr'),`$${fr(a,b)}=${fr(A,L)}$ and $${fr(c,d)}=${fr(C,L)}$, so ${A>C?`$${fr(a,b)}$ is bigger.`:A<C?`$${fr(c,d)}$ is bigger.`:'they are equal!'}`)}
+  ['#f1n','#f1d','#f2n','#f2d'].forEach(s=>$(s).addEventListener('input',go));go()}
+
+/* ================= C3 ================= */
+function wholes(n,d,w,part,cls){let h='';for(let i=0;i<w;i++)h+=fbar(1,1);return `<div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center">${h.replace(/class="fbar"/g,'class="fbar" style="width:60px;flex:none"')}<div style="width:120px">${fbar(d,part,cls)}</div></div>`}
+function t3(){
+  stepper($('#t3body'),[
+    {vis:wholes(0,3,4,2),q:R`$4\dfrac23-3\dfrac13$. Wholes first: $4-3=\;?$`,opts:[['1',1],['7',0,'Take away, do not add.']],ok:'One whole left.'},
+    {q:R`Now the parts: $\dfrac23-\dfrac13=\;?$`,opts:[[R`$\dfrac13$`,1],[R`$\dfrac10$`,0,'The pieces are still thirds. Only the number of pieces changes.'],[R`$1$`,0,'Two thirds take away one third.']],ok:R`So $4\dfrac23-3\dfrac13=1\dfrac13$. Easy!`},
+    {q:R`Harder: $4\dfrac12-2\dfrac34$. Make the pieces the same: $\dfrac12=\dfrac{?}{4}$`,opts:[['2',1],['1',0,'A half is two quarters.'],['4',0,'A half is two quarters.']],ok:R`So it is $4\dfrac24-2\dfrac34$.`},
+    {vis:wholes(0,4,4,2),q:R`Problem: you can't take $\dfrac34$ from $\dfrac24$! Break one whole into 4 quarters. $4\dfrac24=3\dfrac{?}{4}$`,opts:[['6',1],['3',0,'2 quarters + 4 more quarters.'],['2',0,'The broken whole gives 4 more quarters.']],ok:R`$4\dfrac24=3\dfrac64$.<div style="margin-top:.3rem;display:flex;gap:6px;flex-wrap:wrap;align-items:center">${'<div class="fbar" style="width:60px;flex:none"><i class="on"></i></div>'.repeat(3)}<div style="width:110px">${fbar(4,4,'on3')}</div><div style="width:110px">${fbar(4,2)}</div></div>`},
+    {q:R`Now take away: $3\dfrac64-2\dfrac34=\;?$`,opts:[[R`$1\dfrac34$`,1],[R`$1\dfrac14$`,0,'6 quarters take away 3 quarters.'],[R`$2\dfrac34$`,0,'3 wholes take away 2 wholes.']],ok:R`$1\dfrac34$. Check by adding back: $2\dfrac34+1\dfrac34=3\dfrac64=4\dfrac24=4\dfrac12$ ✓`}],
+    `<div class="tfb ok"><b>Done!</b> Wholes, then parts. Not enough parts? Break a whole.</div>`);
+}
+
+/* ================= C4 ================= */
+function t4(){
+  stepper($('#t4body'),[
+    {vis:areaSVG(4,3,5,3),q:R`Rosa's floor is $4\dfrac35$ m by $3$ m. Estimate first: $4\dfrac35\approx5$, so the area is about…`,opts:[['15 m²',1],['12 m²',0,'4 3/5 is closer to 5 than to 4.'],['8 m²',0,'Multiply, do not add.']],ok:'About 15 m². Now the exact answer.'},
+    {q:R`Split the rectangle. The blue part: $4\times3=\;?$`,opts:[['12',1],['7',0,'Multiply.']],ok:'Blue part: 12 m².'},
+    {q:R`The pink part: $\dfrac35\times3=\;?$`,opts:[[R`$\dfrac95$`,1],[R`$\dfrac{3}{15}$`,0,'Only the top number is multiplied: 3 lots of 3 fifths.'],[R`$\dfrac{9}{15}$`,0,'The pieces stay fifths.']],ok:R`$\dfrac95=1\dfrac45$: 3 lots of 3 fifths.`},
+    {q:R`Add them: $12+1\dfrac45=\;?$`,opts:[[R`$13\dfrac45$`,1],[R`$12\dfrac95$`,0,'9/5 is more than one whole. Write it as 1 4/5 first.']],ok:R`$13\dfrac45$ m². A bit less than our estimate of 15 ✓`}],
+    `<div class="tfb ok"><b>Done!</b> Whole part × number, plus fraction part × number. Then check with your estimate.</div>`);
+}
+function c4Play(){function go(){const w=+$('#aw').value,[a,b]=$('#af').value.split('/').map(Number),n=+$('#an').value;
+    $('#awv').textContent=w;$('#anv').textContent=n;html($('#asvg'),areaSVG(w,a,b,n));
+    html($('#ar'),`$${w}${fr(a,b)}\\times${n}=${w}\\times${n}+${fr(a,b)}\\times${n}=${w*n}+${fr(a*n,b)}${(a*n)%b===0||gcd2(a*n,b)>1||a*n>b?'='+w*n+'+'+mixTex(a*n,b):''}=${mixTex(w*n*b+a*n,b)}$`)}
+  ['#aw','#af','#an'].forEach(s=>$(s).addEventListener('input',go));go()}
+
+/* ================= C5 ================= */
+function t5(){
+  const hp=$('#hookpies');if(hp)hp.innerHTML=[0,1,2].map(()=>pie(2,2)).join('');
+  stepper($('#t5body'),[
+    {vis:strips(3,2,1),q:R`$3\div\dfrac12$ means “how many halves fit into 3?”`,opts:[['6',1],['1.5',0,'That is 3 ÷ 2. Count the half pieces.'],['3',0,'Each whole has 2 halves.']],ok:'6 halves. So 3 pizzas feed 6 people!'},
+    {vis:strips(4,3,0),q:R`$4\div\dfrac13$: how many thirds fit into 4?`,opts:[['12',1],['7',0,'Each whole has 3 thirds.'],['4/3',0,'Count the pieces: 4 lots of 3.']],ok:'12 thirds.'},
+    {vis:strips(4,3,2),q:R`$4\div\dfrac23$: group the 12 thirds in twos. How many groups?`,opts:[['6',1],['24',0,'Groups of 2 means fewer groups than pieces.'],['8',0,'Count the coloured pairs.']],ok:'6 groups.'},
+    {q:R`Look: $4\times3\div2$ is also 6! So $\div\dfrac23$ is the same as $\times\dfrac32$. Try the trick: $6\div\dfrac35=6\times\dfrac53=\;?$`,opts:[['10',1],[R`$\dfrac{18}{5}$`,0,'Flip the 3/5 first, then multiply.'],['30',0,'6 × 5 = 30, then ÷ 3.']],ok:R`$6\times\dfrac53=\dfrac{30}{3}=10$. <b>Flip and multiply!</b>`}],
+    `<div class="tfb ok"><b>Done!</b> Dividing by a fraction: count how many pieces fit, or flip and multiply.</div>`);
+}
+function c5Play(){function go(){const n=+$('#sn').value,[a,b]=$('#sf').value.split('/').map(Number);$('#snv').textContent=n;
+    const pieces=n*b,g=Math.floor(pieces/a),left=pieces%a;html($('#ssv'),strips(n,b,a));
+    html($('#sr'),`$${n}=${pieces}$ pieces of $${fr(1,b)}$. Groups of ${a}: <b>${g}</b>${left?` and $${fr(left,a)}$ of a group`:''}.<br>$${n}\\div${fr(a,b)}=${mixTex(n*b,a)}$ &nbsp;·&nbsp; flip: $${n}\\times${fr(b,a)}=${mixTex(n*b,a)}$ ✓`)}
+  ['#sn','#sf'].forEach(s=>$(s).addEventListener('input',go));go()}
+
+/* ================= C6 ================= */
+function t6(){
+  stepper($('#t6body'),[
+    {q:R`$\dfrac38+\dfrac23+\dfrac58$. Don't start at the left! Which two make a whole?`,opts:[[R`$\dfrac38+\dfrac58$`,1],[R`$\dfrac38+\dfrac23$`,0,'Different pieces: hard work.'],[R`$\dfrac23+\dfrac58$`,0,'Different pieces: hard work.']],ok:R`$\dfrac38+\dfrac58=\dfrac88=1$.`},
+    {q:R`So the total is $1+\dfrac23=\;?$`,opts:[[R`$1\dfrac23$`,1],[R`$\dfrac53$`,0,'True, but write it as a mixed number.']],ok:'Done in your head!'},
+    {q:R`$\dfrac45+\dfrac{3}{10}+\dfrac15+\dfrac{7}{10}$. Pair the fifths, pair the tenths. Total?`,opts:[['2',1],[R`$\dfrac{15}{30}$`,0,'Never add the bottom numbers!'],['1',0,'Each pair makes 1.']],ok:R`$1+1=2$.`},
+    {q:R`$6-1\dfrac38-2\dfrac58$. Add what you take away first: $1\dfrac38+2\dfrac58=\;?$`,opts:[['4',1],[R`$3\dfrac88$`,0,'3 8/8 is a whole number: 4.'],['3',0,'3/8 + 5/8 makes one more whole.']],ok:R`$6-4=2$. No fraction work at all!`}],
+    `<div class="tfb ok"><b>Done!</b> Look first, then calculate: find the pairs that make a whole.</div>`);
+}
+function c6Play(){const C=[[1,4],[2,5],[5,8],[1,6],[3,4],[3,8],[5,6],[3,5]];let sel=-1,pairs=0;const used=new Set();
+  function draw(){html($('#mcards'),C.map(([n,d],i)=>`<button type="button" class="fcard${used.has(i)?' used':''}${sel===i?' sel':''}" data-i="${i}" ${used.has(i)?'disabled':''}>$\\dfrac{${n}}{${d}}$</button>`).join(''));
+    $('#mcards').querySelectorAll('button').forEach(b=>b.onclick=()=>pick(+b.dataset.i))}
+  function pick(i){if(sel<0){sel=i;draw();return}if(sel===i){sel=-1;draw();return}
+    const [a,b]=C[sel],[c,d]=C[i];if(a*d+c*b===b*d){used.add(sel);used.add(i);pairs++;html($('#mr'),pairs<4?`$${fr(a,b)}+${fr(c,d)}=1$ ✓ &nbsp;${pairs} / 4 wholes`:'<b>All 4 wholes found!</b> Total of all eight cards: $4$.')}
+    else html($('#mr'),`$${fr(a,b)}+${fr(c,d)}$ is not 1. Try another pair.`);sel=-1;draw()}
+  $('#mreset').onclick=()=>{used.clear();sel=-1;pairs=0;html($('#mr'),'Tap two cards that make 1 whole.');draw()};draw();html($('#mr'),'Tap two cards that make 1 whole.')}
+
+/* ================= BOOT ================= */
+function boot(){
+  initState();buildTabs();renderQuestions();
+  [t1,c1Play,t2,c2Play,t3,t4,c4Play,t5,c5Play,t6,c6Play].forEach(f=>{try{f()}catch(e){console.error(f.name,e)}});
+  $('#resetBtn').onclick=()=>{const b=$('#resetBtn');if(!b.dataset.armed){b.dataset.armed=1;b.textContent='Tap again to clear all answers';setTimeout(()=>{delete b.dataset.armed;b.textContent='Start again'},4000);return}
+    delete b.dataset.armed;b.textContent='Start again';try{localStorage.removeItem(KEY)}catch(e){}initState();renderQuestions();refreshProgress();};
+  mathify(document.querySelector('main'));
+  refreshProgress();
+  const h=location.hash.slice(1);show(ORDER.includes(h)?h:'start');
+}
+let booted=false;window.addEventListener('load',()=>{if(!booted){booted=true;boot()}});
+
+</script>
+</body>
+</html>
