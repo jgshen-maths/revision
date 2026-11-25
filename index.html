@@ -213,15 +213,16 @@ const BOARDS = {
   horizon:{name:'Horizon', sub:'Our own curriculum · beyond the syllabus', col:'#d4693a', cls:'horizon', custom:true, stages:[]}
 };
 
-/* ===== HORIZON: Mr Shen's own curriculum. To add a section, add a line to sections. ===== */
+/* ===== HORIZON: Mr Shen's own curriculum. To add a section, add a line to sections.
+   Numbering rule: sections are chapter.section (Chapter 1 = 1.0, 1.1, 1.2 ...); renumber imported files to their Horizon chapter. ===== */
 const HORIZON = {
   chapters:[
     {n:1, name:'Sets and Integers', tag:'Start with the language of sets, then build the whole numbers inside it: order, primes and the arithmetic of the clock.',
      sections:[
-      {n:'1', title:'The language of sets', d:'Sets and elements, subsets and the power set, ∩ ∪ and complements, counting with Venn diagrams.', href:'horizon/1-sets.html', tags:['5 steps','Venn tools','Learning report']},
-      {n:'2.1', title:'Introducing integers', d:'Why we need ℤ: closure, the number line, inequalities and the rules of addition.', href:'horizon/2-1-integers.html', tags:['5 steps','Number-line drawing','Learning report']},
-      {n:'2.2', title:'Multiplication and primes', d:'Multiplication as an operator, primes, prime factorisation, HCF and LCM.', href:'horizon/2-2-primes.html', tags:['Proofs to explore','Learning report']},
-      {n:'2.3', title:'Modular arithmetic', d:'The arithmetic of the clock: remainders, congruence and check digits.', href:'horizon/2-3-modular.html', tags:['Real-life codes','Learning report']}
+      {n:'1.0', title:'The language of sets', d:'Sets and elements, subsets and the power set, ∩ ∪ and complements, counting with Venn diagrams.', href:'horizon/1-0-sets.html', tags:['5 steps','Venn tools','Learning report']},
+      {n:'1.1', title:'Introducing integers', d:'Why we need ℤ: closure, the number line, inequalities and the rules of addition.', href:'horizon/1-1-integers.html', tags:['5 steps','Number-line drawing','Learning report']},
+      {n:'1.2', title:'Multiplication and primes', d:'Multiplication as an operator, primes, prime factorisation, HCF and LCM.', href:'horizon/1-2-primes.html', tags:['Proofs to explore','Learning report']},
+      {n:'1.3', title:'Modular arithmetic', d:'The arithmetic of the clock: remainders, congruence and check digits.', href:'horizon/1-3-modular.html', tags:['Real-life codes','Learning report']}
      ],
      gate:{title:'HORIZON GATE', sub:"The Queen's Kingdom", d:'A reading journey beyond the integers: the stories, open questions and great ideas this chapter leads to. No exercises, just the view.', href:'horizon/gate.html'}}
   ],
