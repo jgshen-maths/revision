@@ -1,0 +1,1841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style id="tw">/*! tailwindcss v4.3.3 | MIT License | https://tailwindcss.com */
+@layer properties;
+@layer theme, base, components, utilities;
+@layer theme {
+  :root, :host {
+    --font-sans: "Avenir Next","Segoe UI",system-ui,sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
+    monospace;
+    --color-red-700: oklch(50.5% 0.213 27.518);
+    --color-amber-50: oklch(98.7% 0.022 95.277);
+    --color-amber-200: oklch(92.4% 0.12 95.746);
+    --color-amber-400: oklch(82.8% 0.189 84.429);
+    --color-amber-700: oklch(55.5% 0.163 48.998);
+    --color-amber-800: oklch(47.3% 0.137 46.201);
+    --color-emerald-50: oklch(97.9% 0.021 166.113);
+    --color-emerald-200: oklch(90.5% 0.093 164.15);
+    --color-emerald-700: oklch(50.8% 0.118 165.612);
+    --color-teal-50: #f1f3fb;
+    --color-teal-200: #c9d0ef;
+    --color-teal-600: #3b4fa8;
+    --color-teal-700: #33449a;
+    --color-teal-800: #2a3880;
+    --color-teal-900: #222d66;
+    --color-rose-700: oklch(51.4% 0.222 16.935);
+    --color-slate-50: oklch(98.4% 0.003 247.858);
+    --color-slate-100: oklch(96.8% 0.007 247.896);
+    --color-slate-200: oklch(92.9% 0.013 255.508);
+    --color-slate-300: oklch(86.9% 0.022 252.894);
+    --color-slate-400: oklch(70.4% 0.04 256.788);
+    --color-slate-500: oklch(55.4% 0.046 257.417);
+    --color-slate-600: oklch(44.6% 0.043 257.281);
+    --color-slate-700: oklch(37.2% 0.044 257.287);
+    --color-slate-800: oklch(27.9% 0.041 260.031);
+    --spacing: 0.25rem;
+    --container-xl: 36rem;
+    --container-2xl: 42rem;
+    --text-xs: 0.75rem;
+    --text-xs--line-height: calc(1 / 0.75);
+    --text-sm: 0.875rem;
+    --text-sm--line-height: calc(1.25 / 0.875);
+    --text-base: 1rem;
+    --text-base--line-height: calc(1.5 / 1);
+    --text-lg: 1.125rem;
+    --text-lg--line-height: calc(1.75 / 1.125);
+    --text-xl: 1.25rem;
+    --text-xl--line-height: calc(1.75 / 1.25);
+    --text-2xl: 1.5rem;
+    --text-2xl--line-height: calc(2 / 1.5);
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --leading-relaxed: 1.625;
+    --radius-lg: 0.5rem;
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --default-font-family: var(--font-sans);
+    --default-mono-font-family: var(--font-mono);
+  }
+}
+@layer base {
+  *, ::after, ::before, ::backdrop, ::file-selector-button {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0 solid;
+  }
+  html, :host {
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    tab-size: 4;
+    font-family: var(--default-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji');
+    font-feature-settings: var(--default-font-feature-settings, normal);
+    font-variation-settings: var(--default-font-variation-settings, normal);
+    -webkit-tap-highlight-color: transparent;
+  }
+  hr {
+    height: 0;
+    color: inherit;
+    border-top-width: 1px;
+  }
+  abbr:where([title]) {
+    -webkit-text-decoration: underline dotted;
+    text-decoration: underline dotted;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+  a {
+    color: inherit;
+    -webkit-text-decoration: inherit;
+    text-decoration: inherit;
+  }
+  b, strong {
+    font-weight: bolder;
+  }
+  code, kbd, samp, pre {
+    font-family: var(--default-mono-font-family, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace);
+    font-feature-settings: var(--default-mono-font-feature-settings, normal);
+    font-variation-settings: var(--default-mono-font-variation-settings, normal);
+    font-size: 1em;
+  }
+  small {
+    font-size: 80%;
+  }
+  sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  sub {
+    bottom: -0.25em;
+  }
+  sup {
+    top: -0.5em;
+  }
+  table {
+    text-indent: 0;
+    border-color: inherit;
+    border-collapse: collapse;
+  }
+  :-moz-focusring:where(:not(iframe)) {
+    outline: auto;
+  }
+  progress {
+    vertical-align: baseline;
+  }
+  summary {
+    display: list-item;
+  }
+  ol, ul, menu {
+    list-style: none;
+  }
+  img, svg, video, canvas, audio, iframe, embed, object {
+    display: block;
+    vertical-align: middle;
+  }
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+  button, input, select, optgroup, textarea, ::file-selector-button {
+    font: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    border-radius: 0;
+    background-color: transparent;
+    opacity: 1;
+  }
+  :where(select:is([multiple], [size])) optgroup {
+    font-weight: bolder;
+  }
+  :where(select:is([multiple], [size])) optgroup option {
+    padding-inline-start: 20px;
+  }
+  ::file-selector-button {
+    margin-inline-end: 4px;
+  }
+  ::placeholder {
+    opacity: 1;
+  }
+  @supports (not (-webkit-appearance: -apple-pay-button))  or (contain-intrinsic-size: 1px) {
+    ::placeholder {
+      color: currentcolor;
+      @supports (color: color-mix(in lab, red, red)) {
+        color: color-mix(in oklab, currentcolor 50%, transparent);
+      }
+    }
+  }
+  textarea {
+    resize: vertical;
+  }
+  ::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+  ::-webkit-date-and-time-value {
+    min-height: 1lh;
+    text-align: inherit;
+  }
+  ::-webkit-datetime-edit {
+    display: inline-flex;
+  }
+  ::-webkit-datetime-edit-fields-wrapper {
+    padding: 0;
+  }
+  ::-webkit-datetime-edit, ::-webkit-datetime-edit-year-field, ::-webkit-datetime-edit-month-field, ::-webkit-datetime-edit-day-field, ::-webkit-datetime-edit-hour-field, ::-webkit-datetime-edit-minute-field, ::-webkit-datetime-edit-second-field, ::-webkit-datetime-edit-millisecond-field, ::-webkit-datetime-edit-meridiem-field {
+    padding-block: 0;
+  }
+  ::-webkit-calendar-picker-indicator {
+    line-height: 1;
+  }
+  :-moz-ui-invalid {
+    box-shadow: none;
+  }
+  button, input:where([type='button'], [type='reset'], [type='submit']), ::file-selector-button {
+    appearance: button;
+  }
+  ::-webkit-inner-spin-button, ::-webkit-outer-spin-button {
+    height: auto;
+  }
+  [hidden]:where(:not([hidden='until-found'])) {
+    display: none !important;
+  }
+}
+@layer utilities {
+  .fixed {
+    position: fixed;
+  }
+  .static {
+    position: static;
+  }
+  .mx-auto {
+    margin-inline: auto;
+  }
+  .my-2 {
+    margin-block: calc(var(--spacing) * 2);
+  }
+  .my-3 {
+    margin-block: calc(var(--spacing) * 3);
+  }
+  .mt-1 {
+    margin-top: var(--spacing);
+  }
+  .mt-2 {
+    margin-top: calc(var(--spacing) * 2);
+  }
+  .mt-3 {
+    margin-top: calc(var(--spacing) * 3);
+  }
+  .mt-4 {
+    margin-top: calc(var(--spacing) * 4);
+  }
+  .mt-5 {
+    margin-top: calc(var(--spacing) * 5);
+  }
+  .mt-6 {
+    margin-top: calc(var(--spacing) * 6);
+  }
+  .mb-1 {
+    margin-bottom: var(--spacing);
+  }
+  .mb-2 {
+    margin-bottom: calc(var(--spacing) * 2);
+  }
+  .mb-3 {
+    margin-bottom: calc(var(--spacing) * 3);
+  }
+  .mb-4 {
+    margin-bottom: calc(var(--spacing) * 4);
+  }
+  .mb-5 {
+    margin-bottom: calc(var(--spacing) * 5);
+  }
+  .mb-6 {
+    margin-bottom: calc(var(--spacing) * 6);
+  }
+  .block {
+    display: block;
+  }
+  .flex {
+    display: flex;
+  }
+  .grid {
+    display: grid;
+  }
+  .hidden {
+    display: none;
+  }
+  .inline-block {
+    display: inline-block;
+  }
+  .table {
+    display: table;
+  }
+  .w-14 {
+    width: calc(var(--spacing) * 14);
+  }
+  .w-24 {
+    width: calc(var(--spacing) * 24);
+  }
+  .w-56 {
+    width: calc(var(--spacing) * 56);
+  }
+  .w-full {
+    width: 100%;
+  }
+  .max-w-2xl {
+    max-width: var(--container-2xl);
+  }
+  .max-w-xl {
+    max-width: var(--container-xl);
+  }
+  .min-w-0 {
+    min-width: 0px;
+  }
+  .flex-1 {
+    flex: 1;
+  }
+  .cursor-pointer {
+    cursor: pointer;
+  }
+  .list-decimal {
+    list-style-type: decimal;
+  }
+  .list-disc {
+    list-style-type: disc;
+  }
+  .grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+  .items-center {
+    align-items: center;
+  }
+  .items-start {
+    align-items: flex-start;
+  }
+  .justify-center {
+    justify-content: center;
+  }
+  .gap-1 {
+    gap: var(--spacing);
+  }
+  .gap-2 {
+    gap: calc(var(--spacing) * 2);
+  }
+  .gap-3 {
+    gap: calc(var(--spacing) * 3);
+  }
+  .gap-4 {
+    gap: calc(var(--spacing) * 4);
+  }
+  .gap-6 {
+    gap: calc(var(--spacing) * 6);
+  }
+  :where(.space-y-1 > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(var(--spacing) * var(--tw-space-y-reverse));
+    margin-block-end: calc(var(--spacing) * calc(1 - var(--tw-space-y-reverse)));
+  }
+  :where(.space-y-2 > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(calc(var(--spacing) * 2) * var(--tw-space-y-reverse));
+    margin-block-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-y-reverse)));
+  }
+  :where(.space-y-3 > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(calc(var(--spacing) * 3) * var(--tw-space-y-reverse));
+    margin-block-end: calc(calc(var(--spacing) * 3) * calc(1 - var(--tw-space-y-reverse)));
+  }
+  .gap-x-6 {
+    column-gap: calc(var(--spacing) * 6);
+  }
+  .gap-y-1 {
+    row-gap: var(--spacing);
+  }
+  .overflow-x-auto {
+    overflow-x: auto;
+  }
+  .rounded {
+    border-radius: 0.25rem;
+  }
+  .rounded-lg {
+    border-radius: var(--radius-lg);
+  }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
+  .border-b-4 {
+    border-bottom-style: var(--tw-border-style);
+    border-bottom-width: 4px;
+  }
+  .border-l-4 {
+    border-left-style: var(--tw-border-style);
+    border-left-width: 4px;
+  }
+  .border-amber-200 {
+    border-color: var(--color-amber-200);
+  }
+  .border-amber-400 {
+    border-color: var(--color-amber-400);
+  }
+  .border-emerald-200 {
+    border-color: var(--color-emerald-200);
+  }
+  .border-slate-200 {
+    border-color: var(--color-slate-200);
+  }
+  .border-teal-200 {
+    border-color: var(--color-teal-200);
+  }
+  .border-teal-600 {
+    border-color: var(--color-teal-600);
+  }
+  .bg-amber-50 {
+    background-color: var(--color-amber-50);
+  }
+  .bg-emerald-50 {
+    background-color: var(--color-emerald-50);
+  }
+  .bg-slate-50 {
+    background-color: var(--color-slate-50);
+  }
+  .bg-slate-100 {
+    background-color: var(--color-slate-100);
+  }
+  .bg-teal-50 {
+    background-color: var(--color-teal-50);
+  }
+  .p-2 {
+    padding: calc(var(--spacing) * 2);
+  }
+  .p-3 {
+    padding: calc(var(--spacing) * 3);
+  }
+  .px-3 {
+    padding-inline: calc(var(--spacing) * 3);
+  }
+  .py-1 {
+    padding-block: var(--spacing);
+  }
+  .pl-5 {
+    padding-left: calc(var(--spacing) * 5);
+  }
+  .pl-6 {
+    padding-left: calc(var(--spacing) * 6);
+  }
+  .text-center {
+    text-align: center;
+  }
+  .text-left {
+    text-align: left;
+  }
+  .text-right {
+    text-align: right;
+  }
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+  .text-2xl {
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
+  }
+  .text-base {
+    font-size: var(--text-base);
+    line-height: var(--tw-leading, var(--text-base--line-height));
+  }
+  .text-lg {
+    font-size: var(--text-lg);
+    line-height: var(--tw-leading, var(--text-lg--line-height));
+  }
+  .text-sm {
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
+  }
+  .text-xl {
+    font-size: var(--text-xl);
+    line-height: var(--tw-leading, var(--text-xl--line-height));
+  }
+  .text-xs {
+    font-size: var(--text-xs);
+    line-height: var(--tw-leading, var(--text-xs--line-height));
+  }
+  .leading-relaxed {
+    --tw-leading: var(--leading-relaxed);
+    line-height: var(--leading-relaxed);
+  }
+  .font-bold {
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+  }
+  .font-semibold {
+    --tw-font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
+  }
+  .text-amber-700 {
+    color: var(--color-amber-700);
+  }
+  .text-amber-800 {
+    color: var(--color-amber-800);
+  }
+  .text-emerald-700 {
+    color: var(--color-emerald-700);
+  }
+  .text-red-700 {
+    color: var(--color-red-700);
+  }
+  .text-rose-700 {
+    color: var(--color-rose-700);
+  }
+  .text-slate-300 {
+    color: var(--color-slate-300);
+  }
+  .text-slate-400 {
+    color: var(--color-slate-400);
+  }
+  .text-slate-500 {
+    color: var(--color-slate-500);
+  }
+  .text-slate-600 {
+    color: var(--color-slate-600);
+  }
+  .text-slate-700 {
+    color: var(--color-slate-700);
+  }
+  .text-slate-800 {
+    color: var(--color-slate-800);
+  }
+  .text-teal-700 {
+    color: var(--color-teal-700);
+  }
+  .text-teal-800 {
+    color: var(--color-teal-800);
+  }
+  .text-teal-900 {
+    color: var(--color-teal-900);
+  }
+  .underline {
+    text-decoration-line: underline;
+  }
+  .ease-out {
+    --tw-ease: var(--ease-out);
+    transition-timing-function: var(--ease-out);
+  }
+  @media (width >= 48rem) {
+    .md\:grid-cols-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .md\:grid-cols-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .md\:grid-cols-5 {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+  }
+}
+@property --tw-space-y-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-leading {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ease {
+  syntax: "*";
+  inherits: false;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-space-y-reverse: 0;
+      --tw-border-style: solid;
+      --tw-leading: initial;
+      --tw-font-weight: initial;
+      --tw-ease: initial;
+    }
+  }
+}
+</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Horizon · Section 2.2 · Multiplication and primes</title>
+
+
+<style>
+  body { font-family: 'Inter', system-ui, sans-serif; background-color: #f7f6fb; color: #0f172a; overflow-x: hidden; }
+  .tab-content { display: none; animation: fadeIn 0.4s ease-out; }
+  .tab-content.active { display: block; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+  input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; background: transparent; }
+  input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; height: 20px; width: 20px; border-radius: 50%; background: #3b4fa8; cursor: pointer; margin-top: -8px; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+  input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 6px; cursor: pointer; background: #cbd5e1; border-radius: 3px; }
+  .btn { background:#3b4fa8; color:#fff; font-weight:700; padding:.45rem 1rem; border-radius:.4rem; font-size:.875rem; transition:.15s; box-shadow:0 1px 2px rgba(0,0,0,.15); }
+  .btn:hover { background:#33449a; } .btn:disabled { background:#94a3b8; cursor:not-allowed; }
+  .btn-ghost { background:#fff; color:#33449a; border:2px solid #c9d0ef; font-weight:700; padding:.3rem .75rem; border-radius:.4rem; font-size:.8rem; transition:.15s; }
+  .btn-ghost:hover { background:#eef0fa; border-color:#3b4fa8; } .btn-ghost.on { background:#3b4fa8; color:#fff; border-color:#3b4fa8; }
+  .card { background:#fff; border:1px solid #e2e8f0; border-radius:.75rem; padding:1.25rem; }
+  .key { background:#eef0fa; border-left:5px solid #3b4fa8; border-radius:.5rem; padding:1rem 1.25rem; }
+  .warn { background:#fffbeb; border-left:5px solid #f59e0b; border-radius:.5rem; padding:1rem 1.25rem; }
+  .step-badge { display:inline-flex; align-items:center; justify-content:center; width:1.75rem; height:1.75rem; border-radius:9999px; background:#3b4fa8; color:#fff; font-weight:800; font-size:.85rem; flex-shrink:0; }
+  .ex-card { background:#fff; border:1px solid #cbd5e1; border-radius:.75rem; padding:1.1rem 1.25rem; margin-bottom:1rem; }
+  .ex-card.ok { border-color:#34d399; background:#f0fdf4; } .ex-card.bad { border-color:#fca5a5; background:#fef2f2; }
+  .qnum { width:2rem; height:2rem; border-radius:.5rem; background:#1c2230; color:#fff; font-weight:800; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .inp { border:2px solid #cbd5e1; border-radius:.4rem; padding:.45rem .7rem; font-family: ui-monospace, monospace; font-weight:700; width:100%; max-width:22rem; }
+  .inp:focus { outline:none; border-color:#3b4fa8; box-shadow:0 0 0 3px #c9d0ef; }
+  .opt { display:block; width:100%; text-align:left; border:2px solid #cbd5e1; background:#fff; border-radius:.5rem; padding:.5rem .8rem; margin-bottom:.4rem; font-size:.9rem; transition:.15s; }
+  .opt:hover { border-color:#3b4fa8; background:#eef0fa; } .opt.sel { border-color:#3b4fa8; background:#dde2f6; font-weight:700; }
+  .opt.right { border-color:#10b981; background:#d1fae5; } .opt.wrong { border-color:#ef4444; background:#fee2e2; }
+  .chip { display:inline-flex; align-items:center; justify-content:center; min-width:2.6rem; height:2.4rem; padding:0 .5rem; border:2px solid #cbd5e1; border-radius:.5rem; background:#fff; font-weight:700; cursor:pointer; transition:.15s; user-select:none; }
+  .chip:hover { border-color:#3b4fa8; background:#eef0fa; transform:translateY(-2px); }
+  .chip.selA { background:#c9d0ef; border-color:#3b4fa8; color:#1c2230; } .chip.selB { background:#fde68a; border-color:#d97706; color:#78350f; }
+  .chip.pos { background:#ecfeff; border-color:#22d3ee; color:#155e75; } .chip.neg { background:#fff1f2; border-color:#fb7185; color:#9f1239; }
+  .chip.pick { outline:4px solid #f59e0b; }
+  .chip.static { cursor:default; } .chip.static:hover { transform:none; }
+  .sol-box { background:#f0fdf4; border:1px solid #bbf7d0; border-radius:.6rem; padding:1rem 1.2rem; } .sol-box.fail { background:#fff7ed; border-color:#fed7aa; }
+  .lvl { background:#1c2230; color:#fff; border-radius:.6rem; padding:.6rem 1rem; font-weight:800; margin:1.5rem 0 .8rem; }
+  .tab-done::after { content:" ✓"; color:#10b981; }
+  .ok-t { color:#047857; font-weight:700; } .bad-t { color:#b91c1c; font-weight:700; }
+  table.tb { border-collapse:collapse; font-size:.85rem; } table.tb th, table.tb td { border:1px solid #cbd5e1; padding:.35rem .6rem; text-align:center; }
+  table.tb th { background:#eef0fa; }
+  .tech { background:#fff; border:1px solid #c9d0ef; border-left:6px solid #3b4fa8; border-radius:.6rem; padding:1rem 1.2rem; margin-bottom:1rem; }
+  .tech .tt { font-weight:800; color:#33449a; margin-bottom:.35rem; }
+  .eg { background:#f8fafc; border:1px dashed #94a3b8; border-radius:.5rem; padding:.6rem .9rem; margin-top:.5rem; font-size:.9rem; }
+  .turn { display:inline-block; background:#fef3c7; color:#92400e; font-weight:800; font-size:.72rem; padding:.1rem .5rem; border-radius:9999px; margin-bottom:.4rem; }
+  .chip.sm { min-width:2.1rem; height:2rem; font-size:.8rem; padding:0 .3rem; }
+  .chip.prime { background:#c9d0ef; border-color:#3b4fa8; color:#1c2230; }
+  .chip.struck { background:#f7f6fb; color:#94a3b8; text-decoration:line-through; border-color:#e2e8f0; }
+  .chip.one { background:#fee2e2; border-color:#f87171; color:#991b1b; }
+  .chip.oddd { background:#fef3c7; border-color:#f59e0b; color:#78350f; }
+  .dot { width:1.15rem; height:1.15rem; border-radius:9999px; background:#5b6cc0; display:inline-block; }
+  .dot.b { background:#f59e0b; }
+  sup { font-size:.7em; }
+
+  /* ---- V2 additions ---- */
+  .qtext p { margin:.4rem 0; } .qtext p:first-child { margin-top:0; } .qtext p:last-child { margin-bottom:0; }
+  .qtext ul { list-style:disc; padding-left:1.4rem; margin:.4rem 0; } .qtext li { margin:.15rem 0; }
+  .qlabel { display:inline-block; background:#dde2f6; color:#1c2230; font-weight:800; font-size:.78rem; letter-spacing:.02em; padding:.1rem .65rem; border-radius:9999px; }
+  .hint { background:#fffbeb; border-left:4px solid #f59e0b; padding:.4rem .75rem; border-radius:.35rem; font-size:.88rem; color:#78350f; }
+  .codetab { margin:.2rem 0 .5rem; } .codetab td, .codetab th { min-width:2.1rem; padding:.2rem .35rem; }
+  .codetab th { background:#dde2f6; }
+  mjx-container[display="true"] { overflow-x:auto; overflow-y:hidden; max-width:100%; }
+  .fprev { margin-top:.55rem; border:2px dashed #a7b2e2; background:#eef0fa; border-radius:.5rem; padding:.4rem .8rem; min-height:3rem; max-width:34rem; }
+  .fprev .lab { font-size:.68rem; font-weight:800; color:#33449a; text-transform:uppercase; letter-spacing:.05em; display:block; }
+  .fprev .msg { font-size:.85rem; color:#475569; }
+  kbd.k { background:#f7f6fb; border:1px solid #94a3b8; border-bottom-width:3px; border-radius:.3rem; padding:0 .4rem; font-family:ui-monospace,monospace; font-weight:700; font-size:.85em; }
+  .proof { background:#fff; border:2px solid #33449a; border-radius:.75rem; padding:1.1rem 1.3rem; margin-bottom:1.2rem; }
+  .proof .ph { font-weight:800; color:#33449a; font-size:1.05rem; margin-bottom:.4rem; }
+  .proof .ps { margin:.7rem 0; padding-left:.9rem; border-left:4px solid #c9d0ef; font-size:.92rem; color:#1e293b; }
+  .proof .ps b.n { color:#33449a; }
+  .rp-tile { background:#f8fafc; border:1px solid #cbd5e1; border-radius:.6rem; padding:.7rem .9rem; text-align:center; }
+  .rp-tile .v { font-size:1.6rem; font-weight:800; color:#1c2230; } .rp-tile .l { font-size:.72rem; color:#475569; font-weight:700; }
+  .badge { display:inline-block; font-size:.72rem; font-weight:800; padding:.1rem .55rem; border-radius:9999px; white-space:nowrap; }
+  .b-sec { background:#d1fae5; color:#065f46; } .b-dev { background:#fef3c7; color:#92400e; } .b-need { background:#fee2e2; color:#991b1b; }
+  .b-flu { background:#d1fae5; color:#065f46; } .b-per { background:#cffafe; color:#155e75; } .b-gue { background:#fef3c7; color:#92400e; } .b-rus { background:#fee2e2; color:#991b1b; } .b-str { background:#ede9fe; color:#5b21b6; }
+  .rp-bar { display:flex; height:1.6rem; border-radius:.4rem; overflow:hidden; border:1px solid #cbd5e1; }
+  .rp-bar div { display:flex; align-items:center; justify-content:center; font-size:.72rem; font-weight:800; color:#fff; }
+  .meter { height:.6rem; background:#e2e8f0; border-radius:9999px; overflow:hidden; min-width:6rem; } .meter > div { height:100%; background:#3b4fa8; }
+  table.rp { border-collapse:collapse; width:100%; font-size:.84rem; } table.rp th, table.rp td { border-bottom:1px solid #e2e8f0; padding:.45rem .5rem; text-align:left; vertical-align:top; }
+  table.rp th { background:#eef0fa; font-size:.75rem; text-transform:uppercase; letter-spacing:.03em; color:#33449a; }
+  .heat td.h { text-align:center; font-weight:800; border-radius:.3rem; }
+  .toast { position:fixed; right:1rem; bottom:1rem; background:#1c2230; color:#fff; padding:.8rem 1.1rem; border-radius:.6rem; box-shadow:0 6px 18px rgba(0,0,0,.3); z-index:50; max-width:20rem; font-size:.9rem; }
+  @media print { body { background:#fff; } .toast, .tab-link, .no-print { display:none !important; } }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script>
+/* MathJax-compatible shim: the lesson code calls MathJax.typesetPromise; we render with KaTeX */
+window.MathJax={typesetPromise:function(els){try{(els&&els.length?els:[document.body]).forEach(function(e){if(e&&window.renderMathInElement)renderMathInElement(e,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false}],throwOnError:false,ignoredClasses:['nomath']})})}catch(err){}return Promise.resolve()}};
+</script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%20role%3D%22img%22%20aria-label%3D%22%E7%94%B3%20Shen%20Studio%22%3E%3Crect%20width%3D%22100%22%20height%3D%22100%22%20rx%3D%2212%22%20fill%3D%22%23B3261E%22/%3E%3Cpath%20d%3D%22M41.57%2027.7V42.46H27.58V27.7ZM15.1%2025.34V70.78H16.95C22.18%2070.78%2027.58%2067.91%2027.58%2066.65V62.18H41.57V90H44.01C48.82%2090%2054.3%2086.88%2054.3%2085.62V62.18H68.97V68.93H71.07C75.37%2068.93%2081.53%2066.65%2081.61%2065.89V29.64C83.38%2029.3%2084.39%2028.55%2084.9%2027.87L73.69%2019.19L68.12%2025.34H54.3V13.96C56.74%2013.62%2057.33%2012.7%2057.5%2011.52L41.57%2010V25.34H28.42L15.1%2020.2ZM54.3%2027.7H68.97V42.46H54.3ZM41.57%2059.82H27.58V44.82H41.57ZM54.3%2059.82V44.82H68.97V59.82Z%22%20fill%3D%22%23FFFFFF%22/%3E%3C/svg%3E">
+<style id="shen-brand">
+.shen-footer{display:flex;align-items:center;justify-content:center;gap:8px;padding:18px 12px 26px;font:500 13px/1.3 Inter,"Helvetica Neue",Arial,sans-serif;color:#6B6458;letter-spacing:.03em;text-align:center}
+.shen-footer svg{width:20px;height:20px;flex-shrink:0}
+.shen-footer b{font-weight:600;color:#1A1A1A}
+.shen-print-mark{display:none}
+@media print{.shen-footer{display:none!important}
+.shen-print-mark{display:flex!important;position:fixed;right:0;bottom:0;align-items:center;gap:1.5mm;font:500 7.5pt/1 Inter,Arial,sans-serif;color:#555;opacity:.75;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.shen-print-mark svg{width:4mm;height:4mm}}
+</style>
+<style id="home-link">
+.homebtn{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 12px;border:1px solid var(--line,#ddd);border-radius:999px;background:#fff;color:var(--ink,#1c2230);text-decoration:none;font:600 .88rem/1 Inter,system-ui,sans-serif;white-space:nowrap;flex-shrink:0}
+.homebtn:hover{background:#f1eff6}
+.homebtn svg{width:16px;height:16px}
+@media print{.homebtn{display:none!important}}
+</style>
+<style id="hz">/* ===== Horizon lessons on the Maths Atlas theme ===== */
+:root{--ink:#1c2230;--muted:#5b6475;--paper:#f7f6fb;--line:#e2e0ea;--a:#3b4fa8;--a-soft:#e8ebf8;--b:#b5487a;--hz:#d4693a;--hz-soft:#fdf0e8}
+html,body{margin:0;padding:0}
+body{background:var(--paper)!important;color:var(--ink);font:17px/1.62 "Avenir Next","Segoe UI",system-ui,-apple-system,sans-serif!important;overflow-x:hidden}
+h1,h2,h3,h4{font-family:Georgia,"Times New Roman",serif}
+h2{color:var(--ink)}
+header.top{position:sticky;top:0;z-index:30;background:rgba(247,246,251,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.topin{max-width:980px;margin:0 auto;padding:.55rem 1rem .35rem;display:flex;align-items:center;gap:.8rem;flex-wrap:wrap}
+.brand{font-family:Georgia,serif;font-weight:600;font-size:1.02rem;flex:1;min-width:180px;line-height:1.3}
+.brand .hzk{display:inline-block;font:700 .66rem/1 "Avenir Next",system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#fff;background:linear-gradient(90deg,#2b2350,var(--hz));border-radius:999px;padding:.28rem .6rem;margin-right:.4rem;vertical-align:2px}
+.brand small{display:block;font-weight:400;color:var(--muted);font-size:.84rem}
+.prog{font-size:.82rem;color:var(--muted);text-align:right;white-space:nowrap}
+nav.tabs{max-width:980px;margin:0 auto;display:flex;gap:.35rem;overflow-x:auto;padding:.1rem 1rem .6rem;scrollbar-width:thin}
+nav.tabs .tab-link{flex:0 0 auto;border:1px solid var(--line)!important;background:#fff!important;color:var(--ink)!important;border-radius:999px!important;padding:.32rem .8rem!important;font:400 .9rem/1.4 "Avenir Next",system-ui,sans-serif!important;cursor:pointer;white-space:nowrap}
+nav.tabs .tab-link.border-teal-600{background:var(--ink)!important;color:#fff!important;border-color:var(--ink)!important}
+nav.tabs .tab-link.tab-done::after{color:#2f8a4c}
+nav.tabs .tab-link.border-teal-600.tab-done::after{color:#9be3b0}
+main.hzmain{max-width:980px;margin:0 auto;padding:1.4rem 1rem 3rem}
+main.hzmain h2{font-size:1.65rem!important}
+main.hzmain .card{border-color:var(--line)}
+.katex{font-size:1.06em}
+.katex-display{overflow-x:auto;overflow-y:hidden;padding:2px 0}
+input,select,button,textarea{font-family:inherit}
+@media print{header.top{position:static}}
+
+.hzr h3{font-size:1.15rem;margin:1.4rem 0 .4rem;font-weight:600}
+.hzr .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:.8rem 1rem;margin:.5rem 0}
+.hzr-t{overflow-x:auto}.hzr-t table{width:100%;border-collapse:collapse}
+.hzr-t td{padding:.3rem .35rem;vertical-align:middle;font-size:.95rem}
+.hzr-t td:last-child{white-space:nowrap;font-size:.82rem}
+.hzr-ul{list-style:disc;padding-left:1.2rem;margin:.2rem 0}.hzr-ul li{margin:.25rem 0}
+@media(max-width:480px){.hzr-t td:nth-child(2){min-width:70px}.hzr-t td:nth-child(2) div{min-width:60px!important}}
+.codetab,table.tb,table.rp{display:block;overflow-x:auto;max-width:100%}
+</style>
+</head>
+<body>
+<header class="top"><div class="topin"><a class="homebtn" href="../index.html#horizon" aria-label="Back to the Maths Atlas home page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>Home</a><div class="brand"><span class="hzk">Horizon</span>Chapter 1 · Sets and Integers<small>Section 2.2 · Multiplication, primes and factorisation: HCF and LCM</small></div><div class="prog"><span id="prog-count">0</span> / <span id="prog-total">0</span> done</div></div><nav class="tabs" id="tabs"><button type="button" class="tab-link text-teal-700 border-b-4 border-teal-600 font-bold" data-tab="t1" onclick="openTab(event,'t1')">1. Multiplication</button><button type="button" class="tab-link" data-tab="t2" onclick="openTab(event,'t2')">2. Primes: the Atoms</button><button type="button" class="tab-link" data-tab="t3" onclick="openTab(event,'t3')">3. Fundamental Theorem</button><button type="button" class="tab-link" data-tab="t4" onclick="openTab(event,'t4')">4. Counting Divisors</button><button type="button" class="tab-link" data-tab="t5" onclick="openTab(event,'t5')">5. HCF &amp; LCM</button><button type="button" class="tab-link" data-tab="t6" onclick="openTab(event,'t6')">6. Homework</button><button type="button" class="tab-link" data-tab="t7" onclick="openTab(event,'t7')"><span id="t7-label">7. Learning Report (locked)</span></button></nav></header>
+<main class="hzmain">
+
+  <!-- ================= TAB 1 ================= -->
+  <div id="t1" class="tab-content active">
+    <h2 class="text-2xl font-bold text-slate-800 mb-1">Step 1: Multiplication, the Advanced Language of Addition</h2>
+    <p class="text-slate-600 mb-5">In 2.1 we studied the rules of addition in $\mathbb{Z}$. Now we meet an operation that is <em>built from</em> addition, and then compare the two.</p>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">1</span><h3 class="text-lg font-bold text-slate-800">Multiplication is an operator: it acts on a number</h3></div>
+    <div class="key mb-4 text-sm text-slate-800">
+      <p>Picture a number as an <strong>arrow</strong> on the number line, starting at $0$. An <strong>operator</strong> is a machine that acts on that arrow. In $3 \times 2$ the first number is the <strong>operator</strong> and the second is the number it acts on:</p>
+      <p class="text-center my-2">$3 \times 2$ means &ldquo;apply the operator $3$ to the number $2$&rdquo;.</p>
+      <ul class="list-disc pl-6 space-y-1">
+        <li>The <strong>size</strong> of the operator is a <strong>stretch factor</strong>. Operator $3$ stretches the arrow of $2$ to <strong>three times</strong> its length, so it ends at $6$.</li>
+        <li>The <strong>sign</strong> of the operator is a <strong>direction instruction</strong>. A positive operator keeps the direction. A <strong>negative operator also flips</strong> the arrow to the other side of $0$.</li>
+        <li>So operator $-3$ applied to $2$: stretch to $6$, then flip, ending at $-6$. That is $(-3)\times2=-6$.</li>
+      </ul>
+    </div>
+    <div class="card mb-4">
+      <p class="text-sm text-slate-600 mb-2">Move the sliders. The <span class="text-teal-700 font-bold">teal arrow</span> is the number. The <span class="text-slate-500 font-bold">dashed arrow</span> is the number after the operator&rsquo;s stretch. The <span class="text-amber-700 font-bold">amber arrow</span> is the final result, after the flip if the operator is negative.</p>
+      <div class="grid md:grid-cols-2 gap-4 mb-2">
+        <div><label class="text-sm font-bold text-amber-700">Operator = <span id="op-kv">3</span></label><input type="range" id="op-k" min="-6" max="6" value="3" oninput="opUpdate()"></div>
+        <div><label class="text-sm font-bold text-teal-700">Number = <span id="op-xv">2</span></label><input type="range" id="op-x" min="-6" max="6" value="2" oninput="opUpdate()"></div>
+      </div>
+      <div id="op-svg" class="overflow-x-auto"></div>
+      <div id="op-out" class="text-sm p-3 rounded bg-slate-50 border border-slate-200 space-y-1 mt-2"></div>
+      <div class="mt-2 flex gap-2 flex-wrap"><button class="btn-ghost" onclick="opSwap()">Swap the roles of operator and number</button><button class="btn-ghost" onclick="opSet(-3,-4)">Try $(-3)\times(-4)$</button></div>
+    </div>
+    <div class="key mb-5 text-sm text-slate-800">
+      <p><strong>Swapping roles.</strong> Operator $3$ on $2$ stretches a short arrow to $6$. Operator $2$ on $3$ stretches a different arrow to the <em>same</em> endpoint $6$. The journeys differ but the destination is the same: $3\times2=2\times3$. This is <strong>commutativity</strong>, and the Swap button lets you see it for any pair, including negatives.</p>
+      <p class="mt-2"><strong>Why the sign rule is not random.</strong> $(-3)\times(-4)$: the number $-4$ points left. Operator $3$ stretches it to $-12$ (still pointing left). The negative sign of the operator then <strong>flips</strong> it, so it now points right, at $\mathbf{12}$. A flip of a flip returns to the right-hand side.</p>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">2</span><h3 class="text-lg font-bold text-slate-800">The stretch is repeated addition</h3></div>
+    <div class="key mb-4 text-sm text-slate-800">
+      <p>Stretching to &ldquo;four times as long&rdquo; means laying four copies end to end. So the operator $4$ applied to $3$ gives $3+3+3+3$: $4 \times 3$ is a <strong>shorter language</strong> for adding the same number many times. It is closed on $\mathbb{Z}$: multiply two integers and you get an integer.</p>
+      <p class="mt-1">In set language, the <strong>multiples of $k$</strong> are $M_k = \{x : x = k \times n,\ n \in \mathbb{Z}^+\}$. For example $M_4 = \{4, 8, 12, 16, \ldots\}$.</p>
+    </div>
+    <div class="card mb-5">
+      <div class="grid md:grid-cols-2 gap-4 mb-2">
+        <div><label class="text-sm font-bold text-teal-700">Rows (groups) a = <span id="ar-av">3</span></label><input type="range" id="ar-a" min="1" max="9" value="3" oninput="arUpdate()"></div>
+        <div><label class="text-sm font-bold text-amber-700">In each group b = <span id="ar-bv">5</span></label><input type="range" id="ar-b" min="1" max="9" value="5" oninput="arUpdate()"></div>
+      </div>
+      <div id="ar-grid" class="my-3 flex justify-center"></div>
+      <div id="ar-out" class="text-sm p-3 rounded bg-slate-50 border border-slate-200 space-y-1"></div>
+      <div class="mt-2"><button class="btn-ghost" onclick="arSwap()">Swap rows and columns</button></div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">3</span><h3 class="text-lg font-bold text-slate-800">Addition vs multiplication: the Properties Lab</h3></div>
+    <p class="text-sm text-slate-700 mb-2">Set $a$, $b$, $c$ and compare how the two operations behave. Which rules do they share? Where do they differ?</p>
+    <div class="card mb-4">
+      <div class="grid md:grid-cols-3 gap-4 mb-3">
+        <div><label class="text-sm font-bold text-slate-700">a = <span id="lb-av">3</span></label><input type="range" id="lb-a" min="-9" max="9" value="3" oninput="lbUpdate()"></div>
+        <div><label class="text-sm font-bold text-slate-700">b = <span id="lb-bv">-4</span></label><input type="range" id="lb-b" min="-9" max="9" value="-4" oninput="lbUpdate()"></div>
+        <div><label class="text-sm font-bold text-slate-700">c = <span id="lb-cv">5</span></label><input type="range" id="lb-c" min="-9" max="9" value="5" oninput="lbUpdate()"></div>
+      </div>
+      <div class="overflow-x-auto"><table class="tb w-full" id="lb-table"></table></div>
+    </div>
+    <div class="key mb-5 text-sm text-slate-800">
+      <p><strong>What we learn.</strong> Both $+$ and $\times$ are <strong>commutative</strong> and <strong>associative</strong>. Addition has identity $0$ and every integer has an opposite $-a$. Multiplication has identity $1$, but <strong>no integer except $\pm1$ has an inverse</strong> (there is no integer $m$ with $2 \times m = 1$). In operator language: applying operator $2$ and then operator $3$ is the same as applying operator $6$ (associativity), operator $1$ changes nothing (identity), and operator $-1$ only flips. And the two operations are linked by the <strong>distributive law</strong>: $a \times (b + c) = a \times b + a \times c$. This works one way only: addition does <em>not</em> distribute over multiplication.</p>
+    </div>
+
+    <p class="text-sm font-bold text-slate-700 mb-2">See the distributive law as an area</p>
+    <div class="card mb-6">
+      <div class="grid md:grid-cols-3 gap-4 mb-2">
+        <div><label class="text-sm font-bold text-slate-700">height a = <span id="am-av">4</span></label><input type="range" id="am-a" min="1" max="9" value="4" oninput="amUpdate()"></div>
+        <div><label class="text-sm font-bold text-teal-700">width b = <span id="am-bv">5</span></label><input type="range" id="am-b" min="1" max="9" value="5" oninput="amUpdate()"></div>
+        <div><label class="text-sm font-bold text-amber-700">width c = <span id="am-cv">3</span></label><input type="range" id="am-c" min="1" max="9" value="3" oninput="amUpdate()"></div>
+      </div>
+      <div id="am-svg" class="max-w-xl mx-auto"></div>
+      <div id="am-out" class="text-center font-bold p-2 rounded bg-slate-50 border border-slate-200"></div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">4</span><h3 class="text-lg font-bold text-slate-800">Techniques, with worked examples</h3></div>
+
+    <div class="tech"><div class="tt">Technique 1: re-order and regroup to make friendly numbers</div>
+      <p class="text-sm text-slate-700">Commutativity and associativity let you multiply in any order. Look for pairs that make $10$, $100$ or $1000$, such as $25\times4$ or $8\times125$.</p>
+      <div class="eg"><strong>Example 1:</strong> $25 \times 17 \times 4 = (25 \times 4) \times 17 = 100 \times 17 = 1700$.<br><strong>Example 2:</strong> $8 \times 37 \times 125 = (8 \times 125) \times 37 = 1000 \times 37 = 37\,000$. &#10004;</div></div>
+
+    <div class="tech"><div class="tt">Technique 2: signs. Why is $(-3)\times(-4)=12$?</div>
+      <p class="text-sm text-slate-700">Two views. <strong>Operator view:</strong> the operator $-3$ stretches by $3$ and flips, so $(-3)\times(-4)$: stretch $-4$ to $-12$, flip to $12$. <strong>Algebra view:</strong> use only repeated addition and the distributive law.</p>
+      <div class="eg">&bull; $3 \times (-4) = (-4)+(-4)+(-4) = -12$ (repeated addition).<br>
+      &bull; By commutativity $(-4) \times 3 = -12$ too, so a negative times a positive is negative.<br>
+      &bull; Now $0 = 0 \times (-4) = \big(3 + (-3)\big) \times (-4) = 3\times(-4) + (-3)\times(-4) = -12 + (-3)\times(-4)$.<br>
+      &bull; So $(-3)\times(-4)$ must be the number that cancels $-12$, namely its opposite $\mathbf{12}$.</div>
+      <p class="text-sm text-slate-700 mt-2">The distributive law <em>forces</em> the answer: it is not a random rule to memorise.</p></div>
+
+    <div class="tech"><div class="tt">Technique 3: $n(n+m)$ lies between $n^2$ and $(n+m)^2$</div>
+      <p class="text-sm text-slate-700">Products of numbers that are close together are trapped between two perfect squares, which lets you estimate square roots and <strong>find the numbers</strong> from their product. This idea is big enough to have its own section: see <strong>Step 5: Between two squares</strong>, just below Technique 5.</p></div>
+
+    <div class="tech"><div class="tt">Technique 4: repeating blocks, and erasing digits</div>
+      <p class="text-sm text-slate-700">A digit sum of a repeating pattern is <strong>(block sum) &times; (number of blocks)</strong>. To erase the <em>most</em> digits while the erased digits add to a fixed amount: erase the <strong>zeros first</strong> (they cost nothing), then use the <strong>smallest non-zero digit</strong> as many times as needed.</p>
+      <div class="eg"><strong>Example:</strong> the number $200820082008$ has digit sum $10 \times 3 = 30$. We erase digits so the rest add to $24$, so the erased digits must add to $30 - 24 = 6$. There are $6$ zeros (cost $0$), then three $2$s (cost $6$): that erases $6 + 3 = \mathbf{9}$ digits, the most possible.</div></div>
+
+    <div class="tech"><div class="tt">Technique 5: work backwards (undo the known parts)</div>
+      <p class="text-sm text-slate-700">Evaluate every part that does <em>not</em> contain the unknown. Then divide it out and solve what is left.</p>
+      <div class="eg"><strong>Example:</strong> Which symbol ($+,-,\div,\times$) replaces $\oplus$ in $3 \times (4 \oplus 2 + 1) \times (2 \times 5 + 2) = 252$?<br>
+      Known part: $2\times5+2=12$. So $3 \times (\ldots) \times 12 = 252$, and $(\ldots)=252 \div 36 = 7$.<br>
+      So $4 \oplus 2 + 1 = 7$, giving $4 \oplus 2 = 6$. Only $+$ works ($4\times2=8$, $4-2=2$, $4\div2=2$).</div></div>
+
+    <div class="flex items-start gap-3 mb-3 mt-6"><span class="step-badge">5</span><h3 class="text-lg font-bold text-slate-800">Between two squares: where does $n(n+m)$ live?</h3></div>
+    <div class="key mb-4 text-sm text-slate-800">
+      <p>Take positive whole numbers $n$ and $m$. Then $n$ and $n+m$ are numbers that are <strong>$m$ apart</strong> (for $m=1$ they are consecutive). Their product is trapped between two perfect squares:</p>
+      <p class="text-center my-2">$$n^2 \;<\; n(n+m) \;<\; (n+m)^2$$</p>
+      <p><strong>Why (operator view).</strong> A positive operator makes a bigger number bigger. Apply the operator $n$ to the numbers $n$ and $n+m$. Since $n < n+m$, the results are in the same order: $n\times n < n\times(n+m)$. Now apply the operator $n+m$ to the same two numbers: $(n+m)\times n < (n+m)\times(n+m)$. By commutativity $(n+m)\times n = n(n+m)$, so the middle term is the same in both. Taking square roots:</p>
+      <p class="text-center my-2">$$n \;<\; \sqrt{n(n+m)} \;<\; n+m$$</p>
+    </div>
+    <div class="key mb-4 text-sm text-slate-800">
+      <p class="font-bold text-teal-900">A sharper squeeze: the square root sits just below the <em>middle</em></p>
+      <p>Expand $\left(n+\tfrac m2\right)^2 = n^2 + nm + \tfrac{m^2}{4} = n(n+m) + \tfrac{m^2}{4}$. So</p>
+      <p class="text-center my-2">$$n(n+m) = \left(n+\tfrac m2\right)^2 - \left(\tfrac m2\right)^2 \quad\Longrightarrow\quad n \;<\; \sqrt{n(n+m)} \;<\; n+\tfrac m2 .$$</p>
+      <p>For consecutive numbers ($m=1$): $\sqrt{n(n+1)}$ is a tiny bit less than $n+\tfrac12$. That is why $\sqrt{2162}\approx46.5$ and its whole-number part is $46$.</p>
+    </div>
+
+    <p class="text-sm font-bold text-slate-700 mb-2">Try it: the Squeeze Explorer</p>
+    <div class="card mb-4">
+      <div class="grid md:grid-cols-2 gap-4 mb-2">
+        <div><label class="text-sm font-bold text-teal-700">n = <span id="sq-nv">20</span></label><input type="range" id="sq-n" min="1" max="60" value="20" oninput="sqUpdate()"></div>
+        <div><label class="text-sm font-bold text-amber-700">m (the gap) = <span id="sq-mv">7</span></label><input type="range" id="sq-m" min="1" max="12" value="7" oninput="sqUpdate()"></div>
+      </div>
+      <div id="sq-svg" class="overflow-x-auto"></div>
+      <div id="sq-out" class="text-sm p-3 rounded bg-slate-50 border border-slate-200 space-y-1 mt-2"></div>
+    </div>
+
+    <p class="text-sm font-bold text-slate-700 mb-2">Try it: the Reverse Solver (you know the product $P$ and the gap $m$)</p>
+    <div class="card mb-5">
+      <div class="flex items-center gap-3 mb-3 flex-wrap">
+        <label class="text-sm font-bold" for="rv-p">P =</label><input type="number" id="rv-p" class="inp" style="max-width:7rem" min="2" max="99999" value="864" oninput="rvUpdate()">
+        <label class="text-sm font-bold" for="rv-m">m =</label><input type="number" id="rv-m" class="inp" style="max-width:5rem" min="1" max="20" value="5" oninput="rvUpdate()">
+        <button class="btn-ghost" onclick="rvSet(2162,1)">$2162$, $m=1$</button><button class="btn-ghost" onclick="rvSet(864,5)">$864$, $m=5$</button><button class="btn-ghost" onclick="rvSet(1330,3)">$1330$, $m=3$</button>
+      </div>
+      <div id="rv-out" class="text-sm space-y-2"></div>
+    </div>
+
+    <p class="text-sm font-bold text-slate-700 mb-2">Applications, with worked examples</p>
+
+    <div class="tech"><div class="tt">Application 1: the whole-number part of a square root</div>
+      <p class="text-sm text-slate-700">If a number is $n(n+1)$, its square root has whole-number part $n$, and the decimal part is just under $0.5$.</p>
+      <div class="eg"><strong>Example:</strong> $\sqrt{8010}$. Notice $8010 = 89\times90$.<br>
+      $89^2 = 7921 < 8010 < 8100 = 90^2$, so $89 < \sqrt{8010} < 90$.<br>
+      The whole-number part is $\mathbf{89}$, and $\sqrt{8010}\approx 89.5$.</div></div>
+
+    <div class="tech"><div class="tt">Application 2: two consecutive numbers with a given product</div>
+      <p class="text-sm text-slate-700">Take the square root of the product. The smaller number is its whole-number part.</p>
+      <div class="eg"><strong>Example:</strong> two consecutive numbers multiply to $2162$.<br>
+      $\sqrt{2162}\approx46.5$, so $n=46$.<br>
+      Check: $46\times47 = 2162$ &#10004;. The numbers are $46$ and $47$.</div></div>
+
+    <div class="tech"><div class="tt">Application 3: two numbers $m$ apart with a given product</div>
+      <p class="text-sm text-slate-700">From $n < \sqrt{P} < n+\tfrac m2$ we get $\sqrt{P} - \tfrac m2 < n < \sqrt{P}$. That leaves only a few whole numbers to test.</p>
+      <div class="eg"><strong>Example:</strong> two numbers differ by $5$ and multiply to $864$.<br>
+      $\sqrt{864}\approx29.4$, and $\tfrac m2 = 2.5$, so $26.9 < n < 29.4$.<br>
+      Candidates: $n = 27, 28, 29$.<br>
+      Test: $27\times32 = 864$ &#10004;. The numbers are $27$ and $32$.</div></div>
+
+    <div class="tech"><div class="tt">Application 4: mental multiplication (difference of squares)</div>
+      <p class="text-sm text-slate-700">Since $n(n+m) = \left(n+\tfrac m2\right)^2 - \left(\tfrac m2\right)^2$, two numbers equally far from a friendly middle number multiply quickly.</p>
+      <div class="eg"><strong>Example 1:</strong> $38\times42$: the middle is $40$ and each number is $2$ away.<br>
+      $38\times42 = 40^2 - 2^2 = 1600 - 4 = 1596$.<br>
+      <strong>Example 2:</strong> $96\times104 = 100^2 - 4^2 = 10\,000 - 16 = 9984$.</div></div>
+
+    <div class="tech"><div class="tt">Application 5: is $N$ a product of two consecutive numbers?</div>
+      <p class="text-sm text-slate-700">Expand: $4n(n+1)+1 = 4n^2+4n+1 = (2n+1)^2$. So if $N = n(n+1)$, then $4N+1$ is a <strong>perfect square</strong>. This works as a test.</p>
+      <div class="eg"><strong>Example 1:</strong> $N = 4422$. $4N+1 = 17\,689 = 133^2$, so $2n+1 = 133$ and $n = 66$ &#10004;.<br>
+      <strong>Example 2:</strong> $N = 4423$. $4N+1 = 17\,693$. But $133^2 = 17\,689$ and $134^2 = 17\,956$, so $17\,693$ is not a square. $4423$ is <strong>not</strong> a product of consecutive numbers.</div></div>
+
+    <div class="tech"><div class="tt">Application 6: four consecutive numbers plus one</div>
+      <p class="text-sm text-slate-700">Pair the outer two numbers and the inner two numbers. Both pairs have the same &ldquo;middle&rdquo;, so the products are $x$ and $x+2$ for $x = n(n+3)$, an $n(n+m)$ product with $m=2$ again:</p>
+      <div class="eg">$n(n+1)(n+2)(n+3)+1 = \big[n(n+3)\big]\big[(n+1)(n+2)\big]+1 = x(x+2)+1 = (x+1)^2$.<br>
+      <strong>Example:</strong> $5\times6\times7\times8+1$: here $x = 5\times8 = 40$, so the total is $41^2 = 1681$. Check: $5\times6\times7\times8 = 1680$ &#10004;.</div></div>
+
+    <h3 class="text-xl font-bold text-slate-800 mb-3 bg-slate-100 p-3 rounded-lg inline-block">Check your understanding</h3>
+    <div id="ex-t1"></div>
+  </div>
+
+  <!-- ================= TAB 2 ================= -->
+  <div id="t2" class="tab-content">
+    <h2 class="text-2xl font-bold text-slate-800 mb-1">Step 2: Primes, the Atoms of Multiplication</h2>
+    <p class="text-slate-600 mb-5">Addition builds <em>every</em> positive integer from one single piece, $1$: $5 = 1+1+1+1+1$. Multiplication is different: it needs <strong>many</strong> basic building blocks. These are the <strong>prime numbers</strong>.</p>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">1</span><h3 class="text-lg font-bold text-slate-800">Factors, divisibility and primes</h3></div>
+    <div class="key mb-4 text-sm text-slate-800">
+      <p>$d$ <strong>divides</strong> $n$, written $d \mid n$, if $n = d \times k$ for some integer $k$. The <strong>factor set</strong> of $n$ is $F(n) = \{d \in \mathbb{Z}^+ : d \mid n\}$, for example $F(12)=\{1,2,3,4,6,12\}$ and $n\big(F(12)\big)=6$.</p>
+      <p class="mt-2">A <strong>prime</strong> is a positive integer with <strong>exactly two</strong> factors: $1$ and itself. Writing $\mathbb{P}$ for the set of primes: $\mathbb{P} = \{p \in \mathbb{Z}^+ : n(F(p)) = 2\}$. A positive integer with more than two factors is <strong>composite</strong>.</p>
+      <ul class="list-disc pl-6 mt-2 space-y-1">
+        <li>$F(7)=\{1,7\}$: two factors, so $7 \in \mathbb{P}$. $F(9)=\{1,3,9\}$: composite.</li>
+        <li>$F(1)=\{1\}$ has only <em>one</em> element, so $1 \notin \mathbb{P}$. The number $1$ is neither prime nor composite.</li>
+        <li>$2$ is the <strong>only even prime</strong>. Every other even number has the factor $2$.</li>
+      </ul>
+    </div>
+
+    <p class="text-sm font-bold text-slate-700 mb-2">Try it: the Sieve of Eratosthenes</p>
+    <div class="card mb-5">
+      <p class="text-sm text-slate-600 mb-2">Each step finds the next number that has not been struck out. It must be prime (nothing smaller divides it), so we strike out all its multiples.</p>
+      <div id="sv-grid" class="flex flex-wrap gap-1 mb-3 max-w-2xl"></div>
+      <div class="flex gap-2 flex-wrap mb-2"><button class="btn" onclick="svStep()">Next step</button><button class="btn-ghost" onclick="svAll()">Finish it</button><button class="btn-ghost" onclick="svReset()">Reset</button></div>
+      <div id="sv-out" class="text-sm p-3 rounded bg-slate-50 border border-slate-200"></div>
+    </div>
+
+    <p class="text-sm font-bold text-slate-700 mb-2">Try it: the Factor Finder</p>
+    <div class="card mb-5">
+      <div class="flex items-center gap-3 mb-2"><label class="text-sm font-bold" for="ff-n">Choose n (1 to 500):</label><input type="number" id="ff-n" class="inp" style="max-width:8rem" min="1" max="500" value="36" oninput="ffUpdate()"></div>
+      <div id="ff-out" class="text-sm p-3 rounded bg-slate-50 border border-slate-200 space-y-1"></div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">2</span><h3 class="text-lg font-bold text-slate-800">Techniques, with worked examples</h3></div>
+    <div class="tech"><div class="tt">Technique 1: list factors in pairs (stop at the square root)</div>
+      <p class="text-sm text-slate-700">Test $d = 1, 2, 3, \ldots$. Each $d$ that divides $n$ gives a pair $d \times (n \div d)$. You can stop once $d$ passes $\sqrt{n}$, because the pairs start repeating.</p>
+      <div class="eg"><strong>Example:</strong> $F(30)$: $1\times30,\ 2\times15,\ 3\times10,\ 5\times6$ (next would be $6\times5$, a repeat). So $F(30)=\{1,2,3,5,6,10,15,30\}$.</div></div>
+    <div class="tech"><div class="tt">Technique 2: test whether $n$ is prime using only primes up to $\sqrt{n}$</div>
+      <p class="text-sm text-slate-700">If $n$ had a factor bigger than $\sqrt n$, it would be paired with a smaller one. So it is enough to test the <strong>primes</strong> $\le \sqrt n$.</p>
+      <div class="eg"><strong>Example 1:</strong> Is $143$ prime? $\sqrt{143} \approx 11.96$, so test $2,3,5,7,11$. $143 \div 11 = 13$, so $143 = 11 \times 13$ is composite.<br>
+      <strong>Example 2:</strong> Is $97$ prime? $\sqrt{97}\approx 9.8$, so test $2,3,5,7$. None divides $97$, so $97$ is prime.</div></div>
+    <div class="tech"><div class="tt">Technique 3: &ldquo;smallest&rdquo; problems use the smallest primes</div>
+      <p class="text-sm text-slate-700">To make a product of distinct primes as small as possible, use the smallest primes. An <em>even</em> product of primes must contain the prime $2$.</p>
+      <div class="eg"><strong>Example:</strong> the smallest product of three distinct primes is $2 \times 3 \times 5 = 30$. The smallest <em>odd</em> product of three distinct primes is $3 \times 5 \times 7 = 105$ (it cannot use $2$).</div></div>
+
+    <h3 class="text-xl font-bold text-slate-800 mb-3 bg-slate-100 p-3 rounded-lg inline-block">Check your understanding</h3>
+    <div id="ex-t2"></div>
+  </div>
+
+  <!-- ================= TAB 3 ================= -->
+  <div id="t3" class="tab-content">
+    <h2 class="text-2xl font-bold text-slate-800 mb-1">Step 3: The Fundamental Theorem of Arithmetic</h2>
+    <p class="text-slate-600 mb-5">If primes are the atoms of multiplication, then every number is a &ldquo;molecule&rdquo; built from them, and each molecule has <strong>exactly one</strong> recipe.</p>
+
+    <div class="key mb-5 text-sm text-slate-800">
+      <p class="font-bold text-teal-900 text-base mb-1">Fundamental Theorem of Arithmetic</p>
+      <p>Every integer $n \ge 2$ can be written as a <strong>product of primes</strong>, and this can be done in <strong>exactly one way</strong>, apart from the order of the factors.</p>
+      <p class="mt-2"><strong>Why &ldquo;apart from the order&rdquo;?</strong> Because multiplication is commutative: $2\times3\times5$ and $5\times2\times3$ are the same product. <strong>Why is $1$ not prime?</strong> Because $6 = 2\times3 = 1\times2\times3 = 1\times1\times2\times3$ would give infinitely many &ldquo;different&rdquo; recipes. Excluding $1$ keeps the factorisation unique.</p>
+      <p class="mt-2">We write repeated primes with indices: $360 = 2\times2\times2\times3\times3\times5 = 2^3 \times 3^2 \times 5$.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-4 mb-5">
+      <div class="card text-sm"><p class="font-bold text-teal-800 mb-1">Addition: many recipes</p><p class="text-slate-700">Ways to write $6$ as a sum of positive integers: $6$, $5+1$, $4+2$, $4+1+1$, $3+3$, $3+2+1$, $3+1+1+1$, $2+2+2$, $2+2+1+1$, $2+1+1+1+1$, $1+1+1+1+1+1$ = <strong>11 ways</strong>.</p></div>
+      <div class="card text-sm"><p class="font-bold text-teal-800 mb-1">Multiplication: one recipe</p><p class="text-slate-700">$6 = 2 \times 3$. That is the only way to write $6$ as a product of primes. Every number has a unique &ldquo;prime fingerprint&rdquo;.</p></div>
+    </div>
+
+    <p class="text-sm font-bold text-slate-700 mb-2">Try it: the Factor Ladder</p>
+    <div class="card mb-5">
+      <div class="flex items-center gap-3 mb-2 flex-wrap"><label class="text-sm font-bold" for="fl-n">Choose n (2 to 5000):</label><input type="number" id="fl-n" class="inp" style="max-width:8rem" min="2" max="5000" value="360" oninput="flUpdate()">
+        <button class="btn-ghost" onclick="flSet(1001)">1001</button><button class="btn-ghost" onclick="flSet(110618)">110618</button><button class="btn-ghost" onclick="flSet(2310)">2310</button></div>
+      <div id="fl-out" class="text-sm p-3 rounded bg-slate-50 border border-slate-200"></div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">2</span><h3 class="text-lg font-bold text-slate-800">Techniques, with worked examples</h3></div>
+
+    <div class="tech"><div class="tt">Technique 1: the factor ladder and index form</div>
+      <p class="text-sm text-slate-700">Divide by the smallest prime that works, again and again, until you reach $1$. The primes you used, with their counts, give the factorisation.</p>
+      <div class="eg"><strong>Example:</strong> $126$: $126 \div 2 = 63$, $63 \div 3 = 21$, $21 \div 3 = 7$, $7 \div 7 = 1$. So $126 = 2 \times 3^2 \times 7$.</div></div>
+
+    <div class="tech"><div class="tt">Technique 2: two numbers with a given sum and product</div>
+      <p class="text-sm text-slate-700">Factorise the product. Every possible number is a <strong>product of some of those primes</strong>. List the factor pairs $(d, P\div d)$ and check which pair has the required sum.</p>
+      <div class="eg"><strong>Example:</strong> sum $26$, product $105$. $105 = 3\times5\times7$. Factor pairs: $(1,105)$ sum $106$; $(3,35)$ sum $38$; $(5,21)$ sum $26$ &#10004;; $(7,15)$ sum $22$. The numbers are $5$ and $21$.</div></div>
+
+    <div class="tech"><div class="tt">Technique 3: counting trailing zeros of $n!$</div>
+      <p class="text-sm text-slate-700">$n! = 1\times2\times3\times\cdots\times n$. A trailing zero comes from a factor $10 = 2\times5$. There are always more $2$s than $5$s, so <strong>count the factors of $5$</strong>. Multiples of $5$ give one each, multiples of $25$ give one <em>extra</em>, multiples of $125$ one more, and so on.</p>
+      <div class="eg"><strong>Example 1:</strong> $20!$: multiples of $5$ are $5,10,15,20$: that is $4$ fives, so $4$ trailing zeros.<br>
+      <strong>Example 2:</strong> $50!$: multiples of $5$: $10$ numbers. Multiples of $25$ ($25$ and $50$) each have a second $5$: $2$ more. Total $10+2=12$ trailing zeros.</div></div>
+
+    <div class="tech"><div class="tt">Technique 4: decoding with unique factorisation</div>
+      <p class="text-sm text-slate-700">Because the prime factorisation is unique, a product of primes can only be read back <em>one</em> way. Order is irrelevant (commutativity), so you can reorder the factors to spell a word.</p>
+      <div class="eg"><strong>Example:</strong> primes in order are $2, 3, 5, 7, \ldots$ and letters $A, B, C, D, \ldots$. The code $2 \times 5 \times 7 = 70$ gives $A, C, D$: the word can be read as $\text{CAD}$.</div></div>
+
+    <div class="tech"><div class="tt">Technique 5: compare the sums of prime factors</div>
+      <p class="text-sm text-slate-700">Factorise each candidate completely, add its <strong>distinct</strong> prime factors, and compare.</p>
+      <div class="eg"><strong>Example:</strong> arrangements of the digits $1,2,3$: $123 = 3\times41$ (sum $44$); $132=2^2\times3\times11$ ($2+3+11=16$); $213=3\times71$ ($74$); $231=3\times7\times11$ ($21$); $312=2^3\times3\times13$ ($18$); $321=3\times107$ ($110$). The smallest sum is $16$, from $132$.</div></div>
+
+    <h3 class="text-xl font-bold text-slate-800 mb-3 bg-slate-100 p-3 rounded-lg inline-block">Check your understanding</h3>
+    <div class="card mb-4" id="howto-t3"><p class="text-sm font-bold text-slate-800 mb-2">How to type a factorisation</p>
+      <table class="tb text-sm"><tr><th>You type</th><th>The preview shows</th></tr>
+        <tr><td><kbd class="k">2^3*3*5</kbd></td><td>$2^3\times3\times5$</td></tr>
+        <tr><td><kbd class="k">2*2*2*3*3*5</kbd></td><td>$2\times2\times2\times3\times3\times5$</td></tr></table>
+      <p class="text-xs text-slate-600 mt-2">Use <kbd class="k">^</kbd> for a power and <kbd class="k">*</kbd> for $\times$. Use <strong>primes only</strong>; the order does not matter. A live preview under the answer box shows exactly how your answer is read, so you can fix mistakes before you check.</p></div>
+    <div id="ex-t3"></div>
+  </div>
+
+  <!-- ================= TAB 4 ================= -->
+  <div id="t4" class="tab-content">
+    <h2 class="text-2xl font-bold text-slate-800 mb-1">Step 4: Counting Divisors with the Box Method</h2>
+    <p class="text-slate-600 mb-5">Listing all factors of a big number is slow. Prime factorisation lets us <strong>count</strong> them without listing, with the same &ldquo;choice boxes&rdquo; idea you used for combinations.</p>
+
+    <div class="key mb-5 text-sm text-slate-800">
+      <p>Every divisor of $n = 2^a \times 3^b \times 5^c$ is built by <strong>choosing an exponent for each prime</strong>: the power of $2$ can be $0,1,\ldots,a$ ($a+1$ choices), the power of $3$ can be $0,\ldots,b$ ($b+1$ choices), and so on. Multiply the choices:</p>
+      <p class="text-center my-2">$n\big(F(n)\big) = (a+1)(b+1)(c+1)$</p>
+    </div>
+
+    <p class="text-sm font-bold text-slate-700 mb-2">Try it: the Divisor Builder</p>
+    <div class="card mb-5">
+      <div class="grid md:grid-cols-3 gap-4 mb-3">
+        <div><label class="text-sm font-bold text-teal-700">Power of 2: <span id="dv-av">3</span></label><input type="range" id="dv-a" min="0" max="4" value="3" oninput="dvUpdate()"></div>
+        <div><label class="text-sm font-bold text-amber-700">Power of 3: <span id="dv-bv">2</span></label><input type="range" id="dv-b" min="0" max="3" value="2" oninput="dvUpdate()"></div>
+        <div><label class="text-sm font-bold text-rose-700">Power of 5: <span id="dv-cv">1</span></label><input type="range" id="dv-c" min="0" max="2" value="1" oninput="dvUpdate()"></div>
+      </div>
+      <label class="text-sm font-bold text-slate-700 flex items-center gap-2 mb-2"><input type="checkbox" id="dv-odd" onchange="dvUpdate()"> Show only ODD divisors (the power of 2 must be 0)</label>
+      <div id="dv-sum" class="p-3 rounded bg-slate-50 border border-slate-200 text-sm mb-3"></div>
+      <div id="dv-list" class="flex flex-wrap gap-1"></div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">2</span><h3 class="text-lg font-bold text-slate-800">Techniques, with worked examples</h3></div>
+    <div class="tech"><div class="tt">Technique 1: count with the formula</div>
+      <div class="eg"><strong>Example:</strong> $72 = 2^3 \times 3^2$. Boxes: $(3+1)\times(2+1) = 4 \times 3 = 12$ divisors. (Check: $1,2,3,4,6,8,9,12,18,24,36,72$.)</div></div>
+    <div class="tech"><div class="tt">Technique 2: restricted counts (odd or even divisors)</div>
+      <p class="text-sm text-slate-700">An <strong>odd</strong> divisor can contain no factor of $2$: the box for $2$ has only <strong>1</strong> choice (exponent $0$). For <strong>even</strong> divisors, subtract the odd ones from the total (or restrict the exponent of $2$ to $1,\ldots,a$).</p>
+      <div class="eg"><strong>Example:</strong> $360 = 2^3\times3^2\times5$. Total: $4\times3\times2=24$. Odd divisors: $1\times3\times2 = 6$. Even divisors: $24-6=18$.</div></div>
+    <div class="tech"><div class="tt">Technique 3: which numbers have an odd number of factors?</div>
+      <p class="text-sm text-slate-700">The count is a product of terms $(e+1)$. It is odd only if <strong>every</strong> $(e+1)$ is odd, which means every exponent $e$ is even. That happens exactly when $n$ is a <strong>perfect square</strong>.</p>
+      <div class="eg"><strong>Example:</strong> $36 = 2^2\times3^2$ gives $3\times3 = 9$ factors (odd). $12=2^2\times3$ gives $3\times2=6$ (even).</div></div>
+
+    <h3 class="text-xl font-bold text-slate-800 mb-3 bg-slate-100 p-3 rounded-lg inline-block">Check your understanding</h3>
+    <div id="ex-t4"></div>
+  </div>
+
+  <!-- ================= TAB 5 ================= -->
+  <div id="t5" class="tab-content">
+    <h2 class="text-2xl font-bold text-slate-800 mb-1">Step 5: HCF and LCM from Prime Factorisation</h2>
+    <p class="text-slate-600 mb-5">Two numbers share factors, and they share multiples. Sets make this precise.</p>
+
+    <div class="grid md:grid-cols-2 gap-4 mb-5">
+      <div class="key text-sm text-slate-800"><p class="font-bold text-teal-900">HCF: Highest Common Factor</p><p>The <strong>largest element</strong> of the set $F(a) \cap F(b)$ (the factors they share).</p><p class="mt-1">Example: $F(12)\cap F(18) = \{1,2,3,6\}$, so $\text{HCF}=6$.</p></div>
+      <div class="key text-sm text-slate-800"><p class="font-bold text-teal-900">LCM: Lowest Common Multiple</p><p>The <strong>smallest element</strong> of $M_a \cap M_b$ (the multiples they share).</p><p class="mt-1">Example: $M_{12}\cap M_{18} = \{36,72,108,\ldots\}$, so $\text{LCM}=36$.</p></div>
+    </div>
+
+    <p class="text-sm font-bold text-slate-700 mb-2">Try it: the HCF &amp; LCM Explorer</p>
+    <div class="card mb-5">
+      <div class="flex items-center gap-3 mb-3 flex-wrap">
+        <label class="text-sm font-bold" for="hl-a">a =</label><input type="number" id="hl-a" class="inp" style="max-width:6rem" min="1" max="500" value="84" oninput="hlUpdate()">
+        <label class="text-sm font-bold" for="hl-b">b =</label><input type="number" id="hl-b" class="inp" style="max-width:6rem" min="1" max="500" value="126" oninput="hlUpdate()">
+        <button class="btn-ghost" onclick="hlSet(12,18)">12, 18</button><button class="btn-ghost" onclick="hlSet(48,180)">48, 180</button><button class="btn-ghost" onclick="hlSet(35,64)">35, 64</button>
+      </div>
+      <div id="hl-out" class="text-sm space-y-3"></div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">2</span><h3 class="text-lg font-bold text-slate-800">A formal proof that $\text{HCF}\times\text{LCM}=a\times b$</h3></div>
+    <p class="text-sm text-slate-700 mb-2">The Explorer always shows the same product on both sides. Is that luck? No: here is why, using only prime factorisation.</p>
+    <div class="proof">
+      <div class="ph">Theorem</div>
+      <p class="text-sm">For any positive integers $a$ and $b$: $\;\text{HCF}(a,b)\times\text{LCM}(a,b)=a\times b.$</p>
+      <div class="ps"><b class="n">Setting up.</b> Let $p_1,p_2,\ldots,p_k$ be all the primes that divide $a$ or $b$. By the Fundamental Theorem of Arithmetic,
+        $$a=p_1^{\alpha_1}p_2^{\alpha_2}\cdots p_k^{\alpha_k},\qquad b=p_1^{\beta_1}p_2^{\beta_2}\cdots p_k^{\beta_k},$$
+        where each exponent is $\ge 0$ (an exponent is $0$ when that prime does not divide the number).</div>
+      <div class="ps"><b class="n">Step 1: what divides $a$?</b> Suppose $d\mid a$, so $a=dc$. Factorise $d$ and $c$ into primes. Multiplying $d$ and $c$ <em>adds</em> the exponents of each prime, and by <strong>uniqueness</strong> of the factorisation of $a$ the totals must equal $\alpha_1,\ldots,\alpha_k$. Hence
+        $$d=p_1^{\delta_1}\cdots p_k^{\delta_k}\quad\text{with}\quad 0\le\delta_i\le\alpha_i\ \text{ for every } i.$$
+        Conversely, every such number divides $a$.</div>
+      <div class="ps"><b class="n">Step 2: the HCF.</b> A number $d$ is a common factor of $a$ and $b$ exactly when $\delta_i\le\alpha_i$ <em>and</em> $\delta_i\le\beta_i$, that is $\delta_i\le\min(\alpha_i,\beta_i)$ for every $i$. The <strong>largest</strong> such $d$ uses the largest exponent allowed for each prime:
+        $$\text{HCF}(a,b)=p_1^{\min(\alpha_1,\beta_1)}\cdots p_k^{\min(\alpha_k,\beta_k)}.$$</div>
+      <div class="ps"><b class="n">Step 3: the LCM.</b> If $m$ is a multiple of $a$, then $m=ac$, so the exponent of $p_i$ in $m$ is $\alpha_i+(\text{something}\ge0)$, which is at least $\alpha_i$. So $m$ is a common multiple of $a$ and $b$ exactly when its exponent of $p_i$ is at least $\max(\alpha_i,\beta_i)$ for every $i$. The <strong>smallest</strong> such $m$ uses exactly $\max(\alpha_i,\beta_i)$ and no other primes:
+        $$\text{LCM}(a,b)=p_1^{\max(\alpha_1,\beta_1)}\cdots p_k^{\max(\alpha_k,\beta_k)}.$$</div>
+      <div class="ps"><b class="n">Step 4: one fact about two numbers.</b> For any two numbers $x$ and $y$, one is the smaller and the other is the larger. So
+        $$\min(x,y)+\max(x,y)=x+y.$$</div>
+      <div class="ps"><b class="n">Step 5: put it together.</b> Multiply, and use the index law $p^s\times p^t=p^{s+t}$ prime by prime:
+        $$\begin{aligned}\text{HCF}\times\text{LCM}&=\prod_{i=1}^{k}p_i^{\min(\alpha_i,\beta_i)}\times\prod_{i=1}^{k}p_i^{\max(\alpha_i,\beta_i)}\\&=\prod_{i=1}^{k}p_i^{\min(\alpha_i,\beta_i)+\max(\alpha_i,\beta_i)}\\&=\prod_{i=1}^{k}p_i^{\alpha_i+\beta_i}\\&=\Big(\prod_{i=1}^{k}p_i^{\alpha_i}\Big)\Big(\prod_{i=1}^{k}p_i^{\beta_i}\Big)=a\times b.\qquad\blacksquare\end{aligned}$$</div>
+    </div>
+    <p class="text-sm font-bold text-slate-700 mb-2">The proof in numbers: $a=84$, $b=126$</p>
+    <div class="card mb-3 overflow-x-auto">
+      <table class="tb text-sm mx-auto">
+        <tr><th>prime $p_i$</th><th>$\alpha_i$ (in $84$)</th><th>$\beta_i$ (in $126$)</th><th>$\min$</th><th>$\max$</th><th>$\min+\max$</th><th>$\alpha_i+\beta_i$</th></tr>
+        <tr><td>$2$</td><td>$2$</td><td>$1$</td><td>$1$</td><td>$2$</td><td>$3$</td><td>$3$</td></tr>
+        <tr><td>$3$</td><td>$1$</td><td>$2$</td><td>$1$</td><td>$2$</td><td>$3$</td><td>$3$</td></tr>
+        <tr><td>$7$</td><td>$1$</td><td>$1$</td><td>$1$</td><td>$1$</td><td>$2$</td><td>$2$</td></tr>
+      </table>
+      <p class="text-sm text-slate-700 mt-3">$\text{HCF}\times\text{LCM}=2^{3}\times3^{3}\times7^{2}=8\times27\times49=10\,584$, and $a\times b=84\times126=10\,584$ &#10004;.</p>
+    </div>
+    <div class="warn mb-5 text-sm text-slate-800"><strong>Careful: only for two numbers.</strong> Step 4 is a fact about <em>two</em> exponents. For three numbers the pattern fails. For example $\text{HCF}(4,6,10)=2$ and $\text{LCM}(4,6,10)=60$, so $\text{HCF}\times\text{LCM}=120$, but $4\times6\times10=240$.</div>
+
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">3</span><h3 class="text-lg font-bold text-slate-800">Techniques, with worked examples</h3></div>
+    <div class="tech"><div class="tt">Technique 1: use the prime exponents (min for HCF, max for LCM)</div>
+      <p class="text-sm text-slate-700">Write both numbers in index form. For each prime, <strong>HCF takes the smaller power, LCM takes the larger power</strong>.</p>
+      <div class="eg"><strong>Example:</strong> $84 = 2^2\times3\times7$ and $126 = 2\times3^2\times7$.<br>
+      HCF $= 2^1\times3^1\times7^1 = 42$. LCM $= 2^2\times3^2\times7^1 = 252$.</div></div>
+    <div class="tech"><div class="tt">Technique 2: the product check, and finding a missing number</div>
+      <p class="text-sm text-slate-700">For two numbers, $\text{HCF} \times \text{LCM} = a \times b$. So if you know three of these four values you can find the fourth. (Proved in Step 2 above.)</p>
+      <div class="eg"><strong>Example:</strong> $\text{HCF}(a,b)=4$, $\text{LCM}(a,b)=60$ and $a=12$. Then $12 \times b = 4 \times 60 = 240$, so $b = 20$. (Check: $12=2^2\cdot3$, $20=2^2\cdot5$: HCF $=4$, LCM $=60$ &#10004;)</div></div>
+    <div class="tech"><div class="tt">Technique 3: algebraic HCF with prime letters</div>
+      <p class="text-sm text-slate-700">Treat letters that stand for primes exactly like numbers: take the <strong>lower power</strong> of each prime that appears in both, and handle the number parts separately.</p>
+      <div class="eg"><strong>Example:</strong> $\text{HCF}(12a^2b,\ 18ab^3)$ where $a$ and $b$ are primes different from $2$ and $3$: $12a^2b = 2^2\cdot3\cdot a^2\cdot b$ and $18ab^3 = 2\cdot3^2\cdot a\cdot b^3$. HCF $= 2\cdot3\cdot a\cdot b = 6ab$.<br>
+      <strong>Careful:</strong> if a letter is allowed to be a <em>small prime like 2 or 3</em>, it can merge with the number part. Then compute for each allowed value.</div></div>
+    <div class="tech"><div class="tt">Technique 4: word problems</div>
+      <p class="text-sm text-slate-700">&ldquo;Happens together again / repeat every&rdquo; means <strong>LCM</strong>. &ldquo;Cut into equal pieces / largest possible size&rdquo; means <strong>HCF</strong>.</p>
+      <div class="eg"><strong>Example:</strong> a light flashes every $10$ s and another every $15$ s. They flash together every $\text{LCM}(10,15) = 30$ s.</div></div>
+
+    <h3 class="text-xl font-bold text-slate-800 mb-3 bg-slate-100 p-3 rounded-lg inline-block">Check your understanding</h3>
+    <div id="ex-t5"></div>
+  </div>
+
+  <!-- ================= TAB 6 ================= -->
+  <div id="t6" class="tab-content">
+    <h2 class="text-2xl font-bold text-slate-800 mb-1">Homework: Multiplication, Primes, Factorisation, HCF &amp; LCM</h2>
+    <p class="text-slate-600 mb-3">Three levels, from understanding to advanced applications, including a review of set notation for multiples, factors and primes. Each question gives you 3 attempts, then shows the full solution. For factorisation answers, use <kbd class="k">^</kbd> for a power and <kbd class="k">*</kbd> for $\times$: typing <kbd class="k">2^3*3*5</kbd> is read as $2^3\times3\times5$, and a live preview shows your answer.</p>
+    <div class="card mb-3 bg-teal-50 border-teal-200"><p class="text-sm text-slate-800" id="hw-score">Homework status: 0 correct, 0 revealed, 0 remaining</p></div>
+    <div id="ex-t6"></div>
+  </div>
+
+  <!-- ================= TAB 7 ================= -->
+  <div id="t7" class="tab-content">
+    <h2 class="text-2xl font-bold text-slate-800 mb-1">Your Learning Report</h2>
+    <div id="report-root"></div>
+  </div>
+
+  </main>
+<footer class="shen-footer"><svg viewBox="0 0 100 100" role="img" aria-label="申 Shen Studio"><rect width="100" height="100" rx="12" fill="#B3261E"/><path d="M41.57 27.7V42.46H27.58V27.7ZM15.1 25.34V70.78H16.95C22.18 70.78 27.58 67.91 27.58 66.65V62.18H41.57V90H44.01C48.82 90 54.3 86.88 54.3 85.62V62.18H68.97V68.93H71.07C75.37 68.93 81.53 66.65 81.61 65.89V29.64C83.38 29.3 84.39 28.55 84.9 27.87L73.69 19.19L68.12 25.34H54.3V13.96C56.74 13.62 57.33 12.7 57.5 11.52L41.57 10V25.34H28.42L15.1 20.2ZM54.3 27.7H68.97V42.46H54.3ZM41.57 59.82H27.58V44.82H41.57ZM54.3 59.82V44.82H68.97V59.82Z" fill="#FFFFFF"/></svg><span><b>Shen Studio</b> · Designed by Mr. Shen</span></footer>
+<div class="shen-print-mark" aria-hidden="true"><svg viewBox="0 0 100 100" role="img" aria-label="申 Shen Studio"><rect width="100" height="100" rx="12" fill="#B3261E"/><path d="M41.57 27.7V42.46H27.58V27.7ZM15.1 25.34V70.78H16.95C22.18 70.78 27.58 67.91 27.58 66.65V62.18H41.57V90H44.01C48.82 90 54.3 86.88 54.3 85.62V62.18H68.97V68.93H71.07C75.37 68.93 81.53 66.65 81.61 65.89V29.64C83.38 29.3 84.39 28.55 84.9 27.87L73.69 19.19L68.12 25.34H54.3V13.96C56.74 13.62 57.33 12.7 57.5 11.52L41.57 10V25.34H28.42L15.1 20.2ZM54.3 27.7H68.97V42.46H54.3ZM41.57 59.82H27.58V44.82H41.57ZM54.3 59.82V44.82H68.97V59.82Z" fill="#FFFFFF"/></svg><span>Shen Studio</span></div>
+
+
+<script>
+/* ============ helpers ============ */
+const R = String.raw;
+function typeset(el){ try{ if(window.MathJax && MathJax.typesetPromise){ MathJax.typesetPromise(el?[el]:undefined).catch(()=>{}); } }catch(e){} }
+function sorter(a,b){ const na=Number(a), nb=Number(b); if(!isNaN(na)&&!isNaN(nb)) return na-nb; return String(a)<String(b)?-1:String(a)>String(b)?1:0; }
+function fm(n){ return n<0 ? '−'+(-n) : ''+n; }
+function fp(n){ return n<0 ? '(−'+(-n)+')' : ''+n; }
+function range(a,b){ const r=[]; for(let i=a;i<=b;i++) r.push(i); return r; }
+function fmtSet(arr){ return arr.length? '{ '+arr.join(', ')+' }' : '∅'; }
+function cleanNum(s){ return String(s).replace(/[−–—]/g,'-'); }
+function gcd(a,b){ while(b){ [a,b]=[b,a%b]; } return a; }
+function isPrime(n){ if(n<2) return false; for(let i=2;i*i<=n;i++) if(n%i===0) return false; return true; }
+function factorize(n){ const f={}; let d=2; while(d*d<=n){ while(n%d===0){ f[d]=(f[d]||0)+1; n/=d; } d++; } if(n>1) f[n]=(f[n]||0)+1; return f; }
+function indexForm(f){ const ks=Object.keys(f).map(Number).sort((a,b)=>a-b); return ks.map(p=>f[p]>1? p+'<sup>'+f[p]+'</sup>' : ''+p).join(' × ') || '1'; }
+function divisorsOf(n){ const r=[]; for(let d=1; d<=n; d++) if(n%d===0) r.push(d); return r; }
+function clampInt(v,lo,hi){ v=parseInt(v); if(isNaN(v)) return lo; return Math.max(lo,Math.min(hi,v)); }
+
+function openTab(evt, id){
+  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab-link').forEach(b=>{ b.classList.remove('text-teal-700','border-b-4','border-teal-600','font-bold'); b.classList.add('text-slate-500','font-semibold'); });
+  document.getElementById(id).classList.add('active');
+  const btn=document.querySelector('.tab-link[data-tab="'+id+'"]'); btn.classList.remove('text-slate-500','font-semibold'); btn.classList.add('text-teal-700','border-b-4','border-teal-600','font-bold');
+  if(id==='t7') buildReport();
+  typeset(document.getElementById(id)); window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ============ TAB 1 widgets ============ */
+function arUpdate(){
+  const a=+document.getElementById('ar-a').value, b=+document.getElementById('ar-b').value;
+  document.getElementById('ar-av').textContent=a; document.getElementById('ar-bv').textContent=b;
+  let g=`<div style="display:grid;grid-template-columns:repeat(${b},1.35rem);gap:.3rem">`;
+  for(let i=0;i<a;i++) for(let j=0;j<b;j++) g+=`<span class="dot ${i%2?'b':''}"></span>`;
+  document.getElementById('ar-grid').innerHTML=g+'</div>';
+  const rep=(n,t)=>Array(t).fill(n).join(' + ');
+  document.getElementById('ar-out').innerHTML=
+   `<div><strong class="text-teal-700">Read by rows:</strong> ${a} groups of ${b}: ${a} × ${b} = ${rep(b,a)} = <strong>${a*b}</strong></div>
+    <div><strong class="text-amber-700">Read by columns:</strong> ${b} groups of ${a}: ${b} × ${a} = ${rep(a,b)} = <strong>${a*b}</strong></div>
+    <div class="text-slate-600">Same dots, same total: <strong>${a} × ${b} = ${b} × ${a}</strong> (commutativity).</div>`;
+}
+function arSwap(){ const A=document.getElementById('ar-a'), B=document.getElementById('ar-b'); const t=A.value; A.value=B.value; B.value=t; arUpdate(); }
+function lbUpdate(){
+  const a=+document.getElementById('lb-a').value,b=+document.getElementById('lb-b').value,c=+document.getElementById('lb-c').value;
+  document.getElementById('lb-av').textContent=fm(a);document.getElementById('lb-bv').textContent=fm(b);document.getElementById('lb-cv').textContent=fm(c);
+  const inv = a===0 ? 'no inverse (0 × anything = 0)' : (Math.abs(a)===1 ? `${fp(a)} × ${fp(a)} = 1 ✔` : `1/${fp(a)} = ${(1/a).toFixed(3).replace('-','−')}… is not an integer ✘`);
+  const d1=a*(b+c), d2=a*b+a*c, e1=a+(b*c), e2=(a+b)*(a+c);
+  let h='<tr><th>Rule</th><th>Addition</th><th>Multiplication</th></tr>';
+  h+=`<tr><td><strong>Commutative</strong></td><td>${fm(a)} + ${fp(b)} = ${fm(a+b)} &nbsp; ${fm(b)} + ${fp(a)} = ${fm(a+b)} ✔</td><td>${fm(a)} × ${fp(b)} = ${fm(a*b)} &nbsp; ${fm(b)} × ${fp(a)} = ${fm(a*b)} ✔</td></tr>`;
+  h+=`<tr><td><strong>Associative</strong></td><td>(${fm(a)}+${fp(b)})+${fp(c)} = ${fm(a+b+c)} &nbsp; ${fm(a)}+(${fm(b)}+${fp(c)}) = ${fm(a+b+c)} ✔</td><td>(${fm(a)}×${fp(b)})×${fp(c)} = ${fm(a*b*c)} &nbsp; ${fm(a)}×(${fm(b)}×${fp(c)}) = ${fm(a*b*c)} ✔</td></tr>`;
+  h+=`<tr><td><strong>Identity</strong></td><td>${fm(a)} + 0 = ${fm(a)} (identity 0) ✔</td><td>${fm(a)} × 1 = ${fm(a)} (identity 1) ✔</td></tr>`;
+  h+=`<tr><td><strong>Inverse</strong></td><td>${fm(a)} + ${fp(-a)} = 0 ✔</td><td>${inv}</td></tr>`;
+  h+=`<tr><td><strong>Distributive</strong></td><td colspan="2">× over +: ${fm(a)}×(${fm(b)}+${fp(c)}) = ${fm(d1)} &nbsp; and &nbsp; ${fm(a)}×${fp(b)} + ${fm(a)}×${fp(c)} = ${fm(d2)} ✔<br>+ over ×? ${fm(a)} + (${fm(b)}×${fp(c)}) = ${fm(e1)} &nbsp; but &nbsp; (${fm(a)}+${fp(b)})×(${fm(a)}+${fp(c)}) = ${fm(e2)} ${e1===e2?'(equal this time by luck)':'✘ not equal'}</td></tr>`;
+  document.getElementById('lb-table').innerHTML=h;
+}
+function amUpdate(){
+  const a=+document.getElementById('am-a').value,b=+document.getElementById('am-b').value,c=+document.getElementById('am-c').value;
+  document.getElementById('am-av').textContent=a;document.getElementById('am-bv').textContent=b;document.getElementById('am-cv').textContent=c;
+  const u=20, W=(b+c)*u, H=a*u, ox=20, oy=10;
+  let s=`<svg viewBox="0 0 ${ox*2+W} ${oy*2+H+22}" class="w-full">`;
+  s+=`<rect x="${ox}" y="${oy}" width="${b*u}" height="${H}" fill="#c9d0ef" stroke="#33449a" stroke-width="2"/><rect x="${ox+b*u}" y="${oy}" width="${c*u}" height="${H}" fill="#fde68a" stroke="#b45309" stroke-width="2"/>`;
+  s+=`<text text-anchor="middle" font-weight="800" font-size="13" fill="#1c2230"><tspan x="${ox+b*u/2}" y="${oy+H/2-2}">${a}×${b}</tspan><tspan x="${ox+b*u/2}" y="${oy+H/2+14}">= ${a*b}</tspan></text><text text-anchor="middle" font-weight="800" font-size="13" fill="#78350f"><tspan x="${ox+b*u+c*u/2}" y="${oy+H/2-2}">${a}×${c}</tspan><tspan x="${ox+b*u+c*u/2}" y="${oy+H/2+14}">= ${a*c}</tspan></text>`;
+  s+=`<text x="${ox+W/2}" y="${oy+H+16}" text-anchor="middle" font-size="12" font-weight="700">width b + c = ${b+c}</text>`;
+  document.getElementById('am-svg').innerHTML=s+'</svg>';
+  document.getElementById('am-out').innerHTML=`${a} × (${b} + ${c}) = ${a} × ${b+c} = ${a*(b+c)} &nbsp;=&nbsp; ${a*b} + ${a*c}`;
+}
+
+/* ============ TAB 1 operator widget (V2) ============ */
+function opSet(k,x){ document.getElementById('op-k').value=k; document.getElementById('op-x').value=x; opUpdate(); }
+function opSwap(){ const K=document.getElementById('op-k'), X=document.getElementById('op-x'); const t=K.value; K.value=X.value; X.value=t; opUpdate(); }
+function opUpdate(){
+  const k=+document.getElementById('op-k').value, x=+document.getElementById('op-x').value, r=k*x;
+  document.getElementById('op-kv').textContent=fm(k); document.getElementById('op-xv').textContent=fm(x);
+  const W=880, pad=24, lo=-36, hi=36, sc=(W-2*pad)/(hi-lo), X=v=>pad+(v-lo)*sc, yAx=190, y1=44, y2=98, y3=148;
+  let g=`<svg viewBox="0 0 ${W} 216" class="w-full" style="min-width:560px">`;
+  g+=`<line x1="${pad}" y1="${yAx}" x2="${W-pad}" y2="${yAx}" stroke="#334155" stroke-width="2"/>`;
+  for(let v=lo; v<=hi; v+=6) g+=`<line x1="${X(v)}" y1="${yAx-5}" x2="${X(v)}" y2="${yAx+5}" stroke="#334155" stroke-width="${v===0?3:1.5}"/><text x="${X(v)}" y="${yAx+20}" text-anchor="middle" font-size="12" font-weight="${v===0?800:500}" fill="#334155">${fm(v)}</text>`;
+  const arrow=(a,b,y,col,dash,label)=>{
+    let o='';
+    if(a===b){ o+=`<circle cx="${X(a)}" cy="${y}" r="5" fill="${col}"/>`; }
+    else { const d=b>a?1:-1; o+=`<line x1="${X(a)}" y1="${y}" x2="${X(b)-d*8}" y2="${y}" stroke="${col}" stroke-width="5" ${dash?'stroke-dasharray="8 6"':''}/><polygon points="${X(b)},${y} ${X(b)-d*12},${y-7} ${X(b)-d*12},${y+7}" fill="${col}"/>`; }
+    o+=`<text x="${X((a+b)/2)}" y="${y-13}" text-anchor="middle" font-size="12.5" font-weight="700" fill="${col}" stroke="#fff" stroke-width="5" paint-order="stroke">${label}</text>`; return o;
+  };
+  const guide=(v,col)=>`<line x1="${X(v)}" y1="${y1}" x2="${X(v)}" y2="${yAx}" stroke="${col}" stroke-width="1.5" stroke-dasharray="3 4" opacity=".6"/>`;
+  g+=guide(x,'#3b4fa8'); if(r!==x) g+=guide(r,'#d97706');
+  g+=arrow(0,x,y1,'#3b4fa8',false,`number ${fm(x)}`);
+  const s2=Math.abs(k)*x;
+  if(k>=0){ g+=arrow(0,r,y2,'#d97706',false,`result ${fm(r)}${k===0?' (operator 0 squashes to 0)':''}`); }
+  else {
+    g+=arrow(0,s2,y2,'#94a3b8',true,`stretch ×${Math.abs(k)}: ${fm(s2)}`);
+    g+=`<path d="M ${X(s2)} ${y2+8} Q ${X(0)} ${(y2+y3)/2+22} ${X(r)} ${y3-9}" fill="none" stroke="#94a3b8" stroke-width="2" stroke-dasharray="4 4"/><text x="${X(0)}" y="${(y2+y3)/2+8}" text-anchor="middle" font-size="12" font-weight="800" fill="#64748b" stroke="#fff" stroke-width="5" paint-order="stroke">flip</text>`;
+    g+=arrow(0,r,y3,'#d97706',false,`result ${fm(r)}`);
+  }
+  document.getElementById('op-svg').innerHTML=g+'</svg>';
+  const dirTxt = k<0 ? 'The operator is <strong>negative</strong>, so it <strong>flips</strong> the arrow to the other side of $0$.' : k>0 ? 'The operator is <strong>positive</strong>, so the direction is kept.' : 'The operator is <strong>0</strong>: it squashes every arrow to $0$.';
+  const pt = x<0 ? 'pointing left' : x>0 ? 'pointing right' : 'of length $0$';
+  const M=t=>'$'+String(t).replace(/</g,'\\lt ').replace(/>/g,'\\gt ')+'$', tx=v=>v<0?'('+v+')':''+v;
+  document.getElementById('op-out').innerHTML=
+   `<div>${M(tx(k)+'\\times'+tx(x))} means: <strong>apply the operator ${M(k)} to the number ${M(x)}</strong>.</div>
+    <div><span class="text-slate-500 font-bold">Stretch:</span> the size of the operator is ${M(Math.abs(k))}, so the arrow of ${M(x)} (${pt}) becomes ${M(Math.abs(k)+'\\times'+Math.abs(x)+'='+Math.abs(k)*Math.abs(x))} units long.</div>
+    <div><span class="text-slate-500 font-bold">Direction:</span> ${dirTxt}</div>
+    <div class="font-bold text-amber-700">Result: ${M(tx(k)+'\\times'+tx(x)+'='+r)}</div>
+    <div class="text-slate-600">Swapped roles: operator ${M(x)} applied to ${M(k)} gives ${M(tx(x)+'\\times'+tx(k)+'='+r)}, the same endpoint.</div>`;
+  typeset(document.getElementById('op-out'));
+}
+
+/* ============ TAB 1 squeeze widgets (V2) ============ */
+function sqUpdate(){
+  const n=+document.getElementById('sq-n').value, m=+document.getElementById('sq-m').value;
+  document.getElementById('sq-nv').textContent=n; document.getElementById('sq-mv').textContent=m;
+  const P=n*(n+m), r=Math.sqrt(P), mid=n+m/2, W=880, pad=40, lo=n-0.5, hi=n+m+0.5, X=v=>pad+(v-lo)/(hi-lo)*(W-2*pad), y=70;
+  let g=`<svg viewBox="0 0 ${W} 130" class="w-full" style="min-width:560px"><line x1="${pad}" y1="${y}" x2="${W-pad}" y2="${y}" stroke="#334155" stroke-width="2"/>`;
+  for(let v=n; v<=n+m; v++) g+=`<line x1="${X(v)}" y1="${y-5}" x2="${X(v)}" y2="${y+5}" stroke="#334155"/><text x="${X(v)}" y="${y+22}" text-anchor="middle" font-size="12" fill="#475569">${v}</text>`;
+  g+=`<line x1="${X(mid)}" y1="${y-26}" x2="${X(mid)}" y2="${y+6}" stroke="#64748b" stroke-width="2" stroke-dasharray="4 3"/><text x="${X(mid)}" y="${y-32}" text-anchor="middle" font-size="12" font-weight="700" fill="#475569">middle ${mid}</text>`;
+  g+=`<circle cx="${X(n)}" cy="${y}" r="9" fill="#3b4fa8"/><text x="${X(n)}" y="${y-16}" text-anchor="middle" font-size="13" font-weight="800" fill="#33449a">n = ${n}</text>`;
+  g+=`<circle cx="${X(n+m)}" cy="${y}" r="9" fill="#3b4fa8"/><text x="${X(n+m)}" y="${y-16}" text-anchor="middle" font-size="13" font-weight="800" fill="#33449a">n+m = ${n+m}</text>`;
+  g+=`<circle cx="${X(r)}" cy="${y}" r="9" fill="#f59e0b" stroke="#92400e" stroke-width="2"/><text x="${X(r)}" y="${y+48}" text-anchor="middle" font-size="13" font-weight="800" fill="#92400e">√P ≈ ${r.toFixed(2)}</text>`;
+  document.getElementById('sq-svg').innerHTML=g+'</svg>';
+  const ok=(c)=>c?'✔':'✘', M=t=>'$'+String(t).replace(/</g,'\\lt ').replace(/>/g,'\\gt ')+'$';
+  document.getElementById('sq-out').innerHTML=
+   `<div>${M('n^2='+n*n)} &nbsp; ${M('P=n(n+m)='+n+'\\times'+(n+m)+'='+P)} &nbsp; ${M('(n+m)^2='+(n+m)*(n+m))}</div>
+    <div>${M(n*n+'<'+P+'<'+(n+m)*(n+m))} ${ok(n*n<P&&P<(n+m)*(n+m))}</div>
+    <div>${M('\\sqrt{P}\\approx'+r.toFixed(3))}, so ${M('n<\\sqrt{P}<n+\\tfrac m2')}: ${M(n+'<'+r.toFixed(3)+'<'+mid)} ${ok(n<r&&r<mid)}</div>
+    <div>The whole-number part of ${M('\\sqrt{P}')} is <strong>${Math.floor(r)}</strong>. The square root sits <strong>${(mid-r).toFixed(3)}</strong> below the middle ${M(mid)}.</div>`;
+  typeset(document.getElementById('sq-out'));
+}
+function rvSet(P,m){ document.getElementById('rv-p').value=P; document.getElementById('rv-m').value=m; rvUpdate(); }
+function rvUpdate(){
+  const P=clampInt(document.getElementById('rv-p').value,2,99999), m=clampInt(document.getElementById('rv-m').value,1,20);
+  const r=Math.sqrt(P), lo=r-m/2, cands=[];
+  for(let n=Math.max(1,Math.floor(lo)); n<=Math.ceil(r); n++) if(n>lo && n<r) cands.push(n);
+  const hit=cands.find(n=>n*(n+m)===P);
+  const M=t=>'$'+String(t).replace(/</g,'\\lt ').replace(/>/g,'\\gt ')+'$';
+  document.getElementById('rv-out').innerHTML=
+   `<div class="p-3 rounded bg-slate-50 border border-slate-200"><div><strong>Step 1.</strong> ${M('\\sqrt{'+P+'}\\approx'+r.toFixed(3))}</div>
+    <div><strong>Step 2.</strong> The smaller number ${M('n')} satisfies ${M('\\sqrt{P}-\\tfrac m2<n<\\sqrt{P}')}, that is ${M(lo.toFixed(2)+'<n<'+r.toFixed(2))}.</div>
+    <div><strong>Step 3.</strong> Candidates: ${cands.length? M(cands.join(',\\ ')) : 'none'}.</div></div>
+    <div class="p-3 rounded bg-slate-50 border border-slate-200">${cands.map(n=>`<div>${M('n='+n+':\\ '+n+'\\times'+(n+m)+'='+n*(n+m))} ${n*(n+m)===P?'<span class="ok-t">✔ matches</span>':'✘'}</div>`).join('')||'Nothing to test.'}</div>
+    <div class="p-2 rounded ${hit?'bg-emerald-50 border border-emerald-200':'bg-amber-50 border border-amber-200'} font-bold">${hit?`The numbers are ${M(hit)} and ${M(hit+m)}.`:`No two whole numbers that are ${M(m)} apart multiply to ${M(P)}.`}</div>`;
+  typeset(document.getElementById('rv-out'));
+}
+
+/* ============ TAB 2 widgets ============ */
+let svPrimes=[], svStruck=new Set();
+function svRender(msg){
+  let h=''; for(let n=1;n<=100;n++){ let cls='chip sm static'; if(n===1) cls+=' one'; else if(svPrimes.includes(n)) cls+=' prime'; else if(svStruck.has(n)) cls+=' struck'; h+=`<span class="${cls}">${n}</span>`; }
+  document.getElementById('sv-grid').innerHTML=h;
+  document.getElementById('sv-out').innerHTML=msg||'Press “Next step”. Notice that 1 is shaded red: it is not prime (only one factor).';
+}
+function svStep(){
+  let p=null; for(let n=2;n<=100;n++) if(!svStruck.has(n)&&!svPrimes.includes(n)){ p=n; break; }
+  if(p===null){ svRender(`Done! The ${svPrimes.length} primes below 100 are: ${svPrimes.join(', ')}.`); return; }
+  svPrimes.push(p); for(let m=2*p;m<=100;m+=p) svStruck.add(m);
+  svRender(`<strong>${p}</strong> is prime (not struck out). Strike out its multiples ${p}×2=${2*p}, ${p}×3=${3*p}, … Primes found so far: ${svPrimes.join(', ')}.`);
+}
+function svAll(){ for(let i=0;i<200;i++){ let p=null; for(let n=2;n<=100;n++) if(!svStruck.has(n)&&!svPrimes.includes(n)){ p=n; break; } if(p===null) break; svPrimes.push(p); for(let m=2*p;m<=100;m+=p) svStruck.add(m); } svRender(`Done! The ${svPrimes.length} primes below 100 are: ${svPrimes.join(', ')}.`); }
+function svReset(){ svPrimes=[]; svStruck=new Set(); svRender(); }
+function ffUpdate(){
+  const n=clampInt(document.getElementById('ff-n').value,1,500); const root=Math.floor(Math.sqrt(n)); const pairs=[];
+  for(let d=1; d<=root; d++) if(n%d===0) pairs.push(`${d} × ${n/d}`);
+  const F=divisorsOf(n);
+  let verdict = n===1 ? '<span class="bad-t">F(1) = {1} has only one element: 1 is neither prime nor composite.</span>' : F.length===2 ? `<span class="ok-t">Exactly two factors: ${n} is PRIME.</span>` : `<span class="bad-t">${F.length} factors: ${n} is COMPOSITE.</span>`;
+  document.getElementById('ff-out').innerHTML=`<div>Test d from 1 up to √${n} ≈ ${Math.sqrt(n).toFixed(2)} (so d ≤ ${root}). Factor pairs: <strong>${pairs.join(', ')}</strong></div>
+    <div>F(${n}) = ${fmtSet(F)} &nbsp; n(F(${n})) = <strong>${F.length}</strong></div><div>${verdict}</div>`;
+}
+
+/* ============ TAB 3 widget ============ */
+function flSet(n){ document.getElementById('fl-n').value=n; flUpdate(); }
+function flUpdate(){
+  const n=clampInt(document.getElementById('fl-n').value,2,1000000); let m=n; const rows=[];
+  while(m>1){ let p=2; while(m%p!==0) p++; rows.push([p,m]); m=m/p; }
+  const f=factorize(n);
+  let h='<div class="flex gap-6 flex-wrap items-start"><div class="font-mono text-base">';
+  rows.forEach(r=>{ h+=`<div><span class="inline-block w-14 text-right text-teal-700 font-bold">${r[0]}</span> | ${r[1]}</div>`; });
+  h+=`<div><span class="inline-block w-14"></span> | 1</div></div><div><div class="mb-1">${n} = ${rows.map(r=>r[0]).join(' × ')}</div><div class="text-base"><strong>${n} = ${indexForm(f)}</strong></div><div class="mt-1 text-slate-600">Primes used: ${fmtSet(Object.keys(f).map(Number).sort((a,b)=>a-b))}</div></div></div>`;
+  document.getElementById('fl-out').innerHTML=h;
+}
+
+/* ============ TAB 4 widget ============ */
+function dvUpdate(){
+  const a=+document.getElementById('dv-a').value,b=+document.getElementById('dv-b').value,c=+document.getElementById('dv-c').value, odd=document.getElementById('dv-odd').checked;
+  document.getElementById('dv-av').textContent=a;document.getElementById('dv-bv').textContent=b;document.getElementById('dv-cv').textContent=c;
+  const n=Math.pow(2,a)*Math.pow(3,b)*Math.pow(5,c); const all=[];
+  for(let i=0;i<=(odd?0:a);i++) for(let j=0;j<=b;j++) for(let k=0;k<=c;k++) all.push(Math.pow(2,i)*Math.pow(3,j)*Math.pow(5,k));
+  all.sort((x,y)=>x-y);
+  const bx=[(odd?1:a+1), b+1, c+1];
+  document.getElementById('dv-sum').innerHTML=`n = 2<sup>${a}</sup> × 3<sup>${b}</sup> × 5<sup>${c}</sup> = <strong>${n}</strong><br>Boxes: (${odd?'1 (odd only)':a+'+1'}) × (${b}+1) × (${c}+1) = ${bx[0]} × ${bx[1]} × ${bx[2]} = <strong class="text-emerald-700">${all.length}</strong> ${odd?'odd ':''}divisors`;
+  document.getElementById('dv-list').innerHTML=all.map(d=>`<span class="chip sm static ${d%2?'oddd':''}">${d}</span>`).join('');
+}
+
+/* ============ TAB 5 widget ============ */
+function hlSet(a,b){ document.getElementById('hl-a').value=a; document.getElementById('hl-b').value=b; hlUpdate(); }
+function hlUpdate(){
+  const a=clampInt(document.getElementById('hl-a').value,1,500), b=clampInt(document.getElementById('hl-b').value,1,500);
+  const Fa=divisorsOf(a), Fb=divisorsOf(b), common=Fa.filter(x=>Fb.includes(x)); const H=gcd(a,b), L=a*b/H;
+  const fa=factorize(a), fb=factorize(b); const primes=[...new Set([...Object.keys(fa),...Object.keys(fb)].map(Number))].sort((x,y)=>x-y);
+  const ma=[],mb=[]; for(let i=1;i<=Math.min(L/a,12);i++) ma.push(a*i); for(let i=1;i<=Math.min(L/b,12);i++) mb.push(b*i);
+  const dots=(arr,full)=> arr.join(', ')+(full?'':', …');
+  let t='<table class="tb"><tr><th></th>'+primes.map(p=>`<th>${p}</th>`).join('')+'<th>value</th></tr>';
+  const rowf=(lab,fn,val)=>`<tr><td class="text-left"><strong>${lab}</strong></td>`+primes.map(p=>`<td>${fn(p)}</td>`).join('')+`<td>${val}</td></tr>`;
+  t+=rowf(`${a}`,p=>fa[p]||0,indexForm(fa)); t+=rowf(`${b}`,p=>fb[p]||0,indexForm(fb));
+  t+=rowf('smaller power (min)',p=>Math.min(fa[p]||0,fb[p]||0),'<strong class="text-teal-700">HCF = '+H+'</strong>');
+  t+=rowf('larger power (max)',p=>Math.max(fa[p]||0,fb[p]||0),'<strong class="text-amber-700">LCM = '+L+'</strong>')+'</table>';
+  document.getElementById('hl-out').innerHTML=
+   `<div class="p-3 rounded bg-slate-50 border"><div>F(${a}) = ${fmtSet(Fa)}</div><div>F(${b}) = ${fmtSet(Fb)}</div><div class="mt-1"><strong>F(${a}) ∩ F(${b}) = ${fmtSet(common)}</strong>, largest element = <strong class="text-teal-700">HCF ${H}</strong></div></div>
+    <div class="p-3 rounded bg-slate-50 border"><div>M<sub>${a}</sub> = ${dots(ma,L/a<=12)}</div><div>M<sub>${b}</sub> = ${dots(mb,L/b<=12)}</div><div class="mt-1">First shared multiple: <strong class="text-amber-700">LCM ${L}</strong></div></div>
+    <div class="overflow-x-auto">${t}</div>
+    <div class="p-2 rounded bg-emerald-50 border border-emerald-200 font-bold">Check: HCF × LCM = ${H} × ${L} = ${H*L} and a × b = ${a} × ${b} = ${a*b} ✔</div>`;
+}
+
+/* ============ EXERCISE DATA ============ */
+function S(steps){ return '<ol class="list-decimal pl-5 space-y-1 text-sm text-slate-700">'+steps.map(s=>'<li>'+s+'</li>').join('')+'</ol>'; }
+const EX={};
+
+EX.t1=[
+ { level:'A. Multiplication as an operator', id:'t1o1', type:'num', q:R`<p>Apply the operator $-3$ to the number $4$. What number do you reach?</p><p>Stretch first, then flip if the operator is negative.</p>`, ans:-12,
+   sol:S([R`The size of the operator is $3$, so stretch the arrow of $4$ to three times its length: it ends at $12$.`,R`The operator is <strong>negative</strong>, so flip the arrow to the other side of $0$: it ends at $-12$.`,R`$(-3)\times4=\mathbf{-12}$.`]) },
+ { id:'t1o2', type:'num', q:R`<p>Apply the operator $-2$ to the number $-5$. What number do you reach?</p>`, ans:10,
+   sol:S([R`Stretch: the arrow of $-5$ becomes twice as long, ending at $-10$ (still pointing left).`,R`Flip: the negative operator moves the endpoint to the other side of $0$, at $10$.`,R`$(-2)\times(-5)=\mathbf{10}$.`]) },
+ { id:'t1o3', type:'mc', q:R`<p>Which operator takes the number $4$ to $-12$?</p>`,
+   opts:[R`$3$`,R`$-3$`,R`$-8$`,R`$12$`], ans:1,
+   sol:S([R`$4$ must be stretched to three times its length ($12$), so the size of the operator is $3$.`,R`The result points the <em>other way</em> ($-12$ is left of $0$), so the operator must also flip: it is <strong>negative</strong>.`,R`The operator is $\mathbf{-3}$: $(-3)\times4=-12$.`]) },
+ { id:'t1o4', type:'num', q:R`<p>The operator $-5$ applied to $6$ reaches the same endpoint as the operator $6$ applied to which number?</p>`, ans:-5,
+   sol:S([R`Operator $-5$ on $6$: $(-5)\times6=-30$.`,R`By commutativity, operator $6$ applied to $-5$ gives $6\times(-5)=-30$ as well.`,R`The number is $\mathbf{-5}$. (Swapping the roles changes the journey but not the destination.)`]) },
+ { level:'B. Properties and clever calculation', id:'t1q1', type:'num', q:R`Calculate cleverly: $25 \times 17 \times 4$.`, ans:1700,
+   sol:S([R`Re-order (commutativity) so the friendly pair is together: $25\times4\times17$.`,R`Regroup (associativity): $(25\times4)\times17 = 100\times17$.`,R`$=\mathbf{1700}$.`]) },
+ { id:'t1q2', type:'num', q:R`Calculate cleverly: $8 \times 37 \times 125$.`, ans:37000,
+   sol:S([R`$8\times125=1000$, so regroup: $(8\times125)\times37$.`,R`$=1000\times37=\mathbf{37\,000}$.`]) },
+ { id:'t1q3', type:'set', q:R`List the elements of $M_4=\{x : x = 4n,\ n \in \mathbb{Z}^+\}$ that are less than $30$.`, ans:'4,8,12,16,20,24,28',
+   sol:S([R`$M_4$ is the set of positive multiples of $4$: $4\times1, 4\times2, 4\times3,\ldots$`,R`Keep those below $30$: $4,8,12,16,20,24,28$ ($4\times7=28$; $4\times8=32$ is too big).`]) },
+ { id:'t1q4', type:'mc', q:R`Let $M_3=\{3,6,9,12,\ldots\}$. Which statement is correct?`,
+   opts:[R`$M_3$ is closed under both $+$ and $\times$`,R`$M_3$ is closed under $+$ but not $\times$`,R`$M_3$ is closed under $\times$ but not $+$`,R`$M_3$ is closed under neither`], ans:0,
+   sol:S([R`Members look like $3m$ and $3n$. Then $3m+3n=3(m+n)$ is again a multiple of $3$ (closed under $+$).`,R`And $(3m)(3n)=3\times(3mn)$ is a multiple of $3$ (closed under $\times$).`,R`So $M_3$ is closed under both. (It is <em>not</em> closed under subtraction: $3-6=-3\notin M_3$.)`]) },
+ { id:'t1q5', type:'mc', q:R`Which property justifies $7 \times (10 + 3) = 7\times10 + 7\times3$?`,
+   opts:['Commutativity','Associativity','The distributive law','The identity property'], ans:2,
+   sol:S([R`Multiplication is being <strong>shared out</strong> across a sum. That is the <strong>distributive law</strong>: $a(b+c)=ab+ac$.`]) },
+ { id:'t1q6', type:'num', q:R`Calculate $(-4)\times5\times(-3)$.`, ans:60,
+   sol:S([R`Re-order: $\big((-4)\times(-3)\big)\times5$.`,R`$(-4)\times(-3)=12$ (see Technique 2: the distributive law forces a negative times a negative to be positive).`,R`$12\times5=\mathbf{60}$.`]) },
+ { id:'t1q7', type:'mc', q:R`Which statement correctly compares $+$ and $\times$ on $\mathbb{Z}$?`,
+   opts:[R`$\times$ distributes over $+$, but $+$ does not distribute over $\times$`,R`$+$ distributes over $\times$, but $\times$ does not distribute over $+$`,R`Both distribute over each other`,R`Neither distributes over the other`], ans:0,
+   sol:S([R`$a\times(b+c)=a\times b+a\times c$ always holds.`,R`But e.g. $2+(3\times4)=14$ while $(2+3)\times(2+4)=30$, so $+$ does <em>not</em> distribute over $\times$.`]) },
+ { level:'C. Between two squares: $n(n+m)$', id:'t1q8', type:'num', q:R`<p><span class="qlabel">Page numbers</span></p><p>A book is opened at random. The two page numbers showing are <strong>consecutive</strong> numbers, and their product is $4422$.</p><p><strong>Question:</strong> what is the sum of the digits of the two page numbers?</p>`, ans:25,
+   sol:S([R`The two numbers are consecutive, so $n(n+1)=4422$ and $n^2<4422<(n+1)^2$.`,R`$\sqrt{4422}\approx66.5$, so $n=66$.`,R`Check: $66\times67=4422$ &#10004;`,R`Digit sum: $6+6+6+7=\mathbf{25}$.`]) },
+ { id:'t1c1', type:'num', q:R`<p>Without a calculator, find the <strong>whole-number part</strong> of $\sqrt{2450}$.</p><p class="hint">Hint: look at $49\times50$.</p>`, ans:49,
+   sol:S([R`$2450=49\times50$, which is $n(n+1)$ with $n=49$.`,R`$49^2=2401<2450<2500=50^2$, so $49<\sqrt{2450}<50$.`,R`The whole-number part is $\mathbf{49}$. (Indeed $\sqrt{2450}\approx49.497$.)`]) },
+ { id:'t1c2', type:'set', q:R`<p>The product $20\times27$ is of the form $n(n+m)$ with $n=20$ and $n+m=27$.</p><p><strong>Question:</strong> which two perfect squares does it lie between? Type them smaller first, separated by a comma.</p>`, ans:'400,729',
+   sol:S([R`$n^2=20^2=400$ and $(n+m)^2=27^2=729$.`,R`$20\times27=540$, and $400<540<729$ &#10004;. The squares are $\mathbf{400}$ and $\mathbf{729}$.`]) },
+ { id:'t1c3', type:'num', q:R`<p>Two whole numbers differ by $3$ and their product is $1330$.</p><p><strong>Question:</strong> what is the <em>larger</em> number?</p>`, ans:38,
+   sol:S([R`$\sqrt{1330}\approx36.5$ and $\tfrac m2=1.5$, so $\sqrt{1330}-1.5<n<\sqrt{1330}$, that is $34.97<n<36.47$.`,R`Candidates: $n=35$ or $36$.`,R`$35\times38=1330$ &#10004; (and $36\times39=1404$ is too big).`,R`The numbers are $35$ and $38$. The larger is $\mathbf{38}$.`]) },
+ { id:'t1c4', type:'num', q:R`<p>Two whole numbers differ by $6$ and their product is $1147$.</p><p><strong>Question:</strong> what is their <em>sum</em>?</p>`, ans:68,
+   sol:S([R`$\sqrt{1147}\approx33.87$ and $\tfrac m2=3$, so $30.87<n<33.87$.`,R`Candidates: $n=31,32,33$. Test: $31\times37=1147$ &#10004; ($32\times38=1216$ and $33\times39=1287$ are too big).`,R`The numbers are $31$ and $37$, and the sum is $\mathbf{68}$.`]) },
+ { id:'t1c5', type:'num', q:R`<p>Calculate $97\times103$ <strong>mentally</strong>, using the idea $n(n+m)=\left(n+\tfrac m2\right)^2-\left(\tfrac m2\right)^2$.</p>`, ans:9991,
+   sol:S([R`The two numbers are each $3$ away from the middle number $100$.`,R`$97\times103=100^2-3^2=10\,000-9=\mathbf{9991}$.`]) },
+ { id:'t1c6', type:'num', q:R`<p>What is the <strong>smallest</strong> whole number $n$ for which $n(n+1)$ is greater than $10\,000$?</p>`, ans:100,
+   sol:S([R`$10\,000=100^2$.`,R`If $n=99$: $99\times100=9900<10\,000$. (In general $n(n+1)<(n+1)^2$, so $99\times100<100^2$.)`,R`If $n=100$: $100\times101=10\,100>10\,000$ &#10004; (and $n(n+1)>n^2=10\,000$ for sure).`,R`The smallest is $n=\mathbf{100}$.`]) },
+ { id:'t1c7', type:'num', q:R`<p>Find the <strong>value</strong> of $\sqrt{7\times8\times9\times10+1}$ without multiplying all four numbers.</p><p class="hint">Hint: pair the outer numbers $7\times10$ and the inner numbers $8\times9$.</p>`, ans:71,
+   sol:S([R`Outer pair: $x=7\times10=70$. Inner pair: $8\times9=72=x+2$.`,R`So the product plus one is $x(x+2)+1=(x+1)^2=71^2$.`,R`Check: $7\times8\times9\times10=5040$, and $5041=71^2$ &#10004;.`,R`The value is $\mathbf{71}$.`]) },
+ { id:'t1c8', type:'mc', q:R`<p>Which of these numbers is a product of two <strong>consecutive</strong> whole numbers?</p><p>Use the test from Application 5: $N=n(n+1)$ means $4N+1$ is a perfect square.</p>`,
+   opts:['3190','3192','3194','3196'], ans:1,
+   sol:S([R`$4N+1$ for each option: $12\,761,\ 12\,769,\ 12\,777,\ 12\,785$.`,R`$113^2=12\,769$ is the only perfect square in the list ($112^2=12\,544$ and $114^2=12\,996$).`,R`So $N=3192$ and $2n+1=113$ gives $n=56$: $56\times57=3192$ &#10004;.`]) },
+ { id:'t1c9', type:'num', q:R`<p>Given that $6320=79\times80$, estimate $\sqrt{6320}$ to <strong>one decimal place</strong>.</p>`, ans:79.5,
+   sol:S([R`Here $n=79$ and $m=1$, so $\sqrt{6320}$ is just below $n+\tfrac12=79.5$.`,R`Indeed $\sqrt{6320}\approx79.498$, which rounds to $\mathbf{79.5}$.`]) },
+ { id:'t1c10', type:'num', q:R`<p><strong>Challenge.</strong> What is the smallest number <em>greater than $2000$</em> that is the product of two consecutive whole numbers?</p>`, ans:2070,
+   sol:S([R`$\sqrt{2000}\approx44.7$. Since $n(n+1)<(n+1)^2$, a product $n(n+1)$ with $n+1\le44$ is below $44^2=1936$; and $44\times45=1980<2000$.`,R`So $n\ge45$: $45\times46=2070>2000$ &#10004;.`,R`The smallest is $\mathbf{2070}$.`]) },
+ { level:'D. Smart thinking: digits and symbols', id:'t1q9', type:'num', q:R`<p><span class="qlabel">Dominique&rsquo;s number, part (a)</span></p><p>Dominique writes down the $1000$-digit number $20082008\ldots2008$ (the block $2008$ repeated).</p><p><strong>Question:</strong> what is the digit sum of <em>one block</em> $2008$?</p>`, ans:10,
+   sol:S([R`$2+0+0+8=\mathbf{10}$.`]) },
+ { id:'t1q10', type:'num', q:R`<p><span class="qlabel">Dominique&rsquo;s number, part (b)</span></p><p>Dominique&rsquo;s $1000$-digit number is the block $2008$ repeated.</p><p><strong>Question:</strong> what is the digit sum of the <em>whole</em> $1000$-digit number?</p>`, ans:2500,
+   sol:S([R`Each block has $4$ digits, so there are $1000\div4=250$ blocks.`,R`Digit sum $=250\times10=\mathbf{2500}$.`]) },
+ { id:'t1q11', type:'num', q:R`<p><span class="qlabel">Dominique&rsquo;s number, part (c)</span></p><p>She erases some digits of the $1000$-digit number. The digits that remain add up to $2008$.</p><p><strong>Question:</strong> what must the <em>erased</em> digits add up to?</p>`, ans:492,
+   sol:S([R`Whole number: $2500$. Remaining: $2008$.`,R`Erased: $2500-2008=\mathbf{492}$.`]) },
+ { id:'t1q12', type:'num', q:R`<p><span class="qlabel">Dominique&rsquo;s number, part (d)</span></p><p>She erases some digits of the $1000$-digit number so that the remaining digits add up to $2008$.</p><p><strong>Question:</strong> what is the <em>largest number of digits</em> she could have erased?</p>`, ans:746,
+   sol:S([R`Digits available: $250$ each of $2$, $0$, $0$, $8$, so $500$ zeros, $250$ twos, $250$ eights.`,R`Erase <strong>all $500$ zeros</strong> first: they cost nothing.`,R`The erased digits must add to $492$. Use the smallest non-zero digit, $2$: $492\div2=246$ twos (we have $250$, so this is possible).`,R`Total erased: $500+246=\mathbf{746}$.`]) },
+ { id:'t1q13', type:'mc', q:R`<p><span class="qlabel">Which symbol?</span></p><p>One of the symbols $+,\ -,\ \div,\ \times$ replaces $\oplus$ in the equation</p><p>$$1\times2\times(3\oplus4+5)\times(6\times7+8+9)=2006.$$</p><p><strong>Question:</strong> which symbol makes the equation true?</p>`,
+   opts:['+','−','÷','×'], ans:3,
+   sol:S([R`Evaluate the known bracket: $6\times7+8+9=42+17=59$.`,R`So $1\times2\times(\ldots)\times59=2006$, meaning $(\ldots)=2006\div(2\times59)=2006\div118=17$.`,R`So $3\oplus4+5=17$, giving $3\oplus4=12$.`,R`Only $3\times4=12$ works ($3+4=7$, $3-4=-1$, $3\div4=0.75$). The symbol is <strong>$\times$</strong>.`]) }
+];
+
+EX.t2=[
+ { id:'t2q1', type:'mc', q:R`Which of these numbers is <strong>prime</strong>?`,
+   opts:['51','57','59','63'], ans:2,
+   sol:S([R`$51=3\times17$, $57=3\times19$ and $63=7\times9$ are all composite.`,R`$\sqrt{59}\approx7.7$: test $2,3,5,7$. None divides $59$, so <strong>$59$ is prime</strong>.`]) },
+ { id:'t2q2', type:'set', q:R`List the prime numbers between $20$ and $40$.`, ans:'23,29,31,37',
+   sol:S([R`Check odd numbers $21$ to $39$ using the primes $2,3,5$ (since $\sqrt{40}<7$).`,R`$21=3\cdot7$, $25=5^2$, $27=3^3$, $33=3\cdot11$, $35=5\cdot7$, $39=3\cdot13$ are composite.`,R`The primes are $23,29,31,37$.`]) },
+ { id:'t2q3', type:'mc', q:R`Why is $1$ <strong>not</strong> a prime number?`,
+   opts:['It has only one factor, but a prime needs exactly two','It is an odd number','It is smaller than 2 and negative','It can be divided by every number'], ans:0,
+   sol:S([R`$F(1)=\{1\}$ has just <strong>one</strong> element. A prime has exactly two factors, $1$ and itself.`,R`(Also, counting $1$ as prime would break the uniqueness of prime factorisation.)`]) },
+ { id:'t2q4', type:'set', q:R`Find the factor set $F(30)$. List all its elements.`, ans:'1,2,3,5,6,10,15,30',
+   sol:S([R`Pairs: $1\times30,\ 2\times15,\ 3\times10,\ 5\times6$.`,R`$F(30)=\{1,2,3,5,6,10,15,30\}$.`]) },
+ { id:'t2q5', type:'num', q:R`Find $n\big(F(36)\big)$, the number of factors of $36$.`, ans:9,
+   sol:S([R`Pairs: $1\times36,\ 2\times18,\ 3\times12,\ 4\times9,\ 6\times6$.`,R`List: $1,2,3,4,6,9,12,18,36$. The pair $6\times6$ gives only <strong>one</strong> new factor.`,R`$n(F(36))=\mathbf{9}$.`]) },
+ { id:'t2q6', type:'num', q:R`What is the <strong>smallest prime factor</strong> of $221$?`, ans:13,
+   sol:S([R`$\sqrt{221}\approx14.9$. Test $2,3,5,7,11,13$.`,R`$221\div13=17$, so $221=13\times17$. None of $2,3,5,7,11$ divides it.`,R`The smallest prime factor is $\mathbf{13}$.`]) },
+ { id:'t2q7', type:'num', q:R`<p><span class="qlabel">Page numbers</span></p><p>A book is opened. The two page numbers showing are consecutive, with the odd page on the right. The odd page number is a prime, and the even page number is the product of four distinct primes.</p><p><strong>Question:</strong> what is the least possible odd page number?</p>`, ans:211,
+   sol:S([R`The even page is the product of four distinct primes, so it is even: it must contain the prime $2$.`,R`The smallest such product uses the four smallest primes: $2\times3\times5\times7=210$.`,R`The odd page is $210+1=211$. Is it prime? $\sqrt{211}\approx14.5$: test $2,3,5,7,11,13$: none divides it. So $211$ is prime.`,R`Any other even page (product of four distinct primes) is bigger than $210$, so the least odd page is $\mathbf{211}$.`]) },
+ { id:'t2q8', type:'mc', q:R`Is the set of prime numbers closed under multiplication?`,
+   opts:[R`No: $2\times3=6$, and $6$ is not prime`,R`Yes: a product of primes is prime`,R`Yes, but only for odd primes`,R`No: because $1$ is prime`], ans:0,
+   sol:S([R`$2$ and $3$ are primes but $2\times3=6$ has factors $1,2,3,6$, so $6\notin\mathbb{P}$.`,R`One counterexample shows $\mathbb{P}$ is <strong>not</strong> closed under $\times$. A product of two numbers bigger than $1$ always has extra factors.`]) },
+ { id:'t2q9', type:'num', q:R`How many prime numbers are less than $50$?`, ans:15,
+   sol:S([R`Primes below $50$: $2,3,5,7,11,13,17,19,23,29,31,37,41,43,47$.`,R`Counting: $\mathbf{15}$. (You can check with the sieve.)`]) }
+];
+
+EX.t3=[
+ { id:'t3q1', type:'fact', q:R`Write $360$ as a product of primes (index form).`, ans:'2^3*3^2*5',
+   sol:S([R`$360\div2=180$, $180\div2=90$, $90\div2=45$, $45\div3=15$, $15\div3=5$, $5\div5=1$.`,R`$360=2^3\times3^2\times5$.`]) },
+ { id:'t3q2', type:'fact', q:R`Write $1001$ as a product of primes.`, ans:'7*11*13',
+   sol:S([R`$1001$ is odd, not divisible by $3$ or $5$. $1001\div7=143$.`,R`$143=11\times13$ (both prime).`,R`$1001=7\times11\times13$.`]) },
+ { id:'t3q3', type:'mc', q:R`The Fundamental Theorem of Arithmetic says that every integer $n \ge 2$&hellip;`,
+   opts:['can be written as a product of primes in exactly one way, apart from the order','is itself a prime number','can be written as a sum of primes in exactly one way','has exactly two factors'], ans:0,
+   sol:S([R`The theorem is about <strong>products</strong> of primes, and about <strong>uniqueness</strong> (apart from the order of the factors).`,R`It is false for sums: $6=3+3=2+2+2$.`]) },
+ { id:'t3q4', type:'set', q:R`<p><span class="qlabel">Sum and product</span></p><p>Two whole numbers have sum $116$ and product $3003$.</p><p><strong>Question:</strong> find the two numbers. Type them separated by a comma.</p>`, ans:'39,77',
+   sol:S([R`Factorise the product: $3003=3\times1001=3\times7\times143=3\times7\times11\times13$.`,R`Each number is a product of some of $3,7,11,13$. Try pairs $(d,\,3003\div d)$: $(1,3003)$ sum $3004$; $(3,1001)$ sum $1004$; $(7,429)$ sum $436$; $(11,273)$ sum $284$; $(13,231)$ sum $244$; $(21,143)$ sum $164$; $(33,91)$ sum $124$; $(39,77)$ sum $\mathbf{116}$ &#10004;.`,R`The numbers are <strong>$39$ and $77$</strong>.`]) },
+ { id:'t3q5', type:'set', q:R`<p><span class="qlabel">Sum and product, again</span></p><p>Two whole numbers have sum $201$ and product $10010$.</p><p><strong>Question:</strong> find the two numbers. Type them separated by a comma.</p>`, ans:'91,110',
+   sol:S([R`$10010=2\times5\times1001=2\times5\times7\times11\times13$.`,R`The sum $201$ is only just above the smallest possible sum for this product ($2\sqrt{10010}\approx200.1$), so the two numbers are both close to $\sqrt{10010}\approx100$.`,R`Build factor pairs from the primes near $100$: $(65,154)$ sum $219$; $(70,143)$ sum $213$; $(77,130)$ sum $207$; $(91,110)$ sum $\mathbf{201}$ &#10004; (and $91\times110=10010$).`,R`The numbers are <strong>$91$ and $110$</strong> (that is $7\times13$ and $2\times5\times11$).`]) },
+ { id:'t3q6', type:'num', q:R`<p><span class="qlabel">Trailing zeros</span></p><p>$30!=1\times2\times3\times\cdots\times30$.</p><p><strong>Question:</strong> how many trailing zeros does $30!$ have?</p>`, ans:7,
+   sol:S([R`A trailing zero needs a factor $10=2\times5$. There are plenty of $2$s, so count the factors of $5$.`,R`Multiples of $5$ up to $30$: $5,10,15,20,25,30$: that is $6$ fives.`,R`But $25=5^2$ has <strong>two</strong> fives: one extra.`,R`Total: $6+1=\mathbf{7}$ trailing zeros.`]) },
+ { id:'t3q7', type:'num', q:R`How many trailing zeros does $100!$ have?`, ans:24,
+   sol:S([R`Multiples of $5$ up to $100$: $100\div5=20$.`,R`Multiples of $25$: $100\div25=4$ (each adds one extra $5$).`,R`Multiples of $125$: none.`,R`Total: $20+4=\mathbf{24}$.`]) },
+ { id:'t3q8', type:'fact', q:R`<p><span class="qlabel">The secret code of Mathland, part (a)</span></p><p>Residents write the primes in order ($2,3,5,7,11,\ldots$) and give them the letters $A,B,C,D,E,\ldots$ in order. A word is coded by <strong>multiplying</strong> the primes of its letters.</p><p><strong>Question:</strong> write $110618$ as a product of primes.</p><p class="hint">Hint: $110618=2\times56309$. The next prime factor is $19$. Then $2911=41\times71$.</p>`, ans:'2*19*41*71',
+   sol:S([R`$110618\div2=56309$. Testing primes upward, $56309\div19=2911$.`,R`$2911\div41=71$, and $71$ is prime.`,R`$110618=2\times19\times41\times71$.`]) },
+ { id:'t3q9', type:'text', q:R`<p><span class="qlabel">The secret code of Mathland, part (b)</span></p><p>Each letter is coded by a prime:</p><div class="overflow-x-auto"><table class="tb codetab"><tr><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th><th>I</th><th>J</th></tr><tr><td>$2$</td><td>$3$</td><td>$5$</td><td>$7$</td><td>$11$</td><td>$13$</td><td>$17$</td><td>$19$</td><td>$23$</td><td>$29$</td></tr><tr><th>K</th><th>L</th><th>M</th><th>N</th><th>O</th><th>P</th><th>Q</th><th>R</th><th>S</th><th>T</th></tr><tr><td>$31$</td><td>$37$</td><td>$41$</td><td>$43$</td><td>$47$</td><td>$53$</td><td>$59$</td><td>$61$</td><td>$67$</td><td>$71$</td></tr></table></div><p>In part (a), $110618=2\times19\times41\times71$. So the primes $2,\ 19,\ 41,\ 71$ stand for the letters $A,\ H,\ M,\ T$.</p><p><strong>Question:</strong> which English word do these four letters spell?</p>`, ans:['math'],
+   sol:S([R`$2\to A$, $19\to H$, $41\to M$, $71\to T$.`,R`Because multiplication is commutative, the product $110618$ does not remember the order of the letters. The only English word using $A,H,M,T$ is <strong>MATH</strong>.`,R`And because of unique factorisation, no other set of letters can give $110618$.`]) },
+ { id:'t3q10', type:'num', q:R`<p><span class="qlabel">Digits 7, 8, 9</span></p><p>A three-digit number uses each of the digits $7,8,9$ exactly once. The six possible numbers are</p><p>$$789,\quad 798,\quad 879,\quad 897,\quad 978,\quad 987.$$</p><p><strong>Question:</strong> which one has the smallest sum of its <em>distinct</em> prime factors? Give that sum.</p>`, ans:31,
+   sol:S([R`Factorise each: $789=3\times263$ (sum $266$); $798=2\times3\times7\times19$ (sum $31$); $879=3\times293$ (sum $296$); $897=3\times13\times23$ (sum $39$); $978=2\times3\times163$ (sum $168$); $987=3\times7\times47$ (sum $57$).`,R`The smallest sum is $2+3+7+19=\mathbf{31}$, from $798$.`]) },
+ { id:'t3q11', type:'mc', q:R`If $1$ <em>were</em> counted as a prime, what would go wrong with the Fundamental Theorem?`,
+   opts:['Factorisations would no longer be unique ($6=2\\times3=1\\times2\\times3$&hellip;)','Every number would be prime','Even numbers could not be factorised','Nothing would change'], ans:0,
+   sol:S([R`If $1$ were prime, we could insert any number of $1$s: $6=2\times3=1\times2\times3=1\times1\times2\times3$.`,R`That gives infinitely many different prime factorisations, destroying <strong>uniqueness</strong>. This is the real reason $1$ is excluded.`]) }
+];
+
+EX.t4=[
+ { id:'t4q1', type:'num', q:R`How many divisors does $180 = 2^2 \times 3^2 \times 5$ have?`, ans:18,
+   sol:S([R`Boxes: power of $2$: $2+1=3$ choices; power of $3$: $2+1=3$; power of $5$: $1+1=2$.`,R`$3\times3\times2=\mathbf{18}$.`]) },
+ { id:'t4q2', type:'num', q:R`How many divisors does $2^5 \times 7^2$ have?`, ans:18,
+   sol:S([R`Choices for the power of $2$: $0$ to $5$, that is $6$. For $7$: $0$ to $2$, that is $3$.`,R`$6\times3=\mathbf{18}$.`]) },
+ { id:'t4q3', type:'num', q:R`$p$ and $q$ are different primes. How many divisors does $p^2 q$ have?`, ans:6,
+   sol:S([R`Powers of $p$: $0,1,2$ (3 choices). Powers of $q$: $0,1$ (2 choices).`,R`$3\times2=\mathbf{6}$. (They are $1,p,p^2,q,pq,p^2q$.)`]) },
+ { id:'t4q4', type:'num', q:R`<p><span class="qlabel">Odd factors</span></p><p>Determine the number of <strong>odd</strong> positive whole-number factors of $840$.</p>`, ans:8,
+   sol:S([R`Prime factorisation: $840=2^3\times3\times5\times7$.`,R`An odd factor contains <strong>no</strong> factor $2$: the box for $2$ has only $1$ choice (exponent $0$).`,R`Boxes: $1\times(1+1)\times(1+1)\times(1+1)=1\times2\times2\times2=\mathbf{8}$.`,R`(They are $1,3,5,7,15,21,35,105$.)`]) },
+ { id:'t4q5', type:'num', q:R`How many <strong>even</strong> factors does $360 = 2^3\times3^2\times5$ have?`, ans:18,
+   sol:S([R`Total factors: $(3+1)(2+1)(1+1)=24$.`,R`Odd factors (power of $2$ is $0$): $1\times3\times2=6$.`,R`Even factors $=24-6=\mathbf{18}$.`]) },
+ { id:'t4q6', type:'mc', q:R`Which of these numbers has an <strong>odd</strong> number of factors?`,
+   opts:['48','49','50','54'], ans:1,
+   sol:S([R`A number has an odd number of factors exactly when it is a <strong>perfect square</strong>.`,R`$49=7^2$ is the only square here: $F(49)=\{1,7,49\}$ has $3$ elements. (Check: $48$ has $10$, $50$ has $6$, $54$ has $8$.)`]) },
+ { id:'t4q7', type:'num', q:R`<p><span class="qlabel">Challenge</span></p><p>What is the <em>smallest</em> positive integer that has exactly $6$ divisors?</p>`, ans:12,
+   sol:S([R`A count of $6$ must come from $6=6\times1$ or $6=3\times2$ (as a product of $(e+1)$ terms).`,R`Option $6\times1$: $n=p^5$, smallest is $2^5=32$.`,R`Option $3\times2$: $n=p^2q$, smallest is $2^2\times3=12$ (using the smallest primes and putting the bigger exponent on $2$).`,R`Check $F(12)=\{1,2,3,4,6,12\}$: six divisors. The smallest is $\mathbf{12}$.`]) }
+];
+
+EX.t5=[
+ { id:'t5q1', type:'num', q:R`Find $\text{HCF}(84,\,126)$.`, ans:42,
+   sol:S([R`$84=2^2\times3\times7$ and $126=2\times3^2\times7$.`,R`Take the smaller power of each prime: $2^1\times3^1\times7^1=\mathbf{42}$.`]) },
+ { id:'t5q2', type:'num', q:R`Find $\text{LCM}(12,\,18)$.`, ans:36,
+   sol:S([R`$12=2^2\times3$ and $18=2\times3^2$.`,R`Take the larger power of each prime: $2^2\times3^2=4\times9=\mathbf{36}$.`]) },
+ { id:'t5q3', type:'num', q:R`Find $\text{HCF}(48,\,180)$.`, ans:12,
+   sol:S([R`$48=2^4\times3$ and $180=2^2\times3^2\times5$.`,R`Smaller powers: $2^2\times3^1\times5^0=\mathbf{12}$.`]) },
+ { id:'t5q4', type:'set', q:R`List the set $F(24) \cap F(36)$ (the common factors of $24$ and $36$).`, ans:'1,2,3,4,6,12',
+   sol:S([R`$F(24)=\{1,2,3,4,6,8,12,24\}$ and $F(36)=\{1,2,3,4,6,9,12,18,36\}$.`,R`Elements in both: $\{1,2,3,4,6,12\}$. The largest is $12=\text{HCF}(24,36)$.`]) },
+ { id:'t5q5', type:'num', q:R`$\text{HCF}(a,b)=6$ and $\text{LCM}(a,b)=180$. If $a=36$, find $b$.`, ans:30,
+   sol:S([R`Use $\text{HCF}\times\text{LCM}=a\times b$: $6\times180=1080=36\times b$.`,R`$b=1080\div36=\mathbf{30}$.`,R`(Check: $36=2^2\cdot3^2$, $30=2\cdot3\cdot5$: HCF $=2\cdot3=6$, LCM $=2^2\cdot3^2\cdot5=180$ &#10004;)`]) },
+ { id:'t5q6', type:'num', q:R`<p><span class="qlabel">Word problem</span></p><p>Bus A leaves a station every $12$ minutes and bus B every $18$ minutes. They leave together at 8:00 am.</p><p><strong>Question:</strong> after how many minutes do they next leave together?</p>`, ans:36,
+   sol:S([R`&ldquo;Together again&rdquo; means a common multiple, and the <em>next</em> time means the <strong>lowest</strong>: LCM.`,R`$\text{LCM}(12,18)=36$. They leave together again after $\mathbf{36}$ minutes (8:36 am).`]) },
+ { id:'t5q7', type:'num', q:R`<p><span class="qlabel">Algebraic HCF</span></p><p>$p$ and $q$ are <em>distinct primes</em>, both less than $7$.</p><p><strong>Question:</strong> what is the <strong>largest possible value</strong> of the highest common factor of $2p^2q$ and $3pq^2$?</p>`, ans:45,
+   sol:S([R`The primes less than $7$ are $2,3,5$. Try each ordered pair $(p,q)$ of distinct primes and compute the HCF.`,R`$(2,3)$: $24$ and $54$, HCF $6$. $(2,5)$: $40$ and $150$, HCF $10$. $(3,2)$: $36$ and $36$, HCF $36$.`,R`$(3,5)$: $2\cdot9\cdot5=90$ and $3\cdot3\cdot25=225$, HCF $=3^2\times5=45$. $(5,2)$: $100$ and $60$, HCF $20$. $(5,3)$: $150$ and $135$, HCF $15$.`,R`The largest is <strong>$45$</strong> (when $p=3$, $q=5$).`]) },
+ { id:'t5q8', type:'num', q:R`<p><span class="qlabel">Challenge</span></p><p>What is the smallest positive integer divisible by <em>every</em> number from $1$ to $10$?</p>`, ans:2520,
+   sol:S([R`We need the LCM of $1,2,\ldots,10$: for each prime take the <strong>largest</strong> power that appears.`,R`$2^3$ (from $8$), $3^2$ (from $9$), $5$ (from $5,10$), $7$.`,R`$2^3\times3^2\times5\times7=8\times9\times35=\mathbf{2520}$.`]) },
+ { id:'t5q9', type:'mc', q:R`<p>If $\text{HCF}(a,b)=1$ we say $a$ and $b$ are <strong>coprime</strong>.</p><p><strong>Question:</strong> what is $\text{LCM}(35,\,64)$?</p>`,
+   opts:['35','64','2240','1'], ans:2,
+   sol:S([R`$35=5\times7$ and $64=2^6$ share no prime, so $\text{HCF}=1$.`,R`$\text{LCM}=\dfrac{a\times b}{\text{HCF}}=35\times64=\mathbf{2240}$.`]) },
+ { id:'t5q10', type:'mc', q:R`<p>In the proof, the prime $p$ has exponent $\alpha=3$ in $a$ and $\beta=5$ in $b$.</p><p><strong>Question:</strong> what are the exponents of $p$ in $\text{HCF}(a,b)$ and in $\text{LCM}(a,b)$?</p>`,
+   opts:[R`$3$ in the HCF and $5$ in the LCM`,R`$5$ in the HCF and $3$ in the LCM`,R`$4$ in both`,R`$0$ in the HCF and $8$ in the LCM`], ans:0,
+   sol:S([R`The HCF takes the <strong>smaller</strong> exponent: $\min(3,5)=3$.`,R`The LCM takes the <strong>larger</strong> exponent: $\max(3,5)=5$.`,R`Check with Step 4 of the proof: $3+5=8=\alpha+\beta$, so $\text{HCF}\times\text{LCM}$ contains $p^8$, just like $a\times b$.`]) },
+ { id:'t5q11', type:'num', q:R`<p>$a=2^4\times3^2$ and $b=2^1\times3^5$.</p><p><strong>Question:</strong> use Step 4 of the proof ($\min+\max=\alpha+\beta$) to find the exponent of $3$ in $\text{HCF}\times\text{LCM}$.</p>`, ans:7,
+   sol:S([R`For the prime $3$: $\alpha=2$ and $\beta=5$.`,R`$\min(2,5)=2$ and $\max(2,5)=5$, so the HCF contains $3^2$ and the LCM contains $3^5$.`,R`In the product the exponents add: $2+5=\mathbf{7}$. (This equals $\alpha+\beta=7$, the exponent of $3$ in $a\times b$.)`]) },
+ { id:'t5q12', type:'num', q:R`<p>For <em>two</em> numbers, $\text{HCF}\times\text{LCM}=a\times b$. For three numbers this is not always true.</p><p>Take $4$, $6$ and $10$.</p><p><strong>Question:</strong> find $\dfrac{4\times6\times10}{\text{HCF}\times\text{LCM}}$.</p>`, ans:2,
+   sol:S([R`$4=2^2$, $6=2\times3$, $10=2\times5$. The only prime in all three is $2$, to the power $1$: $\text{HCF}=2$.`,R`$\text{LCM}=2^2\times3\times5=60$, so $\text{HCF}\times\text{LCM}=120$.`,R`$4\times6\times10=240$, and $240\div120=\mathbf{2}$. The two-number rule fails for three numbers because Step 4 only works for two exponents.`]) }
+];
+
+EX.t6=[
+ { level:'Level 1: Understanding (set notation and basics)', id:'h1', type:'mc', q:R`Which set is <strong>closed under multiplication</strong>?`,
+   opts:[R`The prime numbers $\mathbb{P}$`,R`The odd integers`,R`$\{1,2,3\}$`,R`The integers from $1$ to $10$`], ans:1,
+   sol:S([R`$\mathbb{P}$: $2\times3=6\notin\mathbb{P}$. $\{1,2,3\}$: $2\times3=6\notin$ set. Integers $1$ to $10$: $4\times5=20\notin$ set.`,R`Odd integers: $(2m+1)(2n+1)=2(2mn+m+n)+1$ is odd, so the odd integers are closed under $\times$.`]) },
+ { id:'h2', type:'set', q:R`List $\{x : x \in \mathbb{P},\ x < 20\}$, the primes less than $20$.`, ans:'2,3,5,7,11,13,17,19',
+   sol:S([R`Check $2$ to $19$: $2,3,5,7,11,13,17,19$ have exactly two factors each.`]) },
+ { id:'h3', type:'set', q:R`List the elements of $M_5 = \{x : x = 5n,\ n\in\mathbb{Z}^+\}$ that are at most $40$.`, ans:'5,10,15,20,25,30,35,40',
+   sol:S([R`$5\times1$ up to $5\times8=40$: $5,10,15,20,25,30,35,40$.`]) },
+ { id:'h4', type:'num', q:R`Find $n\big(F(28)\big)$.`, ans:6,
+   sol:S([R`Pairs: $1\times28,\ 2\times14,\ 4\times7$.`,R`$F(28)=\{1,2,4,7,14,28\}$, so $n=\mathbf{6}$. (Check with $28=2^2\times7$: $3\times2=6$.)`]) },
+ { id:'h5', type:'fact', q:R`Write $126$ as a product of primes (index form).`, ans:'2*3^2*7',
+   sol:S([R`$126\div2=63$, $63\div3=21$, $21\div3=7$, $7\div7=1$.`,R`$126=2\times3^2\times7$.`]) },
+ { id:'h6', type:'mc', q:R`Which property is shown by $(4\times5)\times3=4\times(5\times3)$?`,
+   opts:['Commutativity','Associativity','Distributivity','Identity'], ans:1,
+   sol:S([R`The order of the numbers is unchanged; only the <strong>brackets</strong> moved. That is associativity.`]) },
+ { id:'h7', type:'num', q:R`Calculate $5\times(-7)\times(-2)$.`, ans:70,
+   sol:S([R`$(-7)\times(-2)=14$.`,R`$5\times14=\mathbf{70}$.`]) },
+
+ { level:'Level 2: Applying', id:'h8', type:'num', q:R`Find $\text{HCF}(56,\,84)$.`, ans:28,
+   sol:S([R`$56=2^3\times7$, $84=2^2\times3\times7$.`,R`Smaller powers: $2^2\times7=\mathbf{28}$.`]) },
+ { id:'h9', type:'num', q:R`Find $\text{LCM}(15,\,20)$.`, ans:60,
+   sol:S([R`$15=3\times5$, $20=2^2\times5$.`,R`Larger powers: $2^2\times3\times5=\mathbf{60}$.`]) },
+ { id:'h10', type:'num', q:R`How many divisors does $2^3\times3\times7^2$ have?`, ans:24,
+   sol:S([R`$(3+1)(1+1)(2+1)=4\times2\times3=\mathbf{24}$.`]) },
+ { id:'h11', type:'set', q:R`Find $F(18)\cap F(27)$.`, ans:'1,3,9',
+   sol:S([R`$F(18)=\{1,2,3,6,9,18\}$ and $F(27)=\{1,3,9,27\}$.`,R`Common elements: $\{1,3,9\}$.`]) },
+ { id:'h12', type:'mc', q:R`<p>Let $A=M_4$ (the multiples of $4$) and $B=M_6$ (the multiples of $6$).</p><p><strong>Question:</strong> which statement describes $A\cap B$?</p>`,
+   opts:[R`The multiples of $12$`,R`The multiples of $24$`,R`The multiples of $2$`,R`The multiples of $10$`], ans:0,
+   sol:S([R`$A\cap B$ is the set of numbers that are multiples of <em>both</em> $4$ and $6$.`,R`$\text{LCM}(4,6)=12$, and the common multiples are exactly the multiples of the LCM: $\{12,24,36,\ldots\}=M_{12}$.`]) },
+ { id:'h13', type:'mc', q:R`Is $\{1,2,3,5,7\}\subseteq\mathbb{P}$ (the set of primes)?`,
+   opts:['No: $1\\notin\\mathbb{P}$, so not every element is prime','Yes: all of them are prime','No: $2\\notin\\mathbb{P}$','Yes: because 1 is prime'], ans:0,
+   sol:S([R`$A\subseteq B$ needs <em>every</em> element of $A$ to be in $B$.`,R`$1\notin\mathbb{P}$ (it has only one factor), so $\{1,2,3,5,7\}\not\subseteq\mathbb{P}$.`]) },
+ { id:'h14', type:'num', q:R`What is the smallest positive integer that is a multiple of $8$, $12$ <em>and</em> $15$?`, ans:120,
+   sol:S([R`$8=2^3$, $12=2^2\cdot3$, $15=3\cdot5$.`,R`Largest powers: $2^3\times3\times5=\mathbf{120}$.`]) },
+ { id:'h15', type:'num', q:R`How many divisors of $144=2^4\times3^2$ are <strong>perfect squares</strong>?`, ans:6,
+   sol:S([R`A divisor $2^i3^j$ is a perfect square when $i$ and $j$ are both even.`,R`$i\in\{0,2,4\}$ (3 choices), $j\in\{0,2\}$ (2 choices).`,R`$3\times2=\mathbf{6}$ (they are $1,4,16,9,36,144$).`]) },
+ { id:'h16', type:'num', q:R`How many trailing zeros does $40!$ have?`, ans:9,
+   sol:S([R`Multiples of $5$ up to $40$: $8$.`,R`Multiples of $25$: just $25$, adding $1$ extra.`,R`Total $8+1=\mathbf{9}$.`]) },
+
+ { level:'Level 3: Advanced applications', id:'h17', type:'set', q:R`<p>Two whole numbers have sum $40$ and product $391$.</p><p><strong>Question:</strong> find the two numbers. Type them separated by a comma.</p>`, ans:'17,23',
+   sol:S([R`Factorise: $391=17\times23$ (both prime).`,R`The only factor pairs are $(1,391)$ and $(17,23)$. Sum of $(17,23)$ is $40$ &#10004;.`,R`The numbers are $17$ and $23$.`]) },
+ { id:'h18', type:'num', q:R`<p>What is the smallest positive integer $n$ such that $540\times n$ is a <strong>perfect square</strong>?</p>`, ans:15,
+   sol:S([R`$540=2^2\times3^3\times5$.`,R`A perfect square has <strong>even</strong> exponents on every prime. Here $3^3$ and $5^1$ are odd.`,R`Multiply by $3\times5=15$: $540\times15=2^2\times3^4\times5^2=8100=90^2$.`,R`$n=\mathbf{15}$.`]) },
+ { id:'h19', type:'num', q:R`Find the HCF of the three numbers $360$, $1000$ and $1800$.`, ans:40,
+   sol:S([R`$360=2^3\cdot3^2\cdot5$, $1000=2^3\cdot5^3$, $1800=2^3\cdot3^2\cdot5^2$.`,R`Smallest power of each prime across all three: $2^3$, $3^0$, $5^1$.`,R`$2^3\times5=\mathbf{40}$.`]) },
+ { id:'h20', type:'num', q:R`What is the smallest positive integer with exactly $8$ divisors?`, ans:24,
+   sol:S([R`$8=8=4\times2=2\times2\times2$ as products of $(e+1)$ terms.`,R`$p^7$: smallest $2^7=128$. $p^3q$: smallest $2^3\times3=24$. $pqr$: smallest $2\times3\times5=30$.`,R`The smallest is $\mathbf{24}$.`]) },
+ { id:'h21', type:'num', q:R`<p>Let $p=3$ and $q=5$.</p><p><strong>Question:</strong> find $\text{LCM}(p^2q^3,\ p^3q)$.</p>`, ans:3375,
+   sol:S([R`Take the larger power of each prime: $p^3q^3=3^3\times5^3$.`,R`$=27\times125=\mathbf{3375}$. (Check: $p^2q^3=1125$, $p^3q=135$, HCF $=45$, $45\times3375=151\,875=1125\times135$ &#10004;)`]) },
+ { id:'h22', type:'num', q:R`<p>The product of <strong>three consecutive</strong> whole numbers is $1716$.</p><p><strong>Question:</strong> what is their sum?</p>`, ans:36,
+   sol:S([R`The cube root of $1716$ is about $11.97$, so the middle number is about $12$.`,R`Try $11\times12\times13=1716$ &#10004;.`,R`Sum: $11+12+13=\mathbf{36}$.`]) }
+];
+
+/* ============ CONCEPT AND SKILL TAGS (used by the learning report) ============ */
+const CONCEPTS={
+ op:{label:'Multiplication as an operator (stretch, flip, signs)',tab:'t1',where:'Tab 1, Steps 1 to 2 and Technique 2',
+   tips:['Redraw it. For one product, draw the arrow of the second number, stretch it by the <strong>size</strong> of the first number, then flip it if the first number is <strong>negative</strong>. Ask two questions every time: how long, and which way?','Replay the operator sliders in Tab 1: fix the operator at $-3$ and move the number from $-4$ to $4$. Watch the arrow each time.','Remember: a negative number points left; a negative operator flips it. Flip a left-pointing arrow and it points right, so $(-3)\\times(-4)=12$.']},
+ prop:{label:'Properties of multiplication and closure',tab:'t1',where:'Tab 1, Step 3 (Properties Lab) and Technique 1',
+   tips:['Say each rule in words before you use it: commutative changes the <em>order</em>, associative changes the <em>brackets</em>, distributive <em>spreads</em> across a sum.','Test a claim with small numbers. One counterexample (for example $2\\times3=6$ is not prime) is enough to show a set is not closed.','For clever calculation, scan for pairs that make $10$, $100$ or $1000$ ($25\\times4$, $8\\times125$) and regroup them first.']},
+ sets:{label:'Set notation: multiples, factors and common factors',tab:'t2',where:'Tab 1 Step 2, Tab 2 Step 1 and Tab 5 Step 1',
+   tips:['Translate the set-builder notation into words first: $\\{x : x=5n,\\ n\\in\\mathbb{Z}^+\\}$ means &ldquo;the positive multiples of $5$&rdquo;. Then list a few elements.','List factors in <strong>pairs</strong> and stop at the square root (Tab 2, Technique 1), then compare two lists to find the common elements.','Subset questions: check <em>every</em> element. One element outside is enough to say &ldquo;not a subset&rdquo;.']},
+ prime:{label:'Primes and factors',tab:'t2',where:'Tab 2',
+   tips:['Use the definition: a prime has <strong>exactly two</strong> factors. This is why $1$ is not prime.','To test a number, divide only by the <strong>primes up to its square root</strong> (Tab 2, Technique 2).','Run the Sieve of Eratosthenes again and say aloud why each number that survives must be prime.']},
+ fta:{label:'Prime factorisation and the Fundamental Theorem',tab:'t3',where:'Tab 3',
+   tips:['Use the factor ladder: divide by the <strong>smallest prime that works</strong> until you reach $1$, then write the exponents. Multiply back to check.','For sum-and-product and trailing-zero problems, <strong>factorise first</strong>. The primes show you which numbers are possible.','Use the live preview under each answer box: it shows how your factorisation is read.']},
+ div:{label:'Counting divisors (the box method)',tab:'t4',where:'Tab 4',
+   tips:['Each prime gives (<strong>exponent + 1</strong>) choices. Multiply the boxes.','For odd divisors the box for the prime $2$ has only <strong>one</strong> choice (exponent $0$).','Rebuild a small case with the Divisor Builder to watch every divisor appear, then check the formula against your list.']},
+ hcf:{label:'HCF and LCM',tab:'t5',where:'Tab 5, Steps 1 to 3',
+   tips:['Write both numbers in index form with the primes lined up in columns. HCF takes the <strong>smaller</strong> exponent in each column, LCM the <strong>larger</strong>.','Re-read the proof in Tab 5, Step 2. The key idea is $\\min+\\max=\\alpha+\\beta$ for each prime.','Decide the meaning first: &ldquo;together again&rdquo; means LCM, &ldquo;largest equal pieces&rdquo; means HCF.']},
+ sq:{label:'Between two squares: n(n+m)',tab:'t1',where:'Tab 1, Step 5',
+   tips:['Write down $n^2$ and $(n+m)^2$ first and see where the target sits between them.','For a product of numbers $m$ apart, take $\\sqrt{P}$ and test the whole numbers <strong>just below it</strong>, within $m/2$ (use the Reverse Solver).','For mental products, find the middle number: $(\\text{mid}-d)(\\text{mid}+d)=\\text{mid}^2-d^2$.']},
+ smart:{label:'Smart problem solving (digits, symbols, codes)',tab:'t1',where:'Tab 1 Techniques 4 and 5',
+   tips:['Organise before calculating: write what is fixed (totals, digit sums) and what you can choose (which digits to erase).','Work <strong>backwards</strong>: evaluate every part without the unknown, then undo the known parts one at a time.','For codes and factorisations, remember that the factorisation is unique, so only one set of letters fits.']}
+};
+const SKILLS={
+ U:{label:'Understand (definitions and properties)',tips:['Before choosing an answer, <strong>explain the idea in one full sentence</strong> in your own words, then match it to an option.']},
+ C:{label:'Compute (carry out a method)',tips:['Cover the worked example, redo it yourself, then compare line by line. <strong>Write every step</strong> rather than doing it in your head.']},
+ A:{label:'Apply (use it in a problem or context)',tips:['Underline what is <strong>given</strong> and what is <strong>asked</strong>, turn the story into a maths sentence, and only then calculate. Check that the answer makes sense in the story.']},
+ Rz:{label:'Reason (multi-step and challenge problems)',tips:['Break the problem into small steps. After each step ask &ldquo;what does this tell me?&rdquo; and test a small case before the big one.']}
+};
+const TAGS={
+ t1o1:['op','C'],t1o2:['op','C'],t1o3:['op','U'],t1o4:['op','U'],
+ t1q1:['prop','C'],t1q2:['prop','C'],t1q3:['sets','C'],t1q4:['prop','U'],t1q5:['prop','U'],t1q6:['op','C'],t1q7:['prop','U'],
+ t1q8:['sq','A'],
+ t1c1:['sq','C'],t1c2:['sq','U'],t1c3:['sq','A'],t1c4:['sq','A'],t1c5:['sq','C'],t1c6:['sq','Rz'],t1c7:['sq','Rz'],t1c8:['sq','A'],t1c9:['sq','U'],t1c10:['sq','Rz'],
+ t1q9:['smart','C'],t1q10:['smart','C'],t1q11:['smart','A'],t1q12:['smart','Rz'],t1q13:['smart','Rz'],
+ t2q1:['prime','C'],t2q2:['prime','C'],t2q3:['prime','U'],t2q4:['sets','C'],t2q5:['prime','C'],t2q6:['prime','C'],t2q7:['prime','Rz'],t2q8:['prop','U'],t2q9:['prime','C'],
+ t3q1:['fta','C'],t3q2:['fta','C'],t3q3:['fta','U'],t3q4:['fta','A'],t3q5:['fta','Rz'],t3q6:['fta','A'],t3q7:['fta','A'],t3q8:['fta','C'],t3q9:['smart','A'],t3q10:['fta','A'],t3q11:['fta','U'],
+ t4q1:['div','C'],t4q2:['div','C'],t4q3:['div','C'],t4q4:['div','A'],t4q5:['div','A'],t4q6:['div','U'],t4q7:['div','Rz'],
+ t5q1:['hcf','C'],t5q2:['hcf','C'],t5q3:['hcf','C'],t5q4:['sets','C'],t5q5:['hcf','A'],t5q6:['hcf','A'],t5q7:['hcf','Rz'],t5q8:['hcf','Rz'],t5q9:['hcf','U'],t5q10:['hcf','U'],t5q11:['hcf','U'],t5q12:['hcf','Rz'],
+ h1:['prop','U'],h2:['sets','C'],h3:['sets','C'],h4:['prime','C'],h5:['fta','C'],h6:['prop','U'],h7:['op','C'],
+ h8:['hcf','C'],h9:['hcf','C'],h10:['div','C'],h11:['sets','C'],h12:['sets','U'],h13:['sets','U'],h14:['hcf','A'],h15:['div','Rz'],h16:['fta','A'],
+ h17:['fta','A'],h18:['fta','Rz'],h19:['hcf','C'],h20:['div','Rz'],h21:['hcf','C'],h22:['sq','A']
+};
+const TAB_NAMES={t1:'Tab 1 Multiplication',t2:'Tab 2 Primes',t3:'Tab 3 Fundamental Theorem',t4:'Tab 4 Counting Divisors',t5:'Tab 5 HCF and LCM',t6:'Tab 6 Homework'};
+
+/* ============ EXERCISE ENGINE ============ */
+const EXMAP={}, ST={};
+const now=()=>Date.now()+(window.__skew||0);
+function normSet(s){
+  s=cleanNum(s).toLowerCase().trim();
+  if(/∅|empty|^\{\s*\}$/.test(s)) return '';
+  s=s.replace(/[{}\s]/g,''); const arr=s.split(',').filter(x=>x!==''); arr.sort(sorter); return arr.join(',');
+}
+function parseFact(s){
+  s=String(s).toLowerCase().replace(/[×x·\*]/g,'*').replace(/²/g,'^2').replace(/³/g,'^3').replace(/\s/g,'');
+  if(!s) return null; const m={};
+  for(const t of s.split('*')){ const mm=t.match(/^(\d+)(?:\^(\d+))?$/); if(!mm) return null; const p=+mm[1], k=mm[2]?+mm[2]:1; m[p]=(m[p]||0)+k; }
+  return m;
+}
+function sameFact(a,b){ const ka=Object.keys(a), kb=Object.keys(b); return ka.length===kb.length && ka.every(k=>a[k]===b[k]); }
+
+/* live LaTeX preview of a typed factorisation */
+function factToLatex(raw){
+  const s0=String(raw).trim(); if(!s0) return {state:'empty'};
+  let t=s0.toLowerCase().replace(/[×x·]/g,'*').replace(/²/g,'^2').replace(/³/g,'^3').replace(/\s/g,'');
+  const tm=t.match(/[*^]+$/); let dang='';
+  if(tm){ if(tm[0].length>1) return {state:'bad'}; dang=tm[0]; t=t.slice(0,-1); }
+  if(!t) return {state:'bad'};
+  const out=[], bases=[];
+  for(const p of t.split('*')){ const m=p.match(/^(\d+)(?:\^(\d+))?$/); if(!m) return {state:'bad'}; bases.push(+m[1]); out.push(m[2]!==undefined? m[1]+'^{'+m[2]+'}' : m[1]); }
+  if(dang==='^') out[out.length-1]+='^{\\square}';
+  let tex=out.join('\\times ');
+  if(dang==='*') tex+='\\times\\,\\square';
+  const notPrime=[...new Set(bases.filter(b=>!isPrime(b)))];
+  return {state:'ok',tex,notPrime};
+}
+const _pt={};
+function factPreview(id){
+  const el=document.getElementById('prev-'+id), inp=document.getElementById('inp-'+id); if(!el||!inp) return;
+  const r=factToLatex(inp.value); let h='<span class="lab">Preview</span>';
+  if(r.state==='empty') h+='<span class="msg">Your answer will appear here as you type, for example $2^3\\times3\\times5$.</span>';
+  else if(r.state==='bad') h+='<span class="msg">This cannot be read yet. Use numbers, <kbd class="k">^</kbd> and <kbd class="k">*</kbd> only.</span>';
+  else { h+='<span class="text-lg">$'+r.tex+'$</span>'; if(r.notPrime.length) h+='<span class="block text-xs text-amber-700 font-semibold mt-1">Not all factors are prime yet: '+r.notPrime.map(b=>'$'+b+'$').join(', ')+' can be split further.</span>'; }
+  el.innerHTML=h; clearTimeout(_pt[id]); _pt[id]=setTimeout(()=>typeset(el),120);
+}
+
+function exHTML(e,n){
+  let inp='';
+  const enter=`onkeydown="if(event.key==='Enter')checkEx('${e.id}')"`;
+  if(e.type==='num') inp=`<input type="text" inputmode="decimal" class="inp" id="inp-${e.id}" placeholder="Your answer" ${enter}>`;
+  else if(e.type==='set') inp=`<input type="text" class="inp" id="inp-${e.id}" placeholder="e.g. 2, 3, 5" ${enter}><p class="text-xs text-slate-500 mt-1">Type the elements separated by commas.</p>`;
+  else if(e.type==='fact') inp=`<input type="text" class="inp" id="inp-${e.id}" placeholder="Type your factorisation" oninput="factPreview('${e.id}')" ${enter}><p class="text-xs text-slate-500 mt-1">Use <kbd class="k">^</kbd> for a power and <kbd class="k">*</kbd> for $\\times$. Primes only.</p><div class="fprev" id="prev-${e.id}"></div>`;
+  else if(e.type==='text') inp=`<input type="text" class="inp" id="inp-${e.id}" placeholder="Your answer" ${enter}>`;
+  else if(e.type==='mc') inp=e.opts.map((o,i)=>`<button class="opt" id="opt-${e.id}-${i}" onclick="pickOpt('${e.id}',${i})">${o}</button>`).join('');
+  return `<div class="ex-card" id="card-${e.id}" onfocusin="markSeen('${e.id}')" onclick="markSeen('${e.id}')"><div class="flex items-start gap-3"><div class="qnum">${n}</div><div class="flex-1 min-w-0">
+    <div class="qtext text-slate-800 leading-relaxed">${e.q}</div>
+    <div class="mt-3">${inp}</div>
+    <div class="mt-3 flex items-center gap-3 flex-wrap"><button class="btn" id="btn-${e.id}" onclick="checkEx('${e.id}')">Check answer</button><span id="att-${e.id}" class="text-xs font-semibold text-slate-500">Attempts left: 3</span></div>
+    <div id="fb-${e.id}" class="mt-2 text-sm font-semibold"></div>
+    <div id="sol-${e.id}" class="hidden mt-3 sol-box"><h4 class="font-bold text-slate-800 mb-1" id="solh-${e.id}">Step-by-step solution</h4>${e.sol}</div>
+  </div></div></div>`;
+}
+function markSeen(id){ const st=ST[id]; if(st && !st.t0 && !st.done){ st.t0=st.last=now(); } }
+function mountEx(key){
+  const box=document.getElementById('ex-'+key); let h='', lv='', n=0;
+  EX[key].forEach(e=>{ if(e.level&&e.level!==lv){ lv=e.level; h+=`<div class="lvl">${lv}</div>`; } e.lv=lv; n++; e.no=n; h+=exHTML(e,n); });
+  box.innerHTML=h;
+  EX[key].forEach(e=>{ EXMAP[e.id]=e; ST[e.id]={tries:0,done:false,pick:null,tab:key,correct:false,t0:null,last:null,log:[]}; });
+  if('IntersectionObserver' in window){
+    const io=new IntersectionObserver(es=>es.forEach(en=>{ if(en.isIntersecting && (en.intersectionRatio>=0.15 || en.intersectionRect.height>=180)) markSeen(en.target.id.slice(5)); }),{threshold:[0.05,0.15,0.3,0.5]});
+    box.querySelectorAll('.ex-card').forEach(c=>io.observe(c));
+  }
+}
+function pickOpt(id,i){ const st=ST[id]; if(st.done) return; markSeen(id); st.pick=i; EXMAP[id].opts.forEach((_,k)=>document.getElementById(`opt-${id}-${k}`).classList.toggle('sel',k===i)); }
+function checkEx(id){
+  const e=EXMAP[id], st=ST[id]; if(st.done) return;
+  const fb=document.getElementById('fb-'+id); let correct=false, ansText=''; const warn=m=>{ fb.className='mt-2 text-sm font-semibold text-amber-700'; fb.textContent=m; };
+  if(e.type==='num'){
+    const raw=document.getElementById('inp-'+id).value; const v=cleanNum(raw).replace(/[, ]/g,''); if(v===''||isNaN(Number(v))) return warn('Type a number first.');
+    ansText=raw.trim(); correct=Math.abs(Number(v)-e.ans)<1e-9;
+  } else if(e.type==='set'){
+    const v=document.getElementById('inp-'+id).value; if(v.trim()==='') return warn('Type your answer first.'); ansText=v.trim(); correct=normSet(v)===normSet(e.ans);
+  } else if(e.type==='fact'){
+    const v=document.getElementById('inp-'+id).value; if(v.trim()==='') return warn('Type your answer first.');
+    const pf=parseFact(v); if(!pf) return warn('This cannot be read yet. Use numbers, ^ and * only (see the preview).');
+    ansText=v.trim(); correct = sameFact(pf, parseFact(e.ans)) && Object.keys(pf).every(k=>isPrime(+k));
+  } else if(e.type==='text'){
+    const v=document.getElementById('inp-'+id).value.toLowerCase().replace(/\s/g,''); if(v==='') return warn('Type your answer first.'); ansText=v; correct=e.ans.includes(v);
+  } else if(e.type==='mc'){
+    if(st.pick===null) return warn('Choose an option first.'); ansText=String(e.opts[st.pick]); correct=st.pick===e.ans;
+  }
+  const t=now(); if(!st.t0){ st.t0=st.last=t; }
+  st.log.push({dt:t-st.last, ans:ansText, ok:correct}); st.last=t;
+  st.tries++; const left=3-st.tries; document.getElementById('att-'+id).textContent='Attempts left: '+Math.max(left,0);
+  if(correct) finishEx(id,true); else if(left<=0) finishEx(id,false);
+  else { fb.className='mt-2 text-sm font-semibold text-red-700'; fb.textContent='Not quite. Try again: '+left+' attempt'+(left===1?'':'s')+' left.'; const c=document.getElementById('card-'+id); c.classList.add('bad'); setTimeout(()=>{ if(!st.done) c.classList.remove('bad'); },900); }
+}
+function finishEx(id,ok){
+  const e=EXMAP[id], st=ST[id]; st.done=true; st.correct=ok;
+  const card=document.getElementById('card-'+id), fb=document.getElementById('fb-'+id), sol=document.getElementById('sol-'+id);
+  card.classList.remove('bad'); if(ok) card.classList.add('ok');
+  fb.className='mt-2 text-sm font-bold '+(ok?'text-emerald-700':'text-red-700');
+  fb.textContent= ok?'Correct! Well done.':'All 3 attempts used. Study the full solution below.';
+  sol.classList.remove('hidden'); if(!ok) sol.classList.add('fail');
+  document.getElementById('solh-'+id).textContent= ok?'Full solution (compare with your method)':'Full step-by-step solution';
+  document.getElementById('btn-'+id).disabled=true;
+  if(e.type==='mc') e.opts.forEach((_,k)=>{ const b=document.getElementById(`opt-${id}-${k}`); b.disabled=true; b.classList.remove('sel'); if(k===e.ans) b.classList.add('right'); else if(k===st.pick) b.classList.add('wrong'); });
+  else document.getElementById('inp-'+id).disabled=true;
+  typeset(sol); refreshProgress();
+}
+let reportUnlocked=false;
+function allDone(){ return Object.keys(EX).every(k=>EX[k].every(e=>ST[e.id]&&ST[e.id].done)); }
+function refreshProgress(){
+  let done=0,total=0;
+  Object.keys(EX).forEach(k=>{ let d=0; EX[k].forEach(e=>{ total++; if(ST[e.id]&&ST[e.id].done){done++;d++;} }); const b=document.querySelector('.tab-link[data-tab="'+k+'"]'); if(b) b.classList.toggle('tab-done',d===EX[k].length); });
+  document.getElementById('prog-count').textContent=done; document.getElementById('prog-total').textContent=total;
+  let c=0,r=0; EX.t6.forEach(e=>{ if(ST[e.id].done){ ST[e.id].correct?c++:r++; } });
+  document.getElementById('hw-score').textContent=`Homework status: ${c} correct, ${r} revealed after 3 attempts, ${EX.t6.length-c-r} remaining`;
+  const ready=allDone(); const lab=document.getElementById('t7-label');
+  if(lab) lab.textContent= ready ? '7. Learning Report (ready)' : '7. Learning Report (locked)';
+  if(ready && !reportUnlocked){
+    reportUnlocked=true; showToast();
+    if(document.getElementById('t7').classList.contains('active')) buildReport();
+  }
+}
+function showToast(){
+  const t=document.createElement('div'); t.className='toast no-print'; t.id='report-toast';
+  t.innerHTML='<strong>All questions finished.</strong> Your Learning Report is ready.<div class="mt-2"><button class="btn" style="background:#fff;color:#1c2230" onclick="document.getElementById(\'report-toast\').remove();openTab(null,\'t7\')">View my report</button></div>';
+  document.body.appendChild(t);
+}
+
+/* ============ LEARNING REPORT ============ */
+const EFFORT={
+ flu:{label:'Secure',long:'Correct first time',cls:'b-flu',score:1},
+ per:{label:'Persistent',long:'Corrected with real thought between attempts',cls:'b-per',score:0.8},
+ gue:{label:'Guess-and-check',long:'Quick retries, close to guessing',cls:'b-gue',score:0.45},
+ rus:{label:'Rushed',long:'Used the attempts quickly to reach the solution',cls:'b-rus',score:0},
+ str:{label:'Needs support',long:'Real effort, but the idea is not secure yet',cls:'b-str',score:0.2}
+};
+function thrFor(e){
+  const base={mc:4,num:7,set:9,fact:10,text:5}[e.type]||7; const tg=TAGS[e.id]||[]; let f=1;
+  if(tg[1]==='Rz') f=1.5; else if(tg[1]==='A') f=1.25;
+  if(/Level 2/.test(e.lv||'')) f*=1.2; if(/Level 3/.test(e.lv||'')) f*=1.5;
+  return base*f*1000;
+}
+function analyzeQ(e){
+  const st=ST[e.id], thr=thrFor(e), L=st.log, n=L.length, quick=L.map(a=>a.dt<thr);
+  const norm=a=>String(a).toLowerCase().replace(/\s/g,'');
+  const wrong=L.filter(a=>!a.ok); const repeated=wrong.length>1 && new Set(wrong.map(a=>norm(a.ans))).size<wrong.length;
+  let key;
+  if(st.correct){ if(n===1) key='flu'; else { const qr=quick.slice(1).filter(Boolean).length; key= qr===0?'per':'gue'; } }
+  else { const q=quick.filter(Boolean).length; key= q===n?'rus' : q>=2?'gue':'str'; }
+  const tg=TAGS[e.id]||['smart','C'];
+  return {id:e.id, tab:st.tab, no:e.no, concept:tg[0], skill:tg[1], n, ok:st.correct, key, repeated, score:EFFORT[key].score, log:L, thr};
+}
+function aggregate(rows){
+  const n=rows.length; if(!n) return null;
+  const sum=f=>rows.reduce((a,r)=>a+f(r),0);
+  const first=rows.filter(r=>r.ok&&r.n===1).length, rev=rows.filter(r=>!r.ok).length;
+  const rush=rows.filter(r=>r.key==='rus'||r.key==='gue').length;
+  const score=sum(r=>r.score)/n;
+  const status= score>=0.8?'sec': score>=0.55?'dev':'need';
+  return {n, first, rev, rush, att:sum(r=>r.n)/n, score, status, habit: rush/n>=0.34, str: rows.filter(r=>r.key==='str').length};
+}
+const STAT={sec:['Secure','b-sec'],dev:['Developing','b-dev'],need:['Needs support','b-need']};
+function pct(x){ return Math.round(x*100)+'%'; }
+function secs(ms){ return (ms/1000).toFixed(ms<10000?1:0)+'s'; }
+function buildReport(){
+  const root=document.getElementById('report-root');
+  if(!allDone()){
+    let h='<div class="card mb-3"><p class="text-slate-700">Your report is built from <strong>every</strong> exercise and homework question: how many attempts you used, whether you made a real effort on each try, and which ideas are secure. It unlocks when all questions are finished (correct, or all 3 attempts used).</p></div><div class="space-y-2">';
+    Object.keys(EX).forEach(k=>{ const tot=EX[k].length, d=EX[k].filter(e=>ST[e.id].done).length;
+      h+=`<div class="card flex items-center gap-3 flex-wrap"><div class="font-bold w-56">${TAB_NAMES[k]}</div><div class="meter flex-1"><div style="width:${d/tot*100}%"></div></div><div class="text-sm font-bold w-24 text-right">${d} / ${tot}</div><button class="btn-ghost" onclick="openTab(null,'${k}')">Go to tab</button></div>`; });
+    root.innerHTML=h+'</div>'; return;
+  }
+  const rows=[]; Object.keys(EX).forEach(k=>EX[k].forEach(e=>rows.push(analyzeQ(e))));
+  const A=aggregate(rows), tot=rows.length;
+  const cnt={flu:0,per:0,gue:0,rus:0,str:0}; rows.forEach(r=>cnt[r.key]++);
+  const firstDt=rows.map(r=>r.log[0]?r.log[0].dt:0), avgThink=firstDt.reduce((a,b)=>a+b,0)/tot;
+  const habitShare=(cnt.rus+cnt.gue)/tot;
+  let h='';
+  h+=`<p class="text-slate-600 mb-4">This report is built automatically from what you did on all ${tot} questions in Tabs 1 to 6. It looks at <strong>what you got right</strong> and also at <strong>how you got there</strong>: how many attempts you used and whether each attempt showed real thinking. Timing is only a guide, so read the advice as suggestions, not a verdict.</p>`;
+  h+=`<div class="grid grid-cols-2 md:grid-cols-5 gap-3 mb-5">
+    <div class="rp-tile"><div class="v">${tot}</div><div class="l">questions finished</div></div>
+    <div class="rp-tile"><div class="v">${pct(A.first/tot)}</div><div class="l">correct on the first attempt</div></div>
+    <div class="rp-tile"><div class="v">${A.att.toFixed(1)}</div><div class="l">average attempts per question</div></div>
+    <div class="rp-tile"><div class="v">${A.rev}</div><div class="l">solutions revealed after 3 attempts</div></div>
+    <div class="rp-tile"><div class="v">${secs(avgThink)}</div><div class="l">average thinking time before the first answer</div></div></div>`;
+  // effort
+  const order=['flu','per','gue','rus','str'], colors={flu:'#059669',per:'#0891b2',gue:'#d97706',rus:'#dc2626',str:'#7c3aed'};
+  h+=`<h3 class="text-lg font-bold text-slate-800 mb-2">1. Effort check: how you got your answers</h3><div class="card mb-3"><div class="rp-bar mb-3">${order.filter(k=>cnt[k]).map(k=>`<div style="width:${cnt[k]/tot*100}%;background:${colors[k]}" title="${EFFORT[k].label}">${cnt[k]}</div>`).join('')}</div>
+   <div class="grid md:grid-cols-2 gap-x-6 gap-y-1 text-sm">${order.map(k=>`<div><span class="badge ${EFFORT[k].cls}">${EFFORT[k].label}</span> <strong>${cnt[k]}</strong> &nbsp;${EFFORT[k].long}</div>`).join('')}</div></div>`;
+  if(habitShare>=0.2){
+    h+=`<div class="warn mb-4 text-sm text-slate-800"><p class="font-bold">Work habit to fix: slow down on retries</p><p class="mt-1">On ${cnt.rus+cnt.gue} of ${tot} questions (${pct(habitShare)}) your attempts came very quickly, one after another. The three attempts are there for <em>thinking</em>, not for trying the next answer. After a wrong answer, do this before you click again:</p>
+    <ol class="list-decimal pl-6 mt-1"><li>Re-read the question and underline what is asked.</li><li>Look back at the worked example in the tab and find the step you skipped.</li><li>Change something in your method, then answer.</li></ol></div>`;
+  } else if(cnt.rus+cnt.gue===0){
+    h+=`<div class="key mb-4 text-sm text-slate-800"><strong>Good work habits.</strong> You did not rush to a solution on any question. Where an answer was wrong, you took time between attempts.</div>`;
+  } else {
+    h+=`<div class="key mb-4 text-sm text-slate-800"><strong>Mostly steady.</strong> A few questions (${cnt.rus+cnt.gue}) had very quick retries. They are marked in the table below. Slow down on those and compare with the worked solution.</div>`;
+  }
+  // concept table
+  const concRows=Object.keys(CONCEPTS).map(c=>({c, rows:rows.filter(r=>r.concept===c)})).filter(x=>x.rows.length);
+  h+=`<h3 class="text-lg font-bold text-slate-800 mt-6 mb-2">2. Results by concept</h3><div class="card mb-3 overflow-x-auto"><table class="rp"><tr><th>Concept</th><th>Questions</th><th>First attempt</th><th>Avg attempts</th><th>Effort flags</th><th>Understanding</th></tr>`;
+  const concAgg={};
+  concRows.forEach(({c,rows:rs})=>{ const g=aggregate(rs); concAgg[c]=g; const st=STAT[g.status];
+    h+=`<tr><td class="font-semibold">${CONCEPTS[c].label}</td><td>${g.n}</td><td>${g.first} of ${g.n}<div class="meter mt-1"><div style="width:${g.first/g.n*100}%"></div></div></td><td>${g.att.toFixed(1)}</td><td>${g.rush?`<span class="badge b-rus">${g.rush} quick</span>`:'<span class="text-slate-400">none</span>'}${g.str?` <span class="badge b-str">${g.str} struggled</span>`:''}</td><td><span class="badge ${st[1]}">${st[0]}</span></td></tr>`; });
+  h+='</table></div>';
+  // skills
+  h+=`<h3 class="text-lg font-bold text-slate-800 mt-6 mb-2">3. Results by skill</h3><div class="card mb-3 overflow-x-auto"><table class="rp"><tr><th>Skill</th><th>Questions</th><th>First attempt</th><th>Avg attempts</th><th>Effort flags</th><th>Level</th></tr>`;
+  const skAgg={};
+  Object.keys(SKILLS).forEach(k=>{ const rs=rows.filter(r=>r.skill===k); if(!rs.length) return; const g=aggregate(rs); skAgg[k]=g; const st=STAT[g.status];
+    h+=`<tr><td class="font-semibold">${SKILLS[k].label}</td><td>${g.n}</td><td>${g.first} of ${g.n}<div class="meter mt-1"><div style="width:${g.first/g.n*100}%"></div></div></td><td>${g.att.toFixed(1)}</td><td>${g.rush?`<span class="badge b-rus">${g.rush} quick</span>`:'<span class="text-slate-400">none</span>'}</td><td><span class="badge ${st[1]}">${st[0]}</span></td></tr>`; });
+  h+='</table></div>';
+  // heat map
+  h+=`<p class="text-sm font-bold text-slate-700 mt-4 mb-1">Concept by skill (each cell: average score, number of questions)</p><div class="card mb-3 overflow-x-auto"><table class="rp heat"><tr><th>Concept</th>${Object.keys(SKILLS).map(k=>`<th>${SKILLS[k].label.split(' (')[0]}</th>`).join('')}</tr>`;
+  concRows.forEach(({c,rows:rs})=>{ h+=`<tr><td class="font-semibold">${CONCEPTS[c].label}</td>`+Object.keys(SKILLS).map(k=>{ const cell=rs.filter(r=>r.skill===k); if(!cell.length) return '<td class="h text-slate-300">&ndash;</td>'; const sc=cell.reduce((a,r)=>a+r.score,0)/cell.length; const hue=Math.round(sc*120); return `<td class="h" style="background:hsl(${hue},70%,88%);color:hsl(${hue},60%,22%)">${Math.round(sc*100)}%<div class="text-xs font-semibold">${cell.length} q</div></td>`; }).join('')+'</tr>'; });
+  h+='</table></div>';
+  // study plan
+  const weak=concRows.map(x=>({c:x.c,g:concAgg[x.c]})).filter(x=>x.g.status!=='sec').sort((a,b)=>a.g.score-b.g.score);
+  h+=`<h3 class="text-lg font-bold text-slate-800 mt-6 mb-2">4. How to understand better: your study plan</h3>`;
+  if(!weak.length){
+    h+=`<div class="key text-sm text-slate-800 mb-3"><strong>Every concept looks secure.</strong> Next step: choose the skill with the lowest result in the table above and explain one solved <em>Reason</em> question aloud to a friend, step by step. Then try writing out the printable homework by hand.</div>`;
+  } else {
+    weak.forEach(({c,g})=>{ const cc=CONCEPTS[c], st=STAT[g.status];
+      h+=`<div class="card mb-3"><div class="flex items-center gap-2 flex-wrap mb-1"><span class="font-bold text-slate-800">${cc.label}</span><span class="badge ${st[1]}">${st[0]}</span><span class="text-xs text-slate-500">${g.first} of ${g.n} correct first time</span></div>`;
+      if(g.habit) h+=`<p class="text-sm text-amber-800 bg-amber-50 border-l-4 border-amber-400 rounded px-3 py-1 mb-2"><strong>First, slow down.</strong> Many attempts here were very quick, so the result may show haste more than a gap in understanding. Redo these questions carefully, writing each step.</p>`;
+      h+=`<ul class="list-disc pl-6 text-sm text-slate-700 space-y-1">${cc.tips.map(t=>`<li>${t}</li>`).join('')}</ul>
+        <div class="mt-2 flex items-center gap-2 flex-wrap"><button class="btn-ghost" onclick="openTab(null,'${cc.tab}')">Revisit: ${cc.where}</button></div></div>`; });
+  }
+  const weakSk=Object.keys(skAgg).filter(k=>skAgg[k].status!=='sec');
+  if(weakSk.length){
+    h+=`<div class="card mb-3"><p class="font-bold text-slate-800 mb-1">Skill advice</p><ul class="list-disc pl-6 text-sm text-slate-700 space-y-1">${weakSk.map(k=>`<li><strong>${SKILLS[k].label}.</strong> ${SKILLS[k].tips[0]}</li>`).join('')}</ul></div>`;
+  }
+  // question table
+  h+=`<details class="mt-4"><summary class="cursor-pointer font-bold text-slate-800 text-lg">5. Question by question</summary><div class="card mt-2 overflow-x-auto"><table class="rp"><tr><th>Question</th><th>Concept</th><th>Skill</th><th>Attempts</th><th>Result</th><th>Effort</th><th>Time before each attempt</th></tr>`;
+  rows.forEach(r=>{ const dots=r.log.map(a=>a.ok?'<span class="ok-t">&#10003;</span>':'<span class="bad-t">&#10007;</span>').join(' ');
+    h+=`<tr><td>${TAB_NAMES[r.tab].split(' ').slice(0,2).join(' ')} Q${r.no}</td><td>${CONCEPTS[r.concept].label}</td><td>${SKILLS[r.skill].label.split(' (')[0]}</td><td>${dots}</td><td>${r.ok?'Correct':'Revealed'}</td><td><span class="badge ${EFFORT[r.key].cls}">${EFFORT[r.key].label}</span>${r.repeated?' <span class="text-xs text-slate-500">repeated the same wrong answer</span>':''}</td><td class="text-xs text-slate-600">${r.log.map(a=>secs(a.dt)).join(', ')}</td></tr>`; });
+  h+='</table></div></details>';
+  h+=`<div class="mt-5 flex gap-2 flex-wrap no-print"><button class="btn" onclick="window.print()">Print or save this report</button><button class="btn-ghost" onclick="openTab(null,'t6')">Back to homework</button></div>`;
+  root.innerHTML=h; typeset(root);
+}
+
+window.addEventListener('DOMContentLoaded',()=>{
+  Object.keys(EX).forEach(mountEx);
+  Object.keys(EXMAP).forEach(id=>{ if(!TAGS[id]) console.error('missing tag for '+id); });
+  arUpdate(); opUpdate(); lbUpdate(); amUpdate(); sqUpdate(); rvUpdate(); svRender(); ffUpdate(); flUpdate(); dvUpdate(); hlUpdate();
+  Object.keys(EXMAP).forEach(id=>{ if(EXMAP[id].type==='fact') factPreview(id); });
+  refreshProgress(); buildReport(); typeset();
+});
+</script>
+</body>
+</html>

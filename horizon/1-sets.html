@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style id="tw">/*! tailwindcss v4.3.3 | MIT License | https://tailwindcss.com */
+@layer properties;
+@layer theme, base, components, utilities;
+@layer theme {
+  :root, :host {
+    --font-sans: "Avenir Next","Segoe UI",system-ui,sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
+    monospace;
+    --color-red-700: oklch(50.5% 0.213 27.518);
+    --color-amber-700: oklch(55.5% 0.163 48.998);
+    --color-emerald-700: oklch(50.8% 0.118 165.612);
+    --color-teal-50: #f1f3fb;
+    --color-teal-200: #c9d0ef;
+    --color-teal-600: #3b4fa8;
+    --color-teal-700: #33449a;
+    --color-slate-100: oklch(96.8% 0.007 247.896);
+    --color-slate-500: oklch(55.4% 0.046 257.417);
+    --color-slate-600: oklch(44.6% 0.043 257.281);
+    --color-slate-700: oklch(37.2% 0.044 257.287);
+    --color-slate-800: oklch(27.9% 0.041 260.031);
+    --spacing: 0.25rem;
+    --container-md: 28rem;
+    --text-xs: 0.75rem;
+    --text-xs--line-height: calc(1 / 0.75);
+    --text-sm: 0.875rem;
+    --text-sm--line-height: calc(1.25 / 0.875);
+    --text-base: 1rem;
+    --text-base--line-height: calc(1.5 / 1);
+    --text-lg: 1.125rem;
+    --text-lg--line-height: calc(1.75 / 1.125);
+    --text-xl: 1.25rem;
+    --text-xl--line-height: calc(1.75 / 1.25);
+    --text-2xl: 1.5rem;
+    --text-2xl--line-height: calc(2 / 1.5);
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --leading-relaxed: 1.625;
+    --radius-lg: 0.5rem;
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --default-font-family: var(--font-sans);
+    --default-mono-font-family: var(--font-mono);
+  }
+}
+@layer base {
+  *, ::after, ::before, ::backdrop, ::file-selector-button {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0 solid;
+  }
+  html, :host {
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    tab-size: 4;
+    font-family: var(--default-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji');
+    font-feature-settings: var(--default-font-feature-settings, normal);
+    font-variation-settings: var(--default-font-variation-settings, normal);
+    -webkit-tap-highlight-color: transparent;
+  }
+  hr {
+    height: 0;
+    color: inherit;
+    border-top-width: 1px;
+  }
+  abbr:where([title]) {
+    -webkit-text-decoration: underline dotted;
+    text-decoration: underline dotted;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+  a {
+    color: inherit;
+    -webkit-text-decoration: inherit;
+    text-decoration: inherit;
+  }
+  b, strong {
+    font-weight: bolder;
+  }
+  code, kbd, samp, pre {
+    font-family: var(--default-mono-font-family, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace);
+    font-feature-settings: var(--default-mono-font-feature-settings, normal);
+    font-variation-settings: var(--default-mono-font-variation-settings, normal);
+    font-size: 1em;
+  }
+  small {
+    font-size: 80%;
+  }
+  sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  sub {
+    bottom: -0.25em;
+  }
+  sup {
+    top: -0.5em;
+  }
+  table {
+    text-indent: 0;
+    border-color: inherit;
+    border-collapse: collapse;
+  }
+  :-moz-focusring:where(:not(iframe)) {
+    outline: auto;
+  }
+  progress {
+    vertical-align: baseline;
+  }
+  summary {
+    display: list-item;
+  }
+  ol, ul, menu {
+    list-style: none;
+  }
+  img, svg, video, canvas, audio, iframe, embed, object {
+    display: block;
+    vertical-align: middle;
+  }
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+  button, input, select, optgroup, textarea, ::file-selector-button {
+    font: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    border-radius: 0;
+    background-color: transparent;
+    opacity: 1;
+  }
+  :where(select:is([multiple], [size])) optgroup {
+    font-weight: bolder;
+  }
+  :where(select:is([multiple], [size])) optgroup option {
+    padding-inline-start: 20px;
+  }
+  ::file-selector-button {
+    margin-inline-end: 4px;
+  }
+  ::placeholder {
+    opacity: 1;
+  }
+  @supports (not (-webkit-appearance: -apple-pay-button))  or (contain-intrinsic-size: 1px) {
+    ::placeholder {
+      color: currentcolor;
+      @supports (color: color-mix(in lab, red, red)) {
+        color: color-mix(in oklab, currentcolor 50%, transparent);
+      }
+    }
+  }
+  textarea {
+    resize: vertical;
+  }
+  ::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+  ::-webkit-date-and-time-value {
+    min-height: 1lh;
+    text-align: inherit;
+  }
+  ::-webkit-datetime-edit {
+    display: inline-flex;
+  }
+  ::-webkit-datetime-edit-fields-wrapper {
+    padding: 0;
+  }
+  ::-webkit-datetime-edit, ::-webkit-datetime-edit-year-field, ::-webkit-datetime-edit-month-field, ::-webkit-datetime-edit-day-field, ::-webkit-datetime-edit-hour-field, ::-webkit-datetime-edit-minute-field, ::-webkit-datetime-edit-second-field, ::-webkit-datetime-edit-millisecond-field, ::-webkit-datetime-edit-meridiem-field {
+    padding-block: 0;
+  }
+  ::-webkit-calendar-picker-indicator {
+    line-height: 1;
+  }
+  :-moz-ui-invalid {
+    box-shadow: none;
+  }
+  button, input:where([type='button'], [type='reset'], [type='submit']), ::file-selector-button {
+    appearance: button;
+  }
+  ::-webkit-inner-spin-button, ::-webkit-outer-spin-button {
+    height: auto;
+  }
+  [hidden]:where(:not([hidden='until-found'])) {
+    display: none !important;
+  }
+}
+@layer utilities {
+  .fixed {
+    position: fixed;
+  }
+  .mx-auto {
+    margin-inline: auto;
+  }
+  .mt-1 {
+    margin-top: var(--spacing);
+  }
+  .mt-2 {
+    margin-top: calc(var(--spacing) * 2);
+  }
+  .mt-3 {
+    margin-top: calc(var(--spacing) * 3);
+  }
+  .mt-6 {
+    margin-top: calc(var(--spacing) * 6);
+  }
+  .mb-1 {
+    margin-bottom: var(--spacing);
+  }
+  .mb-2 {
+    margin-bottom: calc(var(--spacing) * 2);
+  }
+  .mb-3 {
+    margin-bottom: calc(var(--spacing) * 3);
+  }
+  .mb-4 {
+    margin-bottom: calc(var(--spacing) * 4);
+  }
+  .mb-5 {
+    margin-bottom: calc(var(--spacing) * 5);
+  }
+  .block {
+    display: block;
+  }
+  .flex {
+    display: flex;
+  }
+  .grid {
+    display: grid;
+  }
+  .hidden {
+    display: none;
+  }
+  .inline-block {
+    display: inline-block;
+  }
+  .w-full {
+    width: 100%;
+  }
+  .max-w-md {
+    max-width: var(--container-md);
+  }
+  .min-w-0 {
+    min-width: 0px;
+  }
+  .flex-1 {
+    flex: 1;
+  }
+  .cursor-pointer {
+    cursor: pointer;
+  }
+  .list-decimal {
+    list-style-type: decimal;
+  }
+  .list-disc {
+    list-style-type: disc;
+  }
+  .grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+  .items-center {
+    align-items: center;
+  }
+  .items-start {
+    align-items: flex-start;
+  }
+  .gap-2 {
+    gap: calc(var(--spacing) * 2);
+  }
+  .gap-3 {
+    gap: calc(var(--spacing) * 3);
+  }
+  :where(.space-y-1 > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(var(--spacing) * var(--tw-space-y-reverse));
+    margin-block-end: calc(var(--spacing) * calc(1 - var(--tw-space-y-reverse)));
+  }
+  .rounded-lg {
+    border-radius: var(--radius-lg);
+  }
+  .border-b-4 {
+    border-bottom-style: var(--tw-border-style);
+    border-bottom-width: 4px;
+  }
+  .border-teal-200 {
+    border-color: var(--color-teal-200);
+  }
+  .border-teal-600 {
+    border-color: var(--color-teal-600);
+  }
+  .bg-slate-100 {
+    background-color: var(--color-slate-100);
+  }
+  .bg-teal-50 {
+    background-color: var(--color-teal-50);
+  }
+  .p-3 {
+    padding: calc(var(--spacing) * 3);
+  }
+  .pl-5 {
+    padding-left: calc(var(--spacing) * 5);
+  }
+  .pl-6 {
+    padding-left: calc(var(--spacing) * 6);
+  }
+  .text-center {
+    text-align: center;
+  }
+  .text-2xl {
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
+  }
+  .text-base {
+    font-size: var(--text-base);
+    line-height: var(--tw-leading, var(--text-base--line-height));
+  }
+  .text-lg {
+    font-size: var(--text-lg);
+    line-height: var(--tw-leading, var(--text-lg--line-height));
+  }
+  .text-sm {
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
+  }
+  .text-xl {
+    font-size: var(--text-xl);
+    line-height: var(--tw-leading, var(--text-xl--line-height));
+  }
+  .text-xs {
+    font-size: var(--text-xs);
+    line-height: var(--tw-leading, var(--text-xs--line-height));
+  }
+  .leading-relaxed {
+    --tw-leading: var(--leading-relaxed);
+    line-height: var(--leading-relaxed);
+  }
+  .font-bold {
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+  }
+  .font-semibold {
+    --tw-font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
+  }
+  .text-amber-700 {
+    color: var(--color-amber-700);
+  }
+  .text-emerald-700 {
+    color: var(--color-emerald-700);
+  }
+  .text-red-700 {
+    color: var(--color-red-700);
+  }
+  .text-slate-500 {
+    color: var(--color-slate-500);
+  }
+  .text-slate-600 {
+    color: var(--color-slate-600);
+  }
+  .text-slate-700 {
+    color: var(--color-slate-700);
+  }
+  .text-slate-800 {
+    color: var(--color-slate-800);
+  }
+  .text-teal-700 {
+    color: var(--color-teal-700);
+  }
+  .italic {
+    font-style: italic;
+  }
+  .ease-out {
+    --tw-ease: var(--ease-out);
+    transition-timing-function: var(--ease-out);
+  }
+}
+@property --tw-space-y-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-leading {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ease {
+  syntax: "*";
+  inherits: false;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-space-y-reverse: 0;
+      --tw-border-style: solid;
+      --tw-leading: initial;
+      --tw-font-weight: initial;
+      --tw-ease: initial;
+    }
+  }
+}
+</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Horizon · Section 1 · The language of sets</title>
+
+<style>
+  body { font-family: 'Inter', system-ui, sans-serif; background-color: #f7f6fb; color: #0f172a; overflow-x: hidden; }
+  .tab-content { display: none; animation: fadeIn 0.4s ease-out; }
+  .tab-content.active { display: block; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+  input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; background: transparent; }
+  input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; height: 20px; width: 20px; border-radius: 50%; background: #3b4fa8; cursor: pointer; margin-top: -8px; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+  input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 6px; cursor: pointer; background: #cbd5e1; border-radius: 3px; }
+  .btn { background:#3b4fa8; color:#fff; font-weight:700; padding:.45rem 1rem; border-radius:.4rem; font-size:.875rem; transition:.15s; box-shadow:0 1px 2px rgba(0,0,0,.15); }
+  .btn:hover { background:#33449a; } .btn:disabled { background:#94a3b8; cursor:not-allowed; }
+  .btn-ghost { background:#fff; color:#33449a; border:2px solid #c9d0ef; font-weight:700; padding:.3rem .75rem; border-radius:.4rem; font-size:.8rem; transition:.15s; }
+  .btn-ghost:hover { background:#eef0fa; border-color:#3b4fa8; } .btn-ghost.on { background:#3b4fa8; color:#fff; border-color:#3b4fa8; }
+  .card { background:#fff; border:1px solid #e2e8f0; border-radius:.75rem; padding:1.25rem; }
+  .key { background:#eef0fa; border-left:5px solid #3b4fa8; border-radius:.5rem; padding:1rem 1.25rem; }
+  .warn { background:#fffbeb; border-left:5px solid #f59e0b; border-radius:.5rem; padding:1rem 1.25rem; }
+  .step-badge { display:inline-flex; align-items:center; justify-content:center; width:1.75rem; height:1.75rem; border-radius:9999px; background:#3b4fa8; color:#fff; font-weight:800; font-size:.85rem; flex-shrink:0; }
+  .ex-card { background:#fff; border:1px solid #cbd5e1; border-radius:.75rem; padding:1.1rem 1.25rem; margin-bottom:1rem; }
+  .ex-card.ok { border-color:#34d399; background:#f0fdf4; } .ex-card.bad { border-color:#fca5a5; background:#fef2f2; }
+  .qnum { width:2rem; height:2rem; border-radius:.5rem; background:#1c2230; color:#fff; font-weight:800; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .inp { border:2px solid #cbd5e1; border-radius:.4rem; padding:.45rem .7rem; font-family: ui-monospace, monospace; font-weight:700; width:100%; max-width:22rem; }
+  .inp:focus { outline:none; border-color:#3b4fa8; box-shadow:0 0 0 3px #c9d0ef; }
+  .opt { display:block; width:100%; text-align:left; border:2px solid #cbd5e1; background:#fff; border-radius:.5rem; padding:.5rem .8rem; margin-bottom:.4rem; font-size:.9rem; transition:.15s; }
+  .opt:hover { border-color:#3b4fa8; background:#eef0fa; } .opt.sel { border-color:#3b4fa8; background:#dde2f6; font-weight:700; }
+  .opt.right { border-color:#10b981; background:#d1fae5; } .opt.wrong { border-color:#ef4444; background:#fee2e2; }
+  .chip { display:inline-flex; align-items:center; justify-content:center; min-width:2.6rem; height:2.4rem; padding:0 .5rem; border:2px solid #cbd5e1; border-radius:.5rem; background:#fff; font-weight:700; cursor:pointer; transition:.15s; user-select:none; }
+  .chip:hover { border-color:#3b4fa8; background:#eef0fa; transform:translateY(-2px); }
+  .chip.selA { background:#c9d0ef; border-color:#3b4fa8; color:#1c2230; } .chip.selB { background:#fde68a; border-color:#d97706; color:#78350f; }
+  .chip.pos { background:#ecfeff; border-color:#22d3ee; color:#155e75; } .chip.neg { background:#fff1f2; border-color:#fb7185; color:#9f1239; }
+  .chip.pick { outline:4px solid #f59e0b; }
+  .chip.static { cursor:default; } .chip.static:hover { transform:none; }
+  .sol-box { background:#f0fdf4; border:1px solid #bbf7d0; border-radius:.6rem; padding:1rem 1.2rem; } .sol-box.fail { background:#fff7ed; border-color:#fed7aa; }
+  .lvl { background:#1c2230; color:#fff; border-radius:.6rem; padding:.6rem 1rem; font-weight:800; margin:1.5rem 0 .8rem; }
+  .tab-done::after { content:" ✓"; color:#10b981; }
+  .ok-t { color:#047857; font-weight:700; } .bad-t { color:#b91c1c; font-weight:700; }
+  table.tb { border-collapse:collapse; font-size:.85rem; } table.tb th, table.tb td { border:1px solid #cbd5e1; padding:.35rem .6rem; text-align:center; }
+  table.tb th { background:#eef0fa; }
+  .tech { background:#fff; border:1px solid #c9d0ef; border-left:6px solid #3b4fa8; border-radius:.6rem; padding:1rem 1.2rem; margin-bottom:1rem; }
+  .tech .tt { font-weight:800; color:#33449a; margin-bottom:.35rem; }
+  .eg { background:#f8fafc; border:1px dashed #94a3b8; border-radius:.5rem; padding:.6rem .9rem; margin-top:.5rem; font-size:.9rem; }
+  .turn { display:inline-block; background:#fef3c7; color:#92400e; font-weight:800; font-size:.72rem; padding:.1rem .5rem; border-radius:9999px; margin-bottom:.4rem; }
+  .chip.sm { min-width:2.1rem; height:2rem; font-size:.8rem; padding:0 .3rem; }
+  .chip.prime { background:#c9d0ef; border-color:#3b4fa8; color:#1c2230; }
+  .chip.struck { background:#f7f6fb; color:#94a3b8; text-decoration:line-through; border-color:#e2e8f0; }
+  .chip.one { background:#fee2e2; border-color:#f87171; color:#991b1b; }
+  .chip.oddd { background:#fef3c7; border-color:#f59e0b; color:#78350f; }
+  .dot { width:1.15rem; height:1.15rem; border-radius:9999px; background:#5b6cc0; display:inline-block; }
+  .dot.b { background:#f59e0b; }
+  sup { font-size:.7em; }
+
+  /* ---- V2 additions ---- */
+  .qtext p { margin:.4rem 0; } .qtext p:first-child { margin-top:0; } .qtext p:last-child { margin-bottom:0; }
+  .qtext ul { list-style:disc; padding-left:1.4rem; margin:.4rem 0; } .qtext li { margin:.15rem 0; }
+  .qlabel { display:inline-block; background:#dde2f6; color:#1c2230; font-weight:800; font-size:.78rem; letter-spacing:.02em; padding:.1rem .65rem; border-radius:9999px; }
+  .hint { background:#fffbeb; border-left:4px solid #f59e0b; padding:.4rem .75rem; border-radius:.35rem; font-size:.88rem; color:#78350f; }
+  .codetab { margin:.2rem 0 .5rem; } .codetab td, .codetab th { min-width:2.1rem; padding:.2rem .35rem; }
+  .codetab th { background:#dde2f6; }
+  mjx-container[display="true"] { overflow-x:auto; overflow-y:hidden; max-width:100%; }
+  .fprev { margin-top:.55rem; border:2px dashed #a7b2e2; background:#eef0fa; border-radius:.5rem; padding:.4rem .8rem; min-height:3rem; max-width:34rem; }
+  .fprev .lab { font-size:.68rem; font-weight:800; color:#33449a; text-transform:uppercase; letter-spacing:.05em; display:block; }
+  .fprev .msg { font-size:.85rem; color:#475569; }
+  kbd.k { background:#f7f6fb; border:1px solid #94a3b8; border-bottom-width:3px; border-radius:.3rem; padding:0 .4rem; font-family:ui-monospace,monospace; font-weight:700; font-size:.85em; }
+  .proof { background:#fff; border:2px solid #33449a; border-radius:.75rem; padding:1.1rem 1.3rem; margin-bottom:1.2rem; }
+  .proof .ph { font-weight:800; color:#33449a; font-size:1.05rem; margin-bottom:.4rem; }
+  .proof .ps { margin:.7rem 0; padding-left:.9rem; border-left:4px solid #c9d0ef; font-size:.92rem; color:#1e293b; }
+  .proof .ps b.n { color:#33449a; }
+  .rp-tile { background:#f8fafc; border:1px solid #cbd5e1; border-radius:.6rem; padding:.7rem .9rem; text-align:center; }
+  .rp-tile .v { font-size:1.6rem; font-weight:800; color:#1c2230; } .rp-tile .l { font-size:.72rem; color:#475569; font-weight:700; }
+  .badge { display:inline-block; font-size:.72rem; font-weight:800; padding:.1rem .55rem; border-radius:9999px; white-space:nowrap; }
+  .b-sec { background:#d1fae5; color:#065f46; } .b-dev { background:#fef3c7; color:#92400e; } .b-need { background:#fee2e2; color:#991b1b; }
+  .b-flu { background:#d1fae5; color:#065f46; } .b-per { background:#cffafe; color:#155e75; } .b-gue { background:#fef3c7; color:#92400e; } .b-rus { background:#fee2e2; color:#991b1b; } .b-str { background:#ede9fe; color:#5b21b6; }
+  .rp-bar { display:flex; height:1.6rem; border-radius:.4rem; overflow:hidden; border:1px solid #cbd5e1; }
+  .rp-bar div { display:flex; align-items:center; justify-content:center; font-size:.72rem; font-weight:800; color:#fff; }
+  .meter { height:.6rem; background:#e2e8f0; border-radius:9999px; overflow:hidden; min-width:6rem; } .meter > div { height:100%; background:#3b4fa8; }
+  table.rp { border-collapse:collapse; width:100%; font-size:.84rem; } table.rp th, table.rp td { border-bottom:1px solid #e2e8f0; padding:.45rem .5rem; text-align:left; vertical-align:top; }
+  table.rp th { background:#eef0fa; font-size:.75rem; text-transform:uppercase; letter-spacing:.03em; color:#33449a; }
+  .heat td.h { text-align:center; font-weight:800; border-radius:.3rem; }
+  .toast { position:fixed; right:1rem; bottom:1rem; background:#1c2230; color:#fff; padding:.8rem 1.1rem; border-radius:.6rem; box-shadow:0 6px 18px rgba(0,0,0,.3); z-index:50; max-width:20rem; font-size:.9rem; }
+  @media print { body { background:#fff; } .toast, .tab-link, .no-print { display:none !important; } }
+
+  .tutor{border:2px solid #3b4fa8;border-radius:18px;background:#fff;padding:1rem}
+  .tutor .who{font-size:.85rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#3b4fa8;margin-bottom:.3rem}
+  .tq{font-size:1.08rem;margin:.5rem 0 .7rem;line-height:1.6}
+  .tbtns{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.4rem}
+  .tutor .tbtns .btn{background:#fff;color:#1c2230;border:2px solid #c9d0ef;box-shadow:none;font-weight:600}
+  .tutor .tbtns .btn:hover{border-color:#3b4fa8;background:#eef0fa}
+  .tutor .tbtns .btn:disabled{opacity:.45;background:#fff;color:#64748b;text-decoration:line-through}
+  .tutor .tbtns .btn.primary{background:#3b4fa8;color:#fff;border-color:#3b4fa8}
+  .tfb{border-radius:10px;padding:.5rem .8rem;margin:.4rem 0;font-size:.95rem}
+  .tfb.ok{background:#e5f4ea;color:#24683b}.tfb.no{background:#fdecea;color:#9b2c2c}
+  .steps-dots{display:flex;gap:5px;margin-bottom:.3rem}.steps-dots i{width:22px;height:6px;border-radius:3px;background:#dcd8e6}.steps-dots i.on{background:#3b4fa8}
+  details.pf summary{cursor:pointer}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script>
+/* MathJax-compatible shim: the lesson code calls MathJax.typesetPromise; we render with KaTeX */
+window.MathJax={typesetPromise:function(els){try{(els&&els.length?els:[document.body]).forEach(function(e){if(e&&window.renderMathInElement)renderMathInElement(e,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false}],throwOnError:false,ignoredClasses:['nomath']})})}catch(err){}return Promise.resolve()}};
+</script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%20role%3D%22img%22%20aria-label%3D%22%E7%94%B3%20Shen%20Studio%22%3E%3Crect%20width%3D%22100%22%20height%3D%22100%22%20rx%3D%2212%22%20fill%3D%22%23B3261E%22/%3E%3Cpath%20d%3D%22M41.57%2027.7V42.46H27.58V27.7ZM15.1%2025.34V70.78H16.95C22.18%2070.78%2027.58%2067.91%2027.58%2066.65V62.18H41.57V90H44.01C48.82%2090%2054.3%2086.88%2054.3%2085.62V62.18H68.97V68.93H71.07C75.37%2068.93%2081.53%2066.65%2081.61%2065.89V29.64C83.38%2029.3%2084.39%2028.55%2084.9%2027.87L73.69%2019.19L68.12%2025.34H54.3V13.96C56.74%2013.62%2057.33%2012.7%2057.5%2011.52L41.57%2010V25.34H28.42L15.1%2020.2ZM54.3%2027.7H68.97V42.46H54.3ZM41.57%2059.82H27.58V44.82H41.57ZM54.3%2059.82V44.82H68.97V59.82Z%22%20fill%3D%22%23FFFFFF%22/%3E%3C/svg%3E">
+<style id="shen-brand">
+.shen-footer{display:flex;align-items:center;justify-content:center;gap:8px;padding:18px 12px 26px;font:500 13px/1.3 Inter,"Helvetica Neue",Arial,sans-serif;color:#6B6458;letter-spacing:.03em;text-align:center}
+.shen-footer svg{width:20px;height:20px;flex-shrink:0}
+.shen-footer b{font-weight:600;color:#1A1A1A}
+.shen-print-mark{display:none}
+@media print{.shen-footer{display:none!important}
+.shen-print-mark{display:flex!important;position:fixed;right:0;bottom:0;align-items:center;gap:1.5mm;font:500 7.5pt/1 Inter,Arial,sans-serif;color:#555;opacity:.75;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.shen-print-mark svg{width:4mm;height:4mm}}
+</style>
+<style id="home-link">
+.homebtn{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 12px;border:1px solid var(--line,#ddd);border-radius:999px;background:#fff;color:var(--ink,#1c2230);text-decoration:none;font:600 .88rem/1 Inter,system-ui,sans-serif;white-space:nowrap;flex-shrink:0}
+.homebtn:hover{background:#f1eff6}
+.homebtn svg{width:16px;height:16px}
+@media print{.homebtn{display:none!important}}
+</style>
+<style id="hz">/* ===== Horizon lessons on the Maths Atlas theme ===== */
+:root{--ink:#1c2230;--muted:#5b6475;--paper:#f7f6fb;--line:#e2e0ea;--a:#3b4fa8;--a-soft:#e8ebf8;--b:#b5487a;--hz:#d4693a;--hz-soft:#fdf0e8}
+html,body{margin:0;padding:0}
+body{background:var(--paper)!important;color:var(--ink);font:17px/1.62 "Avenir Next","Segoe UI",system-ui,-apple-system,sans-serif!important;overflow-x:hidden}
+h1,h2,h3,h4{font-family:Georgia,"Times New Roman",serif}
+h2{color:var(--ink)}
+header.top{position:sticky;top:0;z-index:30;background:rgba(247,246,251,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.topin{max-width:980px;margin:0 auto;padding:.55rem 1rem .35rem;display:flex;align-items:center;gap:.8rem;flex-wrap:wrap}
+.brand{font-family:Georgia,serif;font-weight:600;font-size:1.02rem;flex:1;min-width:180px;line-height:1.3}
+.brand .hzk{display:inline-block;font:700 .66rem/1 "Avenir Next",system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#fff;background:linear-gradient(90deg,#2b2350,var(--hz));border-radius:999px;padding:.28rem .6rem;margin-right:.4rem;vertical-align:2px}
+.brand small{display:block;font-weight:400;color:var(--muted);font-size:.84rem}
+.prog{font-size:.82rem;color:var(--muted);text-align:right;white-space:nowrap}
+nav.tabs{max-width:980px;margin:0 auto;display:flex;gap:.35rem;overflow-x:auto;padding:.1rem 1rem .6rem;scrollbar-width:thin}
+nav.tabs .tab-link{flex:0 0 auto;border:1px solid var(--line)!important;background:#fff!important;color:var(--ink)!important;border-radius:999px!important;padding:.32rem .8rem!important;font:400 .9rem/1.4 "Avenir Next",system-ui,sans-serif!important;cursor:pointer;white-space:nowrap}
+nav.tabs .tab-link.border-teal-600{background:var(--ink)!important;color:#fff!important;border-color:var(--ink)!important}
+nav.tabs .tab-link.tab-done::after{color:#2f8a4c}
+nav.tabs .tab-link.border-teal-600.tab-done::after{color:#9be3b0}
+main.hzmain{max-width:980px;margin:0 auto;padding:1.4rem 1rem 3rem}
+main.hzmain h2{font-size:1.65rem!important}
+main.hzmain .card{border-color:var(--line)}
+.katex{font-size:1.06em}
+.katex-display{overflow-x:auto;overflow-y:hidden;padding:2px 0}
+input,select,button,textarea{font-family:inherit}
+@media print{header.top{position:static}}
+
+.hzr h3{font-size:1.15rem;margin:1.4rem 0 .4rem;font-weight:600}
+.hzr .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:.8rem 1rem;margin:.5rem 0}
+.hzr-t{overflow-x:auto}.hzr-t table{width:100%;border-collapse:collapse}
+.hzr-t td{padding:.3rem .35rem;vertical-align:middle;font-size:.95rem}
+.hzr-t td:last-child{white-space:nowrap;font-size:.82rem}
+.hzr-ul{list-style:disc;padding-left:1.2rem;margin:.2rem 0}.hzr-ul li{margin:.25rem 0}
+@media(max-width:480px){.hzr-t td:nth-child(2){min-width:70px}.hzr-t td:nth-child(2) div{min-width:60px!important}}
+.codetab,table.tb,table.rp{display:block;overflow-x:auto;max-width:100%}
+</style>
+</head>
+<body>
+<header class="top"><div class="topin"><a class="homebtn" href="../index.html#horizon" aria-label="Back to the Maths Atlas home page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>Home</a><div class="brand"><span class="hzk">Horizon</span>Chapter 1 · Sets and Integers<small>Section 1 · The language of sets: sets, subsets and Venn diagrams</small></div><div class="prog"><span id="prog-count">0</span> / <span id="prog-total">0</span> done</div></div><nav class="tabs" id="tabs"><button type="button" class="tab-link text-teal-700 border-b-4 border-teal-600 font-bold" data-tab="t1" onclick="openTab(event,'t1')">1. What is a set?</button><button type="button" class="tab-link" data-tab="t2" onclick="openTab(event,'t2')">2. Subsets &amp; power set</button><button type="button" class="tab-link" data-tab="t3" onclick="openTab(event,'t3')">3. Set operations</button><button type="button" class="tab-link" data-tab="t4" onclick="openTab(event,'t4')">4. Counting with Venn</button><button type="button" class="tab-link" data-tab="t5" onclick="openTab(event,'t5')">5. Homework</button><button type="button" class="tab-link" data-tab="t6" onclick="openTab(event,'t6')">6. Learning report</button></nav></header>
+<main class="hzmain">
+  <!-- ================= TAB 1 ================= -->
+  <div id="t1" class="tab-content active">
+    <h2 class="text-2xl font-bold text-slate-800 mb-1">Step 1: What Is a Set?</h2>
+    <p class="text-slate-600 mb-5">Before numbers, before equations, mathematics starts with something simpler: <strong>putting things together into a collection</strong>. That collection is called a <em>set</em>, and its language will follow you through every chapter of this course.</p>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">1</span><h3 class="text-lg font-bold text-slate-800">A set is a well-defined collection</h3></div>
+    <div class="key mb-4 text-sm text-slate-800">
+      <p>A <strong>set</strong> is a collection of distinct objects, called its <strong>elements</strong>. We write the elements inside curly brackets: $V=\{\text{carrot},\ \text{broccoli},\ \text{spinach}\}$.</p>
+      <ul class="list-disc pl-6 mt-2 space-y-1">
+        <li><strong>Well-defined:</strong> for any object you must be able to say <em>yes, it is in</em> or <em>no, it is not</em>. “The vowels” is a set. “Nice songs” is not, because people disagree.</li>
+        <li><strong>Order does not matter:</strong> $\{1,2,3\}=\{3,1,2\}$.</li>
+        <li><strong>Repeats do not count:</strong> $\{1,1,2,3\}=\{1,2,3\}$. Each element is listed once.</li>
+      </ul>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">2</span><h3 class="text-lg font-bold text-slate-800">Belonging: $\in$ and $\notin$</h3></div>
+    <div class="tech">
+      <div class="tt">Technique 1: read the symbols aloud</div>
+      <p class="text-sm text-slate-700">$x\in A$ reads “$x$ <strong>is an element of</strong> $A$”. $x\notin A$ reads “$x$ is <strong>not</strong> an element of $A$”.</p>
+      <div class="eg"><p><strong>Example.</strong> $V=\{\text{carrot},\ \text{broccoli},\ \text{spinach}\}$. Then $\text{spinach}\in V$ and $\text{apple}\notin V$.</p></div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3 mt-6"><span class="step-badge">3</span><h3 class="text-lg font-bold text-slate-800">Two ways to describe a set</h3></div>
+    <div class="tech">
+      <div class="tt">Technique 2: list it, or give the rule</div>
+      <p class="text-sm text-slate-700"><strong>Roster form</strong> lists the elements: $\{\text{January},\ \text{June},\ \text{July}\}$. <strong>Set-builder form</strong> gives the rule: $\{x : x \text{ is a month starting with J}\}$, read “the set of all $x$ <strong>such that</strong> $x$ is a month starting with J”.</p>
+      <div class="eg"><p><strong>Example.</strong> $L=\{x : x \text{ is a letter of the word BANANA}\}$. Go through the word and keep each letter once: $L=\{\text{B},\ \text{A},\ \text{N}\}$.</p></div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3 mt-6"><span class="step-badge">4</span><h3 class="text-lg font-bold text-slate-800">Counting elements: $n(A)$ and the empty set</h3></div>
+    <div class="key mb-4 text-sm text-slate-800">
+      <p>$n(A)$ is the <strong>number of distinct elements</strong> in $A$ (its <em>cardinality</em>). For the set $L$ above, $n(L)=3$, not $6$.</p>
+      <p class="mt-2">The <strong>empty set</strong> has no elements at all. We write it $\varnothing$ or $\{\ \}$, and $n(\varnothing)=0$.</p>
+    </div>
+    <div class="warn mb-5 text-sm text-slate-800"><p><strong>Trap.</strong> $\{0\}$ is <em>not</em> empty: it has one element, the number $0$. And $\{\varnothing\}$ is not empty either: it is a box containing one empty box.</p></div>
+
+    <div class="tutor mb-5"><div class="who">Let's do it together</div><div id="tt1"></div></div>
+
+    <p class="text-sm font-bold text-slate-700 mb-2">Try it: the Set Machine</p>
+    <div class="card mb-5">
+      <p class="text-sm text-slate-600 mb-2">Type a word. The machine builds $\{x : x \text{ is a letter of the word}\}$ and counts its elements.</p>
+      <input type="text" id="sm-w" class="inp" value="MISSISSIPPI" oninput="smUpdate()">
+      <div id="sm-out" class="mt-3 text-base"></div>
+    </div>
+
+    <details class="card mb-5"><summary class="font-bold text-slate-800 cursor-pointer">Write it like a mathematician (optional): the LaTeX behind the symbols</summary>
+      <p class="text-sm text-slate-700 mt-2">Mathematicians type symbols with short commands: <code>\in</code> gives $\in$, <code>\notin</code> gives $\notin$, <code>\varnothing</code> gives $\varnothing$, and <code>\{ \}</code> gives curly brackets. Try it:</p>
+      <input type="text" id="lx1" class="inp mt-2" value="\text{Apple} \in \{\text{Apple},\ \text{Banana}\}" oninput="lxUpdate(1)">
+      <div id="lx1-out" class="mt-2 text-lg"></div>
+    </details>
+
+    <h3 class="text-xl font-bold text-slate-800 mb-3 bg-slate-100 p-3 rounded-lg inline-block">Check your understanding</h3>
+    <div id="ex-t1"></div>
+  </div>
+
+  <!-- ================= TAB 2 ================= -->
+  <div id="t2" class="tab-content">
+    <h2 class="text-2xl font-bold text-slate-800 mb-1">Step 2: Subsets and the Power Set</h2>
+    <p class="text-slate-600 mb-5">Sets can sit <strong>inside</strong> other sets. The positive integers sit inside the integers; your class sits inside your school. This idea, the subset, is how mathematicians organise every family of numbers.</p>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">1</span><h3 class="text-lg font-bold text-slate-800">Subsets: $\subseteq$ and $\subset$</h3></div>
+    <div class="key mb-4 text-sm text-slate-800">
+      <p>$A\subseteq B$ (“$A$ is a <strong>subset</strong> of $B$”) means <strong>every element of $A$ is also in $B$</strong>.</p>
+      <p class="mt-1">$A\subset B$ (“<strong>proper</strong> subset”) means $A\subseteq B$ and $A\neq B$: $B$ has at least one extra element.</p>
+      <ul class="list-disc pl-6 mt-2 space-y-1">
+        <li>Every set is a subset of itself: $A\subseteq A$.</li>
+        <li>The empty set is a subset of every set: there is nothing in $\varnothing$ that could fail the test.</li>
+      </ul>
+    </div>
+    <div class="tech">
+      <div class="tt">Technique 1: check element by element</div>
+      <p class="text-sm text-slate-700">To test $A\subseteq B$, take each element of $A$ in turn and ask “is it in $B$?”. One “no” is enough to say $A\not\subseteq B$.</p>
+      <div class="eg"><p><strong>Example.</strong> $\{2,4\}\subseteq\{1,2,3,4\}$: $2$ ✔, $4$ ✔. But $\{2,5\}\not\subseteq\{1,2,3,4\}$ because $5$ is not in the bigger set.</p></div>
+    </div>
+    <div class="warn mb-5 text-sm text-slate-800"><p><strong>Trap: $\in$ or $\subseteq$?</strong> An <em>element</em> belongs ($\in$); a <em>set</em> is a subset ($\subseteq$). So $2\in\{1,2\}$ but $\{2\}\subseteq\{1,2\}$. Writing $2\subseteq\{1,2\}$ is wrong: $2$ is a number, not a set.</p></div>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">2</span><h3 class="text-lg font-bold text-slate-800">How many subsets? The doubling rule</h3></div>
+    <div class="key mb-4 text-sm text-slate-800">
+      <p>List every subset of $\{a,b\}$: $\varnothing,\ \{a\},\ \{b\},\ \{a,b\}$. That is $4$. For $\{a,b,c\}$ there are $8$. The set of <strong>all</strong> subsets of $A$ is called the <strong>power set</strong> of $A$.</p>
+    </div>
+    <div class="proof">
+      <div class="ph">Theorem 1: a set with $n$ elements has $2^n$ subsets</div>
+      <p class="text-sm">If $n(A)=n$, then $A$ has exactly $2^n$ subsets, and $2^n-1$ of them are proper subsets.</p>
+      <div class="eg"><p><strong>Example 1.</strong> Pizza toppings $\{\text{ham},\ \text{cheese},\ \text{olive}\}$: $2^3=8$ possible pizzas, from plain (the empty set) to everything.</p>
+        <p class="mt-1"><strong>Example 2.</strong> A set with $10$ elements has $2^{10}=1024$ subsets. Listing them by hand is hopeless; the rule counts them instantly.</p>
+        <p class="mt-1"><strong>Example 3.</strong> Subsets of $\{1,2,3,4,5\}$ that contain $1$: the $1$ is fixed “in”, and the other $4$ elements each choose freely, so $2^4=16$.</p></div>
+      <details class="pf"><summary>Show the proof (optional reading for the curious)</summary>
+      <div class="ps">To build a subset, go through the $n$ elements one at a time and decide <strong>in</strong> or <strong>out</strong>. Each element gives $2$ choices, and the choices are independent, so there are $2\times2\times\cdots\times2=2^n$ ways. Different choices give different subsets, and every subset arises this way. Exactly one of them is $A$ itself, so $2^n-1$ are proper. $\blacksquare$</div>
+      </details>
+    </div>
+
+    <div class="tutor mb-5"><div class="who">Let's do it together</div><div id="tt2"></div></div>
+
+    <p class="text-sm font-bold text-slate-700 mb-2">Try it: the Subset Builder</p>
+    <div class="card mb-5">
+      <div class="flex items-center gap-3 flex-wrap mb-2"><span class="text-sm font-bold">Number of elements: <span id="sb-nv">3</span></span><input type="range" id="sb-n" min="1" max="5" value="3" oninput="sbUpdate()" style="max-width:14rem"></div>
+      <p class="text-sm text-slate-600 mb-2">Click the elements to switch them in or out. Your subset is shown, and every subset is listed below: watch the count double each time you add an element.</p>
+      <div id="sb-chips" class="flex flex-wrap gap-2 mb-2"></div>
+      <div id="sb-out" class="text-base mb-2"></div>
+      <div id="sb-all" class="text-sm"></div>
+    </div>
+
+    <h3 class="text-xl font-bold text-slate-800 mb-3 bg-slate-100 p-3 rounded-lg inline-block">Check your understanding</h3>
+    <div id="ex-t2"></div>
+  </div>
+
+  <!-- ================= TAB 3 ================= -->
+  <div id="t3" class="tab-content">
+    <h2 class="text-2xl font-bold text-slate-800 mb-1">Step 3: The Universal Set and Set Operations</h2>
+    <p class="text-slate-600 mb-5">Now we combine sets. To talk about what is <em>outside</em> a set, we first need to agree on <strong>everything</strong> we are talking about.</p>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">1</span><h3 class="text-lg font-bold text-slate-800">The universal set and the complement</h3></div>
+    <div class="key mb-4 text-sm text-slate-800">
+      <p>The <strong>universal set</strong> $\mathscr{E}$ contains every object under discussion. The <strong>complement</strong> $A'$ is everything in $\mathscr{E}$ that is <strong>not</strong> in $A$.</p>
+      <div class="eg"><p><strong>Example.</strong> $\mathscr{E}=\{\text{red, orange, yellow,}$ $\text{green, blue, purple}\}$ and $A=\{\text{red, yellow, blue}\}$. Then $A'=\{\text{orange, green, purple}\}$ and $n(A)+n(A')=n(\mathscr{E})=6$.</p></div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">2</span><h3 class="text-lg font-bold text-slate-800">Intersection, union and difference</h3></div>
+    <div class="tech">
+      <div class="tt">Technique 1: three operations, three words</div>
+      <ul class="list-disc pl-6 text-sm text-slate-700 space-y-1">
+        <li>$A\cap B$ (<strong>intersection</strong>, “and”): elements in <strong>both</strong> $A$ and $B$.</li>
+        <li>$A\cup B$ (<strong>union</strong>, “or”): elements in $A$ <strong>or</strong> $B$ <strong>or both</strong>, each listed once.</li>
+        <li>$A\setminus B$ (<strong>difference</strong>, “but not”): elements in $A$ that are <strong>not</strong> in $B$. It is the same as $A\cap B'$.</li>
+      </ul>
+      <div class="eg"><p><strong>Example.</strong> Piano $P=\{\text{Lucas, Chloe, Oliver, Ella}\}$, violin $V=\{\text{Chloe, Ella, Jackson}\}$.</p>
+        <p class="mt-1">$P\cap V=\{\text{Chloe, Ella}\}$, $P\cup V=\{\text{Lucas, Chloe, Oliver,}$ $\text{Ella, Jackson}\}$, $P\setminus V=\{\text{Lucas, Oliver}\}$.</p></div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3 mt-6"><span class="step-badge">3</span><h3 class="text-lg font-bold text-slate-800">The Venn diagram: four regions</h3></div>
+    <div class="key mb-4 text-sm text-slate-800">
+      <p>Two overlapping circles inside a rectangle cut $\mathscr{E}$ into <strong>four regions</strong>: only $A$, both, only $B$, and outside both. Every element lands in <strong>exactly one</strong> region. Each operation is just a choice of regions to shade.</p>
+    </div>
+    <p class="text-sm font-bold text-slate-700 mb-2">Try it: the Region Shader</p>
+    <div class="card mb-5">
+      <div class="flex flex-wrap gap-2 mb-3" id="vs-btns"></div>
+      <div id="vs-svg" class="max-w-md mx-auto"></div>
+      <div id="vs-desc" class="text-center font-bold mt-2"></div>
+    </div>
+
+    <div class="tutor mb-5"><div class="who">Let's do it together</div><div id="tt3"></div></div>
+
+    <p class="text-sm font-bold text-slate-700 mb-2">Try it: the Venn Sorter</p>
+    <div class="card mb-5">
+      <p class="text-sm text-slate-600 mb-2">$\mathscr{E}=\{1,2,\ldots,20\}$. Choose the rules for $A$ and $B$ and watch every number drop into its region.</p>
+      <div class="flex flex-wrap gap-3 mb-3 text-sm"><label class="font-bold">A: <select id="vr-a" class="inp" style="width:auto;font-family:inherit" onchange="vrUpdate()"></select></label><label class="font-bold">B: <select id="vr-b" class="inp" style="width:auto;font-family:inherit" onchange="vrUpdate()"></select></label></div>
+      <div id="vr-svg" class="max-w-md mx-auto"></div>
+      <div id="vr-out" class="text-sm mt-2"></div>
+    </div>
+
+    <h3 class="text-xl font-bold text-slate-800 mb-3 bg-slate-100 p-3 rounded-lg inline-block">Check your understanding</h3>
+    <p class="text-sm text-slate-600 mb-3">For the shading questions: tap regions of the diagram to shade or unshade them, then check.</p>
+    <div id="ex-t3"></div>
+  </div>
+
+  <!-- ================= TAB 4 ================= -->
+  <div id="t4" class="tab-content">
+    <h2 class="text-2xl font-bold text-slate-800 mb-1">Step 4: Counting with Venn Diagrams</h2>
+    <p class="text-slate-600 mb-5">Surveys ask “how many like this, how many like that?”. A Venn diagram turns a confusing list of numbers into four tidy regions. The secret is the order you fill them in.</p>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">1</span><h3 class="text-lg font-bold text-slate-800">Fill from the inside out</h3></div>
+    <div class="tech">
+      <div class="tt">Technique 1: middle first, then the “only” parts, then outside</div>
+      <ol class="list-decimal pl-6 text-sm text-slate-700 space-y-1">
+        <li>Write the <strong>overlap</strong> (both) in the middle.</li>
+        <li>Only $A$ $=n(A)-$ both. Only $B$ $=n(B)-$ both.</li>
+        <li>Outside (neither) $=n(\mathscr{E})-$ (everything inside the circles).</li>
+      </ol>
+      <div class="eg"><p><strong>Worked example.</strong> In a class of $30$, $18$ study Art, $16$ study Music and $4$ study neither. How many study both?</p>
+        <p class="mt-1">Inside the circles: $30-4=26$ students. But $18+16=34$, which is $8$ too many: those $8$ students were counted twice, once in each circle. So <strong>$8$ study both</strong>. Then only Art $=10$, only Music $=8$. Check: $10+8+8+4=30$ ✔.</p></div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3 mt-6"><span class="step-badge">2</span><h3 class="text-lg font-bold text-slate-800">The counting rule</h3></div>
+    <div class="proof">
+      <div class="ph">Theorem 2: inclusion–exclusion for two sets</div>
+      <p class="text-sm">$n(A\cup B)=n(A)+n(B)-n(A\cap B)$, and $n\big((A\cup B)'\big)=n(\mathscr{E})-n(A\cup B)$.</p>
+      <div class="eg"><p><strong>Example 1.</strong> $50$ club members: $30$ basketball, $25$ soccer, $10$ both. $n(B\cup S)=30+25-10=45$, so $50-45=5$ play neither.</p>
+        <p class="mt-1"><strong>Example 2 (running it backwards).</strong> If $n(A\cup B)$ is known, the rule gives the overlap: $n(A\cap B)=n(A)+n(B)-n(A\cup B)$. That is exactly the Art and Music example: $18+16-26=8$.</p>
+        <p class="mt-1"><strong>Example 3 (disjoint sets).</strong> If $A$ and $B$ have no elements in common, $n(A\cap B)=0$ and the rule becomes plain adding: $n(A\cup B)=n(A)+n(B)$.</p></div>
+      <details class="pf"><summary>Show the proof (optional reading for the curious)</summary>
+      <div class="ps">Let the three regions inside the circles hold $x$ (only $A$), $y$ (both), $z$ (only $B$). Then $n(A)=x+y$, $n(B)=y+z$ and $n(A\cup B)=x+y+z$. So $n(A)+n(B)-n(A\cap B)=(x+y)+(y+z)-y=x+y+z=n(A\cup B)$. The overlap $y$ was counted twice and is taken away once. $\blacksquare$</div>
+      </details>
+    </div>
+
+    <div class="tutor mb-5"><div class="who">Let's do it together</div><div id="tt4"></div></div>
+
+    <p class="text-sm font-bold text-slate-700 mb-2">Try it: the Venn Filler</p>
+    <div class="card mb-5">
+      <div class="grid grid-cols-2 gap-2 text-sm mb-3" style="max-width:26rem">
+        <label>Total $n(\mathscr{E})$ <input type="number" id="vf-e" class="inp" value="50" oninput="vfUpdate()"></label>
+        <label>$n(A)$ <input type="number" id="vf-a" class="inp" value="30" oninput="vfUpdate()"></label>
+        <label>$n(B)$ <input type="number" id="vf-b" class="inp" value="25" oninput="vfUpdate()"></label>
+        <label>Both $n(A\cap B)$ <input type="number" id="vf-ab" class="inp" value="10" oninput="vfUpdate()"></label>
+      </div>
+      <div id="vf-svg" class="max-w-md mx-auto"></div>
+      <div id="vf-out" class="text-sm mt-2"></div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">3</span><h3 class="text-lg font-bold text-slate-800">Three sets: start in the very middle</h3></div>
+    <div class="tech">
+      <div class="tt">Technique 2: three circles, same idea</div>
+      <p class="text-sm text-slate-700">With three circles there are $8$ regions. Fill the centre ($A\cap B\cap C$) first. Then each “two clubs but not the third” region is the pair total <strong>minus the centre</strong>. Then the “only” regions, then outside.</p>
+      <div class="eg"><p><strong>Worked example.</strong> $3$ students are in Drama, Music and Art; $5$ are in Drama and Music. How many are in Drama and Music <strong>but not</strong> Art? The $5$ includes the $3$ in all three clubs, so $5-3=2$.</p></div>
+    </div>
+
+    <h3 class="text-xl font-bold text-slate-800 mb-3 bg-slate-100 p-3 rounded-lg inline-block">Check your understanding</h3>
+    <div id="ex-t4"></div>
+  </div>
+
+  <!-- ================= TAB 5 ================= -->
+  <div id="t5" class="tab-content">
+    <h2 class="text-2xl font-bold text-slate-800 mb-1">Homework: The Language of Sets</h2>
+    <p class="text-slate-600 mb-3">Three levels, from understanding to advanced applications. Each question gives you 3 attempts, then shows the full solution.</p>
+    <div class="card mb-3 bg-teal-50 border-teal-200"><p class="text-sm text-slate-800" id="hw-score">Homework status: 0 correct, 0 revealed, 0 remaining</p></div>
+    <div id="ex-t5"></div>
+  </div>
+
+<div id="t6" class="tab-content"><h2 class="text-2xl font-bold text-slate-800 mb-1">Learning report</h2><p class="text-slate-600 mb-4">Built from your own attempts in this section.</p><div id="hz-report"></div></div>
+</main>
+<footer class="shen-footer"><svg viewBox="0 0 100 100" role="img" aria-label="申 Shen Studio"><rect width="100" height="100" rx="12" fill="#B3261E"/><path d="M41.57 27.7V42.46H27.58V27.7ZM15.1 25.34V70.78H16.95C22.18 70.78 27.58 67.91 27.58 66.65V62.18H41.57V90H44.01C48.82 90 54.3 86.88 54.3 85.62V62.18H68.97V68.93H71.07C75.37 68.93 81.53 66.65 81.61 65.89V29.64C83.38 29.3 84.39 28.55 84.9 27.87L73.69 19.19L68.12 25.34H54.3V13.96C56.74 13.62 57.33 12.7 57.5 11.52L41.57 10V25.34H28.42L15.1 20.2ZM54.3 27.7H68.97V42.46H54.3ZM41.57 59.82H27.58V44.82H41.57ZM54.3 59.82V44.82H68.97V59.82Z" fill="#FFFFFF"/></svg><span><b>Shen Studio</b> · Designed by Mr. Shen</span></footer>
+<div class="shen-print-mark" aria-hidden="true"><svg viewBox="0 0 100 100" role="img" aria-label="申 Shen Studio"><rect width="100" height="100" rx="12" fill="#B3261E"/><path d="M41.57 27.7V42.46H27.58V27.7ZM15.1 25.34V70.78H16.95C22.18 70.78 27.58 67.91 27.58 66.65V62.18H41.57V90H44.01C48.82 90 54.3 86.88 54.3 85.62V62.18H68.97V68.93H71.07C75.37 68.93 81.53 66.65 81.61 65.89V29.64C83.38 29.3 84.39 28.55 84.9 27.87L73.69 19.19L68.12 25.34H54.3V13.96C56.74 13.62 57.33 12.7 57.5 11.52L41.57 10V25.34H28.42L15.1 20.2ZM54.3 27.7H68.97V42.46H54.3ZM41.57 59.82H27.58V44.82H41.57ZM54.3 59.82V44.82H68.97V59.82Z" fill="#FFFFFF"/></svg><span>Shen Studio</span></div>
+
+
+<script>
+const R=String.raw;
+function typeset(el){ try{ if(window.MathJax && MathJax.typesetPromise){ MathJax.typesetPromise(el?[el]:undefined).catch(()=>{}); } }catch(e){} }
+function openTab(evt, id){
+  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab-link').forEach(b=>{ b.classList.remove('text-teal-700','border-b-4','border-teal-600','font-bold'); b.classList.add('text-slate-500','font-semibold'); });
+  document.getElementById(id).classList.add('active');
+  const btn=document.querySelector('.tab-link[data-tab="'+id+'"]'); btn.classList.remove('text-slate-500','font-semibold'); btn.classList.add('text-teal-700','border-b-4','border-teal-600','font-bold');
+  typeset(document.getElementById(id)); window.scrollTo({top:0,behavior:'smooth'});
+}
+
+const minus=s=>String(s).replace(/-/g,"−");
+/* ---------- generic stepper ---------- */
+function stepper(box,steps,endHtml){
+  let i=0,fb='',fbok=true,solved=false;
+  function render(){
+    if(i>=steps.length){html(box,endHtml);return}
+    const st=steps[i];
+    let h=`<div class="steps-dots">${steps.map((_,j)=>`<i class="${j<=i?'on':''}"></i>`).join('')}</div>`;
+    if(st.vis)h+=`<div style="margin:.4rem 0">${typeof st.vis==='function'?st.vis():st.vis}</div>`;
+    h+=`<div class="tq">${st.q}</div>`;
+    if(fb)h+=`<div class="tfb ${fbok?'ok':'no'}">${fb}</div>`;
+    if(!solved){const n=st.opts.length,k=(i*2+1)%n,ord=st.opts.map((_,j)=>(j+k)%n);h+=`<div class="tbtns">${ord.map(j=>`<button type="button" class="btn" data-j="${j}">${st.opts[j][0]}</button>`).join('')}</div>`}
+    else h+=`<div class="tbtns"><button type="button" class="btn primary" id="snext">${i<steps.length-1?'Next →':'Finish ✓'}</button></div>`;
+    html(box,h);
+    box.querySelectorAll('[data-j]').forEach(b=>b.onclick=()=>{const o=st.opts[+b.dataset.j];
+      if(o[1]){fb=st.ok;fbok=true;solved=true}else{fb=o[2]||'Not quite. Have another look.';fbok=false;b.disabled=true;
+        render();const bb=box.querySelector(`[data-j="${b.dataset.j}"]`);if(bb)bb.disabled=true;return}
+      render()});
+    const n=box.querySelector('#snext');if(n)n.onclick=()=>{i++;fb='';solved=false;render()};
+  }
+  render();
+}
+const tiles=(b,n,cls,cross)=>Array.from({length:n},(_,i)=>`<span class="tileb${cls?' '+cls:''}${cross&&i<cross?' x':''}">${b}</span>`).join('');
+
+
+/* ============ helpers for this section ============ */
+const $=q=>document.querySelector(q);
+function html(el,h){el.innerHTML=h;typeset(el);}
+const T=s=>'\\text{'+s+'}';
+/* Venn picture: regions a (only A), ab (both), b (only B), out; sel = array of shaded region keys */
+const VP={a:'M 230,67.55 A 80,80 0 1,0 230,192.45 A 80,80 0 0,1 230,67.55 Z',b:'M 230,67.55 A 80,80 0 0,1 230,192.45 A 80,80 0 1,0 230,67.55 Z',ab:'M 230,67.55 A 80,80 0 0,1 230,192.45 A 80,80 0 0,1 230,67.55 Z'};
+function vennSVG(sel,o){o=o||{};sel=sel||[];const on=k=>sel.includes(k);const F='#5b6cc0',click=o.click?'style="cursor:pointer"':'';
+  let s=`<svg viewBox="0 0 460 260" class="w-full" ${o.id?`id="${o.id}"`:''}>`;
+  s+=`<rect data-r="out" x="10" y="10" width="440" height="240" rx="10" fill="${on('out')?F:'#f8fafc'}" fill-opacity="${on('out')?.45:1}" stroke="#1c2230" stroke-width="2.5" ${click}/>`;
+  ['a','b','ab'].forEach(k=>s+=`<path data-r="${k}" d="${VP[k]}" fill="${on(k)?F:'#e2e8f0'}" fill-opacity="${on(k)?.8:.45}" stroke="#1c2230" stroke-width="2.5" ${click}/>`);
+  s+=`<text x="26" y="36" font-size="18" font-style="italic" fill="#1c2230">ℰ</text><text x="118" y="56" font-size="16" font-weight="700" fill="#3b4fa8">${o.la||'A'}</text><text x="330" y="56" font-size="16" font-weight="700" fill="#3b4fa8">${o.lb||'B'}</text>`;
+  if(o.nums){const P={a:[150,136],ab:[230,136],b:[310,136],out:[400,225]};Object.keys(o.nums).forEach(k=>s+=`<text x="${P[k][0]}" y="${P[k][1]}" font-size="${o.small?13:20}" font-weight="700" text-anchor="middle" fill="#1c2230">${o.nums[k]}</text>`)}
+  if(o.lists){const P={a:[150,110],ab:[230,110],b:[310,110],out:[230,232]};Object.keys(o.lists).forEach(k=>{const L=o.lists[k];const per=k==='out'?12:(k==='ab'?2:3);for(let r=0;r*per<L.length;r++)s+=`<text x="${P[k][0]}" y="${P[k][1]+r*19}" font-size="14" text-anchor="middle" fill="#1c2230">${L.slice(r*per,r*per+per).join(', ')}</text>`})}
+  return s+'</svg>';}
+
+/* ============ Tab 1 widgets ============ */
+function smUpdate(){const w=$('#sm-w').value.toUpperCase().replace(/[^A-Z]/g,'');const set=[...new Set(w.split(''))].filter(Boolean);
+  html($('#sm-out'),w?`Letters in order: ${w.split('').join(', ')}<br>As a set (each letter once): $\\{${set.map(c=>'\\text{'+c+'}').join(',\\ ')}\\}$, so $n=${set.length}$ <span class="text-sm text-slate-500">(the word has ${w.length} letters, but only ${set.length} different ones)</span>`:'Type a word.');}
+function lxUpdate(k){const v=$('#lx'+k).value;const o=$('#lx'+k+'-out');o.textContent='$'+v+'$';typeset(o);}
+
+/* ============ Tab 2 widget ============ */
+let sbOn=new Set([0,2]);
+function sbUpdate(){const n=+$('#sb-n').value;$('#sb-nv').textContent=n;const E='abcde'.slice(0,n).split('');sbOn=new Set([...sbOn].filter(i=>i<n));
+  $('#sb-chips').innerHTML=E.map((e,i)=>`<span class="chip ${sbOn.has(i)?'selA':''}" onclick="sbToggle(${i})">${e}</span>`).join('');
+  const cur=E.filter((_,i)=>sbOn.has(i));const all=[];for(let m=0;m<(1<<n);m++)all.push(E.filter((_,i)=>m>>i&1));
+  const fmtS=a=>a.length?`\\{${a.join(',')}\\}`:'\\varnothing';
+  html($('#sb-out'),`Your subset: $${fmtS(cur)}$ ${cur.length===n?'(this is the whole set, so it is <strong>not</strong> a proper subset)':'(a proper subset)'}`);
+  html($('#sb-all'),`<strong>All ${all.length} subsets</strong> $=2^{${n}}$: `+all.map(a=>{const me=a.join()===cur.join();return `<span style="display:inline-block;margin:2px 3px;padding:1px 6px;border-radius:6px;${me?'background:#c9d0ef;font-weight:700':''}">$${fmtS(a)}$</span>`}).join(''));}
+function sbToggle(i){sbOn.has(i)?sbOn.delete(i):sbOn.add(i);sbUpdate();}
+
+/* ============ Tab 3 widgets ============ */
+const VS={'A \\cap B':['ab','Intersection: in both A and B'],'A \\cup B':[['a','ab','b'],'Union: in A or B or both'],'A \\setminus B':['a','Difference: in A but not in B'],'B \\setminus A':['b','Difference: in B but not in A'],"A'":[['b','out'],'Complement: everything not in A'],"(A \\cup B)'":['out','Neither A nor B'],"(A \\cap B)'":[['a','b','out'],'Not in both']};
+function vsInit(){$('#vs-btns').innerHTML=Object.keys(VS).map((k,i)=>`<button class="btn-ghost" data-vs="${i}">$${k}$</button>`).join('');
+  $('#vs-btns').querySelectorAll('button').forEach(b=>b.onclick=()=>vsShow(+b.dataset.vs));typeset($('#vs-btns'));vsShow(0);}
+function vsShow(i){const k=Object.keys(VS)[i];const r=VS[k][0];$('#vs-svg').innerHTML=vennSVG([].concat(r));html($('#vs-desc'),`$${k}$: ${VS[k][1]}`);$('#vs-btns').querySelectorAll('button').forEach((b,j)=>b.classList.toggle('on',j===i));}
+const RULES={even:['even numbers',x=>x%2===0],odd:['odd numbers',x=>x%2===1],m3:['multiples of 3',x=>x%3===0],m4:['multiples of 4',x=>x%4===0],m5:['multiples of 5',x=>x%5===0],prime:['prime numbers',x=>x>1&&[...Array(x).keys()].slice(2).every(d=>x%d)],sq:['square numbers',x=>Number.isInteger(Math.sqrt(x))],big:['numbers greater than 12',x=>x>12]};
+function vrInit(){const o=Object.keys(RULES).map(k=>`<option value="${k}">${RULES[k][0]}</option>`).join('');$('#vr-a').innerHTML=o;$('#vr-b').innerHTML=o;$('#vr-a').value='even';$('#vr-b').value='m3';vrUpdate();}
+function vrUpdate(){const A=RULES[$('#vr-a').value],B=RULES[$('#vr-b').value];const L={a:[],ab:[],b:[],out:[]};
+  for(let x=1;x<=20;x++){const a=A[1](x),b=B[1](x);L[a&&b?'ab':a?'a':b?'b':'out'].push(x)}
+  $('#vr-svg').innerHTML=vennSVG([],{lists:L});
+  html($('#vr-out'),`$A$ = ${A[0]}, $B$ = ${B[0]}<br>$n(A\\cap B)=${L.ab.length}$, $n(A\\cup B)=${L.a.length+L.ab.length+L.b.length}$, $n\\big((A\\cup B)'\\big)=${L.out.length}$. Check: ${L.a.length}+${L.ab.length}+${L.b.length}+${L.out.length}=20 ✔`);}
+
+/* ============ Tab 4 widget ============ */
+function vfUpdate(){const E=+$('#vf-e').value,a=+$('#vf-a').value,b=+$('#vf-b').value,ab=+$('#vf-ab').value;const oa=a-ab,ob=b-ab,u=a+b-ab,out=E-u;
+  const bad=[];if(ab>a||ab>b)bad.push('“both” cannot be bigger than n(A) or n(B)');if(out<0)bad.push('the circles hold more people than the total');if([E,a,b,ab].some(v=>v<0||!Number.isInteger(v)))bad.push('use whole numbers that are not negative');
+  $('#vf-svg').innerHTML=vennSVG([],{nums:bad.length?{}:{a:oa,ab:ab,b:ob,out:out}});
+  html($('#vf-out'),bad.length?`<span class="bad-t">Impossible: ${bad.join('; ')}.</span>`:`Only $A$: $${a}-${ab}=${oa}$ &nbsp; Only $B$: $${b}-${ab}=${ob}$<br>$n(A\\cup B)=${a}+${b}-${ab}=${u}$ &nbsp; Neither: $${E}-${u}=${out}$<br>Check: $${oa}+${ab}+${ob}+${out}=${oa+ab+ob+out}$ ✔`);}
+
+/* ============ steppers ============ */
+function c1Steppers(){
+  stepper($('#tt1'),[
+    {q:R`$V=\{\text{carrot},\ \text{broccoli},\ \text{spinach},\ \text{cucumber}\}$. Which symbol completes $\text{apple}\ \square\ V$?`,opts:[[R`$\notin$`,1],[R`$\in$`,0,'Is apple one of the four vegetables listed?'],[R`$=$`,0,'Apple is one object; V is a whole set.']],ok:R`$\text{apple}\notin V$: apple is not one of its elements.`},
+    {q:R`What is $n(V)$?`,opts:[['4',1],['1',0,'Count the elements inside the brackets.'],['5',0,'Count again: carrot, broccoli, spinach, cucumber.']],ok:R`$n(V)=4$.`},
+    {q:R`$L=\{x : x \text{ is a letter of the word BANANA}\}$. In roster form, $L=$`,opts:[[R`$\{\text{B},\text{A},\text{N}\}$`,1],[R`$\{\text{B},\text{A},\text{N},\text{A},\text{N},\text{A}\}$`,0,'In a set each element is listed once.'],[R`$\{\text{BANANA}\}$`,0,'The elements are letters, not the whole word.']],ok:R`Each letter once: $\{\text{B},\text{A},\text{N}\}$.`},
+    {q:R`So $n(L)=$`,opts:[['3',1],['6',0,'Repeated letters count once.'],['1',0,'There are three different letters.']],ok:R`$n(L)=3$, even though BANANA has 6 letters.`},
+    {q:'Which of these is the empty set?',opts:[['{months with 32 days}',1],['{0}',0,'This set has one element: the number 0.'],[R`$\{\varnothing\}$`,0,'This set contains one element (an empty set), so it is not empty.']],ok:R`No month has 32 days, so this set is $\varnothing$.`}],
+    `<div class="tfb ok"><b>Done!</b> List each element once, read $\\in$ as “is an element of”, and count distinct elements for $n(A)$.</div>`);
+  stepper($('#tt2'),[
+    {q:R`$S=\{\text{ham},\ \text{cheese},\ \text{olive}\}$. Is $\{\text{ham},\ \text{olive}\}\subseteq S$?`,opts:[['Yes',1],['No',0,'Check each element: is ham in S? Is olive in S?']],ok:'Both ham and olive are in S, so yes.'},
+    {q:R`Is $\{\text{ham},\ \text{pineapple}\}\subseteq S$?`,opts:[['No',1],['Yes',0,'Is pineapple in S?']],ok:R`Pineapple $\notin S$. One “no” is enough.`},
+    {q:R`Which is correct?`,opts:[[R`$\text{ham}\in S$`,1],[R`$\text{ham}\subseteq S$`,0,'Ham is an element, not a set. Elements belong (∈).'],[R`$\{\text{ham}\}\in S$`,0,'{ham} is a set. Sets are subsets (⊆).']],ok:R`An element belongs: $\text{ham}\in S$. The set $\{\text{ham}\}\subseteq S$.`},
+    {q:'To build a subset, each topping is either in or out. How many subsets does S have?',opts:[['8',1],['3',0,'That counts the toppings, not the ways to choose.'],['6',0,'Each of the 3 toppings has 2 choices: 2 × 2 × 2.']],ok:R`$2\times2\times2=2^3=8$, including $\varnothing$ and $S$ itself.`},
+    {q:'How many of them are proper subsets?',opts:[['7',1],['8',0,'A proper subset cannot be S itself.'],['6',0,'Only S itself is left out.']],ok:R`$8-1=7$.`}],
+    `<div class="tfb ok"><b>Done!</b> Check element by element; $n$ elements give $2^n$ subsets.</div>`);
+  const V1=vennSVG([],{lists:{a:[2,4,8,10],ab:[6],b:[3,9],out:[1,5,7]}});
+  stepper($('#tt3'),[
+    {q:R`$\mathscr{E}=\{1,2,\ldots,10\}$, $A$ = even numbers $=\{2,4,6,8,10\}$, $B$ = multiples of $3$. Then $B=$`,opts:[[R`$\{3,6,9\}$`,1],[R`$\{3,6,9,12\}$`,0,'12 is not in ℰ.'],[R`$\{1,3,6,9\}$`,0,'1 is not a multiple of 3.']],ok:R`$B=\{3,6,9\}$.`},
+    {q:R`$A\cap B$ (in both) $=$`,opts:[[R`$\{6\}$`,1],[R`$\{2,3,4,6,8,9,10\}$`,0,'That is the union. Intersection means both.'],[R`$\varnothing$`,0,'Is any number even and a multiple of 3?']],ok:R`Only $6$ is in both.`},
+    {q:R`$A\cup B$ (either or both) $=$`,opts:[[R`$\{2,3,4,6,8,9,10\}$`,1],[R`$\{2,3,4,6,6,8,9,10\}$`,0,'List 6 only once.'],[R`$\{6\}$`,0,'That is the intersection.']],ok:R`Seven elements; $6$ is listed once.`},
+    {q:R`$A'$ (not even) $=$`,opts:[[R`$\{1,3,5,7,9\}$`,1],[R`$\{3,9\}$`,0,'That is B but not A. The complement looks at all of ℰ.'],[R`$\{1,5,7\}$`,0,'3 and 9 are not even either.']],ok:R`Everything in $\mathscr{E}$ that is not even.`},
+    {vis:V1,q:R`Look at the diagram. Which region holds $1$, $5$ and $7$?`,opts:[[R`$(A\cup B)'$, outside both`,1],[R`$A\cap B$`,0,'They are neither even nor multiples of 3.'],[R`$A\setminus B$`,0,'They are not even.']],ok:R`Outside both circles: $(A\cup B)'=\{1,5,7\}$.`}],
+    `<div class="tfb ok"><b>Done!</b> ∩ = both, ∪ = either, ′ = not, ∖ = but not. Every element sits in exactly one region.</div>`);
+  stepper($('#tt4'),[
+    {q:'A youth club has 50 members: 30 play basketball, 25 play soccer and 10 play both. Which number do you write in the Venn diagram first?',opts:[['10, in the overlap',1],['30, in the basketball circle',0,'30 includes the 10 who also play soccer. Start with the overlap.'],['50, outside',0,'50 is everyone. Fill the inside first.']],ok:'Start with the overlap: 10.'},
+    {vis:vennSVG([],{nums:{ab:10},la:'Basketball',lb:'Soccer'}),q:'Only basketball $=30-10=$',opts:[['20',1],['30',0,'Take away the 10 who also play soccer.'],['40',0,'Subtract, do not add.']],ok:'20 play only basketball.'},
+    {q:'Only soccer $=$',opts:[['15',1],['25',0,'Take away the overlap.'],['5',0,'25 − 10.']],ok:'15 play only soccer.'},
+    {vis:vennSVG([],{nums:{a:20,ab:10,b:15},la:'Basketball',lb:'Soccer'}),q:'How many play at least one sport?',opts:[['45',1],['55',0,'30 + 25 counts the 10 twice.'],['35',0,'Add all three inside regions: 20 + 10 + 15.']],ok:R`$20+10+15=45$. The rule gives the same: $30+25-10=45$.`},
+    {q:'How many play neither?',opts:[['5',1],['10',0,'50 − 45.'],['0',0,'Everyone outside the circles plays neither.']],ok:R`$50-45=5$. Check: $20+10+15+5=50$ ✔`}],
+    `<div class="tfb ok"><b>Done!</b> Overlap first, then the only parts, then outside; check the four regions add up to the total.</div>`);
+}
+
+/* ============ EXERCISE DATA ============ */
+function S(steps){ return '<ol class="list-decimal pl-5 space-y-1 text-sm text-slate-700">'+steps.map(s=>'<li>'+s+'</li>').join('')+'</ol>'; }
+const EX={};
+EX.t1=[
+ {id:'t1q1',type:'mc',q:R`Let $V=\{\text{carrot},\ \text{broccoli},\ \text{spinach},\ \text{cucumber}\}$. Which symbol completes $\text{apple}\ \square\ V$?`,opts:[R`$\in$`,R`$\notin$`,R`$=$`],ans:1,
+  sol:S([R`Apple is not one of the four vegetables in $V$.`,R`So $\text{apple}\notin V$.`])},
+ {id:'t1q2',type:'num',q:R`Let $S=\{\text{spring},\ \text{summer},\ \text{autumn},\ \text{winter}\}$. Find $n(S)$.`,ans:4,sol:S([R`Count the elements: spring, summer, autumn, winter.`,R`$n(S)=4$.`])},
+ {id:'t1q3',type:'num',q:R`Let $M=\{x : x \text{ is a month whose name starts with J}\}$. Find $n(M)$.`,ans:3,sol:S([R`List them: January, June, July.`,R`$M=\{\text{January},\ \text{June},\ \text{July}\}$, so $n(M)=3$.`])},
+ {id:'t1q4',type:'set',q:R`Write $\{x : x \text{ is a letter of the word LETTER}\}$ in roster form. (Type the letters separated by commas.)`,ans:'L,E,T,R',sol:S([R`Go through L, E, T, T, E, R and keep each letter once.`,R`$\{\text{L},\text{E},\text{T},\text{R}\}$: four elements.`])},
+ {id:'t1q5',type:'mc',q:R`Which of these sets is equal to the empty set $\varnothing$?`,opts:['{months with 30 days}','{mammals that naturally have 10 legs}','{countries whose name starts with A}','{colours of the rainbow}'],ans:1,sol:S([R`The other three sets all have elements (April, Australia, red …).`,R`No mammal naturally has 10 legs, so that set has no elements: it is $\varnothing$.`])},
+ {id:'t1q6',type:'mc',q:R`Which two sets are equal?`,opts:[R`$\{1,2,3\}$ and $\{3,2,1,1\}$`,R`$\{1,2\}$ and $\{1,2,3\}$`,R`$\{0\}$ and $\varnothing$`,R`$\{1,2\}$ and $\{\{1,2\}\}$`],ans:0,sol:S([R`Order and repeats do not matter, so $\{3,2,1,1\}=\{1,2,3\}$.`,R`$\{0\}$ has one element; $\{\{1,2\}\}$ has one element (a set). Neither matches.`])},
+ {id:'t1q7',type:'text',q:R`<strong>Write it like a mathematician.</strong> Type the LaTeX command for the “is an element of” symbol $\in$ (include the backslash).`,ans:['\\in'],sol:S([R`The command is <code>\in</code>, short for “in”. (<code>\notin</code> gives $\notin$.)`])}
+];
+EX.t2=[
+ {id:'t2q1',type:'mc',q:'Which statement is true?',opts:[R`$3\subseteq\{1,2,3\}$`,R`$\{3\}\subseteq\{1,2,3\}$`,R`$\{3\}\in\{1,2,3\}$`,R`$\{1,4\}\subseteq\{1,2,3\}$`],ans:1,sol:S([R`$3$ is an element, so we write $3\in\{1,2,3\}$, not $\subseteq$.`,R`$\{3\}$ is a set whose only element is in $\{1,2,3\}$, so $\{3\}\subseteq\{1,2,3\}$ ✔.`,R`$\{1,4\}$ fails because $4\notin\{1,2,3\}$.`])},
+ {id:'t2q2',type:'num',q:R`How many subsets does $\{a,b,c,d\}$ have?`,ans:16,sol:S([R`Each of the $4$ elements is in or out.`,R`$2^4=16$ subsets.`])},
+ {id:'t2q3',type:'num',q:R`How many <strong>proper</strong> subsets does $\{1,2,3\}$ have?`,ans:7,sol:S([R`$2^3=8$ subsets in total.`,R`Leave out the set itself: $8-1=7$.`])},
+ {id:'t2q4',type:'mc',q:R`Is $\varnothing\subseteq A$ for every set $A$?`,opts:['Yes, always','Only if A is empty','Only if A has an element','Never'],ans:0,sol:S([R`To fail the test, $\varnothing$ would need an element that is not in $A$.`,R`$\varnothing$ has no elements at all, so it never fails: $\varnothing\subseteq A$ always.`])},
+ {id:'t2q5',type:'num',q:R`How many subsets of $\{1,2,3,4,5\}$ contain the element $1$?`,ans:16,sol:S([R`Fix $1$ “in”. The other $4$ elements each choose in or out freely.`,R`$2^4=16$.`])},
+ {id:'t2q6',type:'num',q:R`A set has $64$ subsets. How many elements does it have?`,ans:6,sol:S([R`We need $2^n=64$.`,R`$2^6=64$, so $n=6$.`])}
+];
+EX.t3=[
+ {id:'t3q1',type:'num',q:R`$\mathscr{E}=\{\text{Liam, Mia, Noah, Ava, Ethan, Emma}\}$. Find $n(\mathscr{E})$.`,ans:6,sol:S([R`Count every name: $6$.`])},
+ {id:'t3q2',type:'num',q:R`$\mathscr{E}=\{\text{red, orange, yellow,}$ $\text{green, blue, purple}\}$ and $A=\{\text{red, yellow, blue}\}$. Find $n(A')$.`,ans:3,sol:S([R`$A'=\{\text{orange, green, purple}\}$.`,R`$n(A')=3$. Check: $n(A)+n(A')=3+3=6=n(\mathscr{E})$.`])},
+ {id:'t3q3',type:'set',q:R`Piano $P=\{\text{Lucas, Chloe, Oliver, Ella}\}$ and violin $V=\{\text{Chloe, Ella, Jackson}\}$. List the elements of $P\cap V$ (names separated by commas).`,ans:'Chloe,Ella',sol:S([R`Look for names in <strong>both</strong> lists: Chloe and Ella.`,R`$P\cap V=\{\text{Chloe, Ella}\}$.`])},
+ {id:'t3q4',type:'num',q:R`Same sets. Find $n(P\cup V)$.`,ans:5,sol:S([R`$P\cup V=\{\text{Lucas, Chloe, Oliver,}$ $\text{Ella, Jackson}\}$, each name once.`,R`$n(P\cup V)=5$.`])},
+ {id:'t3q5',type:'venn',q:R`Shade the region for $A\setminus B$ (in $A$ but not in $B$).`,regions:['a'],sol:S([R`$A\setminus B$ keeps the part of $A$ outside $B$: the left crescent only.`])},
+ {id:'t3q6',type:'venn',q:R`Shade the region for $(A\cup B)'$.`,regions:['out'],sol:S([R`$A\cup B$ is both circles. Its complement is everything outside them: the rectangle only.`])},
+ {id:'t3q7',type:'mc',q:R`Students study Art ($A$) and Music ($M$). Which expression describes the students who study Music <strong>but not</strong> Art?`,opts:[R`$A\cap M$`,R`$M\setminus A$`,R`$A\cup M$`,R`$(A\cup M)'$`],ans:1,sol:S([R`“Music but not Art” keeps $M$ and removes $A$: that is $M\setminus A$, also written $M\cap A'$.`])},
+ {id:'t3q8',type:'text',q:R`<strong>Write it like a mathematician.</strong> Type the LaTeX command for the intersection symbol $\cap$ (include the backslash).`,ans:['\\cap'],sol:S([R`The command is <code>\cap</code>, and union $\cup$ is <code>\cup</code>.`])}
+];
+EX.t4=[
+ {id:'t4q1',type:'num',q:R`In a class of $30$ students, $18$ study Art, $16$ study Music and $4$ study neither. How many study <strong>both</strong>?`,ans:8,sol:S([R`At least one subject: $30-4=26$.`,R`$n(A\cap M)=18+16-26=8$.`])},
+ {id:'t4q2',type:'num',q:R`A youth club has $50$ members: $30$ play basketball, $25$ play soccer and $10$ play both. How many play <strong>neither</strong>?`,ans:5,sol:S([R`$n(B\cup S)=30+25-10=45$.`,R`Neither: $50-45=5$.`])},
+ {id:'t4q3',type:'num',q:R`Same club. How many play <strong>only</strong> basketball?`,ans:20,sol:S([R`$30-10=20$.`])},
+ {id:'t4q4',type:'num',q:R`In a café survey, $15$ people ordered coffee only, $12$ tea only, $8$ both, and $5$ neither. How many people were surveyed?`,ans:40,sol:S([R`The four regions do not overlap, so add them: $15+12+8+5=40$.`])},
+ {id:'t4q5',type:'num',q:R`$3$ students belong to all three clubs Drama, Music and Art. $5$ belong to Drama and Music. How many belong to Drama and Music <strong>but not</strong> Art?`,ans:2,sol:S([R`The $5$ in Drama and Music includes the $3$ in all three clubs.`,R`$5-3=2$.`])},
+ {id:'t4q6',type:'num',q:R`In a class of $32$, every student likes maths or art (or both). $20$ like maths and $17$ like art. How many like both?`,ans:5,sol:S([R`Everyone is inside the circles, so $n(M\cup A)=32$.`,R`$n(M\cap A)=20+17-32=5$.`])}
+];
+EX.t5=[
+ {level:'Level 1: Understanding',id:'h1',type:'num',q:R`Let $C=\{x : x \text{ is a colour of the flag of France}\}$. Find $n(C)$.`,ans:3,sol:S([R`Blue, white and red: $n(C)=3$.`])},
+ {id:'h2',type:'mc',q:R`Let $F=\{\text{apple},\ \text{banana},\ \text{mango}\}$. True or false: $\text{banana}\in F$?`,opts:['True','False'],ans:0,sol:S([R`Banana is listed in $F$, so $\text{banana}\in F$ is true.`])},
+ {id:'h3',type:'num',q:R`$\mathscr{E}$ is the set of the seven days of the week and $W=\{\text{Saturday},\ \text{Sunday}\}$. Find $n(W')$.`,ans:5,sol:S([R`$W'$ is the five weekdays, so $n(W')=5$.`])},
+ {id:'h4',type:'num',q:R`Two sets $A$ and $B$ have no elements in common. What is $n(A\cap B)$?`,ans:0,sol:S([R`They share nothing, so $A\cap B=\varnothing$ and $n(A\cap B)=0$. Such sets are called <strong>disjoint</strong>.`])},
+ {id:'h5',type:'text',q:R`Type the LaTeX command for the union symbol $\cup$.`,ans:['\\cup'],sol:S([R`<code>\cup</code> (a “cup” you can pour things into).`])},
+ {level:'Level 2: Applying',id:'h6',type:'venn',q:R`Shade the region for $B\setminus A$.`,regions:['b'],sol:S([R`Keep $B$, remove $A$: the right crescent only.`])},
+ {id:'h7',type:'venn',q:R`Shade the region for $A'$ (not in $A$).`,regions:['b','out'],sol:S([R`Everything outside circle $A$: the right crescent <strong>and</strong> the outside region.`])},
+ {id:'h8',type:'num',q:R`In a year group of $100$ students, $60$ play video games, $45$ play sport and $20$ do both. How many do <strong>neither</strong>?`,ans:15,sol:S([R`$n(V\cup S)=60+45-20=85$.`,R`Neither: $100-85=15$.`])},
+ {id:'h9',type:'num',q:R`Same year group. How many play video games <strong>only</strong>?`,ans:40,sol:S([R`$60-20=40$.`])},
+ {id:'h10',type:'num',q:R`How many subsets does a set with $6$ elements have?`,ans:64,sol:S([R`$2^6=64$.`])},
+ {level:'Level 3: Advanced applications',id:'h11',type:'set',q:R`List the elements of $\{x : x \text{ is an integer},\ -2\le x\lt 3\}$. (Use - for negatives.)`,ans:'-2,-1,0,1,2',sol:S([R`$-2$ is included ($\le$); $3$ is not ($\lt$).`,R`$\{-2,-1,0,1,2\}$. You will meet sets like this again in 2.1.`])},
+ {id:'h12',type:'num',q:R`In a group of $100$ people, $70$ drink tea and $60$ drink coffee. What is the <strong>smallest</strong> possible number who drink both?`,ans:30,sol:S([R`$n(T\cup C)$ is at most $100$.`,R`$n(T\cap C)=70+60-n(T\cup C)\ge130-100=30$.`,R`So at least $30$ drink both; $30$ happens when nobody drinks neither.`])},
+ {id:'h13',type:'num',q:R`$30$ students were asked about clubs D, M and A. $3$ are in all three, $5$ are in D and M, $6$ in M and A, $4$ in D and A. How many are in M and A but <strong>not</strong> D?`,ans:3,sol:S([R`The $6$ in M and A includes the $3$ in all three clubs.`,R`$6-3=3$.`])},
+ {id:'h14',type:'num',q:R`How many subsets of $\{1,2,3,4,5,6\}$ contain <strong>neither</strong> $1$ nor $2$?`,ans:16,sol:S([R`Fix $1$ and $2$ “out”. The other $4$ elements choose freely.`,R`$2^4=16$.`])}
+];
+
+/* ============ EXERCISE ENGINE (2.1 engine + venn + text types) ============ */
+const EXMAP={}, ST={};
+function cleanNum(s){ return String(s).replace(/[−–—]/g,'-'); }
+function sorter(a,b){ const na=Number(a), nb=Number(b); if(!isNaN(na)&&!isNaN(nb)) return na-nb; return String(a)<String(b)?-1:String(a)>String(b)?1:0; }
+function normSet(s){ s=cleanNum(s).toLowerCase().trim(); if(/∅|empty|^\{\s*\}$/.test(s)) return ''; s=s.replace(/[{}\s]/g,''); const arr=[...new Set(s.split(',').filter(x=>x!==''))]; arr.sort(sorter); return arr.join(','); }
+function normTex(s){ return String(s).trim().replace(/\s+/g,'').replace(/^\$|\$$/g,''); }
+function exHTML(e,n){
+  let inp='';
+  if(e.type==='num') inp=`<input type="text" inputmode="decimal" class="inp" id="inp-${e.id}" placeholder="Your answer" onkeydown="if(event.key==='Enter')checkEx('${e.id}')">`;
+  else if(e.type==='set') inp=`<input type="text" class="inp" id="inp-${e.id}" placeholder="e.g. A, B, C" onkeydown="if(event.key==='Enter')checkEx('${e.id}')"><p class="text-xs text-slate-500 mt-1">Type the elements separated by commas, each once. Order does not matter.</p>`;
+  else if(e.type==='text') inp=`<input type="text" class="inp nomath" id="inp-${e.id}" placeholder="e.g. \\notin" oninput="texPrev('${e.id}')" onkeydown="if(event.key==='Enter')checkEx('${e.id}')"><p class="text-xs text-slate-500 mt-1">Preview: <span id="pv-${e.id}" class="text-lg"></span></p>`;
+  else if(e.type==='mc') inp=e.opts.map((o,i)=>`<button class="opt" id="opt-${e.id}-${i}" onclick="pickOpt('${e.id}',${i})">${o}</button>`).join('');
+  else if(e.type==='venn') inp=`<div id="vq-${e.id}" class="max-w-md"></div><button class="btn-ghost mt-1" onclick="vqClear('${e.id}')">Clear shading</button>`;
+  return `<div class="ex-card" id="card-${e.id}"><div class="flex items-start gap-3"><div class="qnum">${n}</div><div class="flex-1 min-w-0">
+    <div class="text-slate-800 leading-relaxed">${e.q}</div>
+    <div class="mt-3">${inp}</div>
+    <div class="mt-3 flex items-center gap-3 flex-wrap"><button class="btn" id="btn-${e.id}" onclick="checkEx('${e.id}')">Check answer</button><span id="att-${e.id}" class="text-xs font-semibold text-slate-500">Attempts left: 3</span></div>
+    <div id="fb-${e.id}" class="mt-2 text-sm font-semibold"></div>
+    <div id="sol-${e.id}" class="hidden mt-3 sol-box"><h4 class="font-bold text-slate-800 mb-1" id="solh-${e.id}">Step-by-step solution</h4>${e.sol}<div id="solv-${e.id}" class="max-w-md mt-2"></div></div>
+  </div></div></div>`;
+}
+function texPrev(id){ const v=document.getElementById('inp-'+id).value, p=document.getElementById('pv-'+id); p.textContent=v.trim()?'$'+v+'$':''; typeset(p); }
+function vqRender(id){ const st=ST[id], el=document.getElementById('vq-'+id); el.innerHTML=vennSVG(st.sel,{click:!st.done});
+  if(!st.done) el.querySelectorAll('[data-r]').forEach(r=>r.addEventListener('click',()=>{ const k=r.dataset.r; st.sel=st.sel.includes(k)?st.sel.filter(x=>x!==k):st.sel.concat(k); vqRender(id); })); }
+function vqClear(id){ if(ST[id].done) return; ST[id].sel=[]; vqRender(id); }
+function mountEx(key){
+  const box=document.getElementById('ex-'+key); let h='', lv='', n=0;
+  EX[key].forEach(e=>{ if(e.level&&e.level!==lv){ lv=e.level; h+=`<div class="lvl">${lv}</div>`; } n++; h+=exHTML(e,n); });
+  box.innerHTML=h;
+  EX[key].forEach(e=>{ EXMAP[e.id]=e; ST[e.id]={tries:0,done:false,pick:null,tab:key,correct:false,sel:[]}; if(e.type==='venn') vqRender(e.id); });
+}
+function pickOpt(id,i){ const st=ST[id]; if(st.done) return; st.pick=i; EXMAP[id].opts.forEach((_,k)=>document.getElementById(`opt-${id}-${k}`).classList.toggle('sel',k===i)); }
+function checkEx(id){
+  const e=EXMAP[id], st=ST[id]; if(st.done) return;
+  const fb=document.getElementById('fb-'+id); let correct=false; const warn=m=>{ fb.className='mt-2 text-sm font-semibold text-amber-700'; fb.textContent=m; };
+  if(e.type==='num'){
+    const v=cleanNum(document.getElementById('inp-'+id).value).replace(/[, ]/g,''); if(v===''||isNaN(Number(v))) return warn('Type a number first.');
+    correct=Math.abs(Number(v)-e.ans)<1e-9;
+  } else if(e.type==='set'){
+    const v=document.getElementById('inp-'+id).value; if(v.trim()==='') return warn('Type your answer first.'); correct=normSet(v)===normSet(e.ans);
+  } else if(e.type==='text'){
+    const v=document.getElementById('inp-'+id).value; if(v.trim()==='') return warn('Type the command first.'); correct=e.ans.some(a=>normTex(a)===normTex(v));
+  } else if(e.type==='mc'){
+    if(st.pick===null) return warn('Choose an option first.'); correct=st.pick===e.ans;
+  } else if(e.type==='venn'){
+    if(!st.sel.length) return warn('Tap at least one region to shade it.');
+    correct=[...st.sel].sort().join()===[...e.regions].sort().join();
+  }
+  st.tries++; const left=3-st.tries; document.getElementById('att-'+id).textContent='Attempts left: '+Math.max(left,0);
+  if(correct) finishEx(id,true); else if(left<=0) finishEx(id,false);
+  else { fb.className='mt-2 text-sm font-semibold text-red-700'; fb.textContent='Not quite. Try again: '+left+' attempt'+(left===1?'':'s')+' left.'+(left===1&&e.hint?' Hint: '+e.hint:''); const c=document.getElementById('card-'+id); c.classList.add('bad'); setTimeout(()=>{ if(!st.done) c.classList.remove('bad'); },900); }
+}
+function finishEx(id,ok){
+  const e=EXMAP[id], st=ST[id]; st.done=true; st.correct=ok;
+  const card=document.getElementById('card-'+id), fb=document.getElementById('fb-'+id), sol=document.getElementById('sol-'+id);
+  card.classList.remove('bad'); if(ok) card.classList.add('ok');
+  fb.className='mt-2 text-sm font-bold '+(ok?'text-emerald-700':'text-red-700');
+  fb.textContent= ok?'Correct! Well done.':'All 3 attempts used. Study the full solution below.';
+  sol.classList.remove('hidden'); if(!ok) sol.classList.add('fail');
+  document.getElementById('solh-'+id).textContent= ok?'Full solution (compare with your method)':'Full step-by-step solution';
+  document.getElementById('btn-'+id).disabled=true;
+  if(e.type==='mc') e.opts.forEach((_,k)=>{ const b=document.getElementById(`opt-${id}-${k}`); b.disabled=true; b.classList.remove('sel'); if(k===e.ans) b.classList.add('right'); else if(k===st.pick) b.classList.add('wrong'); });
+  if(e.type==='num'||e.type==='set'||e.type==='text') document.getElementById('inp-'+id).disabled=true;
+  if(e.type==='venn'){ vqRender(id); document.getElementById('solv-'+id).innerHTML='<p class="text-xs font-bold text-slate-600 mb-1">Correct shading:</p>'+vennSVG(e.regions); }
+  typeset(sol); refreshProgress();
+}
+function refreshProgress(){
+  let done=0,total=0;
+  Object.keys(EX).forEach(k=>{ let d=0; EX[k].forEach(e=>{ total++; if(ST[e.id]&&ST[e.id].done){done++;d++;} }); const b=document.querySelector('.tab-link[data-tab="'+k+'"]'); if(b) b.classList.toggle('tab-done',d===EX[k].length); });
+  document.getElementById('prog-count').textContent=done; document.getElementById('prog-total').textContent=total;
+  let c=0,r=0; EX.t5.forEach(e=>{ if(ST[e.id].done){ ST[e.id].correct?c++:r++; } });
+  document.getElementById('hw-score').textContent=`Homework status: ${c} correct, ${r} revealed after 3 attempts, ${EX.t5.length-c-r} remaining`;
+}
+window.addEventListener('DOMContentLoaded',()=>{
+  Object.keys(EX).forEach(mountEx);
+  smUpdate(); lxUpdate(1); sbUpdate(); vsInit(); vrInit(); vfUpdate(); c1Steppers();
+  refreshProgress(); typeset();
+});
+
+</script>
+
+<script>const HZ={"reportTab": "t6", "reportLabel": "6. Learning report", "tabs": {"t1": "1. What is a set?", "t2": "2. Subsets", "t3": "3. Operations", "t4": "4. Counting", "t5": "5. Homework"}, "centre": ["Sets", "{ … }"], "concepts": {"set": {"n": "Sets and elements", "adv": "Ask the yes/no question for each object: “is it in the set?”. Read ∈ as “is an element of”. A set has no order and no repeats, so {1,1,2} is just {1,2}."}, "desc": {"n": "Describing a set", "adv": "For set-builder form, read the rule aloud (“the set of all x such that …”) and go through the candidates one by one, keeping each element once. Then count distinct elements for n(A)."}, "sub": {"n": "Subsets and 2ⁿ", "adv": "Check A ⊆ B element by element: one element missing from B is enough to say no. Elements belong (∈); sets are subsets (⊆). For counting, each element is in or out, so n elements give 2ⁿ subsets."}, "ops": {"n": "∩, ∪, complement, ∖", "adv": "Translate the symbol into a word first: ∩ = both, ∪ = either or both, ′ = not, ∖ = but not. Then decide which of the four Venn regions it keeps. Try the Region Shader in Tab 3 again."}, "venn": {"n": "Venn regions", "adv": "Every element lands in exactly one of the four regions: only A, both, only B, outside. To shade an expression, test one point from each region against it."}, "count": {"n": "Counting with Venn diagrams", "adv": "Fill from the inside out: overlap first, then “only” = total − overlap, then outside. Finish by checking that the four regions add up to the total. Remember n(A∪B) = n(A) + n(B) − n(A∩B)."}, "latex": {"n": "Writing symbols in LaTeX", "adv": "Each symbol has a short command with a backslash: \\in, \\notin, \\cap, \\cup, \\varnothing. Say the name of the symbol and type it after the backslash."}}, "links": [["set", "desc"], ["set", "sub"], ["sub", "ops"], ["ops", "venn"], ["venn", "count"], ["set", "latex"], ["ops", "latex"], ["desc", "count"]], "next": "Next: 2.1, where the integers are built as a set.", "tags": {"t1q1": ["set", "U"], "t1q2": ["desc", "C"], "t1q3": ["desc", "C"], "t1q4": ["desc", "C"], "t1q5": ["set", "U"], "t1q6": ["set", "R"], "t1q7": ["latex", "U"], "t2q1": ["sub", "U"], "t2q2": ["sub", "C"], "t2q3": ["sub", "C"], "t2q4": ["sub", "R"], "t2q5": ["sub", "A"], "t2q6": ["sub", "R"], "t3q1": ["set", "C"], "t3q2": ["ops", "C"], "t3q3": ["ops", "C"], "t3q4": ["ops", "C"], "t3q5": ["venn", "U"], "t3q6": ["venn", "U"], "t3q7": ["ops", "A"], "t3q8": ["latex", "U"], "t4q1": ["count", "A"], "t4q2": ["count", "A"], "t4q3": ["count", "C"], "t4q4": ["count", "C"], "t4q5": ["count", "R"], "t4q6": ["count", "A"], "h1": ["desc", "C"], "h2": ["set", "U"], "h3": ["ops", "C"], "h4": ["ops", "R"], "h5": ["latex", "U"], "h6": ["venn", "U"], "h7": ["venn", "U"], "h8": ["count", "A"], "h9": ["count", "C"], "h10": ["sub", "C"], "h11": ["desc", "A"], "h12": ["count", "R"], "h13": ["count", "R"], "h14": ["sub", "A"]}};</script>
+<script>/* ===== Horizon learning report (attempt-based 3/2/1/0, effort, skills, advice, knowledge map) =====
+   Needs from the page: EX (questions by tab), EXMAP, ST (tries, done, correct), checkEx, openTab,
+   and HZ = {tabs:{t1:'name',...}, concepts:{key:{n,adv}}, tags:{qid:[concept,skill]}, links:[[a,b],...], centre:['line1','line2']} */
+(function(){
+  const SK={U:'Understand',C:'Compute',A:'Apply',R:'Reason'};
+  const LOG={};const now=()=>Date.now();
+  function seen(id){if(!LOG[id])LOG[id]={t0:now(),att:[]};}
+  window.addEventListener('load',()=>{
+    if('IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting&&en.target.offsetParent!==null)seen(en.target.id.slice(5))}),{threshold:.35});
+      document.querySelectorAll('[id^="card-"]').forEach(c=>io.observe(c));}
+    const _chk=window.checkEx;
+    window.checkEx=function(id){const st=ST[id];const before=st?st.tries:0;seen(id);const r=_chk.apply(this,arguments);
+      if(st&&st.tries>before)LOG[id].att.push(now());refreshLock();return r};
+    const _open=window.openTab;
+    window.openTab=function(evt,id){const r=_open.apply(this,arguments);if(id===HZ.reportTab)build();return r};
+    refreshLock();
+  });
+  function rows(){const out=[];Object.keys(EX).forEach(t=>EX[t].forEach((e,i)=>{const st=ST[e.id],L=LOG[e.id]||{att:[]};const tg=(HZ.tags||{})[e.id]||[t,'C'];
+    const pts=st&&st.done?(st.correct?Math.max(1,4-st.tries):0):null;const first=L.att[0]&&L.t0?(L.att[0]-L.t0)/1000:null;
+    out.push({id:e.id,tab:t,no:i+1,c:tg[0],k:tg[1],done:st&&st.done,ok:st&&st.correct,tries:st?st.tries:0,pts,
+      fast:pts===3&&first!==null&&first<(e.type==='mc'?4:7),
+      rushed:st&&st.done&&!st.correct&&L.att.length>=3&&L.t0&&(L.att[L.att.length-1]-L.t0)<20000})}));return out}
+  function refreshLock(){const b=document.querySelector(`.tab-link[data-tab="${HZ.reportTab}"]`);if(!b)return;const R=rows(),d=R.filter(r=>r.done).length;
+    b.innerHTML=`${HZ.reportLabel||'Learning report'} <small style="opacity:.7">(${d}/${R.length})</small>`}
+  const lvl=a=>a==null?'n':a>=2.5?'g':a>=1.5?'a':'r';
+  const COL={g:'#2f8a4c',a:'#b7791f',r:'#c0392b',n:'#9aa1ad'},LV={g:'steady',a:'practise',r:'needs work',n:'not tried'};
+  const avg=rs=>{const d=rs.filter(r=>r.pts!=null);return d.length?d.reduce((s,r)=>s+r.pts,0)/d.length:null};
+  const bar=(v,col)=>`<div style="height:10px;background:#e6e3ee;border-radius:6px;overflow:hidden;min-width:120px"><i style="display:block;height:100%;width:${Math.round(v*100)}%;background:${col}"></i></div>`;
+  function kmap(R){const ks=Object.keys(HZ.concepts),n=ks.length,W=n>8?760:640,H=n>8?430:380,cx=W/2,cy=H/2,rx=W/2-110,ry=H/2-55;
+    const pos={};ks.forEach((k,i)=>{const a=-Math.PI/2+2*Math.PI*i/n;pos[k]=[cx+rx*Math.cos(a),cy+ry*Math.sin(a)]});
+    let s=`<svg viewBox="0 0 ${W} ${H}" style="width:100%;min-width:${Math.min(W,520)}px" role="img" aria-label="Knowledge map">`;
+    ks.forEach(k=>s+=`<line x1="${cx}" y1="${cy}" x2="${pos[k][0]}" y2="${pos[k][1]}" stroke="#e2e0ea" stroke-width="1.5"/>`);
+    (HZ.links||[]).forEach(([a,b])=>{if(pos[a]&&pos[b])s+=`<line x1="${pos[a][0]}" y1="${pos[a][1]}" x2="${pos[b][0]}" y2="${pos[b][1]}" stroke="#a7b2e2" stroke-width="2" stroke-dasharray="5 4"/>`});
+    s+=`<ellipse cx="${cx}" cy="${cy}" rx="88" ry="34" fill="#1c2230"/><text x="${cx}" y="${cy-4}" fill="#fff" font-size="14" text-anchor="middle" font-weight="700">${HZ.centre[0]}</text><text x="${cx}" y="${cy+15}" fill="#fff" font-size="13" text-anchor="middle">${HZ.centre[1]}</text>`;
+    ks.forEach(k=>{const a=avg(R.filter(r=>r.c===k)),l=lvl(a),[x,y]=pos[k];const name=HZ.concepts[k].n;
+      s+=`<rect x="${x-92}" y="${y-26}" width="184" height="52" rx="12" fill="#fff" stroke="${COL[l]}" stroke-width="3"/><text x="${x}" y="${y-5}" font-size="13" text-anchor="middle" font-weight="700" fill="#1c2230" ${name.length>24?'textLength="170" lengthAdjust="spacingAndGlyphs"':''}>${name}</text><text x="${x}" y="${y+15}" font-size="12.5" text-anchor="middle" fill="${COL[l]}">${a==null?'not tried':a.toFixed(1)+' / 3 · '+LV[l]}</text>`});
+    return s+'</svg>'}
+  function build(){const box=document.getElementById('hz-report');if(!box)return;const R=rows(),D=R.filter(r=>r.done);
+    if(!D.length){box.innerHTML='<div class="card"><p>Nothing answered yet. Work through the tabs, then come back: this report is built from your own attempts.</p></div>';return}
+    let h='';
+    h+=`<h3>1. By tab</h3><div class="card"><div class="hzr-t"><table>`;
+    Object.keys(EX).forEach(t=>{const rs=R.filter(r=>r.tab===t),d=rs.filter(r=>r.done),p=d.reduce((s,r)=>s+r.pts,0);
+      h+=`<tr><td style="padding:.3rem .4rem;white-space:nowrap">${HZ.tabs[t]||t}</td><td style="padding:.3rem .4rem;width:55%">${bar(p/(rs.length*3||1),'linear-gradient(90deg,#3b4fa8,#b5487a)')}</td><td style="padding:.3rem .4rem;white-space:nowrap;font-size:.85rem">${d.length}/${rs.length} · ${p} pts</td></tr>`});
+    h+=`</table></div></div>`;
+    h+=`<h3>2. By idea</h3><div class="card"><div class="hzr-t"><table>`;
+    Object.keys(HZ.concepts).forEach(k=>{const rs=R.filter(r=>r.c===k),a=avg(rs),l=lvl(a);
+      h+=`<tr><td style="padding:.3rem .4rem">${HZ.concepts[k].n}</td><td style="padding:.3rem .4rem;width:40%">${bar(a==null?0:a/3,COL[l])}</td><td style="padding:.3rem .4rem;white-space:nowrap;font-size:.85rem;color:${COL[l]};font-weight:700">${a==null?'not tried':a.toFixed(1)+' / 3 · '+LV[l]}</td></tr>`});
+    h+=`</table></div></div>`;
+    h+=`<h3>3. By kind of thinking</h3><div class="card"><div class="hzr-t"><table>`;
+    Object.keys(SK).forEach(k=>{const rs=R.filter(r=>r.k===k);if(!rs.length)return;const a=avg(rs),l=lvl(a);
+      h+=`<tr><td style="padding:.3rem .4rem">${SK[k]}</td><td style="padding:.3rem .4rem;width:40%">${bar(a==null?0:a/3,COL[l])}</td><td style="padding:.3rem .4rem;white-space:nowrap;font-size:.85rem;color:${COL[l]};font-weight:700">${a==null?'not tried':a.toFixed(1)+' / 3'}</td></tr>`});
+    h+=`</table></div></div>`;
+    const first=D.filter(r=>r.pts===3).length,fast=D.filter(r=>r.fast).length,rush=D.filter(r=>r.rushed).length,left=R.length-D.length;
+    h+=`<h3>4. How you worked</h3><div class="card"><ul class="hzr-ul">
+      <li><b>${first}</b> right on the first try.</li>
+      <li>${fast?`<b>${fast}</b> answered right very quickly: great if you really knew them.`:'You took your time on every question.'}</li>
+      <li>${rush?`<b>${rush}</b> question(s) had three wrong tries in under 20 seconds. After a wrong answer, stop and re-read the technique box or redo the worked example before trying again.`:'No rushing: you stopped to think after wrong answers. Well done.'}</li>
+      <li>${left?`<b>${left}</b> question(s) still to do.`:'You finished every question!'}</li></ul></div>`;
+    const weak=Object.keys(HZ.concepts).map(k=>[k,avg(R.filter(r=>r.c===k))]).filter(([k,a])=>a!=null&&a<2.5).sort((x,y)=>x[1]-y[1]).slice(0,3);
+    h+=`<h3>5. What to do next</h3>`+(weak.length?weak.map(([k,a])=>`<div class="card" style="border-left:5px solid ${COL[lvl(a)]}"><b>${HZ.concepts[k].n}</b> <span style="color:${COL[lvl(a)]};font-weight:700">(${a.toFixed(1)} / 3)</span><p style="margin:.3rem 0 0">${HZ.concepts[k].adv}</p></div>`).join(''):`<div class="card">Every idea you tried is steady. ${HZ.next||''}</div>`);
+    h+=`<h3>6. Your knowledge map</h3><p style="font-size:.9rem;color:#5b6475">Each box is one idea of this part, coloured by your average score. Dashed lines show ideas that build on each other.</p><div class="card" style="overflow-x:auto">${kmap(R)}</div>
+      <p style="font-size:.85rem"><span style="color:#2f8a4c">■</span> steady (2.5 or more) &nbsp; <span style="color:#b7791f">■</span> practise &nbsp; <span style="color:#c0392b">■</span> needs work (below 1.5) &nbsp; <span style="color:#9aa1ad">■</span> not tried</p>`;
+    const tot=D.reduce((s,r)=>s+r.pts,0);
+    h+=`<h3>7. Your score</h3><div class="card" style="text-align:center"><div style="font-family:Georgia,serif;font-size:2.2rem;font-weight:700;color:#3b4fa8">${tot} / ${R.length*3}</div><p style="font-size:.88rem;color:#5b6475;margin:.2rem 0 0">3 points for right on the first try, 2 on the second, 1 on the third, 0 if all three tries were wrong.</p></div>`;
+    box.innerHTML='<div class="hzr">'+h+'</div>';if(window.MathJax)MathJax.typesetPromise([box]);
+  }
+  window.hzBuildReport=build;
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style id="tw">/*! tailwindcss v4.3.3 | MIT License | https://tailwindcss.com */
+@layer properties;
+@layer theme, base, components, utilities;
+@layer theme {
+  :root, :host {
+    --font-sans: "Avenir Next","Segoe UI",system-ui,sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
+    monospace;
+    --color-red-700: oklch(50.5% 0.213 27.518);
+    --color-amber-50: oklch(98.7% 0.022 95.277);
+    --color-amber-700: oklch(55.5% 0.163 48.998);
+    --color-emerald-700: oklch(50.8% 0.118 165.612);
+    --color-teal-50: #f1f3fb;
+    --color-teal-200: #c9d0ef;
+    --color-teal-600: #3b4fa8;
+    --color-teal-700: #33449a;
+    --color-teal-800: #2a3880;
+    --color-teal-900: #222d66;
+    --color-slate-50: oklch(98.4% 0.003 247.858);
+    --color-slate-100: oklch(96.8% 0.007 247.896);
+    --color-slate-200: oklch(92.9% 0.013 255.508);
+    --color-slate-300: oklch(86.9% 0.022 252.894);
+    --color-slate-500: oklch(55.4% 0.046 257.417);
+    --color-slate-600: oklch(44.6% 0.043 257.281);
+    --color-slate-700: oklch(37.2% 0.044 257.287);
+    --color-slate-800: oklch(27.9% 0.041 260.031);
+    --spacing: 0.25rem;
+    --container-xl: 36rem;
+    --container-2xl: 42rem;
+    --container-3xl: 48rem;
+    --text-xs: 0.75rem;
+    --text-xs--line-height: calc(1 / 0.75);
+    --text-sm: 0.875rem;
+    --text-sm--line-height: calc(1.25 / 0.875);
+    --text-base: 1rem;
+    --text-base--line-height: calc(1.5 / 1);
+    --text-lg: 1.125rem;
+    --text-lg--line-height: calc(1.75 / 1.125);
+    --text-xl: 1.25rem;
+    --text-xl--line-height: calc(1.75 / 1.25);
+    --text-2xl: 1.5rem;
+    --text-2xl--line-height: calc(2 / 1.5);
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --leading-relaxed: 1.625;
+    --leading-loose: 2;
+    --radius-lg: 0.5rem;
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --default-font-family: var(--font-sans);
+    --default-mono-font-family: var(--font-mono);
+  }
+}
+@layer base {
+  *, ::after, ::before, ::backdrop, ::file-selector-button {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0 solid;
+  }
+  html, :host {
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    tab-size: 4;
+    font-family: var(--default-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji');
+    font-feature-settings: var(--default-font-feature-settings, normal);
+    font-variation-settings: var(--default-font-variation-settings, normal);
+    -webkit-tap-highlight-color: transparent;
+  }
+  hr {
+    height: 0;
+    color: inherit;
+    border-top-width: 1px;
+  }
+  abbr:where([title]) {
+    -webkit-text-decoration: underline dotted;
+    text-decoration: underline dotted;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+  a {
+    color: inherit;
+    -webkit-text-decoration: inherit;
+    text-decoration: inherit;
+  }
+  b, strong {
+    font-weight: bolder;
+  }
+  code, kbd, samp, pre {
+    font-family: var(--default-mono-font-family, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace);
+    font-feature-settings: var(--default-mono-font-feature-settings, normal);
+    font-variation-settings: var(--default-mono-font-variation-settings, normal);
+    font-size: 1em;
+  }
+  small {
+    font-size: 80%;
+  }
+  sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  sub {
+    bottom: -0.25em;
+  }
+  sup {
+    top: -0.5em;
+  }
+  table {
+    text-indent: 0;
+    border-color: inherit;
+    border-collapse: collapse;
+  }
+  :-moz-focusring:where(:not(iframe)) {
+    outline: auto;
+  }
+  progress {
+    vertical-align: baseline;
+  }
+  summary {
+    display: list-item;
+  }
+  ol, ul, menu {
+    list-style: none;
+  }
+  img, svg, video, canvas, audio, iframe, embed, object {
+    display: block;
+    vertical-align: middle;
+  }
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+  button, input, select, optgroup, textarea, ::file-selector-button {
+    font: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    border-radius: 0;
+    background-color: transparent;
+    opacity: 1;
+  }
+  :where(select:is([multiple], [size])) optgroup {
+    font-weight: bolder;
+  }
+  :where(select:is([multiple], [size])) optgroup option {
+    padding-inline-start: 20px;
+  }
+  ::file-selector-button {
+    margin-inline-end: 4px;
+  }
+  ::placeholder {
+    opacity: 1;
+  }
+  @supports (not (-webkit-appearance: -apple-pay-button))  or (contain-intrinsic-size: 1px) {
+    ::placeholder {
+      color: currentcolor;
+      @supports (color: color-mix(in lab, red, red)) {
+        color: color-mix(in oklab, currentcolor 50%, transparent);
+      }
+    }
+  }
+  textarea {
+    resize: vertical;
+  }
+  ::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+  ::-webkit-date-and-time-value {
+    min-height: 1lh;
+    text-align: inherit;
+  }
+  ::-webkit-datetime-edit {
+    display: inline-flex;
+  }
+  ::-webkit-datetime-edit-fields-wrapper {
+    padding: 0;
+  }
+  ::-webkit-datetime-edit, ::-webkit-datetime-edit-year-field, ::-webkit-datetime-edit-month-field, ::-webkit-datetime-edit-day-field, ::-webkit-datetime-edit-hour-field, ::-webkit-datetime-edit-minute-field, ::-webkit-datetime-edit-second-field, ::-webkit-datetime-edit-millisecond-field, ::-webkit-datetime-edit-meridiem-field {
+    padding-block: 0;
+  }
+  ::-webkit-calendar-picker-indicator {
+    line-height: 1;
+  }
+  :-moz-ui-invalid {
+    box-shadow: none;
+  }
+  button, input:where([type='button'], [type='reset'], [type='submit']), ::file-selector-button {
+    appearance: button;
+  }
+  ::-webkit-inner-spin-button, ::-webkit-outer-spin-button {
+    height: auto;
+  }
+  [hidden]:where(:not([hidden='until-found'])) {
+    display: none !important;
+  }
+}
+@layer utilities {
+  .collapse {
+    visibility: collapse;
+  }
+  .static {
+    position: static;
+  }
+  .mx-auto {
+    margin-inline: auto;
+  }
+  .my-1 {
+    margin-block: var(--spacing);
+  }
+  .my-2 {
+    margin-block: calc(var(--spacing) * 2);
+  }
+  .mt-1 {
+    margin-top: var(--spacing);
+  }
+  .mt-2 {
+    margin-top: calc(var(--spacing) * 2);
+  }
+  .mt-3 {
+    margin-top: calc(var(--spacing) * 3);
+  }
+  .mt-4 {
+    margin-top: calc(var(--spacing) * 4);
+  }
+  .mb-1 {
+    margin-bottom: var(--spacing);
+  }
+  .mb-2 {
+    margin-bottom: calc(var(--spacing) * 2);
+  }
+  .mb-3 {
+    margin-bottom: calc(var(--spacing) * 3);
+  }
+  .mb-4 {
+    margin-bottom: calc(var(--spacing) * 4);
+  }
+  .mb-5 {
+    margin-bottom: calc(var(--spacing) * 5);
+  }
+  .mb-6 {
+    margin-bottom: calc(var(--spacing) * 6);
+  }
+  .block {
+    display: block;
+  }
+  .flex {
+    display: flex;
+  }
+  .grid {
+    display: grid;
+  }
+  .hidden {
+    display: none;
+  }
+  .inline-block {
+    display: inline-block;
+  }
+  .inline-flex {
+    display: inline-flex;
+  }
+  .table {
+    display: table;
+  }
+  .min-h-\[1\.5rem\] {
+    min-height: 1.5rem;
+  }
+  .min-h-\[3\.2rem\] {
+    min-height: 3.2rem;
+  }
+  .w-full {
+    width: 100%;
+  }
+  .max-w-2xl {
+    max-width: var(--container-2xl);
+  }
+  .max-w-3xl {
+    max-width: var(--container-3xl);
+  }
+  .max-w-xl {
+    max-width: var(--container-xl);
+  }
+  .min-w-0 {
+    min-width: 0px;
+  }
+  .flex-1 {
+    flex: 1;
+  }
+  .list-decimal {
+    list-style-type: decimal;
+  }
+  .list-disc {
+    list-style-type: disc;
+  }
+  .flex-col {
+    flex-direction: column;
+  }
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+  .items-center {
+    align-items: center;
+  }
+  .items-end {
+    align-items: flex-end;
+  }
+  .items-start {
+    align-items: flex-start;
+  }
+  .gap-1 {
+    gap: var(--spacing);
+  }
+  .gap-2 {
+    gap: calc(var(--spacing) * 2);
+  }
+  .gap-3 {
+    gap: calc(var(--spacing) * 3);
+  }
+  .gap-4 {
+    gap: calc(var(--spacing) * 4);
+  }
+  :where(.space-y-1 > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(var(--spacing) * var(--tw-space-y-reverse));
+    margin-block-end: calc(var(--spacing) * calc(1 - var(--tw-space-y-reverse)));
+  }
+  :where(.space-y-2 > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(calc(var(--spacing) * 2) * var(--tw-space-y-reverse));
+    margin-block-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-y-reverse)));
+  }
+  .self-center {
+    align-self: center;
+  }
+  .overflow-x-auto {
+    overflow-x: auto;
+  }
+  .rounded {
+    border-radius: 0.25rem;
+  }
+  .rounded-lg {
+    border-radius: var(--radius-lg);
+  }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
+  .border-b-4 {
+    border-bottom-style: var(--tw-border-style);
+    border-bottom-width: 4px;
+  }
+  .border-slate-200 {
+    border-color: var(--color-slate-200);
+  }
+  .border-teal-200 {
+    border-color: var(--color-teal-200);
+  }
+  .border-teal-600 {
+    border-color: var(--color-teal-600);
+  }
+  .bg-amber-50 {
+    background-color: var(--color-amber-50);
+  }
+  .bg-slate-50 {
+    background-color: var(--color-slate-50);
+  }
+  .bg-slate-100 {
+    background-color: var(--color-slate-100);
+  }
+  .bg-teal-50 {
+    background-color: var(--color-teal-50);
+  }
+  .p-2 {
+    padding: calc(var(--spacing) * 2);
+  }
+  .p-3 {
+    padding: calc(var(--spacing) * 3);
+  }
+  .pr-2 {
+    padding-right: calc(var(--spacing) * 2);
+  }
+  .pl-5 {
+    padding-left: calc(var(--spacing) * 5);
+  }
+  .pl-6 {
+    padding-left: calc(var(--spacing) * 6);
+  }
+  .text-center {
+    text-align: center;
+  }
+  .text-left {
+    text-align: left;
+  }
+  .text-right {
+    text-align: right;
+  }
+  .text-2xl {
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
+  }
+  .text-base {
+    font-size: var(--text-base);
+    line-height: var(--tw-leading, var(--text-base--line-height));
+  }
+  .text-lg {
+    font-size: var(--text-lg);
+    line-height: var(--tw-leading, var(--text-lg--line-height));
+  }
+  .text-sm {
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
+  }
+  .text-xl {
+    font-size: var(--text-xl);
+    line-height: var(--tw-leading, var(--text-xl--line-height));
+  }
+  .text-xs {
+    font-size: var(--text-xs);
+    line-height: var(--tw-leading, var(--text-xs--line-height));
+  }
+  .leading-\[2\.6rem\] {
+    --tw-leading: 2.6rem;
+    line-height: 2.6rem;
+  }
+  .leading-loose {
+    --tw-leading: var(--leading-loose);
+    line-height: var(--leading-loose);
+  }
+  .leading-relaxed {
+    --tw-leading: var(--leading-relaxed);
+    line-height: var(--leading-relaxed);
+  }
+  .font-bold {
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+  }
+  .font-medium {
+    --tw-font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-medium);
+  }
+  .font-semibold {
+    --tw-font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
+  }
+  .text-amber-700 {
+    color: var(--color-amber-700);
+  }
+  .text-emerald-700 {
+    color: var(--color-emerald-700);
+  }
+  .text-red-700 {
+    color: var(--color-red-700);
+  }
+  .text-slate-300 {
+    color: var(--color-slate-300);
+  }
+  .text-slate-500 {
+    color: var(--color-slate-500);
+  }
+  .text-slate-600 {
+    color: var(--color-slate-600);
+  }
+  .text-slate-700 {
+    color: var(--color-slate-700);
+  }
+  .text-slate-800 {
+    color: var(--color-slate-800);
+  }
+  .text-teal-700 {
+    color: var(--color-teal-700);
+  }
+  .text-teal-800 {
+    color: var(--color-teal-800);
+  }
+  .text-teal-900 {
+    color: var(--color-teal-900);
+  }
+  .uppercase {
+    text-transform: uppercase;
+  }
+  .ease-out {
+    --tw-ease: var(--ease-out);
+    transition-timing-function: var(--ease-out);
+  }
+  .select-none {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  @media (width >= 48rem) {
+    .md\:grid-cols-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .md\:grid-cols-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+}
+@property --tw-space-y-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-leading {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ease {
+  syntax: "*";
+  inherits: false;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-space-y-reverse: 0;
+      --tw-border-style: solid;
+      --tw-leading: initial;
+      --tw-font-weight: initial;
+      --tw-ease: initial;
+    }
+  }
+}
+</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Horizon · Section 2.1 · Introducing integers</title>
+
+
+<style>
+  body { font-family: 'Inter', system-ui, sans-serif; background-color: #f7f6fb; color: #0f172a; overflow-x: hidden; }
+  .tab-content { display: none; animation: fadeIn 0.4s ease-out; }
+  .tab-content.active { display: block; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+  input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; background: transparent; }
+  input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; height: 20px; width: 20px; border-radius: 50%; background: #3b4fa8; cursor: pointer; margin-top: -8px; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+  input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 6px; cursor: pointer; background: #cbd5e1; border-radius: 3px; }
+  .btn { background:#3b4fa8; color:#fff; font-weight:700; padding:.45rem 1rem; border-radius:.4rem; font-size:.875rem; transition:.15s; box-shadow:0 1px 2px rgba(0,0,0,.15); }
+  .btn:hover { background:#33449a; } .btn:disabled { background:#94a3b8; cursor:not-allowed; }
+  .btn-ghost { background:#fff; color:#33449a; border:2px solid #c9d0ef; font-weight:700; padding:.3rem .75rem; border-radius:.4rem; font-size:.8rem; transition:.15s; }
+  .btn-ghost:hover { background:#eef0fa; border-color:#3b4fa8; } .btn-ghost.on { background:#3b4fa8; color:#fff; border-color:#3b4fa8; }
+  .card { background:#fff; border:1px solid #e2e8f0; border-radius:.75rem; padding:1.25rem; }
+  .key { background:#eef0fa; border-left:5px solid #3b4fa8; border-radius:.5rem; padding:1rem 1.25rem; }
+  .warn { background:#fffbeb; border-left:5px solid #f59e0b; border-radius:.5rem; padding:1rem 1.25rem; }
+  .step-badge { display:inline-flex; align-items:center; justify-content:center; width:1.75rem; height:1.75rem; border-radius:9999px; background:#3b4fa8; color:#fff; font-weight:800; font-size:.85rem; flex-shrink:0; }
+  .ex-card { background:#fff; border:1px solid #cbd5e1; border-radius:.75rem; padding:1.1rem 1.25rem; margin-bottom:1rem; }
+  .ex-card.ok { border-color:#34d399; background:#f0fdf4; } .ex-card.bad { border-color:#fca5a5; background:#fef2f2; }
+  .qnum { width:2rem; height:2rem; border-radius:.5rem; background:#1c2230; color:#fff; font-weight:800; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .inp { border:2px solid #cbd5e1; border-radius:.4rem; padding:.45rem .7rem; font-family: ui-monospace, monospace; font-weight:700; width:100%; max-width:22rem; }
+  .inp:focus { outline:none; border-color:#3b4fa8; box-shadow:0 0 0 3px #c9d0ef; }
+  .opt { display:block; width:100%; text-align:left; border:2px solid #cbd5e1; background:#fff; border-radius:.5rem; padding:.5rem .8rem; margin-bottom:.4rem; font-size:.9rem; transition:.15s; }
+  .opt:hover { border-color:#3b4fa8; background:#eef0fa; } .opt.sel { border-color:#3b4fa8; background:#dde2f6; font-weight:700; }
+  .opt.right { border-color:#10b981; background:#d1fae5; } .opt.wrong { border-color:#ef4444; background:#fee2e2; }
+  .chip { display:inline-flex; align-items:center; justify-content:center; min-width:2.6rem; height:2.4rem; padding:0 .5rem; border:2px solid #cbd5e1; border-radius:.5rem; background:#fff; font-weight:700; cursor:pointer; transition:.15s; user-select:none; }
+  .chip:hover { border-color:#3b4fa8; background:#eef0fa; transform:translateY(-2px); }
+  .chip.selA { background:#c9d0ef; border-color:#3b4fa8; color:#1c2230; } .chip.selB { background:#fde68a; border-color:#d97706; color:#78350f; }
+  .chip.pos { background:#ecfeff; border-color:#22d3ee; color:#155e75; } .chip.neg { background:#fff1f2; border-color:#fb7185; color:#9f1239; }
+  .chip.pick { outline:4px solid #f59e0b; }
+  .chip.static { cursor:default; } .chip.static:hover { transform:none; }
+  .sol-box { background:#f0fdf4; border:1px solid #bbf7d0; border-radius:.6rem; padding:1rem 1.2rem; } .sol-box.fail { background:#fff7ed; border-color:#fed7aa; }
+  .lvl { background:#1c2230; color:#fff; border-radius:.6rem; padding:.6rem 1rem; font-weight:800; margin:1.5rem 0 .8rem; }
+  .tab-done::after { content:" ✓"; color:#10b981; }
+  .ok-t { color:#047857; font-weight:700; } .bad-t { color:#b91c1c; font-weight:700; }
+  table.tb { border-collapse:collapse; font-size:.85rem; } table.tb th, table.tb td { border:1px solid #cbd5e1; padding:.35rem .6rem; text-align:center; }
+  table.tb th { background:#eef0fa; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script>
+/* MathJax-compatible shim: the lesson code calls MathJax.typesetPromise; we render with KaTeX */
+window.MathJax={typesetPromise:function(els){try{(els&&els.length?els:[document.body]).forEach(function(e){if(e&&window.renderMathInElement)renderMathInElement(e,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false}],throwOnError:false,ignoredClasses:['nomath']})})}catch(err){}return Promise.resolve()}};
+</script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%20role%3D%22img%22%20aria-label%3D%22%E7%94%B3%20Shen%20Studio%22%3E%3Crect%20width%3D%22100%22%20height%3D%22100%22%20rx%3D%2212%22%20fill%3D%22%23B3261E%22/%3E%3Cpath%20d%3D%22M41.57%2027.7V42.46H27.58V27.7ZM15.1%2025.34V70.78H16.95C22.18%2070.78%2027.58%2067.91%2027.58%2066.65V62.18H41.57V90H44.01C48.82%2090%2054.3%2086.88%2054.3%2085.62V62.18H68.97V68.93H71.07C75.37%2068.93%2081.53%2066.65%2081.61%2065.89V29.64C83.38%2029.3%2084.39%2028.55%2084.9%2027.87L73.69%2019.19L68.12%2025.34H54.3V13.96C56.74%2013.62%2057.33%2012.7%2057.5%2011.52L41.57%2010V25.34H28.42L15.1%2020.2ZM54.3%2027.7H68.97V42.46H54.3ZM41.57%2059.82H27.58V44.82H41.57ZM54.3%2059.82V44.82H68.97V59.82Z%22%20fill%3D%22%23FFFFFF%22/%3E%3C/svg%3E">
+<style id="shen-brand">
+.shen-footer{display:flex;align-items:center;justify-content:center;gap:8px;padding:18px 12px 26px;font:500 13px/1.3 Inter,"Helvetica Neue",Arial,sans-serif;color:#6B6458;letter-spacing:.03em;text-align:center}
+.shen-footer svg{width:20px;height:20px;flex-shrink:0}
+.shen-footer b{font-weight:600;color:#1A1A1A}
+.shen-print-mark{display:none}
+@media print{.shen-footer{display:none!important}
+.shen-print-mark{display:flex!important;position:fixed;right:0;bottom:0;align-items:center;gap:1.5mm;font:500 7.5pt/1 Inter,Arial,sans-serif;color:#555;opacity:.75;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.shen-print-mark svg{width:4mm;height:4mm}}
+</style>
+<style id="home-link">
+.homebtn{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 12px;border:1px solid var(--line,#ddd);border-radius:999px;background:#fff;color:var(--ink,#1c2230);text-decoration:none;font:600 .88rem/1 Inter,system-ui,sans-serif;white-space:nowrap;flex-shrink:0}
+.homebtn:hover{background:#f1eff6}
+.homebtn svg{width:16px;height:16px}
+@media print{.homebtn{display:none!important}}
+</style>
+<style id="hz">/* ===== Horizon lessons on the Maths Atlas theme ===== */
+:root{--ink:#1c2230;--muted:#5b6475;--paper:#f7f6fb;--line:#e2e0ea;--a:#3b4fa8;--a-soft:#e8ebf8;--b:#b5487a;--hz:#d4693a;--hz-soft:#fdf0e8}
+html,body{margin:0;padding:0}
+body{background:var(--paper)!important;color:var(--ink);font:17px/1.62 "Avenir Next","Segoe UI",system-ui,-apple-system,sans-serif!important;overflow-x:hidden}
+h1,h2,h3,h4{font-family:Georgia,"Times New Roman",serif}
+h2{color:var(--ink)}
+header.top{position:sticky;top:0;z-index:30;background:rgba(247,246,251,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.topin{max-width:980px;margin:0 auto;padding:.55rem 1rem .35rem;display:flex;align-items:center;gap:.8rem;flex-wrap:wrap}
+.brand{font-family:Georgia,serif;font-weight:600;font-size:1.02rem;flex:1;min-width:180px;line-height:1.3}
+.brand .hzk{display:inline-block;font:700 .66rem/1 "Avenir Next",system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#fff;background:linear-gradient(90deg,#2b2350,var(--hz));border-radius:999px;padding:.28rem .6rem;margin-right:.4rem;vertical-align:2px}
+.brand small{display:block;font-weight:400;color:var(--muted);font-size:.84rem}
+.prog{font-size:.82rem;color:var(--muted);text-align:right;white-space:nowrap}
+nav.tabs{max-width:980px;margin:0 auto;display:flex;gap:.35rem;overflow-x:auto;padding:.1rem 1rem .6rem;scrollbar-width:thin}
+nav.tabs .tab-link{flex:0 0 auto;border:1px solid var(--line)!important;background:#fff!important;color:var(--ink)!important;border-radius:999px!important;padding:.32rem .8rem!important;font:400 .9rem/1.4 "Avenir Next",system-ui,sans-serif!important;cursor:pointer;white-space:nowrap}
+nav.tabs .tab-link.border-teal-600{background:var(--ink)!important;color:#fff!important;border-color:var(--ink)!important}
+nav.tabs .tab-link.tab-done::after{color:#2f8a4c}
+nav.tabs .tab-link.border-teal-600.tab-done::after{color:#9be3b0}
+main.hzmain{max-width:980px;margin:0 auto;padding:1.4rem 1rem 3rem}
+main.hzmain h2{font-size:1.65rem!important}
+main.hzmain .card{border-color:var(--line)}
+.katex{font-size:1.06em}
+.katex-display{overflow-x:auto;overflow-y:hidden;padding:2px 0}
+input,select,button,textarea{font-family:inherit}
+@media print{header.top{position:static}}
+
+.hzr h3{font-size:1.15rem;margin:1.4rem 0 .4rem;font-weight:600}
+.hzr .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:.8rem 1rem;margin:.5rem 0}
+.hzr-t{overflow-x:auto}.hzr-t table{width:100%;border-collapse:collapse}
+.hzr-t td{padding:.3rem .35rem;vertical-align:middle;font-size:.95rem}
+.hzr-t td:last-child{white-space:nowrap;font-size:.82rem}
+.hzr-ul{list-style:disc;padding-left:1.2rem;margin:.2rem 0}.hzr-ul li{margin:.25rem 0}
+@media(max-width:480px){.hzr-t td:nth-child(2){min-width:70px}.hzr-t td:nth-child(2) div{min-width:60px!important}}
+.codetab,table.tb,table.rp{display:block;overflow-x:auto;max-width:100%}
+</style>
+</head>
+<body>
+<header class="top"><div class="topin"><a class="homebtn" href="../index.html#horizon" aria-label="Back to the Maths Atlas home page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>Home</a><div class="brand"><span class="hzk">Horizon</span>Chapter 1 · Sets and Integers<small>Section 2.1 · Introducing integers: closure, order and addition</small></div><div class="prog"><span id="prog-count">0</span> / <span id="prog-total">0</span> done</div></div><nav class="tabs" id="tabs"><button type="button" class="tab-link text-teal-700 border-b-4 border-teal-600 font-bold" data-tab="t1" onclick="openTab(event,'t1')">1. Closure &amp; Why We Need &#8484;</button><button type="button" class="tab-link" data-tab="t2" onclick="openTab(event,'t2')">2. Number Line &amp; Inequalities</button><button type="button" class="tab-link" data-tab="t3" onclick="openTab(event,'t3')">3. Rules of Addition</button><button type="button" class="tab-link" data-tab="t4" onclick="openTab(event,'t4')">4. Smart Math Thinking</button><button type="button" class="tab-link" data-tab="t5" onclick="openTab(event,'t5')">5. Homework</button><button type="button" class="tab-link" data-tab="t6" onclick="openTab(event,'t6')">6. Learning report</button></nav></header>
+<main class="hzmain">
+
+  <!-- ================= TAB 1 ================= -->
+  <div id="t1" class="tab-content active">
+    <h2 class="text-2xl font-bold text-slate-800 mb-1">Step 1: Closure, and Why We Needed New Numbers</h2>
+    <p class="text-slate-600 mb-5">In Chapter 1 you learned that a set is a collection and that $a \in S$ means &ldquo;$a$ belongs to $S$&rdquo;. Now we ask a new question: <strong>what happens when we <em>calculate</em> with members of a set?</strong></p>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">1</span><h3 class="text-lg font-bold text-slate-800">An operation can &ldquo;escape&rdquo; the set</h3></div>
+    <div class="card mb-5 text-sm text-slate-700 leading-relaxed">
+      <p>Let $\mathbb{Z}^+ = \{1,2,3,\ldots\}$ be the <strong>positive integers</strong> (the counting numbers). Both $8 \in \mathbb{Z}^+$ and $5 \in \mathbb{Z}^+$.</p>
+      <p class="mt-2">$8 + 5 = 13$. Is $13 \in \mathbb{Z}^+$? Yes, we <em>stayed inside</em>.</p>
+      <p class="mt-1">$5 - 8 = -3$. Is $-3 \in \mathbb{Z}^+$? <strong>No!</strong> The answer <em>escaped</em> from our set. In our counting-number world, that question had no answer.</p>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">2</span><h3 class="text-lg font-bold text-slate-800">What does &ldquo;closed&rdquo; mean?</h3></div>
+    <div class="key mb-4">
+      <p class="text-slate-800">A set $S$ is <strong>closed under an operation</strong> (like $+$, $-$, $\times$) if combining <strong>any two members of $S$</strong> (they may be the same member twice) <strong>always</strong> gives an answer that is <strong>still in $S$</strong>.</p>
+      <p class="text-sm text-slate-700 mt-2">In set language: &ldquo;if $a \in S$ and $b \in S$, then $a + b \in S$.&rdquo; Think of $S$ as an island: if every calculation lands on the island, the island is closed.</p>
+      <p class="text-sm text-slate-700 mt-2"><strong>Proving vs disproving.</strong> To show a set is <em>not</em> closed, <strong>one counterexample</strong> is enough ($5-8$ above). To show it <em>is</em> closed, trying examples is not enough: we need a reason that works for <em>all</em> pairs.</p>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">3</span><h3 class="text-lg font-bold text-slate-800">Why do we care?</h3></div>
+    <div class="grid md:grid-cols-3 gap-4 mb-5 text-sm">
+      <div class="card"><strong class="text-teal-800">Guaranteed answers.</strong><br>If a set is closed, every calculation has an answer in the same world. No surprises, no &ldquo;impossible&rdquo;.</div>
+      <div class="card"><strong class="text-teal-800">Safe chains of steps.</strong><br>You can do a long calculation, step after step, and trust that each intermediate result is still a legal number of your system.</div>
+      <div class="card"><strong class="text-teal-800">It drives discovery.</strong><br>When a set is not closed, mathematicians <em>build a bigger set</em> that fixes it. That is exactly how negative numbers were born.</div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">4</span><h3 class="text-lg font-bold text-slate-800">Try it: the Closure Tester</h3></div>
+    <div class="card mb-5">
+      <div class="flex flex-wrap gap-2 mb-2" id="cs-sets"></div>
+      <div class="flex flex-wrap gap-2 mb-3" id="cs-ops"></div>
+      <p class="text-sm text-slate-600 mb-2">Click <strong>two members</strong> (first teal, second amber), or let the computer hunt for a counterexample.</p>
+      <div id="cs-members" class="flex flex-wrap gap-2 mb-3"></div>
+      <div id="cs-out" class="p-3 rounded-lg bg-slate-50 border border-slate-200 text-base min-h-[3.2rem] mb-2">Pick two members&hellip;</div>
+      <div class="flex flex-wrap gap-2 mb-2"><button class="btn" onclick="csAuto()">Search for a counterexample</button><button class="btn-ghost" onclick="csReset()">Clear picks</button></div>
+      <div id="cs-auto" class="text-sm font-semibold min-h-[1.5rem]"></div>
+      <div class="mt-4 overflow-x-auto"><p class="text-xs font-bold text-slate-500 uppercase mb-1">Your closure scoreboard (fills in as you search)</p><table class="tb" id="cs-table"></table></div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">5</span><h3 class="text-lg font-bold text-slate-800">The fix: build $\mathbb{Z}$</h3></div>
+    <div class="key mb-5">
+      <p class="text-sm text-slate-800">Add the number $0$ and the <strong>negative integers</strong> $\mathbb{Z}^- = \{\ldots,-3,-2,-1\}$ to $\mathbb{Z}^+$. The result is the set of <strong>integers</strong>:</p>
+      <p class="text-center my-2">$\mathbb{Z} = \mathbb{Z}^- \cup \{0\} \cup \mathbb{Z}^+ = \{\ldots,-3,-2,-1,0,1,2,3,\ldots\}$</p>
+      <ul class="list-disc pl-6 text-sm text-slate-800 space-y-1">
+        <li>The three pieces do not overlap (they are <em>disjoint</em>) and together make everything: a <strong>partition</strong> of $\mathbb{Z}$, just like a Venn diagram with three separate regions.</li>
+        <li>$\mathbb{Z}^+ \subset \mathbb{Z}$: the old world sits <em>inside</em> the new one (proper subset).</li>
+        <li>$\mathbb{Z}$ <strong>is</strong> closed under $+$, $-$ and $\times$. Subtraction now always works because $a - b = a + (-b)$, and $-b$ is also an integer.</li>
+        <li>$\mathbb{Z}$ is <strong>not</strong> closed under $\div$: $1 \div 2 \notin \mathbb{Z}$. That problem will lead us to fractions in a later chapter.</li>
+      </ul>
+    </div>
+
+    <h3 class="text-xl font-bold text-slate-800 mb-3 bg-slate-100 p-3 rounded-lg inline-block">Check your understanding</h3>
+    <div id="ex-t1"></div>
+  </div>
+
+  <!-- ================= TAB 2 ================= -->
+  <div id="t2" class="tab-content">
+    <h2 class="text-2xl font-bold text-slate-800 mb-1">Step 2: The Integer Number Line, Order and Inequalities</h2>
+    <p class="text-slate-600 mb-5">Integers have a natural <strong>order</strong>. The number line makes that order visible: <strong>further right means bigger</strong>.</p>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">1</span><h3 class="text-lg font-bold text-slate-800">Opposites and comparing</h3></div>
+    <div class="key mb-4 text-sm text-slate-800">
+      <p>Every integer $a$ has an <strong>opposite</strong> $-a$, the mirror image across $0$. They cancel: $a + (-a) = 0$. Also $-(-a) = a$.</p>
+      <p class="mt-1">We compare with <strong>$<$</strong> (less than), <strong>$>$</strong> (greater than), <strong>$\le$</strong> (less than or equal), <strong>$\ge$</strong> (greater than or equal).</p>
+    </div>
+    <div class="card mb-5">
+      <div class="grid md:grid-cols-2 gap-4 mb-2">
+        <div><label class="text-sm font-bold text-teal-700">Number A = <span id="cmp-av">-3</span></label><input type="range" id="cmp-a" min="-10" max="10" value="-3" oninput="cmpUpdate()"></div>
+        <div><label class="text-sm font-bold text-amber-700">Number B = <span id="cmp-bv">4</span></label><input type="range" id="cmp-b" min="-10" max="10" value="4" oninput="cmpUpdate()"></div>
+      </div>
+      <div id="cmp-svg" class="max-w-2xl mx-auto"></div>
+      <div id="cmp-out" class="text-center font-bold text-lg p-2 rounded bg-slate-50 border border-slate-200"></div>
+      <p class="text-xs text-slate-500 mt-2 text-center">Opposites: the opposite of A is <span id="cmp-opp" class="font-bold"></span>, and A + (opposite of A) = 0.</p>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">2</span><h3 class="text-lg font-bold text-slate-800">Inequalities on a number line</h3></div>
+    <div class="key mb-4 text-sm text-slate-800">
+      <ul class="list-disc pl-5 space-y-1">
+        <li><strong>Open circle &#9675;</strong>: the end value is <em>not</em> included ($<$ or $>$).</li>
+        <li><strong>Closed circle &#9679;</strong>: the end value <em>is</em> included ($\le$ or $\ge$).</li>
+        <li>Shade toward the numbers that satisfy it. An arrow-end means &ldquo;keeps going&rdquo;.</li>
+        <li>Compound inequality $-2 \le x < 3$ reads &ldquo;$x$ is at least $-2$ and less than $3$&rdquo;.</li>
+      </ul>
+      <p class="mt-2">Over the integers we can also list the solutions as a set: $\{x : x \in \mathbb{Z},\ -2 \le x < 3\} = \{-2,-1,0,1,2\}$.</p>
+    </div>
+    <p class="text-sm font-bold text-slate-700 mb-2">Try it: Inequality Painter</p>
+    <div class="card mb-6">
+      <div class="grid md:grid-cols-2 gap-3 mb-3 text-sm">
+        <div class="flex items-center gap-2 flex-wrap"><span class="font-bold">Lower:</span>
+          <select id="ip-lo-t" class="inp" style="width:auto;font-family:inherit" onchange="ipUpdate()"><option value="n">none</option><option value="g">x &gt; </option><option value="ge" selected>x &ge; </option></select>
+          <select id="ip-lo-v" class="inp" style="width:auto" onchange="ipUpdate()"></select></div>
+        <div class="flex items-center gap-2 flex-wrap"><span class="font-bold">Upper:</span>
+          <select id="ip-hi-t" class="inp" style="width:auto;font-family:inherit" onchange="ipUpdate()"><option value="n">none</option><option value="l" selected>x &lt; </option><option value="le">x &le; </option></select>
+          <select id="ip-hi-v" class="inp" style="width:auto" onchange="ipUpdate()"></select></div>
+      </div>
+      <div id="ip-svg" class="mx-auto"></div>
+      <div id="ip-out" class="text-sm p-3 rounded bg-slate-50 border border-slate-200 mt-2"></div>
+    </div>
+
+    <h3 class="text-xl font-bold text-slate-800 mb-3 bg-slate-100 p-3 rounded-lg inline-block">Check your understanding</h3>
+    <p class="text-sm text-slate-600 mb-3">For the drawing questions: click a number on the line once for an open circle &#9675;, twice for a closed circle &#9679;, three times to remove. Then choose how to shade.</p>
+    <div id="ex-t2"></div>
+  </div>
+
+  <!-- ================= TAB 3 ================= -->
+  <div id="t3" class="tab-content">
+    <h2 class="text-2xl font-bold text-slate-800 mb-1">Step 3: The Rules of Addition in $\mathbb{Z}$</h2>
+    <p class="text-slate-600 mb-5">Once a set is closed, we ask what <em>rules</em> the operation follows. These rules are what let us calculate cleverly.</p>
+
+    <div class="grid md:grid-cols-2 gap-4 mb-5">
+      <div class="key"><p class="font-bold text-teal-900">Commutativity (order)</p><p class="text-center my-1">$a + b = b + a$</p><p class="text-sm text-slate-800">You may swap the order of two numbers being added.</p></div>
+      <div class="key"><p class="font-bold text-teal-900">Associativity (grouping)</p><p class="text-center my-1">$(a+b)+c = a+(b+c)$</p><p class="text-sm text-slate-800">You may choose which pair to add first. Brackets can move.</p></div>
+      <div class="key"><p class="font-bold text-teal-900">Identity</p><p class="text-center my-1">$a + 0 = a$</p><p class="text-sm text-slate-800">Zero does nothing when added.</p></div>
+      <div class="key"><p class="font-bold text-teal-900">Opposites (inverses)</p><p class="text-center my-1">$a + (-a) = 0$</p><p class="text-sm text-slate-800">Every integer has a partner that cancels it.</p></div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">1</span><h3 class="text-lg font-bold text-slate-800">See commutativity: two routes, same destination</h3></div>
+    <div class="card mb-5">
+      <div class="grid md:grid-cols-2 gap-4 mb-2">
+        <div><label class="text-sm font-bold text-teal-700">a = <span id="jp-av">5</span></label><input type="range" id="jp-a" min="-9" max="9" value="5" oninput="jpUpdate()"></div>
+        <div><label class="text-sm font-bold text-amber-700">b = <span id="jp-bv">-8</span></label><input type="range" id="jp-b" min="-9" max="9" value="-8" oninput="jpUpdate()"></div>
+      </div>
+      <div id="jp-svg" class="max-w-3xl mx-auto"></div>
+      <div id="jp-out" class="text-center font-bold p-2 rounded bg-slate-50 border border-slate-200"></div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">2</span><h3 class="text-lg font-bold text-slate-800">See associativity: move the brackets</h3></div>
+    <div class="card mb-5">
+      <div class="grid md:grid-cols-3 gap-4 mb-3">
+        <div><label class="text-sm font-bold text-slate-700">a = <span id="as-av">7</span></label><input type="range" id="as-a" min="-9" max="9" value="7" oninput="asUpdate()"></div>
+        <div><label class="text-sm font-bold text-slate-700">b = <span id="as-bv">-4</span></label><input type="range" id="as-b" min="-9" max="9" value="-4" oninput="asUpdate()"></div>
+        <div><label class="text-sm font-bold text-slate-700">c = <span id="as-cv">9</span></label><input type="range" id="as-c" min="-9" max="9" value="9" oninput="asUpdate()"></div>
+      </div>
+      <div id="as-out" class="space-y-2 text-base"></div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">3</span><h3 class="text-lg font-bold text-slate-800">Subtraction breaks the rules, so we glue the sign on</h3></div>
+    <div class="warn mb-4 text-sm text-slate-800">
+      <p><strong>Subtraction is not commutative:</strong> $5 - 3 = 2$ but $3 - 5 = -2$.</p>
+      <p class="mt-1"><strong>Subtraction is not associative:</strong> $(10-5)-2 = 3$ but $10-(5-2) = 7$.</p>
+      <p class="mt-2"><strong>The rescue:</strong> subtracting is the same as adding the opposite, $a - b = a + (-b)$. After rewriting, every term is a <em>signed number</em> being added, so commutativity and associativity apply. <strong>The sign stays glued to the number that follows it.</strong></p>
+    </div>
+    <p class="text-sm font-bold text-slate-700 mb-2">Try it: the Sign-Glued Shuffler. Click two chips to swap them.</p>
+    <div class="card mb-5">
+      <div id="sh-chips" class="flex flex-wrap gap-2 mb-3"></div>
+      <div id="sh-out" class="text-base p-3 rounded bg-slate-50 border border-slate-200 mb-3"></div>
+      <div class="flex gap-2 flex-wrap"><button class="btn-ghost" onclick="shNew()">New expression</button><button class="btn-ghost" onclick="shReset()">Reset order</button><button class="btn-ghost" onclick="shSort()">Group: positives first</button></div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">4</span><h3 class="text-lg font-bold text-slate-800">Scoreboard: which operations follow which rules?</h3></div>
+    <div class="overflow-x-auto mb-5"><table class="tb">
+      <tr><th>Operation on $\mathbb{Z}$</th><th>Closed?</th><th>Commutative?</th><th>Associative?</th><th>Identity?</th><th>Opposites (inverses)?</th></tr>
+      <tr><td><strong>Addition $+$</strong></td><td class="ok-t">Yes</td><td class="ok-t">Yes</td><td class="ok-t">Yes</td><td class="ok-t">0</td><td class="ok-t">Yes: $-a$</td></tr>
+      <tr><td><strong>Subtraction $-$</strong></td><td class="ok-t">Yes</td><td class="bad-t">No: $5-3 \ne 3-5$</td><td class="bad-t">No</td><td class="bad-t">No (0-a is not a)</td><td class="bad-t">&mdash;</td></tr>
+      <tr><td><strong>Multiplication $\times$</strong></td><td class="ok-t">Yes</td><td class="ok-t">Yes</td><td class="ok-t">Yes</td><td class="ok-t">1</td><td class="bad-t">No: nothing times 2 gives 1</td></tr>
+      <tr><td><strong>Division $\div$</strong></td><td class="bad-t">No: $1 \div 2$</td><td class="bad-t">No</td><td class="bad-t">No</td><td class="bad-t">&mdash;</td><td class="bad-t">&mdash;</td></tr>
+    </table></div>
+
+    <div class="key mb-6">
+      <p class="font-bold text-teal-900 mb-1">Look ahead (optional): the word &ldquo;group&rdquo;</p>
+      <p class="text-sm text-slate-800">When a set with one operation is <strong>closed</strong>, <strong>associative</strong>, has an <strong>identity</strong>, and every element has an <strong>opposite (inverse)</strong>, mathematicians call it a <strong>group</strong>. So $(\mathbb{Z},+)$ is a group; if it is also commutative it is called an <em>abelian</em> group. $(\mathbb{Z}^+,+)$ is <em>not</em>: it has no identity and no opposites, which is exactly why we built $\mathbb{Z}$. And $(\mathbb{Z},\times)$ is not a group (2 has no integer inverse), which foreshadows fractions. You do not need to memorise the word now; the four rules above are what we use.</p>
+    </div>
+
+    <h3 class="text-xl font-bold text-slate-800 mb-3 bg-slate-100 p-3 rounded-lg inline-block">Check your understanding</h3>
+    <div id="ex-t3"></div>
+  </div>
+
+  <!-- ================= TAB 4 ================= -->
+  <div id="t4" class="tab-content">
+    <h2 class="text-2xl font-bold text-slate-800 mb-1">Step 4: Smart Math Thinking: Using Commutativity &amp; Associativity</h2>
+    <p class="text-slate-600 mb-5">Competition problems often look impossible, until you <strong>re-order and re-group</strong> the numbers so that big calculations collapse into tiny ones. You have the two key tools: <strong>commutativity</strong> (re-order) and <strong>associativity</strong> (re-group), with signs glued to their numbers.</p>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">A</span><h3 class="text-lg font-bold text-slate-800">Worked example A: re-order, then re-group</h3></div>
+    <div class="card mb-5">
+      <p class="font-bold text-slate-800 mb-1">What is the value of $(2+4+6+\cdots+198+200) - (1+3+5+\cdots+197+199)$?</p>
+      <p class="text-sm text-slate-600 mb-3">Adding all of it up would take forever. First try a small copy of the problem. Choose how many pairs: <strong id="ea-nv">4</strong></p>
+      <input type="range" id="ea-n" min="2" max="6" value="4" oninput="eaUpdate()" class="mb-3">
+      <div class="flex flex-wrap gap-2 mb-3">
+        <button class="btn-ghost on" id="ea-b1" onclick="eaStep(1)">Step 1</button><button class="btn-ghost" id="ea-b2" onclick="eaStep(2)">Step 2</button><button class="btn-ghost" id="ea-b3" onclick="eaStep(3)">Step 3</button><button class="btn-ghost" id="ea-b4" onclick="eaStep(4)">Step 4</button></div>
+      <div id="ea-out" class="p-3 rounded-lg bg-slate-50 border border-slate-200 text-base leading-loose"></div>
+      <p class="text-sm text-slate-700 mt-3"><strong>Scale up:</strong> the evens go up to $200$, so there are $100$ pairs, and each pair is $1$. The answer is $\mathbf{100}$.</p>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">B</span><h3 class="text-lg font-bold text-slate-800">Worked example B: write it twice (forwards and backwards)</h3></div>
+    <div class="card mb-5">
+      <p class="font-bold text-slate-800 mb-1">Determine the exact value of $1+3+5+7+\cdots+199$.</p>
+      <p class="text-sm text-slate-600 mb-2">Commutativity lets us write the same sum <em>backwards</em>. Add the two rows column by column. Number of terms: <strong id="eb-nv">6</strong></p>
+      <input type="range" id="eb-n" min="3" max="10" value="6" oninput="ebUpdate()" class="mb-3">
+      <div id="eb-out" class="overflow-x-auto"></div>
+      <div id="eb-txt" class="mt-3 p-3 rounded-lg bg-slate-50 border border-slate-200 text-sm"></div>
+      <p class="text-sm text-slate-700 mt-3"><strong>Scale up:</strong> $1,3,\ldots,199$ has $100$ terms and each column adds to $200$. Two copies give $100 \times 200 = 20\,000$, so one copy is $\mathbf{10\,000}$.</p>
+    </div>
+
+    <div class="key mb-6">
+      <p class="font-bold text-teal-900 mb-1">Your toolkit</p>
+      <ul class="list-disc pl-6 text-sm text-slate-800 space-y-1">
+        <li><strong>Pair up</strong> numbers that make a tidy total (like $2-1$, or a pair making $100$).</li>
+        <li><strong>Write it twice</strong> (forwards and backwards) when numbers go up by equal steps. Then every column has the same total.</li>
+        <li><strong>Test a small version first</strong> and look for the pattern.</li>
+        <li><strong>Count carefully</strong>: how many terms? how many pairs?</li>
+      </ul>
+    </div>
+
+    <h3 class="text-xl font-bold text-slate-800 mb-3 bg-slate-100 p-3 rounded-lg inline-block">Check your understanding: competition style</h3>
+    <div id="ex-t4"></div>
+  </div>
+
+  <!-- ================= TAB 5 ================= -->
+  <div id="t5" class="tab-content">
+    <h2 class="text-2xl font-bold text-slate-800 mb-1">Homework: Introducing Integers</h2>
+    <p class="text-slate-600 mb-3">Three levels, from understanding to advanced applications. Each question gives you 3 attempts, then shows the full solution.</p>
+    <div class="card mb-3 bg-teal-50 border-teal-200"><p class="text-sm text-slate-800" id="hw-score">Homework status: 0 correct, 0 revealed, 0 remaining</p></div>
+    <div id="ex-t5"></div>
+  </div>
+
+  <div id="t6" class="tab-content"><h2 class="text-2xl font-bold text-slate-800 mb-1">Learning report</h2><p class="text-slate-600 mb-4">Built from your own attempts in this section.</p><div id="hz-report"></div></div>
+</main>
+<footer class="shen-footer"><svg viewBox="0 0 100 100" role="img" aria-label="申 Shen Studio"><rect width="100" height="100" rx="12" fill="#B3261E"/><path d="M41.57 27.7V42.46H27.58V27.7ZM15.1 25.34V70.78H16.95C22.18 70.78 27.58 67.91 27.58 66.65V62.18H41.57V90H44.01C48.82 90 54.3 86.88 54.3 85.62V62.18H68.97V68.93H71.07C75.37 68.93 81.53 66.65 81.61 65.89V29.64C83.38 29.3 84.39 28.55 84.9 27.87L73.69 19.19L68.12 25.34H54.3V13.96C56.74 13.62 57.33 12.7 57.5 11.52L41.57 10V25.34H28.42L15.1 20.2ZM54.3 27.7H68.97V42.46H54.3ZM41.57 59.82H27.58V44.82H41.57ZM54.3 59.82V44.82H68.97V59.82Z" fill="#FFFFFF"/></svg><span><b>Shen Studio</b> · Designed by Mr. Shen</span></footer>
+<div class="shen-print-mark" aria-hidden="true"><svg viewBox="0 0 100 100" role="img" aria-label="申 Shen Studio"><rect width="100" height="100" rx="12" fill="#B3261E"/><path d="M41.57 27.7V42.46H27.58V27.7ZM15.1 25.34V70.78H16.95C22.18 70.78 27.58 67.91 27.58 66.65V62.18H41.57V90H44.01C48.82 90 54.3 86.88 54.3 85.62V62.18H68.97V68.93H71.07C75.37 68.93 81.53 66.65 81.61 65.89V29.64C83.38 29.3 84.39 28.55 84.9 27.87L73.69 19.19L68.12 25.34H54.3V13.96C56.74 13.62 57.33 12.7 57.5 11.52L41.57 10V25.34H28.42L15.1 20.2ZM54.3 27.7H68.97V42.46H54.3ZM41.57 59.82H27.58V44.82H41.57ZM54.3 59.82V44.82H68.97V59.82Z" fill="#FFFFFF"/></svg><span>Shen Studio</span></div>
+
+
+<script>
+/* ============ helpers ============ */
+const R = String.raw;
+function typeset(el){ try{ if(window.MathJax && MathJax.typesetPromise){ MathJax.typesetPromise(el?[el]:undefined).catch(()=>{}); } }catch(e){} }
+function sorter(a,b){ const na=Number(a), nb=Number(b); if(!isNaN(na)&&!isNaN(nb)) return na-nb; return String(a)<String(b)?-1:String(a)>String(b)?1:0; }
+function fm(n){ return n<0 ? '−'+(-n) : ''+n; }              // minus formatting
+function fp(n){ return n<0 ? '(−'+(-n)+')' : ''+n; }        // parenthesised
+function range(a,b){ const r=[]; for(let i=a;i<=b;i++) r.push(i); return r; }
+function fmtSet(arr){ return arr.length? '{ '+arr.map(fm).join(', ')+' }' : '∅'; }
+function cleanNum(s){ return String(s).replace(/[−–—]/g,'-'); }
+
+function openTab(evt, id){
+  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab-link').forEach(b=>{ b.classList.remove('text-teal-700','border-b-4','border-teal-600','font-bold'); b.classList.add('text-slate-500','font-semibold'); });
+  document.getElementById(id).classList.add('active');
+  const btn=document.querySelector('.tab-link[data-tab="'+id+'"]'); btn.classList.remove('text-slate-500','font-semibold'); btn.classList.add('text-teal-700','border-b-4','border-teal-600','font-bold');
+  typeset(document.getElementById(id)); window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ============ number line drawing ============ */
+const NL={min:-7,max:7,x0:30,x1:530};
+function nx(v){ return NL.x0+(v-NL.min)/(NL.max-NL.min)*(NL.x1-NL.x0); }
+function canon(sp){ return JSON.stringify([sp.lo||null, sp.hi||null, !!sp.or]); }
+function ineqText(sp){
+  const lo=sp.lo, hi=sp.hi;
+  if(sp.or) return 'x '+(hi[1]?'≤':'<')+' '+fm(hi[0])+' or x '+(lo[1]?'≥':'>')+' '+fm(lo[0]);
+  if(lo&&hi) return fm(lo[0])+' '+(lo[1]?'≤':'<')+' x '+(hi[1]?'≤':'<')+' '+fm(hi[0]);
+  if(lo) return 'x '+(lo[1]?'≥':'>')+' '+fm(lo[0]);
+  if(hi) return 'x '+(hi[1]?'≤':'<')+' '+fm(hi[0]);
+  return '';
+}
+function nlSVG(sp, o){
+  o=o||{}; const y=44, xl=nx(NL.min), xr=nx(NL.max);
+  let s=`<svg viewBox="0 0 560 84" class="w-full max-w-xl ${o.click?'select-none':''}">`;
+  s+=`<line x1="${xl-6}" y1="${y}" x2="${xr+6}" y2="${y}" stroke="#334155" stroke-width="2"/>`;
+  s+=`<polygon points="${xl-14},${y} ${xl-4},${y-5} ${xl-4},${y+5}" fill="#334155"/><polygon points="${xr+14},${y} ${xr+4},${y-5} ${xr+4},${y+5}" fill="#334155"/>`;
+  const bar=(a,b)=>`<line x1="${a}" y1="${y}" x2="${b}" y2="${y}" stroke="#5b6cc0" stroke-width="7" stroke-linecap="butt" opacity=".85"/>`;
+  if(sp.or){ s+=bar(xl-6,nx(sp.hi[0])); s+=bar(nx(sp.lo[0]),xr+6); }
+  else if(sp.lo&&sp.hi) s+=bar(nx(sp.lo[0]),nx(sp.hi[0]));
+  else if(sp.lo) s+=bar(nx(sp.lo[0]),xr+6);
+  else if(sp.hi) s+=bar(xl-6,nx(sp.hi[0]));
+  for(let v=-6; v<=6; v++){
+    s+=`<line x1="${nx(v)}" y1="${y-6}" x2="${nx(v)}" y2="${y+6}" stroke="#334155" stroke-width="2"/><text x="${nx(v)}" y="${y+26}" text-anchor="middle" font-size="13" font-weight="700" fill="#334155">${v<0?'−'+(-v):v}</text>`;
+  }
+  const circ=o.circles || [sp.lo, sp.hi].filter(Boolean);
+  circ.forEach(c=>{ s+=`<circle cx="${nx(c[0])}" cy="${y}" r="8" fill="${c[1]?'#33449a':'#fff'}" stroke="#33449a" stroke-width="3"/>`; });
+  if(o.click) for(let v=-6; v<=6; v++) s+=`<rect data-v="${v}" x="${nx(v)-16}" y="6" width="32" height="70" fill="transparent" style="cursor:pointer"/>`;
+  return s+'</svg>';
+}
+function specFromState(mode, pts){
+  const arr=Object.keys(pts).filter(k=>pts[k]).map(Number).sort((a,b)=>a-b).map(v=>[v,pts[v]===2]);
+  if(mode==='right'&&arr.length===1) return {lo:arr[0]};
+  if(mode==='left'&&arr.length===1) return {hi:arr[0]};
+  if(mode==='between'&&arr.length===2) return {lo:arr[0],hi:arr[1]};
+  if(mode==='out'&&arr.length===2) return {hi:arr[0],lo:arr[1],or:true};
+  return null;
+}
+
+/* generic line for tab 2 comparison / tab 3 jumps */
+function lineBase(min,max,W,H,y,step){
+  const px=v=>20+(v-min)/(max-min)*(W-40);
+  let s=`<svg viewBox="0 0 ${W} ${H}" class="w-full"><line x1="10" y1="${y}" x2="${W-10}" y2="${y}" stroke="#334155" stroke-width="2"/>`;
+  for(let v=min; v<=max; v+=step) s+=`<line x1="${px(v)}" y1="${y-5}" x2="${px(v)}" y2="${y+5}" stroke="#334155"/><text x="${px(v)}" y="${y+20}" text-anchor="middle" font-size="11" font-weight="700" fill="#334155">${fm(v)}</text>`;
+  return {px, s};
+}
+function cmpUpdate(){
+  const a=+document.getElementById('cmp-a').value, b=+document.getElementById('cmp-b').value;
+  document.getElementById('cmp-av').textContent=fm(a); document.getElementById('cmp-bv').textContent=fm(b);
+  const L=lineBase(-10,10,600,90,45,1);
+  let s=L.s;
+  s+=`<circle cx="${L.px(a)}" cy="45" r="10" fill="#5b6cc0"/><text x="${L.px(a)}" y="32" text-anchor="middle" font-weight="800" fill="#33449a">A</text>`;
+  s+=`<circle cx="${L.px(b)}" cy="45" r="10" fill="#f59e0b" ${a===b?'opacity=".7"':''}/><text x="${L.px(b)}" y="${a===b?18:32}" text-anchor="middle" font-weight="800" fill="#b45309">B</text>`;
+  document.getElementById('cmp-svg').innerHTML=s+'</svg>';
+  const sym=a<b?'<':a>b?'>':'=';
+  document.getElementById('cmp-out').innerHTML=`${fm(a)} ${sym} ${fm(b)} &nbsp;<span class="text-sm font-medium text-slate-600">${a<b?'A is to the left of B, so A is smaller':a>b?'A is to the right of B, so A is bigger':'same point, so equal'}</span>`;
+  document.getElementById('cmp-opp').textContent=fm(-a)+' (check: '+fm(a)+' + '+fp(-a)+' = 0)';
+}
+function ipInit(){
+  const opts=range(-6,6).map(v=>`<option value="${v}">${fm(v)}</option>`).join('');
+  document.getElementById('ip-lo-v').innerHTML=opts; document.getElementById('ip-hi-v').innerHTML=opts;
+  document.getElementById('ip-lo-v').value='-2'; document.getElementById('ip-hi-v').value='3'; ipUpdate();
+}
+function ipUpdate(){
+  const lt=document.getElementById('ip-lo-t').value, ht=document.getElementById('ip-hi-t').value;
+  const lv=+document.getElementById('ip-lo-v').value, hv=+document.getElementById('ip-hi-v').value;
+  const sp={}; if(lt!=='n') sp.lo=[lv,lt==='ge']; if(ht!=='n') sp.hi=[hv,ht==='le'];
+  document.getElementById('ip-svg').innerHTML=nlSVG(sp);
+  const out=document.getElementById('ip-out');
+  if(!sp.lo&&!sp.hi){ out.textContent='Choose at least one bound.'; return; }
+  const ints=range(-6,6).filter(v=>(!sp.lo||(sp.lo[1]?v>=sp.lo[0]:v>sp.lo[0]))&&(!sp.hi||(sp.hi[1]?v<=sp.hi[0]:v<sp.hi[0])));
+  const bounded=sp.lo&&sp.hi;
+  let h=`<strong class="text-teal-800">${ineqText(sp)}</strong><br>`;
+  if(bounded && !ints.length) h+='No integer satisfies this.';
+  else h+= bounded ? `Integer solutions: ${fmtSet(ints)}, so there are ${ints.length}.` : `Integer solutions (showing −6 to 6): ${ints.map(fm).join(', ')}, …and it keeps going.`;
+  out.innerHTML=h;
+}
+
+/* ============ TAB 1: closure tester ============ */
+const CS={
+  P:{label:'ℤ⁺ (positive integers)', members:range(1,10), has:x=>Number.isInteger(x)&&x>=1, scan:range(1,20)},
+  E:{label:'Even integers', members:[-6,-4,-2,0,2,4,6,8], has:x=>Number.isInteger(x)&&x%2===0, scan:range(-10,10).map(k=>2*k)},
+  O:{label:'Odd integers', members:[-5,-3,-1,1,3,5,7,9], has:x=>Number.isInteger(x)&&Math.abs(x%2)===1, scan:range(-10,10).map(k=>2*k+1)},
+  T:{label:'{−1, 0, 1}', members:[-1,0,1], has:x=>x===-1||x===0||x===1, scan:[-1,0,1]},
+  Z:{label:'ℤ (all integers)', members:range(-6,6), has:x=>Number.isInteger(x), scan:range(-15,15)}
+};
+const OPS={'+':(a,b)=>a+b,'−':(a,b)=>a-b,'×':(a,b)=>a*b,'÷':(a,b)=>b===0?NaN:a/b};
+let csSet='P', csOp='+', csA=null, csB=null; const csRes={};
+function csInit(){
+  document.getElementById('cs-sets').innerHTML=Object.keys(CS).map(k=>`<button class="btn-ghost" id="cs-set-${k}" onclick="csPickSet('${k}')">${CS[k].label}</button>`).join('');
+  document.getElementById('cs-ops').innerHTML=Object.keys(OPS).map(o=>`<button class="btn-ghost" id="cs-op-${o}" onclick="csPickOp('${o}')" style="min-width:3rem;font-size:1.1rem">${o}</button>`).join('');
+  csPickSet('P'); csTable();
+}
+function csPickSet(k){ csSet=k; csA=csB=null; Object.keys(CS).forEach(x=>document.getElementById('cs-set-'+x).classList.toggle('on',x===k)); csRender(); document.getElementById('cs-auto').textContent=''; }
+function csPickOp(o){ csOp=o; Object.keys(OPS).forEach(x=>document.getElementById('cs-op-'+x).classList.toggle('on',x===o)); csRender(); }
+function csReset(){ csA=csB=null; csRender(); }
+function csClick(x){ if(csA===null||(csA!==null&&csB!==null)){ csA=x; csB=null; } else csB=x; csRender(); }
+function csRender(){
+  document.getElementById('cs-op-'+csOp).classList.add('on');
+  document.getElementById('cs-members').innerHTML=CS[csSet].members.map(x=>`<span class="chip ${x===csA?'selA':''} ${x===csB?'selB':''}" onclick="csClick(${x})">${fm(x)}</span>`).join('')+'<span class="self-center text-slate-500 text-sm">…</span>';
+  const out=document.getElementById('cs-out');
+  if(csA===null){ out.innerHTML='Pick two members…'; }
+  else if(csB===null){ out.innerHTML=`First number: <strong class="text-teal-700">${fm(csA)}</strong>. Now pick the second (you can pick the same one again).`; }
+  else {
+    const r=OPS[csOp](csA,csB);
+    if(Number.isNaN(r)){ out.innerHTML=`${fm(csA)} ${csOp} ${fm(csB)} is <strong>undefined</strong> (we never divide by 0). Try another pair.`; return; }
+    const inn=CS[csSet].has(r); const rs=Number.isInteger(r)?fm(r):String(Math.round(r*1000)/1000).replace('-','−');
+    out.innerHTML=`${fm(csA)} ${csOp} ${fp(csB)} = <strong>${rs}</strong> &nbsp; `+(inn?`<span class="ok-t">${rs} ∈ set: stayed inside ✔</span>`:`<span class="bad-t">${rs} ∉ set: ESCAPED! A counterexample ✘</span>`);
+  }
+}
+function csAuto(){
+  const sc=CS[csSet].scan, pairs=[];
+  sc.forEach(a=>sc.forEach(b=>pairs.push([a,b])));
+  pairs.sort((p,q)=>(Math.abs(p[0])+Math.abs(p[1]))-(Math.abs(q[0])+Math.abs(q[1])));
+  let found=null;
+  for(const [a,b] of pairs){ const r=OPS[csOp](a,b); if(Number.isNaN(r)) continue; if(!CS[csSet].has(r)){ found=[a,b,r]; break; } }
+  const el=document.getElementById('cs-auto'); const key=csSet+csOp;
+  if(found){
+    const rs=Number.isInteger(found[2])?fm(found[2]):String(Math.round(found[2]*1000)/1000).replace('-','−');
+    el.innerHTML=`<span class="bad-t">Counterexample found: ${fm(found[0])} ${csOp} ${fp(found[1])} = ${rs}, which is not in the set. So the set is NOT closed under ${csOp}.</span>`;
+    csRes[key]='✘ '+fm(found[0])+' '+csOp+' '+fp(found[1]);
+    csA=found[0]; csB=found[1]; csRender();
+  } else {
+    el.innerHTML=`<span class="ok-t">No counterexample among ${pairs.length} pairs tested${csOp==='÷'?' (pairs dividing by 0 are skipped)':''}.</span> <span class="text-slate-600 font-medium">That is strong evidence, but only a <em>reason</em> that works for every pair proves it is closed.</span>`;
+    csRes[key]='✔ (no counterexample)';
+  }
+  csTable();
+}
+function csTable(){
+  let h='<tr><th>Set</th>'+Object.keys(OPS).map(o=>`<th>${o}</th>`).join('')+'</tr>';
+  Object.keys(CS).forEach(k=>{ h+=`<tr><td class="text-left">${CS[k].label}</td>`+Object.keys(OPS).map(o=>{ const v=csRes[k+o]; return `<td class="${v?(v[0]==='✔'?'ok-t':'bad-t'):'text-slate-300'}">${v||'?'}</td>`; }).join('')+'</tr>'; });
+  document.getElementById('cs-table').innerHTML=h;
+}
+
+/* ============ TAB 3 widgets ============ */
+function jpUpdate(){
+  const a=+document.getElementById('jp-a').value, b=+document.getElementById('jp-b').value;
+  document.getElementById('jp-av').textContent=fm(a); document.getElementById('jp-bv').textContent=fm(b);
+  const W=620,H=230,y=115; const L=lineBase(-20,20,W,H,y,5);
+  const arc=(v1,v2,up,color,label)=>{ if(v1===v2) return ''; const x1=L.px(v1),x2=L.px(v2),r=Math.abs(x2-x1)/2; const sw=up?(x2>x1?1:0):(x2>x1?0:1);
+    return `<path d="M ${x1} ${y} A ${r} ${r} 0 0 ${sw} ${x2} ${y}" fill="none" stroke="${color}" stroke-width="4"/><text x="${(x1+x2)/2}" y="${up?y-r-6:y+r+16}" text-anchor="middle" font-weight="800" font-size="13" fill="${color}">${label}</text>`; };
+  const T='#3b4fa8', A='#d97706';
+  let s=L.s;
+  s+=arc(0,a,true,T,(a>=0?'+':'−')+Math.abs(a))+arc(a,a+b,true,A,(b>=0?'+':'−')+Math.abs(b));
+  s+=arc(0,b,false,A,(b>=0?'+':'−')+Math.abs(b))+arc(b,a+b,false,T,(a>=0?'+':'−')+Math.abs(a));
+  s+=`<circle cx="${L.px(0)}" cy="${y}" r="6" fill="#0f172a"/><circle cx="${L.px(a+b)}" cy="${y}" r="9" fill="#10b981" stroke="#065f46" stroke-width="2"/>`;
+  document.getElementById('jp-svg').innerHTML=s+'</svg>';
+  document.getElementById('jp-out').innerHTML=`Above: ${fm(a)} + ${fp(b)} = ${fm(a+b)} &nbsp;|&nbsp; Below: ${fm(b)} + ${fp(a)} = ${fm(a+b)} &nbsp; (same landing point)`;
+}
+function asUpdate(){
+  const a=+document.getElementById('as-a').value,b=+document.getElementById('as-b').value,c=+document.getElementById('as-c').value;
+  document.getElementById('as-av').textContent=fm(a);document.getElementById('as-bv').textContent=fm(b);document.getElementById('as-cv').textContent=fm(c);
+  const t=a+b+c;
+  document.getElementById('as-out').innerHTML=
+   `<div class="p-2 rounded bg-teal-50"><span class="text-xs font-bold text-teal-700">Brackets on the left:</span><br>(${fm(a)} + ${fp(b)}) + ${fp(c)} = ${fm(a+b)} + ${fp(c)} = <strong>${fm(t)}</strong></div>
+    <div class="p-2 rounded bg-amber-50"><span class="text-xs font-bold text-amber-700">Brackets on the right:</span><br>${fm(a)} + (${fm(b)} + ${fp(c)}) = ${fm(a)} + ${fp(b+c)} = <strong>${fm(t)}</strong></div>
+    <div class="text-sm text-slate-600">Same total both ways. Choose the grouping that makes the sum easiest!</div>`;
+}
+let shTerms=[], shOrig=[], shSel=null;
+function shNew(){
+  const n=6; shTerms=[]; for(let i=0;i<n;i++){ const v=1+Math.floor(Math.random()*19); shTerms.push(Math.random()<0.5?-v:v); }
+  shOrig=shTerms.slice(); shSel=null; shRender();
+}
+function shReset(){ shTerms=shOrig.slice(); shSel=null; shRender(); }
+function shSort(){ shTerms=shTerms.slice().sort((a,b)=>b-a); shSel=null; shRender(); }
+function shClick(i){ if(shSel===null){ shSel=i; } else { const t=shTerms[i]; shTerms[i]=shTerms[shSel]; shTerms[shSel]=t; shSel=null; } shRender(); }
+function shRender(){
+  document.getElementById('sh-chips').innerHTML=shTerms.map((v,i)=>`<span class="chip ${v<0?'neg':'pos'} ${shSel===i?'pick':''}" onclick="shClick(${i})" style="font-size:1.1rem">${v<0?'−':'+'}${Math.abs(v)}</span>`).join('');
+  const ex=shTerms.map((v,i)=> i===0 ? fm(v) : (v<0?' − ':' + ')+Math.abs(v)).join('');
+  const total=shTerms.reduce((s,v)=>s+v,0);
+  document.getElementById('sh-out').innerHTML=`Expression: <strong>${ex}</strong><br>Total: <strong class="text-emerald-700">${fm(total)}</strong> <span class="text-sm text-slate-500">(the total never changes, however you shuffle!)</span>`;
+}
+/* ============ TAB 4 widgets ============ */
+function listTerms(arr){ return arr.length<=6? arr.join(' + ') : arr.slice(0,3).join(' + ')+' + ⋯ + '+arr.slice(-2).join(' + '); }
+let eaStepNo=1;
+function eaStep(k){ eaStepNo=k; for(let i=1;i<=4;i++) document.getElementById('ea-b'+i).classList.toggle('on',i===k); eaUpdate(); }
+function eaUpdate(){
+  const n=+document.getElementById('ea-n').value; document.getElementById('ea-nv').textContent=n;
+  const ev=range(1,n).map(i=>2*i), od=range(1,n).map(i=>2*i-1);
+  let h='';
+  const full=n<=4;
+  if(eaStepNo===1){
+    h=`<div>Start: (${listTerms(ev)}) − (${listTerms(od)})</div>
+       <div class="mt-1 text-slate-700">Take the bracket apart: subtracting a bracket means subtracting <em>every</em> term, so each odd number gets a glued minus sign.</div>
+       <div class="mt-1"><strong>${ev.join(' + ')}${od.map(x=>' − '+x).join('')}</strong></div>`;
+    if(!full) h=h.replace(/<strong>.*<\/strong>/,'<strong>'+ev.slice(0,3).join(' + ')+' + ⋯ + '+ev.slice(-1)+' − 1 − 3 − ⋯ − '+od.slice(-1)+'</strong>');
+  } else if(eaStepNo===2){
+    const pr=ev.map((e,i)=>(i===0?'':' + ')+e+' − '+od[i]);
+    h=`<div><strong>Commutativity:</strong> re-order the terms (keep each sign glued) so each even sits next to the odd just below it.</div>
+       <div class="mt-1"><strong>${full? pr.join('') : pr.slice(0,3).join('')+' + ⋯ + '+ev[n-1]+' − '+od[n-1]}</strong></div>`;
+  } else if(eaStepNo===3){
+    const pr=ev.map((e,i)=>(i===0?'':' + ')+'('+e+' − '+od[i]+')');
+    h=`<div><strong>Associativity:</strong> put brackets round each pair.</div>
+       <div class="mt-1"><strong>${full? pr.join('') : pr.slice(0,3).join('')+' + ⋯ + ('+ev[n-1]+' − '+od[n-1]+')'}</strong></div>`;
+  } else {
+    h=`<div>Every bracket equals $1$, and there are $${n}$ brackets:</div>
+       <div class="mt-1"><strong>${range(1,n).map(()=>'1').slice(0,6).join(' + ')}${n>6?' + ⋯':''} = ${n}</strong></div>
+       <div class="mt-1 text-slate-700">So for $n$ pairs the answer is simply $n$. No big sums needed!</div>`;
+  }
+  document.getElementById('ea-out').innerHTML=h; typeset(document.getElementById('ea-out'));
+}
+function ebUpdate(){
+  const n=+document.getElementById('eb-n').value; document.getElementById('eb-nv').textContent=n;
+  const f=range(1,n).map(i=>2*i-1), b=f.slice().reverse(), tot=2*n;
+  let h='<div class="inline-flex gap-1 items-end"><div class="text-xs font-bold text-slate-500 pr-2 text-right leading-[2.6rem]">Forwards<br>Backwards<br>Column sum</div>';
+  h+=f.map((v,i)=>`<div class="flex flex-col items-center gap-1"><span class="chip static pos">${v}</span><span class="chip static neg">${b[i]}</span><span class="chip static" style="background:#d1fae5;border-color:#10b981;color:#065f46">${tot}</span></div>`).join('')+'</div>';
+  document.getElementById('eb-out').innerHTML=h;
+  document.getElementById('eb-txt').innerHTML=`Every column adds to <strong>${tot}</strong> and there are <strong>${n}</strong> columns, so (sum) + (sum) = ${n} × ${tot} = ${n*tot}. One sum = ${n*tot} ÷ 2 = <strong class="text-emerald-700">${n*tot/2}</strong>. (Check: it is ${n} × ${n} = ${n*n}.)`;
+}
+
+/* ============ EXERCISE DATA ============ */
+function S(steps){ return '<ol class="list-decimal pl-5 space-y-1 text-sm text-slate-700">'+steps.map(s=>'<li>'+s+'</li>').join('')+'</ol>'; }
+const EX={};
+
+EX.t1=[
+ { id:'t1q1', type:'mc', q:R`Which sentence best explains &ldquo;$S$ is closed under addition&rdquo;?`,
+   opts:['Adding any two members of $S$ always gives a member of $S$','Adding two members of $S$ sometimes gives a member of $S$','$S$ contains the number 0','$S$ has no members'], ans:0,
+   sol:S([R`Closed means the operation never lets you <strong>leave</strong> the set.`,R`So it must work for <em>any</em> two members and <em>always</em>, not just sometimes.`]) },
+ { id:'t1q2', type:'mc', q:R`Which pair of members of $\mathbb{Z}^+$ is a <strong>counterexample</strong> showing $\mathbb{Z}^+$ is not closed under subtraction?`,
+   opts:[R`$8 - 3$`,R`$3 - 8$`,R`$5 + 2$`,R`$6 \times 2$`], ans:1,
+   sol:S([R`We need two positive integers whose difference is <em>not</em> positive.`,R`$8-3=5$ is fine. $5+2$ and $6\times2$ are not even subtractions.`,R`$3-8=-5$, and $-5\notin\mathbb{Z}^+$. <strong>This is a counterexample.</strong>`]) },
+ { id:'t1q3', type:'mc', q:R`The odd integers $\{\ldots,-3,-1,1,3,5,\ldots\}$ are <strong>not</strong> closed under addition. Which example proves it?`,
+   opts:[R`$3 + 5 = 8$, and $8$ is even`,R`$3 \times 5 = 15$`,R`$1 + 1 = 2$ is a counterexample only if 2 is odd`,R`$7 - 7 = 0$ is odd`], ans:0,
+   sol:S([R`We want two odd numbers whose <em>sum</em> is not odd.`,R`$3$ and $5$ are odd, but $3+5=8$ is even, so $8\notin$ odd integers.`,R`One counterexample is enough to show the set is not closed under $+$.`]) },
+ { id:'t1q4', type:'mc', q:R`Is the set $T=\{-1,0,1\}$ closed under <strong>multiplication</strong>?`,
+   opts:['Yes: every product of two members is $-1$, $0$ or $1$','No: $1 \\times 1 = 1$ is not in $T$','No: $0 \\times 1 = 0$ is not in $T$','It cannot be decided'], ans:0,
+   sol:S([R`There are only $9$ ordered pairs, so we can check them all.`,R`Products: $(-1)(-1)=1$, $(-1)(0)=0$, $(-1)(1)=-1$, $0\times$anything$=0$, $1\times1=1$. All results are in $T$.`,R`So $T$ <strong>is</strong> closed under $\times$. (But under $+$ it is not: $1+1=2\notin T$.)`]) },
+ { id:'t1q5', type:'mc', q:R`Why do mathematicians care whether a set is closed?`,
+   opts:['It guarantees calculations stay inside the set, and when it fails it tells us we may need a bigger set','Because closed sets are always infinite','Because closed sets have no negative numbers','It does not matter for anything'], ans:0,
+   sol:S([R`Closure gives <strong>reliability</strong>: every calculation has an answer in our number world.`,R`Failure is <strong>informative</strong>: $\mathbb{Z}^+$ is not closed under $-$, so we invented $0$ and the negatives to make $\mathbb{Z}$.`]) },
+ { id:'t1q6', type:'mc', q:R`Which statement about $\mathbb{Z}$ is correct?`,
+   opts:[R`Closed under $+$, $-$ and $\times$ but not $\div$`,R`Closed under $+$ and $\times$ only`,R`Closed under all four operations`,R`Closed under $\div$ only`], ans:0,
+   sol:S([R`$+$, $-$, $\times$ of integers always give integers.`,R`But $1\div2=0.5\notin\mathbb{Z}$, so $\mathbb{Z}$ is not closed under $\div$.`]) },
+ { id:'t1q7', type:'num', q:R`The even integers $E=\{\ldots,-2,0,2,4,\ldots\}$ are closed under addition. Take $a=14$ and $b=-6$ (both in $E$). What is $a+b$? (Notice it stays in $E$.)`, ans:8,
+   sol:S([R`$14+(-6)=8$.`,R`$8$ is even, so $8\in E$, which fits with $E$ being closed under $+$.`]) }
+];
+
+/* number line reading specs */
+const NR1={lo:[1,false]}, NR2={lo:[-3,true],hi:[2,false]}, NR3={hi:[-1,true]};
+EX.t2=[
+ { id:'t2q1', type:'seq', q:R`Write these integers in <strong>increasing order</strong> (smallest first), separated by commas: $\;3,\ -7,\ 0,\ -2,\ 5,\ -1$`, ans:'-7,-2,-1,0,3,5',
+   sol:S([R`Further <em>left</em> on the number line means smaller. Negatives come first, and among negatives the one with the larger digit is smaller.`,R`$-7 < -2 < -1 < 0 < 3 < 5$.`]) },
+ { id:'t2q2', type:'mc', q:R`Which statement is <strong>true</strong>?`,
+   opts:[R`$-3 > 1$`,R`$-8 < -2$`,R`$0 < -5$`,R`$-1 \ge 2$`], ans:1,
+   sol:S([R`$-8$ is to the left of $-2$ on the number line, so $-8 < -2$ is true.`,R`$-3>1$, $0<-5$ and $-1\ge2$ are all false: in each, the left-hand number is actually further left.`]) },
+ { id:'t2q3', type:'mc', q:R`<strong>Reading a number line.</strong> Which inequality does this show? ${nlSVG(NR1)}`,
+   opts:['x < 1','x > 1','x ≥ 1','x ≤ 1'], ans:1,
+   sol:S([R`The circle at $1$ is <strong>open</strong>, so $1$ is <em>not</em> included: strict inequality.`,R`Shading goes to the <strong>right</strong>: numbers bigger than $1$.`,R`So it is $x > 1$.`]) },
+ { id:'t2q4', type:'mc', q:R`<strong>Reading a number line.</strong> Which inequality does this show? ${nlSVG(NR2)}`,
+   opts:['−3 < x ≤ 2','−3 ≤ x < 2','−3 ≤ x ≤ 2','−3 < x < 2'], ans:1,
+   sol:S([R`Left end: <strong>closed</strong> circle at $-3$, so $-3$ is included: $-3 \le x$.`,R`Right end: <strong>open</strong> circle at $2$, so $2$ is not included: $x < 2$.`,R`Combine: $-3 \le x < 2$.`]) },
+ { id:'t2q5', type:'nldraw', mode0:'left', spec:{hi:[3,true]}, q:R`<strong>Draw</strong> the inequality $x \le 3$ on the number line.`,
+   sol:S([R`$\le$ includes $3$, so draw a <strong>closed</strong> circle at $3$.`,R`$x$ is <em>less</em> than $3$, so shade to the <strong>left</strong>.`]) },
+ { id:'t2q6', type:'nldraw', spec:{lo:[-2,false],hi:[4,true]}, q:R`<strong>Draw</strong> the inequality $-2 < x \le 4$ on the number line.`,
+   sol:S([R`Left end: $-2 < x$ is strict, so an <strong>open</strong> circle at $-2$.`,R`Right end: $x \le 4$ includes $4$, so a <strong>closed</strong> circle at $4$.`,R`Shade <strong>between</strong> the two circles.`]) },
+ { id:'t2q7', type:'set', q:R`List the integers in $\{x : x \in \mathbb{Z},\ -3 \le x < 2\}$. (Elements separated by commas.)`, ans:'-3,-2,-1,0,1',
+   sol:S([R`$-3\le x$ includes $-3$. $x<2$ stops just before $2$.`,R`The integers are $-3,-2,-1,0,1$.`]) },
+ { id:'t2q8', type:'num', q:R`How many integers satisfy $-4 < x \le 3$?`, ans:7,
+   sol:S([R`$-4<x$ means we start at $-3$ (not $-4$). $x\le3$ includes $3$.`,R`The integers are $-3,-2,-1,0,1,2,3$: that is $\mathbf{7}$ of them.`]) },
+ { id:'t2q9', type:'num', q:R`Find the value of $-(-12)$.`, ans:12,
+   sol:S([R`The opposite of $-12$ is the number that cancels it: $-12+12=0$.`,R`So $-(-12)=\mathbf{12}$.`]) }
+];
+
+EX.t3=[
+ { id:'t3q1', type:'num', q:R`Calculate cleverly: $38 + 47 + 62$.`, ans:147,
+   sol:S([R`Use <strong>commutativity</strong> to put $38$ next to $62$: $38+62+47$.`,R`Use <strong>associativity</strong>: $(38+62)+47 = 100+47$.`,R`$=\mathbf{147}$.`]) },
+ { id:'t3q2', type:'num', q:R`Calculate: $56 + (-19) + 44 + 19$.`, ans:100,
+   sol:S([R`Re-order to bring partners together: $(56+44) + \big((-19)+19\big)$.`,R`$=100 + 0 = \mathbf{100}$. (Opposites cancel.)`]) },
+ { id:'t3q3', type:'num', q:R`Calculate: $25 - 13 + 75 - 17$.`, ans:70,
+   sol:S([R`Glue the signs: $+25,\ -13,\ +75,\ -17$.`,R`Group the positives and the negatives: $(25+75)+(-13-17)$.`,R`$=100+(-30)=\mathbf{70}$.`]) },
+ { id:'t3q4', type:'num', q:R`Calculate: $-18 + 25 + 18 - 7$.`, ans:18,
+   sol:S([R`$-18$ and $+18$ are opposites: they cancel.`,R`Left with $25-7=\mathbf{18}$.`]) },
+ { id:'t3q5', type:'mc', q:R`Which property says $(7+8)+2 = 7+(8+2)$?`,
+   opts:['Commutativity','Associativity','Identity','Opposites (inverses)'], ans:1,
+   sol:S([R`The numbers stay in the <em>same order</em>; only the <strong>brackets move</strong>.`,R`That is <strong>associativity</strong>.`]) },
+ { id:'t3q6', type:'mc', q:R`Which property says $13 + (-13) = 0$?`,
+   opts:['Commutativity','Associativity','Identity','Opposites (inverses)'], ans:3,
+   sol:S([R`$-13$ is the <strong>opposite</strong> of $13$: adding them gives the identity $0$.`,R`This is the <strong>inverse</strong> property.`]) },
+ { id:'t3q7', type:'num', q:R`Subtraction is not associative. Find $20-(8-5)$. (Compare with $(20-8)-5=7$.)`, ans:17,
+   sol:S([R`Brackets first: $8-5=3$.`,R`$20-3=\mathbf{17}$, which is different from $(20-8)-5=12-5=7$.`,R`So moving the brackets changed the answer: subtraction is <strong>not associative</strong>.`]) },
+ { id:'t3q8', type:'num', q:R`Rewrite $9 - 14$ as an addition: $9 + (\ \square\ )$. What number goes in the box?`, ans:-14,
+   sol:S([R`Subtracting is adding the opposite: $a-b=a+(-b)$.`,R`So $9-14 = 9+(\mathbf{-14})$.`]) },
+ { id:'t3q9', type:'mc', q:R`Why is $(\mathbb{Z}^+,+)$ <strong>not</strong> a group?`,
+   opts:['It has no identity (0 is not in $\\mathbb{Z}^+$) and no opposites','Because $+$ is not associative','Because $\\mathbb{Z}^+$ is not closed under $+$','Because $\\mathbb{Z}^+$ has no positive numbers'], ans:0,
+   sol:S([R`$\mathbb{Z}^+$ <em>is</em> closed under $+$ and $+$ <em>is</em> associative, so options 2 and 3 are false.`,R`But there is no $0$ in $\mathbb{Z}^+$ (no identity), and $3$ has no partner in $\mathbb{Z}^+$ adding to the identity (no opposite).`,R`$\mathbb{Z}$ fixes both problems.`]) }
+];
+
+EX.t4=[
+ { id:'t4q1', type:'num', q:R`<strong>Largest number.</strong> The sum of ten <em>distinct</em> positive integers is $100$. What is the largest possible value of any one of the ten integers?`, ans:55,
+   sol:S([R`To make one number as large as possible, make the other nine as <strong>small</strong> as possible.`,R`The smallest nine distinct positive integers are $1,2,3,\ldots,9$, with sum $1+2+\cdots+9=45$.`,R`The largest number is $100-45=\mathbf{55}$.`]) },
+ { id:'t4q2', type:'num', q:R`Determine the value of $\;1\,000\,000 - 999\,999 + 999\,998 - 999\,997 + \cdots + 4 - 3 + 2 - 1$.`, ans:500000,
+   sol:S([R`Group in pairs (associativity): $(1\,000\,000-999\,999)+(999\,998-999\,997)+\cdots+(4-3)+(2-1)$.`,R`Each pair equals $1$.`,R`The numbers $1$ to $1\,000\,000$ make $1\,000\,000 \div 2 = 500\,000$ pairs.`,R`Answer: $\mathbf{500\,000}$.`]) },
+ { id:'t4q3', type:'num', q:R`Evaluate $\;1 - 2 + 3 - 4 + \cdots + 2007 - 2008$.`, ans:-1004,
+   sol:S([R`Pair each odd number with the next even number: $(1-2)+(3-4)+\cdots+(2007-2008)$.`,R`Each pair is $-1$.`,R`There are $2008\div2=1004$ pairs, so the total is $\mathbf{-1004}$.`]) },
+ { id:'t4q4', type:'num', q:R`Determine the exact value of $\;1 + 4 + 7 + \cdots + 301$.`, ans:15251,
+   sol:S([R`Write the sum forwards and backwards (commutativity): $1+4+\cdots+301$ and $301+298+\cdots+1$.`,R`Every column adds to $302$.`,R`Number of terms: they go up by $3$, so $(301-1)\div3+1=101$ terms.`,R`Two copies: $302\times101=30\,502$. One copy: $30\,502\div2=\mathbf{15\,251}$.`]) },
+ { id:'t4q5', type:'mc', q:R`Which property lets us write $1+3+5+\cdots+199$ <em>backwards</em> as $199+197+\cdots+1$ without changing its value?`,
+   opts:['Commutativity (order)','Associativity only','The identity 0','Opposites'], ans:0,
+   sol:S([R`Reversing the list changes the <strong>order</strong> of the terms.`,R`Being allowed to re-order sums is exactly <strong>commutativity</strong>. (Adding the rows column by column then uses associativity too.)`]) }
+];
+
+EX.t5=[
+ { level:'Level 1: Understanding', id:'h1', type:'mc', q:R`Which set is closed under <strong>subtraction</strong>?`,
+   opts:[R`$\mathbb{Z}^+$`,R`The odd integers`,R`$\mathbb{Z}$`,R`$\{1,2,3\}$`], ans:2,
+   sol:S([R`$\mathbb{Z}^+$: $2-5=-3\notin\mathbb{Z}^+$. Odd integers: $3-1=2$ is even. $\{1,2,3\}$: $1-3=-2\notin$ set.`,R`$\mathbb{Z}$: $a-b=a+(-b)$ is always an integer. <strong>$\mathbb{Z}$ is closed under $-$.</strong>`]) },
+ { id:'h2', type:'mc', q:R`Let $P=\{2,4,6,8,\ldots\}$ be the positive even numbers. Which statement is true?`,
+   opts:[R`$P$ is closed under $+$ and $\times$ but not under $-$`,R`$P$ is closed under $-$ but not under $+$`,R`$P$ is closed under all of $+,-,\times$`,R`$P$ is not closed under $+$`], ans:0,
+   sol:S([R`Even + even is even, even $\times$ even is even (and positive stays positive).`,R`But $4-6=-2$ is not positive, so $P$ is not closed under $-$.`]) },
+ { id:'h3', type:'seq', q:R`Write in increasing order: $\;-12,\ 7,\ -3,\ 0,\ -8$`, ans:'-12,-8,-3,0,7',
+   sol:S([R`Negatives first, with the biggest-looking negative being the smallest: $-12<-8<-3$.`,R`Then $0$, then $7$: $-12,-8,-3,0,7$.`]) },
+ { id:'h4', type:'set', q:R`List the elements of $\{x : x \in \mathbb{Z},\ -5 < x \le -1\}$.`, ans:'-4,-3,-2,-1',
+   sol:S([R`$-5<x$ excludes $-5$, so start at $-4$. $x\le-1$ includes $-1$.`,R`$\{-4,-3,-2,-1\}$.`]) },
+ { id:'h5', type:'num', q:R`Find $-(-(-4))$.`, ans:-4,
+   sol:S([R`Work from the inside: $-(-4)=4$.`,R`Then $-(4)=\mathbf{-4}$.`]) },
+
+ { level:'Level 2: Applying', id:'h6', type:'mc', q:R`<strong>Read the number line.</strong> Which inequality is shown? ${nlSVG({lo:[-4,true],hi:[1,true]})}`,
+   opts:['−4 < x < 1','−4 ≤ x < 1','−4 ≤ x ≤ 1','x ≥ −4 or x ≤ 1'], ans:2,
+   sol:S([R`Both circles are <strong>closed</strong>: both ends are included.`,R`Shading is between them: $-4 \le x \le 1$.`]) },
+ { id:'h7', type:'nldraw', spec:{lo:[-3,false]}, q:R`<strong>Draw</strong> $x > -3$ on the number line.`,
+   sol:S([R`$>$ is strict: <strong>open</strong> circle at $-3$.`,R`$x$ is bigger than $-3$: shade to the <strong>right</strong>.`]) },
+ { id:'h8', type:'nldraw', spec:{lo:[-5,true],hi:[-1,false]}, q:R`<strong>Draw</strong> $-5 \le x < -1$ on the number line.`,
+   sol:S([R`$-5\le x$: <strong>closed</strong> circle at $-5$.`,R`$x<-1$: <strong>open</strong> circle at $-1$.`,R`Shade between them.`]) },
+ { id:'h9', type:'num', q:R`Calculate: $47 + 38 + 53 - 38$.`, ans:100,
+   sol:S([R`Re-order: $(47+53)+(38-38)$.`,R`$=100+0=\mathbf{100}$.`]) },
+ { id:'h10', type:'num', q:R`Calculate: $99 - 48 + 1 - 52$.`, ans:0,
+   sol:S([R`Glue the signs and group: $(99+1)+(-48-52)$.`,R`$=100+(-100)=\mathbf{0}$.`]) },
+ { id:'h11', type:'num', q:R`How many integers satisfy $-7 < x \le 8$?`, ans:15,
+   sol:S([R`The integers are $-6,-5,\ldots,0,\ldots,8$.`,R`From $-6$ to $-1$ is $6$ numbers, $0$ is $1$ number, $1$ to $8$ is $8$ numbers: $6+1+8=\mathbf{15}$.`]) },
+ { id:'h12', type:'mc', q:R`Which property justifies $8+15+12 = 8+12+15$?`,
+   opts:['Commutativity','Associativity','Identity','Closure'], ans:0,
+   sol:S([R`The numbers $15$ and $12$ have <strong>swapped places</strong>: that is commutativity.`]) },
+
+ { level:'Level 3: Advanced applications', id:'h13', type:'num', q:R`The positive integer $n$ is between $1$ and $20$. Milly adds up all the integers from $1$ to $n$ inclusive. Billy adds up all the integers from $(n+1)$ to $20$ inclusive. Their totals are the same. What is $n$?`, ans:14,
+   sol:S([R`Pair up $1+20$, $2+19$, $\ldots$: there are $10$ pairs each making $21$, so $1+2+\cdots+20=210$.`,R`Milly and Billy have equal totals, so each total is $210\div2=105$.`,R`Add from the top: $20+19+18+17+16=90$, and $+15$ gives $105$. So Billy's numbers are $15$ to $20$, and Milly's are $1$ to $\mathbf{14}$.`,R`(Check: $1+2+\cdots+14=105$ &#10004;)`]) },
+ { id:'h14', type:'num', q:R`Sindy writes down the positive integers less than $200$ in increasing order but <strong>skips the multiples of 10</strong>. She then alternately places $+$ and $-$ signs: $\;+1-2+3-4+5-6+7-8+9-11+12-\cdots-199$. What is the value of the expression?`, ans:-100,
+   sol:S([R`Without the multiples of $10$, each block of $20$ numbers keeps $18$ numbers, e.g. $1,\ldots,9,11,\ldots,19$. For $1$ to $199$ that is $10$ blocks of $18$ numbers.`,R`Each block has an even number of terms, so the signs restart as $+,-,+,-,\ldots$ and we can pair them: $(1-2)+(3-4)+(5-6)+(7-8)+(9-11)+(12-13)+(14-15)+(16-17)+(18-19)$.`,R`The pairs give $-1,-1,-1,-1,-2,-1,-1,-1,-1$, a block total of $-10$.`,R`Ten blocks: $10\times(-10)=\mathbf{-100}$.`]) },
+ { id:'h15', type:'num', q:R`Evaluate $\;(1+3+5+\cdots+99) - (2+4+6+\cdots+100)$.`, ans:-50,
+   sol:S([R`Re-order and pair each odd with the next even: $(1-2)+(3-4)+\cdots+(99-100)$.`,R`Each pair is $-1$. There are $50$ pairs.`,R`Total: $\mathbf{-50}$.`]) },
+ { id:'h16', type:'num', q:R`Evaluate $\;100 - 99 + 98 - 97 + \cdots + 2 - 1$.`, ans:50,
+   sol:S([R`Pair: $(100-99)+(98-97)+\cdots+(2-1)$.`,R`Each pair is $+1$. There are $100\div2=50$ pairs.`,R`Total: $\mathbf{50}$.`]) },
+ { id:'h17', type:'num', q:R`Find the sum of all integers from $-50$ to $51$ inclusive.`, ans:51,
+   sol:S([R`Pair opposites: $-50$ with $50$, $-49$ with $49$, $\ldots$, $-1$ with $1$. Each pair is $0$.`,R`Left over: $0$ and $51$.`,R`Total: $\mathbf{51}$.`]) },
+ { id:'h18', type:'num', q:R`The sum of $9$ consecutive integers is $108$. What is the <strong>smallest</strong> of them?`, ans:8,
+   sol:S([R`The average is $108\div9=12$, and for consecutive numbers the average is the <em>middle</em> (5th) number.`,R`The numbers go $8,9,10,11,12,13,14,15,16$. The smallest is $12-4=\mathbf{8}$.`,R`(Check: pairs around $12$ cancel their differences, so the sum is $9\times12=108$ &#10004;)`]) }
+];
+
+/* ============ EXERCISE ENGINE ============ */
+const EXMAP={}, ST={};
+function normSet(s){
+  s=cleanNum(s).toLowerCase().trim();
+  if(/∅|empty|^\{\s*\}$/.test(s)) return '';
+  s=s.replace(/[{}\s]/g,''); const arr=s.split(',').filter(x=>x!==''); arr.sort(sorter); return arr.join(',');
+}
+function normSeq(s){ return cleanNum(s).toLowerCase().replace(/[{}\s]/g,'').split(/[,<;]/).filter(x=>x!=='').join(','); }
+function exHTML(e,n){
+  let inp='';
+  if(e.type==='num') inp=`<input type="text" inputmode="decimal" class="inp" id="inp-${e.id}" placeholder="Your answer" onkeydown="if(event.key==='Enter')checkEx('${e.id}')">`;
+  else if(e.type==='set') inp=`<input type="text" class="inp" id="inp-${e.id}" placeholder="e.g. -2, -1, 0" onkeydown="if(event.key==='Enter')checkEx('${e.id}')"><p class="text-xs text-slate-500 mt-1">Type elements separated by commas. Use - for negatives.</p>`;
+  else if(e.type==='seq') inp=`<input type="text" class="inp" id="inp-${e.id}" placeholder="e.g. -5, -2, 0, 3" onkeydown="if(event.key==='Enter')checkEx('${e.id}')"><p class="text-xs text-slate-500 mt-1">Type in order, separated by commas. Use - for negatives.</p>`;
+  else if(e.type==='mc') inp=e.opts.map((o,i)=>`<button class="opt" id="opt-${e.id}-${i}" onclick="pickOpt('${e.id}',${i})">${o}</button>`).join('');
+  else if(e.type==='nldraw') inp=`<div id="nl-${e.id}" class="max-w-xl"></div>
+     <div class="flex flex-wrap gap-2 mt-1"><span class="text-xs font-bold text-slate-600 self-center">Shade:</span>
+     <button class="btn-ghost" id="md-${e.id}-right" onclick="setMode('${e.id}','right')">→ to the right</button>
+     <button class="btn-ghost" id="md-${e.id}-left" onclick="setMode('${e.id}','left')">← to the left</button>
+     <button class="btn-ghost" id="md-${e.id}-between" onclick="setMode('${e.id}','between')">between two circles</button>
+     <button class="btn-ghost" id="md-${e.id}-out" onclick="setMode('${e.id}','out')">outside two circles</button>
+     <button class="btn-ghost" onclick="clearNL('${e.id}')">Clear</button></div>`;
+  return `<div class="ex-card" id="card-${e.id}"><div class="flex items-start gap-3"><div class="qnum">${n}</div><div class="flex-1 min-w-0">
+    <div class="text-slate-800 leading-relaxed">${e.q}</div>
+    <div class="mt-3">${inp}</div>
+    <div class="mt-3 flex items-center gap-3 flex-wrap"><button class="btn" id="btn-${e.id}" onclick="checkEx('${e.id}')">Check answer</button><span id="att-${e.id}" class="text-xs font-semibold text-slate-500">Attempts left: 3</span></div>
+    <div id="fb-${e.id}" class="mt-2 text-sm font-semibold"></div>
+    <div id="sol-${e.id}" class="hidden mt-3 sol-box"><h4 class="font-bold text-slate-800 mb-1" id="solh-${e.id}">Step-by-step solution</h4>${e.sol}<div id="solv-${e.id}" class="max-w-xl mt-2"></div></div>
+  </div></div></div>`;
+}
+function mountEx(key){
+  const box=document.getElementById('ex-'+key); let h='', lv='', n=0;
+  EX[key].forEach(e=>{ if(e.level&&e.level!==lv){ lv=e.level; h+=`<div class="lvl">${lv}</div>`; } n++; h+=exHTML(e,n); });
+  box.innerHTML=h;
+  EX[key].forEach(e=>{
+    EXMAP[e.id]=e; ST[e.id]={tries:0,done:false,pick:null,tab:key,correct:false,pts:{},mode:null};
+    if(e.type==='nldraw') nlDrawRender(e.id);
+  });
+}
+function nlDrawRender(id){
+  const st=ST[id], el=document.getElementById('nl-'+id);
+  const circles=Object.keys(st.pts).filter(k=>st.pts[k]).map(k=>[+k, st.pts[k]===2]);
+  const sp=specFromState(st.mode, st.pts)||{};
+  el.innerHTML=nlSVG(sp,{click:!st.done, circles});
+  ['right','left','between','out'].forEach(m=>document.getElementById(`md-${id}-${m}`).classList.toggle('on',st.mode===m));
+  if(!st.done) el.querySelector('svg').addEventListener('click',ev=>{ const r=ev.target.closest('[data-v]'); if(!r) return; const v=r.dataset.v; st.pts[v]=((st.pts[v]||0)+1)%3; nlDrawRender(id); });
+}
+function setMode(id,m){ if(ST[id].done) return; ST[id].mode=m; nlDrawRender(id); }
+function clearNL(id){ if(ST[id].done) return; ST[id].pts={}; ST[id].mode=null; nlDrawRender(id); }
+function pickOpt(id,i){ const st=ST[id]; if(st.done) return; st.pick=i; EXMAP[id].opts.forEach((_,k)=>document.getElementById(`opt-${id}-${k}`).classList.toggle('sel',k===i)); }
+function checkEx(id){
+  const e=EXMAP[id], st=ST[id]; if(st.done) return;
+  const fb=document.getElementById('fb-'+id); let correct=false; const warn=m=>{ fb.className='mt-2 text-sm font-semibold text-amber-700'; fb.textContent=m; };
+  if(e.type==='num'){
+    const v=cleanNum(document.getElementById('inp-'+id).value).replace(/[, ]/g,''); if(v===''||isNaN(Number(v))) return warn('Type a number first.');
+    correct=Math.abs(Number(v)-e.ans)<1e-9;
+  } else if(e.type==='set'){
+    const v=document.getElementById('inp-'+id).value; if(v.trim()==='') return warn('Type your answer first.'); correct=normSet(v)===normSet(e.ans);
+  } else if(e.type==='seq'){
+    const v=document.getElementById('inp-'+id).value; if(v.trim()==='') return warn('Type your answer first.'); correct=normSeq(v)===normSeq(e.ans);
+  } else if(e.type==='mc'){
+    if(st.pick===null) return warn('Choose an option first.'); correct=st.pick===e.ans;
+  } else if(e.type==='nldraw'){
+    if(!st.mode) return warn('Choose how to shade first.');
+    const sp=specFromState(st.mode,st.pts); if(!sp) return warn('Check the number of circles: this shading needs '+(st.mode==='right'||st.mode==='left'?'exactly one':'exactly two')+' circle(s).');
+    correct=canon(sp)===canon(e.spec);
+  }
+  st.tries++; const left=3-st.tries; document.getElementById('att-'+id).textContent='Attempts left: '+Math.max(left,0);
+  if(correct) finishEx(id,true); else if(left<=0) finishEx(id,false);
+  else { fb.className='mt-2 text-sm font-semibold text-red-700'; fb.textContent='Not quite. Try again: '+left+' attempt'+(left===1?'':'s')+' left.'; const c=document.getElementById('card-'+id); c.classList.add('bad'); setTimeout(()=>{ if(!st.done) c.classList.remove('bad'); },900); }
+}
+function finishEx(id,ok){
+  const e=EXMAP[id], st=ST[id]; st.done=true; st.correct=ok;
+  const card=document.getElementById('card-'+id), fb=document.getElementById('fb-'+id), sol=document.getElementById('sol-'+id);
+  card.classList.remove('bad'); if(ok) card.classList.add('ok');
+  fb.className='mt-2 text-sm font-bold '+(ok?'text-emerald-700':'text-red-700');
+  fb.textContent= ok?'Correct! Well done.':'All 3 attempts used. Study the full solution below.';
+  sol.classList.remove('hidden'); if(!ok) sol.classList.add('fail');
+  document.getElementById('solh-'+id).textContent= ok?'Full solution (compare with your method)':'Full step-by-step solution';
+  document.getElementById('btn-'+id).disabled=true;
+  if(e.type==='mc') e.opts.forEach((_,k)=>{ const b=document.getElementById(`opt-${id}-${k}`); b.disabled=true; b.classList.remove('sel'); if(k===e.ans) b.classList.add('right'); else if(k===st.pick) b.classList.add('wrong'); });
+  if(e.type==='num'||e.type==='set'||e.type==='seq') document.getElementById('inp-'+id).disabled=true;
+  if(e.type==='nldraw'){
+    nlDrawRender(id);
+    document.getElementById('solv-'+id).innerHTML='<p class="text-xs font-bold text-slate-600 mb-1">Correct drawing ('+ineqText(e.spec)+'):</p>'+nlSVG(e.spec);
+  }
+  typeset(sol); refreshProgress();
+}
+function refreshProgress(){
+  let done=0,total=0;
+  Object.keys(EX).forEach(k=>{ let d=0; EX[k].forEach(e=>{ total++; if(ST[e.id]&&ST[e.id].done){done++;d++;} }); const b=document.querySelector('.tab-link[data-tab="'+k+'"]'); if(b) b.classList.toggle('tab-done',d===EX[k].length); });
+  document.getElementById('prog-count').textContent=done; document.getElementById('prog-total').textContent=total;
+  let c=0,r=0; EX.t5.forEach(e=>{ if(ST[e.id].done){ ST[e.id].correct?c++:r++; } });
+  document.getElementById('hw-score').textContent=`Homework status: ${c} correct, ${r} revealed after 3 attempts, ${EX.t5.length-c-r} remaining`;
+}
+
+window.addEventListener('DOMContentLoaded',()=>{
+  Object.keys(EX).forEach(mountEx);
+  csInit(); cmpUpdate(); ipInit(); jpUpdate(); asUpdate(); shNew(); eaUpdate(); ebUpdate();
+  refreshProgress(); typeset();
+});
+</script>
+
+<script>const HZ={"reportTab": "t6", "reportLabel": "6. Learning report", "tabs": {"t1": "1. Closure", "t2": "2. Number line", "t3": "3. Rules of addition", "t4": "4. Smart thinking", "t5": "5. Homework"}, "centre": ["Integers", "ℤ"], "concepts": {"clo": {"n": "Closure", "adv": "Test a claim with one pair first. To show a set is <b>not</b> closed, one counterexample is enough; to show it <b>is</b> closed you need a reason that works for every pair. Try the Closure Tester in Tab 1 again."}, "zset": {"n": "Building ℤ from sets", "adv": "Say the three pieces out loud: ℤ⁻, {0}, ℤ⁺. They do not overlap and together they make ℤ. ℤ fixes subtraction, but not division."}, "ord": {"n": "Order and opposites", "adv": "Picture the number line: further right is bigger. Among negatives, the one with the bigger digit is <b>smaller</b> (−8 &lt; −2). The opposite of a is its mirror image across 0."}, "ineq": {"n": "Inequalities on the line", "adv": "Open circle = not included (&lt; or &gt;); closed circle = included (≤ or ≥). Shade towards the numbers that work. To count integers, list them from the first one that works to the last."}, "rules": {"n": "Rules of addition", "adv": "Commutative swaps the <b>order</b>; associative moves the <b>brackets</b>; 0 is the identity; a and −a cancel. Look for pairs that make 0 or 100 before you add."}, "sign": {"n": "Subtraction and glued signs", "adv": "Rewrite a − b as a + (−b) first. Then every term is a signed number and you may reorder freely, as long as each sign stays glued to the number after it."}, "smart": {"n": "Smart sums", "adv": "Try a small version first, pair up terms with a tidy total, or write the sum forwards and backwards. Always count how many terms or pairs there are."}}, "links": [["clo", "zset"], ["zset", "ord"], ["ord", "ineq"], ["zset", "rules"], ["rules", "sign"], ["rules", "smart"], ["sign", "smart"]], "tags": {"t1q1": ["clo", "U"], "t1q2": ["clo", "U"], "t1q3": ["clo", "U"], "t1q4": ["clo", "R"], "t1q5": ["clo", "U"], "t1q6": ["zset", "U"], "t1q7": ["clo", "C"], "t2q1": ["ord", "C"], "t2q2": ["ord", "U"], "t2q3": ["ineq", "U"], "t2q4": ["ineq", "U"], "t2q5": ["ineq", "A"], "t2q6": ["ineq", "A"], "t2q7": ["ineq", "C"], "t2q8": ["ineq", "C"], "t2q9": ["ord", "C"], "t3q1": ["rules", "C"], "t3q2": ["rules", "C"], "t3q3": ["sign", "C"], "t3q4": ["rules", "C"], "t3q5": ["rules", "U"], "t3q6": ["rules", "U"], "t3q7": ["sign", "U"], "t3q8": ["sign", "U"], "t3q9": ["zset", "R"], "t4q1": ["smart", "R"], "t4q2": ["smart", "A"], "t4q3": ["smart", "A"], "t4q4": ["smart", "R"], "t4q5": ["rules", "U"], "h1": ["clo", "U"], "h2": ["clo", "U"], "h3": ["ord", "C"], "h4": ["ineq", "C"], "h5": ["ord", "C"], "h6": ["ineq", "U"], "h7": ["ineq", "A"], "h8": ["ineq", "A"], "h9": ["rules", "C"], "h10": ["sign", "C"], "h11": ["ineq", "C"], "h12": ["rules", "U"], "h13": ["smart", "R"], "h14": ["smart", "R"], "h15": ["smart", "A"], "h16": ["smart", "A"], "h17": ["smart", "A"], "h18": ["smart", "R"]}, "next": "Next: 2.2, multiplication and primes."};</script>
+<script>/* ===== Horizon learning report (attempt-based 3/2/1/0, effort, skills, advice, knowledge map) =====
+   Needs from the page: EX (questions by tab), EXMAP, ST (tries, done, correct), checkEx, openTab,
+   and HZ = {tabs:{t1:'name',...}, concepts:{key:{n,adv}}, tags:{qid:[concept,skill]}, links:[[a,b],...], centre:['line1','line2']} */
+(function(){
+  const SK={U:'Understand',C:'Compute',A:'Apply',R:'Reason'};
+  const LOG={};const now=()=>Date.now();
+  function seen(id){if(!LOG[id])LOG[id]={t0:now(),att:[]};}
+  window.addEventListener('load',()=>{
+    if('IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting&&en.target.offsetParent!==null)seen(en.target.id.slice(5))}),{threshold:.35});
+      document.querySelectorAll('[id^="card-"]').forEach(c=>io.observe(c));}
+    const _chk=window.checkEx;
+    window.checkEx=function(id){const st=ST[id];const before=st?st.tries:0;seen(id);const r=_chk.apply(this,arguments);
+      if(st&&st.tries>before)LOG[id].att.push(now());refreshLock();return r};
+    const _open=window.openTab;
+    window.openTab=function(evt,id){const r=_open.apply(this,arguments);if(id===HZ.reportTab)build();return r};
+    refreshLock();
+  });
+  function rows(){const out=[];Object.keys(EX).forEach(t=>EX[t].forEach((e,i)=>{const st=ST[e.id],L=LOG[e.id]||{att:[]};const tg=(HZ.tags||{})[e.id]||[t,'C'];
+    const pts=st&&st.done?(st.correct?Math.max(1,4-st.tries):0):null;const first=L.att[0]&&L.t0?(L.att[0]-L.t0)/1000:null;
+    out.push({id:e.id,tab:t,no:i+1,c:tg[0],k:tg[1],done:st&&st.done,ok:st&&st.correct,tries:st?st.tries:0,pts,
+      fast:pts===3&&first!==null&&first<(e.type==='mc'?4:7),
+      rushed:st&&st.done&&!st.correct&&L.att.length>=3&&L.t0&&(L.att[L.att.length-1]-L.t0)<20000})}));return out}
+  function refreshLock(){const b=document.querySelector(`.tab-link[data-tab="${HZ.reportTab}"]`);if(!b)return;const R=rows(),d=R.filter(r=>r.done).length;
+    b.innerHTML=`${HZ.reportLabel||'Learning report'} <small style="opacity:.7">(${d}/${R.length})</small>`}
+  const lvl=a=>a==null?'n':a>=2.5?'g':a>=1.5?'a':'r';
+  const COL={g:'#2f8a4c',a:'#b7791f',r:'#c0392b',n:'#9aa1ad'},LV={g:'steady',a:'practise',r:'needs work',n:'not tried'};
+  const avg=rs=>{const d=rs.filter(r=>r.pts!=null);return d.length?d.reduce((s,r)=>s+r.pts,0)/d.length:null};
+  const bar=(v,col)=>`<div style="height:10px;background:#e6e3ee;border-radius:6px;overflow:hidden;min-width:120px"><i style="display:block;height:100%;width:${Math.round(v*100)}%;background:${col}"></i></div>`;
+  function kmap(R){const ks=Object.keys(HZ.concepts),n=ks.length,W=n>8?760:640,H=n>8?430:380,cx=W/2,cy=H/2,rx=W/2-110,ry=H/2-55;
+    const pos={};ks.forEach((k,i)=>{const a=-Math.PI/2+2*Math.PI*i/n;pos[k]=[cx+rx*Math.cos(a),cy+ry*Math.sin(a)]});
+    let s=`<svg viewBox="0 0 ${W} ${H}" style="width:100%;min-width:${Math.min(W,520)}px" role="img" aria-label="Knowledge map">`;
+    ks.forEach(k=>s+=`<line x1="${cx}" y1="${cy}" x2="${pos[k][0]}" y2="${pos[k][1]}" stroke="#e2e0ea" stroke-width="1.5"/>`);
+    (HZ.links||[]).forEach(([a,b])=>{if(pos[a]&&pos[b])s+=`<line x1="${pos[a][0]}" y1="${pos[a][1]}" x2="${pos[b][0]}" y2="${pos[b][1]}" stroke="#a7b2e2" stroke-width="2" stroke-dasharray="5 4"/>`});
+    s+=`<ellipse cx="${cx}" cy="${cy}" rx="88" ry="34" fill="#1c2230"/><text x="${cx}" y="${cy-4}" fill="#fff" font-size="14" text-anchor="middle" font-weight="700">${HZ.centre[0]}</text><text x="${cx}" y="${cy+15}" fill="#fff" font-size="13" text-anchor="middle">${HZ.centre[1]}</text>`;
+    ks.forEach(k=>{const a=avg(R.filter(r=>r.c===k)),l=lvl(a),[x,y]=pos[k];const name=HZ.concepts[k].n;
+      s+=`<rect x="${x-92}" y="${y-26}" width="184" height="52" rx="12" fill="#fff" stroke="${COL[l]}" stroke-width="3"/><text x="${x}" y="${y-5}" font-size="13" text-anchor="middle" font-weight="700" fill="#1c2230" ${name.length>24?'textLength="170" lengthAdjust="spacingAndGlyphs"':''}>${name}</text><text x="${x}" y="${y+15}" font-size="12.5" text-anchor="middle" fill="${COL[l]}">${a==null?'not tried':a.toFixed(1)+' / 3 · '+LV[l]}</text>`});
+    return s+'</svg>'}
+  function build(){const box=document.getElementById('hz-report');if(!box)return;const R=rows(),D=R.filter(r=>r.done);
+    if(!D.length){box.innerHTML='<div class="card"><p>Nothing answered yet. Work through the tabs, then come back: this report is built from your own attempts.</p></div>';return}
+    let h='';
+    h+=`<h3>1. By tab</h3><div class="card"><div class="hzr-t"><table>`;
+    Object.keys(EX).forEach(t=>{const rs=R.filter(r=>r.tab===t),d=rs.filter(r=>r.done),p=d.reduce((s,r)=>s+r.pts,0);
+      h+=`<tr><td style="padding:.3rem .4rem;white-space:nowrap">${HZ.tabs[t]||t}</td><td style="padding:.3rem .4rem;width:55%">${bar(p/(rs.length*3||1),'linear-gradient(90deg,#3b4fa8,#b5487a)')}</td><td style="padding:.3rem .4rem;white-space:nowrap;font-size:.85rem">${d.length}/${rs.length} · ${p} pts</td></tr>`});
+    h+=`</table></div></div>`;
+    h+=`<h3>2. By idea</h3><div class="card"><div class="hzr-t"><table>`;
+    Object.keys(HZ.concepts).forEach(k=>{const rs=R.filter(r=>r.c===k),a=avg(rs),l=lvl(a);
+      h+=`<tr><td style="padding:.3rem .4rem">${HZ.concepts[k].n}</td><td style="padding:.3rem .4rem;width:40%">${bar(a==null?0:a/3,COL[l])}</td><td style="padding:.3rem .4rem;white-space:nowrap;font-size:.85rem;color:${COL[l]};font-weight:700">${a==null?'not tried':a.toFixed(1)+' / 3 · '+LV[l]}</td></tr>`});
+    h+=`</table></div></div>`;
+    h+=`<h3>3. By kind of thinking</h3><div class="card"><div class="hzr-t"><table>`;
+    Object.keys(SK).forEach(k=>{const rs=R.filter(r=>r.k===k);if(!rs.length)return;const a=avg(rs),l=lvl(a);
+      h+=`<tr><td style="padding:.3rem .4rem">${SK[k]}</td><td style="padding:.3rem .4rem;width:40%">${bar(a==null?0:a/3,COL[l])}</td><td style="padding:.3rem .4rem;white-space:nowrap;font-size:.85rem;color:${COL[l]};font-weight:700">${a==null?'not tried':a.toFixed(1)+' / 3'}</td></tr>`});
+    h+=`</table></div></div>`;
+    const first=D.filter(r=>r.pts===3).length,fast=D.filter(r=>r.fast).length,rush=D.filter(r=>r.rushed).length,left=R.length-D.length;
+    h+=`<h3>4. How you worked</h3><div class="card"><ul class="hzr-ul">
+      <li><b>${first}</b> right on the first try.</li>
+      <li>${fast?`<b>${fast}</b> answered right very quickly: great if you really knew them.`:'You took your time on every question.'}</li>
+      <li>${rush?`<b>${rush}</b> question(s) had three wrong tries in under 20 seconds. After a wrong answer, stop and re-read the technique box or redo the worked example before trying again.`:'No rushing: you stopped to think after wrong answers. Well done.'}</li>
+      <li>${left?`<b>${left}</b> question(s) still to do.`:'You finished every question!'}</li></ul></div>`;
+    const weak=Object.keys(HZ.concepts).map(k=>[k,avg(R.filter(r=>r.c===k))]).filter(([k,a])=>a!=null&&a<2.5).sort((x,y)=>x[1]-y[1]).slice(0,3);
+    h+=`<h3>5. What to do next</h3>`+(weak.length?weak.map(([k,a])=>`<div class="card" style="border-left:5px solid ${COL[lvl(a)]}"><b>${HZ.concepts[k].n}</b> <span style="color:${COL[lvl(a)]};font-weight:700">(${a.toFixed(1)} / 3)</span><p style="margin:.3rem 0 0">${HZ.concepts[k].adv}</p></div>`).join(''):`<div class="card">Every idea you tried is steady. ${HZ.next||''}</div>`);
+    h+=`<h3>6. Your knowledge map</h3><p style="font-size:.9rem;color:#5b6475">Each box is one idea of this part, coloured by your average score. Dashed lines show ideas that build on each other.</p><div class="card" style="overflow-x:auto">${kmap(R)}</div>
+      <p style="font-size:.85rem"><span style="color:#2f8a4c">■</span> steady (2.5 or more) &nbsp; <span style="color:#b7791f">■</span> practise &nbsp; <span style="color:#c0392b">■</span> needs work (below 1.5) &nbsp; <span style="color:#9aa1ad">■</span> not tried</p>`;
+    const tot=D.reduce((s,r)=>s+r.pts,0);
+    h+=`<h3>7. Your score</h3><div class="card" style="text-align:center"><div style="font-family:Georgia,serif;font-size:2.2rem;font-weight:700;color:#3b4fa8">${tot} / ${R.length*3}</div><p style="font-size:.88rem;color:#5b6475;margin:.2rem 0 0">3 points for right on the first try, 2 on the second, 1 on the third, 0 if all three tries were wrong.</p></div>`;
+    box.innerHTML='<div class="hzr">'+h+'</div>';if(window.MathJax)MathJax.typesetPromise([box]);
+  }
+  window.hzBuildReport=build;
+})();
+</script>
+</body>
+</html>

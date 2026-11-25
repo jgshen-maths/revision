@@ -85,8 +85,53 @@ details.year[open] .chev{transform:rotate(90deg)}
 .res a .ty{font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--c);margin-left:auto}
 .hidden{display:none!important}
 .empty{color:var(--muted);font-size:.9rem;padding:1rem 0}
+
+/* ===== Horizon board ===== */
+body.horizon{--c:#d4693a;--c-soft:#fbe9df}
+.boards{grid-template-columns:1fr 1fr 1fr}
+.board.hzb{background:linear-gradient(180deg,#221c48 0%,#5b3a6e 55%,#e07a4a 100%);border-color:transparent;color:#fff}
+.board.hzb .bs,.board.hzb .bc{color:#f7d7b8}
+.board.hzb.on .bn{color:#ffd58a}
+.board.hzb::before{content:"";position:absolute;right:-18px;bottom:-30px;width:72px;height:72px;border-radius:50%;background:radial-gradient(circle,#ffe3a1 0%,#f6a85b 55%,rgba(246,168,91,0) 72%);opacity:.9}
+.board.hzb.on{box-shadow:0 12px 30px -14px #d4693a;outline:2px solid #ffd58a;outline-offset:2px}
+.hzv{display:none}
+body.horizon .sky,body.horizon .tools,body.horizon #tree{display:none}
+body.horizon .hzv{display:block}
+.hz-scene{position:relative;border-radius:22px;overflow:hidden;height:250px;background:#1c2230;margin-bottom:1.2rem}
+.hz-scene svg{position:absolute;inset:0;width:100%;height:100%}
+.hz-scene .cap{position:absolute;left:1.3rem;top:1.1rem;right:1.3rem;color:#fff}
+.hz-scene .cap .k{color:#f7d7b8}
+.hz-scene .cap h2{font-family:Georgia,serif;font-weight:600;font-size:clamp(1.5rem,4.4vw,2.2rem);margin:.15rem 0 .2rem;line-height:1.1}
+.hz-scene .cap p{margin:0;font-size:.92rem;color:#efe3f3;max-width:520px}
+.hz-sun{animation:hzrise 2.4s cubic-bezier(.2,.7,.2,1) both}
+@keyframes hzrise{from{transform:translateY(46px);opacity:.3}to{transform:none;opacity:1}}
+.hz-tw{animation:hztw 3s ease-in-out infinite}
+@keyframes hztw{50%{opacity:.25}}
+.hz-ch{display:flex;align-items:baseline;gap:.7rem;flex-wrap:wrap;margin:.4rem 0 .9rem}
+.hz-ch .no{font-family:Georgia,serif;font-size:2.4rem;line-height:1;color:var(--c)}
+.hz-ch b{font-family:Georgia,serif;font-size:1.35rem}
+.hz-ch .tg2{color:var(--muted);font-size:.92rem;flex-basis:100%}
+.hz-road{position:relative;padding-left:2.2rem;margin-bottom:1.4rem}
+.hz-road::before{content:"";position:absolute;left:.85rem;top:.6rem;bottom:.6rem;width:3px;border-radius:3px;background:linear-gradient(180deg,#5b3a6e,#d4693a 70%,#f4c95d)}
+.hz-st{position:relative;display:block;text-decoration:none;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:16px;padding:.85rem 1rem;margin-bottom:.7rem;transition:transform .2s,border-color .2s,box-shadow .2s}
+.hz-st:hover{transform:translateX(4px);border-color:var(--c);box-shadow:0 10px 24px -18px var(--c)}
+.hz-st::before{content:attr(data-n);position:absolute;left:-2.2rem;top:.8rem;width:1.75rem;height:1.75rem;border-radius:50%;background:#fff;border:3px solid var(--c);display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:800;color:var(--c)}
+.hz-st .t{font-family:Georgia,serif;font-size:1.12rem;font-weight:600}
+.hz-st .d{color:var(--muted);font-size:.9rem;margin-top:.1rem}
+.hz-st .tg{display:flex;gap:.35rem;flex-wrap:wrap;margin-top:.45rem}
+.hz-st .tg i{font-style:normal;font-size:.72rem;font-weight:700;letter-spacing:.04em;color:var(--c);background:var(--c-soft);border-radius:999px;padding:.1rem .55rem}
+.hz-gate{position:relative;display:block;text-decoration:none;color:#f3ecff;border-radius:18px;padding:1.1rem 1.1rem 1.2rem;overflow:hidden;background:radial-gradient(ellipse at 50% 120%,#3a2a6e 0%,#141533 60%,#0b0c1e 100%);border:1.5px solid rgba(244,201,93,.6);transition:transform .2s,box-shadow .2s}
+.hz-gate:hover{transform:translateX(4px);box-shadow:0 14px 34px -16px #f4c95d}
+.hz-gate::before{content:"◇";position:absolute;left:-2.2rem;top:1rem;width:1.75rem;height:1.75rem;border-radius:50%;background:#141533;border:3px solid #f4c95d;color:#f4c95d;display:flex;align-items:center;justify-content:center;font-size:.8rem}
+.hz-gate .stars{position:absolute;inset:0;background-image:radial-gradient(1px 1px at 12% 30%,#fff,transparent),radial-gradient(1px 1px at 72% 18%,#fff,transparent),radial-gradient(1.5px 1.5px at 40% 70%,#ffe7a8,transparent),radial-gradient(1px 1px at 88% 62%,#fff,transparent),radial-gradient(1px 1px at 25% 85%,#fff,transparent),radial-gradient(1px 1px at 58% 40%,#cfd6ff,transparent);opacity:.8}
+.hz-gate .k{color:#f4c95d;position:relative}
+.hz-gate .t{position:relative;font-family:Georgia,serif;font-size:1.3rem;font-weight:600;letter-spacing:.06em;color:#ffe3a1;margin:.15rem 0}
+.hz-gate .d{position:relative;font-size:.9rem;color:#d8d0ee}
+.hz-next{border:1.5px dashed var(--line);border-radius:16px;padding:.9rem 1rem;color:var(--muted);font-size:.9rem;text-align:center}
+
 footer{text-align:center;color:var(--muted);font-size:.8rem;padding:1.5rem}
 @media(max-width:560px){.strand.lit{grid-column:1/-1}.boards{grid-template-columns:1fr 1fr;gap:.5rem}.board{padding:.8rem}.board .bn{font-size:1.15rem}.board .bc{display:none}.strands{grid-template-columns:1fr 1fr;padding:.2rem .7rem .8rem}.meter{display:none}.sky-grid .sl{font-size:.58rem}}
+@media(max-width:560px){.boards{grid-template-columns:1fr 1fr 1fr}.board .bs{font-size:.72rem;line-height:1.3;display:block}.board .bn{font-size:1.02rem}.hz-scene{height:300px}}
 </style>
 </head>
 <body>
@@ -98,6 +143,7 @@ footer{text-align:center;color:var(--muted);font-size:.8rem;padding:1.5rem}
 
   <div class="boards" id="boards"></div>
 
+  <section class="hzv" id="hzv"></section>
   <div class="sky">
     <div class="k" id="skyTitle">Star map</div>
     <div class="sky-grid" id="sky"></div>
@@ -111,7 +157,7 @@ footer{text-align:center;color:var(--muted);font-size:.8rem;padding:1.5rem}
   </div>
   <div id="tree"></div>
 </main>
-<footer>Maths Atlas · NCEA and Cambridge<br>Designed by Mr. Shen</footer>
+<footer>Maths Atlas · NCEA, Cambridge and Horizon<br>Designed by Mr. Shen</footer>
 
 <script>
 /* =================================================================
@@ -163,8 +209,52 @@ const BOARDS = {
       {name:'IGCSE', note:'Years 10–11', years:[10,11], strands:['number','algebra','geometry','measurement','statistics','probability']},
       {name:'AS Level', note:'Year 12', years:[12], strands:['pure','statistics','probability','mechanics']},
       {name:'A Level', note:'Year 13', years:[13], strands:['pure','statistics','probability','mechanics']}
-    ]}
+    ]},
+  horizon:{name:'Horizon', sub:'Our own curriculum · beyond the syllabus', col:'#d4693a', cls:'horizon', custom:true, stages:[]}
 };
+
+/* ===== HORIZON: Mr Shen's own curriculum. To add a section, add a line to sections. ===== */
+const HORIZON = {
+  chapters:[
+    {n:1, name:'Sets and Integers', tag:'Start with the language of sets, then build the whole numbers inside it: order, primes and the arithmetic of the clock.',
+     sections:[
+      {n:'1', title:'The language of sets', d:'Sets and elements, subsets and the power set, ∩ ∪ and complements, counting with Venn diagrams.', href:'horizon/1-sets.html', tags:['5 steps','Venn tools','Learning report']},
+      {n:'2.1', title:'Introducing integers', d:'Why we need ℤ: closure, the number line, inequalities and the rules of addition.', href:'horizon/2-1-integers.html', tags:['5 steps','Number-line drawing','Learning report']},
+      {n:'2.2', title:'Multiplication and primes', d:'Multiplication as an operator, primes, prime factorisation, HCF and LCM.', href:'horizon/2-2-primes.html', tags:['Proofs to explore','Learning report']},
+      {n:'2.3', title:'Modular arithmetic', d:'The arithmetic of the clock: remainders, congruence and check digits.', href:'horizon/2-3-modular.html', tags:['Real-life codes','Learning report']}
+     ],
+     gate:{title:'HORIZON GATE', sub:"The Queen's Kingdom", d:'A reading journey beyond the integers: the stories, open questions and great ideas this chapter leads to. No exercises, just the view.', href:'horizon/gate.html'}}
+  ],
+  next:'Chapter 2 is on the horizon.'
+};
+function horizonScene(){
+  let st='';const R=(a,b)=>a+Math.random()*(b-a);
+  for(let i=0;i<38;i++)st+=`<circle class="${i%3?'':'hz-tw'}" style="animation-delay:${R(0,3).toFixed(1)}s" cx="${R(0,1000).toFixed(0)}" cy="${R(0,150).toFixed(0)}" r="${R(.6,1.7).toFixed(1)}" fill="#fff" opacity="${R(.4,.95).toFixed(2)}"/>`;
+  const mk=(x,y,r,lit,lab)=>`<circle cx="${x}" cy="${y}" r="${r+6}" fill="${lit?'#ffd58a':'#fff'}" opacity="${lit?.25:.08}"/><circle cx="${x}" cy="${y}" r="${r}" fill="${lit?'#ffd58a':'#8a86a8'}"/>`+(lab?`<text x="${x+r+10}" y="${y+5}" font-size="15" fill="${lit?'#ffe3a1':'#b9b3cf'}" font-family="Georgia,serif">${lab}</text>`:'');
+  return `<svg viewBox="0 0 1000 340" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+  <defs><linearGradient id="hzsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#17143a"/><stop offset=".45" stop-color="#4a3270"/><stop offset=".78" stop-color="#c8664a"/><stop offset="1" stop-color="#f5b56c"/></linearGradient>
+  <radialGradient id="hzsun"><stop offset="0" stop-color="#fff3c9"/><stop offset=".45" stop-color="#ffc977"/><stop offset="1" stop-color="#ff9a5a" stop-opacity="0"/></radialGradient>
+  <linearGradient id="hzgr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a2348"/><stop offset="1" stop-color="#12121f"/></linearGradient>
+  <clipPath id="hzup"><rect x="0" y="0" width="1000" height="250"/></clipPath></defs>
+  <rect width="1000" height="250" fill="url(#hzsky)"/>${st}
+  <g clip-path="url(#hzup)"><g class="hz-sun"><circle cx="620" cy="250" r="150" fill="url(#hzsun)" opacity=".85"/><circle cx="620" cy="250" r="52" fill="#ffe2a0"/></g></g>
+  <rect y="250" width="1000" height="90" fill="url(#hzgr)"/>
+  <path d="M 330,340 C 450,314 520,292 575,272 S 610,254 620,250" fill="none" stroke="#f4c95d" stroke-opacity=".35" stroke-width="26" stroke-linecap="round"/>
+  <path d="M 330,340 C 450,314 520,292 575,272 S 610,254 620,250" fill="none" stroke="#ffe3a1" stroke-width="2" stroke-dasharray="10 9"/>
+  <line x1="0" y1="250" x2="1000" y2="250" stroke="#ffd58a" stroke-opacity=".6"/>
+  ${mk(470,312,8,true,'Chapter 1')}${mk(548,284,5,false,'')}${mk(598,262,3.5,false,'')}
+  </svg>`;
+}
+function renderHorizon(){
+  let h=`<div class="hz-scene">${horizonScene()}<div class="cap"><div class="k">Horizon · a curriculum by Mr. Shen</div><h2>Walk towards the horizon</h2><p>One idea at a time, from sets to numbers and beyond. Each chapter is a road of short sections and ends at a gate that opens onto the wider world of mathematics.</p></div></div>`;
+  HORIZON.chapters.forEach(c=>{
+    h+=`<div class="hz-ch"><span class="no">${c.n}</span><b>${c.name}</b><span class="tg2">${c.tag}</span></div><div class="hz-road">`;
+    c.sections.forEach(s=>h+=s.href?`<a class="hz-st" data-n="${s.n}" href="${s.href}"><div class="t">${s.title}</div><div class="d">${s.d}</div><div class="tg">${s.tags.map(t=>`<i>${t}</i>`).join('')}</div></a>`:`<div class="hz-st" data-n="${s.n}" style="opacity:.55"><div class="t">${s.title}</div><div class="d">Coming soon</div></div>`);
+    if(c.gate)h+=`<a class="hz-gate" href="${c.gate.href}"><div class="stars"></div><div class="k">Chapter ${c.n} ends here · a reading journey</div><div class="t">◇ ${c.gate.title}</div><div class="d"><i>${c.gate.sub}</i>. ${c.gate.d}</div></a>`;
+    h+=`</div>`;});
+  h+=`<div class="hz-next">${HORIZON.next}</div>`;
+  $('#hzv').innerHTML=h;
+}
 const ICON = {
   number:'<path d="M3 13h18"/><path d="M6 10v6M12 10v6M18 10v6"/>',
   algebra:'<path d="M4 7l8 10M12 7L4 17"/><path d="M15 12h6M18 9v6"/>',
@@ -183,17 +273,17 @@ const TYPE = {interactive:'Interactive', print:'Printable', lesson:'Lesson', rev
 /* ===== STATE ===== */
 let board='ncea';
 try{const b=localStorage.getItem('atlas-board');if(BOARDS[b])board=b}catch(e){}
-if(/^#(ncea|cam)/.test(location.hash))board=location.hash.slice(1).split('-')[0];
+if(/^#(ncea|cam|horizon)/.test(location.hash))board=location.hash.slice(1).split('-')[0];
 const $=s=>document.querySelector(s);
 const all=(b,y,s)=>RESOURCES[`${b}/${y}/${s}`]||[];
 const res=(b,y,s)=>all(b,y,s).filter(r=>r.href&&!r.soon);
 const icon=k=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${ICON[k]||''}</svg>`;
 const yearsOf=b=>BOARDS[b].stages.flatMap(st=>st.years.map(y=>({y,st})));
-const countLive=b=>yearsOf(b).reduce((a,{y,st})=>a+st.strands.filter(s=>res(b,y,s).length).length,0);
+const countLive=b=>BOARDS[b].custom?HORIZON.chapters.reduce((a,c)=>a+c.sections.filter(x=>x.href).length+(c.gate?1:0),0):yearsOf(b).reduce((a,{y,st})=>a+st.strands.filter(s=>res(b,y,s).length).length,0);
 
 function renderBoards(){
   $('#boards').innerHTML=Object.keys(BOARDS).map(k=>{const B=BOARDS[k],n=countLive(k);
-    return `<button type="button" class="board${k===board?' on':''}" data-b="${k}" style="--bcol:${B.col}"><span class="bn">${B.name}</span><span class="bs">${B.sub}</span><span class="bc">${n} live</span></button>`}).join('');
+    return `<button type="button" class="board${k===board?' on':''}${B.custom?' hzb':''}" data-b="${k}" style="--bcol:${B.col}"><span class="bn">${B.name}</span><span class="bs">${B.sub}</span><span class="bc">${n} live</span></button>`}).join('');
   document.querySelectorAll('.board').forEach(b=>b.onclick=()=>{board=b.dataset.b;try{localStorage.setItem('atlas-board',board)}catch(e){};render()});
   const total=Object.keys(BOARDS).reduce((a,k)=>a+countLive(k),0);
   $('#liveTxt').textContent=`${total} topic${total===1?'':'s'} live · more coming`;
@@ -237,7 +327,7 @@ function filter(){
   document.querySelectorAll('.stage').forEach(st=>{let n=st.nextElementSibling,vis=false;while(n&&n.matches('details.year')){if(!n.classList.contains('hidden'))vis=true;n=n.nextElementSibling}st.classList.toggle('hidden',!vis)});
   const e=$('#empty');if(e)e.classList.toggle('hidden',any);
 }
-function render(){document.body.className=BOARDS[board].cls;renderBoards();renderSky();renderTree();}
+function render(){document.body.className=BOARDS[board].cls;renderBoards();if(BOARDS[board].custom){renderHorizon();return}renderSky();renderTree();}
 $('#q').oninput=filter;$('#liveOnly').onchange=filter;
 $('#expand').onclick=()=>{const all=[...document.querySelectorAll('details.year')],open=all.some(d=>!d.open);all.forEach(d=>d.open=open);$('#expand').textContent=open?'Close all':'Open all'};
 render();

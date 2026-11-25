@@ -1,0 +1,2062 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style id="tw">/*! tailwindcss v4.3.3 | MIT License | https://tailwindcss.com */
+@layer properties;
+@layer theme, base, components, utilities;
+@layer theme {
+  :root, :host {
+    --font-sans: "Avenir Next","Segoe UI",system-ui,sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
+    monospace;
+    --color-red-700: oklch(50.5% 0.213 27.518);
+    --color-amber-50: oklch(98.7% 0.022 95.277);
+    --color-amber-400: oklch(82.8% 0.189 84.429);
+    --color-amber-700: oklch(55.5% 0.163 48.998);
+    --color-amber-800: oklch(47.3% 0.137 46.201);
+    --color-emerald-700: oklch(50.8% 0.118 165.612);
+    --color-teal-50: #f1f3fb;
+    --color-teal-200: #c9d0ef;
+    --color-teal-600: #3b4fa8;
+    --color-teal-700: #33449a;
+    --color-teal-900: #222d66;
+    --color-slate-100: oklch(96.8% 0.007 247.896);
+    --color-slate-300: oklch(86.9% 0.022 252.894);
+    --color-slate-400: oklch(70.4% 0.04 256.788);
+    --color-slate-500: oklch(55.4% 0.046 257.417);
+    --color-slate-600: oklch(44.6% 0.043 257.281);
+    --color-slate-700: oklch(37.2% 0.044 257.287);
+    --color-slate-800: oklch(27.9% 0.041 260.031);
+    --spacing: 0.25rem;
+    --text-xs: 0.75rem;
+    --text-xs--line-height: calc(1 / 0.75);
+    --text-sm: 0.875rem;
+    --text-sm--line-height: calc(1.25 / 0.875);
+    --text-base: 1rem;
+    --text-base--line-height: calc(1.5 / 1);
+    --text-lg: 1.125rem;
+    --text-lg--line-height: calc(1.75 / 1.125);
+    --text-xl: 1.25rem;
+    --text-xl--line-height: calc(1.75 / 1.25);
+    --text-2xl: 1.5rem;
+    --text-2xl--line-height: calc(2 / 1.5);
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --leading-relaxed: 1.625;
+    --radius-lg: 0.5rem;
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --default-font-family: var(--font-sans);
+    --default-mono-font-family: var(--font-mono);
+  }
+}
+@layer base {
+  *, ::after, ::before, ::backdrop, ::file-selector-button {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0 solid;
+  }
+  html, :host {
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    tab-size: 4;
+    font-family: var(--default-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji');
+    font-feature-settings: var(--default-font-feature-settings, normal);
+    font-variation-settings: var(--default-font-variation-settings, normal);
+    -webkit-tap-highlight-color: transparent;
+  }
+  hr {
+    height: 0;
+    color: inherit;
+    border-top-width: 1px;
+  }
+  abbr:where([title]) {
+    -webkit-text-decoration: underline dotted;
+    text-decoration: underline dotted;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+  a {
+    color: inherit;
+    -webkit-text-decoration: inherit;
+    text-decoration: inherit;
+  }
+  b, strong {
+    font-weight: bolder;
+  }
+  code, kbd, samp, pre {
+    font-family: var(--default-mono-font-family, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace);
+    font-feature-settings: var(--default-mono-font-feature-settings, normal);
+    font-variation-settings: var(--default-mono-font-variation-settings, normal);
+    font-size: 1em;
+  }
+  small {
+    font-size: 80%;
+  }
+  sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  sub {
+    bottom: -0.25em;
+  }
+  sup {
+    top: -0.5em;
+  }
+  table {
+    text-indent: 0;
+    border-color: inherit;
+    border-collapse: collapse;
+  }
+  :-moz-focusring:where(:not(iframe)) {
+    outline: auto;
+  }
+  progress {
+    vertical-align: baseline;
+  }
+  summary {
+    display: list-item;
+  }
+  ol, ul, menu {
+    list-style: none;
+  }
+  img, svg, video, canvas, audio, iframe, embed, object {
+    display: block;
+    vertical-align: middle;
+  }
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+  button, input, select, optgroup, textarea, ::file-selector-button {
+    font: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    border-radius: 0;
+    background-color: transparent;
+    opacity: 1;
+  }
+  :where(select:is([multiple], [size])) optgroup {
+    font-weight: bolder;
+  }
+  :where(select:is([multiple], [size])) optgroup option {
+    padding-inline-start: 20px;
+  }
+  ::file-selector-button {
+    margin-inline-end: 4px;
+  }
+  ::placeholder {
+    opacity: 1;
+  }
+  @supports (not (-webkit-appearance: -apple-pay-button))  or (contain-intrinsic-size: 1px) {
+    ::placeholder {
+      color: currentcolor;
+      @supports (color: color-mix(in lab, red, red)) {
+        color: color-mix(in oklab, currentcolor 50%, transparent);
+      }
+    }
+  }
+  textarea {
+    resize: vertical;
+  }
+  ::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+  ::-webkit-date-and-time-value {
+    min-height: 1lh;
+    text-align: inherit;
+  }
+  ::-webkit-datetime-edit {
+    display: inline-flex;
+  }
+  ::-webkit-datetime-edit-fields-wrapper {
+    padding: 0;
+  }
+  ::-webkit-datetime-edit, ::-webkit-datetime-edit-year-field, ::-webkit-datetime-edit-month-field, ::-webkit-datetime-edit-day-field, ::-webkit-datetime-edit-hour-field, ::-webkit-datetime-edit-minute-field, ::-webkit-datetime-edit-second-field, ::-webkit-datetime-edit-millisecond-field, ::-webkit-datetime-edit-meridiem-field {
+    padding-block: 0;
+  }
+  ::-webkit-calendar-picker-indicator {
+    line-height: 1;
+  }
+  :-moz-ui-invalid {
+    box-shadow: none;
+  }
+  button, input:where([type='button'], [type='reset'], [type='submit']), ::file-selector-button {
+    appearance: button;
+  }
+  ::-webkit-inner-spin-button, ::-webkit-outer-spin-button {
+    height: auto;
+  }
+  [hidden]:where(:not([hidden='until-found'])) {
+    display: none !important;
+  }
+}
+@layer utilities {
+  .visible {
+    visibility: visible;
+  }
+  .fixed {
+    position: fixed;
+  }
+  .static {
+    position: static;
+  }
+  .start-1 {
+    inset-inline-start: calc(var(--spacing) * 1);
+  }
+  .m-1 {
+    margin: var(--spacing);
+  }
+  .mx-auto {
+    margin-inline: auto;
+  }
+  .my-2 {
+    margin-block: calc(var(--spacing) * 2);
+  }
+  .my-3 {
+    margin-block: calc(var(--spacing) * 3);
+  }
+  .mt-1 {
+    margin-top: var(--spacing);
+  }
+  .mt-2 {
+    margin-top: calc(var(--spacing) * 2);
+  }
+  .mt-3 {
+    margin-top: calc(var(--spacing) * 3);
+  }
+  .mt-4 {
+    margin-top: calc(var(--spacing) * 4);
+  }
+  .mt-5 {
+    margin-top: calc(var(--spacing) * 5);
+  }
+  .mt-6 {
+    margin-top: calc(var(--spacing) * 6);
+  }
+  .mt-8 {
+    margin-top: calc(var(--spacing) * 8);
+  }
+  .mr-1 {
+    margin-right: var(--spacing);
+  }
+  .mb-1 {
+    margin-bottom: var(--spacing);
+  }
+  .mb-2 {
+    margin-bottom: calc(var(--spacing) * 2);
+  }
+  .mb-3 {
+    margin-bottom: calc(var(--spacing) * 3);
+  }
+  .mb-4 {
+    margin-bottom: calc(var(--spacing) * 4);
+  }
+  .mb-5 {
+    margin-bottom: calc(var(--spacing) * 5);
+  }
+  .block {
+    display: block;
+  }
+  .flex {
+    display: flex;
+  }
+  .grid {
+    display: grid;
+  }
+  .hidden {
+    display: none;
+  }
+  .inline-block {
+    display: inline-block;
+  }
+  .table {
+    display: table;
+  }
+  .h-3 {
+    height: calc(var(--spacing) * 3);
+  }
+  .w-3 {
+    width: calc(var(--spacing) * 3);
+  }
+  .w-24 {
+    width: calc(var(--spacing) * 24);
+  }
+  .w-56 {
+    width: calc(var(--spacing) * 56);
+  }
+  .min-w-0 {
+    min-width: 0px;
+  }
+  .min-w-\[10rem\] {
+    min-width: 10rem;
+  }
+  .flex-1 {
+    flex: 1;
+  }
+  .shrink-0 {
+    flex-shrink: 0;
+  }
+  .cursor-pointer {
+    cursor: pointer;
+  }
+  .list-decimal {
+    list-style-type: decimal;
+  }
+  .list-disc {
+    list-style-type: disc;
+  }
+  .grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+  .items-center {
+    align-items: center;
+  }
+  .items-start {
+    align-items: flex-start;
+  }
+  .justify-center {
+    justify-content: center;
+  }
+  .gap-1 {
+    gap: var(--spacing);
+  }
+  .gap-2 {
+    gap: calc(var(--spacing) * 2);
+  }
+  .gap-3 {
+    gap: calc(var(--spacing) * 3);
+  }
+  .gap-4 {
+    gap: calc(var(--spacing) * 4);
+  }
+  :where(.space-y-1 > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(var(--spacing) * var(--tw-space-y-reverse));
+    margin-block-end: calc(var(--spacing) * calc(1 - var(--tw-space-y-reverse)));
+  }
+  :where(.space-y-2 > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(calc(var(--spacing) * 2) * var(--tw-space-y-reverse));
+    margin-block-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-y-reverse)));
+  }
+  .gap-x-6 {
+    column-gap: calc(var(--spacing) * 6);
+  }
+  .gap-y-1 {
+    row-gap: var(--spacing);
+  }
+  .overflow-x-auto {
+    overflow-x: auto;
+  }
+  .rounded {
+    border-radius: 0.25rem;
+  }
+  .rounded-lg {
+    border-radius: var(--radius-lg);
+  }
+  .border-b-4 {
+    border-bottom-style: var(--tw-border-style);
+    border-bottom-width: 4px;
+  }
+  .border-l-4 {
+    border-left-style: var(--tw-border-style);
+    border-left-width: 4px;
+  }
+  .border-amber-400 {
+    border-color: var(--color-amber-400);
+  }
+  .border-teal-200 {
+    border-color: var(--color-teal-200);
+  }
+  .border-teal-600 {
+    border-color: var(--color-teal-600);
+  }
+  .bg-amber-50 {
+    background-color: var(--color-amber-50);
+  }
+  .bg-slate-100 {
+    background-color: var(--color-slate-100);
+  }
+  .bg-teal-50 {
+    background-color: var(--color-teal-50);
+  }
+  .p-1 {
+    padding: var(--spacing);
+  }
+  .p-2 {
+    padding: calc(var(--spacing) * 2);
+  }
+  .p-3 {
+    padding: calc(var(--spacing) * 3);
+  }
+  .px-3 {
+    padding-inline: calc(var(--spacing) * 3);
+  }
+  .py-1 {
+    padding-block: var(--spacing);
+  }
+  .pl-5 {
+    padding-left: calc(var(--spacing) * 5);
+  }
+  .pl-6 {
+    padding-left: calc(var(--spacing) * 6);
+  }
+  .text-right {
+    text-align: right;
+  }
+  .align-middle {
+    vertical-align: middle;
+  }
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+  .text-2xl {
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
+  }
+  .text-base {
+    font-size: var(--text-base);
+    line-height: var(--tw-leading, var(--text-base--line-height));
+  }
+  .text-lg {
+    font-size: var(--text-lg);
+    line-height: var(--tw-leading, var(--text-lg--line-height));
+  }
+  .text-sm {
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
+  }
+  .text-xl {
+    font-size: var(--text-xl);
+    line-height: var(--tw-leading, var(--text-xl--line-height));
+  }
+  .text-xs {
+    font-size: var(--text-xs);
+    line-height: var(--tw-leading, var(--text-xs--line-height));
+  }
+  .leading-relaxed {
+    --tw-leading: var(--leading-relaxed);
+    line-height: var(--leading-relaxed);
+  }
+  .font-bold {
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+  }
+  .font-semibold {
+    --tw-font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
+  }
+  .text-amber-700 {
+    color: var(--color-amber-700);
+  }
+  .text-amber-800 {
+    color: var(--color-amber-800);
+  }
+  .text-emerald-700 {
+    color: var(--color-emerald-700);
+  }
+  .text-red-700 {
+    color: var(--color-red-700);
+  }
+  .text-slate-300 {
+    color: var(--color-slate-300);
+  }
+  .text-slate-400 {
+    color: var(--color-slate-400);
+  }
+  .text-slate-500 {
+    color: var(--color-slate-500);
+  }
+  .text-slate-600 {
+    color: var(--color-slate-600);
+  }
+  .text-slate-700 {
+    color: var(--color-slate-700);
+  }
+  .text-slate-800 {
+    color: var(--color-slate-800);
+  }
+  .text-teal-700 {
+    color: var(--color-teal-700);
+  }
+  .text-teal-900 {
+    color: var(--color-teal-900);
+  }
+  .overline {
+    text-decoration-line: overline;
+  }
+  .underline {
+    text-decoration-line: underline;
+  }
+  .opacity-60 {
+    opacity: 60%;
+  }
+  .ring {
+    --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .ease-out {
+    --tw-ease: var(--ease-out);
+    transition-timing-function: var(--ease-out);
+  }
+  @media (width >= 48rem) {
+    .md\:grid-cols-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .md\:grid-cols-5 {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+  }
+}
+@property --tw-space-y-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-leading {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-inset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-inset-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-inset-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-inset-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-inset-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-ring-inset {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ring-offset-width {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+@property --tw-ring-offset-color {
+  syntax: "*";
+  inherits: false;
+  initial-value: #fff;
+}
+@property --tw-ring-offset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-ease {
+  syntax: "*";
+  inherits: false;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-space-y-reverse: 0;
+      --tw-border-style: solid;
+      --tw-leading: initial;
+      --tw-font-weight: initial;
+      --tw-shadow: 0 0 #0000;
+      --tw-shadow-color: initial;
+      --tw-shadow-alpha: 100%;
+      --tw-inset-shadow: 0 0 #0000;
+      --tw-inset-shadow-color: initial;
+      --tw-inset-shadow-alpha: 100%;
+      --tw-ring-color: initial;
+      --tw-ring-shadow: 0 0 #0000;
+      --tw-inset-ring-color: initial;
+      --tw-inset-ring-shadow: 0 0 #0000;
+      --tw-ring-inset: initial;
+      --tw-ring-offset-width: 0px;
+      --tw-ring-offset-color: #fff;
+      --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-ease: initial;
+    }
+  }
+}
+</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Horizon · Section 2.3 · Modular arithmetic</title>
+
+
+<style>
+  body { font-family: 'Inter', system-ui, sans-serif; background-color: #f7f6fb; color: #0f172a; overflow-x: hidden; }
+  .tab-content { display: none; animation: fadeIn 0.4s ease-out; }
+  .tab-content.active { display: block; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+  input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; background: transparent; }
+  input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; height: 20px; width: 20px; border-radius: 50%; background: #3b4fa8; cursor: pointer; margin-top: -8px; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+  input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 6px; cursor: pointer; background: #cbd5e1; border-radius: 3px; }
+  .btn { background:#3b4fa8; color:#fff; font-weight:700; padding:.45rem 1rem; border-radius:.4rem; font-size:.875rem; transition:.15s; box-shadow:0 1px 2px rgba(0,0,0,.15); }
+  .btn:hover { background:#33449a; } .btn:disabled { background:#94a3b8; cursor:not-allowed; }
+  .btn-ghost { background:#fff; color:#33449a; border:2px solid #c9d0ef; font-weight:700; padding:.3rem .75rem; border-radius:.4rem; font-size:.8rem; transition:.15s; }
+  .btn-ghost:hover { background:#eef0fa; border-color:#3b4fa8; } .btn-ghost.on { background:#3b4fa8; color:#fff; border-color:#3b4fa8; }
+  .card { background:#fff; border:1px solid #e2e8f0; border-radius:.75rem; padding:1.25rem; }
+  .key { background:#eef0fa; border-left:5px solid #3b4fa8; border-radius:.5rem; padding:1rem 1.25rem; }
+  .warn { background:#fffbeb; border-left:5px solid #f59e0b; border-radius:.5rem; padding:1rem 1.25rem; }
+  .step-badge { display:inline-flex; align-items:center; justify-content:center; width:1.75rem; height:1.75rem; border-radius:9999px; background:#3b4fa8; color:#fff; font-weight:800; font-size:.85rem; flex-shrink:0; }
+  .ex-card { background:#fff; border:1px solid #cbd5e1; border-radius:.75rem; padding:1.1rem 1.25rem; margin-bottom:1rem; }
+  .ex-card.ok { border-color:#34d399; background:#f0fdf4; } .ex-card.bad { border-color:#fca5a5; background:#fef2f2; }
+  .qnum { width:2rem; height:2rem; border-radius:.5rem; background:#1c2230; color:#fff; font-weight:800; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .inp { border:2px solid #cbd5e1; border-radius:.4rem; padding:.45rem .7rem; font-family: ui-monospace, monospace; font-weight:700; width:100%; max-width:22rem; }
+  .inp:focus { outline:none; border-color:#3b4fa8; box-shadow:0 0 0 3px #c9d0ef; }
+  .opt { display:block; width:100%; text-align:left; border:2px solid #cbd5e1; background:#fff; border-radius:.5rem; padding:.5rem .8rem; margin-bottom:.4rem; font-size:.9rem; transition:.15s; }
+  .opt:hover { border-color:#3b4fa8; background:#eef0fa; } .opt.sel { border-color:#3b4fa8; background:#dde2f6; font-weight:700; }
+  .opt.right { border-color:#10b981; background:#d1fae5; } .opt.wrong { border-color:#ef4444; background:#fee2e2; }
+  .chip { display:inline-flex; align-items:center; justify-content:center; min-width:2.6rem; height:2.4rem; padding:0 .5rem; border:2px solid #cbd5e1; border-radius:.5rem; background:#fff; font-weight:700; cursor:pointer; transition:.15s; user-select:none; }
+  .chip:hover { border-color:#3b4fa8; background:#eef0fa; transform:translateY(-2px); }
+  .chip.selA { background:#c9d0ef; border-color:#3b4fa8; color:#1c2230; } .chip.selB { background:#fde68a; border-color:#d97706; color:#78350f; }
+  .chip.pos { background:#ecfeff; border-color:#22d3ee; color:#155e75; } .chip.neg { background:#fff1f2; border-color:#fb7185; color:#9f1239; }
+  .chip.pick { outline:4px solid #f59e0b; }
+  .chip.static { cursor:default; } .chip.static:hover { transform:none; }
+  .sol-box { background:#f0fdf4; border:1px solid #bbf7d0; border-radius:.6rem; padding:1rem 1.2rem; } .sol-box.fail { background:#fff7ed; border-color:#fed7aa; }
+  .lvl { background:#1c2230; color:#fff; border-radius:.6rem; padding:.6rem 1rem; font-weight:800; margin:1.5rem 0 .8rem; }
+  .tab-done::after { content:" ✓"; color:#10b981; }
+  .ok-t { color:#047857; font-weight:700; } .bad-t { color:#b91c1c; font-weight:700; }
+  table.tb { border-collapse:collapse; font-size:.85rem; } table.tb th, table.tb td { border:1px solid #cbd5e1; padding:.35rem .6rem; text-align:center; }
+  table.tb th { background:#eef0fa; }
+  .tech { background:#fff; border:1px solid #c9d0ef; border-left:6px solid #3b4fa8; border-radius:.6rem; padding:1rem 1.2rem; margin-bottom:1rem; }
+  .tech .tt { font-weight:800; color:#33449a; margin-bottom:.35rem; }
+  .eg { background:#f8fafc; border:1px dashed #94a3b8; border-radius:.5rem; padding:.6rem .9rem; margin-top:.5rem; font-size:.9rem; }
+  .turn { display:inline-block; background:#fef3c7; color:#92400e; font-weight:800; font-size:.72rem; padding:.1rem .5rem; border-radius:9999px; margin-bottom:.4rem; }
+  .chip.sm { min-width:2.1rem; height:2rem; font-size:.8rem; padding:0 .3rem; }
+  .chip.prime { background:#c9d0ef; border-color:#3b4fa8; color:#1c2230; }
+  .chip.struck { background:#f7f6fb; color:#94a3b8; text-decoration:line-through; border-color:#e2e8f0; }
+  .chip.one { background:#fee2e2; border-color:#f87171; color:#991b1b; }
+  .chip.oddd { background:#fef3c7; border-color:#f59e0b; color:#78350f; }
+  .dot { width:1.15rem; height:1.15rem; border-radius:9999px; background:#5b6cc0; display:inline-block; }
+  .dot.b { background:#f59e0b; }
+  sup { font-size:.7em; }
+
+  /* ---- V2 additions ---- */
+  .qtext p { margin:.4rem 0; } .qtext p:first-child { margin-top:0; } .qtext p:last-child { margin-bottom:0; }
+  .qtext ul { list-style:disc; padding-left:1.4rem; margin:.4rem 0; } .qtext li { margin:.15rem 0; }
+  .qlabel { display:inline-block; background:#dde2f6; color:#1c2230; font-weight:800; font-size:.78rem; letter-spacing:.02em; padding:.1rem .65rem; border-radius:9999px; }
+  .hint { background:#fffbeb; border-left:4px solid #f59e0b; padding:.4rem .75rem; border-radius:.35rem; font-size:.88rem; color:#78350f; }
+  .codetab { margin:.2rem 0 .5rem; } .codetab td, .codetab th { min-width:2.1rem; padding:.2rem .35rem; }
+  .codetab th { background:#dde2f6; }
+  mjx-container[display="true"] { overflow-x:auto; overflow-y:hidden; max-width:100%; }
+  .fprev { margin-top:.55rem; border:2px dashed #a7b2e2; background:#eef0fa; border-radius:.5rem; padding:.4rem .8rem; min-height:3rem; max-width:34rem; }
+  .fprev .lab { font-size:.68rem; font-weight:800; color:#33449a; text-transform:uppercase; letter-spacing:.05em; display:block; }
+  .fprev .msg { font-size:.85rem; color:#475569; }
+  kbd.k { background:#f7f6fb; border:1px solid #94a3b8; border-bottom-width:3px; border-radius:.3rem; padding:0 .4rem; font-family:ui-monospace,monospace; font-weight:700; font-size:.85em; }
+  .proof { background:#fff; border:2px solid #33449a; border-radius:.75rem; padding:1.1rem 1.3rem; margin-bottom:1.2rem; }
+  .proof .ph { font-weight:800; color:#33449a; font-size:1.05rem; margin-bottom:.4rem; }
+  .proof .ps { margin:.7rem 0; padding-left:.9rem; border-left:4px solid #c9d0ef; font-size:.92rem; color:#1e293b; }
+  .proof .ps b.n { color:#33449a; }
+  .rp-tile { background:#f8fafc; border:1px solid #cbd5e1; border-radius:.6rem; padding:.7rem .9rem; text-align:center; }
+  .rp-tile .v { font-size:1.6rem; font-weight:800; color:#1c2230; } .rp-tile .l { font-size:.72rem; color:#475569; font-weight:700; }
+  .badge { display:inline-block; font-size:.72rem; font-weight:800; padding:.1rem .55rem; border-radius:9999px; white-space:nowrap; }
+  .b-sec { background:#d1fae5; color:#065f46; } .b-dev { background:#fef3c7; color:#92400e; } .b-need { background:#fee2e2; color:#991b1b; }
+  .b-flu { background:#d1fae5; color:#065f46; } .b-per { background:#cffafe; color:#155e75; } .b-gue { background:#fef3c7; color:#92400e; } .b-rus { background:#fee2e2; color:#991b1b; } .b-str { background:#ede9fe; color:#5b21b6; }
+  .rp-bar { display:flex; height:1.6rem; border-radius:.4rem; overflow:hidden; border:1px solid #cbd5e1; }
+  .rp-bar div { display:flex; align-items:center; justify-content:center; font-size:.72rem; font-weight:800; color:#fff; }
+  .meter { height:.6rem; background:#e2e8f0; border-radius:9999px; overflow:hidden; min-width:6rem; } .meter > div { height:100%; background:#3b4fa8; }
+  table.rp { border-collapse:collapse; width:100%; font-size:.84rem; } table.rp th, table.rp td { border-bottom:1px solid #e2e8f0; padding:.45rem .5rem; text-align:left; vertical-align:top; }
+  table.rp th { background:#eef0fa; font-size:.75rem; text-transform:uppercase; letter-spacing:.03em; color:#33449a; }
+  .heat td.h { text-align:center; font-weight:800; border-radius:.3rem; }
+  .toast { position:fixed; right:1rem; bottom:1rem; background:#1c2230; color:#fff; padding:.8rem 1.1rem; border-radius:.6rem; box-shadow:0 6px 18px rgba(0,0,0,.3); z-index:50; max-width:20rem; font-size:.9rem; }
+  @media print { body { background:#fff; } .toast, .tab-link, .no-print { display:none !important; } }
+
+  /* ---- 2.3 additions ---- */
+  .chip.struck-lite { opacity:.55; }
+  select.inp { background:#fff; }
+  /* ---- V2 additions: examples, proof drawers, scenes, scoring, map ---- */
+  .seeit { background:#fffbeb; border:2px solid #fcd34d; border-radius:.6rem; padding:.7rem 1rem; margin:.7rem 0; }
+  .seeit .sh { font-weight:800; color:#92400e; font-size:.95rem; margin-bottom:.35rem; }
+  .seg { margin:.55rem 0; padding:.1rem 0 .1rem .8rem; border-left:4px solid #f59e0b; font-size:.9rem; color:#1e293b; }
+  .seg .et { font-weight:800; color:#78350f; margin-bottom:.15rem; } .seg p { margin:.25rem 0; }
+  details.pf { border:1px dashed #a7b2e2; border-radius:.5rem; background:#f8fafc; padding:.45rem .8rem; margin:.6rem 0 .2rem; }
+  details.pf > summary { cursor:pointer; font-weight:800; color:#33449a; font-size:.92rem; }
+  details.pf[open] > summary { margin-bottom:.4rem; }
+  .scene { border:2px solid #cbd5e1; border-radius:.75rem; padding:.9rem 1.15rem; margin-bottom:1rem; background:#fff; font-size:.92rem; color:#1e293b; }
+  .scene.bad { border-color:#fca5a5; background:#fef2f2; } .scene.good { border-color:#6ee7b7; background:#ecfdf5; }
+  .scene .sh { font-weight:800; color:#33449a; font-size:.78rem; text-transform:uppercase; letter-spacing:.05em; margin-bottom:.4rem; }
+  .scene.bad .sh { color:#b91c1c; } .scene .ask { margin-top:.7rem; background:#fffbeb; border-left:4px solid #f59e0b; padding:.45rem .75rem; border-radius:.35rem; }
+  .machine { font-family:ui-monospace,Menlo,Consolas,monospace; font-size:.8rem; background:#0f172a; color:#a7f3d0; border-radius:.45rem; padding:.45rem .75rem; margin:.5rem 0; overflow-x:auto; }
+  .mono { font-family:ui-monospace,Menlo,Consolas,monospace; font-weight:700; background:#e2e8f0; padding:0 .3rem; border-radius:.25rem; }
+  .pts { display:inline-block; min-width:2.6rem; text-align:center; font-weight:800; font-size:.75rem; padding:.1rem .45rem; border-radius:9999px; color:#fff; }
+  .pts.p3 { background:#059669; } .pts.p2 { background:#0891b2; } .pts.p1 { background:#d97706; } .pts.p0 { background:#dc2626; }
+  .kmswatch { padding:.05rem .6rem; border-radius:9999px; border:1px solid #94a3b8; font-weight:700; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script>
+/* MathJax-compatible shim: the lesson code calls MathJax.typesetPromise; we render with KaTeX */
+window.MathJax={typesetPromise:function(els){try{(els&&els.length?els:[document.body]).forEach(function(e){if(e&&window.renderMathInElement)renderMathInElement(e,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false}],throwOnError:false,ignoredClasses:['nomath']})})}catch(err){}return Promise.resolve()}};
+</script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%20role%3D%22img%22%20aria-label%3D%22%E7%94%B3%20Shen%20Studio%22%3E%3Crect%20width%3D%22100%22%20height%3D%22100%22%20rx%3D%2212%22%20fill%3D%22%23B3261E%22/%3E%3Cpath%20d%3D%22M41.57%2027.7V42.46H27.58V27.7ZM15.1%2025.34V70.78H16.95C22.18%2070.78%2027.58%2067.91%2027.58%2066.65V62.18H41.57V90H44.01C48.82%2090%2054.3%2086.88%2054.3%2085.62V62.18H68.97V68.93H71.07C75.37%2068.93%2081.53%2066.65%2081.61%2065.89V29.64C83.38%2029.3%2084.39%2028.55%2084.9%2027.87L73.69%2019.19L68.12%2025.34H54.3V13.96C56.74%2013.62%2057.33%2012.7%2057.5%2011.52L41.57%2010V25.34H28.42L15.1%2020.2ZM54.3%2027.7H68.97V42.46H54.3ZM41.57%2059.82H27.58V44.82H41.57ZM54.3%2059.82V44.82H68.97V59.82Z%22%20fill%3D%22%23FFFFFF%22/%3E%3C/svg%3E">
+<style id="shen-brand">
+.shen-footer{display:flex;align-items:center;justify-content:center;gap:8px;padding:18px 12px 26px;font:500 13px/1.3 Inter,"Helvetica Neue",Arial,sans-serif;color:#6B6458;letter-spacing:.03em;text-align:center}
+.shen-footer svg{width:20px;height:20px;flex-shrink:0}
+.shen-footer b{font-weight:600;color:#1A1A1A}
+.shen-print-mark{display:none}
+@media print{.shen-footer{display:none!important}
+.shen-print-mark{display:flex!important;position:fixed;right:0;bottom:0;align-items:center;gap:1.5mm;font:500 7.5pt/1 Inter,Arial,sans-serif;color:#555;opacity:.75;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.shen-print-mark svg{width:4mm;height:4mm}}
+</style>
+<style id="home-link">
+.homebtn{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 12px;border:1px solid var(--line,#ddd);border-radius:999px;background:#fff;color:var(--ink,#1c2230);text-decoration:none;font:600 .88rem/1 Inter,system-ui,sans-serif;white-space:nowrap;flex-shrink:0}
+.homebtn:hover{background:#f1eff6}
+.homebtn svg{width:16px;height:16px}
+@media print{.homebtn{display:none!important}}
+</style>
+<style id="hz">/* ===== Horizon lessons on the Maths Atlas theme ===== */
+:root{--ink:#1c2230;--muted:#5b6475;--paper:#f7f6fb;--line:#e2e0ea;--a:#3b4fa8;--a-soft:#e8ebf8;--b:#b5487a;--hz:#d4693a;--hz-soft:#fdf0e8}
+html,body{margin:0;padding:0}
+body{background:var(--paper)!important;color:var(--ink);font:17px/1.62 "Avenir Next","Segoe UI",system-ui,-apple-system,sans-serif!important;overflow-x:hidden}
+h1,h2,h3,h4{font-family:Georgia,"Times New Roman",serif}
+h2{color:var(--ink)}
+header.top{position:sticky;top:0;z-index:30;background:rgba(247,246,251,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.topin{max-width:980px;margin:0 auto;padding:.55rem 1rem .35rem;display:flex;align-items:center;gap:.8rem;flex-wrap:wrap}
+.brand{font-family:Georgia,serif;font-weight:600;font-size:1.02rem;flex:1;min-width:180px;line-height:1.3}
+.brand .hzk{display:inline-block;font:700 .66rem/1 "Avenir Next",system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#fff;background:linear-gradient(90deg,#2b2350,var(--hz));border-radius:999px;padding:.28rem .6rem;margin-right:.4rem;vertical-align:2px}
+.brand small{display:block;font-weight:400;color:var(--muted);font-size:.84rem}
+.prog{font-size:.82rem;color:var(--muted);text-align:right;white-space:nowrap}
+nav.tabs{max-width:980px;margin:0 auto;display:flex;gap:.35rem;overflow-x:auto;padding:.1rem 1rem .6rem;scrollbar-width:thin}
+nav.tabs .tab-link{flex:0 0 auto;border:1px solid var(--line)!important;background:#fff!important;color:var(--ink)!important;border-radius:999px!important;padding:.32rem .8rem!important;font:400 .9rem/1.4 "Avenir Next",system-ui,sans-serif!important;cursor:pointer;white-space:nowrap}
+nav.tabs .tab-link.border-teal-600{background:var(--ink)!important;color:#fff!important;border-color:var(--ink)!important}
+nav.tabs .tab-link.tab-done::after{color:#2f8a4c}
+nav.tabs .tab-link.border-teal-600.tab-done::after{color:#9be3b0}
+main.hzmain{max-width:980px;margin:0 auto;padding:1.4rem 1rem 3rem}
+main.hzmain h2{font-size:1.65rem!important}
+main.hzmain .card{border-color:var(--line)}
+.katex{font-size:1.06em}
+.katex-display{overflow-x:auto;overflow-y:hidden;padding:2px 0}
+input,select,button,textarea{font-family:inherit}
+@media print{header.top{position:static}}
+
+.hzr h3{font-size:1.15rem;margin:1.4rem 0 .4rem;font-weight:600}
+.hzr .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:.8rem 1rem;margin:.5rem 0}
+.hzr-t{overflow-x:auto}.hzr-t table{width:100%;border-collapse:collapse}
+.hzr-t td{padding:.3rem .35rem;vertical-align:middle;font-size:.95rem}
+.hzr-t td:last-child{white-space:nowrap;font-size:.82rem}
+.hzr-ul{list-style:disc;padding-left:1.2rem;margin:.2rem 0}.hzr-ul li{margin:.25rem 0}
+@media(max-width:480px){.hzr-t td:nth-child(2){min-width:70px}.hzr-t td:nth-child(2) div{min-width:60px!important}}
+.codetab,table.tb,table.rp{display:block;overflow-x:auto;max-width:100%}
+</style>
+</head>
+<body>
+<header class="top"><div class="topin"><a class="homebtn" href="../index.html#horizon" aria-label="Back to the Maths Atlas home page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>Home</a><div class="brand"><span class="hzk">Horizon</span>Chapter 1 · Sets and Integers<small>Section 2.3 · Modular arithmetic: the arithmetic of the clock</small></div><div class="prog"><span id="prog-count">0</span> / <span id="prog-total">0</span> done</div></div><nav class="tabs" id="tabs"><button type="button" class="tab-link text-teal-700 border-b-4 border-teal-600 font-bold" data-tab="t1" onclick="openTab(event,'t1')">1. Remainders</button><button type="button" class="tab-link" data-tab="t2" onclick="openTab(event,'t2')">2. Addition</button><button type="button" class="tab-link" data-tab="t3" onclick="openTab(event,'t3')">3. Multiplication &amp; Powers</button><button type="button" class="tab-link" data-tab="t4" onclick="openTab(event,'t4')">4. Primes Meet the Clock</button><button type="button" class="tab-link" data-tab="t5" onclick="openTab(event,'t5')">5. Competitions &amp; Codes</button><button type="button" class="tab-link" data-tab="t6" onclick="openTab(event,'t6')">6. Homework</button><button type="button" class="tab-link" data-tab="t7" onclick="openTab(event,'t7')"><span id="t7-label">7. Learning Report (locked)</span></button></nav></header>
+<main class="hzmain">
+
+  
+  <!-- ================= TABS ================= -->
+  <div id="t1" class="tab-content active">
+    <h2 class="text-2xl font-bold text-slate-800 mb-1">Step 1: Remainders, and Cutting ℤ into Pieces</h2>
+    <p class="text-slate-600 mb-5">In 2.1 we organised $\mathbb{Z}$ with sets, and in 2.2 we split the positive integers into primes and composites. Now we cut the <strong>whole of $\mathbb{Z}$</strong>, negatives included, into a small number of pieces using one very old idea: the <strong>remainder</strong>. This is <strong>modular arithmetic</strong>, the arithmetic of the clock.</p>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">1</span><h3 class="text-lg font-bold text-slate-800">The set narrative: classes of a modulus</h3></div>
+    <div class="key mb-4 text-sm text-slate-800">
+      <p><strong>Start with two pieces.</strong> Every integer is even or odd, never both:</p>
+      <p class="mt-1">$E=\{x\in\mathbb{Z}:\ x=2q,\ q\in\mathbb{Z}\}$ and $O=\{x\in\mathbb{Z}:\ x=2q+1,\ q\in\mathbb{Z}\}$.</p>
+      <p class="mt-1">The two sets do not overlap, and together they cover $\mathbb{Z}$. A family of sets like this is called a <strong>partition</strong> of $\mathbb{Z}$. The remainder when dividing by $2$ tells you which piece an integer lives in.</p>
+      <p class="mt-3"><strong>Now use any modulus $m$.</strong> Fix a positive integer $m$ (the <em>modulus</em>). For each remainder $r\in\{0,1,\ldots,m-1\}$ define the <strong>residue class</strong></p>
+      <p class="mt-1">$$[r]_m=\{x\in\mathbb{Z}:\ x=mq+r,\ q\in\mathbb{Z}\}.$$</p>
+      <p class="mt-1">For example $[2]_5=\{\ldots,-8,-3,2,7,12,\ldots\}$. Note that $[0]_m$ is the set of all multiples of $m$, which you met as $M_m$ in 2.2 (now with negatives included). We write $\mathbb{Z}_m=\{[0]_m,[1]_m,\ldots,[m-1]_m\}$ for the set of classes, so $n(\mathbb{Z}_m)=m$.</p>
+    </div>
+
+    <div class="proof">
+      <div class="ph">Theorem 1: the $m$ classes partition $\mathbb{Z}$</div>
+      <p class="text-sm">For every positive integer $m$, every integer $x$ belongs to <strong>exactly one</strong> of $[0]_m,[1]_m,\ldots,[m-1]_m$.</p>
+      <div class="seeit"><div class="sh">What this theorem says, with examples</div>
+        <div class="seg"><p class="et">Example 1: modulus $4$ cut into four pieces</p><p>Sort the integers $-6,-5,\ldots,9$ by remainder on division by $4$:</p><table class="codetab text-sm"><tr><th>Class</th><th colspan="4">Integers from $-6$ to $9$ in that class</th></tr><tr><td>$[0]_4$</td><td>$-4$</td><td>$0$</td><td>$4$</td><td>$8$</td></tr><tr><td>$[1]_4$</td><td>$-3$</td><td>$1$</td><td>$5$</td><td>$9$</td></tr><tr><td>$[2]_4$</td><td>$-6$</td><td>$-2$</td><td>$2$</td><td>$6$</td></tr><tr><td>$[3]_4$</td><td>$-5$</td><td>$-1$</td><td>$3$</td><td>$7$</td></tr></table><p>Every integer in the list appears in <strong>exactly one</strong> row: none is missing and none is repeated. That is what Theorem 1 promises for <em>every</em> integer, not just this list.</p></div>        <div class="seg"><p class="et">Example 2: what it can do, checking infinitely many integers with three checks</p><p><strong>Claim:</strong> $n^2+1$ is never a multiple of $3$.</p><p>Every $n$ lies in exactly one of $[0]_3,[1]_3,[2]_3$, so it is enough to test one number from each class. $0^2+1=1$, $1^2+1=2$, $2^2+1=5\equiv2$. The remainders are $1,2,2$, never $0$. Three checks settle the claim for all integers.</p></div>        <div class="seg"><p class="et">Example 3: counting with a partition</p><p>How many of the integers $1,2,\ldots,100$ lie in each class mod $7$? Since $100=7\times14+2$, the classes $[1]_7$ and $[2]_7$ have $15$ members ($1,8,\ldots,99$ and $2,9,\ldots,100$) and the other five classes have $14$ each. Check: $15+15+5\times14=100$. The counts add up to $100$ <em>because</em> the classes partition the integers: no integer is counted twice or missed.</p></div>
+      </div>
+      <details class="pf"><summary>Show the proof (optional reading for the curious)</summary>
+      <div class="ps"><b class="n">Every integer is in some class.</b> Divide $x$ by $m$. The <em>division algorithm</em> gives integers $q$ and $r$ with $x=mq+r$ and $0\le r\lt m$ (take $q$ as the largest integer with $mq\le x$, and $r=x-mq$). So $x\in[r]_m$.</div>
+      <div class="ps"><b class="n">No integer is in two classes.</b> Suppose $x=mq+r=mq'+r'$ with $0\le r,r'\lt m$. Then $m(q-q')=r'-r$. The right side lies strictly between $-m$ and $m$, and the only multiple of $m$ in that range is $0$. So $r'=r$: the two classes are the same one. $\blacksquare$</div>
+      </details>
+    </div>
+
+    <div class="tech">
+      <div class="tt">Technique 1: find the class (remainder) of any integer, including negatives</div>
+      <p class="text-sm text-slate-700">The remainder $r$ is always in $\{0,1,\ldots,m-1\}$, never negative. For a negative number, <strong>add multiples of $m$ until you land in that range</strong>.</p>
+      <div class="eg"><p><strong>Example 1:</strong> $47$ divided by $6$: $47=6\times7+5$, so $47\in[5]_6$.</p>
+        <p class="mt-1"><strong>Example 2:</strong> $-17$ divided by $5$. Add $5$ repeatedly: $-17\to-12\to-7\to-2\to3$. So $-17=5\times(-4)+3$ and $-17\in[3]_5$. (Writing $-17=5\times(-3)-2$ is wrong here because the remainder $-2$ is negative.)</p></div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3 mt-6"><span class="step-badge">2</span><h3 class="text-lg font-bold text-slate-800">The map from $\mathbb{Z}$ to the clock</h3></div>
+    <div class="key mb-4 text-sm text-slate-800">
+      <p>Define the <strong>remainder map</strong> $\varphi_m:\mathbb{Z}\to\{0,1,\ldots,m-1\}$ by $\varphi_m(x)=$ the remainder of $x$ on division by $m$.</p>
+      <ul class="list-disc pl-6 mt-2 space-y-1">
+        <li>$\mathbb{Z}$ is infinite, but the clock has only $m$ positions. Think of $\mathbb{Z}$ as an endless thread wound round the clock: every full turn adds $m$.</li>
+        <li>The map is <strong>onto</strong>: every clock position is used, in fact by infinitely many integers.</li>
+        <li>The integers sent to position $r$ are exactly the class $[r]_m$. In symbols $\varphi_m^{-1}(r)=[r]_m$. So <strong>the clock is a small copy of the whole of $\mathbb{Z}$</strong>: each position stands for an entire infinite set.</li>
+      </ul>
+    </div>
+    <p class="text-sm font-bold text-slate-700 mb-2">Try it: the Clock Wrap</p>
+    <div class="card mb-5">
+      <div class="grid md:grid-cols-2 gap-4 items-start">
+        <div>
+          <div class="flex items-center gap-3 mb-2 flex-wrap"><label class="text-sm font-bold" for="cw-m">Modulus $m=$ <span id="cw-mv" class="text-teal-700">5</span></label></div>
+          <input type="range" id="cw-m" min="2" max="12" value="5" oninput="cwUpdate()">
+          <div class="flex items-center gap-3 mt-3 flex-wrap"><label class="text-sm font-bold" for="cw-x">Integer $x=$</label><input type="number" id="cw-x" class="inp" style="max-width:7rem" min="-999" max="999" value="-17" oninput="cwUpdate()">
+            <button class="btn-ghost" onclick="cwSet(47)">47</button><button class="btn-ghost" onclick="cwSet(-17)">&minus;17</button><button class="btn-ghost" onclick="cwSet(0)">0</button></div>
+          <div id="cw-msg" class="mt-3 text-sm space-y-1"></div>
+        </div>
+        <div id="cw-clock" class="flex justify-center"></div>
+      </div>
+      <p class="text-sm font-bold text-slate-700 mt-4 mb-1">The map, class by class (integers from $-12$ to $24$):</p>
+      <div id="cw-fibres" class="text-sm space-y-1 overflow-x-auto"></div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3 mt-6"><span class="step-badge">3</span><h3 class="text-lg font-bold text-slate-800">Congruence: landing on the same clock position</h3></div>
+    <div class="key mb-4 text-sm text-slate-800">
+      <p>Two integers $a$ and $b$ are <strong>congruent modulo $m$</strong>, written $a\equiv b\pmod m$, when they land on the same clock position, that is, when they lie in the <strong>same class</strong>. Three ways to say the same thing:</p>
+      <ol class="list-decimal pl-6 mt-2 space-y-1">
+        <li>$a$ and $b$ have the same remainder on division by $m$.</li>
+        <li>$a$ and $b$ belong to the same class $[r]_m$.</li>
+        <li>$m\mid(a-b)$, that is, $a-b$ is a multiple of $m$.</li>
+      </ol>
+      <details class="pf mt-2"><summary>Show why (1) and (3) agree (optional reading)</summary><p class="text-sm mt-2"><em>Why:</em> if $a=mq+r$ and $b=mq'+r$ then $a-b=m(q-q')$. Conversely if $m\mid a-b$ then adding or subtracting multiples of $m$ never changes the remainder, so $a$ and $b$ share one.</p></details>
+    </div>
+    <div class="tech">
+      <div class="tt">Technique 2: test a congruence with the difference</div>
+      <p class="text-sm text-slate-700">To decide whether $a\equiv b\pmod m$, compute $a-b$ and ask whether $m$ divides it. This avoids two separate divisions, and it works for negative numbers.</p>
+      <div class="eg"><p><strong>Example 1:</strong> Is $-3\equiv2\pmod5$? $-3-2=-5=5\times(-1)$, so yes.</p>
+        <p class="mt-1"><strong>Example 2:</strong> Is $29\equiv4\pmod7$? $29-4=25$, and $7\nmid25$, so no.</p>
+        <p class="mt-1"><strong>Example 3 (links to 2.2):</strong> For which moduli $m>1$ is $50\equiv14\pmod m$? We need $m\mid36$, so $m$ is a factor of $36$ above $1$: $m\in\{2,3,4,6,9,12,18,36\}$. That is $n(F(36))-1=8$ values.</p></div>
+    </div>
+
+    <h3 class="text-xl font-bold text-slate-800 mb-3 mt-8 bg-slate-100 p-3 rounded-lg inline-block">Check your understanding</h3>
+    <div id="ex-t1"></div>
+  </div>
+  <div id="t2" class="tab-content">
+    <h2 class="text-2xl font-bold text-slate-800 mb-1">Step 2: Addition on the Clock</h2>
+    <p class="text-slate-600 mb-5">We have $m$ classes. Can we <em>add classes</em>? A clock says yes: $9$ o'clock plus $5$ hours is $2$ o'clock, because $9+5=14\equiv2\pmod{12}$. But first we must check that the answer does not depend on <em>which</em> integer we pick from each class.</p>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">1</span><h3 class="text-lg font-bold text-slate-800">Adding classes is well defined</h3></div>
+    <div class="key mb-4 text-sm text-slate-800">
+      <p>Define addition of classes by $[a]_m+[b]_m=[a+b]_m$. This only makes sense if the result does not change when we pick other members of the classes. That is exactly what the next theorem guarantees.</p>
+    </div>
+    <div class="proof">
+      <div class="ph">Theorem 2: congruence respects addition</div>
+      <p class="text-sm">If $a\equiv a'\pmod m$ and $b\equiv b'\pmod m$, then $a+b\equiv a'+b'\pmod m$.</p>
+      <div class="seeit"><div class="sh">What this theorem says, with examples</div>
+        <div class="seg"><p class="et">Example 1: pick different members of the same classes</p><p>Take the classes $[2]_5$ and $[4]_5$. Choose <em>any</em> member of each, add them, and look at the class of the sum:</p><table class="codetab text-sm"><tr><th>member of $[2]_5$</th><th>member of $[4]_5$</th><th>sum</th><th>class of the sum</th></tr><tr><td>$2$</td><td>$4$</td><td>$6$</td><td>$[1]_5$</td></tr><tr><td>$7$</td><td>$9$</td><td>$16$</td><td>$[1]_5$</td></tr><tr><td>$-3$</td><td>$14$</td><td>$11$</td><td>$[1]_5$</td></tr><tr><td>$12$</td><td>$-1$</td><td>$11$</td><td>$[1]_5$</td></tr></table><p>Whatever members we pick, the sum lands in $[1]_5$. So the rule $[2]_5+[4]_5=[1]_5$ is a safe definition: the answer does not depend on the choice.</p></div>        <div class="seg"><p class="et">Example 2: what it can do, quick sums with big numbers</p><p>The units digit of $1\,000\,003+2\,000\,005$: work mod $10$ with $3+5=8$. And on a $12$-hour clock, $50$ hours after $7$ o&rsquo;clock is $7+50=57\equiv9\pmod{12}$, so $9$ o&rsquo;clock. Only the remainders matter, so we never need the huge numbers.</p></div>
+      </div>
+      <details class="pf"><summary>Show the proof (optional reading for the curious)</summary>
+      <div class="ps"><b class="n">Proof.</b> By hypothesis $a'=a+mk$ and $b'=b+ml$ for some integers $k,l$. Then
+        $$a'+b'=a+b+m(k+l),$$
+        so $(a'+b')-(a+b)$ is a multiple of $m$. By the difference test, $a'+b'\equiv a+b\pmod m$. $\blacksquare$</div>
+      </details>
+    </div>
+    <div class="tech">
+      <div class="tt">Technique 1: reduce first, then add</div>
+      <p class="text-sm text-slate-700">Theorem 2 lets you replace each number by its remainder <strong>before</strong> adding. The numbers stay small.</p>
+      <div class="eg"><p><strong>Example 1:</strong> $(47+58)\bmod 6$. We have $47\equiv5$ and $58\equiv4$, so $47+58\equiv5+4=9\equiv3\pmod6$.</p>
+        <p class="mt-1"><strong>Example 2 (in set notation):</strong> $[2]_5+[4]_5=[6]_5=[1]_5$. Check with other members: $7\in[2]_5$ and $-1\in[4]_5$ give $7+(-1)=6\in[1]_5$. Same class.</p></div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3 mt-6"><span class="step-badge">2</span><h3 class="text-lg font-bold text-slate-800">The addition table: the same rules as $\mathbb{Z}$</h3></div>
+    <p class="text-sm text-slate-700 mb-2">Back in 2.1 you studied closure, commutativity and associativity on $\mathbb{Z}$. Explore which of them survive on the clock.</p>
+    <p class="text-sm font-bold text-slate-700 mb-2">Try it: the Clock Addition Table</p>
+    <div class="card mb-4">
+      <div class="flex items-center gap-3 mb-2 flex-wrap"><label class="text-sm font-bold" for="at-m">Modulus $m=$ <span id="at-mv" class="text-teal-700">7</span></label><div class="flex-1 min-w-[10rem]"><input type="range" id="at-m" min="2" max="12" value="7" oninput="atUpdate()"></div>
+        <button class="btn-ghost" id="at-hl" onclick="atToggle()">Highlight pairs that add to 0</button></div>
+      <div id="at-out" class="overflow-x-auto"></div>
+      <div id="at-msg" class="mt-3 text-sm space-y-1"></div>
+    </div>
+    <div class="key mb-4 text-sm text-slate-800">
+      <p class="font-bold text-teal-900">What the table shows: $(\mathbb{Z}_m,+)$</p>
+      <ul class="list-disc pl-6 mt-1 space-y-1">
+        <li><strong>Closed:</strong> every entry is again a clock position.</li>
+        <li><strong>Commutative:</strong> the table is symmetric about the diagonal, because $a+b$ and $b+a$ are the same integer.</li>
+        <li><strong>Associative:</strong> $(a+b)+c$ and $a+(b+c)$ are the <em>same integer</em>, so they certainly land on the same position.</li>
+        <li><strong>Identity:</strong> $[0]_m$ leaves every class unchanged.</li>
+        <li><strong>Inverses:</strong> every class has an <em>additive inverse</em>: the inverse of $[a]_m$ is $[m-a]_m$, because $a+(m-a)=m\equiv0$. (The pairs that add to $0$ are highlighted by the button.)</li>
+      </ul>
+      <p class="mt-2">Compare with 2.1: subtraction is <em>not</em> closed on the positive integers, but on $\mathbb{Z}_m$ it is always possible, because we can subtract by adding the inverse: $a-b\equiv a+(m-b)$.</p>
+    </div>
+    <div class="tech">
+      <div class="tt">Technique 2: subtraction means adding the inverse</div>
+      <div class="eg"><p><strong>Example:</strong> $5-9\pmod{12}$. The inverse of $9$ is $12-9=3$, so $5-9\equiv5+3=8\pmod{12}$. Check: $5-9=-4$, and $-4+12=8$.</p></div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3 mt-6"><span class="step-badge">3</span><h3 class="text-lg font-bold text-slate-800">The calendar is $\mathbb{Z}_7$</h3></div>
+    <div class="key mb-4 text-sm text-slate-800">
+      <p>Label the days $0=$ Mon, $1=$ Tue, $2=$ Wed, $3=$ Thu, $4=$ Fri, $5=$ Sat, $6=$ Sun. "In $n$ days' time" means <strong>add $n$ modulo $7$</strong>. Only $n\bmod7$ matters.</p>
+    </div>
+    <div class="tech">
+      <div class="tt">Technique 3: days of the week</div>
+      <div class="eg"><p><strong>Worked example 1.</strong> If today is Monday, what day will it be in $31$ days' time?</p>
+        <p class="mt-1">$31=4\times7+3$, so $31\equiv3\pmod7$. Three days after Monday is <strong>Thursday</strong>. (Four whole weeks change nothing.)</p></div>
+      <div class="eg"><p><strong>Worked example 2.</strong> If Jan 1st is a Friday and it is a leap year, what day will Jan 1st be next year?</p>
+        <p class="mt-1">A leap year has $366$ days, so the next Jan 1st is $366$ days later. $366=52\times7+2$, so $366\equiv2\pmod7$. Two days after Friday is <strong>Sunday</strong>.</p>
+        <p class="mt-1">In a normal year the shift is $365\equiv1$ day. In a leap year the shift is $366\equiv2$ days.</p></div>
+      <div class="eg"><p><strong>Going further (Mahdi's question).</strong> When will Jan 1st be a Friday again? Keep adding the yearly shifts and stop when the total is a multiple of $7$. You will do this in the exercises.</p></div>
+    </div>
+
+    <h3 class="text-xl font-bold text-slate-800 mb-3 mt-8 bg-slate-100 p-3 rounded-lg inline-block">Check your understanding</h3>
+    <div id="ex-t2"></div>
+  </div>
+  <div id="t3" class="tab-content">
+    <h2 class="text-2xl font-bold text-slate-800 mb-1">Step 3: Multiplication on the Clock, and Powers</h2>
+    <p class="text-slate-600 mb-5">In 2.2 you treated multiplication as an <strong>operator</strong>: $a\times b$ means apply the operator $a$ to the number $b$, stretching it. On the clock, the operator stretches and then <strong>wraps</strong> round. The same kind of check as for addition tells us it is safe to multiply classes.</p>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">1</span><h3 class="text-lg font-bold text-slate-800">Multiplying classes is well defined</h3></div>
+    <div class="proof">
+      <div class="ph">Theorem 3: congruence respects multiplication</div>
+      <p class="text-sm">If $a\equiv a'\pmod m$ and $b\equiv b'\pmod m$, then $ab\equiv a'b'\pmod m$.</p>
+      <div class="seeit"><div class="sh">What this theorem says, with examples</div>
+        <div class="seg"><p class="et">Example 1: the product does not depend on the members chosen</p><p>Modulo $7$: $10\equiv3$ and $12\equiv5$. Try different members of the same classes:</p><table class="codetab text-sm"><tr><th>numbers</th><th>product</th><th>remainder mod $7$</th></tr><tr><td>$10\times12$</td><td>$120=7\times17+1$</td><td>$1$</td></tr><tr><td>$3\times5$</td><td>$15$</td><td>$1$</td></tr><tr><td>$3\times(-2)$</td><td>$-6$</td><td>$1$</td></tr><tr><td>$10\times(-2)$</td><td>$-20$</td><td>$1$</td></tr></table><p>All four products are in the class $[1]_7$. Replacing a number by a smaller or negative member of its class is safe.</p></div>        <div class="seg"><p class="et">Example 2: what it can do, units digits of big products</p><p>The units digit of $4567\times8903$ is the units digit of $7\times3=21$, so it is $1$. We never multiply the big numbers.</p></div>        <div class="seg"><p class="et">Example 3: what it can do, the negative trick</p><p>$99\times101$ modulo $100$: $99\equiv-1$ and $101\equiv1$, so the product is $\equiv-1\equiv99$. Check: $99\times101=9999$, whose last two digits are $99$.</p></div>
+      </div>
+      <details class="pf"><summary>Show the proof (optional reading for the curious)</summary>
+      <div class="ps"><b class="n">Proof.</b> Write $a'=a+mk$ and $b'=b+ml$. Expand using the distributive law:
+        $$a'b'=(a+mk)(b+ml)=ab+m\,(al+bk+mkl).$$
+        So $a'b'-ab$ is a multiple of $m$, and $a'b'\equiv ab\pmod m$. $\blacksquare$</div>
+      </details>
+    </div>
+    <p class="text-sm text-slate-700 mb-3">So we define $[a]_m\times[b]_m=[ab]_m$, and we may <strong>reduce before multiplying</strong>: $(47\times58)\bmod6=(5\times4)\bmod6=20\bmod6=2$.</p>
+
+    <p class="text-sm font-bold text-slate-700 mb-2">Try it: the Clock Multiplication Table</p>
+    <div class="card mb-4">
+      <div class="flex items-center gap-3 mb-2 flex-wrap"><label class="text-sm font-bold" for="mt-m">Modulus $m=$ <span id="mt-mv" class="text-teal-700">6</span></label><div class="flex-1 min-w-[10rem]"><input type="range" id="mt-m" min="2" max="15" value="6" oninput="mtUpdate()"></div>
+        <button class="btn-ghost" onclick="mtSet(6)">6</button><button class="btn-ghost" onclick="mtSet(7)">7</button><button class="btn-ghost" onclick="mtSet(12)">12</button><button class="btn-ghost" onclick="mtSet(13)">13</button></div>
+      <div id="mt-out" class="overflow-x-auto"></div>
+      <div id="mt-msg" class="mt-3 text-sm space-y-1"></div>
+    </div>
+    <div class="warn mb-4 text-sm text-slate-800">
+      <p class="font-bold">Something new happens.</p>
+      <p>On $\mathbb{Z}$, if $ab=0$ then $a=0$ or $b=0$. On the clock, <strong>mod $6$</strong> we get $2\times3\equiv0$ although neither $2$ nor $3$ is $0$. Try modulus $7$ and modulus $13$: this never happens. The table is telling us something deep about <strong>primes</strong>. We investigate it in Step 4.</p>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3 mt-6"><span class="step-badge">2</span><h3 class="text-lg font-bold text-slate-800">Powers repeat: cycles</h3></div>
+    <div class="key mb-4 text-sm text-slate-800">
+      <p>A power $a^n$ is repeated multiplication. Because there are only $m$ positions on the clock, the sequence $a^1,a^2,a^3,\ldots$ (reduced mod $m$) <strong>must repeat</strong>. After that it cycles for ever. To find $a^N\bmod m$ for a huge $N$, find the cycle and its length (the <em>period</em>), then reduce $N$.</p>
+      <p class="mt-1">The <strong>units digit</strong> of a number is its remainder modulo $10$. So units-digit questions are just questions in $\mathbb{Z}_{10}$.</p>
+    </div>
+    <p class="text-sm font-bold text-slate-700 mb-2">Try it: the Power Cycle Explorer</p>
+    <div class="card mb-4">
+      <div class="flex items-center gap-3 mb-3 flex-wrap">
+        <label class="text-sm font-bold" for="pc-a">Base $a=$</label><input type="number" id="pc-a" class="inp" style="max-width:5.5rem" min="1" max="999" value="2" oninput="pcUpdate()">
+        <label class="text-sm font-bold" for="pc-m">modulus $m=$</label><input type="number" id="pc-m" class="inp" style="max-width:5.5rem" min="2" max="99" value="10" oninput="pcUpdate()">
+        <label class="text-sm font-bold" for="pc-n">exponent $N=$</label><input type="number" id="pc-n" class="inp" style="max-width:8rem" min="1" max="99999" value="2004" oninput="pcUpdate()">
+        <button class="btn-ghost" onclick="pcSet(2,10,2004)">$2^{2004}$ mod 10</button><button class="btn-ghost" onclick="pcSet(3,10,3003)">$3^{3003}$ mod 10</button><button class="btn-ghost" onclick="pcSet(2,7,164)">$2^{164}$ mod 7</button>
+      </div>
+      <div id="pc-out" class="text-sm space-y-2"></div>
+    </div>
+
+    <div class="tech">
+      <div class="tt">Technique 1: units digit of a power by finding the cycle</div>
+      <p class="text-sm text-slate-700">Write the first few units digits, spot the repeat, find the period $k$, then divide the exponent by $k$. If the exponent is a multiple of $k$ you land on the <em>last</em> digit of the cycle.</p>
+      <div class="eg"><p><strong>Worked example 1.</strong> What is the units digit of $2^{2004}$?</p>
+        <table class="tb my-2"><tr><th>Power</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td></tr><tr><th>Units digit</th><td>2</td><td>4</td><td>8</td><td>6</td><td>2</td><td>4</td><td>8</td><td>6</td></tr></table>
+        <p>The pattern repeats every $4$ powers: $2^{n+4}\equiv2^n\pmod{10}$. Since $4\mid2004$, $2^{2004}$ has the same units digit as $2^4$. The answer is <strong>6</strong>.</p></div>
+      <div class="eg"><p><strong>Worked example 2.</strong> What is the units digit of $3^{3003}$?</p>
+        <table class="tb my-2"><tr><th>Power</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td></tr><tr><th>Units digit</th><td>3</td><td>9</td><td>7</td><td>1</td><td>3</td><td>9</td><td>7</td><td>1</td></tr></table>
+        <p>Period $4$. Divide: $3003=4\times750+3$. So $3^{3003}$ has the same units digit as $3^3$. The answer is <strong>7</strong>.</p>
+        <p class="mt-1">In modular language: $3^4=81\equiv1\pmod{10}$, so $3^{3003}=(3^4)^{750}\times3^3\equiv1^{750}\times27\equiv7$.</p></div>
+    </div>
+
+    <div class="tech">
+      <div class="tt">Technique 2: remainders of powers (any modulus)</div>
+      <p class="text-sm text-slate-700">The same method works for any modulus. Find a power that is $\equiv1$, and reduce the exponent by it.</p>
+      <div class="eg"><p><strong>Worked example 3.</strong> What is the remainder when $3^{50}$ is divided by $7$?</p>
+        <p class="mt-1">Powers of $3$ mod $7$: $3,\ 2,\ 6,\ 4,\ 5,\ 1,\ 3,\ldots$ The period is $6$ and $3^6\equiv1$. Now $50=6\times8+2$, so $3^{50}=(3^6)^8\times3^2\equiv1\times9\equiv2\pmod7$. The remainder is <strong>2</strong>.</p></div>
+    </div>
+
+    <div class="tech">
+      <div class="tt">Technique 3: replace the base by a smaller (or negative) representative</div>
+      <p class="text-sm text-slate-700">By Theorem 3 we may change the base to any number in its class. Choosing $-1$ is especially powerful, because $(-1)^n$ is $1$ for even $n$ and $-1$ for odd $n$.</p>
+      <div class="eg"><p><strong>Worked example 4.</strong> Find the remainder of $19^{101}$ divided by $20$.</p>
+        <p class="mt-1">$19\equiv-1\pmod{20}$, so $19^{101}\equiv(-1)^{101}=-1\equiv19\pmod{20}$. The remainder is <strong>19</strong>.</p></div>
+      <div class="eg"><p><strong>Worked example 5.</strong> Units digit of $13\times27\times38$: reduce each factor mod $10$: $3\times7\times8=168\equiv8$. The units digit is <strong>8</strong>.</p></div>
+    </div>
+
+    <h3 class="text-xl font-bold text-slate-800 mb-3 mt-8 bg-slate-100 p-3 rounded-lg inline-block">Check your understanding</h3>
+    <div id="ex-t3"></div>
+  </div>
+  <div id="t4" class="tab-content">
+    <h2 class="text-2xl font-bold text-slate-800 mb-1">Step 4: Primes Meet the Clock</h2>
+    <p class="text-slate-600 mb-5">Mod $6$ gave $2\times3\equiv0$, but mod $7$ there was no such surprise. Primes are special on the clock. In this step the HCF and the Fundamental Theorem of Arithmetic from 2.2 become the tools for three famous results about primes.</p>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">1</span><h3 class="text-lg font-bold text-slate-800">Inverses and zero divisors</h3></div>
+    <div class="key mb-4 text-sm text-slate-800">
+      <p>In $\mathbb{Z}$ the only numbers with a multiplicative inverse that is an integer are $1$ and $-1$. On the clock, more numbers have one. A class $[a]_m$ has a <strong>multiplicative inverse</strong> if there is an $x$ with $ax\equiv1\pmod m$. For example $3\times5=15\equiv1\pmod 7$, so $5$ is the inverse of $3$ mod $7$.</p>
+      <p class="mt-2">A pair of non-zero classes with product $[0]$ (like $2\times3$ mod $6$) is called a pair of <strong>zero divisors</strong>.</p>
+    </div>
+    <div class="proof">
+      <div class="ph">Theorem 4: when does $a$ have an inverse mod $m$?</div>
+      <p class="text-sm">$a$ has a multiplicative inverse modulo $m$ <strong>if and only if</strong> $\text{HCF}(a,m)=1$.</p>
+      <div class="seeit"><div class="sh">What this theorem says, with examples</div>
+        <div class="seg"><p class="et">Example 1: a prime modulus, every non-zero class has an inverse</p><p>Modulo $7$ the inverse pairs are $1\leftrightarrow1$, $2\leftrightarrow4$ ($2\times4=8\equiv1$), $3\leftrightarrow5$ ($3\times5=15\equiv1$) and $6\leftrightarrow6$ ($6\times6=36\equiv1$). All six non-zero classes are covered, as predicted: $\text{HCF}(a,7)=1$ for $a=1,\ldots,6$.</p></div>        <div class="seg"><p class="et">Example 2: a composite modulus, some classes have none</p><p>Modulo $10$: $\text{HCF}(a,10)=1$ only for $a=1,3,7,9$, and indeed $3\times7=21\equiv1$ and $9\times9=81\equiv1$. For $a=4$ (HCF $2$) the multiples of $4$ mod $10$ are $4,8,2,6,0,\ldots$, always even, so $1$ never appears: <strong>no inverse</strong>. The same happens for $2,5,6,8$.</p></div>        <div class="seg"><p class="et">Example 3: what it can do, undoing a multiplication</p><p>Solve $2x\equiv5\pmod{11}$. $\text{HCF}(2,11)=1$ and $2\times6=12\equiv1$, so multiply both sides by $6$: $x\equiv30\equiv8$. Check: $2\times8=16\equiv5$. &#10003;</p><p>But $6x\equiv5\pmod9$ has <strong>no</strong> solution: $\text{HCF}(6,9)=3$, and $6x$ is always a multiple of $3$ while $5+9k$ never is.</p></div>
+      </div>
+      <details class="pf"><summary>Show the proof (optional reading for the curious)</summary>
+      <div class="ps"><b class="n">Key lemma.</b> If $\text{HCF}(a,m)=1$ and $m\mid at$, then $m\mid t$. <em>Reason:</em> take any prime power $p^e$ that divides $m$ exactly. Since $\text{HCF}(a,m)=1$, the prime $p$ does not divide $a$. The exponent of $p$ in $at$ is (exponent in $a$) $+$ (exponent in $t$) $=0+$ (exponent in $t$), and it is at least $e$ because $m\mid at$. By uniqueness of prime factorisation, $p^e\mid t$. This holds for every prime power in $m$, so $m\mid t$.</div>
+      <div class="ps"><b class="n">If $\text{HCF}(a,m)=1$, an inverse exists.</b> Look at the $m$ products $a\times0,a\times1,\ldots,a\times(m-1)$. They are all in different classes: if $ai\equiv aj$ with $0\le i,j\lt m$ then $m\mid a(i-j)$, so by the lemma $m\mid(i-j)$, and since $|i-j|\lt m$ this forces $i=j$. Different classes means these $m$ products use up <strong>all $m$ classes exactly once</strong>, so one of them is $\equiv1$. That gives $ax\equiv1$.</div>
+      <div class="ps"><b class="n">If $d=\text{HCF}(a,m)>1$, no inverse exists.</b> If $ax\equiv1$ then $m\mid ax-1$. But $d$ divides $m$ and $d$ divides $ax$, so $d\mid1$. That is impossible when $d>1$. $\blacksquare$</div>
+      </details>
+    </div>
+    <div class="key mb-4 text-sm text-slate-800">
+      <p class="font-bold text-teal-900">The prime case</p>
+      <p>If the modulus is a <strong>prime</strong> $p$, then $\text{HCF}(a,p)=1$ for every $a$ that is not a multiple of $p$. So <strong>every non-zero class mod a prime has an inverse</strong>. That is why mod $7$ and mod $13$ behaved so well, while mod $6$ did not.</p>
+    </div>
+    <div class="proof">
+      <div class="ph">Corollary (Euclid&rsquo;s lemma): no zero divisors modulo a prime</div>
+      <p class="text-sm">If $p$ is a prime and $p\mid ab$, then $p\mid a$ or $p\mid b$. Equivalently, modulo a prime, $ab\equiv0$ forces $a\equiv0$ or $b\equiv0$.</p>
+      <div class="seeit"><div class="sh">What this theorem says, with examples</div>
+        <div class="seg"><p class="et">Example 1: a prime works</p><p>$7\mid84=6\times14$. Does $7$ divide $6$? No. So it must divide $14$, and it does.</p></div>        <div class="seg"><p class="et">Example 2: a composite fails</p><p>$6\mid12=3\times4$, but $6\nmid3$ and $6\nmid4$. This is the zero-divisor pair $3\times4\equiv0\pmod6$. Euclid&rsquo;s lemma is a property of <em>primes</em> only.</p></div>        <div class="seg"><p class="et">Example 3: what it can do, counting solutions</p><p>How many $x$ in $\{0,1,\ldots,10\}$ satisfy $x(x-1)\equiv0\pmod{11}$? By the lemma $11\mid x$ or $11\mid x-1$, so only $x=0$ and $x=1$: <strong>two</strong> solutions. Modulo $12$ the same equation has <strong>four</strong> solutions, $0,1,4,9$ (for example $4\times3=12$ and $9\times8=72$), because $12$ is not prime.</p></div>
+      </div>
+      <details class="pf"><summary>Show the proof (optional reading for the curious)</summary>
+      <div class="ps"><b class="n">Proof.</b> Suppose $p\nmid a$. Since $p$ is prime, $\text{HCF}(a,p)=1$, so by Theorem 4 there is $x$ with $ax\equiv1\pmod p$. From $p\mid ab$ we have $ab\equiv0$, so
+        $$b\equiv(xa)\,b=x\,(ab)\equiv x\times0=0\pmod p,$$
+        that is, $p\mid b$. So either $p\mid a$ or $p\mid b$. $\blacksquare$</div>
+      </details>
+    </div>
+    <p class="text-sm font-bold text-slate-700 mb-2">Try it: the Inverse Finder</p>
+    <div class="card mb-4">
+      <div class="flex items-center gap-3 mb-3 flex-wrap">
+        <label class="text-sm font-bold" for="iv-a">$a=$</label><input type="number" id="iv-a" class="inp" style="max-width:5.5rem" min="1" max="99" value="5" oninput="ivUpdate()">
+        <label class="text-sm font-bold" for="iv-m">modulus $m=$</label><input type="number" id="iv-m" class="inp" style="max-width:5.5rem" min="2" max="30" value="7" oninput="ivUpdate()">
+        <button class="btn-ghost" onclick="ivSet(5,7)">5 mod 7</button><button class="btn-ghost" onclick="ivSet(4,10)">4 mod 10</button><button class="btn-ghost" onclick="ivSet(7,12)">7 mod 12</button><button class="btn-ghost" onclick="ivSet(8,12)">8 mod 12</button>
+      </div>
+      <div id="iv-out" class="text-sm space-y-2"></div>
+    </div>
+    <div class="tech">
+      <div class="tt">Technique 1: find an inverse, then solve $ax\equiv b$</div>
+      <p class="text-sm text-slate-700">First check $\text{HCF}(a,m)=1$. Then scan $a\times1,a\times2,\ldots$ mod $m$ until you reach $1$. To solve $ax\equiv b$, multiply both sides by the inverse.</p>
+      <div class="eg"><p><strong>Example:</strong> solve $3x\equiv4\pmod7$. The inverse of $3$ is $5$ (since $3\times5=15\equiv1$). Multiply both sides by $5$: $x\equiv20\equiv6\pmod7$. Check: $3\times6=18=2\times7+4$. &#10003;</p></div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3 mt-6"><span class="step-badge">2</span><h3 class="text-lg font-bold text-slate-800">Fermat's Little Theorem</h3></div>
+    <p class="text-sm text-slate-700 mb-2">Take the prime $p=7$ and any $a$ that is not a multiple of $7$. Look at the powers $a^6$ mod $7$. Use the explorer to try different values.</p>
+    <p class="text-sm font-bold text-slate-700 mb-2">Try it: the Fermat Checker</p>
+    <div class="card mb-4">
+      <div class="flex items-center gap-3 mb-3 flex-wrap">
+        <label class="text-sm font-bold" for="fm-p">Prime $p=$</label><select id="fm-p" class="inp" style="max-width:6rem" onchange="fmUpdate()"><option>3</option><option>5</option><option selected>7</option><option>11</option><option>13</option><option>17</option><option>19</option></select>
+        <label class="text-sm font-bold" for="fm-a">$a=$</label><input type="number" id="fm-a" class="inp" style="max-width:5.5rem" min="1" max="99" value="3" oninput="fmUpdate()">
+      </div>
+      <div id="fm-out" class="text-sm space-y-2"></div>
+    </div>
+    <div class="proof">
+      <div class="ph">Theorem 5 (Fermat's Little Theorem)</div>
+      <p class="text-sm">If $p$ is a prime and $p\nmid a$, then $a^{p-1}\equiv1\pmod p$. Equivalently, $a^p\equiv a\pmod p$ for every integer $a$.</p>
+      <div class="seeit"><div class="sh">What this theorem says, with examples</div>
+        <div class="seg"><p class="et">Example 1: the shuffle and the result for $p=5$</p><p>For $p=5$ the theorem says $a^4\equiv1\pmod5$ whenever $5\nmid a$. Check: $1^4=1$, $2^4=16\equiv1$, $3^4=81\equiv1$, $4^4=256=51\times5+1\equiv1$. &#10003; (The Fermat Checker above shows the shuffle for other primes.)</p></div>        <div class="seg"><p class="et">Example 2: the equivalent form $a^p\equiv a$</p><p>$7^5=16\,807$ and $16\,807-7=16\,800=5\times3360$, so $7^5\equiv7\pmod5$. Also $12^5-12=248\,820=5\times49\,764$. The form $a^p\equiv a$ even works when $p\mid a$ (both sides are $\equiv0$).</p></div>        <div class="seg"><p class="et">Example 3: what it can do, spotting composite numbers</p><p>If $n$ were prime, then $2^{n-1}\equiv1\pmod n$. Test $n=15$: $2^4=16\equiv1\pmod{15}$, so $2^{14}=2^{12}\times2^2\equiv4\neq1$. So $15$ is <strong>not</strong> prime, found without trying a single factor. For $n=13$: $2^{12}=4096=315\times13+1\equiv1$, which is consistent with $13$ being prime.</p><p class="text-xs text-slate-600">Careful: passing the test does not prove primality. A rare composite such as $341=11\times31$ satisfies $2^{340}\equiv1\pmod{341}$.</p></div>
+      </div>
+      <details class="pf"><summary>Show the proof (optional reading for the curious)</summary>
+      <div class="ps"><b class="n">Step 1: multiplying by $a$ shuffles the non-zero classes.</b> Consider $a\times1,a\times2,\ldots,a\times(p-1)$ mod $p$. By Theorem 4 (here $\text{HCF}(a,p)=1$) these are all different, and none is $0$. So they are exactly the classes $1,2,\ldots,p-1$ in some other order. (The Fermat Checker shows the shuffled list.)</div>
+      <div class="ps"><b class="n">Step 2: multiply everything together.</b> The product of the shuffled list equals the product of the original list:
+        $$a\cdot2a\cdot3a\cdots(p-1)a\equiv1\cdot2\cdot3\cdots(p-1)\pmod p,$$
+        that is, $a^{p-1}\,(p-1)!\equiv(p-1)!\pmod p$.</div>
+      <div class="ps"><b class="n">Step 3: cancel.</b> $(p-1)!$ is a product of numbers smaller than $p$, so it has no factor $p$ and $\text{HCF}\big((p-1)!,p\big)=1$. By Theorem 4 it has an inverse, so we may cancel it: $a^{p-1}\equiv1\pmod p$. Multiplying by $a$ gives $a^p\equiv a$. $\blacksquare$</div>
+      </details>
+    </div>
+    <div class="tech">
+      <div class="tt">Technique 2: reduce huge exponents with Fermat</div>
+      <p class="text-sm text-slate-700">For a prime $p$ and $p\nmid a$: $a^{p-1}\equiv1$. So reduce the exponent mod $(p-1)$.</p>
+      <div class="eg"><p><strong>Example 1:</strong> $3^{100}\bmod7$. $3^6\equiv1$ and $100=6\times16+4$, so $3^{100}\equiv3^4=81\equiv4\pmod7$.</p>
+        <p class="mt-1"><strong>Example 2:</strong> $2^{164}\bmod7$. The cycle length of $2$ is $3$, which divides $p-1=6$, as it must. $164=3\times54+2$ gives $2^2=4$.</p>
+        <p class="mt-1"><em>The cycle length of any $a$ always divides $p-1$.</em> Fermat only guarantees that $p-1$ works; the true period can be smaller.</p></div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3 mt-6"><span class="step-badge">3</span><h3 class="text-lg font-bold text-slate-800">Pairing inverses: Wilson's Theorem</h3></div>
+    <div class="proof">
+      <div class="ph">Theorem (Wilson&rsquo;s Theorem)</div>
+      <p class="text-sm">For every prime $p$, $(p-1)!\equiv-1\pmod p$. For a composite number $n>4$, $(n-1)!\equiv0\pmod n$ (it is never $-1$).</p>
+      <div class="seeit"><div class="sh">What this theorem says, with examples</div>
+        <div class="seg"><p class="et">Example 1: small primes</p><table class="codetab text-sm"><tr><th>$p$</th><th>$(p-1)!$</th><th>remainder mod $p$</th></tr><tr><td>$5$</td><td>$24$</td><td>$4\equiv-1$</td></tr><tr><td>$7$</td><td>$720$</td><td>$6\equiv-1$</td></tr><tr><td>$11$</td><td>$3\,628\,800$</td><td>$10\equiv-1$</td></tr></table></div>        <div class="seg"><p class="et">Example 2: composite numbers behave differently</p><p>$5!=120=6\times20\equiv0\pmod6$ and $8!=40\,320\equiv0\pmod9$. The remainder is $0$, not $-1$. So Wilson&rsquo;s remainder $-1$ is a fingerprint of primes.</p></div>        <div class="seg"><p class="et">Example 3: what it can do, remainders of big factorials</p><p>Find $14!\bmod17$. By Wilson $16!\equiv-1$, and $16!=16\times15\times14!$ with $16\equiv-1$ and $15\equiv-2$. So $(-1)(-2)\times14!\equiv-1$, that is $2\times14!\equiv16$, so $14!\equiv8\pmod{17}$ (cancel the $2$, or multiply by its inverse $9$: $16\times9=144\equiv8$).</p></div>
+      </div>
+      <details class="pf"><summary>Show the proof (optional reading for the curious)</summary>
+      <div class="ps"><b class="n">Which classes are their own inverse?</b> Mod a prime $p$, every non-zero class has an inverse. We need $x^2\equiv1$, so $p\mid(x-1)(x+1)$, so by Euclid&rsquo;s lemma $p\mid x-1$ or $p\mid x+1$: only $x=1$ and $x=p-1\equiv-1$.</div>
+      <div class="ps"><b class="n">Pair the others.</b> The remaining classes $2,3,\ldots,p-2$ split into pairs $\{a,a^{-1}\}$ with $a\neq a^{-1}$, and each pair multiplies to $1$. For $p=11$: $2\times6\equiv1$, $3\times4\equiv1$, $5\times9\equiv1$, $7\times8\equiv1$.</div>
+      <div class="ps"><b class="n">Multiply everything.</b> $(p-1)!=1\times(\text{pairs, each}\equiv1)\times(p-1)\equiv1\times1\times(p-1)\equiv-1$. For $p=11$: $10!\equiv1\times1\times1\times1\times1\times10\equiv-1$. $\blacksquare$</div>
+      </details>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3 mt-6"><span class="step-badge">4</span><h3 class="text-lg font-bold text-slate-800">Where do the primes sit? Residues mod 6 and mod 24</h3></div>
+    <div class="proof">
+      <div class="ph">Theorem 6: every prime greater than $3$ is $\equiv1$ or $5\pmod6$</div>
+      <div class="seeit"><div class="sh">What this theorem says, with examples</div>
+        <div class="seg"><p class="et">Example 1: residues of the primes</p><p>The primes from $5$ to $47$ and their classes mod $6$:</p><table class="codetab text-sm"><tr><th>prime</th><td>$5$</td><td>$7$</td><td>$11$</td><td>$13$</td><td>$17$</td><td>$19$</td><td>$23$</td><td>$29$</td><td>$31$</td><td>$37$</td><td>$41$</td><td>$43$</td><td>$47$</td></tr><tr><th>mod $6$</th><td>$5$</td><td>$1$</td><td>$5$</td><td>$1$</td><td>$5$</td><td>$1$</td><td>$5$</td><td>$5$</td><td>$1$</td><td>$1$</td><td>$5$</td><td>$1$</td><td>$5$</td></tr></table><p>Every residue is $1$ or $5$, never $0,2,3$ or $4$.</p></div>        <div class="seg"><p class="et">Example 2: the converse is false</p><p>Being $\equiv1$ or $5\pmod6$ does not make a number prime: $25\equiv1$, $35\equiv5$ and $49\equiv1$ are all composite. The theorem narrows the search; it does not finish it.</p></div>        <div class="seg"><p class="et">Example 3: what it can do, a shortcut when searching for primes</p><p>Up to $50$, only the numbers $6k\pm1$ can be prime: $5$, $7$, $11$, $13$, $17$, $19$, $23$, $25$, $29$, $31$, $35$, $37$, $41$, $43$, $47$, $49$. That is $16$ candidates instead of $45$ numbers. Only $25,35,49$ fail, leaving $13$ primes.</p></div>
+      </div>
+      <details class="pf"><summary>Show the proof (optional reading for the curious)</summary>
+      <div class="ps"><b class="n">Proof.</b> Sort integers by their class mod $6$. The classes $[0]_6,[2]_6,[4]_6$ are even, and $[3]_6$ is a multiple of $3$ (and $[0]_6$ too). So an integer in $[0],[2],[3],[4]$ is divisible by $2$ or $3$. A prime greater than $3$ cannot be, so it lies in $[1]_6$ or $[5]_6$. $\blacksquare$ (Not every number in these classes is prime, for example $25$.)</div>
+      </details>
+    </div>
+    <div class="proof">
+      <div class="ph">Theorem 7: if $p>3$ is prime, then $24\mid p^2-1$</div>
+      <div class="seeit"><div class="sh">What this theorem says, with examples</div>
+        <div class="seg"><p class="et">Example 1: a table of primes</p><table class="codetab text-sm"><tr><th>$p$</th><th>$p^2-1$</th><th>divided by $24$</th></tr><tr><td>$5$</td><td>$24$</td><td>$1$</td></tr><tr><td>$7$</td><td>$48$</td><td>$2$</td></tr><tr><td>$11$</td><td>$120$</td><td>$5$</td></tr><tr><td>$13$</td><td>$168$</td><td>$7$</td></tr><tr><td>$17$</td><td>$288$</td><td>$12$</td></tr><tr><td>$23$</td><td>$528$</td><td>$22$</td></tr></table><p>Every $p^2-1$ is an exact multiple of $24$.</p></div>        <div class="seg"><p class="et">Example 2: why $p>3$ is needed</p><p>For $p=3$: $3^2-1=8$, which $24$ does not divide. For $p=2$: $3$. The primes $2$ and $3$ are exactly the ones that spoil the proof.</p></div>        <div class="seg"><p class="et">Example 3: what it can do</p><p>For primes $p,q>3$ the squares $p^2$ and $q^2$ are both $\equiv1\pmod{24}$, so $24\mid p^2-q^2$. Check: $29^2-17^2=841-289=552=24\times23$. &#10003; Also $31^2=961=1+24\times40$.</p></div>
+      </div>
+      <details class="pf"><summary>Show the proof (optional reading for the curious)</summary>
+      <div class="ps"><b class="n">Proof.</b> Factorise: $p^2-1=(p-1)(p+1)$. Since $p$ is odd, $p-1$ and $p+1$ are consecutive even numbers, so one of them is a multiple of $4$ and the product is a multiple of $2\times4=8$. Among three consecutive numbers $p-1,p,p+1$ one is a multiple of $3$, and it is not $p$, so $3\mid(p-1)(p+1)$. Since $\text{HCF}(8,3)=1$, $8\times3=24$ divides the product. $\blacksquare$</div>
+      <p class="text-sm mt-1">Check: $p=29$: $29^2-1=840=24\times35$. &#10003;</p>
+      </details>
+    </div>
+
+    <h3 class="text-xl font-bold text-slate-800 mb-3 mt-8 bg-slate-100 p-3 rounded-lg inline-block">Check your understanding</h3>
+    <div id="ex-t4"></div>
+  </div>
+  <div id="t5" class="tab-content">
+    <h2 class="text-2xl font-bold text-slate-800 mb-1">Step 5: Modular Thinking in Competitions and in Real Life</h2>
+    <p class="text-slate-600 mb-5">Modular arithmetic is a favourite in maths competitions, and it also protects the numbers on your bank card and your books. Here you will turn the theory into three problem-solving tools: <strong>consecutive integers</strong>, <strong>digit sums and squares</strong>, and <strong>check digits</strong>.</p>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">1</span><h3 class="text-lg font-bold text-slate-800">Consecutive integers and the pigeonhole of residues</h3></div>
+    <div class="proof">
+      <div class="ph">Fact: one multiple of $m$ among $m$ consecutive integers</div>
+      <p class="text-sm">Among any $m$ consecutive integers, <strong>exactly one</strong> is a multiple of $m$.</p>
+      <div class="seeit"><div class="sh">What this theorem says, with examples</div>
+        <div class="seg"><p class="et">Example 1: three small windows</p><p>$m=5$: among $23,24,25,26,27$ only $25$ is a multiple of $5$. $m=7$: among $100,\ldots,106$ only $105$. With negatives, $m=5$: among $-3,-2,-1,0,1$ only $0$.</p></div>        <div class="seg"><p class="et">Example 2: what it can do</p><p>Among $4$ consecutive integers one is a multiple of $4$. Among $3$ consecutive integers one is a multiple of $3$. Combine the facts and you can prove that $n(n+1)(n+2)$ is divisible by $6$, or that a product of five consecutive integers is divisible by $5$. This is the engine behind Technique 1 below.</p></div>
+      </div>
+      <details class="pf"><summary>Show the proof (optional reading for the curious)</summary>
+      <div class="ps"><b class="n">Why.</b> Theorem 1 says there are exactly $m$ classes. The $m$ consecutive integers $n,n+1,\ldots,n+m-1$ have $m$ <em>different</em> remainders (two of them differ by less than $m$, so by Theorem 1's argument they cannot share a class). Different remainders in a set of $m$ possible values means every remainder appears once, including $0$.</div>
+      </details>
+    </div>
+    <div class="tech">
+      <div class="tt">Technique 1: factor-hunting in a product of consecutive integers</div>
+      <p class="text-sm text-slate-700">To show a product is divisible by $N$, split $N$ into coprime prime powers, and find a factor for each using the Fact above.</p>
+      <div class="eg"><p><strong>Worked example.</strong> Show that the product of any three consecutive integers is divisible by $6$.</p>
+        <p class="mt-1">Among three consecutive integers exactly one is a multiple of $3$. Among them at least one is even. So the product has a factor $3$ and a factor $2$. Since $\text{HCF}(2,3)=1$, the product is divisible by $2\times3=6$. &#10003;</p>
+        <p class="mt-1">Example: $4\times5\times6=120=6\times20$. In the same way, the product of <strong>four</strong> consecutive integers is divisible by $24$ (a multiple of $3$, a multiple of $4$, and another even number).</p></div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3 mt-6"><span class="step-badge">2</span><h3 class="text-lg font-bold text-slate-800">Digit sums and squares</h3></div>
+    <div class="proof">
+      <div class="ph">Theorem 8: casting out nines</div>
+      <p class="text-sm">Every integer is congruent mod $9$ to the sum of its digits.</p>
+      <div class="seeit"><div class="sh">What this theorem says, with examples</div>
+        <div class="seg"><p class="et">Example 1: digit sums and remainders</p><table class="codetab text-sm"><tr><th>number</th><th>digit sum</th><th>digit sum mod $9$</th><th>number mod $9$</th></tr><tr><td>$6358$</td><td>$22$</td><td>$4$</td><td>$4$</td></tr><tr><td>$4127$</td><td>$14$</td><td>$5$</td><td>$5$</td></tr><tr><td>$98\,765\,432$</td><td>$44$</td><td>$8$</td><td>$8$</td></tr></table><p>The two right-hand columns always agree.</p></div>        <div class="seg"><p class="et">Example 2: what it can do, checking a multiplication</p><p>Is $6358\times4127=26\,239\,466$ plausible? Modulo $9$: $4\times5=20\equiv2$. The digit sum of $26\,239\,466$ is $38\equiv2$. The check <em>passes</em>. (If the digit sums had disagreed, the answer would certainly be wrong.)</p></div>        <div class="seg"><p class="et">Example 3: what it can do, divisibility tests</p><p>$1\,234\,566$ has digit sum $27$, a multiple of $9$, so $9$ divides it ($1\,234\,566=9\times137\,174$). $7\,654\,321$ has digit sum $28\equiv1$, so it leaves remainder $1$ when divided by $9$. The same proof works mod $3$.</p></div>
+      </div>
+      <details class="pf"><summary>Show the proof (optional reading for the curious)</summary>
+      <div class="ps"><b class="n">Proof.</b> $10\equiv1\pmod9$, so by Theorem 3, $10^k\equiv1^k=1$ for every $k$. Hence $\overline{d_kd_{k-1}\ldots d_0}=d_k10^k+\cdots+d_110+d_0\equiv d_k+\cdots+d_1+d_0\pmod9$. $\blacksquare$</div>
+      <p class="text-sm mt-1">The same proof works mod $3$. Example: $98\,765\,432\equiv9+8+7+6+5+4+3+2=44\equiv8\pmod9$.</p>
+      </details>
+    </div>
+    <div class="tech">
+      <div class="tt">Technique 2: which remainders can a perfect square have?</div>
+      <p class="text-sm text-slate-700">Square each class. If a remainder never appears, a number with that remainder is <strong>not</strong> a perfect square.</p>
+      <div class="eg"><p><strong>Worked example.</strong> Squares mod $4$: $0^2=0,\ 1^2=1,\ 2^2=4\equiv0,\ 3^2=9\equiv1$. So a perfect square leaves remainder $0$ or $1$ when divided by $4$, never $2$ or $3$. Therefore $2026$ ($\equiv2$) and $1\,234\,567$ ($\equiv3$) are <strong>not</strong> perfect squares. (A remainder of $0$ or $1$ does not prove a number is a square; it only fails to rule it out.)</p></div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3 mt-6"><span class="step-badge">3</span><h3 class="text-lg font-bold text-slate-800">Check digits: how does a machine know a number is wrong?</h3></div>
+
+    <div class="scene">
+      <div class="sh">Scene 1: a mix-up at the parcel depot</div>
+      <p>Mia works at a parcel depot. Every parcel has a tracking number, and a scanner reads it to decide which truck the parcel goes on. When a label is torn, Mia has to <strong>type the number in by hand</strong>, hundreds of times a day.</p>
+      <p class="mt-2">One tired afternoon she types <span class="mono">4729853</span> instead of <span class="mono">4729353</span>. One digit is wrong, and the machine has no idea. The parcel goes to the wrong city, and nobody finds out until the customer rings to complain.</p>
+      <p class="mt-2"><strong>Where else does this happen?</strong> Supermarket barcodes, books (ISBN), airline tickets, bank accounts, credit cards, money orders. People and scanners make mistakes, and two of the most common ones are <strong>one wrong digit</strong> and <strong>two neighbouring digits swapped</strong>.</p>
+      <div class="ask"><strong>The big question.</strong> The machine does not know the right number. It only sees what was typed. Can it still tell that something is wrong?</div>
+    </div>
+
+    <div class="scene">
+      <div class="sh">Scene 2: the trick, one extra digit at the end</div>
+      <p>The answer is yes, if we add one extra digit, the <strong>check digit</strong>, calculated from all the other digits by a fixed rule. The machine repeats the calculation. If its answer does not match the check digit, it beeps and rejects the number.</p>
+      <div class="my-3"><svg viewBox="0 0 330 150" class="mx-auto" style="max-width:340px;width:100%" role="img" aria-label="A parcel label with the tracking number 472935 and check digit 3">
+ <rect x="2" y="2" width="326" height="146" rx="10" fill="#fff" stroke="#94a3b8" stroke-width="2"/>
+ <rect x="14" y="12" width="3" height="46" fill="#0f172a"/><rect x="20" y="12" width="4" height="46" fill="#0f172a"/><rect x="27" y="12" width="2" height="46" fill="#0f172a"/><rect x="32" y="12" width="3" height="46" fill="#0f172a"/><rect x="38" y="12" width="2" height="46" fill="#0f172a"/><rect x="43" y="12" width="2" height="46" fill="#0f172a"/><rect x="50" y="12" width="4" height="46" fill="#0f172a"/><rect x="57" y="12" width="2" height="46" fill="#0f172a"/><rect x="62" y="12" width="4" height="46" fill="#0f172a"/><rect x="69" y="12" width="2" height="46" fill="#0f172a"/><rect x="74" y="12" width="2" height="46" fill="#0f172a"/><rect x="81" y="12" width="2" height="46" fill="#0f172a"/><rect x="86" y="12" width="2" height="46" fill="#0f172a"/><rect x="91" y="12" width="3" height="46" fill="#0f172a"/><rect x="99" y="12" width="2" height="46" fill="#0f172a"/><rect x="104" y="12" width="3" height="46" fill="#0f172a"/><rect x="110" y="12" width="2" height="46" fill="#0f172a"/><rect x="115" y="12" width="3" height="46" fill="#0f172a"/><rect x="121" y="12" width="2" height="46" fill="#0f172a"/><rect x="126" y="12" width="2" height="46" fill="#0f172a"/><rect x="133" y="12" width="4" height="46" fill="#0f172a"/><rect x="141" y="12" width="4" height="46" fill="#0f172a"/><rect x="150" y="12" width="3" height="46" fill="#0f172a"/><rect x="157" y="12" width="2" height="46" fill="#0f172a"/><rect x="162" y="12" width="2" height="46" fill="#0f172a"/><rect x="167" y="12" width="3" height="46" fill="#0f172a"/><rect x="175" y="12" width="3" height="46" fill="#0f172a"/><rect x="183" y="12" width="3" height="46" fill="#0f172a"/><rect x="189" y="12" width="2" height="46" fill="#0f172a"/><rect x="196" y="12" width="2" height="46" fill="#0f172a"/>
+ <text x="26" y="96" font-size="22" font-family="monospace" font-weight="700" fill="#0f172a">4</text><text x="60" y="96" font-size="22" font-family="monospace" font-weight="700" fill="#0f172a">7</text><text x="94" y="96" font-size="22" font-family="monospace" font-weight="700" fill="#0f172a">2</text><text x="128" y="96" font-size="22" font-family="monospace" font-weight="700" fill="#0f172a">9</text><text x="162" y="96" font-size="22" font-family="monospace" font-weight="700" fill="#0f172a">3</text><text x="196" y="96" font-size="22" font-family="monospace" font-weight="700" fill="#0f172a">5</text>
+ <text x="232" y="96" font-size="22" font-family="monospace" font-weight="700" fill="#b91c1c">3</text>
+ <rect x="225" y="73" width="26" height="30" rx="4" fill="none" stroke="#b91c1c" stroke-width="2"/>
+ <text x="26" y="124" font-size="11" fill="#475569" font-family="Arial">parcel number</text>
+ <text x="206" y="124" font-size="11" fill="#b91c1c" font-family="Arial" font-weight="700">check digit</text>
+</svg></div>
+      <p><strong>The depot&rsquo;s first rule.</strong> Use digits $1$ to $9$. Add up the digits of the parcel number and take the remainder mod $9$. That remainder is the check digit.</p>
+      <p class="mt-2">Parcel number $472935$: $4+7+2+9+3+5=30=3\times9+3$, so $30\equiv3\pmod9$. The check digit is $3$, and the full label is <span class="mono">4729353</span>.</p>
+      <div class="machine">SCAN 4729353 &rarr; digits add to 30, remainder 3, check digit 3 &rarr; ACCEPTED</div>
+    </div>
+
+    <div class="scene bad">
+      <div class="sh">Scene 3: what happens if ONE digit is wrong?</div>
+      <p>Mia types <span class="mono">4729<b>8</b>53</span> (the fifth digit $3$ became $8$).</p>
+      <div class="machine">SCAN 4729853 &rarr; digits add to 35, remainder 8, check digit 3 &rarr; REJECTED</div>
+      <p class="mt-2"><strong>The machine catches it.</strong> If one digit changes by $d$, the sum changes by exactly $d$. Here $d=5$. With digits from $1$ to $9$ the change satisfies $1\le|d|\le8$, and a number from $1$ to $8$ is never a multiple of $9$, so the remainder always changes. <strong>Every single-digit error is caught.</strong></p>
+    </div>
+
+    <div class="scene bad">
+      <div class="sh">Scene 4: what happens if TWO digits are swapped?</div>
+      <p>This time Mia types two digits in the wrong order: <span class="mono">47<b>92</b>353</span> instead of <span class="mono">47<b>29</b>353</span>.</p>
+      <div class="machine">SCAN 4792353 &rarr; digits add to 30, remainder 3, check digit 3 &rarr; ACCEPTED (but the number is wrong!)</div>
+      <p class="mt-2"><strong>The machine is fooled.</strong> Adding does not care about the order of the digits, so swapping two digits of the parcel number never changes the sum. The wrong parcel number is accepted, and the parcel goes to the wrong place.</p>
+      <div class="ask">Lesson: the first rule is good against <em>wrong</em> digits but blind to <em>swapped</em> digits. We need a rule that cares about <strong>position</strong>.</div>
+    </div>
+
+    <div class="scene">
+      <div class="sh">Scene 5: a smarter rule, every position gets its own weight</div>
+      <p>Instead of adding the digits, multiply each digit by a <strong>weight</strong> that depends on its position, then add. Now a swap does change the sum, because the two digits are multiplied by different weights.</p>
+      <p class="mt-2">Write the code as $a_1a_2\cdots a_n$ with weights $w_1,w_2,\ldots$ and a modulus $m$. The machine accepts the number when the weighted sum $w_1a_1+w_2a_2+\cdots$ passes the check mod $m$. Then:</p>
+      <ul class="list-disc pl-6 mt-1 space-y-1">
+        <li><strong>One digit $a_i$ changes by $d$:</strong> the sum changes by $w_i\,d$.</li>
+        <li><strong>Neighbours $a_i,a_{i+1}$ swapped:</strong> the sum changes by $(w_i-w_{i+1})(a_{i+1}-a_i)$.</li>
+        <li><strong>The error slips through exactly when $m$ divides that change.</strong> So the detective question is always: <em>can $m$ divide this number?</em></li>
+      </ul>
+      <p class="mt-2"><strong>A real example: the US bank code.</strong> Weights $7,3,9,7,3,9,7,3$ and modulus $10$. The differences between neighbouring weights are $4,-6,2,\ldots$, all even. So if the swapped digits differ by $5$ (for example $2$ and $7$), the change is an even number times $5$, a multiple of $10$, and the swap <strong>slips through</strong>. Better than adding, but not perfect. What went wrong? The modulus $10=2\times5$ has small factors that can divide the change.</p>
+    </div>
+
+    <div class="scene good">
+      <div class="sh">Scene 6: the best guard, a prime modulus (why books use 11)</div>
+      <p>The ISBN-10 number on the back of a book uses weights $10,9,8,\ldots,1$ and the <strong>prime</strong> modulus $11$.</p>
+      <ul class="list-disc pl-6 mt-1 space-y-1">
+        <li><strong>A swap:</strong> neighbouring weights differ by exactly $1$, so the change is $a_{i+1}-a_i$, a non-zero number from $-9$ to $9$. A prime like $11$ cannot divide a number that small, so <strong>every adjacent swap is caught</strong>.</li>
+        <li><strong>One wrong digit:</strong> the change is $w_i\,d$ with $1\le w_i\le10$ and $1\le|d|\le9$. If the prime $11$ divided $w_id$, it would have to divide $w_i$ or $d$ (Euclid&rsquo;s lemma!). It divides neither, so <strong>every single-digit error is caught</strong>.</li>
+      </ul>
+      <p class="mt-2"><strong>Why the prime matters, and why it must be big enough.</strong> The airline ticket rule uses modulus $7$, which is prime but <em>smaller than the digit range</em>. Take the code $1234$ (valid, since $123\equiv4\pmod7$). Change the first digit $1$ to $8$, a change of $7$: $823=7\times117+4\equiv4$, so $8234$ is accepted too. A change of exactly $7$ slips through. A prime modulus must be <strong>larger than every possible change</strong>, which is why $11$ works for digits $0$ to $9$.</p>
+    </div>
+
+    <p class="text-sm font-bold text-slate-700 mb-2">The real systems at a glance</p>
+    <div class="card mb-4 overflow-x-auto"><table class="rp"><tr><th>Code</th><th>Modulus</th><th>One wrong digit</th><th>Neighbours swapped</th></tr>
+      <tr><td>Depot label and US Postal Money Order (add the digits)</td><td>$9$</td><td><span class="ok-t">caught</span></td><td><span class="bad-t">missed inside the number (the sum does not change)</span></td></tr>
+      <tr><td>Airline ticket</td><td>$7$ (prime, but too small)</td><td><span class="bad-t">changes of exactly $7$ missed</span></td><td>not all caught</td></tr>
+      <tr><td>US Bank code</td><td>$10$ (not prime)</td><td><span class="ok-t">caught</span></td><td><span class="bad-t">missed when the digits differ by $5$</span></td></tr>
+      <tr><td>ISBN-10 (books)</td><td>$11$ (prime, bigger than the digits)</td><td><span class="ok-t">caught</span></td><td><span class="ok-t">caught</span></td></tr></table></div>
+
+    <p class="text-sm font-bold text-slate-700 mb-2">Try it: the Check-Digit Tester (be the machine)</p>
+    <p class="text-sm text-slate-700 mb-2">Try four experiments: (1) the <em>depot label</em> with &ldquo;Test every single-digit error&rdquo;; (2) the same label with &ldquo;Test every adjacent swap&rdquo;; (3) the <em>US Bank code</em> swaps; (4) the <em>ISBN-10</em> swaps. Which scheme would you trust with a parcel?</p>
+    <div class="card mb-4">
+      <div class="flex items-center gap-3 mb-3 flex-wrap">
+        <label class="text-sm font-bold" for="cd-s">Code type:</label>
+        <select id="cd-s" class="inp" style="max-width:17rem" onchange="cdSwitch()"><option value="depot" selected>Depot parcel label (add the digits, mod 9)</option><option value="usps">US Postal Money Order (mod 9)</option><option value="air">Airline ticket (mod 7)</option><option value="bank">US Bank code (mod 10)</option><option value="isbn">ISBN-10 (mod 11)</option></select>
+        <label class="text-sm font-bold" for="cd-c">Code:</label><input type="text" id="cd-c" class="inp" style="max-width:14rem" oninput="cdUpdate()" inputmode="numeric">
+        <button class="btn-ghost" onclick="cdFix()">Fix the check digit</button>
+      </div>
+      <div id="cd-rule" class="text-sm text-slate-700 mb-2"></div>
+      <div id="cd-status" class="text-sm font-bold mb-2"></div>
+      <div class="flex gap-2 flex-wrap mb-2"><button class="btn" onclick="cdTest('single')">Test every single-digit error</button><button class="btn" onclick="cdTest('swap')">Test every adjacent swap</button></div>
+      <div id="cd-out" class="text-sm space-y-1"></div>
+    </div>
+    <div class="tech">
+      <div class="tt">Technique 3: will the code catch this kind of error?</div>
+      <p class="text-sm text-slate-700">Write the change in the sum for the error, then check whether $m$ can divide it. If it can, build an example. If it never can, prove it.</p>
+      <div class="eg"><p><strong>Worked example 1 (US Postal Money Order).</strong> It has eleven digits from $1$ to $9$, and $a_1+\cdots+a_{10}\equiv a_{11}\pmod9$. If one digit is changed (including the check digit $a_{11}$), the two sides change by $\pm d$ where $d$ is the difference between the old and new digits. Both digits lie in $\{1,\ldots,9\}$, so $1\le|d|\le8$, and a number from $1$ to $8$ is <strong>never</strong> a multiple of $9$. So <strong>every single-digit error is detected</strong>.</p></div>
+      <div class="eg"><p><strong>Worked example 2 (airline ticket).</strong> The number formed by the digits before the check digit must be congruent to the check digit mod $7$. Take the code $1234$: the number $123=7\times17+4\equiv4$, and the check digit is $4$. &#10003;</p>
+        <p class="mt-1">Now change the first digit from $1$ to $8$: $823=7\times117+4\equiv4$, so $8234$ is also valid, and the error is <strong>missed</strong>. Reason: the digits $0$ to $9$ allow a change of $d=\pm7$, and $7\mid7\times10^k$. So <strong>not every single-digit error is detected</strong>: a modulus smaller than the digit range cannot catch changes of exactly $7$.</p></div>
+    </div>
+        <h3 class="text-xl font-bold text-slate-800 mb-3 mt-8 bg-slate-100 p-3 rounded-lg inline-block">Check your understanding</h3>
+    <div id="ex-t5"></div>
+  </div>
+  <div id="t6" class="tab-content">
+    <h2 class="text-2xl font-bold text-slate-800 mb-1">Homework: Modular Arithmetic</h2>
+    <p class="text-slate-600 mb-3">Three levels, from understanding to advanced applications, including a review of set notation for residue classes, multiples and primes. Each question gives you 3 attempts, then shows the full solution. When every question in the chapter is finished, your <strong>Learning Report</strong> unlocks in Tab 7.</p>
+    <div class="card mb-3 bg-teal-50 border-teal-200"><p class="text-sm text-slate-800" id="hw-score">Homework status: 0 correct, 0 revealed, 0 remaining</p></div>
+    <div id="ex-t6"></div>
+  </div>
+
+  <!-- ================= TAB 7 ================= -->
+  <div id="t7" class="tab-content">
+    <h2 class="text-2xl font-bold text-slate-800 mb-1">Your Learning Report</h2>
+    <div id="report-root"></div>
+  </div>
+
+  </main>
+<footer class="shen-footer"><svg viewBox="0 0 100 100" role="img" aria-label="申 Shen Studio"><rect width="100" height="100" rx="12" fill="#B3261E"/><path d="M41.57 27.7V42.46H27.58V27.7ZM15.1 25.34V70.78H16.95C22.18 70.78 27.58 67.91 27.58 66.65V62.18H41.57V90H44.01C48.82 90 54.3 86.88 54.3 85.62V62.18H68.97V68.93H71.07C75.37 68.93 81.53 66.65 81.61 65.89V29.64C83.38 29.3 84.39 28.55 84.9 27.87L73.69 19.19L68.12 25.34H54.3V13.96C56.74 13.62 57.33 12.7 57.5 11.52L41.57 10V25.34H28.42L15.1 20.2ZM54.3 27.7H68.97V42.46H54.3ZM41.57 59.82H27.58V44.82H41.57ZM54.3 59.82V44.82H68.97V59.82Z" fill="#FFFFFF"/></svg><span><b>Shen Studio</b> · Designed by Mr. Shen</span></footer>
+<div class="shen-print-mark" aria-hidden="true"><svg viewBox="0 0 100 100" role="img" aria-label="申 Shen Studio"><rect width="100" height="100" rx="12" fill="#B3261E"/><path d="M41.57 27.7V42.46H27.58V27.7ZM15.1 25.34V70.78H16.95C22.18 70.78 27.58 67.91 27.58 66.65V62.18H41.57V90H44.01C48.82 90 54.3 86.88 54.3 85.62V62.18H68.97V68.93H71.07C75.37 68.93 81.53 66.65 81.61 65.89V29.64C83.38 29.3 84.39 28.55 84.9 27.87L73.69 19.19L68.12 25.34H54.3V13.96C56.74 13.62 57.33 12.7 57.5 11.52L41.57 10V25.34H28.42L15.1 20.2ZM54.3 27.7H68.97V42.46H54.3ZM41.57 59.82H27.58V44.82H41.57ZM54.3 59.82V44.82H68.97V59.82Z" fill="#FFFFFF"/></svg><span>Shen Studio</span></div>
+
+
+<script>
+
+/* ============ helpers ============ */
+const R = String.raw;
+function typeset(el){ try{ if(window.MathJax && MathJax.typesetPromise){ MathJax.typesetPromise(el?[el]:undefined).catch(()=>{}); } }catch(e){} }
+function sorter(a,b){ const na=Number(a), nb=Number(b); if(!isNaN(na)&&!isNaN(nb)) return na-nb; return String(a)<String(b)?-1:String(a)>String(b)?1:0; }
+function fm(n){ return n<0 ? '−'+(-n) : ''+n; }
+function fp(n){ return n<0 ? '(−'+(-n)+')' : ''+n; }
+function range(a,b){ const r=[]; for(let i=a;i<=b;i++) r.push(i); return r; }
+function fmtSet(arr){ return arr.length? '{ '+arr.join(', ')+' }' : '∅'; }
+function cleanNum(s){ return String(s).replace(/[−–—]/g,'-'); }
+function gcd(a,b){ while(b){ [a,b]=[b,a%b]; } return a; }
+function isPrime(n){ if(n<2) return false; for(let i=2;i*i<=n;i++) if(n%i===0) return false; return true; }
+function factorize(n){ const f={}; let d=2; while(d*d<=n){ while(n%d===0){ f[d]=(f[d]||0)+1; n/=d; } d++; } if(n>1) f[n]=(f[n]||0)+1; return f; }
+function indexForm(f){ const ks=Object.keys(f).map(Number).sort((a,b)=>a-b); return ks.map(p=>f[p]>1? p+'<sup>'+f[p]+'</sup>' : ''+p).join(' × ') || '1'; }
+function divisorsOf(n){ const r=[]; for(let d=1; d<=n; d++) if(n%d===0) r.push(d); return r; }
+function clampInt(v,lo,hi){ v=parseInt(v); if(isNaN(v)) return lo; return Math.max(lo,Math.min(hi,v)); }
+
+function openTab(evt, id){
+  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab-link').forEach(b=>{ b.classList.remove('text-teal-700','border-b-4','border-teal-600','font-bold'); b.classList.add('text-slate-500','font-semibold'); });
+  document.getElementById(id).classList.add('active');
+  const btn=document.querySelector('.tab-link[data-tab="'+id+'"]'); btn.classList.remove('text-slate-500','font-semibold'); btn.classList.add('text-teal-700','border-b-4','border-teal-600','font-bold');
+  if(id==='t7') buildReport();
+  typeset(document.getElementById(id)); window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ============ modular helpers ============ */
+function md(x,m){ return ((x%m)+m)%m; }
+function mpow(a,n,m){ let r=1%m; a=md(a,m); while(n>0){ if(n&1) r=(r*a)%m; a=(a*a)%m; n=Math.floor(n/2); } return r; }
+function hueOf(r,m){ return Math.round(r/m*300); }
+function chipHTML(txt,r,m,extra){ const h=hueOf(r,m); return `<span class="chip sm static ${extra||''}" style="background:hsl(${h},70%,90%);border-color:hsl(${h},55%,55%);color:hsl(${h},60%,20%)">${txt}</span>`; }
+
+/* ============ TAB 1: Clock Wrap ============ */
+function cwSet(x){ document.getElementById('cw-x').value=x; cwUpdate(); }
+function cwUpdate(){
+  const m=clampInt(document.getElementById('cw-m').value,2,12); document.getElementById('cw-mv').textContent=m;
+  const x=parseInt(document.getElementById('cw-x').value); const xv=isNaN(x)?0:x;
+  const r=md(xv,m), q=(xv-r)/m;
+  // clock
+  const W=270, cx=W/2, cy=W/2, R0=100; let s=`<svg viewBox="0 0 ${W} ${W}" width="${W}" height="${W}" role="img" aria-label="Clock with ${m} positions">`;
+  s+=`<circle cx="${cx}" cy="${cy}" r="${R0+22}" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>`;
+  for(let k=0;k<m;k++){ const ang=-Math.PI/2+2*Math.PI*k/m, px=cx+R0*Math.cos(ang), py=cy+R0*Math.sin(ang), h=hueOf(k,m), on=(k===r);
+    if(on) s+=`<line x1="${cx}" y1="${cy}" x2="${px}" y2="${py}" stroke="#33449a" stroke-width="4" stroke-linecap="round"/>`;
+    s+=`<circle cx="${px}" cy="${py}" r="${on?19:15}" fill="hsl(${h},70%,${on?78:90}%)" stroke="${on?'#33449a':'hsl('+h+',55%,50%)'}" stroke-width="${on?4:2}"/><text x="${px}" y="${py+5}" text-anchor="middle" font-size="14" font-weight="800" fill="hsl(${h},60%,20%)">${k}</text>`; }
+  s+=`<circle cx="${cx}" cy="${cy}" r="5" fill="#33449a"/></svg>`;
+  document.getElementById('cw-clock').innerHTML=s;
+  // message
+  const turns=Math.abs(q);
+  let walk;
+  if(xv>=0) walk = q===0? `${xv} is already between 0 and ${m-1}.` : `Go round the clock ${q} full turn${q===1?'':'s'} (subtract ${q} &times; ${m} = ${q*m}) and you land on ${r}.`;
+  else walk = `Add ${turns} &times; ${m} = ${turns*m} to reach ${xv+turns*m}: ${turns} full turn${turns===1?'':'s'} the other way.`;
+  document.getElementById('cw-msg').innerHTML=`<p><strong>${fm(xv)} = ${m} &times; ${fp(q)} + ${r}</strong>, so the remainder is <strong>${r}</strong>.</p><p>${walk}</p><p>So $x\\in[${r}]_{${m}}$, and the clock position is <strong>${r}</strong>.</p>`;
+  // fibres
+  let f='';
+  for(let k=0;k<m;k++){ const members=[]; for(let t=-12;t<=24;t++) if(md(t,m)===k) members.push(t);
+    f+=`<div class="flex items-center gap-2 flex-wrap"><span class="font-bold w-24 shrink-0">$[${k}]_{${m}}\\to${k}$</span><span class="text-slate-400">&hellip;</span>${members.map(t=>chipHTML(fm(t),k,m,t===xv?'pick':'')).join('')}<span class="text-slate-400">&hellip;</span></div>`; }
+  document.getElementById('cw-fibres').innerHTML=f; typeset(document.getElementById('cw-msg')); typeset(document.getElementById('cw-fibres'));
+}
+
+/* ============ TAB 2: addition table ============ */
+let atHL=false;
+function atToggle(){ atHL=!atHL; document.getElementById('at-hl').classList.toggle('on',atHL); atUpdate(); }
+function atUpdate(){
+  const m=clampInt(document.getElementById('at-m').value,2,12); document.getElementById('at-mv').textContent=m;
+  let t='<table class="tb mx-auto"><tr><th>+</th>'+range(0,m-1).map(j=>`<th>${j}</th>`).join('')+'</tr>';
+  for(let i=0;i<m;i++){ t+=`<tr><th>${i}</th>`; for(let j=0;j<m;j++){ const v=(i+j)%m, h=hueOf(v,m), z=atHL&&v===0; t+=`<td style="background:hsl(${h},70%,${z?72:91}%);${z?'outline:3px solid #33449a;font-weight:800;':''}">${v}</td>`; } t+='</tr>'; }
+  document.getElementById('at-out').innerHTML=t+'</table>';
+  const pairs=[]; for(let a=1;a<=m/2;a++){ pairs.push(a===m-a? `${a} (its own inverse)` : `${a} and ${m-a}`); }
+  document.getElementById('at-msg').innerHTML=`<p><strong>Identity:</strong> the row of $0$ repeats the headings.</p><p><strong>Inverse pairs</strong> (add to $0$ mod ${m}): ${pairs.join('; ')}.</p><p>Every row contains each of $0,1,\\ldots,${m-1}$ exactly once, so <em>$x+a\\equiv b$ always has exactly one solution</em>: subtraction is always possible.</p>`;
+  typeset(document.getElementById('at-msg'));
+}
+
+/* ============ TAB 3: multiplication table ============ */
+function mtSet(m){ document.getElementById('mt-m').value=m; mtUpdate(); }
+function mtUpdate(){
+  const m=clampInt(document.getElementById('mt-m').value,2,15); document.getElementById('mt-mv').textContent=m;
+  let t='<table class="tb mx-auto"><tr><th>&times;</th>'+range(0,m-1).map(j=>`<th>${j}</th>`).join('')+'</tr>';
+  const zd=[];
+  for(let i=0;i<m;i++){ t+=`<tr><th>${i}</th>`; for(let j=0;j<m;j++){ const v=(i*j)%m, h=hueOf(v,m); let st=`background:hsl(${h},70%,91%);`;
+      if(i>0&&j>0&&v===0){ st+='outline:3px solid #dc2626;font-weight:800;color:#991b1b;'; if(i<=j) zd.push([i,j]); }
+      else if(v===1 && i>0 && j>0) st+='outline:3px solid #059669;font-weight:800;';
+      t+=`<td style="${st}">${v}</td>`; } t+='</tr>'; }
+  document.getElementById('mt-out').innerHTML=t+'</table>';
+  const inv=range(1,m-1).filter(a=>gcd(a,m)===1), non=range(1,m-1).filter(a=>gcd(a,m)>1);
+  let msg=`<p><span class="inline-block w-3 h-3 align-middle" style="background:#fff;outline:3px solid #059669"></span> green: product $1$ (a pair of inverses). <span class="inline-block w-3 h-3 align-middle" style="background:#fff;outline:3px solid #dc2626"></span> red: product $0$ from two non-zero numbers (zero divisors).</p>`;
+  if(isPrime(m)) msg+=`<p><strong>$${m}$ is prime.</strong> There are no red cells, and every non-zero row contains each of $0,\\ldots,${m-1}$ exactly once. All of $1,\\ldots,${m-1}$ have inverses.</p>`;
+  else msg+=`<p><strong>$${m}$ is composite.</strong> Zero divisors: ${zd.slice(0,8).map(p=>`$${p[0]}\\times${p[1]}$`).join(', ')}${zd.length>8?', &hellip;':''}. Numbers with an inverse: $${inv.join(',')}$ (${inv.length} of them). Numbers sharing a factor with ${m} have none: $${non.join(',')}$.</p>`;
+  document.getElementById('mt-msg').innerHTML=msg; typeset(document.getElementById('mt-msg'));
+}
+
+/* ============ TAB 3: power cycles ============ */
+function pcSet(a,m,n){ document.getElementById('pc-a').value=a; document.getElementById('pc-m').value=m; document.getElementById('pc-n').value=n; pcUpdate(); }
+function pcUpdate(){
+  const a=clampInt(document.getElementById('pc-a').value,1,999), m=clampInt(document.getElementById('pc-m').value,2,99), N=clampInt(document.getElementById('pc-n').value,1,99999);
+  const seq=[], seen={}; let k=1, v=md(a,m), start=0, per=0;
+  while(true){ if(seen[v]!==undefined){ start=seen[v]; per=k-seen[v]; break; } seen[v]=k; seq.push(v); v=(v*md(a,m))%m; k++; }
+  const pre=start-1; // number of terms before the cycle
+  let chips=seq.slice(0,24).map((x,i)=>chipHTML(`<span class="text-xs mr-1 opacity-60">${i+1}:</span>${x}`,x,m,(i>=pre)?'':'struck-lite')).join('');
+  const ans=mpow(a,N,m);
+  let how;
+  if(pre===0){ const q=Math.floor(N/per), r=N%per; how=`The cycle starts at the first power and has period $${per}$. Divide the exponent: $${N}=${per}\\times${q}+${r}$. ${r===0?`The remainder is $0$, so $a^{${N}}$ lands on the <strong>last</strong> term of the cycle (power $${per}$).`:`So $a^{${N}}$ lands on the same position as power $${r}$.`}`; }
+  else how=`The first $${pre}$ term${pre===1?'':'s'} are outside the cycle. The cycle has period $${per}$. For $N>${pre}$, count from the cycle start: $(${N}-${pre})\\bmod ${per}$.`;
+  document.getElementById('pc-out').innerHTML=`<p><strong>$a^n\\bmod ${m}$ for $n=1,2,3,\\ldots$:</strong></p><div class="flex flex-wrap gap-1">${chips}${seq.length>24?'<span class="text-slate-400">&hellip;</span>':''}</div><p>Period of the cycle: <strong>${per}</strong>. ${how}</p><p class="text-base"><strong>$${a}^{${N}}\\equiv${ans}\\pmod{${m}}$</strong></p>`;
+  typeset(document.getElementById('pc-out'));
+}
+
+/* ============ TAB 4: inverse finder ============ */
+function ivSet(a,m){ document.getElementById('iv-a').value=a; document.getElementById('iv-m').value=m; ivUpdate(); }
+function ivUpdate(){
+  const m=clampInt(document.getElementById('iv-m').value,2,30), a=clampInt(document.getElementById('iv-a').value,1,99), A=md(a,m);
+  const g=gcd(A===0?m:A,m); const prods=range(0,m-1).map(k=>(a*k)%m);
+  const row=prods.map((p,k)=>chipHTML(`<span class="text-xs mr-1 opacity-60">${k}:</span>${p}`,p,m,p===1?'pick':'')).join('');
+  let verdict;
+  if(g===1){ const x=prods.indexOf(1); verdict=`<p class="font-bold text-emerald-700">$\\text{HCF}(${a},${m})=1$, so $${a}$ has an inverse mod $${m}$: $${a}\\times${x}=${a*x}\\equiv1$. The inverse is <strong>${x}</strong>.</p><p>The row contains every residue exactly once (it is a shuffle of $0,\\ldots,${m-1}$).</p>`; }
+  else { const reach=[...new Set(prods)].sort((p,q)=>p-q); verdict=`<p class="font-bold text-red-700">$\\text{HCF}(${a},${m})=${g}>1$, so $${a}$ has <strong>no</strong> inverse mod $${m}$.</p><p>The products only reach the multiples of ${g}: $\\{${reach.join(',')}\\}$, and $1$ is never hit. Some residues repeat.</p>`; }
+  document.getElementById('iv-out').innerHTML=`<p><strong>$${a}\\times k\\bmod ${m}$ for $k=0,1,\\ldots,${m-1}$:</strong> (the amber ring marks a product of $1$)</p><div class="flex flex-wrap gap-1">${row}</div>${verdict}`;
+  typeset(document.getElementById('iv-out'));
+}
+
+/* ============ TAB 4: Fermat checker ============ */
+function fmUpdate(){
+  const p=parseInt(document.getElementById('fm-p').value), a=clampInt(document.getElementById('fm-a').value,1,99), A=md(a,p);
+  if(A===0){ document.getElementById('fm-out').innerHTML=`<p class="text-amber-700 font-semibold">$${a}$ is a multiple of $${p}$, so $a\\equiv0$ and the theorem does not apply (but $a^p\\equiv a\\equiv0$ still holds). Choose another $a$.</p>`; typeset(document.getElementById('fm-out')); return; }
+  const sh=range(1,p-1).map(k=>(a*k)%p);
+  const chips1=range(1,p-1).map(k=>chipHTML(`${k}`,k,p)).join('');
+  const chips2=sh.map((v,i)=>chipHTML(`<span class="text-xs mr-1 opacity-60">${i+1}&times;:</span>${v}`,v,p)).join('');
+  const pw=[]; let v=1; for(let k=1;k<=p-1;k++){ v=(v*A)%p; pw.push(v); }
+  document.getElementById('fm-out').innerHTML=`<p><strong>Original list $1,2,\\ldots,${p-1}$:</strong></p><div class="flex flex-wrap gap-1">${chips1}</div>
+   <p><strong>After multiplying each by $a=${a}$ (mod ${p}):</strong> the same numbers, shuffled!</p><div class="flex flex-wrap gap-1">${chips2}</div>
+   <p><strong>Powers $a^1,a^2,\\ldots,a^{${p-1}}$ mod ${p}:</strong> ${pw.join(', ')}</p><p class="text-base"><strong>$${a}^{${p-1}}\\equiv${pw[p-2]}\\pmod{${p}}$</strong></p>`;
+  typeset(document.getElementById('fm-out'));
+}
+
+/* ============ TAB 5: check-digit tester ============ */
+const CD={
+  depot:{rule:'Seven digits from 1 to 9. The sum of the first six digits must be congruent to the seventh digit (the check digit) mod 9.',len:7,alpha:[1,2,3,4,5,6,7,8,9],def:'4729353',
+    ok:d=>md(d.slice(0,6).reduce((s,x)=>s+x,0)-d[6],9)===0,
+    fix:d=>{ const s=d.slice(0,6).reduce((x,y)=>x+y,0); d[6]=md(s-1,9)+1; return d; }},
+  usps:{rule:'Eleven digits from 1 to 9. The sum of the first ten digits must be congruent to the eleventh digit mod 9.',len:11,alpha:[1,2,3,4,5,6,7,8,9],def:'12345678911',
+    ok:d=>md(d.slice(0,10).reduce((s,x)=>s+x,0)-d[10],9)===0,
+    fix:d=>{ const s=d.slice(0,10).reduce((x,y)=>x+y,0); d[10]=md(s-1,9)+1; return d; }},
+  air:{rule:'Any length from 4 to 12 digits. The number formed by all digits except the last must be congruent to the last digit mod 7.',len:null,alpha:[0,1,2,3,4,5,6,7,8,9],def:'1234',
+    ok:d=>{ let N=0; for(let i=0;i<d.length-1;i++) N=(N*10+d[i])%7; return md(N-d[d.length-1],7)===0; },
+    fix:d=>{ let N=0; for(let i=0;i<d.length-1;i++) N=(N*10+d[i])%7; d[d.length-1]=N; return d; }},
+  bank:{rule:'Nine digits. 7a₁ + 3a₂ + 9a₃ + 7a₄ + 3a₅ + 9a₆ + 7a₇ + 3a₈ must be congruent to a₉ mod 10.',len:9,alpha:[0,1,2,3,4,5,6,7,8,9],def:'273456782',
+    ok:d=>{ const w=[7,3,9,7,3,9,7,3]; let s=0; for(let i=0;i<8;i++) s+=w[i]*d[i]; return md(s-d[8],10)===0; },
+    fix:d=>{ const w=[7,3,9,7,3,9,7,3]; let s=0; for(let i=0;i<8;i++) s+=w[i]*d[i]; d[8]=md(s,10); return d; }},
+  isbn:{rule:'Ten digits. 10a₁ + 9a₂ + 8a₃ + … + 2a₉ + a₁₀ must be congruent to 0 mod 11.',len:10,alpha:[0,1,2,3,4,5,6,7,8,9],def:'0306406152',
+    ok:d=>{ let s=0; for(let i=0;i<10;i++) s+=(10-i)*d[i]; return md(s,11)===0; },
+    fix:d=>{ let s=0; for(let i=0;i<9;i++) s+=(10-i)*d[i]; const x=md(-s,11); if(x===10) return null; d[9]=x; return d; }}
+};
+function cdDigits(){ const s=document.getElementById('cd-c').value.trim(); if(!/^\d+$/.test(s)) return null; return s.split('').map(Number); }
+function cdLenOK(k,d){ const sc=CD[k]; if(sc.len) return d.length===sc.len; return d.length>=4&&d.length<=12; }
+function cdAlphaOK(k,d){ return d.every(x=>CD[k].alpha.includes(x)); }
+function cdSwitch(){ const k=document.getElementById('cd-s').value; document.getElementById('cd-c').value=CD[k].def; cdUpdate(); }
+function cdUpdate(){
+  const k=document.getElementById('cd-s').value, sc=CD[k], d=cdDigits(); document.getElementById('cd-rule').textContent='Rule: '+sc.rule; document.getElementById('cd-out').innerHTML='';
+  const st=document.getElementById('cd-status');
+  if(!d){ st.className='text-sm font-bold text-amber-700'; st.textContent='Type digits only.'; return; }
+  if(!cdLenOK(k,d)){ st.className='text-sm font-bold text-amber-700'; st.textContent= sc.len? `This code type has exactly ${sc.len} digits.` : 'Use between 4 and 12 digits.'; return; }
+  if(!cdAlphaOK(k,d)){ st.className='text-sm font-bold text-amber-700'; st.textContent='This code type only uses the digits '+sc.alpha[0]+' to '+sc.alpha[sc.alpha.length-1]+'.'; return; }
+  const ok=sc.ok(d); st.className='text-sm font-bold '+(ok?'text-emerald-700':'text-red-700'); st.textContent= ok? 'Valid code: the machine accepts it.' : 'Invalid code: the machine rejects it. Press "Fix the check digit" to make it valid.';
+}
+function cdFix(){ const k=document.getElementById('cd-s').value, d=cdDigits(); if(!d||!cdLenOK(k,d)||!cdAlphaOK(k,d)) return cdUpdate(); const r=CD[k].fix(d.slice()); if(!r){ document.getElementById('cd-status').className='text-sm font-bold text-amber-700'; document.getElementById('cd-status').textContent='The check digit would have to be X (ten), which this tester does not use. Change another digit.'; return; } document.getElementById('cd-c').value=r.join(''); cdUpdate(); }
+function cdTest(kind){
+  const k=document.getElementById('cd-s').value, sc=CD[k], d=cdDigits(), out=document.getElementById('cd-out');
+  if(!d||!cdLenOK(k,d)||!cdAlphaOK(k,d)||!sc.ok(d)){ out.innerHTML='<p class="text-amber-700 font-semibold">Start with a <strong>valid</strong> code (use &ldquo;Fix the check digit&rdquo;).</p>'; return; }
+  let tested=0, missed=[];
+  const add=(nd,desc)=>{ tested++; if(sc.ok(nd)) missed.push(desc); };
+  if(kind==='single'){ for(let i=0;i<d.length;i++) for(const v of sc.alpha){ if(v===d[i]) continue; const nd=d.slice(); nd[i]=v; add(nd,`${d.join('')} &rarr; ${nd.join('')}`); } }
+  else { for(let i=0;i<d.length-1;i++){ if(d[i]===d[i+1]) continue; const nd=d.slice(); [nd[i],nd[i+1]]=[nd[i+1],nd[i]]; add(nd,`${d.join('')} &rarr; ${nd.join('')}`); } }
+  const label= kind==='single'?'single-digit errors':'adjacent swaps (of different digits)';
+  out.innerHTML=`<p>Tested <strong>${tested}</strong> ${label}: <strong class="text-emerald-700">${tested-missed.length} detected</strong>, <strong class="${missed.length?'text-red-700':'text-emerald-700'}">${missed.length} missed</strong>.</p>`+(missed.length? `<p>Examples of errors the machine <em>cannot</em> see:</p><p class="font-mono text-xs">${missed.slice(0,8).join('<br>')}${missed.length>8?'<br>&hellip;':''}</p>`:'<p>Every error of this type was caught.</p>');
+}
+
+/* ============ EXERCISE DATA ============ */
+function S(steps){ return '<ol class="list-decimal pl-5 space-y-1 text-sm text-slate-700">'+steps.map(s=>'<li>'+s+'</li>').join('')+'</ol>'; }
+const EX={};
+const P=(...ps)=>ps.map(p=>`<p>${p}</p>`).join('');
+EX.t1=[
+ { level:'A. Remainders and classes', id:'t1q1', type:'num', q:R`Find the remainder when $83$ is divided by $9$.`, ans:2,
+   sol:S([R`$9\times9=81$ and $83-81=2$.`,R`So $83=9\times9+2$: the remainder is $\mathbf{2}$.`]) },
+ { id:'t1q2', type:'num', q:R`Find the remainder when $-26$ is divided by $7$. (The remainder must be between $0$ and $6$.)`, ans:2,
+   sol:S([R`Add multiples of $7$ until you reach the range $0$ to $6$: $-26\to-19\to-12\to-5\to2$.`,R`That is four additions of $7$, so $-26=7\times(-4)+2$.`,R`The remainder is $\mathbf{2}$.`]) },
+ { id:'t1q3', type:'num', q:R`Find the remainder when $-100$ is divided by $7$.`, ans:5,
+   sol:S([R`$7\times15=105$, so $-100=7\times(-15)+5$ because $-105+5=-100$.`,R`The remainder is $\mathbf{5}$ (not $-2$, which is negative).`]) },
+ { id:'t1q4', type:'num', q:P(R`A clock shows $10$ o'clock.`,R`<strong>Question:</strong> what hour (from $1$ to $12$) does it show after $100$ more hours?`), ans:2,
+   sol:S([R`Only the remainder mod $12$ matters: $10+100=110$.`,R`$110=12\times9+2$, so $110\equiv2\pmod{12}$.`,R`The clock shows $\mathbf{2}$ o'clock.`]) },
+ { level:'B. Set notation and the map from $\mathbb{Z}$', id:'t1q5', type:'set', q:P(R`List the elements of the class $[3]_7$ that lie between $-10$ and $25$ (inclusive).`,R`Type the elements separated by commas.`), ans:'-4,3,10,17,24',
+   sol:S([R`$[3]_7=\{x:\ x=7q+3,\ q\in\mathbb{Z}\}$.`,R`Try $q=-2,-1,0,1,2,3$: $-11,\ -4,\ 3,\ 10,\ 17,\ 24$, and $q=4$ gives $31$.`,R`$-11\lt -10$ and $31>25$ are outside the range, so the answer is $\{-4,3,10,17,24\}$.`]) },
+ { id:'t1q6', type:'mc', q:R`Which set is the class $[3]_5$?`, opts:[R`$\{x\in\mathbb{Z}:\ x=5q+3,\ q\in\mathbb{Z}\}$`,R`$\{x\in\mathbb{Z}:\ x=3q+5,\ q\in\mathbb{Z}\}$`,R`$\{x\in\mathbb{Z}:\ x=5q+3,\ q\in\mathbb{Z}^+\}$`,R`$\{x\in\mathbb{Z}:\ x=3q,\ q\in\mathbb{Z}\}$`], ans:0,
+   sol:S([R`$[r]_m$ is the set of integers $mq+r$ with $q$ <em>any integer</em> (negatives allowed).`,R`For $m=5$, $r=3$: $x=5q+3$ with $q\in\mathbb{Z}$.`,R`Option 3 restricts $q$ to positive integers, so it misses $-2,-7,\ldots$`]) },
+ { id:'t1q7', type:'mc', q:R`Which of these numbers is <strong>not</strong> in the class $[4]_9$?`, opts:[R`$13$`,R`$-5$`,R`$31$`,R`$38$`], ans:3,
+   sol:S([R`Test $x-4$ for divisibility by $9$.`,R`$13-4=9$ &#10003;, $\;-5-4=-9$ &#10003;, $\;31-4=27$ &#10003;, but $38-4=34$ is not a multiple of $9$.`,R`So $38\notin[4]_9$ (it is in $[2]_9$).`]) },
+ { id:'t1q8', type:'mc', q:R`What is $[2]_6\cap[5]_6$?`, opts:[R`The empty set, because the classes of a partition never overlap`,R`$\{2,5\}$`,R`$[1]_6$`,R`$[7]_6$`], ans:0,
+   sol:S([R`By Theorem 1, every integer lies in exactly one class mod $6$.`,R`So two different classes have no common element: $[2]_6\cap[5]_6=\varnothing$.`,R`(Indeed $[7]_6=[1]_6$ is a different class again.)`]) },
+ { id:'t1q9', type:'num', q:R`How many integers $x$ with $-30\le x\le30$ belong to $[1]_7$?`, ans:9,
+   sol:S([R`$x=7q+1$. For $x\ge-30$: $7q\ge-31$, so $q\ge-4$. For $x\le30$: $7q\le29$, so $q\le4$.`,R`So $q=-4,-3,\ldots,4$, which is $9$ values: $-27,-20,-13,-6,1,8,15,22,29$.`,R`The answer is $\mathbf{9}$.`]) },
+ { level:'C. Congruence and reasoning', id:'t1q10', type:'num', q:R`Find the smallest integer $x>50$ with $x\equiv3\pmod8$.`, ans:51,
+   sol:S([R`Members of $[3]_8$: $3,11,19,27,35,43,51,\ldots$`,R`The first one above $50$ is $\mathbf{51}$ ($=8\times6+3$).`]) },
+ { id:'t1q11', type:'mc', q:R`Which of these congruences is <strong>false</strong>?`, opts:[R`$38\equiv-2\pmod8$`,R`$25\equiv-4\pmod9$`,R`$100\equiv0\pmod{25}$`,R`$-7\equiv14\pmod7$`], ans:1,
+   sol:S([R`Use the difference test: is the difference a multiple of the modulus?`,R`$38-(-2)=40=8\times5$ &#10003;. $\;25-(-4)=29$, not a multiple of $9$ &#10007;. $\;100-0=100=25\times4$ &#10003;. $\;-7-14=-21=7\times(-3)$ &#10003;.`,R`So $25\equiv-4\pmod9$ is false.`]) },
+ { id:'t1q12', type:'num', q:R`For how many integers $m>1$ is $100\equiv16\pmod m$?`, ans:11,
+   sol:S([R`$100\equiv16\pmod m$ means $m\mid100-16=84$.`,R`$84=2^2\times3\times7$ has $(2+1)(1+1)(1+1)=12$ factors (box method from 2.2).`,R`We need $m>1$, so remove the factor $1$: $12-1=\mathbf{11}$.`]) },
+ { id:'t1q13', type:'num', q:P(R`$m$ is an integer greater than $1$ with $50\equiv35\pmod m$ and $70\equiv45\pmod m$.`,R`<strong>Question:</strong> find the largest possible value of $m$.`), ans:5,
+   sol:S([R`$m\mid50-35=15$ and $m\mid70-45=25$. So $m$ is a common factor of $15$ and $25$.`,R`$F(15)\cap F(25)=\{1,5\}$, so $\text{HCF}(15,25)=5$.`,R`The largest $m$ is $\mathbf{5}$.`]) },
+ { id:'t1q14', type:'num', q:P(R`A number leaves remainder $3$ when divided by $5$, and remainder $4$ when divided by $7$.`,R`<strong>Question:</strong> what is the smallest positive such number?`), ans:18,
+   sol:S([R`Members of $[3]_5$: $3,8,13,18,23,\ldots$`,R`Check each mod $7$: $3\to3,\ 8\to1,\ 13\to6,\ 18\to4$.`,R`$18=2\times7+4$ &#10003; and $18=3\times5+3$ &#10003;. The smallest is $\mathbf{18}$.`]) }
+];
+
+EX.t2=[
+ { level:'A. Adding on the clock', id:'t2q1', type:'num', q:R`Find $(86+79)\bmod 9$. (Reduce first, then add.)`, ans:3,
+   sol:S([R`$86=9\times9+5$, so $86\equiv5$. $\;79=9\times8+7$, so $79\equiv7$.`,R`$5+7=12\equiv3\pmod9$.`,R`Check: $86+79=165=9\times18+3$. &#10003; The answer is $\mathbf{3}$.`]) },
+ { id:'t2q2', type:'num', q:R`Find $(-23+19)\bmod7$ by reducing each number first.`, ans:3,
+   sol:S([R`$-23\equiv5\pmod7$ because $-23+28=5$. $\;19\equiv5$.`,R`$5+5=10\equiv3\pmod7$.`,R`Check: $-23+19=-4\equiv3$. &#10003; The answer is $\mathbf{3}$.`]) },
+ { id:'t2q3', type:'num', q:R`Find $4-11\pmod{13}$ as a number from $0$ to $12$.`, ans:6,
+   sol:S([R`The additive inverse of $11$ mod $13$ is $13-11=2$.`,R`$4-11\equiv4+2=6\pmod{13}$.`,R`Check: $4-11=-7$ and $-7+13=6$. &#10003;`]) },
+ { id:'t2q4', type:'num', q:R`What is the additive inverse of $7$ modulo $11$? (A number $x$ from $0$ to $10$ with $7+x\equiv0$.)`, ans:4,
+   sol:S([R`We need $7+x\equiv0\pmod{11}$, so $7+x$ must be a multiple of $11$.`,R`$7+4=11$, so $x=\mathbf{4}$.`]) },
+ { id:'t2q5', type:'num', q:R`In $\mathbb{Z}_8$ (numbers $0$ to $7$), solve $x+5\equiv2\pmod8$.`, ans:5,
+   sol:S([R`Subtract $5$ by adding its inverse $8-5=3$: $x\equiv2+3=5$.`,R`Check: $5+5=10=8+2\equiv2$. &#10003; So $x=\mathbf{5}$.`]) },
+ { id:'t2q6', type:'mc', q:R`Why may we replace $4217$ by its remainder mod $9$ <strong>before</strong> adding it to another number?`, opts:[R`Because if $a'=a+9k$ then $a'+b=(a+b)+9k$, which is in the same class as $a+b$`,R`Because $9$ is an odd number`,R`Because remainders are always smaller than the original numbers`,R`Because addition is commutative`], ans:0,
+   sol:S([R`The key fact is Theorem 2: changing a number by a multiple of $m$ changes the sum by a multiple of $m$.`,R`That is exactly the statement in the first option. The other options are true or false facts, but they do not justify the reduction.`]) },
+ { id:'t2q7', type:'mc', q:R`Which of these does $(\mathbb{Z}_m,+)$ have, but the positive integers $\mathbb{Z}^+$ with $+$ do <strong>not</strong>?`, opts:[R`Closure`,R`Associativity`,R`Commutativity`,R`An identity element and an additive inverse for every element`], ans:3,
+   sol:S([R`$\mathbb{Z}^+$ is closed, associative and commutative under $+$.`,R`But $\mathbb{Z}^+$ has no $0$ and no negatives, so there is no identity element and no inverses.`,R`On $\mathbb{Z}_m$ the class $[0]$ is the identity and $[m-a]$ is the inverse of $[a]$.`]) },
+ { level:'B. Calendars and applications', id:'t2q8', type:'text', q:R`Today is a Wednesday. What day of the week will it be in $100$ days' time?`, ans:['friday','fri'],
+   sol:S([R`$100=14\times7+2$, so $100\equiv2\pmod7$.`,R`Two days after Wednesday is <strong>Friday</strong>.`]) },
+ { id:'t2q9', type:'num', q:P(R`Jan 1st is a Friday in a leap year. Assume that every fourth year is a leap year and no other rule applies.`,R`<strong>Question:</strong> how many years later will Jan 1st next be a Friday?`), ans:5,
+   sol:S([R`The shift from Jan 1st of one year to the next is $365\equiv1$ day (normal year) or $366\equiv2$ days (leap year).`,R`Year $0$ is leap: after $1$ year $+2$. Years $1,2,3$ are normal: after $2,3,4$ years $+1$ each. Totals: $2,\ 3,\ 4,\ 5$.`,R`Year $4$ is leap: after $5$ years the total is $5+2=7\equiv0\pmod7$.`,R`So Jan 1st is a Friday again after $\mathbf{5}$ years. (Example: Jan 1st 2016 and Jan 1st 2021.)`]) },
+ { id:'t2q10', type:'text', q:P(R`1 January 2027 is a Friday. The year 2028 is a leap year.`,R`<strong>Question:</strong> what day of the week will 1 January 2030 be?`), ans:['tuesday','tue'],
+   sol:S([R`From 1 Jan 2027 to 1 Jan 2030 the years 2027, 2028 and 2029 pass.`,R`Days: $365+366+365=1096$. And $1096=7\times156+4$, so the shift is $4\pmod7$.`,R`Four days after Friday is <strong>Tuesday</strong>.`]) },
+ { id:'t2q11', type:'num', q:R`Find the remainder when $1+2+3+\cdots+100$ is divided by $7$.`, ans:3,
+   sol:S([R`$1+2+\cdots+100=\dfrac{100\times101}{2}=5050$.`,R`$5050=7\times721+3$, since $7\times721=5047$.`,R`The remainder is $\mathbf{3}$.`]) },
+ { id:'t2q12', type:'num', q:R`How many numbers $x$ in $\{0,1,2,\ldots,11\}$ satisfy $2x\equiv6\pmod{12}$?`, ans:2,
+   sol:S([R`$2x\equiv6$ means $12\mid2x-6$, so $6\mid x-3$.`,R`$x=3$ and $x=9$ both work ($6=6$ and $18=12+6$). Others in the range do not.`,R`So there are $\mathbf{2}$ solutions. (Unlike $x+a\equiv b$, a multiplied equation can have two solutions.)`]) },
+ { id:'t2q13', type:'num', q:P(R`A 12-hour clock shows $9$ o'clock.`,R`<strong>Question:</strong> what hour (from $1$ to $12$) does it show after $500$ more hours?`), ans:5,
+   sol:S([R`$9+500=509$.`,R`$509=12\times42+5$, since $12\times42=504$.`,R`The clock shows $\mathbf{5}$ o'clock.`]) },
+ { id:'t2q14', type:'num', q:P(R`When $n$ is divided by $7$ the remainder is $4$. When $m$ is divided by $7$ the remainder is $5$.`,R`<strong>Question:</strong> what is the remainder when $3n+2m$ is divided by $7$?`), ans:1,
+   sol:S([R`By Theorems 2 and 3 we may use the remainders: $3n+2m\equiv3\times4+2\times5=22$.`,R`$22=7\times3+1$, so the remainder is $\mathbf{1}$.`,R`Check with $n=4$, $m=5$: $3\times4+2\times5=22$. &#10003;`]) }
+];
+
+EX.t3=[
+ { level:'A. Multiplying on the clock', id:'t3q1', type:'num', q:R`Find $(37\times46)\bmod 9$.`, ans:1,
+   sol:S([R`Reduce first: $37=9\times4+1\equiv1$ and $46=9\times5+1\equiv1$.`,R`$37\times46\equiv1\times1=1\pmod9$.`,R`Check: $37\times46=1702=9\times189+1$. &#10003;`]) },
+ { id:'t3q2', type:'num', q:R`What is the units digit of $17\times23\times94$?`, ans:4,
+   sol:S([R`The units digit is the remainder mod $10$, so reduce each factor: $17\equiv7$, $23\equiv3$, $94\equiv4$.`,R`$7\times3=21\equiv1$, and $1\times4=4$.`,R`The units digit is $\mathbf{4}$. (Check: $17\times23\times94=36\,754$.)`]) },
+ { id:'t3q3', type:'num', q:R`What is $(123\,456\,789\times987\,654\,321)\bmod10$?`, ans:9,
+   sol:S([R`Only the units digits matter: $9$ and $1$.`,R`$9\times1=9$, so the answer is $\mathbf{9}$.`]) },
+ { id:'t3q4', type:'mc', q:R`Modulo $12$, which pair of non-zero numbers is a pair of zero divisors (the product is $\equiv0$)?`, opts:[R`$3$ and $5$`,R`$4$ and $6$`,R`$5$ and $7$`,R`$2$ and $7$`], ans:1,
+   sol:S([R`Compute each product mod $12$: $15\equiv3$, $\;24\equiv0$, $\;35\equiv11$, $\;14\equiv2$.`,R`Only $4\times6=24\equiv0$. Both $4$ and $6$ share a factor with $12$, which is why this can happen.`]) },
+ { level:'B. Cycles and units digits', id:'t3q5', type:'num', q:R`What is the units digit of $7^{2004}$?`, ans:1,
+   sol:S([R`Powers of $7$: $7^1=7,\ 7^2=49,\ 7^3=343,\ 7^4=2401$. Units digits $7,9,3,1$, then the pattern repeats.`,R`The period is $4$ and $4\mid2004$, so $7^{2004}=(7^4)^{501}\equiv1^{501}=1\pmod{10}$.`,R`The units digit is $\mathbf{1}$.`]) },
+ { id:'t3q6', type:'num', q:R`What is the units digit of $3^{2025}$?`, ans:3,
+   sol:S([R`Units digits of powers of $3$: $3,9,7,1$, period $4$.`,R`$2025=4\times506+1$, so $3^{2025}$ has the same units digit as $3^1$.`,R`The answer is $\mathbf{3}$.`]) },
+ { id:'t3q7', type:'num', q:R`What is the units digit of $9^{99}$?`, ans:9,
+   sol:S([R`$9^1\equiv9$ and $9^2=81\equiv1\pmod{10}$. The period is $2$.`,R`$99$ is odd, so $9^{99}=(9^2)^{49}\times9\equiv9$.`,R`The units digit is $\mathbf{9}$. (Also: $9\equiv-1$ and $(-1)^{99}=-1\equiv9$.)`]) },
+ { id:'t3q8', type:'num', q:R`What is the remainder when $2^{164}$ is divided by $7$?`, ans:4,
+   sol:S([R`Powers of $2$ mod $7$: $2,\ 4,\ 1,\ 2,\ 4,\ 1,\ldots$ The period is $3$ and $2^3=8\equiv1$.`,R`$164=3\times54+2$, so $2^{164}=(2^3)^{54}\times2^2\equiv1\times4=4$.`,R`The remainder is $\mathbf{4}$.`]) },
+ { id:'t3q9', type:'mc', q:R`What is the period of the units digits of the powers of $2$ ($2,4,8,6,2,4,\ldots$)?`, opts:[R`$2$`,R`$4$`,R`$5$`,R`$10$`], ans:1,
+   sol:S([R`The digits $2,4,8,6$ repeat, then $2,4,8,6$ again. The block has $4$ digits.`,R`So the period is $\mathbf{4}$.`]) },
+ { level:'C. Remainders of powers and challenges', id:'t3q10', type:'num', q:R`Find the remainder when $11^{100}$ is divided by $12$.`, ans:1,
+   sol:S([R`$11\equiv-1\pmod{12}$.`,R`$11^{100}\equiv(-1)^{100}=1$ because $100$ is even.`,R`The remainder is $\mathbf{1}$.`]) },
+ { id:'t3q11', type:'num', q:R`Find the remainder when $4^{100}$ is divided by $7$.`, ans:4,
+   sol:S([R`Powers of $4$ mod $7$: $4,\ 2,\ 1,\ 4,\ldots$ The period is $3$.`,R`$100=3\times33+1$, so $4^{100}\equiv4^1=4$.`,R`The remainder is $\mathbf{4}$.`]) },
+ { id:'t3q12', type:'num', q:R`What is the units digit of $2^{100}+3^{100}+7^{100}$?`, ans:8,
+   sol:S([R`Each has period $4$ in the units digit, and $4\mid100$.`,R`$2^{100}\to$ units digit of $2^4=6$. $\;3^{100}\to3^4=81\to1$. $\;7^{100}\to7^4=2401\to1$.`,R`Sum of the units digits: $6+1+1=8$. The answer is $\mathbf{8}$.`]) },
+ { id:'t3q13', type:'num', q:P(R`Find the <strong>last two digits</strong> of $7^{2004}$, written as a number. (If the last two digits are $07$, type $7$.)`,R`Hint: work modulo $100$ and start with $7^4$.`), ans:1,
+   sol:S([R`$7^2=49$ and $7^4=2401\equiv1\pmod{100}$.`,R`$2004=4\times501$, so $7^{2004}=(7^4)^{501}\equiv1^{501}=1\pmod{100}$.`,R`The last two digits are $01$, so the answer is $\mathbf{1}$.`]) },
+ { id:'t3q14', type:'num', q:R`For how many values of $n$ from $1$ to $100$ does $2^n$ have units digit $4$?`, ans:25,
+   sol:S([R`The units digits of $2^n$ for $n=1,2,3,4,\ldots$ are $2,4,8,6,2,4,8,6,\ldots$ The digit $4$ appears when $n\equiv2\pmod4$.`,R`$n=2,6,10,\ldots,98$ is $\dfrac{98-2}{4}+1=25$ values.`,R`The answer is $\mathbf{25}$.`]) },
+ { id:'t3q15', type:'num', q:R`What is the smallest positive integer $n$ such that $3^n\equiv1\pmod7$?`, ans:6,
+   sol:S([R`Powers of $3$ mod $7$: $3^1=3,\ 3^2=9\equiv2,\ 3^3\equiv6,\ 3^4\equiv18\equiv4,\ 3^5\equiv12\equiv5,\ 3^6\equiv15\equiv1$.`,R`The first time we reach $1$ is $n=\mathbf{6}$. (This is the longest possible cycle mod $7$, a hint of Fermat's theorem in Step 4.)`]) }
+];
+
+EX.t4=[
+ { level:'A. Inverses and zero divisors', id:'t4q1', type:'num', q:R`Find the inverse of $4$ modulo $9$: a number $x$ from $1$ to $8$ with $4x\equiv1\pmod9$.`, ans:7,
+   sol:S([R`$\text{HCF}(4,9)=1$, so an inverse exists.`,R`Scan $4\times k$ mod $9$: $4,8,3,7,2,6,1,\ldots$ The value $1$ appears at $k=7$ ($4\times7=28=27+1$).`,R`The inverse is $\mathbf{7}$.`]) },
+ { id:'t4q2', type:'mc', q:R`Which of these numbers has <strong>no</strong> multiplicative inverse modulo $12$?`, opts:[R`$5$`,R`$7$`,R`$8$`,R`$11$`], ans:2,
+   sol:S([R`By Theorem 4, $a$ has an inverse mod $12$ exactly when $\text{HCF}(a,12)=1$.`,R`$\text{HCF}(5,12)=\text{HCF}(7,12)=\text{HCF}(11,12)=1$, but $\text{HCF}(8,12)=4$.`,R`So $8$ has no inverse.`]) },
+ { id:'t4q3', type:'num', q:R`How many of the numbers $1,2,\ldots,11$ have a multiplicative inverse modulo $12$?`, ans:4,
+   sol:S([R`We need $\text{HCF}(a,12)=1$. Since $12=2^2\times3$, $a$ must be divisible by neither $2$ nor $3$.`,R`Those are $1,5,7,11$.`,R`The answer is $\mathbf{4}$.`]) },
+ { id:'t4q4', type:'num', q:R`Solve $5x\equiv3\pmod7$ for $x\in\{0,1,\ldots,6\}$.`, ans:2,
+   sol:S([R`The inverse of $5$ mod $7$ is $3$ (since $5\times3=15\equiv1$).`,R`Multiply both sides by $3$: $x\equiv9\equiv2\pmod7$.`,R`Check: $5\times2=10\equiv3$. &#10003; So $x=\mathbf{2}$.`]) },
+ { id:'t4q5', type:'mc', q:R`Why does $6x\equiv1\pmod9$ have <strong>no</strong> solution?`, opts:[R`$\text{HCF}(6,9)=3$, and $3$ divides both $9$ and $6x$, so it would have to divide $1$`,R`Because $9$ is odd`,R`Because $6>1$`,R`Because $9$ is not a prime, so no equation can be solved`], ans:0,
+   sol:S([R`If $6x\equiv1\pmod9$ then $9\mid6x-1$. But $3\mid9$ and $3\mid6x$, so $3\mid1$, which is false.`,R`This is the second half of the proof of Theorem 4.`]) },
+ { level:'B. Fermat and Wilson', id:'t4q6', type:'num', q:R`Find the remainder when $5^{100}$ is divided by $7$.`, ans:2,
+   sol:S([R`$7$ is prime and $7\nmid5$, so $5^6\equiv1\pmod7$ (Fermat).`,R`$100=6\times16+4$, so $5^{100}\equiv5^4=625$.`,R`$625=7\times89+2$, so the remainder is $\mathbf{2}$.`]) },
+ { id:'t4q7', type:'num', q:R`Find the remainder when $2^{100}$ is divided by $11$.`, ans:1,
+   sol:S([R`$11$ is prime, so $2^{10}\equiv1\pmod{11}$.`,R`$100=10\times10$, so $2^{100}=(2^{10})^{10}\equiv1$.`,R`The remainder is $\mathbf{1}$.`]) },
+ { id:'t4q8', type:'num', q:R`Find the remainder when $3^{200}$ is divided by $13$.`, ans:9,
+   sol:S([R`Fermat gives $3^{12}\equiv1$, but the true cycle is shorter: $3^3=27=2\times13+1\equiv1$.`,R`$200=3\times66+2$, so $3^{200}=(3^3)^{66}\times3^2\equiv9$.`,R`The remainder is $\mathbf{9}$.`]) },
+ { id:'t4q9', type:'num', q:R`Find the remainder when $10!=1\times2\times3\times\cdots\times10$ is divided by $11$.`, ans:10,
+   sol:S([R`$11$ is prime. By Wilson's Theorem, $(p-1)!\equiv-1\pmod p$.`,R`$10!\equiv-1\equiv10\pmod{11}$.`,R`The remainder is $\mathbf{10}$. (Or use the pairing: $2\cdot6,\ 3\cdot4,\ 5\cdot9,\ 7\cdot8$ are all $\equiv1$, leaving $1\times10$.)`]) },
+ { id:'t4q10', type:'num', q:R`Find the remainder when $12!$ is divided by $13$.`, ans:12,
+   sol:S([R`$13$ is prime, so Wilson's Theorem gives $12!\equiv-1\pmod{13}$.`,R`$-1\equiv12$, so the remainder is $\mathbf{12}$.`]) },
+ { id:'t4q11', type:'num', q:R`Find the remainder when $1^6+2^6+3^6+4^6+5^6+6^6$ is divided by $7$.`, ans:6,
+   sol:S([R`$7$ is prime and none of $1,\ldots,6$ is a multiple of $7$, so each $a^6\equiv1\pmod7$ (Fermat).`,R`The sum is $\equiv1+1+1+1+1+1=6$.`,R`The remainder is $\mathbf{6}$.`]) },
+ { level:'C. Primes inside the classes', id:'t4q12', type:'mc', q:R`A prime $p$ is greater than $3$. Which residue classes mod $6$ can it belong to?`, opts:[R`$[1]_6$ or $[5]_6$`,R`$[0]_6$ or $[3]_6$`,R`$[2]_6$ or $[4]_6$`,R`Any class except $[0]_6$`], ans:0,
+   sol:S([R`Classes $[0],[2],[4]$ contain only even numbers, and $[3]_6$ contains only multiples of $3$.`,R`A prime above $3$ is neither even nor a multiple of $3$, so it lies in $[1]_6$ or $[5]_6$ (Theorem 6).`]) },
+ { id:'t4q13', type:'num', q:R`What is the remainder when the square of a prime greater than $3$ is divided by $24$?`, ans:1,
+   sol:S([R`Theorem 7: $24\mid p^2-1$ for every prime $p>3$.`,R`So $p^2\equiv1\pmod{24}$. Example: $29^2=841=24\times35+1$.`,R`The remainder is $\mathbf{1}$.`]) },
+ { id:'t4q14', type:'mc', q:R`For which modulus $m$ does $x^2\equiv1\pmod m$ have <strong>more than two</strong> solutions with $1\le x\le m-1$?`, opts:[R`$m=7$`,R`$m=11$`,R`$m=13$`,R`$m=15$`], ans:3,
+   sol:S([R`For a prime $m=p$, $p\mid(x-1)(x+1)$ forces $x\equiv1$ or $x\equiv-1$: only two solutions. So $7,11,13$ have exactly two.`,R`For $m=15$: $4^2=16\equiv1$ and $11^2=121=8\times15+1\equiv1$, as well as $1$ and $14$. Four solutions.`,R`A composite modulus has zero divisors, so extra square roots of $1$ can appear.`]) },
+ { id:'t4q15', type:'num', q:R`How many primes $p$ with $5\le p\le50$ satisfy $p\equiv1\pmod6$?`, ans:6,
+   sol:S([R`The numbers $\equiv1\pmod6$ between $5$ and $50$ are $7,13,19,25,31,37,43,49$.`,R`Remove the composites $25=5^2$ and $49=7^2$.`,R`The primes are $7,13,19,31,37,43$: $\mathbf{6}$ of them.`]) }
+];
+
+EX.t5=[
+ { level:'A. Consecutive integers, digit sums and squares', id:'t5q1', type:'num', q:P(R`<span class="qlabel">Units digit of a product</span>`,R`Find the units digit of the product of <strong>any</strong> $5$ consecutive positive integers (for example $5\times6\times7\times8\times9$).`), ans:0,
+   sol:S([R`Among any $5$ consecutive integers exactly one is a multiple of $5$ (the $5$ remainders mod $5$ are all different, so one is $0$).`,R`At least two of them are even, so the product is also even.`,R`A multiple of $5$ times an even number is a multiple of $10$, and $\text{HCF}(2,5)=1$. So the product is divisible by $10$ and ends in $\mathbf{0}$.`,R`Check: $5\times6\times7\times8\times9=15\,120$.`]) },
+ { id:'t5q2', type:'mc', q:R`Which argument is a <strong>complete proof</strong> that the product of $5$ consecutive positive integers always ends in $0$?`, opts:[R`One of the integers is a multiple of $5$ and at least one is even, so the product is a multiple of $5\times2=10$`,R`$5\times6\times7\times8\times9$ ends in $0$, so all such products do`,R`The units digits of five consecutive integers include $0$, so the product ends in $0$`,R`$5\times2=10$, and every product contains these factors`], ans:0,
+   sol:S([R`A proof must cover <em>every</em> case, not one example (option 2).`,R`Option 3 is false: the units digits of $11,12,13,14,15$ do not include $0$, yet the product still ends in $0$ for a different reason.`,R`Option 4 does not say why the factors $5$ and $2$ are present. Option 1 gives the reason: a multiple of $5$ <em>exists</em> by the residue argument, and an even number exists among any two consecutive integers.`]) },
+ { id:'t5q3', type:'num', q:R`What is the remainder when $987\,654\,321$ is divided by $9$?`, ans:0,
+   sol:S([R`By casting out nines, the remainder equals the remainder of the digit sum.`,R`$9+8+7+6+5+4+3+2+1=45=9\times5$.`,R`The remainder is $\mathbf{0}$.`]) },
+ { id:'t5q4', type:'num', q:R`Without a calculator, find the remainder when $8765\times4321$ is divided by $9$.`, ans:8,
+   sol:S([R`Digit sums: $8+7+6+5=26\equiv8\pmod9$ and $4+3+2+1=10\equiv1\pmod9$.`,R`Multiply the remainders: $8\times1=8$.`,R`The remainder is $\mathbf{8}$. (Check: $8765\times4321=37\,873\,565$, and its digit sum is $44\equiv8\pmod9$. &#10003;)`]) },
+ { id:'t5q5', type:'mc', q:R`Which of these numbers can <strong>not</strong> be a perfect square?`, opts:[R`$2025$`,R`$4096$`,R`$1521$`,R`$5678$`], ans:3,
+   sol:S([R`A perfect square leaves remainder $0$ or $1$ on division by $4$.`,R`$2025\equiv1$, $\;4096\equiv0$, $\;1521\equiv1$, but $5678=4\times1419+2\equiv2$.`,R`So $5678$ cannot be a perfect square. (The other three are $45^2$, $64^2$ and $39^2$.)`]) },
+ { id:'t5q6', type:'num', q:R`What is the <strong>largest</strong> integer $N$ such that the product of every $4$ consecutive positive integers is divisible by $N$?`, ans:24,
+   sol:S([R`Among $4$ consecutive integers there is a multiple of $4$, another even number (so a factor $2$), and a multiple of $3$. So $4\times2\times3=24$ divides every such product.`,R`The product $1\times2\times3\times4=24$ is one of them, so $N$ cannot exceed $24$.`,R`The largest $N$ is $\mathbf{24}$.`]) },
+ { level:'B. Check digits', id:'t5q7', type:'mc', q:P(R`<span class="qlabel">US Postal Money Order</span>`,R`The eleven digits are $1$ to $9$, and $a_1+\cdots+a_{10}\equiv a_{11}\pmod9$.`,R`<strong>Question:</strong> will the machine pick up <em>every</em> single-digit error?`), opts:[R`Yes: a changed digit differs by $d$ with $1\le|d|\le8$, and $9\nmid d$, so the equation fails`,R`No: changing a digit from $1$ to $9$ is missed`,R`Yes, but only errors in the first ten digits`,R`No: the machine only checks the last digit`], ans:0,
+   sol:S([R`Changing any one of $a_1,\ldots,a_{10}$ by $d$ changes the left side by $d$, and the right side is untouched. Changing $a_{11}$ by $d$ changes the right side by $d$. Either way the two sides differ by $d$.`,R`The digits are in $\{1,\ldots,9\}$, so $1\le|d|\le8$, and no such $d$ is a multiple of $9$. The congruence fails: the error is detected.`,R`Even $1\to9$ changes by $8$ and $9\nmid8$. So the answer is <strong>yes, every single-digit error is detected</strong>.`]) },
+ { id:'t5q8', type:'num', q:P(R`<span class="qlabel">Airline ticket</span>`,R`The number formed by omitting the check digit must be congruent to the check digit mod $7$. The code $1234$ is valid ($123\equiv4\pmod7$).`,R`<strong>Question:</strong> changing only the <strong>first</strong> digit gives another valid code. What is the new first digit?`), ans:8,
+   sol:S([R`Changing the first digit by $d$ changes the number $123$ by $d\times100$. We need $7\mid100d$, and $\text{HCF}(100,7)=1$, so $7\mid d$.`,R`With digits $0$ to $9$, $d=\pm7$. Starting from $1$: $1+7=8$ (and $1-7\lt 0$ is impossible).`,R`Check: $823=7\times117+4\equiv4$. &#10003; So the new digit is $\mathbf{8}$ and $8234$ is valid.`]) },
+ { id:'t5q9', type:'num', q:R`The airline code $1234$ is valid. If exactly one digit (in any of the four positions) is changed to a different digit, how many of these errors are <strong>not</strong> detected?`, ans:2,
+   sol:S([R`An error is missed when the change $d$ in a digit is a multiple of $7$ (weights $10^k$ are coprime to $7$), so $d=\pm7$.`,R`Digit $1\to8$ works. Digit $2\to9$ works. Digit $3$: $3\pm7$ leaves $0$ to $9$, so no. Check digit $4$: $4\pm7$ leaves $0$ to $9$, so no.`,R`There are $\mathbf{2}$ undetected errors: $8234$ and $1934$.`]) },
+ { id:'t5q10', type:'num', q:P(R`<span class="qlabel">US Bank code</span>`,R`$7a_1+3a_2+9a_3+7a_4+3a_5+9a_6+7a_7+3a_8\equiv a_9\pmod{10}$. The code $273456782$ is valid.`,R`<strong>Question:</strong> swap the first two digits to get $723456782$. What is $\big(7a_1+3a_2+\cdots+3a_8\big)\bmod10$ for the new code?`), ans:2,
+   sol:S([R`New digits $7,2,3,4,5,6,7,8$: $7\times7+3\times2+9\times3+7\times4+3\times5+9\times6+7\times7+3\times8=49+6+27+28+15+54+49+24=252$.`,R`$252\bmod10=\mathbf{2}$.`,R`The check digit is still $2$, so the machine <em>accepts</em> the swapped code: the error is not detected.`]) },
+ { id:'t5q11', type:'mc', q:R`Does the US Bank scheme detect <strong>every</strong> adjacent transposition error?`, opts:[R`Yes, always`,R`No: it misses swaps of two digits that differ by $5$`,R`No: it misses swaps of two digits that differ by $2$`,R`No: it only misses a swap of the first two digits`], ans:1,
+   sol:S([R`Swapping neighbours with weights $w,w'$ changes the sum by $(w-w')(a_{i+1}-a_i)$.`,R`The weight differences are $4,-6,2$. A change of $d=5$ in the digits gives $20,-30,10$, all multiples of $10$, so the error is missed.`,R`Other differences $d$ do not work: $4d,6d,2d$ are multiples of $10$ only when $5\mid d$, that is, $d=\pm5$.`]) },
+ { id:'t5q12', type:'num', q:P(R`<span class="qlabel">ISBN-10</span>`,R`The ISBN $0306406152$ is valid: $10a_1+9a_2+\cdots+2a_9+a_{10}\equiv0\pmod{11}$.`,R`<strong>Question:</strong> swap the first two digits to get $3006406152$. What is the weighted sum $10a_1+9a_2+\cdots+a_{10}$ of the new code, modulo $11$?`), ans:3,
+   sol:S([R`The original sum is $132=11\times12$.`,R`Swapping $a_1=0$ and $a_2=3$ changes the sum by $(10-9)(a_2-a_1)=1\times3=3$. The new sum is $135$.`,R`$135=11\times12+3$, so the answer is $\mathbf{3}$, not $0$: the machine detects the error.`]) },
+ { id:'t5q13', type:'mc', q:R`Why does the ISBN-10 scheme detect <strong>every</strong> adjacent swap of different digits?`, opts:[R`Neighbouring weights differ by $1$, so a swap changes the sum by $a_{i+1}-a_i$, a non-zero number from $-9$ to $9$, which is never a multiple of the prime $11$`,R`Because $11$ is an odd number`,R`Because the weights are all even`,R`Because the check digit can be $X$`], ans:0,
+   sol:S([R`The change in the weighted sum is $(w_i-w_{i+1})(a_{i+1}-a_i)=1\times(a_{i+1}-a_i)$.`,R`If the digits differ, $1\le|a_{i+1}-a_i|\le9\lt 11$, so $11$ cannot divide it.`,R`Compare with mod $10$: weight differences share a factor with $10$, which allowed misses.`]) },
+ { level:'C. Challenge', id:'t5q14', type:'num', q:R`For the valid US Bank code $273456782$, how many of the adjacent swaps of two <strong>different</strong> digits (all $8$ neighbouring pairs, including the last two digits) are <strong>not</strong> detected?`, ans:1,
+   sol:S([R`A swap is missed exactly when the two swapped digits differ by $5$.`,R`The neighbouring pairs are $(2,7),(7,3),(3,4),(4,5),(5,6),(6,7),(7,8),(8,2)$ with differences $5,4,1,1,1,1,1,6$.`,R`Only $(2,7)$ differs by $5$. So $\mathbf{1}$ swap is missed.`]) },
+ { id:'t5q15', type:'num', q:P(R`A scheme works modulo $10$ and a digit with weight $w$ (where $1\le w\le9$) is changed by $d=2$.`,R`<strong>Question:</strong> for which weight $w$ would the error go undetected?`), ans:5,
+   sol:S([R`The sum changes by $wd=2w$. The error is missed when $10\mid2w$, that is, $5\mid w$.`,R`In the range $1$ to $9$ only $w=\mathbf{5}$ works ($2\times5=10$).`]) },
+ { id:'t5q16', type:'num', q:P(R`A check-digit scheme uses all weights equal to $1$ and the digits $0$ to $9$. A single-digit error changes the sum by $d$ with $1\le|d|\le9$.`,R`<strong>Question:</strong> what is the <strong>smallest prime modulus</strong> that detects every single-digit error?`), ans:11,
+   sol:S([R`The error is missed exactly when $m\mid d$.`,R`Look at the small primes: $2,3,5,7$ each divide some change $d$ with $1\le|d|\le9$ (for example $m=7$ misses $d=7$, and $m=5$ misses $d=5$). So they fail.`,R`The smallest prime larger than every possible change is $11$. This is why ISBN-10 uses $11$. The answer is $\mathbf{11}$.`]) },
+];
+EX.t6=[
+ { level:R`Level 1: Understanding and notation`, id:'h1', type:'mc', q:R`<p>Which set is equal to $[3]_5$?</p>`, opts:[R`$\{x:\ x=5q+3,\ q\in\mathbb{Z}\}$`,R`$\{x:\ x=3q+5,\ q\in\mathbb{Z}\}$`,R`$\{x:\ x=5q,\ q\in\mathbb{Z}^+\}$`,R`$\{3,5,8,13\}$`], ans:0,
+   sol:S([R`$[3]_5$ is the set of all integers that leave remainder $3$ when divided by $5$.`,R`That is $\{x:\ x=5q+3,\ q\in\mathbb{Z}\}=\{\ldots,-7,-2,3,8,13,\ldots\}$, negatives included.`]) },
+ { id:'h2', type:'num', q:R`Into how many classes does $\mathbb{Z}$ split when we sort by the remainder on division by $11$? In other words, find $n(\mathbb{Z}_{11})$.`, ans:11,
+   sol:S([R`The possible remainders are $0,1,\ldots,10$, and by Theorem 1 each integer lies in exactly one class.`,R`So $n(\mathbb{Z}_{11})=\mathbf{11}$.`]) },
+ { id:'h3', type:'mc', q:R`The remainder map $\varphi_5:\mathbb{Z}\to\{0,1,2,3,4\}$ sends each integer to its remainder mod $5$. Which statement is true?`, opts:[R`$\varphi_5(-3)=2$`,R`$\varphi_5(-3)=-3$`,R`$\varphi_5(-3)=3$`,R`$\varphi_5(-3)$ is undefined`], ans:0,
+   sol:S([R`$-3=5\times(-1)+2$, so the remainder is $2$.`,R`The remainder is never negative, and the map is defined for every integer.`]) },
+ { id:'h4', type:'num', q:R`What is the additive inverse of $5$ modulo $13$ (a number from $0$ to $12$)?`, ans:8,
+   sol:S([R`We need $5+x\equiv0\pmod{13}$.`,R`$5+8=13$, so the inverse is $\mathbf{8}$.`]) },
+ { id:'h5', type:'mc', q:R`Which statement is equivalent to $38\equiv17\pmod7$?`, opts:[R`$7$ divides $21$ (the difference $38-17$)`,R`$7$ divides $55$ (the sum $38+17$)`,R`$38$ and $17$ have the same quotient when divided by $7$`,R`$38-17$ is a prime`], ans:0,
+   sol:S([R`$a\equiv b\pmod m$ means $m\mid a-b$. Here $38-17=21=7\times3$.`,R`The remainders match too: $38=7\times5+3$ and $17=7\times2+3$. The <em>remainders</em> are the same, not the quotients.`]) },
+ { id:'h6', type:'mc', q:R`Modulo $8$ we have $2\times4\equiv0$. What does this tell us?`, opts:[R`There are zero divisors modulo $8$, because $\text{HCF}(2,8)>1$ and $\text{HCF}(4,8)>1$: $8$ is not prime`,R`The multiplication table of $\mathbb{Z}_8$ is wrong`,R`$2$ and $4$ must be $0$`,R`Every non-zero number mod $8$ has an inverse`], ans:0,
+   sol:S([R`Modulo a prime there are no zero divisors. A composite modulus like $8=2^3$ has them.`,R`$2$ and $4$ share the factor $2$ with $8$, so neither has an inverse (Theorem 4).`]) },
+ { id:'h7', type:'mc', q:R`Fermat's Little Theorem says that for a prime $p$ and an integer $a$ not divisible by $p$:`, opts:[R`$a^{p-1}\equiv1\pmod p$`,R`$a^{p}\equiv1\pmod p$`,R`$a^{p-1}\equiv a\pmod p$`,R`$a\times p\equiv1\pmod p$`], ans:0,
+   sol:S([R`Multiplying $1,2,\ldots,p-1$ by $a$ only shuffles them, so the products agree and $a^{p-1}(p-1)!\equiv(p-1)!$.`,R`Cancelling $(p-1)!$ gives $a^{p-1}\equiv1$. (Option 3 is the equivalent form for $a^p\equiv a$.)`]) },
+ { level:'Level 2: Skills', id:'h8', type:'set', q:P(R`List the elements of $[5]_8$ between $-20$ and $30$ (inclusive).`,R`Type the elements separated by commas.`), ans:'-19,-11,-3,5,13,21,29',
+   sol:S([R`$x=8q+5$. Try $q=-3,\ldots,3$: $-19,-11,-3,5,13,21,29$.`,R`$q=-4$ gives $-27\lt -20$ and $q=4$ gives $37>30$.`]) },
+ { id:'h9', type:'set', q:P(R`Using the factor set $F(n)$ from 2.2, list the set $\{x\in F(30):\ x\equiv1\pmod3\}$.`,R`Type the elements separated by commas.`), ans:'1,10',
+   sol:S([R`$F(30)=\{1,2,3,5,6,10,15,30\}$.`,R`Remainders mod $3$: $1\to1,\ 2\to2,\ 3\to0,\ 5\to2,\ 6\to0,\ 10\to1,\ 15\to0,\ 30\to0$.`,R`The set is $\{1,10\}$.`]) },
+ { id:'h10', type:'set', q:P(R`List the set $\{p\in\mathbb{P}:\ p\lt 30,\ p\equiv1\pmod4\}$, where $\mathbb{P}$ is the set of primes.`,R`Type the elements separated by commas.`), ans:'5,13,17,29',
+   sol:S([R`Primes below $30$: $2,3,5,7,11,13,17,19,23,29$.`,R`Those with remainder $1$ on division by $4$: $5=4+1,\ 13=12+1,\ 17=16+1,\ 29=28+1$.`,R`The set is $\{5,13,17,29\}$.`]) },
+ { id:'h11', type:'num', q:R`Find the remainder when $2^{100}+5^{100}$ is divided by $7$.`, ans:4,
+   sol:S([R`$2^3\equiv1$, $100=3\times33+1$, so $2^{100}\equiv2$.`,R`$5^6\equiv1$ (Fermat), $100=6\times16+4$, so $5^{100}\equiv5^4=625\equiv2$.`,R`Sum: $2+2=4$. The remainder is $\mathbf{4}$.`]) },
+ { id:'h12', type:'num', q:R`What is the units digit of $8^{2027}$?`, ans:2,
+   sol:S([R`Units digits of powers of $8$: $8,4,2,6$, then repeat. Period $4$.`,R`$2027=4\times506+3$, so the same as $8^3=512$: units digit $\mathbf{2}$.`]) },
+ { id:'h13', type:'num', q:R`Solve $4x\equiv5\pmod9$ for $x\in\{0,1,\ldots,8\}$.`, ans:8,
+   sol:S([R`The inverse of $4$ mod $9$ is $7$ ($4\times7=28\equiv1$).`,R`Multiply by $7$: $x\equiv35\equiv8\pmod9$.`,R`Check: $4\times8=32=27+5$. &#10003; So $x=\mathbf{8}$.`]) },
+ { id:'h14', type:'num', q:R`Find $(-45\times38+7)\bmod11$ as a number from $0$ to $10$.`, ans:2,
+   sol:S([R`$-45\equiv10$ (since $-45+55=10$) and $38\equiv5$.`,R`$10\times5=50\equiv6$, and $6+7=13\equiv2$.`,R`Check: $-45\times38+7=-1703=11\times(-155)+2$. The answer is $\mathbf{2}$.`]) },
+ { id:'h15', type:'num', q:R`Find the remainder when $2^{50}$ is divided by $9$.`, ans:4,
+   sol:S([R`Powers of $2$ mod $9$: $2,4,8,7,5,1$. The period is $6$ and $2^6=64\equiv1$.`,R`$50=6\times8+2$, so $2^{50}\equiv2^2=4$.`]) },
+ { level:'Level 3: Applications and challenges', id:'h16', type:'num', q:P(R`Find the last two digits of $3^{100}$, written as a number. (If they are $01$, type $1$.)`,R`Hint: work modulo $100$; compute $3^{10}$ first.`), ans:1,
+   sol:S([R`$3^{10}=59049\equiv49\pmod{100}$.`,R`$3^{20}=(3^{10})^2\equiv49^2=2401\equiv1\pmod{100}$.`,R`$100=20\times5$, so $3^{100}=(3^{20})^5\equiv1$. The last two digits are $01$: answer $\mathbf{1}$.`]) },
+ { id:'h17', type:'num', q:R`How many primes less than $100$ are congruent to $5$ modulo $6$?`, ans:12,
+   sol:S([R`By Theorem 6, every prime above $3$ is $\equiv1$ or $5\pmod6$.`,R`Primes below $100$ that are $\equiv5\pmod6$: $5,11,17,23,29,41,47,53,59,71,83,89$.`,R`There are $\mathbf{12}$. (The $\equiv1$ class has $11$ primes: $7,13,19,31,37,43,61,67,73,79,97$.)`]) },
+ { id:'h18', type:'text', q:P(R`1 January 2026 is a Thursday. The year 2028 is a leap year, and so is $2032$.`,R`<strong>Question:</strong> what day of the week is 1 January 2032?`), ans:['thursday','thu'],
+   sol:S([R`From 1 Jan 2026 to 1 Jan 2032 the years 2026 to 2031 pass, and only 2028 is a leap year.`,R`Days: $5\times365+366=2191=7\times313$, so the shift is $0\pmod7$.`,R`1 January 2032 is again a <strong>Thursday</strong>.`]) },
+ { id:'h19', type:'num', q:P(R`The airline code $12342$ is valid ($1234\equiv2\pmod7$).`,R`<strong>Question:</strong> if exactly one of the five digits is changed to a different digit, how many of these errors are <strong>not</strong> detected?`), ans:3,
+   sol:S([R`An error is missed when the change in a digit is $\pm7$ (the weights are coprime to $7$, and the check digit has weight $1$).`,R`Digit $1\to8$: missed. Digit $2\to9$: missed. Digit $3$ and digit $4$: $\pm7$ is impossible. Check digit $2\to9$: $9\equiv2\pmod7$, missed.`,R`That is $\mathbf{3}$ undetected errors: $82342$, $19342$ and $12349$.`]) },
+ { id:'h20', type:'num', q:P(R`The first nine digits of an ISBN-10 are $3\,1\,4\,1\,5\,9\,2\,6\,5$.`,R`<strong>Question:</strong> what is the check digit $a_{10}$? (Use $10a_1+9a_2+\cdots+2a_9+a_{10}\equiv0\pmod{11}$.)`), ans:9,
+   sol:S([R`$10\times3+9\times1+8\times4+7\times1+6\times5+5\times9+4\times2+3\times6+2\times5=30+9+32+7+30+45+8+18+10=189$.`,R`$189=11\times17+2$, so we need $a_{10}\equiv-2\equiv9\pmod{11}$.`,R`The check digit is $\mathbf{9}$.`]) },
+ { id:'h21', type:'num', q:R`For how many integers $n$ with $1\le n\le100$ is $n^2\equiv1\pmod8$?`, ans:50,
+   sol:S([R`Test the classes mod $8$: $0^2=0,\ 1^2=1,\ 2^2=4,\ 3^2=9\equiv1,\ 4^2=16\equiv0,\ 5^2=25\equiv1,\ 6^2=36\equiv4,\ 7^2=49\equiv1$.`,R`$n^2\equiv1$ exactly when $n$ is odd (classes $1,3,5,7$).`,R`There are $\mathbf{50}$ odd numbers from $1$ to $100$.`]) },
+ { id:'h22', type:'num', q:R`Find the smallest positive integer $n$ such that $2^n\equiv1\pmod{31}$.`, ans:5,
+   sol:S([R`$2^1=2,\ 2^2=4,\ 2^3=8,\ 2^4=16,\ 2^5=32=31+1\equiv1$.`,R`The smallest $n$ is $\mathbf{5}$. It divides $p-1=30$, as the cycle length always must.`]) },
+ { id:'h23', type:'num', q:R`Find the remainder when $1!+2!+3!+\cdots+100!$ is divided by $12$.`, ans:9,
+   sol:S([R`$4!=24$ is a multiple of $12$, and every later factorial has $4!$ as a factor, so it is $\equiv0\pmod{12}$.`,R`Only $1!+2!+3!=1+2+6=9$ matters.`,R`The remainder is $\mathbf{9}$.`]) },
+ { id:'h24', type:'num', q:R`What is the <strong>largest</strong> integer that divides $n^3-n$ for every integer $n\ge2$?`, ans:6,
+   sol:S([R`$n^3-n=(n-1)\,n\,(n+1)$ is a product of three consecutive integers, so it is divisible by $6$ (Step 5).`,R`For $n=2$: $2^3-2=6$, so no larger number divides every case.`,R`The answer is $\mathbf{6}$.`]) }
+];
+
+/* ============ CONCEPT AND SKILL TAGS (used by the learning report) ============ */
+const CONCEPTS={
+ rem:{label:'Remainders and residue classes (set notation, the map from ℤ)',tab:'t1',where:'Tab 1, Steps 1 and 2',
+   tips:['Rewrite the class in words: $[3]_7=\\{x:\\ x=7q+3,\\ q\\in\\mathbb{Z}\\}$ means &ldquo;all integers that leave remainder $3$ when divided by $7$&rdquo;, negatives included.','For a negative number, <strong>add multiples of $m$</strong> until you land between $0$ and $m-1$. Replay the Clock Wrap with $x=-17$ and $m=5$.','Remember Theorem 1: the classes never overlap and together cover $\\mathbb{Z}$.']},
+ cong:{label:'Congruence (the difference test)',tab:'t1',where:'Tab 1, Step 3',
+   tips:['Use the difference test: $a\\equiv b\\pmod m$ exactly when $m\\mid a-b$. Compute $a-b$ first.','When a question asks for &ldquo;all moduli&rdquo;, you are really listing the <strong>factors</strong> of a difference (back to Tab 5 of 2.2).','Two numbers can have the same <em>remainder</em> but different quotients. Compare remainders, not quotients.']},
+ add:{label:'Addition, subtraction and the calendar',tab:'t2',where:'Tab 2, all steps',
+   tips:['Reduce each number to its remainder <strong>before</strong> adding (Theorem 2). Keep the numbers small.','Subtract by adding the inverse: $a-b\\equiv a+(m-b)$.','For days of the week, convert &ldquo;in $n$ days&rdquo; to $n\\bmod7$. For years, add $1$ for a normal year and $2$ for a leap year, and stop when the total is a multiple of $7$.']},
+ mul:{label:'Multiplication on the clock',tab:'t3',where:'Tab 3, Step 1',
+   tips:['Reduce each factor before multiplying (Theorem 3), then reduce the product.','For units digits, only the last digit of each factor matters.','Use the Clock Multiplication Table to see which products give $0$: that happens when the modulus is composite.']},
+ pow:{label:'Powers, cycles and last digits',tab:'t3',where:'Tab 3, Step 2',
+   tips:['Write the first few powers mod $m$, <strong>spot the repeat</strong>, and count the period.','Divide the exponent by the period. A remainder of $0$ means the <em>last</em> term of the cycle, not the first.','Try a smaller or negative base first: $19\\equiv-1\\pmod{20}$ makes every power easy.']},
+ inv:{label:'Inverses, zero divisors and primes',tab:'t4',where:'Tab 4, Step 1',
+   tips:['An inverse of $a$ mod $m$ exists exactly when $\\text{HCF}(a,m)=1$. Check the HCF <strong>first</strong>.','To solve $ax\\equiv b$, multiply both sides by the inverse of $a$.','Use the Inverse Finder: scan the row $a\\times k$ and look for $1$.']},
+ fer:{label:'Fermat, Wilson and primes in the classes',tab:'t4',where:'Tab 4, Steps 2 to 4',
+   tips:['Fermat: for a prime $p$ and $p\\nmid a$, $a^{p-1}\\equiv1$. Reduce the exponent mod $p-1$ (the true cycle can be shorter).','Wilson: $(p-1)!\\equiv-1\\pmod p$. Pair each number with its inverse; only $1$ and $p-1$ pair with themselves.','A prime above $3$ is $\\equiv1$ or $5\\pmod6$, and its square is $\\equiv1\\pmod{24}$.']},
+ chk:{label:'Check digits and error detection',tab:'t5',where:'Tab 5, Step 3',
+   tips:['A single error changes the weighted sum by $w\\,d$. It is missed exactly when $m\\mid wd$.','A swap of neighbours changes the sum by $(w_i-w_{i+1})(a_{i+1}-a_i)$. Test whether $m$ can divide it.','A <strong>prime</strong> modulus larger than every possible change catches all single errors. Run the Check-Digit Tester to see the counts.']},
+ cmp:{label:'Competition tools (consecutive integers, digit sums, squares)',tab:'t5',where:'Tab 5, Steps 1 and 2',
+   tips:['Among any $m$ consecutive integers exactly one is a multiple of $m$. Split the target into <strong>coprime prime powers</strong> and find a factor for each.','A number is congruent mod $9$ (and mod $3$) to its digit sum.','Square every class to see which remainders a perfect square can have: mod $4$ it is only $0$ or $1$.']}
+};
+const SKILLS={
+ U:{label:'Understand (definitions and properties)',tips:['Before choosing an answer, <strong>explain the idea in one full sentence</strong> in your own words, then match it to an option.']},
+ C:{label:'Compute (carry out a method)',tips:['Cover the worked example, redo it yourself, then compare line by line. <strong>Write every step</strong> rather than doing it in your head.']},
+ A:{label:'Apply (use it in a problem or context)',tips:['Underline what is <strong>given</strong> and what is <strong>asked</strong>, turn the story into a maths sentence, and only then calculate. Check that the answer makes sense in the story.']},
+ Rz:{label:'Reason (multi-step and challenge problems)',tips:['Break the problem into small steps. After each step ask &ldquo;what does this tell me?&rdquo; and test a small case before the big one.']}
+};
+const TAGS={
+ t1q1:['rem','C'],t1q2:['rem','C'],t1q3:['rem','C'],t1q4:['rem','A'],t1q5:['rem','C'],t1q6:['rem','U'],t1q7:['rem','U'],t1q8:['rem','U'],t1q9:['rem','A'],
+ t1q10:['cong','C'],t1q11:['cong','U'],t1q12:['cong','Rz'],t1q13:['cong','Rz'],t1q14:['cong','Rz'],
+ t2q1:['add','C'],t2q2:['add','C'],t2q3:['add','C'],t2q4:['add','C'],t2q5:['add','C'],t2q6:['add','U'],t2q7:['add','U'],t2q8:['add','A'],t2q9:['add','Rz'],t2q10:['add','A'],t2q11:['add','A'],t2q12:['add','Rz'],t2q13:['add','A'],t2q14:['add','A'],
+ t3q1:['mul','C'],t3q2:['mul','C'],t3q3:['mul','C'],t3q4:['mul','U'],t3q5:['pow','C'],t3q6:['pow','C'],t3q7:['pow','C'],t3q8:['pow','C'],t3q9:['pow','U'],t3q10:['pow','A'],t3q11:['pow','C'],t3q12:['pow','A'],t3q13:['pow','Rz'],t3q14:['pow','Rz'],t3q15:['pow','U'],
+ t4q1:['inv','C'],t4q2:['inv','U'],t4q3:['inv','A'],t4q4:['inv','C'],t4q5:['inv','U'],t4q6:['fer','C'],t4q7:['fer','C'],t4q8:['fer','C'],t4q9:['fer','C'],t4q10:['fer','C'],t4q11:['fer','A'],t4q12:['fer','U'],t4q13:['fer','U'],t4q14:['inv','Rz'],t4q15:['fer','A'],
+ t5q1:['cmp','A'],t5q2:['cmp','U'],t5q3:['cmp','C'],t5q4:['cmp','C'],t5q5:['cmp','A'],t5q6:['cmp','Rz'],t5q7:['chk','U'],t5q8:['chk','C'],t5q9:['chk','A'],t5q10:['chk','C'],t5q11:['chk','U'],t5q12:['chk','C'],t5q13:['chk','U'],t5q14:['chk','Rz'],t5q15:['chk','Rz'],t5q16:['chk','Rz'],
+ h1:['rem','U'],h2:['rem','U'],h3:['rem','U'],h4:['add','C'],h5:['cong','U'],h6:['inv','U'],h7:['fer','U'],
+ h8:['rem','C'],h9:['rem','C'],h10:['fer','C'],h11:['pow','C'],h12:['pow','C'],h13:['inv','C'],h14:['mul','C'],h15:['pow','C'],
+ h16:['pow','Rz'],h17:['fer','A'],h18:['add','A'],h19:['chk','Rz'],h20:['chk','C'],h21:['cmp','A'],h22:['fer','Rz'],h23:['cmp','Rz'],h24:['cmp','Rz']
+};
+const TAB_NAMES={t1:'Tab 1 Remainders',t2:'Tab 2 Addition',t3:'Tab 3 Multiplication and Powers',t4:'Tab 4 Primes Meet the Clock',t5:'Tab 5 Competition Applications',t6:'Tab 6 Homework'};
+
+/* ============ EXERCISE ENGINE ============ */
+const EXMAP={}, ST={};
+const now=()=>Date.now()+(window.__skew||0);
+function normSet(s){
+  s=cleanNum(s).toLowerCase().trim();
+  if(/∅|empty|^\{\s*\}$/.test(s)) return '';
+  s=s.replace(/[{}\s]/g,''); const arr=s.split(',').filter(x=>x!==''); arr.sort(sorter); return arr.join(',');
+}
+function parseFact(s){
+  s=String(s).toLowerCase().replace(/[×x·\*]/g,'*').replace(/²/g,'^2').replace(/³/g,'^3').replace(/\s/g,'');
+  if(!s) return null; const m={};
+  for(const t of s.split('*')){ const mm=t.match(/^(\d+)(?:\^(\d+))?$/); if(!mm) return null; const p=+mm[1], k=mm[2]?+mm[2]:1; m[p]=(m[p]||0)+k; }
+  return m;
+}
+function sameFact(a,b){ const ka=Object.keys(a), kb=Object.keys(b); return ka.length===kb.length && ka.every(k=>a[k]===b[k]); }
+
+/* live LaTeX preview of a typed factorisation */
+function factToLatex(raw){
+  const s0=String(raw).trim(); if(!s0) return {state:'empty'};
+  let t=s0.toLowerCase().replace(/[×x·]/g,'*').replace(/²/g,'^2').replace(/³/g,'^3').replace(/\s/g,'');
+  const tm=t.match(/[*^]+$/); let dang='';
+  if(tm){ if(tm[0].length>1) return {state:'bad'}; dang=tm[0]; t=t.slice(0,-1); }
+  if(!t) return {state:'bad'};
+  const out=[], bases=[];
+  for(const p of t.split('*')){ const m=p.match(/^(\d+)(?:\^(\d+))?$/); if(!m) return {state:'bad'}; bases.push(+m[1]); out.push(m[2]!==undefined? m[1]+'^{'+m[2]+'}' : m[1]); }
+  if(dang==='^') out[out.length-1]+='^{\\square}';
+  let tex=out.join('\\times ');
+  if(dang==='*') tex+='\\times\\,\\square';
+  const notPrime=[...new Set(bases.filter(b=>!isPrime(b)))];
+  return {state:'ok',tex,notPrime};
+}
+const _pt={};
+function factPreview(id){
+  const el=document.getElementById('prev-'+id), inp=document.getElementById('inp-'+id); if(!el||!inp) return;
+  const r=factToLatex(inp.value); let h='<span class="lab">Preview</span>';
+  if(r.state==='empty') h+='<span class="msg">Your answer will appear here as you type, for example $2^3\\times3\\times5$.</span>';
+  else if(r.state==='bad') h+='<span class="msg">This cannot be read yet. Use numbers, <kbd class="k">^</kbd> and <kbd class="k">*</kbd> only.</span>';
+  else { h+='<span class="text-lg">$'+r.tex+'$</span>'; if(r.notPrime.length) h+='<span class="block text-xs text-amber-700 font-semibold mt-1">Not all factors are prime yet: '+r.notPrime.map(b=>'$'+b+'$').join(', ')+' can be split further.</span>'; }
+  el.innerHTML=h; clearTimeout(_pt[id]); _pt[id]=setTimeout(()=>typeset(el),120);
+}
+
+function exHTML(e,n){
+  let inp='';
+  const enter=`onkeydown="if(event.key==='Enter')checkEx('${e.id}')"`;
+  if(e.type==='num') inp=`<input type="text" inputmode="decimal" class="inp" id="inp-${e.id}" placeholder="Your answer" ${enter}>`;
+  else if(e.type==='set') inp=`<input type="text" class="inp" id="inp-${e.id}" placeholder="e.g. 2, 3, 5" ${enter}><p class="text-xs text-slate-500 mt-1">Type the elements separated by commas.</p>`;
+  else if(e.type==='fact') inp=`<input type="text" class="inp" id="inp-${e.id}" placeholder="Type your factorisation" oninput="factPreview('${e.id}')" ${enter}><p class="text-xs text-slate-500 mt-1">Use <kbd class="k">^</kbd> for a power and <kbd class="k">*</kbd> for $\\times$. Primes only.</p><div class="fprev" id="prev-${e.id}"></div>`;
+  else if(e.type==='text') inp=`<input type="text" class="inp" id="inp-${e.id}" placeholder="Your answer" ${enter}>`;
+  else if(e.type==='mc') inp=e.opts.map((o,i)=>`<button class="opt" id="opt-${e.id}-${i}" onclick="pickOpt('${e.id}',${i})">${o}</button>`).join('');
+  return `<div class="ex-card" id="card-${e.id}" onfocusin="markSeen('${e.id}')" onclick="markSeen('${e.id}')"><div class="flex items-start gap-3"><div class="qnum">${n}</div><div class="flex-1 min-w-0">
+    <div class="qtext text-slate-800 leading-relaxed">${e.q}</div>
+    <div class="mt-3">${inp}</div>
+    <div class="mt-3 flex items-center gap-3 flex-wrap"><button class="btn" id="btn-${e.id}" onclick="checkEx('${e.id}')">Check answer</button><span id="att-${e.id}" class="text-xs font-semibold text-slate-500">Attempts left: 3</span></div>
+    <div id="fb-${e.id}" class="mt-2 text-sm font-semibold"></div>
+    <div id="sol-${e.id}" class="hidden mt-3 sol-box"><h4 class="font-bold text-slate-800 mb-1" id="solh-${e.id}">Step-by-step solution</h4>${e.sol}</div>
+  </div></div></div>`;
+}
+function markSeen(id){ const st=ST[id]; if(st && !st.t0 && !st.done){ st.t0=st.last=now(); } }
+function mountEx(key){
+  const box=document.getElementById('ex-'+key); let h='', lv='', n=0;
+  EX[key].forEach(e=>{ if(e.level&&e.level!==lv){ lv=e.level; h+=`<div class="lvl">${lv}</div>`; } e.lv=lv; n++; e.no=n; h+=exHTML(e,n); });
+  box.innerHTML=h;
+  EX[key].forEach(e=>{ EXMAP[e.id]=e; ST[e.id]={tries:0,done:false,pick:null,tab:key,correct:false,t0:null,last:null,log:[]}; });
+  if('IntersectionObserver' in window){
+    const io=new IntersectionObserver(es=>es.forEach(en=>{ if(en.isIntersecting && (en.intersectionRatio>=0.15 || en.intersectionRect.height>=180)) markSeen(en.target.id.slice(5)); }),{threshold:[0.05,0.15,0.3,0.5]});
+    box.querySelectorAll('.ex-card').forEach(c=>io.observe(c));
+  }
+}
+function pickOpt(id,i){ const st=ST[id]; if(st.done) return; markSeen(id); st.pick=i; EXMAP[id].opts.forEach((_,k)=>document.getElementById(`opt-${id}-${k}`).classList.toggle('sel',k===i)); }
+function checkEx(id){
+  const e=EXMAP[id], st=ST[id]; if(st.done) return;
+  const fb=document.getElementById('fb-'+id); let correct=false, ansText=''; const warn=m=>{ fb.className='mt-2 text-sm font-semibold text-amber-700'; fb.textContent=m; };
+  if(e.type==='num'){
+    const raw=document.getElementById('inp-'+id).value; const v=cleanNum(raw).replace(/[, ]/g,''); if(v===''||isNaN(Number(v))) return warn('Type a number first.');
+    ansText=raw.trim(); correct=Math.abs(Number(v)-e.ans)<1e-9;
+  } else if(e.type==='set'){
+    const v=document.getElementById('inp-'+id).value; if(v.trim()==='') return warn('Type your answer first.'); ansText=v.trim(); correct=normSet(v)===normSet(e.ans);
+  } else if(e.type==='fact'){
+    const v=document.getElementById('inp-'+id).value; if(v.trim()==='') return warn('Type your answer first.');
+    const pf=parseFact(v); if(!pf) return warn('This cannot be read yet. Use numbers, ^ and * only (see the preview).');
+    ansText=v.trim(); correct = sameFact(pf, parseFact(e.ans)) && Object.keys(pf).every(k=>isPrime(+k));
+  } else if(e.type==='text'){
+    const v=document.getElementById('inp-'+id).value.toLowerCase().replace(/\s/g,''); if(v==='') return warn('Type your answer first.'); ansText=v; correct=e.ans.includes(v);
+  } else if(e.type==='mc'){
+    if(st.pick===null) return warn('Choose an option first.'); ansText=String(e.opts[st.pick]); correct=st.pick===e.ans;
+  }
+  const t=now(); if(!st.t0){ st.t0=st.last=t; }
+  st.log.push({dt:t-st.last, ans:ansText, ok:correct}); st.last=t;
+  st.tries++; const left=3-st.tries; document.getElementById('att-'+id).textContent='Attempts left: '+Math.max(left,0);
+  if(correct) finishEx(id,true); else if(left<=0) finishEx(id,false);
+  else { fb.className='mt-2 text-sm font-semibold text-red-700'; fb.textContent='Not quite. Try again: '+left+' attempt'+(left===1?'':'s')+' left.'; const c=document.getElementById('card-'+id); c.classList.add('bad'); setTimeout(()=>{ if(!st.done) c.classList.remove('bad'); },900); }
+}
+function finishEx(id,ok){
+  const e=EXMAP[id], st=ST[id]; st.done=true; st.correct=ok;
+  const card=document.getElementById('card-'+id), fb=document.getElementById('fb-'+id), sol=document.getElementById('sol-'+id);
+  card.classList.remove('bad'); if(ok) card.classList.add('ok');
+  fb.className='mt-2 text-sm font-bold '+(ok?'text-emerald-700':'text-red-700');
+  { const pts=ok?4-st.tries:0; fb.textContent= ok?`Correct! You earned ${pts} point${pts>1?'s':''} (correct on attempt ${st.tries} of 3).`:'All 3 attempts used: 0 points. Study the full solution below.'; }
+  sol.classList.remove('hidden'); if(!ok) sol.classList.add('fail');
+  document.getElementById('solh-'+id).textContent= ok?'Full solution (compare with your method)':'Full step-by-step solution';
+  document.getElementById('btn-'+id).disabled=true;
+  if(e.type==='mc') e.opts.forEach((_,k)=>{ const b=document.getElementById(`opt-${id}-${k}`); b.disabled=true; b.classList.remove('sel'); if(k===e.ans) b.classList.add('right'); else if(k===st.pick) b.classList.add('wrong'); });
+  else document.getElementById('inp-'+id).disabled=true;
+  typeset(sol); refreshProgress();
+}
+let reportUnlocked=false;
+function allDone(){ return Object.keys(EX).every(k=>EX[k].every(e=>ST[e.id]&&ST[e.id].done)); }
+function refreshProgress(){
+  let done=0,total=0;
+  Object.keys(EX).forEach(k=>{ let d=0; EX[k].forEach(e=>{ total++; if(ST[e.id]&&ST[e.id].done){done++;d++;} }); const b=document.querySelector('.tab-link[data-tab="'+k+'"]'); if(b) b.classList.toggle('tab-done',d===EX[k].length); });
+  document.getElementById('prog-count').textContent=done; document.getElementById('prog-total').textContent=total;
+  let c=0,r=0; EX.t6.forEach(e=>{ if(ST[e.id].done){ ST[e.id].correct?c++:r++; } });
+  document.getElementById('hw-score').textContent=`Homework status: ${c} correct, ${r} revealed after 3 attempts, ${EX.t6.length-c-r} remaining`;
+  const ready=allDone(); const lab=document.getElementById('t7-label');
+  if(lab) lab.textContent= ready ? '7. Learning Report (ready)' : '7. Learning Report (locked)';
+  if(ready && !reportUnlocked){
+    reportUnlocked=true; showToast();
+    if(document.getElementById('t7').classList.contains('active')) buildReport();
+  }
+}
+function showToast(){
+  const t=document.createElement('div'); t.className='toast no-print'; t.id='report-toast';
+  t.innerHTML='<strong>All questions finished.</strong> Your Learning Report is ready.<div class="mt-2"><button class="btn" style="background:#fff;color:#1c2230" onclick="document.getElementById(\'report-toast\').remove();openTab(null,\'t7\')">View my report</button></div>';
+  document.body.appendChild(t);
+}
+
+/* ============ LEARNING REPORT ============ */
+const EFFORT={
+ flu:{label:'Secure',long:'Correct first time',cls:'b-flu',score:1},
+ per:{label:'Persistent',long:'Corrected with real thought between attempts',cls:'b-per',score:0.8},
+ gue:{label:'Guess-and-check',long:'Quick retries, close to guessing',cls:'b-gue',score:0.45},
+ rus:{label:'Rushed',long:'Used the attempts quickly to reach the solution',cls:'b-rus',score:0},
+ str:{label:'Needs support',long:'Real effort, but the idea is not secure yet',cls:'b-str',score:0.2}
+};
+function thrFor(e){
+  const base={mc:4,num:7,set:9,fact:10,text:5}[e.type]||7; const tg=TAGS[e.id]||[]; let f=1;
+  if(tg[1]==='Rz') f=1.5; else if(tg[1]==='A') f=1.25;
+  if(/Level 2/.test(e.lv||'')) f*=1.2; if(/Level 3/.test(e.lv||'')) f*=1.5;
+  return base*f*1000;
+}
+function analyzeQ(e){
+  const st=ST[e.id], thr=thrFor(e), L=st.log, n=L.length, quick=L.map(a=>a.dt<thr);
+  const norm=a=>String(a).toLowerCase().replace(/\s/g,'');
+  const wrong=L.filter(a=>!a.ok); const repeated=wrong.length>1 && new Set(wrong.map(a=>norm(a.ans))).size<wrong.length;
+  let key;
+  if(st.correct){ if(n===1) key='flu'; else { const qr=quick.slice(1).filter(Boolean).length; key= qr===0?'per':'gue'; } }
+  else { const q=quick.filter(Boolean).length; key= q===n?'rus' : q>=2?'gue':'str'; }
+  const tg=TAGS[e.id]||['smart','C'];
+  return {id:e.id, tab:st.tab, no:e.no, concept:tg[0], skill:tg[1], n, ok:st.correct, key, repeated, score:EFFORT[key].score, pts:(st.correct?4-n:0), log:L, thr};
+}
+function aggregate(rows){
+  const n=rows.length; if(!n) return null;
+  const sum=f=>rows.reduce((a,r)=>a+f(r),0);
+  const first=rows.filter(r=>r.ok&&r.n===1).length, rev=rows.filter(r=>!r.ok).length;
+  const rush=rows.filter(r=>r.key==='rus'||r.key==='gue').length;
+  const pts=sum(r=>r.pts), score=pts/(3*n);
+  const status= score>=0.8?'sec': score>=0.5?'dev':'need';
+  const by=[0,1,2,3].map(p=>rows.filter(r=>r.pts===p).length);
+  return {n, first, rev, rush, att:sum(r=>r.n)/n, score, pts, max:3*n, by, status, habit: rush/n>=0.34, str: rows.filter(r=>r.key==='str').length};
+}
+const STAT={sec:['Secure','b-sec'],dev:['Developing','b-dev'],need:['Needs support','b-need']};
+function pct(x){ return Math.round(x*100)+'%'; }
+function secs(ms){ return (ms/1000).toFixed(ms<10000?1:0)+'s'; }
+/* ============ KNOWLEDGE MAP (V2) ============ */
+const KM_NODES={
+ rem:[90,200,'Remainders and classes'], cong:[290,200,'Congruence'],
+ add:[490,80,'Addition and the calendar'], mul:[490,200,'Multiplication'], cmp:[490,320,'Competition tools'],
+ inv:[690,200,'Inverses'], pow:[690,310,'Powers and cycles'],
+ chk:[890,80,'Check digits'], fer:[890,200,'Fermat, Wilson and primes']
+};
+const KM_EDGES=[
+ ['rem','cong','Congruent means landing on the same remainder'],
+ ['cong','add','Adding is safe because congruence respects addition'],
+ ['cong','mul','Multiplying is safe because congruence respects multiplication'],
+ ['mul','pow','A power is repeated multiplication'],
+ ['mul','inv','An inverse is the number you multiply by to get 1'],
+ ['inv','fer','The proof of Fermat cancels using inverses'],
+ ['pow','fer','Fermat says when a power returns to 1'],
+ ['add','chk','Check sums are added modulo m'],
+ ['mul','chk','Weights multiply the digits'],
+ ['inv','chk','A prime modulus (Euclid) makes errors visible'],
+ ['rem','cmp','Consecutive integers hit every remainder'],
+ ['mul','cmp','Digit sums and squares multiply remainders']
+];
+function kmWrap(s,n){ const w=s.split(' '), L=[]; let cur=''; w.forEach(x=>{ if((cur+' '+x).trim().length>n && cur){ L.push(cur); cur=x; } else cur=(cur+' '+x).trim(); }); if(cur) L.push(cur); return L; }
+function kmDownstream(c){ const out=new Set(), q=[c]; while(q.length){ const x=q.pop(); KM_EDGES.forEach(([a,b])=>{ if(a===x && !out.has(b)){ out.add(b); q.push(b); } }); } return [...out]; }
+function kmSupports(c){ const d=kmDownstream(c); if(!d.length) return ''; return `<p class="text-sm text-slate-700 mt-2"><strong>Why fix this first:</strong> this idea feeds ${d.map(x=>'<em>'+KM_NODES[x][2]+'</em>').join(', ')} on the knowledge map.</p>`; }
+function kmapHTML(agg){
+  const W=160, H=62;
+  const edge=(a,b)=>{
+    const [x1,y1]=KM_NODES[a], [x2,y2]=KM_NODES[b]; const dx=x2-x1, dy=y2-y1;
+    const t=Math.min((W/2)/Math.abs(dx||1e-9),(H/2)/Math.abs(dy||1e-9));
+    const sx=x1+dx*t, sy=y1+dy*t, ex=x2-dx*t-Math.sign(dx)*2, ey=y2-dy*t-Math.sign(dy)*2;
+    const risk=agg[a]&&agg[a].status==='need';
+    return `<line x1="${sx.toFixed(1)}" y1="${sy.toFixed(1)}" x2="${ex.toFixed(1)}" y2="${ey.toFixed(1)}" stroke="${risk?'#dc2626':'#64748b'}" stroke-width="${risk?2.6:2}" ${risk?'stroke-dasharray="7 5"':''} marker-end="url(#${risk?'kmr':'kmg'})"><title>Horizon · Section 2.3 · Modular arithmetic</title></line>`;
+  };
+  let svg=`<svg viewBox="0 0 1010 390" style="min-width:780px;width:100%" role="img" aria-label="Knowledge map: how the ideas of this chapter connect, coloured by your score"><defs><marker id="kmg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#64748b"/></marker><marker id="kmr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#dc2626"/></marker></defs>`;
+  svg+=KM_EDGES.map(([a,b])=>edge(a,b)).join('');
+  Object.keys(KM_NODES).forEach(c=>{
+    const [x,y,label]=KM_NODES[c], g=agg[c]; const f=g?g.score:0, hue=Math.round(f*120);
+    const lines=kmWrap(label,19), total=lines.length+1, y0=y-(total*14)/2+11;
+    const stroke=g&&g.status==='need'?'#dc2626':`hsl(${hue},55%,32%)`;
+    svg+=`<g style="cursor:pointer" onclick="openTab(null,'${CONCEPTS[c].tab}')"><title>Horizon · Section 2.3 · Modular arithmetic</title>
+      <rect x="${x-W/2}" y="${y-H/2}" width="${W}" height="${H}" rx="12" fill="hsl(${hue},70%,86%)" stroke="${stroke}" stroke-width="${g&&g.status==='need'?3.5:2}"/>`+
+      lines.map((l,i)=>`<text x="${x}" y="${y0+i*14}" text-anchor="middle" font-size="12" font-weight="700" fill="hsl(${hue},60%,16%)" font-family="Inter,Arial,sans-serif">${l}</text>`).join('')+
+      `<text x="${x}" y="${y0+lines.length*14}" text-anchor="middle" font-size="12" font-weight="800" fill="hsl(${hue},65%,22%)" font-family="Inter,Arial,sans-serif">${g?pct(f)+' ('+g.pts+'/'+g.max+')':'-'}</text></g>`;
+  });
+  svg+='</svg>';
+  const weak=Object.keys(KM_NODES).filter(c=>agg[c]&&agg[c].status==='need');
+  const mid=Object.keys(KM_NODES).filter(c=>agg[c]&&agg[c].status==='dev');
+  let note='';
+  if(weak.length){
+    note=`<div class="warn text-sm text-slate-800 mb-3"><p class="font-bold">Where to start</p><p class="mt-1">The red dashed arrows leave a concept with a low score. Ideas further along those arrows are built on it, so improve the <strong>earliest</strong> red concept first: ${weak.map(c=>'<em>'+KM_NODES[c][2]+'</em>').join(', ')}.</p></div>`;
+  } else if(mid.length){
+    note=`<div class="key text-sm text-slate-800 mb-3"><strong>No concept is in the red.</strong> The amber-looking ones (${mid.map(c=>'<em>'+KM_NODES[c][2]+'</em>').join(', ')}) are the best place to gain more points.</div>`;
+  } else {
+    note=`<div class="key text-sm text-slate-800 mb-3"><strong>The whole network is green.</strong> Every idea is secure, and the ideas that depend on each other support each other.</div>`;
+  }
+  const legend=`<div class="flex items-center gap-2 flex-wrap text-xs text-slate-600 mb-2"><span>Node colour = your score:</span><span class="kmswatch" style="background:hsl(0,70%,86%)">low</span><span class="kmswatch" style="background:hsl(60,70%,86%)">middle</span><span class="kmswatch" style="background:hsl(120,70%,86%)">high</span><span>Arrow A &rarr; B means &ldquo;B builds on A&rdquo;. Click a concept to revisit it.</span></div>`;
+  const how=`<details class="mt-2"><summary class="cursor-pointer font-bold text-slate-800 text-sm">How the ideas connect</summary><ul class="list-disc pl-6 text-sm text-slate-700 mt-2 grid md:grid-cols-2 gap-x-6 gap-y-1">${KM_EDGES.map(([a,b,r])=>`<li><strong>${KM_NODES[a][2]} &rarr; ${KM_NODES[b][2]}:</strong> ${r}.</li>`).join('')}</ul></details>`;
+  return `<h3 class="text-lg font-bold text-slate-800 mt-2 mb-2">Your knowledge map</h3><p class="text-sm text-slate-600 mb-2">The ideas of this chapter form a network. Each box is a concept, coloured by how many points you earned on its questions. Arrows show which idea builds on which.</p>${legend}<div class="card mb-3 overflow-x-auto">${svg}</div>${note}${how}`;
+}
+/* ============ SCORE (V2) ============ */
+function scoreHTML(rows,A){
+  const tot=rows.length, max=3*tot, st=STAT[A.status];
+  const cols=['#dc2626','#d97706','#0891b2','#059669'], labs=['0 points: not solved in 3 attempts','1 point: correct on attempt 3','2 points: correct on attempt 2','3 points: correct on attempt 1'];
+  let h=`<h3 class="text-lg font-bold text-slate-800 mt-6 mb-2">Your score</h3><div class="card mb-3">
+   <p class="text-sm text-slate-700 mb-3"><strong>How points work.</strong> Each question is worth up to <strong>3 points</strong>: <strong>3</strong> if you are correct on the first attempt, <strong>2</strong> on the second, <strong>1</strong> on the third, and <strong>0</strong> if all three attempts fail. Points show how securely you knew the idea. The effort check below shows <em>how</em> you worked.</p>
+   <div class="flex items-center gap-4 flex-wrap mb-3"><div class="rp-tile" style="min-width:13rem"><div class="v">${A.pts} / ${max}</div><div class="l">total points (${pct(A.score)})</div></div><div><span class="badge ${st[1]}">${st[0]}</span><div class="text-xs text-slate-600 mt-1">Secure from 80%, Developing from 50%</div></div></div>
+   <div class="rp-bar mb-2">${[3,2,1,0].filter(p=>A.by[p]).map(p=>`<div style="width:${A.by[p]/tot*100}%;background:${cols[p]}" title="${labs[p]}">${A.by[p]}</div>`).join('')}</div>
+   <div class="grid md:grid-cols-2 gap-x-6 gap-y-1 text-sm mb-3">${[3,2,1,0].map(p=>`<div><span class="pts p${p}">${p}</span> <strong>${A.by[p]}</strong> &nbsp;${labs[p].split(': ')[1]}</div>`).join('')}</div>
+   <table class="rp"><tr><th>Tab</th><th>Questions</th><th>Points</th><th>Score</th></tr>`;
+  Object.keys(EX).forEach(k=>{ const rs=rows.filter(r=>r.tab===k), p=rs.reduce((a,r)=>a+r.pts,0), m=3*rs.length, f=p/m, s=STAT[f>=0.8?'sec':f>=0.5?'dev':'need'];
+    h+=`<tr><td class="font-semibold">${TAB_NAMES[k]}</td><td>${rs.length}</td><td>${p} / ${m}</td><td>${pct(f)}<div class="meter mt-1"><div style="width:${f*100}%"></div></div></td></tr>`; });
+  return h+'</table></div>';
+}
+
+function buildReport(){
+  const root=document.getElementById('report-root');
+  if(!allDone()){
+    let h='<div class="card mb-3"><p class="text-slate-700">Your report is built from <strong>every</strong> exercise and homework question: how many attempts you used, whether you made a real effort on each try, and which ideas are secure. It unlocks when all questions are finished (correct, or all 3 attempts used).</p></div><div class="space-y-2">';
+    Object.keys(EX).forEach(k=>{ const tot=EX[k].length, d=EX[k].filter(e=>ST[e.id].done).length;
+      h+=`<div class="card flex items-center gap-3 flex-wrap"><div class="font-bold w-56">${TAB_NAMES[k]}</div><div class="meter flex-1"><div style="width:${d/tot*100}%"></div></div><div class="text-sm font-bold w-24 text-right">${d} / ${tot}</div><button class="btn-ghost" onclick="openTab(null,'${k}')">Go to tab</button></div>`; });
+    root.innerHTML=h+'</div>'; return;
+  }
+  const rows=[]; Object.keys(EX).forEach(k=>EX[k].forEach(e=>rows.push(analyzeQ(e))));
+  const A=aggregate(rows), tot=rows.length;
+  const cnt={flu:0,per:0,gue:0,rus:0,str:0}; rows.forEach(r=>cnt[r.key]++);
+  const firstDt=rows.map(r=>r.log[0]?r.log[0].dt:0), avgThink=firstDt.reduce((a,b)=>a+b,0)/tot;
+  const habitShare=(cnt.rus+cnt.gue)/tot;
+  let h='';
+  h+=`<p class="text-slate-600 mb-4">This report is built automatically from what you did on all ${tot} questions in Tabs 1 to 6. It looks at <strong>what you got right</strong> and also at <strong>how you got there</strong>: how many attempts you used and whether each attempt showed real thinking. Timing is only a guide, so read the advice as suggestions, not a verdict.</p>`;
+  const concAggAll={}; Object.keys(CONCEPTS).forEach(c=>{ const rs=rows.filter(r=>r.concept===c); if(rs.length) concAggAll[c]=aggregate(rs); });
+  h+=kmapHTML(concAggAll);
+  h+=scoreHTML(rows,A);
+  h+='<h3 class="text-lg font-bold text-slate-800 mt-6 mb-2">At a glance</h3>';
+  h+=`<div class="grid grid-cols-2 md:grid-cols-5 gap-3 mb-5">
+    <div class="rp-tile"><div class="v">${tot}</div><div class="l">questions finished</div></div>
+    <div class="rp-tile"><div class="v">${pct(A.first/tot)}</div><div class="l">correct on the first attempt</div></div>
+    <div class="rp-tile"><div class="v">${A.att.toFixed(1)}</div><div class="l">average attempts per question</div></div>
+    <div class="rp-tile"><div class="v">${A.rev}</div><div class="l">solutions revealed after 3 attempts</div></div>
+    <div class="rp-tile"><div class="v">${secs(avgThink)}</div><div class="l">average thinking time before the first answer</div></div></div>`;
+  // effort
+  const order=['flu','per','gue','rus','str'], colors={flu:'#059669',per:'#0891b2',gue:'#d97706',rus:'#dc2626',str:'#7c3aed'};
+  h+=`<h3 class="text-lg font-bold text-slate-800 mb-2">1. Effort check: how you got your answers</h3><div class="card mb-3"><div class="rp-bar mb-3">${order.filter(k=>cnt[k]).map(k=>`<div style="width:${cnt[k]/tot*100}%;background:${colors[k]}" title="${EFFORT[k].label}">${cnt[k]}</div>`).join('')}</div>
+   <div class="grid md:grid-cols-2 gap-x-6 gap-y-1 text-sm">${order.map(k=>`<div><span class="badge ${EFFORT[k].cls}">${EFFORT[k].label}</span> <strong>${cnt[k]}</strong> &nbsp;${EFFORT[k].long}</div>`).join('')}</div></div>`;
+  if(habitShare>=0.2){
+    h+=`<div class="warn mb-4 text-sm text-slate-800"><p class="font-bold">Work habit to fix: slow down on retries</p><p class="mt-1">On ${cnt.rus+cnt.gue} of ${tot} questions (${pct(habitShare)}) your attempts came very quickly, one after another. The three attempts are there for <em>thinking</em>, not for trying the next answer. After a wrong answer, do this before you click again:</p>
+    <ol class="list-decimal pl-6 mt-1"><li>Re-read the question and underline what is asked.</li><li>Look back at the worked example in the tab and find the step you skipped.</li><li>Change something in your method, then answer.</li></ol></div>`;
+  } else if(cnt.rus+cnt.gue===0){
+    h+=`<div class="key mb-4 text-sm text-slate-800"><strong>Good work habits.</strong> You did not rush to a solution on any question. Where an answer was wrong, you took time between attempts.</div>`;
+  } else {
+    h+=`<div class="key mb-4 text-sm text-slate-800"><strong>Mostly steady.</strong> A few questions (${cnt.rus+cnt.gue}) had very quick retries. They are marked in the table below. Slow down on those and compare with the worked solution.</div>`;
+  }
+  // concept table
+  const concRows=Object.keys(CONCEPTS).map(c=>({c, rows:rows.filter(r=>r.concept===c)})).filter(x=>x.rows.length);
+  h+=`<h3 class="text-lg font-bold text-slate-800 mt-6 mb-2">2. Results by concept</h3><div class="card mb-3 overflow-x-auto"><table class="rp"><tr><th>Concept</th><th>Questions</th><th>Score</th><th>First attempt</th><th>Avg attempts</th><th>Effort flags</th><th>Understanding</th></tr>`;
+  const concAgg={};
+  concRows.forEach(({c,rows:rs})=>{ const g=aggregate(rs); concAgg[c]=g; const st=STAT[g.status];
+    h+=`<tr><td class="font-semibold">${CONCEPTS[c].label}</td><td>${g.n}</td><td>${g.pts} / ${g.max}<div class="meter mt-1"><div style="width:${g.score*100}%"></div></div></td><td>${g.first} of ${g.n}<div class="meter mt-1"><div style="width:${g.first/g.n*100}%"></div></div></td><td>${g.att.toFixed(1)}</td><td>${g.rush?`<span class="badge b-rus">${g.rush} quick</span>`:'<span class="text-slate-400">none</span>'}${g.str?` <span class="badge b-str">${g.str} struggled</span>`:''}</td><td><span class="badge ${st[1]}">${st[0]}</span></td></tr>`; });
+  h+='</table></div>';
+  // skills
+  h+=`<h3 class="text-lg font-bold text-slate-800 mt-6 mb-2">3. Results by skill</h3><div class="card mb-3 overflow-x-auto"><table class="rp"><tr><th>Skill</th><th>Questions</th><th>Score</th><th>First attempt</th><th>Avg attempts</th><th>Effort flags</th><th>Level</th></tr>`;
+  const skAgg={};
+  Object.keys(SKILLS).forEach(k=>{ const rs=rows.filter(r=>r.skill===k); if(!rs.length) return; const g=aggregate(rs); skAgg[k]=g; const st=STAT[g.status];
+    h+=`<tr><td class="font-semibold">${SKILLS[k].label}</td><td>${g.n}</td><td>${g.pts} / ${g.max}<div class="meter mt-1"><div style="width:${g.score*100}%"></div></div></td><td>${g.first} of ${g.n}<div class="meter mt-1"><div style="width:${g.first/g.n*100}%"></div></div></td><td>${g.att.toFixed(1)}</td><td>${g.rush?`<span class="badge b-rus">${g.rush} quick</span>`:'<span class="text-slate-400">none</span>'}</td><td><span class="badge ${st[1]}">${st[0]}</span></td></tr>`; });
+  h+='</table></div>';
+  // heat map
+  h+=`<p class="text-sm font-bold text-slate-700 mt-4 mb-1">Concept by skill (each cell: average score, number of questions)</p><div class="card mb-3 overflow-x-auto"><table class="rp heat"><tr><th>Concept</th>${Object.keys(SKILLS).map(k=>`<th>${SKILLS[k].label.split(' (')[0]}</th>`).join('')}</tr>`;
+  concRows.forEach(({c,rows:rs})=>{ h+=`<tr><td class="font-semibold">${CONCEPTS[c].label}</td>`+Object.keys(SKILLS).map(k=>{ const cell=rs.filter(r=>r.skill===k); if(!cell.length) return '<td class="h text-slate-300">&ndash;</td>'; const sc=cell.reduce((a,r)=>a+r.pts/3,0)/cell.length; const hue=Math.round(sc*120); return `<td class="h" style="background:hsl(${hue},70%,88%);color:hsl(${hue},60%,22%)">${Math.round(sc*100)}%<div class="text-xs font-semibold">${cell.length} q</div></td>`; }).join('')+'</tr>'; });
+  h+='</table></div>';
+  // study plan
+  const weak=concRows.map(x=>({c:x.c,g:concAgg[x.c]})).filter(x=>x.g.status!=='sec').sort((a,b)=>a.g.score-b.g.score);
+  h+=`<h3 class="text-lg font-bold text-slate-800 mt-6 mb-2">4. How to understand better: your study plan</h3>`;
+  if(!weak.length){
+    h+=`<div class="key text-sm text-slate-800 mb-3"><strong>Every concept looks secure.</strong> Next step: choose the skill with the lowest result in the table above and explain one solved <em>Reason</em> question aloud to a friend, step by step. Then try writing out the printable homework by hand.</div>`;
+  } else {
+    weak.forEach(({c,g})=>{ const cc=CONCEPTS[c], st=STAT[g.status];
+      h+=`<div class="card mb-3"><div class="flex items-center gap-2 flex-wrap mb-1"><span class="font-bold text-slate-800">${cc.label}</span><span class="badge ${st[1]}">${st[0]}</span><span class="text-xs text-slate-500">${g.first} of ${g.n} correct first time</span></div>`;
+      if(g.habit) h+=`<p class="text-sm text-amber-800 bg-amber-50 border-l-4 border-amber-400 rounded px-3 py-1 mb-2"><strong>First, slow down.</strong> Many attempts here were very quick, so the result may show haste more than a gap in understanding. Redo these questions carefully, writing each step.</p>`;
+      h+=`<ul class="list-disc pl-6 text-sm text-slate-700 space-y-1">${cc.tips.map(t=>`<li>${t}</li>`).join('')}</ul>
+        ${kmSupports(c)}<div class="mt-2 flex items-center gap-2 flex-wrap"><button class="btn-ghost" onclick="openTab(null,'${cc.tab}')">Revisit: ${cc.where}</button></div></div>`; });
+  }
+  const weakSk=Object.keys(skAgg).filter(k=>skAgg[k].status!=='sec');
+  if(weakSk.length){
+    h+=`<div class="card mb-3"><p class="font-bold text-slate-800 mb-1">Skill advice</p><ul class="list-disc pl-6 text-sm text-slate-700 space-y-1">${weakSk.map(k=>`<li><strong>${SKILLS[k].label}.</strong> ${SKILLS[k].tips[0]}</li>`).join('')}</ul></div>`;
+  }
+  // question table
+  h+=`<details class="mt-4"><summary class="cursor-pointer font-bold text-slate-800 text-lg">5. Question by question</summary><div class="card mt-2 overflow-x-auto"><table class="rp"><tr><th>Question</th><th>Concept</th><th>Skill</th><th>Attempts</th><th>Result</th><th>Points</th><th>Effort</th><th>Time before each attempt</th></tr>`;
+  rows.forEach(r=>{ const dots=r.log.map(a=>a.ok?'<span class="ok-t">&#10003;</span>':'<span class="bad-t">&#10007;</span>').join(' ');
+    h+=`<tr><td>${TAB_NAMES[r.tab].split(' ').slice(0,2).join(' ')} Q${r.no}</td><td>${CONCEPTS[r.concept].label}</td><td>${SKILLS[r.skill].label.split(' (')[0]}</td><td>${dots}</td><td>${r.ok?'Correct on attempt '+r.n:'Not solved (solution revealed)'}</td><td><span class="pts p${r.pts}">${r.pts} / 3</span></td><td><span class="badge ${EFFORT[r.key].cls}">${EFFORT[r.key].label}</span>${r.repeated?' <span class="text-xs text-slate-500">repeated the same wrong answer</span>':''}</td><td class="text-xs text-slate-600">${r.log.map(a=>secs(a.dt)).join(', ')}</td></tr>`; });
+  h+='</table></div></details>';
+  h+=`<div class="mt-5 flex gap-2 flex-wrap no-print"><button class="btn" onclick="window.print()">Print or save this report</button><button class="btn-ghost" onclick="openTab(null,'t6')">Back to homework</button></div>`;
+  root.innerHTML=h; typeset(root);
+}
+
+window.addEventListener('DOMContentLoaded',()=>{
+  Object.keys(EX).forEach(mountEx);
+  Object.keys(EXMAP).forEach(id=>{ if(!TAGS[id]) console.error('missing tag for '+id); });
+  Object.keys(TAGS).forEach(id=>{ if(!EXMAP[id]) console.error('tag without question '+id); });
+  cwUpdate(); atUpdate(); mtUpdate(); pcUpdate(); ivUpdate(); fmUpdate(); cdSwitch();
+  refreshProgress(); buildReport(); typeset();
+});
+</script>
+</body>
+</html>
