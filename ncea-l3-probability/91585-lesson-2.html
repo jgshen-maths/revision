@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NCEA Level 3 · 91585 Probability Concepts · Lesson 2</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<style>
+:root{
+  --ink:#1c2230;--muted:#5b6475;--paper:#f7f6fb;--card:#fff;--line:#e2e0ea;
+  --a:#3b4fa8;--a-soft:#e8ebf8;--b:#b5487a;--b-soft:#f8e7ef;
+  --good:#2f8a4c;--good-soft:#e5f4ea;--warn:#b7791f;--warn-soft:#fbf1dc;--bad:#c0392b;--bad-soft:#fbe5e2;--grey:#9aa1ad;
+  --xt:#5b6fd8;--ct:#e09f3e;--neg:#c0392b;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font:18px/1.65 "Avenir Next","Segoe UI",system-ui,-apple-system,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.25;font-weight:600}
+h2{font-size:1.6rem;margin:.2rem 0 .6rem}
+h3{font-size:1.15rem;margin:1.6rem 0 .5rem}
+p{margin:.55rem 0}
+header.top{position:sticky;top:0;z-index:20;background:rgba(247,246,251,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.topin{max-width:940px;margin:0 auto;padding:.55rem 1rem .35rem;display:flex;align-items:center;gap:.8rem;flex-wrap:wrap}
+.brand{font-family:Georgia,serif;font-weight:600;font-size:1.02rem;flex:1;min-width:180px}
+.brand small{display:block;font-family:inherit;font-weight:400;color:var(--muted);font-size:.84rem}
+.prog{font-size:.82rem;color:var(--muted);text-align:right}
+.bar{height:6px;background:var(--line);border-radius:4px;overflow:hidden;width:150px;margin-top:3px}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--a),var(--b));width:0;transition:width .4s}
+nav.tabs{max-width:940px;margin:0 auto;display:flex;gap:.35rem;overflow-x:auto;padding:.1rem 1rem .6rem;scrollbar-width:thin}
+nav.tabs button{flex:0 0 auto;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;padding:.32rem .8rem;font:inherit;font-size:.9rem;cursor:pointer;white-space:nowrap}
+nav.tabs button.ga{border-color:#c9d0ef}
+nav.tabs button.gb{border-color:#eccbdb}
+nav.tabs button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+nav.tabs button .tick{color:var(--good);font-weight:700;margin-left:.25rem}
+nav.tabs button.on .tick{color:#9be3b0}
+main{max-width:940px;margin:0 auto;padding:1.2rem 1rem 4rem}
+section.tab{display:none}
+section.tab.on{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.kicker{font-size:.84rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--a)}
+.gb-sec .kicker{color:var(--b)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1rem 1.1rem;margin:1rem 0}
+.idea{border-left:5px solid var(--a)}
+.gb-sec .idea{border-left-color:var(--b)}
+.box-title{font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:.3rem}
+.key{background:var(--a-soft);border-radius:10px;padding:.6rem .8rem;margin:.6rem 0}
+.gb-sec .key{background:var(--b-soft)}
+.trap{background:var(--warn-soft);border-radius:10px;padding:.6rem .8rem;margin:.6rem 0}
+.trap b{color:#8a5a0c}
+.steps{margin:.3rem 0;padding-left:1.3rem}
+.steps li{margin:.4rem 0}
+.tblwrap{overflow-x:auto;max-width:100%}
+table.t{border-collapse:collapse;margin:.5rem 0;font-size:1rem}
+table.t th,table.t td{border:1px solid var(--line);padding:.35rem .6rem;text-align:center}
+table.t th{background:#efedf5;font-weight:600}
+.widget{background:#fdfcff;border:1px dashed #c9c5d8;border-radius:14px;padding:.9rem;margin:1rem 0}
+.widget .box-title{color:var(--a)}
+.gb-sec .widget .box-title{color:var(--b)}
+.ctrl{display:flex;flex-wrap:wrap;gap:.5rem .8rem;align-items:center;margin:.45rem 0}
+.ctrl label{font-size:.98rem;display:flex;align-items:center;gap:.4rem}
+.ctrl input[type=range]{width:150px}
+.ctrl input[type=text],.ctrl select{font:inherit;padding:.3rem .5rem;border:1px solid #c9c3d6;border-radius:8px}
+.btn{border:1px solid var(--ink);background:#fff;color:var(--ink);border-radius:8px;padding:.36rem .8rem;font:inherit;font-size:.95rem;cursor:pointer}
+.btn:hover{background:#efedf5}
+.btn.primary,.btn.on{background:var(--ink);color:#fff}
+.btn.small{padding:.24rem .6rem;font-size:.9rem}
+.readout{background:#fff;border:1px solid var(--line);border-radius:10px;padding:.55rem .75rem;margin-top:.5rem;font-size:1rem}
+svg{max-width:100%;height:auto;display:block}
+svg text{font-family:"Avenir Next","Segoe UI",system-ui,sans-serif}
+.wex{border-left:5px solid #7a6f8c}
+.wex .box-title{color:#7a6f8c}
+details.why{background:#f1eff6;border-radius:12px;padding:.5rem .9rem;margin:1rem 0}
+details.why summary{cursor:pointer;font-weight:600}
+details.why[open]{padding-bottom:.8rem}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+@media(max-width:640px){.two{grid-template-columns:1fr}h2{font-size:1.35rem}}
+.qhead{display:flex;align-items:baseline;gap:.6rem;margin-top:1.8rem}
+.qhead h3{margin:0}
+.qhead span{font-size:.92rem;color:var(--muted)}
+.q{background:#fff;border:1px solid var(--line);border-radius:14px;padding:.9rem 1rem;margin:.8rem 0}
+.q .qn{font-weight:700;color:var(--muted);font-size:.88rem;letter-spacing:.05em;display:flex;align-items:center;gap:.4rem;flex-wrap:wrap}
+.lvltag{font-size:.74rem;letter-spacing:.08em;border-radius:999px;padding:.05rem .5rem;font-weight:700}
+.lvltag.Focus{background:#e6f2ea;color:#2f7a46}.lvltag.Practice{background:#e8ebf8;color:#3b4fa8}.lvltag.Challenge{background:#f8e7ef;color:#a3376a}
+.q .prompt{margin:.3rem 0 .6rem}
+.q.done-3{border-color:#9ed1ae}.q.done-2,.q.done-1{border-color:#e7c98d}.q.done-0{border-color:#e5a69e}
+.opts{display:grid;gap:.4rem}
+.opt{text-align:left;border:1px solid var(--line);background:#fbfaff;border-radius:10px;padding:.45rem .7rem;font:inherit;cursor:pointer;color:var(--ink)}
+.opt:hover:not(:disabled){border-color:var(--ink)}
+.opt.wrong{background:var(--bad-soft);border-color:#e5a69e}
+.opt.right{background:var(--good-soft);border-color:#9ed1ae}
+.opt:disabled{cursor:default}
+.ansrow{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
+.ansrow input{font:inherit;padding:.35rem .6rem;border:1px solid #c9c3d6;border-radius:8px;width:190px}
+.preview{min-height:1.8rem;color:var(--muted);font-size:1rem;margin-top:.2rem}
+.fmt{font-size:.9rem;color:var(--muted);margin-top:.2rem}
+.dots{display:inline-flex;gap:4px;margin-left:.2rem;vertical-align:middle}
+.dots i{width:10px;height:10px;border-radius:50%;border:1.5px solid var(--grey);display:inline-block}
+.dots i.x{background:var(--bad);border-color:var(--bad)}
+.dots i.ok{background:var(--good);border-color:var(--good)}
+.fb{margin-top:.5rem;font-size:1rem}
+.fb.ok{color:var(--good)}.fb.no{color:var(--bad)}.fb.info{color:#8a5a0c}
+.hint{background:var(--warn-soft);border-radius:10px;padding:.5rem .7rem;margin-top:.5rem;font-size:1rem}
+.sol{background:#eef0fa;border-radius:10px;padding:.55rem .8rem;margin-top:.55rem;font-size:1rem}
+.gb-sec .sol{background:#faeef4}
+.next{display:flex;justify-content:flex-end;margin-top:2rem}
+.hero{padding:1.2rem 0 .4rem}
+.hero h1{font-size:2.1rem;margin:.2rem 0}
+.hero p{color:var(--muted);max-width:640px}
+.route{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.6rem;margin:1rem 0}
+.stop{background:#fff;border:1px solid var(--line);border-radius:12px;padding:.65rem .8rem;cursor:pointer;text-align:left;font:inherit;color:var(--ink)}
+.stop:hover{border-color:var(--ink)}
+.stop .n{font-size:.75rem;font-weight:700;letter-spacing:.08em;color:var(--a)}
+.stop.gb .n{color:var(--b)}.stop.rv .n{color:#6b5ca5}
+.stop .tt{font-weight:600;display:block}
+.stop .mm{font-size:.86rem;color:var(--muted)}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;margin:.6rem 0}
+.flow div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:.5rem .6rem;font-size:.95rem}
+.flow b{display:block;font-size:.95rem}
+@media(max-width:640px){.flow{grid-template-columns:1fr 1fr}.hero h1{font-size:1.6rem}}
+/* report */
+.rbar{margin:.45rem 0}
+.rbar .lab{display:flex;justify-content:space-between;font-size:.9rem;gap:.5rem}
+.rbar .tr{height:10px;background:#e9e6f0;border-radius:6px;overflow:hidden}
+.rbar .tr i{display:block;height:100%}
+.skill{display:flex;justify-content:space-between;gap:.6rem;padding:.35rem 0;border-bottom:1px solid #eeebf3;font-size:1rem}
+.lvl{font-size:.78rem;border-radius:999px;padding:.05rem .55rem;white-space:nowrap;align-self:center}
+.lvl.g{background:var(--good-soft);color:var(--good)}.lvl.a{background:var(--warn-soft);color:#8a5a0c}.lvl.r{background:var(--bad-soft);color:var(--bad)}.lvl.n{background:#eee;color:#777}
+.score{font-family:Georgia,serif;font-size:2.4rem;text-align:center;margin:.3rem 0}
+.legend{display:flex;flex-wrap:wrap;gap:.4rem 1rem;font-size:.9rem;justify-content:center;margin-top:.4rem}
+.legend span{display:inline-flex;align-items:center;gap:.35rem}
+.legend i{width:12px;height:12px;border-radius:50%;display:inline-block}
+.adv{border-left:4px solid var(--warn);padding:.3rem .8rem;margin:.6rem 0;background:#fff;border-radius:0 10px 10px 0}
+.small{font-size:.92rem;color:var(--muted)}
+/* widgets */
+.chain{display:flex;flex-wrap:wrap;gap:.35rem;align-items:center;margin:.4rem 0}
+.chain span.op{background:var(--a-soft);color:var(--a);border-radius:8px;padding:.15rem .5rem;font-weight:700;font-size:.9rem}
+.chain span.ar{color:var(--muted)}
+.flowbox{display:flex;flex-wrap:wrap;align-items:center;gap:.3rem;margin:.35rem 0}
+.flowbox .fbx{border:1.5px solid var(--ink);border-radius:8px;padding:.15rem .5rem;background:#fff;min-width:38px;text-align:center}
+.flowbox .fop{border-radius:999px;padding:.12rem .55rem;font-weight:700;font-size:.88rem}
+.flowbox.fwd .fop{background:var(--a-soft);color:var(--a)}
+.flowbox.back .fop{background:var(--b-soft);color:var(--b)}
+.flowbox .arr{color:var(--muted)}
+.tiles{display:flex;flex-wrap:wrap;gap:4px;align-items:center;margin:.25rem 0}
+.tile{min-width:30px;height:30px;padding:0 .35rem;border-radius:7px;border:1.5px solid #c9c5d8;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:.92rem}
+.tile.common{background:var(--a);border-color:var(--a);color:#fff}
+.tile.sign{border:none;background:none;min-width:12px}
+.factor-row{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin:.35rem 0}
+.factor-row .lab{min-width:70px;font-weight:600}
+.log{font-size:.9rem;color:var(--muted);margin:.4rem 0 0;padding-left:1.2rem}
+.fig{position:relative;margin:.5rem 0}
+.fig .lb{position:absolute;transform:translate(-50%,-50%);background:rgba(255,255,255,.85);padding:0 3px;white-space:nowrap;font-size:.95rem}
+.katex{font-size:1.04em}
+.katex-display{overflow-x:auto;overflow-y:hidden;padding:.15rem 0}
+.credit{text-align:center;color:var(--muted);font-size:.86rem;padding:1rem 0 2rem}
+
+/* number part A */
+#w2r table.t{font-size:.95rem}#w2r table.t th,#w2r table.t td{padding:.3rem .4rem;line-height:1.25}
+.itbl{border-collapse:collapse;margin:.5rem 0;font-size:1.05rem}
+.itbl th,.itbl td{border:1px solid var(--line);padding:.4rem .55rem;text-align:center;vertical-align:middle}
+.itbl th{background:#efedf5;font-weight:600;font-size:.9rem;line-height:1.25}
+.itbl tr.oprow td{border:none;background:none;color:var(--b);font-weight:700;padding:.05rem .3rem;font-size:.95rem;line-height:1.3}
+.itbl td input{font:inherit;width:84px;padding:.25rem .4rem;border:1px solid #c9c3d6;border-radius:7px;text-align:center}
+.itbl td{min-width:64px}.itbl .katex{font-size:1.1em}
+.itbl td.okc{background:var(--good-soft)}.itbl td.noc{background:var(--bad-soft)}
+.itbl tr.new td{animation:fade .35s ease}
+.divbtn{border:1.5px solid var(--b);color:var(--b);background:#fff;border-radius:999px;padding:.15rem .6rem;font:inherit;font-weight:700;cursor:pointer;white-space:nowrap}
+.divbtn:hover{background:var(--b-soft)}
+.note{background:var(--good-soft);border-radius:10px;padding:.55rem .8rem;margin:.5rem 0}
+.tree svg{max-width:100%}
+.tree .nd{cursor:pointer}
+.pairs{display:flex;flex-wrap:wrap;gap:.35rem;margin:.4rem 0}
+.tileb{min-width:34px;height:34px;padding:0 .3rem;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:1rem;border:2px solid #3b4fa8;background:#e8ebf8;color:#3b4fa8;position:relative}
+.tileb.p{border-color:#b5487a;background:#f8e7ef;color:#b5487a}
+.tileb.x{opacity:.45}
+.tileb.x::after{content:"";position:absolute;left:-3px;right:-3px;top:50%;border-top:2.5px solid #c0392b;transform:rotate(-35deg)}
+.trow{display:flex;flex-wrap:wrap;gap:5px;align-items:center;margin:.3rem 0}
+.grpb{display:inline-flex;gap:4px;padding:4px;border:2px dashed #b9b3c9;border-radius:10px}
+.fracbox{display:inline-flex;flex-direction:column;align-items:flex-start;gap:6px}
+.fracbox .barl{border-top:2.5px solid #1c2230;align-self:stretch}
+.pyr{display:flex;flex-direction:column;align-items:center;gap:6px;margin:.5rem 0}
+.pyr div{display:flex;gap:6px}
+.pyr span{min-width:58px;height:40px;border:1.5px solid #1c2230;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;font-weight:600;background:#fff}
+.pyr span.q{background:#f1eff6;color:#7a6f8c}
+
+/* sample: friendly style */
+.hook{background:linear-gradient(135deg,#fff7e6,#eef3ff);border:none;border-radius:18px;padding:1.2rem 1.2rem 1rem}
+.hook .big{font-family:Georgia,serif;font-size:1.35rem;font-weight:600;margin:.1rem 0 .5rem}
+.hookfig{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin:.7rem 0}
+.hookfig .num{font-family:Georgia,serif;font-size:2.2rem;font-weight:700}
+.hookfig .eq{font-size:1.6rem;color:var(--muted)}
+.brick{--c:#6b5ca5;display:inline-flex;align-items:center;justify-content:center;min-width:46px;height:40px;padding:0 .45rem;border-radius:7px;background:var(--c);color:#fff;font-weight:800;font-size:1.2rem;position:relative;margin:10px 3px 0;box-shadow:inset 0 -5px rgba(0,0,0,.18)}
+.brick::before{content:"";position:absolute;top:-8px;left:7px;right:7px;height:9px;background:radial-gradient(circle at 22% 100%,var(--c) 5px,transparent 5.6px),radial-gradient(circle at 78% 100%,var(--c) 5px,transparent 5.6px)}
+.brick.sm{min-width:36px;height:32px;font-size:1rem;margin:8px 2px 0}
+.tray{display:flex;flex-wrap:wrap;align-items:flex-end;gap:2px;min-height:48px}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin:.6rem 0}
+.chip{min-width:56px;height:50px;border-radius:12px;border:2px solid #c9c5d8;background:#fff;font:inherit;font-size:1.3rem;font-weight:700;cursor:pointer;color:var(--ink)}
+.chip.yes{border-color:#2f9e5b;background:#e5f4ea;color:#2f7a46}
+.chip.no{border-color:#e5a69e;background:#fbe5e2;color:#c0392b;animation:shake .3s}
+@keyframes shake{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+.tutor{border:2px solid #3b4fa8;border-radius:18px;background:#fff;padding:1rem}
+.tutor .who{font-size:.85rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#3b4fa8}
+.tq{font-size:1.15rem;margin:.6rem 0 .4rem}
+.tbtns{display:flex;flex-wrap:wrap;gap:.5rem;margin:.3rem 0}
+.tbtns .btn{font-size:1.05rem;padding:.45rem .9rem;border-radius:10px}
+.tfb{border-radius:10px;padding:.45rem .7rem;margin:.4rem 0;font-size:1.02rem}
+.tfb.ok{background:var(--good-soft);color:#24683b}.tfb.no{background:var(--warn-soft);color:#7a4e0a}
+.wow{background:#fdf3ff;border:2px dashed #b5487a;border-radius:18px}
+.wow .box-title{color:#b5487a}
+.shortcut{background:#1c2230;color:#fff;border-radius:16px;padding:1rem 1.1rem}
+.shortcut .box-title{color:#ffd27a}
+.shortcut .katex{color:#fff}
+details.pad{background:#f1eff6;border-radius:12px;padding:.5rem .9rem;margin:1rem 0}
+details.pad summary{cursor:pointer;font-weight:600}
+.tries{margin:.5rem 0;padding-left:0;list-style:none}
+.tries li{display:flex;align-items:flex-end;gap:.5rem;flex-wrap:wrap;margin:.2rem 0}
+.tries li span.l{font-size:.95rem;color:var(--muted);min-width:100px}
+.zones{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin:.6rem 0}
+.zone{border-radius:14px;min-height:96px;padding:.4rem .3rem;text-align:center}
+.zone .zl{font-size:.82rem;font-weight:700;line-height:1.2}
+.zone .tray{justify-content:center}
+.zone.l{background:#e8ebf8;color:#3b4fa8}.zone.m{background:#efe4f3;color:#6b3a87}.zone.r{background:#f8e7ef;color:#b5487a}
+.brow{display:flex;align-items:flex-end;gap:.4rem;flex-wrap:wrap;margin:.2rem 0}
+.brow .lab{font-weight:700;min-width:44px;font-family:Georgia,serif;font-size:1.25rem}
+.brow button.brick{border:none;cursor:pointer;font-family:inherit}
+.brow button.brick:disabled{opacity:.2;cursor:default}
+.steps-dots{display:flex;gap:5px;margin:.2rem 0 .4rem}
+.steps-dots i{width:22px;height:6px;border-radius:3px;background:#dcd8e6}
+.steps-dots i.on{background:#3b4fa8}
+.nest{border:2.5px solid #6b5ca5;border-radius:16px;padding:.5rem;background:#f6f3fb}
+.nest .nest{border-color:#3b4fa8;background:#eef1fb;margin-top:.4rem}
+.nest .nest .nest{border-color:#2f9e5b;background:#eaf6ee}
+.nest .nl{font-size:.85rem;font-weight:700}
+.nest .tray{min-height:40px;gap:6px}
+.ncard{display:inline-flex;align-items:center;justify-content:center;min-width:48px;height:38px;border-radius:10px;background:#fff;border:2px solid #1c2230;font-weight:700;font-size:1.1rem;padding:0 .4rem}
+.cotbl td,.cotbl th{padding:.3rem .45rem}
+.cotbl td.eq{background:var(--good-soft);font-weight:700}
+.pbar{display:flex;height:40px;border:2px solid #1c2230;border-radius:8px;overflow:hidden;max-width:360px;margin:.3rem 0}
+.pbar i{flex:1;border-right:1.5px solid #1c2230;background:#fff;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-style:normal;color:#5b6475}.pbar i:last-child{border-right:none}
+.pbar i.on{background:#7fb3e6;color:#1c2230}.pbar i.ex{background:#f3b3cd;color:#1c2230}.pbar i.off{background:#eee;text-decoration:line-through}
+.bm{display:flex;flex-wrap:wrap;gap:4px;margin:.3rem 0}.bm .row{display:flex;align-items:center;gap:.5rem;width:100%}
+.bm .row b{min-width:58px;font-size:.95rem}.bm .box{width:38px;height:32px;border:2px solid #1c2230;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:.82rem;font-weight:700}
+.g100{display:grid;gap:2px;margin:.4rem 0}.g100 i{width:14px;height:14px;background:#e8e6ef;border-radius:2px}.g100 i.on{background:#3b4fa8}
+.bgrp.take{border-color:#e8902a;border-style:solid}
+.scards{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin:.4rem 0}
+.scard{border:2px solid #cfd3e4;border-radius:12px;padding:.4rem .5rem;text-align:center;background:#fff}.scard b{display:block;font-size:1.15rem}
+.scard.done{border-color:#2f8a4c;background:#e5f4ea}
+.sub{border-left:5px solid #3b4fa8;padding-left:.7rem;margin:1.6rem 0 .6rem}.sub .n{font-size:.8rem;font-weight:800;letter-spacing:.06em;color:#3b4fa8}.sub h3{margin:.1rem 0}
+details.secret{background:linear-gradient(135deg,#2b2350,#4b3a8a);color:#fff;border-radius:18px;padding:.8rem 1rem;margin:1.6rem 0}
+details.secret>summary{cursor:pointer;font-weight:800;font-size:1.15rem;list-style:none}details.secret>summary::-webkit-details-marker{display:none}
+details.secret[open]{background:#f4f1ff;color:inherit;border:3px solid #4b3a8a}details.secret[open]>summary{color:#4b3a8a}
+.bead{display:inline-block;width:20px;height:20px;border-radius:50%;margin:2px}.bgrp{display:inline-flex;flex-wrap:wrap;border:2px dashed #9aa1ad;border-radius:12px;padding:3px;margin:3px;max-width:140px}
+.tins{display:flex;flex-wrap:wrap;gap:4px;align-items:center}.tin{width:26px;height:32px;border:2px solid #1c2230;border-radius:4px 4px 6px 6px}
+.swatch{width:70px;height:70px;border-radius:14px;border:2px solid #1c2230;flex:none}
+.fbar{display:flex;height:30px;border:2px solid #1c2230;border-radius:6px;overflow:hidden;max-width:340px;margin:.25rem 0}
+.fbar i{flex:1;border-right:1.5px solid #1c2230;background:#fff}.fbar i:last-child{border-right:none}
+.fbar i.on{background:#7fb3e6}.fbar i.on2{background:#f3b3cd}.fbar i.on3{background:#ffd27a}
+.fbrow{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}.fbrow .lab{min-width:58px;font-weight:700;font-size:1.05rem}
+.fbrow .fbar{flex:1;min-width:180px}
+.divm{font-family:Georgia,serif;font-size:1.2rem;line-height:1.6}
+.divm .rem{display:inline-flex;align-items:center;justify-content:center;min-width:30px;height:30px;border-radius:50%;border:2px solid #3b4fa8;margin:2px;font-weight:700;font-family:inherit;font-size:1rem}
+.divm .rem.rep{border-color:#c0392b;background:#fbe5e2;color:#c0392b}
+.divm .rem.zero{border-color:#2f8a4c;background:#e5f4ea;color:#2f8a4c}
+.dchips{display:flex;flex-wrap:wrap;gap:6px;margin:.4rem 0}
+.dchips button{min-width:56px;padding:.35rem .5rem;border-radius:10px;border:2px solid #cfd3e4;background:#fff;font:inherit;font-size:1rem;cursor:pointer}
+.dchips button.stop{border-color:#2f8a4c;background:#e5f4ea}.dchips button.rep{border-color:#c0392b;background:#fbe5e2}
+.dchips button .katex{font-size:1.3em}.sort2 .katex{font-size:1.2em}
+.dchips button small{display:block;font-size:.78rem;color:#5b6475}
+.sort2{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin:.5rem 0}
+.sort2>div{border-radius:12px;padding:.5rem .6rem;min-height:60px}
+.sort2 .s{background:#e5f4ea}.sort2 .r{background:#fbe5e2}
+.sort2 b{display:block;font-size:.9rem;margin-bottom:.2rem}
+.pies{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:.3rem 0}
+.strip3{display:flex;flex-wrap:wrap;gap:8px}.strip3 span{display:flex;width:96px;height:34px;border:2px solid #1c2230;border-radius:6px;overflow:hidden}
+.strip3 i{flex:1;border-right:1.5px solid #1c2230;background:#fff}.strip3 i:last-child{border-right:none}
+.fcard{display:inline-flex;align-items:center;justify-content:center;min-width:66px;min-height:58px;padding:.2rem .5rem;border-radius:12px;border:2px solid #cfd3e4;background:#fff;font-size:1.15rem;cursor:pointer;font:inherit}
+.fcard.sel{border-color:#3b4fa8;background:#e8ebf8}.fcard.used{opacity:.35;cursor:default}
+.fcards{display:flex;flex-wrap:wrap;gap:8px;margin:.4rem 0}
+.printonly{display:none}
+@media print{
+  @page{size:A4;margin:12mm}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{background:#fff!important}
+  header.top,nav.tabs,.noprint,.next,section.tab:not(#tab-report){display:none!important}
+  section#tab-report{display:block!important;animation:none!important}
+  main{padding:0!important;max-width:none!important}
+  .printonly{display:block}
+  .rephead{border:2px solid #1c2230}
+  .skill,.rbar,.adv,.rephead,#kmap,.score{break-inside:avoid;page-break-inside:avoid}
+  #kmap svg{max-height:240mm}
+}
+
+/* ===== NCEA lesson layer on the Maths Atlas theme ===== */
+body{font-size:17px}
+h2{color:var(--ink)}
+.lead{color:var(--muted);margin-top:0}
+.prog{display:none}
+nav.tabs button .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-left:6px;background:#d5d2de;vertical-align:middle}
+nav.tabs button .dot.part{background:var(--warn)}nav.tabs button .dot.full{background:var(--good)}
+.card .lab{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:.3rem}
+.card.tech{border-left:5px solid var(--a)}
+.card.tech .lab{color:var(--a)}
+.card.we{border-left:5px solid #7a6bb3}.card.we .lab{color:#6a5aa8}
+.card.thm{border-left:5px solid var(--b)}.card.thm .lab{color:var(--b)}
+.card.tool{background:#fdfcff;border:1px dashed #c9c5d8}.card.tool .lab{color:var(--a)}
+ol.steps{counter-reset:s;list-style:none;padding-left:0}
+ol.steps li{counter-increment:s;position:relative;padding-left:2.1rem;margin:.5rem 0}
+ol.steps li::before{content:counter(s);position:absolute;left:0;top:.15rem;width:1.5rem;height:1.5rem;border-radius:50%;background:var(--a);color:#fff;font-size:.8rem;text-align:center;line-height:1.5rem;font-weight:700}
+details{margin:.6rem 0;border-radius:12px;padding:.5rem .9rem;background:#f1eff6}
+details summary{cursor:pointer;font-weight:600;color:var(--b)}
+.frame{background:var(--a-soft);border-radius:10px;padding:.6rem .8rem;margin:.6rem 0;font-size:.98rem}
+.frame b{color:var(--a)}
+table.dt{border-collapse:collapse;margin:.5rem 0;font-size:.95rem}
+table.dt td,table.dt th{border:1px solid var(--line);padding:.3rem .6rem;text-align:center}
+table.dt th{background:#efedf5;font-weight:600}
+.ex{background:#fff;border:1px solid var(--line);border-radius:14px;padding:1rem 1.1rem 2rem;margin:1rem 0;position:relative;overflow-x:auto}
+.ex .qid{display:inline-block;background:var(--ink);color:#fff;border-radius:6px;padding:0 .5rem;font-weight:700;margin-right:.4rem;font-size:.85rem}
+.ex .meta{font-size:.8rem;color:var(--muted)}
+.ex .lvl{float:right;font-size:.75rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:.05rem .6rem}
+.lvl.A{background:#e5f4ea;color:#24683b}.lvl.M{background:#fbf1dc;color:#8a5a0c}.lvl.E{background:#f8e7ef;color:#8e2f5c}
+.ex .row{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;margin-top:.6rem}
+.ex input[type=text]{font:inherit;font-size:1.05rem;padding:.4rem .6rem;border:1.5px solid #c9c3d6;border-radius:10px;width:170px}
+.ex .pv{min-width:80px;color:var(--muted)}
+.ex button,.ex .btn{font:inherit;font-size:.95rem;padding:.36rem .9rem;border-radius:8px;border:1px solid var(--ink);background:var(--ink);color:#fff;cursor:pointer}
+.ex button.ghost,.btn.ghost{background:#fff;color:var(--ink)}
+.ex button:disabled{opacity:.4;cursor:default}
+.ex .opts label{display:block;margin:.35rem 0;padding:.45rem .6rem;border-radius:10px;border:1px solid var(--line);cursor:pointer}
+.ex .opts label:hover{background:#f7f6fb}
+.ex .sel{display:grid;grid-template-columns:1fr auto;gap:.4rem .6rem;align-items:center;margin-top:.5rem}
+.ex select{font:inherit;font-size:.95rem;padding:.25rem .4rem;border-radius:8px}
+.fb{margin-top:.5rem;font-weight:600}
+.fb.ok{color:var(--good)}.fb.no{color:var(--bad)}
+.hint{margin-top:.5rem;background:var(--warn-soft);border-radius:10px;padding:.5rem .7rem;display:none}
+.solbox{margin-top:.6rem;background:var(--good-soft);border-radius:10px;padding:.6rem .8rem;display:none}
+.att{font-size:.85rem;color:var(--muted)}
+.score{position:absolute;right:1rem;bottom:.6rem;font-weight:800;font-size:.85rem}
+.toolgrid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:760px){.toolgrid{grid-template-columns:1fr}}
+.ctl{display:grid;grid-template-columns:minmax(120px,150px) 1fr 64px;gap:.4rem .6rem;align-items:center;font-size:.92rem}
+.ctl input[type=range]{width:100%}
+.ctl output{font-weight:700;text-align:right}
+.outs{background:#fff;border:1px solid var(--line);border-radius:10px;padding:.55rem .75rem;margin-top:.5rem;font-size:.95rem}
+.outs div{margin:.2rem 0}
+.legend span{display:inline-block;margin-right:.8rem;font-size:.82rem}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:2px;margin-right:4px;vertical-align:-1px}
+.vennwrap{position:relative;width:420px;max-width:100%;margin:auto}
+.vennwrap input{position:absolute;width:52px;text-align:center;font-size:15px;padding:3px;border:1.5px solid #8a9aa3;border-radius:6px;background:#fff}
+.vennwrap input.inc{background:#ffe2c7;border-color:#c4572e;font-weight:700}
+.vennwrap input.den{outline:3px solid #2f7d4f}
+.dist input{width:58px;font-size:14px;padding:3px;text-align:center}
+.grid td.hit{background:#ffe2c7;font-weight:700}
+.stepbox{background:#f4f0fb;border-radius:10px;padding:.5rem .75rem;margin-top:.5rem;min-height:44px}
+.rep table{border-collapse:collapse;width:100%;font-size:.9rem;margin:.5rem 0;display:block;overflow-x:auto}
+.rep th,.rep td{border:1px solid var(--line);padding:.3rem .5rem;text-align:left}
+.rep th{background:#efedf5}
+.rep .bar{height:12px;border-radius:7px;background:#e6e3ee;position:relative;min-width:120px;width:auto;margin:0}
+.rep .bar i{position:absolute;left:0;top:0;bottom:0;border-radius:7px}
+.big{font-family:Georgia,serif;font-size:1.9rem;font-weight:700;color:var(--a)}
+.adv{background:var(--b-soft);border-radius:10px;padding:.55rem .75rem;margin:.5rem 0}
+.pill{display:inline-block;font-size:.75rem;border-radius:9px;padding:0 .5rem;margin-left:.3rem;font-weight:700}
+.pill.r{background:#f8d7d3;color:#8b1e1e}
+.small{font-size:.86rem;color:var(--muted)}
+canvas{max-width:100%}
+/* tab 0 widgets */
+.twt td,.twt th{min-width:62px}
+.twt td.num{background:#ffe2c7;font-weight:700}
+.twt td.den,.twt th.den{outline:3px solid var(--good);outline-offset:-3px}
+.evbtns{display:flex;flex-wrap:wrap;gap:.35rem;margin:.4rem 0}
+.evbtns .btn{font-size:.9rem}
+.tree svg{width:100%;max-width:460px}
+.ichk input{width:64px;font:inherit;text-align:center;padding:.2rem;border:1px solid #c9c3d6;border-radius:8px}
+.toolbox li{margin:.35rem 0}
+
+.katex-display{overflow-x:auto;overflow-y:hidden;padding:2px 0}
+.dist input{width:48px}
+.dist th,.dist td{padding:.25rem .3rem!important}
+#jGrid,#bTable,#bTree,#vennProb,.outs{overflow-x:auto}
+.toolgrid>div{min-width:0}
+@media(max-width:480px){.vennwrap{width:420px!important;max-width:none!important;transform:scale(.74);transform-origin:0 0;margin:0 0 -96px 0!important}}
+.exslot{margin:.8rem 0 1.4rem}.exslot h4{font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;color:var(--a);margin:.4rem 0}
+.lrchart svg{width:100%;max-width:520px}
+.ctl input:not([type]),.ctl select{font:inherit;font-size:.95rem;padding:.25rem .4rem;border:1px solid #c9c3d6;border-radius:8px;min-width:0;width:100%}
+#dXo,#dYo,#dSum{overflow-x:auto;max-width:100%}
+#nTab,#nSvg,#cSvg,#pOut,#sHist,#fSvg2{overflow-x:auto;max-width:100%}
+</style>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%20role%3D%22img%22%20aria-label%3D%22%E7%94%B3%20Shen%20Studio%22%3E%3Crect%20width%3D%22100%22%20height%3D%22100%22%20rx%3D%2212%22%20fill%3D%22%23B3261E%22/%3E%3Cpath%20d%3D%22M41.57%2027.7V42.46H27.58V27.7ZM15.1%2025.34V70.78H16.95C22.18%2070.78%2027.58%2067.91%2027.58%2066.65V62.18H41.57V90H44.01C48.82%2090%2054.3%2086.88%2054.3%2085.62V62.18H68.97V68.93H71.07C75.37%2068.93%2081.53%2066.65%2081.61%2065.89V29.64C83.38%2029.3%2084.39%2028.55%2084.9%2027.87L73.69%2019.19L68.12%2025.34H54.3V13.96C56.74%2013.62%2057.33%2012.7%2057.5%2011.52L41.57%2010V25.34H28.42L15.1%2020.2ZM54.3%2027.7H68.97V42.46H54.3ZM41.57%2059.82H27.58V44.82H41.57ZM54.3%2059.82V44.82H68.97V59.82Z%22%20fill%3D%22%23FFFFFF%22/%3E%3C/svg%3E">
+<style id="shen-brand">
+.shen-footer{display:flex;align-items:center;justify-content:center;gap:8px;padding:18px 12px 26px;font:500 13px/1.3 Inter,"Helvetica Neue",Arial,sans-serif;color:#6B6458;letter-spacing:.03em;text-align:center}
+.shen-footer svg{width:20px;height:20px;flex-shrink:0}
+.shen-footer b{font-weight:600;color:#1A1A1A}
+.shen-print-mark{display:none}
+@media print{.shen-footer{display:none!important}
+.shen-print-mark{display:flex!important;position:fixed;right:0;bottom:0;align-items:center;gap:1.5mm;font:500 7.5pt/1 Inter,Arial,sans-serif;color:#555;opacity:.75;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.shen-print-mark svg{width:4mm;height:4mm}}
+</style>
+<style id="home-link">
+.homebtn{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 12px;border:1px solid var(--line,#ddd);border-radius:999px;background:#fff;color:var(--ink,#1c2230);text-decoration:none;font:600 .88rem/1 Inter,system-ui,sans-serif;white-space:nowrap;flex-shrink:0}
+.homebtn:hover{background:#f1eff6}
+.homebtn svg{width:16px;height:16px}
+@media print{.homebtn{display:none!important}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="topin">
+    <a class="homebtn" href="../index.html" aria-label="Back to the Maths Atlas home page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>Home</a>
+    <div class="brand">NCEA Level 3 · 91585 Probability Concepts<small>Lesson 2 · Independence, simulation and writing</small></div>
+    <div class="prog"><span id="progtxt"></span><div class="bar"><i id="progbar"></i></div></div>
+  </div>
+  <nav class="tabs" id="tabs"></nav>
+</header>
+
+<main>
+<section class="tab" id="start"><div class="kicker">Lesson 2 · Tab 0</div><h2>0 · Foundations</h2>
+<p class="lead">This lesson is about independence, chains of reasoning and simulations. They all rest on three basic tools. Work through them here, with a worked example and a widget for each, then check yourself.</p>
+<div class="card hook"><div class="big">“70% of students take the bus. Of these, 40% are late at least once a week.”</div>
+<p>What fraction of <b>all</b> students are bus users who are late? Can you say what fraction of the <b>late</b> students take the bus? And if a survey of 20 students finds 9 late ones, is that the “true” probability? By the end of this tab you will know which of these you can answer, and why.</p></div>
+
+<div class="sub"><div class="n">TOOL 1</div><h3>The complement and addition rules</h3></div>
+<div class="card tech"><div class="lab">The idea</div>
+<ul><li><b>Complement:</b> \(P(A')=1-P(A)\). “Not A” is everything outside A.</li>
+<li><b>Addition rule:</b> \(P(A\cup B)=P(A)+P(B)-P(A\cap B)\). The overlap is counted twice when you add \(P(A)\) and \(P(B)\), so take it away once.</li>
+<li><b>Mutually exclusive:</b> no overlap, \(P(A\cap B)=0\), so \(P(A\cup B)=P(A)+P(B)\).</li>
+<li><b>Independent:</b> \(P(A\cap B)=P(A)\times P(B)\). A different idea from mutually exclusive.</li></ul></div>
+<div class="tutor"><div class="who">Let's do it together</div><div id="t0a"></div></div>
+<div class="card tool"><div class="lab">Widget · two-event Venn</div>
+<div class="ctl"><span>\(P(A)\)</span><input type="range" id="vA" min="0" max="1" step="0.05" value="0.5"><output id="vAo"></output>
+<span>\(P(B)\)</span><input type="range" id="vB" min="0" max="1" step="0.05" value="0.3"><output id="vBo"></output>
+<span>\(P(A\cap B)\)</span><input type="range" id="vAB" min="0" max="1" step="0.05" value="0.1"><output id="vABo"></output></div>
+<div id="vSvg"></div><div class="outs" id="vOut"></div></div>
+<div class="shortcut"><div class="box-title">Remember</div><p>Draw the Venn diagram and fill the overlap first. Then every other region is a subtraction, and “neither” is \(1-P(A\cup B)\).</p></div>
+<div id="ex-t0a"></div>
+
+<div class="sub"><div class="n">TOOL 2</div><h3>“Of these…”: conditional probability and multiplying</h3></div>
+<div class="card tech"><div class="lab">The idea</div>
+<p>“Of these bus students, 40% are late” is a <b>conditional</b> probability: \(P(\text{late}\mid\text{bus})=0.4\). It is <b>not</b> \(P(\text{late})\).</p>
+<p>From the definition \(P(B\mid A)=\dfrac{P(A\cap B)}{P(A)}\) we get the multiplication rule \[P(A\cap B)=P(A)\times P(B\mid A)\] This is <b>always</b> true: it is multiplying along a tree branch. Using \(P(A)\times P(B)\) instead is only allowed for independent events.</p></div>
+<div class="tutor"><div class="who">Let's do it together</div><div id="t0b"></div></div>
+<div class="shortcut"><div class="box-title">Remember</div><p>Write the given information in symbols first: “of the bus students” → \(\mid\text{bus}\). Then check which direction the question asks for.</p></div>
+<div id="ex-t0b"></div>
+
+<div class="sub"><div class="n">TOOL 3</div><h3>True, model and experimental probability</h3></div>
+<div class="card tech"><div class="lab">The idea</div>
+<ul><li><b>Model (theoretical) probability:</b> worked out from an assumption, e.g. “the coin is fair, so \(P(\text{head})=0.5\)”.</li>
+<li><b>Experimental probability:</b> from trials, e.g. 62 heads in 100 flips gives \(0.62\). It changes from one experiment to the next.</li>
+<li><b>True probability:</b> the real long-run chance for <i>this</i> coin. We can never know it exactly.</li></ul>
+<p>The more trials, the closer the experimental probability usually gets to the true one (the <b>law of large numbers</b>). It is never guaranteed to be equal.</p></div>
+<div class="tutor"><div class="who">Let's do it together</div><div id="t0c"></div></div>
+<div class="card tool"><div class="lab">Widget · the long run</div>
+<p>Pick a true probability, then run trials. The line is the experimental probability after each trial; the dashed line is the true value.</p>
+<div class="ctl"><span>True \(p\)</span><input type="range" id="lrP" min="0.05" max="0.95" step="0.05" value="0.3"><output id="lrPo"></output></div>
+<p><button class="btn small" data-n="10">10 trials</button> <button class="btn small" data-n="100">100 trials</button> <button class="btn small" data-n="1000">1000 trials</button></p>
+<div class="lrchart" id="lrSvg"></div><div class="outs" id="lrOut"></div></div>
+<div class="shortcut"><div class="box-title">Remember</div><p>An experimental probability is an <b>estimate</b> of the true probability. Small samples can be far off; large samples are more reliable. This is the idea behind the simulation lab (Tab 2).</p></div>
+<div id="ex-t0c"></div>
+</section>
+<section class="tab" id="indep"><h2>1 · Independence & bounds</h2><p class="lead">Tool D · about 15 minutes</p><div class="card tech"><div class="lab">Technique</div><p><b>Three equivalent tests for independence. Choose the one that matches the information you are given.</b></p>
+  <ol class="steps"><li><b>Conditional vs conditional:</b> if \(P(B\mid A)=P(B\mid A')\), the events are independent. Use this when the question gives percentages <i>within</i> groups, such as “of shoppers with a regular day, 41.2%…”. You can decide <b>without any further calculation</b> (2016 Question 1(b)).</li>
+  <li><b>Conditional vs overall:</b> if \(P(B\mid A)=P(B)\), the events are independent.</li>
+  <li><b>Product rule:</b> if \(P(A\cap B)=P(A)P(B)\), the events are independent. Use this when you are given a two-way table or joint and marginal probabilities.</li>
+  <li><b>Mutually exclusive</b> is a different idea: the events cannot happen together, so \(P(A\cap B)=0\). To show events are <i>not</i> mutually exclusive, find a non-zero joint probability.</li>
+  <li><b>Excellence sentence:</b> say what the comparison means in context, for example “knowing a student takes the bus does not change the probability that they are late”.</li></ol></div><div class="card we"><div class="lab">Worked example</div><p><b>The 2016 style.</b> For shoppers <i>with</i> a regular shopping day, 41.2% shop at the weekend. For shoppers <i>without</i> one, 28.9% shop at the weekend. Are the events independent?</p>
+  <div class="frame"><b>Excellence answer:</b> “The events are not independent, because the probability of shopping at the weekend depends on whether the shopper has a regular shopping day: \(P(W\mid R)=0.412\ne P(W\mid R')=0.289\). Shoppers with a regular day are more likely to shop at the weekend.”</div>
+  <p><b>The 2015 'bounds' style (a chain of reasoning).</b> 63.9% of imported cars are Japanese, and of these Japanese cars, 80.3% are used. Explain, from this information alone, why a used car is more likely to be Japanese than not.</p>
+  <p><b>Step 1 · What we know and what we want.</b> \(P(J)=0.639\) and \(P(U\mid J)=0.803\). We want to show \(P(J\mid U)\gt 0.5\). We are <b>not</b> told how many non-Japanese cars are used, so we cannot calculate \(P(U)\) or \(P(J\mid U)\) exactly. Instead we find a <b>bound</b>.</p>
+  <p><b>Step 2 · Japanese and used.</b> \(P(J\cap U)=0.639\times0.803=0.513\). This is 51.3% of <b>all</b> imported cars (not a share of the used cars).</p>
+  <div class="frame" style="font-size:14px"><b>Why can we multiply?</b> “Of these cars manufactured in Japan, 80.3% were used” is a <b>conditional</b> probability: \(P(U\mid J)=0.803\), not \(P(U)\). Rearranging the conditional probability formula gives the multiplication:
+  \[P(U\mid J)=\frac{P(J\cap U)}{P(J)}\;\Longrightarrow\;P(J\cap U)=P(J)\times P(U\mid J)=0.639\times0.803=0.513\]
+  This is the same as multiplying along the branches of a tree diagram, and it does <b>not</b> need independence.
+  <ul style="margin:6px 0 0"><li>\(P(J)\times P(U\mid J)\): <b>always</b> true (it is the conditional probability formula).</li>
+  <li>\(P(J)\times P(U)\): only true if \(J\) and \(U\) are independent, and here we are not even given \(P(U)\).</li></ul>
+  <p style="margin:6px 0 0"><b>Why not use the formula directly for \(P(J\mid U)\)?</b> \(P(J\mid U)=\dfrac{P(J\cap U)}{P(U)}\). The numerator is 0.513, but the denominator \(P(U)=P(J\cap U)+P(J'\cap U)=0.513+\,?\) is unknown, because we are not told how many non-Japanese cars are used. That is exactly why we need a bound (Steps 3 and 4).</p>
+  <p style="margin:6px 0 0" class="small">Watch the direction: we are <b>given</b> \(P(U\mid J)\) (given Japanese, is it used?) but asked about \(P(J\mid U)\) (given used, is it Japanese?).</p></div>
+  <p><b>Step 3 · Non-Japanese and used (largest possible).</b> These cars are part of the non-Japanese cars, so \(P(J'\cap U)\le P(J')=1-0.639=0.361\). The largest value happens if every non-Japanese car is used.</p>
+  <p><b>Step 4 · Compare the two parts of the used cars.</b> Every used car is either Japanese or not: \(P(U)=P(J\cap U)+P(J'\cap U)\). The Japanese part (0.513) is bigger than the other part (at most 0.361), so it is <b>more than half</b> of the used cars.</p>
+<div class="fig"><svg viewBox="0 0 600 190" width="600" style="max-width:100%;font-family:inherit">
+<defs><pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="8" stroke="#b9c2cc" stroke-width="3"/></pattern></defs>
+<text x="20" y="18" font-size="13" font-weight="bold">All imported cars (100%)</text>
+<rect x="20" y="28" width="287.3" height="54" fill="#2e6aa5"/>
+<rect x="307.3" y="28" width="70.6" height="54" fill="#bcd4ec"/>
+<rect x="377.8" y="28" width="202.2" height="54" fill="url(#hatch)" stroke="#888"/>
+<rect x="20" y="28" width="560" height="54" fill="none" stroke="#222" stroke-width="1.5"/>
+<text x="163.6" y="52" font-size="13" text-anchor="middle" fill="#fff" font-weight="bold">Japanese & used</text>
+<text x="163.6" y="70" font-size="13" text-anchor="middle" fill="#fff">0.639 × 0.803 = 0.513</text>
+<text x="342.6" y="60" font-size="11" text-anchor="middle">not used</text>
+<text x="478.9" y="52" font-size="13" text-anchor="middle" font-weight="bold">Not Japanese: 0.361</text>
+<text x="478.9" y="70" font-size="12" text-anchor="middle">used part unknown</text>
+<line x1="20" y1="92" x2="20" y2="104" stroke="#222"/><line x1="377.8" y1="92" x2="377.8" y2="104" stroke="#222"/><line x1="20" y1="98" x2="377.8" y2="98" stroke="#222"/>
+<text x="198.9" y="118" font-size="12" text-anchor="middle">Japanese 0.639 (of these, 80.3% are used)</text>
+<text x="20" y="148" font-size="13">Used cars = dark blue part + the used part of the grey block.</text>
+<text x="20" y="170" font-size="13">Even if the WHOLE grey block were used (worst case), 0.361 &lt; 0.513.</text>
+</svg></div>
+  <p><b>Conclusion:</b> \(P(J\mid U)=\dfrac{0.513}{0.513+P(J'\cap U)}\ge\dfrac{0.513}{0.513+0.361}\approx0.587\gt 0.5\), <b>whatever</b> the number of non-Japanese used cars is.</p>
+  <p class="small">A shorter chain from the 2015 schedule: \(P(J\cap U)=0.513\gt 0.5\), so \(P(J'\cap U)\le1-0.513=0.487\), which is smaller than 0.513.</p>
+  <div class="frame"><b>Excellence answer:</b> “\(P(\text{Japan}\cap\text{used})=0.639\times0.803=0.513\). The non-Japanese cars make up only 0.361 of all imported cars, so \(P(\text{not Japan}\cap\text{used})\) can be at most 0.361. So more of the used cars are Japanese than not, which means a used car is more likely to have been made in Japan.”</div>
+  <p class="small"><b>Common errors:</b> (1) “80.3% is more than 50%, so it is Japanese”: 80.3% is \(P(U\mid J)\), which is the wrong direction. (2) Calling 0.513 “the share of used cars that are Japanese”: 0.513 is a share of <i>all</i> cars.</p></div><div class="card thm"><div class="lab">Theorem</div><p><b>Theorem 1 (equivalent tests).</b> If \(0\lt P(A)\lt 1\), then the following are all equivalent:
+  \[P(A\cap B)=P(A)P(B)\iff P(B\mid A)=P(B)\iff P(B\mid A)=P(B\mid A')\]</p>
+  <p><b>Theorem 2.</b> If \(A\) and \(B\) are mutually exclusive and both have non-zero probability, they are <b>not</b> independent.</p>
+  <p><b>Theorem 3 (bounds).</b> If \(P(A\cap B)\gt P(A')\), then \(P(A\mid B)\gt \tfrac12\).</p>
+  <p><b>What they say, with concrete examples:</b></p>
+  <ul><li><b>Theorem 1:</b> bus users and non-bus users are both 30% late, so lateness is independent of taking the bus. The product test gives the same answer.</li>
+  <li><b>Theorem 2:</b> 'Works at Henry's' and 'works at Bob's' (you can't work at both): knowing a student works at Henry's makes \(P(\text{Bob's})=0\), so the events are dependent.</li>
+  <li><b>Theorem 3:</b> cars \(0.513\gt 0.361\), so a used car is more likely Japanese. Hospital: \(0.544\gt 0.36\), so an overnight patient is more likely to have come through ED.</li></ul>
+  <details><summary>Proofs (for interested readers)</summary>
+  <p><b>Theorem 1.</b> \(P(B\mid A)=\frac{P(A\cap B)}{P(A)}\), so \(P(A\cap B)=P(A)P(B)\iff P(B\mid A)=P(B)\).</p>
+  <p>By the law of total probability, \(P(B)=P(A)P(B\mid A)+(1-P(A))P(B\mid A')\). This is a weighted average of the two conditional probabilities, so it equals \(P(B\mid A)\) exactly when \(P(B\mid A)=P(B\mid A')\).</p>
+  <p><b>Theorem 2.</b> \(P(A\cap B)=0\), but \(P(A)P(B)\gt 0\), so the product rule fails.</p>
+  <p><b>Theorem 3.</b> \(A'\cap B\) is part of \(A'\), so \(P(A'\cap B)\le P(A')\lt P(A\cap B)\). Since \(P(B)=P(A\cap B)+P(A'\cap B)\lt 2P(A\cap B)\), we get \(P(A\mid B)=\dfrac{P(A\cap B)}{P(B)}\gt\dfrac12\). ∎</p></details></div><div class="card tool" id="toolIndep"><div class="lab">Interactive tool D — area model</div><p>The square is everyone. A is the left strip. The shaded height inside each strip is \(P(B\mid A)\) or \(P(B\mid A')\). The events are independent exactly when the two shaded heights are equal.</p>
+<div class="toolgrid"><div><div class="ctl"><span>\(P(A)\)</span><input type="range" id="iA" min="0" max="100" value="40"><output id="iAO"></output>
+ <span>\(P(B\mid A)\)</span><input type="range" id="iB1" min="0" max="100" value="30"><output id="iB1O"></output>
+ <span>\(P(B\mid A')\)</span><input type="range" id="iB2" min="0" max="100" value="30"><output id="iB2O"></output></div>
+ <div id="iSvg"></div></div><div><div class="outs" id="iOut"></div><p class="small">Try: set \(P(B\mid A)=0\) to make A and B mutually exclusive, and the tool shows they are dependent. Then make both heights equal and watch \(P(A\cap B)=P(A)P(B)\).</p></div></div></div><h3>Exercises</h3><div id="ex-indep"></div></section><section class="tab" id="sim"><h2>2 · Simulation lab</h2><p class="lead">Tool E · about 15 minutes</p><div class="frame" style="font-size:14px"><b>The 5-step road for every simulation question:</b> ① name the three probabilities → ② understand what the simulation shows → ③ count the results as extreme as the observed one → ④ decide “rare or not” and write the conclusion → ⑤ think about sample size.</div><div class="card tech"><div class="lab">Step 1 of 5 · Three kinds of probability</div><p>Look at one die. There are three different “probabilities of a 6”, and the exam expects you to name them correctly.</p>
+  <div class="tblwrap"><table class="dt" style="text-align:left"><tr><th>Name</th><th>Where it comes from</th><th>Die example</th></tr>
+  <tr><td><b>Model</b> (theoretical)</td><td>an <b>assumption</b> about the situation</td><td>“the die is fair”, so \(P(6)=\tfrac16\)</td></tr>
+  <tr><td><b>Experimental</b></td><td><b>data</b> we collected</td><td>13 sixes in 60 rolls: \(\tfrac{13}{60}\approx0.217\)</td></tr>
+  <tr><td><b>True</b></td><td>the real long-run chance for <b>this</b> die</td><td>unknown: we can only estimate it</td></tr></table></div>
+  <p><b>Remember:</b> the experimental probability is an <b>estimate</b> of the true probability, and it changes from sample to sample. The model is only an assumption, and it might be wrong.</p></div><div class="exslot"><h4>Check this step</h4><div id="ex-sim1"></div></div><div class="card tech"><div class="lab">Step 2 of 5 · What a simulation shows</div><p><b>The situation.</b> A shop claims that 10% of its receipts are “lucky receipts” (model: \(p=0.1\)). Tama collected <b>25</b> receipts and <b>6</b> were lucky. Is that surprising?</p>
+  <p><b>The idea.</b> If the claim is true, 25 receipts should give about \(25\times0.1=2.5\) lucky ones. But samples vary, so a real sample might give 1, 3 or 4 by chance alone. A simulation shows <b>how much results vary by chance alone</b>:</p>
+  <ol class="steps"><li><b>Assume the model is true</b> (\(p=0.1\)).</li><li>Let a computer collect a sample of the <b>same size</b> as the real one (25 receipts) and count the lucky ones.</li><li>Repeat many times (here 1000) and record each count.</li></ol>
+  <p>The table below is the result. Each number tells you in how many of the 1000 simulated samples that count happened.</p></div><div class="tblwrap"><table class="dt"><tr><th>Lucky receipts in 25</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8+</td><th>Total</th></tr>
+<tr><th>Number of simulations</th><td>72</td><td>199</td><td>266</td><td>226</td><td>138</td><td>65</td><td>24</td><td>7</td><td>3</td><td>1000</td></tr></table></div><p><b>Read it like this:</b> 266 of the 1000 samples had exactly 2 lucky receipts, so 2 is the most common result. Results from 1 to 4 are typical when the claim is true.</p>
+  <p class="small">Want to see a simulation being made? Use tool E below: press “Example 1” and watch the histogram build up.</p><div class="card tool" id="toolSim"><div class="lab">Interactive tool E — simulation lab</div><p>Set the model probability, the sample size and the observed number of successes, then run. Each bar shows how many simulated samples gave that result. Orange bars are results as extreme as, or more extreme than, the observed one.</p>
+<div class="ctl" style="grid-template-columns:minmax(0,1fr) 110px"><span>Model probability p</span><input id="sP" value="0.25"><span>Sample size n</span><input id="sN" value="30"><span>Observed successes k</span><input id="sK" value="2">
+<span>Count results</span><select id="sDir"><option value="le">≤ k</option><option value="ge">≥ k</option></select><span>Number of simulations</span><input id="sR" value="1000"></div>
+<p><button class="btn" id="sRun">Run simulation</button> <button class="btn ghost" data-sim="0.25,30,2,le">Example 1: 2 wins in 30</button> <button class="btn ghost" data-sim="0.25,300,60,le">Example 2: 60 wins in 300</button></p>
+<div id="sHist"></div><div class="outs" id="sOut"></div></div><div class="exslot"><h4>Check this step</h4><div id="ex-sim2"></div></div><div class="card tech"><div class="lab">Step 3 of 5 · Count the results as extreme as the observed one</div><p>We now ask: <b>if the claim is true, how often would we get a result at least as far from 2.5 as Tama’s?</b></p>
+  <ol class="steps"><li><b>Expected value:</b> \(np=25\times0.1=2.5\).</li>
+  <li><b>Which direction?</b> Tama’s 6 is <b>above</b> 2.5, so “as extreme or more” means <b>6 or more</b>. (If the observed value were <b>below</b> the expected value, we would count that value <b>or fewer</b>.)</li>
+  <li><b>Add up the matching columns:</b> \(24+7+3=34\) simulations.</li>
+  <li><b>Turn it into a proportion:</b> \(\tfrac{34}{1000}=0.034\), about 3.4%.</li></ol></div><div class="exslot"><h4>Check this step</h4><div id="ex-sim3"></div></div><div class="card tech"><div class="lab">Step 4 of 5 · Decide “rare or not”, then write the conclusion</div><p><b>Rule of thumb:</b> if the proportion from Step 3 is <b>under about 5%</b>, the result is <b>rare</b> under the model.</p>
+  <div class="tblwrap"><table class="dt" style="text-align:left"><tr><th></th><th>Rare (under 5%)</th><th>Not rare</th></tr>
+  <tr><th>You CAN say</th><td>“unlikely to happen by chance alone if the model is true”, so there is evidence against the model</td><td>“consistent with the model”: chance alone could explain it</td></tr>
+  <tr><th>You CANNOT say</th><td>what the cause is (“the shop is cheating”), or that the model is proven wrong</td><td>that the model is proven true</td></tr></table></div>
+  <p><b>Two contrasting examples with the same table:</b></p>
+  <ul><li><b>Tama, 6 lucky:</b> 0.034 (3.4%) is rare, so the claim of 10% is doubtful.</li>
+  <li><b>Kiri, 4 lucky:</b> “4 or more” \(=138+65+24+7+3=237\), so 0.237 (23.7%). This is not rare, so his result is consistent with the 10% claim.</li></ul>
+  <div class="frame"><b>Sentence frame:</b> “If the [model] is true, a result as extreme as [observed] happened in only [x] of the [N] simulations, so it is (un)likely to occur by chance alone. This suggests …, but [limitation, such as sample size or factors not controlled].”</div></div><div class="exslot"><h4>Check this step</h4><div id="ex-sim4"></div></div><div class="card tech"><div class="lab">Step 5 of 5 · Sample size: why more data is more convincing</div><p>In tool E, run <b>Example 1</b> (30 games) and then <b>Example 2</b> (300 games), both with \(p=0.25\). Compare the <b>lower</b> chart (experimental proportions on a fixed 0–1 scale) for the two runs. The upper chart rescales itself, so use the lower one.</p>
+  <ul><li>With 30 games, proportions from about 0.10 to 0.40 are common: the histogram is <b>wide</b>.</li>
+  <li>With 300 games, they stay close to 0.25: the histogram is <b>narrow</b>.</li></ul>
+  <p><b>So:</b> a result far from the model is <b>less surprising</b> in a small sample and <b>more convincing</b> in a large one. The experimental probability gets closer to the true probability as \(n\) grows, but it is never guaranteed to equal it.</p></div><div class="exslot"><h4>Check this step</h4><div id="ex-sim5"></div></div><div class="card thm"><div class="lab">Theorem</div><p><b>Going deeper (optional).</b> <b>Theorem (how much experimental proportions vary).</b> If each of \(n\) independent trials has true probability \(p\), the experimental proportion \(\hat p\) has mean \(p\) and standard deviation \[\sigma_{\hat p}=\sqrt{\frac{p(1-p)}{n}}\] So as \(n\) grows, \(\hat p\) settles towards the true probability \(p\) (the law of large numbers).</p>
+  <p><b>What it says, with concrete examples:</b></p>
+  <ul><li><b>Spinner:</b> with \(p=0.25\) and \(n=30\), \(\sigma\approx0.079\), so proportions from about 0.10 to 0.40 are common. With \(n=300\), \(\sigma\approx0.025\). This is exactly what Step 5 showed.</li>
+  <li><b>Male shoppers (2016):</b> with only 31 males, \(\sigma\approx0.09\), so a 45% estimate could easily be 9 percentage points away from the truth. This is why the examiners accept “small sample” reasons.</li>
+  <li><b>What it can do:</b> to halve the spread, you need about 4 times as many trials.</li></ul>
+  <details><summary>Proof sketch (for interested readers)</summary>
+  <p>Let \(X_i=1\) if trial \(i\) is a success, and 0 otherwise. Then \(E(X_i)=p\) and \(\text{Var}(X_i)=p-p^2=p(1-p)\).</p>
+  <p>For independent trials, variances add: \(\text{Var}(\sum X_i)=np(1-p)\).</p>
+  <p>\(\hat p=\frac1n\sum X_i\), so \(\text{Var}(\hat p)=\frac{np(1-p)}{n^2}=\frac{p(1-p)}{n}\). ∎</p></details></div></section><section class="tab" id="write"><h2>3 · Writing for Excellence</h2><p class="lead">About 5 minutes, then the timed mini-paper (printed).</p><div class="card tech"><div class="lab">Technique</div><p><b>Turning a Merit answer into an Excellence answer.</b> The marking schedules show that Excellence is usually earned in the <b>sentences</b>. Learn these six frames. In the exam, answers are written in English, so use these exact phrases.</p><div class="frame"><b>1 · Relative risk:</b> “[Group 1] were <b>k times as likely</b> as [group 2] to [outcome] (risk a compared with b).”</div>
+<div class="frame"><b>2 · Conditional probability in context:</b> “Of the [given group], [x]% [outcome], so \(P(\text{outcome}\mid\text{given})=\dots\)”</div>
+<div class="frame"><b>3 · Independence:</b> “The events are (not) independent because \(P(B\mid A)=\dots\) is (not) equal to \(P(B\mid A')=\dots\), so knowing [A] (does not change / changes) the probability that [B].”</div>
+<div class="frame"><b>4 · Assumption:</b> “I assumed [independence / large population]. This is reasonable (or not) because [reason specific to the context].”</div>
+<div class="frame"><b>5 · Generalisation (two reasons):</b> “The estimate comes from [one place / one time / n = …], so … First, … Second, …”</div>
+<div class="frame"><b>6 · Simulation:</b> “If the [model] is true, a result as extreme as [observed] happened in only [x] of [N] simulations, so it is unlikely to occur by chance alone. This suggests …, but [limitation].”</div></div><div class="card we"><div class="lab">Worked example</div><p><b>Question:</b> a demonstrator approached 528 female and 31 male shoppers in one supermarket. 54.5% of the females and 45.2% of the males tasted the product. She claims females in general are more likely to taste it. Discuss.</p>
+  <p><b>Merit answer:</b> “The sample might not be representative, so she should be careful.” <span class="small">This is one vague reason with no context.</span></p>
+  <div class="frame"><b>Excellence answer:</b> “Females were \(0.545/0.452=1.2\) times as likely to taste the product in this sample. However, first, only 31 males were approached, so the male estimate of 45.2% has a lot of sampling variability: the true proportion could easily be higher or lower. Second, the data comes from one supermarket and one demonstrator, so shoppers at other locations or times, or with a different demonstrator, may behave differently. So the claim can't be generalised to shoppers in general from this data.”</div></div><h3>Exercises</h3><div id="ex-write"></div></section><section class="tab" id="report"><h2>Learning report</h2><p class="lead">Generated from your attempts in this lesson.</p><div class="rep" id="reportBody"></div></section>
+</main>
+<footer class="shen-footer"><svg viewBox="0 0 100 100" role="img" aria-label="申 Shen Studio"><rect width="100" height="100" rx="12" fill="#B3261E"/><path d="M41.57 27.7V42.46H27.58V27.7ZM15.1 25.34V70.78H16.95C22.18 70.78 27.58 67.91 27.58 66.65V62.18H41.57V90H44.01C48.82 90 54.3 86.88 54.3 85.62V62.18H68.97V68.93H71.07C75.37 68.93 81.53 66.65 81.61 65.89V29.64C83.38 29.3 84.39 28.55 84.9 27.87L73.69 19.19L68.12 25.34H54.3V13.96C56.74 13.62 57.33 12.7 57.5 11.52L41.57 10V25.34H28.42L15.1 20.2ZM54.3 27.7H68.97V42.46H54.3ZM41.57 59.82H27.58V44.82H41.57ZM54.3 59.82V44.82H68.97V59.82Z" fill="#FFFFFF"/></svg><span><b>Shen Studio</b> · Designed by Mr. Shen</span></footer>
+<div class="shen-print-mark" aria-hidden="true"><svg viewBox="0 0 100 100" role="img" aria-label="申 Shen Studio"><rect width="100" height="100" rx="12" fill="#B3261E"/><path d="M41.57 27.7V42.46H27.58V27.7ZM15.1 25.34V70.78H16.95C22.18 70.78 27.58 67.91 27.58 66.65V62.18H41.57V90H44.01C48.82 90 54.3 86.88 54.3 85.62V62.18H68.97V68.93H71.07C75.37 68.93 81.53 66.65 81.61 65.89V29.64C83.38 29.3 84.39 28.55 84.9 27.87L73.69 19.19L68.12 25.34H54.3V13.96C56.74 13.62 57.33 12.7 57.5 11.52L41.57 10V25.34H28.42L15.1 20.2ZM54.3 27.7H68.97V42.46H54.3ZM41.57 59.82H27.58V44.82H41.57ZM54.3 59.82V44.82H68.97V59.82Z" fill="#FFFFFF"/></svg><span>Shen Studio</span></div>
+
+<script>
+const DATA={"lessonId": "L2", "lang": "en", "tabs": [{"id": "start", "title": "0 · Foundations"}, {"id": "indep", "title": "1 · Independence & bounds"}, {"id": "sim", "title": "2 · Simulation lab"}, {"id": "write", "title": "3 · Writing for Excellence"}, {"id": "report", "title": "Learning report"}], "exercises": [{"id": "F1", "concept": "rules", "skill": "calc", "level": "A", "type": "num", "answer": 0.65, "tol": 0.001, "prompt": "\\(P(A)=0.35\\). Find \\(P(A')\\).", "hint": "Not A is everything outside A.", "solution": "\\(P(A')=1-0.35=0.65\\)", "tab": "start", "host": "t0a", "label": "F1"}, {"id": "F2", "concept": "rules", "skill": "calc", "level": "A", "type": "num", "answer": 0.7, "tol": 0.001, "prompt": "\\(P(A)=0.5\\), \\(P(B)=0.3\\) and \\(P(A\\cap B)=0.1\\). Find \\(P(A\\cup B)\\).", "hint": "Add, then take the overlap away once.", "solution": "\\(0.5+0.3-0.1=0.7\\)", "tab": "start", "host": "t0a", "label": "F2"}, {"id": "F3", "concept": "rules", "skill": "model", "level": "A", "type": "num", "answer": 0.35, "tol": 0.001, "prompt": "In a survey, 45% of people own a cat, 30% own a dog and 10% own both.<br>Find the probability that a randomly chosen person owns <b>neither</b>.", "hint": "Find P(cat ∪ dog) first, or fill a Venn diagram.", "solution": "\\(P(C\\cup D)=0.45+0.30-0.10=0.65\\), so neither \\(=1-0.65=0.35\\).", "tab": "start", "host": "t0a", "label": "F3"}, {"id": "F4", "concept": "chain", "skill": "calc", "level": "A", "type": "num", "answer": 0.18, "tol": 0.001, "prompt": "60% of a school's students play a sport. Of these, 30% have been injured this year.<br>Find the probability that a randomly chosen student plays a sport <b>and</b> has been injured.", "hint": "“Of these” is a conditional probability: multiply along the branch.", "solution": "\\(P(S\\cap I)=P(S)\\times P(I\\mid S)=0.6\\times0.3=0.18\\)", "tab": "start", "host": "t0b", "label": "F4"}, {"id": "F5", "concept": "chain", "skill": "reason", "level": "M", "type": "multi", "correct": [0, 2], "prompt": "Same school (F4). Which statements are correct?", "options": ["\\(P(S\\cap I)=0.6\\times0.3\\) is correct even if playing sport and being injured are not independent.", "30% of the injured students play a sport.", "To find \\(P(I)\\) we also need the injury rate for students who do not play a sport.", "\\(P(I)=0.3\\)."], "hint": "Which group is the 30% a percentage of?", "solution": "Statements 1 and 3 are correct. 0.3 is \\(P(I\\mid S)\\), not \\(P(S\\mid I)\\) or \\(P(I)\\). Multiplying \\(P(S)\\times P(I\\mid S)\\) never needs independence.", "tab": "start", "host": "t0b", "label": "F5"}, {"id": "F6", "concept": "tme", "skill": "model", "level": "A", "type": "select", "correct": [1, 2, 0], "prompt": "Classify each probability.", "items": ["A spinner has 4 equal sectors, so \\(P(\\text{red})=\\tfrac14\\).", "Ana spun it 80 times and got red 23 times: \\(\\tfrac{23}{80}\\).", "The actual long-run chance of red for this particular (slightly bent) spinner."], "choices": ["True", "Model", "Experimental"], "hint": "Model = from an assumption; experimental = from trials; true = the real, unknown value.", "solution": "Model, experimental, true.", "tab": "start", "host": "t0c", "label": "F6"}, {"id": "F7", "concept": "samp", "skill": "reason", "level": "A", "type": "multi", "correct": [0, 2], "prompt": "Leo flips a coin 10 times and gets 7 heads. Which statements are correct?", "options": ["The experimental probability of a head is 0.7.", "The coin must be biased.", "With 1000 flips, the proportion of heads would probably be much closer to the true probability.", "The true probability of a head is 0.7."], "hint": "10 flips is a very small sample.", "solution": "Statements 1 and 3. Seven heads in 10 flips happens quite often with a fair coin (about 17% of the time for 7 or more), so it is not good evidence of bias, and 0.7 is only an estimate.", "tab": "start", "host": "t0c", "label": "F7"}, {"id": "I1", "label": "I1", "tab": "indep", "concept": "indep", "skill": "reason", "level": "M", "type": "multi", "correct": [0, 3], "prompt": "At a school, 30% of students who take the bus are late at least once a week, and 30% of students who don't take the bus are also late at least once a week. Which statements are correct?", "options": ["‘Late’ and ‘takes the bus’ are independent, because \\(P(L\\mid B)=P(L\\mid B')=0.3\\).", "They are mutually exclusive.", "We cannot decide without knowing \\(P(B)\\).", "Knowing that a student takes the bus does not change the probability that they are late."], "hint": "Look at test 1 in the technique box: conditional vs conditional.", "solution": "Statements 1 and 4 are correct. Equal conditional probabilities are enough (Theorem 1). They are not mutually exclusive, since some bus users are late."}, {"id": "I2", "label": "I2", "tab": "indep", "concept": "indep", "skill": "calc", "level": "A", "type": "num", "answer": 0.1, "tol": 0.001, "prompt": "\\(P(A)=0.4\\), \\(P(B)=0.25\\) and \\(P(A\\cup B)=0.55\\). Find \\(P(A\\cap B)\\).", "hint": "Rearrange \\(P(A\\cup B)=P(A)+P(B)-P(A\\cap B)\\).", "solution": "\\(P(A\\cap B)=0.4+0.25-0.55=0.1\\)"}, {"id": "I3", "label": "I3", "tab": "indep", "concept": "indep", "skill": "reason", "level": "M", "type": "multi", "correct": [0], "prompt": "Using I2, are \\(A\\) and \\(B\\) independent?", "options": ["Yes, because \\(P(A)P(B)=0.4\\times0.25=0.1=P(A\\cap B)\\).", "No, because \\(P(A\\cap B)\\ne0\\).", "No, because they are mutually exclusive."], "hint": "Use the product rule.", "solution": "Only statement 1 is correct. A non-zero overlap only tells you the events are not mutually exclusive."}, {"id": "I4", "label": "I4", "tab": "indep", "concept": "indep", "skill": "calc", "level": "A", "type": "num", "answer": 0.4, "tol": 0.001, "prompt": "150 students were surveyed:<table class=\"dt\"><tr><th></th><th>Job</th><th>No job</th><th>Total</th></tr><tr><th>Plays sport</th><td>36</td><td>54</td><td>90</td></tr><tr><th>No sport</th><td>24</td><td>36</td><td>60</td></tr></table>Find \\(P(\\text{job}\\mid\\text{plays sport})\\).", "hint": "Use the 'plays sport' row only.", "solution": "\\(\\tfrac{36}{90}=0.4\\)"}, {"id": "I5", "label": "I5", "tab": "indep", "concept": "indep", "skill": "reason", "level": "E", "type": "multi", "correct": [0, 2], "prompt": "Same survey. Which conclusions are correct?", "options": ["\\(P(\\text{job}\\mid\\text{sport})=P(\\text{job}\\mid\\text{no sport})=0.4\\), so for these students having a job is independent of playing sport.", "They are not independent, because 36 ≠ 24.", "Knowing that a student plays sport does not change the chance that they have a job.", "The events are mutually exclusive."], "hint": "Compare probabilities, not counts: \\(\\tfrac{24}{60}=?\\)", "solution": "Statements 1 and 3 are correct. Counts like 36 and 24 come from groups of different sizes, so compare the proportions."}, {"id": "I6", "label": "I6", "tab": "indep", "concept": "me", "skill": "calc", "level": "A", "type": "num", "answer": 0.8, "tol": 0.001, "prompt": "\\(A\\) and \\(B\\) are mutually exclusive, with \\(P(A)=0.3\\) and \\(P(B)=0.5\\). Find \\(P(A\\cup B)\\).", "hint": "Mutually exclusive means \\(P(A\\cap B)=0\\).", "solution": "\\(0.3+0.5-0=0.8\\). (They are also dependent: \\(P(A\\mid B)=0\\ne0.3\\).)"}, {"id": "I7", "label": "I7", "tab": "indep", "concept": "chain", "skill": "calc", "level": "M", "type": "num", "answer": 0.544, "tol": 0.001, "prompt": "At a hospital, 64% of patients are admitted through the emergency department (ED). Of these, 85% stay overnight. Nothing is known about the other patients.<br>Find \\(P(\\text{ED}\\cap\\text{overnight})\\).", "hint": "Multiply along the branch.", "solution": "\\(0.64\\times0.85=0.544\\)"}, {"id": "I8", "label": "I8", "tab": "indep", "concept": "chain", "skill": "strategy", "level": "E", "type": "num", "answer": 0.36, "tol": 0.001, "prompt": "Same hospital. What is the <b>largest possible</b> value of \\(P(\\text{not ED}\\cap\\text{overnight})\\)?", "hint": "It can't be more than the probability of 'not ED'.", "solution": "At most \\(P(\\text{not ED})=1-0.64=0.36\\), which happens if every non-ED patient stays overnight."}, {"id": "I9", "label": "I9", "tab": "indep", "concept": "chain", "skill": "reason", "level": "E", "type": "multi", "correct": [0, 3], "prompt": "Same hospital. A patient who stayed overnight is chosen at random. Which statements are correct?", "options": ["They are more likely to have come through ED than not, because \\(0.544>0.36\\ge P(\\text{not ED}\\cap\\text{overnight})\\).", "We can't say anything without knowing \\(P(\\text{overnight})\\).", "Because 85% is more than 50%, they are more likely to be from ED.", "The argument works even though \\(P(\\text{overnight})\\) is unknown."], "hint": "85% is \\(P(\\text{overnight}\\mid\\text{ED})\\), which is the wrong direction. Use the bound from I8.", "solution": "Statements 1 and 4 are correct (Theorem 3). Statement 3 reaches the right conclusion with the wrong reason, and it would get no credit."}, {"id": "S1", "label": "S1", "tab": "sim", "slot": "sim1", "concept": "tme", "skill": "model", "level": "A", "type": "select", "correct": [1, 2, 0, 1], "prompt": "Classify each probability as true, model (theoretical) or experimental.", "items": ["A fair die is assumed, so \\(P(6)=\\tfrac16\\).", "Hemi rolled his die 60 times and got 13 sixes: \\(\\tfrac{13}{60}\\).", "The actual long-run chance that this worn die lands on 6, which we can never know exactly.", "A call centre assumes each of its 10 operators is equally likely to take the next call: \\(\\tfrac1{10}\\)."], "choices": ["True", "Model / theoretical", "Experimental"], "hint": "Model = from an assumption. Experimental = from data. True = the unknown real value.", "solution": "Model, Experimental, True, Model."}, {"id": "S2", "label": "S2", "tab": "sim", "slot": "sim2", "concept": "sim", "skill": "calc", "level": "A", "type": "num", "answer": 0.829, "tol": 0.001, "prompt": "Use the lucky-receipt table. In what proportion of the 1000 simulations were there <b>between 1 and 4</b> lucky receipts (including 1 and 4)?", "hint": "Add the numbers under 1, 2, 3 and 4, then divide by 1000.", "solution": "\\(\\dfrac{199+266+226+138}{1000}=\\dfrac{829}{1000}=0.829\\). So about 83% of samples give 1 to 4 lucky receipts by chance alone: these are the typical results."}, {"id": "S3", "label": "S3", "tab": "sim", "slot": "sim3", "concept": "sim", "skill": "model", "level": "M", "type": "select", "correct": [1, 0, 0, 1], "prompt": "For each observed result, decide which results you should count as “as extreme or more extreme”.", "items": ["Receipts (\\(p=0.1\\), \\(n=25\\), expected 2.5): Mere got <b>5</b> lucky receipts.", "Receipts: Rua got <b>0</b> lucky receipts.", "Spinner (\\(p=0.25\\), \\(n=30\\), expected 7.5): Hemi won <b>2</b> games.", "Spinner: Ana won <b>13</b> games."], "choices": ["that number or fewer (≤ k)", "that number or more (≥ k)"], "hint": "Compare the observed number with the expected value \\(np\\). Above expected: count upwards. Below expected: count downwards.", "solution": "5 is above 2.5: ≥. 0 is below 2.5: ≤. 2 is below 7.5: ≤. 13 is above 7.5: ≥."}, {"id": "S4", "label": "S4", "tab": "sim", "slot": "sim3", "concept": "sim", "skill": "calc", "level": "M", "type": "num", "answer": 0.099, "tol": 0.001, "prompt": "Mere got <b>5</b> lucky receipts in 25. Use the table to estimate the probability of a result as extreme as hers, if the shop’s claim is true.", "hint": "5 is above 2.5, so count 5 or more: add the columns 5, 6, 7 and 8+.", "solution": "\\(\\dfrac{65+24+7+3}{1000}=\\dfrac{99}{1000}=0.099\\) (about 9.9%)"}, {"id": "S5", "label": "S5", "tab": "sim", "slot": "sim4", "concept": "sim", "skill": "reason", "level": "M", "type": "select", "correct": [0, 1, 1], "prompt": "Using the 5% rule of thumb, is each result rare if the shop’s 10% claim is true?", "items": ["Tama: 6 lucky receipts (0.034).", "Mere: 5 lucky receipts (0.099).", "Kiri: 4 lucky receipts (0.237)."], "choices": ["Rare: unlikely by chance alone", "Not rare: consistent with the claim"], "hint": "Compare each proportion with 0.05.", "solution": "Only Tama’s result (3.4%) is under 5%. Mere’s 9.9% and Kiri’s 23.7% are not rare."}, {"id": "S6", "label": "S6", "tab": "sim", "slot": "sim4", "concept": "sim", "skill": "reason", "level": "E", "type": "multi", "correct": [0, 3], "prompt": "Tama’s result (6 lucky receipts, 0.034). Which conclusions are justified?", "options": ["6 or more lucky receipts happened in only about 3.4% of the simulations, so Tama's result is unlikely to occur by chance alone if \\(p=0.1\\). Something other than chance may be acting.", "This proves the shop prints more lucky receipts than it claims.", "The model must be correct, because the simulation used it.", "Other factors (such as the day or the till) were not controlled, so we can't say what causes the difference."], "hint": "Look at the CAN / CANNOT table in Step 4.", "solution": "Statements 1 and 4 are correct, which matches the 2015 schedule note: “It should not be concluded that the importer is rounding”."}, {"id": "S7", "label": "S7", "tab": "sim", "slot": "sim5", "concept": "samp", "skill": "reason", "level": "M", "type": "multi", "correct": [0, 2], "prompt": "Which statements about sample size are correct?", "options": ["With larger samples, experimental probabilities vary less around the true probability.", "With a large enough sample, the experimental probability equals the true probability exactly.", "With \\(n=10\\), an observed proportion far from the model is less surprising than with \\(n=100\\).", "Sample size doesn't matter if the sample is random."], "hint": "Compare example 1 and example 2 in tool E.", "solution": "Statements 1 and 3 are correct. Experimental probabilities get closer to the true value but never become guaranteed to equal it."}, {"id": "S8", "label": "S8", "tab": "sim", "slot": "sim5", "concept": "sim", "skill": "strategy", "level": "E", "type": "num", "answer": 0.0167, "tol": 0.013, "unit": "Use tool E (1000 or more simulations). Any value from your simulation that is close to the true value is accepted.", "prompt": "<b>Put all 5 steps together.</b> A courier company claims that 92% of its parcels arrive on time. One driver delivered 41 of his 50 parcels on time. Use tool E to estimate the probability of 41 <b>or fewer</b> on-time parcels out of 50, if the 92% claim is true.", "hint": "Step 3: the expected value is \\(50\\times0.92=46\\), and 41 is below it, so count ≤ 41. In tool E, set p = 0.92, n = 50, k = 41 and choose ≤ k.", "solution": "The simulation gives about 0.017 (the exact binomial value is 0.0167). This is under 5%, so it is rare: the driver's on-time rate is probably below 92%, although factors such as his route were not controlled."}, {"id": "W1", "label": "W1", "tab": "write", "concept": "rr", "skill": "calc", "level": "M", "type": "num", "answer": 2.5, "tol": 0.01, "prompt": "In one school, 30% of students who sleep less than 7 hours a night caught a cold this term, compared with 12% of students who sleep 7 hours or more. Find the relative risk of a cold for the short sleepers compared with the others.", "hint": "\\(0.30\\div0.12\\)", "solution": "\\(\\text{RR}=\\tfrac{0.30}{0.12}=2.5\\)"}, {"id": "W2", "label": "W2", "tab": "write", "concept": "rr", "skill": "reason", "level": "E", "type": "multi", "correct": [0, 3], "prompt": "Which sentences about W1 would be credited at Excellence level?", "options": ["“In this school, students sleeping less than 7 hours were 2.5 times as likely to catch a cold as students sleeping 7 hours or more.”", "“Short sleepers were 250% more likely to catch a cold.”", "“This proves that a lack of sleep causes colds.”", "“The risk was 0.30 compared with 0.12. This is from one school in one term, so other schools or seasons may differ, and other factors (such as stress) were not controlled.”"], "hint": "2.5 times as likely means 150% more likely. Observational data doesn't prove a cause.", "solution": "Statements 1 and 4 are correct. Statement 2 should say 150% more likely, and statement 3 claims a cause from observational data."}, {"id": "W3", "label": "W3", "tab": "write", "concept": "general", "skill": "reason", "level": "E", "type": "multi", "correct": [0, 1, 3], "prompt": "For the demonstrator example in the worked example, tick every <b>valid reason, in context</b>, for being careful about generalising.", "options": ["The data comes from one supermarket on particular days, and shoppers elsewhere or at other times may behave differently.", "Only 31 males were approached, so the male estimate has large sampling variability.", "The calculations used decimals, which can't be exact.", "A different demonstrator or product could change whether shoppers stop to taste.", "The probability must be 0.5 for both genders."], "hint": "Valid reasons are about where the data came from and how much of it there is.", "solution": "Statements 1, 2 and 4 are correct. Any two of them, explained in context, would meet the Excellence criterion."}, {"id": "W4", "label": "W4", "tab": "write", "concept": "assume", "skill": "reason", "level": "E", "type": "multi", "correct": [0, 1, 3], "prompt": "To find the probability that three randomly chosen shoppers <b>all</b> have a regular shopping day and shop at the weekend, we cube one shopper's probability. Which assumptions are being made?", "options": ["The three shoppers' habits are independent of each other.", "The population of shoppers is large, so choosing without replacement hardly changes the probability.", "The three events are mutually exclusive.", "Each shopper has the same probability as the study's estimate."], "hint": "Think about why multiplying three equal factors is allowed.", "solution": "Statements 1, 2 and 4 are correct (the 2016 schedule accepted the independence and large-population assumptions)."}, {"id": "W5", "label": "W5", "tab": "write", "concept": "assume", "skill": "calc", "level": "M", "type": "num", "answer": 0.0138, "tol": 0.0003, "unit": "Give your answer to 4 decimal places.", "prompt": "The probability that a shopper has a regular shopping day <b>and</b> shops at the weekend is 0.24. Assuming independence, find the probability that all three randomly chosen shoppers do.", "hint": "\\(0.24^3\\)", "solution": "\\(0.24^3=0.0138\\)"}], "concepts": {"indep": {"name": "Independence tests", "advice": "Choose the test that fits the information you are given. Conditional percentages: compare \\(P(B\\mid A)\\) with \\(P(B\\mid A')\\). Joint and marginal values: compare \\(P(A\\cap B)\\) with \\(P(A)P(B)\\). Finish with a sentence in context."}, "me": {"name": "Mutually exclusive", "advice": "Mutually exclusive means the events cannot happen together, so \\(P(A\\cap B)=0\\). It is NOT the same as independent; in fact, mutually exclusive events (with non-zero probabilities) are always dependent."}, "chain": {"name": "Chains of reasoning (bounds)", "advice": "When the question says 'from this information alone', look for a bound: compare the joint probability you CAN find with the largest value the other piece could possibly be."}, "tme": {"name": "True, model & experimental probability", "advice": "True probability = the real long-run chance, never known exactly. Model probability = from assumptions (for example, equally likely outcomes). Experimental probability = observed frequency in a sample. Use all three words in your explanation."}, "sim": {"name": "Using a simulation", "advice": "A simulation shows how much results vary by chance alone, assuming the model is true. Locate the observed result in the simulated distribution. If results that extreme are rare, chance alone is an unlikely explanation. Don't name a cause."}, "samp": {"name": "Sampling variation & sample size", "advice": "Small samples vary a lot. Larger samples give experimental probabilities that vary less and are closer to the true probability. Say this in context, using the actual sample size."}, "rr": {"name": "Relative risk wording", "advice": "Write 'A is k times as likely as B to …'. A relative risk of 2.5 means 150% MORE likely, not 250% more. Name both groups and the outcome."}, "general": {"name": "Generalising from data", "advice": "For an Excellence mark, give TWO different reasons, each tied to the context. For example: one place or one time only; a small group within the sample; who was observed or who chose to respond; the rate may change over time."}, "assume": {"name": "Assumptions", "advice": "Name the assumption (independence; a large population, so sampling without replacement hardly matters; the estimate stays the same) and say whether it is reasonable here."}, "rules": {"name": "Probability rules", "advice": "Draw a Venn diagram and fill the overlap first. Complement: 1 − P(A). Or: P(A) + P(B) − P(A ∩ B). Neither: 1 − P(A ∪ B)."}}, "skills": {"calc": {"name": "Selecting & using methods (A)", "advice": "Practise identifying which numbers the question gives you (joint, marginal or conditional) before choosing a formula."}, "model": {"name": "Building a representation (M)", "advice": "Always convert the words into a tree, two-way table or Venn diagram before calculating. Use a population of 1000 or 10 000."}, "strategy": {"name": "Devising a strategy / chain of steps (E)", "advice": "Write a plan first: 'I need P(…|…), so I need the numerator … and the denominator …'. Excellence questions hide one step: find it before calculating."}, "reason": {"name": "Explaining in context (M/E)", "advice": "Use the sentence frames: name the probability, give the number, and say what it means in the context. Excellence answers give TWO reasons that are specific to the context."}}, "map": {"w": 780, "h": 460, "nodes": [{"id": "indep", "concept": "indep", "x": 130, "y": 50, "label": "Independence tests"}, {"id": "me", "concept": "me", "x": 390, "y": 50, "label": "Mutually exclusive"}, {"id": "chain", "concept": "chain", "x": 650, "y": 50, "label": "Bounds reasoning"}, {"id": "tme", "concept": "tme", "x": 130, "y": 170, "label": "True / model / experimental"}, {"id": "sim", "concept": "sim", "x": 390, "y": 170, "label": "Simulation"}, {"id": "samp", "concept": "samp", "x": 650, "y": 170, "label": "Sample size"}, {"id": "rr", "concept": "rr", "x": 130, "y": 300, "label": "Relative risk wording"}, {"id": "general", "concept": "general", "x": 390, "y": 300, "label": "Generalising"}, {"id": "assume", "concept": "assume", "x": 650, "y": 300, "label": "Assumptions"}, {"id": "rules", "concept": "rules", "x": 390, "y": 425, "label": "Probability rules"}], "edges": [["indep", "me", "ME ⇒ dependent"], ["indep", "chain", ""], ["tme", "sim", ""], ["sim", "samp", ""], ["tme", "samp", ""], ["general", "samp", ""], ["general", "assume", ""], ["indep", "assume", ""], ["rr", "general", ""], ["me", "chain", ""], ["rules", "me", ""], ["rules", "general", ""], ["rules", "indep", ""]]}, "ui": {"exHeading": "Exercises", "typeHere": "type your answer", "numHelp": "Type a decimal (e.g. 0.268), a fraction (e.g. 18/67) or a percentage (e.g. 26.8%). Give probabilities to 3 decimal places unless told otherwise.", "badInput": "not a number yet", "selectAll": "Tick ALL the statements that are correct.", "check": "Check", "showSol": "Show solution", "solution": "Worked solution", "attempt": "Attempt", "answerFirst": "Enter or choose an answer first.", "tryAgain": "Not yet — read the hint and try again.", "correct": ["Correct on the first try! 3/3", "Correct on the second try. 2/3", "Correct on the third try. 1/3"], "outOfTries": "Three attempts used — study the worked solution carefully.", "revealed": "Solution opened before finishing — scored 0.", "confirmReveal": "Opening the solution now ends this question with a score of 0. Continue?", "scoreWord": "Score", "rushedTag": "rushed", "solShort": "solution", "level": {"A": "Achieved", "M": "Merit", "E": "Excellence"}, "notFinished": "You have finished {d} of {n} questions. The full report appears when every question is finished.", "showAnyway": "Show the report so far", "mapTitle": "Knowledge map", "mapNote": "How today's ideas connect. Border colour shows your score on that idea: green ≥ 80%, amber 50–79%, red < 50%, grey = not attempted.", "scoreTitle": "Score", "scoreRule": "3 points if correct on the 1st try, 2 on the 2nd, 1 on the 3rd, 0 if all three tries fail or the solution is opened early.", "byConcept": "Results by concept", "bySkill": "Results by skill (NCEA thinking level)", "concept": "Concept", "skill": "Skill", "questions": "Questions", "points": "Points", "perQ": "Question by question", "attemptsUsed": "Attempts used", "advice": "Advice", "rushAdvice": "Some answers were submitted very quickly or the solution was opened early. At Excellence level, examiners reward the chain of working. Before typing, write the representation (tree, table or Venn diagram) on paper first.", "allGood": "Strong work on every concept. Next step: write full sentences in context for each answer, because that is what turns a correct number into an Excellence grade.", "reset": "Reset all my answers", "resetQ": "Delete all answers on this page?"}, "toolText": {"indep": {"shaded": "shaded = B", "yes": "Independent: \\(P(B\\mid A)=P(B\\mid A')\\)", "no": "Not independent: knowing A changes the probability of B", "me": "A and B are mutually exclusive (\\(P(A\\cap B)=0\\)), so they are dependent."}, "sim": {"bad": "Check the inputs: 0 ≤ p ≤ 1, n > 0.", "obs": "observed", "model": "Model probability", "exp": "Experimental probability", "propTitle": "Experimental proportions on a fixed 0–1 scale (use this view to compare sample sizes)", "tail": "Simulations with {dir} {k} successes", "rare": "Rare (under 5%): unlikely to happen by chance alone if the model is true.", "notRare": "Not rare: consistent with the model (but this does not prove the model)."}}};
+
+"use strict";
+const S = {};                        // per-exercise state
+const LS_KEY = "t91585_" + DATA.lessonId + "_" + DATA.lang;
+function save(){ try{ localStorage.setItem(LS_KEY, JSON.stringify(S)); }catch(e){} }
+function load(){ try{ const v = JSON.parse(localStorage.getItem(LS_KEY)||"{}"); Object.assign(S, v);}catch(e){} }
+function km(el){ try{ renderMathInElement(el,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false}); }catch(e){} }
+function tex(s){ try{ return katex.renderToString(s,{throwOnError:false}); }catch(e){ return s; } }
+const $ = (q,el=document)=>el.querySelector(q);
+const fmt = (x,d=4)=> (Math.round(x*Math.pow(10,d))/Math.pow(10,d)).toString();
+
+/* ---------------- tabs ---------------- */
+let tabSeen = {};
+function showTab(id){
+  document.querySelectorAll("section.tab").forEach(s=>s.classList.toggle("on", s.id===id));
+  document.querySelectorAll("nav button").forEach(b=>b.classList.toggle("on", b.dataset.t===id));
+  const now = Date.now();
+  DATA.exercises.filter(e=>e.tab===id).forEach(e=>{ if(!S[e.id]) S[e.id]={a:0,done:false,ok:false,rushed:false,rev:false,times:[]}; if(!S[e.id].seen) S[e.id].seen=now; });
+  if(id==="report") buildReport();
+  window.scrollTo({top:0}); try{history.replaceState(null,"","#"+id)}catch(e){} const nb=document.querySelector("nav button.on"); if(nb) nb.scrollIntoView({inline:"center",block:"nearest"});
+}
+function updateDots(){
+  DATA.tabs.forEach(t=>{
+    const ex = DATA.exercises.filter(e=>e.tab===t.id); if(!ex.length) return;
+    const d = ex.filter(e=>S[e.id]&&S[e.id].done).length;
+    const dot = document.querySelector(`nav button[data-t="${t.id}"] .dot`);
+    if(dot) dot.className = "dot" + (d===ex.length?" full":(d>0?" part":""));
+  });
+}
+
+/* ---------------- answer parsing ---------------- */
+function parseNum(s){
+  s = (s||"").trim().replace(/\s+/g,"").replace("−","-");
+  if(!s) return NaN;
+  let pct = false; if(s.endsWith("%")){ pct=true; s=s.slice(0,-1); }
+  let v;
+  if(/^-?\d*\.?\d+\/-?\d*\.?\d+$/.test(s)){ const [a,b]=s.split("/").map(Number); v=a/b; }
+  else if(/^-?\d*\.?\d+$/.test(s)) v = Number(s);
+  else return NaN;
+  return pct ? v/100 : v;
+}
+function previewTex(s){
+  s=(s||"").trim(); if(!s) return "";
+  const m = s.match(/^(-?\d*\.?\d+)\s*\/\s*(-?\d*\.?\d+)$/);
+  if(m) return tex(`\\dfrac{${m[1]}}{${m[2]}}`);
+  if(/^-?\d*\.?\d+%$/.test(s)) return tex(s.replace("%","\\%"));
+  if(/^-?\d*\.?\d+$/.test(s)) return tex(s);
+  return `<span style="color:#b3261e">${DATA.ui.badInput}</span>`;
+}
+
+/* ---------------- exercises ---------------- */
+function renderExercises(){
+  DATA.exercises.forEach((e,i)=>{
+    const host = document.getElementById("ex-"+(e.host||e.slot||e.tab)); if(!host) return;
+    const st = S[e.id] || (S[e.id]={a:0,done:false,ok:false,rushed:false,rev:false,times:[]});
+    const div = document.createElement("div"); div.className="ex"; div.id="card-"+e.id;
+    let body = `<span class="qid">${e.label}</span><span class="meta">${DATA.concepts[e.concept].name} · ${DATA.skills[e.skill].name}</span>
+      <span class="lvl ${e.level}">${DATA.ui.level[e.level]}</span><div style="margin-top:6px">${e.prompt}</div>`;
+    if(e.type==="num"){
+      body += `<div class="row"><input type="text" id="in-${e.id}" placeholder="${DATA.ui.typeHere}" autocomplete="off">
+        <span class="pv" id="pv-${e.id}"></span></div><div class="small">${e.unit||DATA.ui.numHelp}</div>`;
+    } else if(e.type==="multi"){
+      body += `<div class="small" style="margin-top:6px">${DATA.ui.selectAll}</div><div class="opts">` + e.options.map((o,k)=>
+        `<label><input type="checkbox" name="o-${e.id}" value="${k}"> ${o}</label>`).join("") + `</div>`;
+    } else if(e.type==="select"){
+      body += `<div class="sel">` + e.items.map((it,k)=>`<div>${it}</div><select id="s-${e.id}-${k}"><option value="">—</option>` +
+        e.choices.map((c,j)=>`<option value="${j}">${c}</option>`).join("") + `</select>`).join("") + `</div>`;
+    }
+    body += `<div class="row"><button id="chk-${e.id}">${DATA.ui.check}</button>
+      <button class="ghost" id="sol-${e.id}">${DATA.ui.showSol}</button><span class="att" id="att-${e.id}"></span></div>
+      <div class="fb" id="fb-${e.id}"></div><div class="hint" id="hint-${e.id}">💡 ${e.hint}</div>
+      <div class="solbox" id="sb-${e.id}"><b>${DATA.ui.solution}</b><br>${e.solution}</div><div class="score" id="sc-${e.id}"></div>`;
+    div.innerHTML = body; host.appendChild(div);
+    if(e.type==="num"){
+      const inp = $("#in-"+e.id, div), pv = $("#pv-"+e.id, div);
+      inp.addEventListener("input",()=>{ pv.innerHTML = previewTex(inp.value); });
+      inp.addEventListener("keydown",ev=>{ if(ev.key==="Enter") check(e); });
+    }
+    $("#chk-"+e.id, div).onclick = ()=>check(e);
+    $("#sol-"+e.id, div).onclick = ()=>reveal(e, true);
+    paint(e);
+  });
+}
+function grade(e){
+  if(e.type==="num"){ const v=parseNum($("#in-"+e.id).value); if(isNaN(v)) return null; return Math.abs(v-e.answer) <= e.tol; }
+  if(e.type==="multi"){
+    const got=[...document.querySelectorAll(`input[name="o-${e.id}"]:checked`)].map(x=>+x.value).sort().join(",");
+    if(!got) return null; return got === e.correct.slice().sort().join(",");
+  }
+  if(e.type==="select"){
+    const vals = e.items.map((_,k)=>$(`#s-${e.id}-${k}`).value); if(vals.some(v=>v==="")) return null;
+    return vals.every((v,k)=>+v===e.correct[k]);
+  }
+}
+function check(e){
+  const st=S[e.id]; if(st.done) return;
+  const r = grade(e);
+  if(r===null){ $("#fb-"+e.id).className="fb no"; $("#fb-"+e.id).textContent=DATA.ui.answerFirst; return; }
+  const now=Date.now(); const last = st.times.length? st.times[st.times.length-1] : (st.seen||now);
+  if(now-last < (e.type==="num"?9000:6000)) st.fast = (st.fast||0)+1;
+  st.times.push(now); st.a += 1;
+  if(r){ st.ok=true; st.done=true; st.score = 4-st.a; }
+  else if(st.a>=3){ st.done=true; st.score=0; }
+  if(st.fast && st.fast>=2) st.rushed = true;
+  if(st.a===1 && now-(st.seen||now) < 5000 && !r) st.rushed = true;
+  save(); paint(e); updateDots();
+}
+function reveal(e, byButton){
+  const st=S[e.id];
+  if(byButton && !st.done){
+    if(!confirm(DATA.ui.confirmReveal)) return;
+    st.rev=true; st.done=true; st.score=0; if(st.a<3) st.rushed=true; save(); updateDots();
+  }
+  paint(e);
+}
+function paint(e){
+  const st=S[e.id]; if(!st) return;
+  const fb=$("#fb-"+e.id), att=$("#att-"+e.id);
+  att.textContent = st.done? "" : `${DATA.ui.attempt} ${Math.min(st.a+1,3)} / 3`;
+  if(st.a>=1 && !st.ok) $("#hint-"+e.id).style.display="block";
+  if(st.done){
+    $("#sb-"+e.id).style.display="block"; $("#chk-"+e.id).disabled=true;
+    fb.className = "fb " + (st.ok?"ok":"no");
+    fb.textContent = st.ok ? DATA.ui.correct[st.a-1] : (st.rev? DATA.ui.revealed : DATA.ui.outOfTries);
+    $("#sc-"+e.id).innerHTML = `${DATA.ui.scoreWord}: ${st.score}/3` + (st.rushed?` <span class="pill r">${DATA.ui.rushedTag}</span>`:"");
+  } else if(st.a>0){ fb.className="fb no"; fb.textContent = DATA.ui.tryAgain; }
+}
+
+/* ---------------- report ---------------- */
+function colourFor(p){ return p===null?"#cfd6da":(p>=0.8?"#2f7d4f":(p>=0.5?"#d39b1f":"#b3261e")); }
+function buildReport(){
+  const ex = DATA.exercises, done = ex.filter(e=>S[e.id]&&S[e.id].done);
+  const host = $("#reportBody");
+  if(done.length < ex.length && !host.dataset.force){
+    host.innerHTML = `<div class="card"><p>${DATA.ui.notFinished.replace("{d}",done.length).replace("{n}",ex.length)}</p>
+      <button class="btn" id="forceRep">${DATA.ui.showAnyway}</button></div>`;
+    $("#forceRep").onclick=()=>{ host.dataset.force="1"; buildReport(); };
+    return;
+  }
+  const agg=(key)=>{ const o={}; ex.forEach(e=>{ const k=e[key]; o[k]=o[k]||{got:0,max:0,n:0,rushed:0,qs:[]};
+      const st=S[e.id]; if(st&&st.done){ o[k].got+=st.score; o[k].max+=3; o[k].n++; if(st.rushed) o[k].rushed++; } o[k].qs.push(e.label); }); return o; };
+  const byC=agg("concept"), byS=agg("skill");
+  // knowledge map
+  const m = DATA.map; let svg = `<svg viewBox="0 0 ${m.w} ${m.h}" style="width:100%;max-width:${m.w}px">`;
+  m.edges.forEach(([a,b,l])=>{ const A=m.nodes.find(n=>n.id===a), B=m.nodes.find(n=>n.id===b);
+    svg+=`<line x1="${A.x}" y1="${A.y}" x2="${B.x}" y2="${B.y}" stroke="#9aa6ad" stroke-width="1.6"/>`;
+    if(l) svg+=`<text x="${(A.x+B.x)/2+8}" y="${(A.y+B.y)/2+16}" font-size="11" fill="#5c6670" text-anchor="middle">${l}</text>`; });
+  m.nodes.forEach(n=>{ const c=byC[n.concept]; const p = c&&c.max? c.got/c.max : null;
+    const w = Math.max(110, n.label.length*(DATA.lang==="zh"?14:7.2)+20);
+    svg+=`<rect x="${n.x-w/2}" y="${n.y-20}" width="${w}" height="40" rx="12" fill="#fff" stroke="${colourFor(p)}" stroke-width="3"/>
+      <text x="${n.x}" y="${n.y-1}" font-size="13" text-anchor="middle" font-weight="700" fill="#1f2328">${n.label}</text>
+      <text x="${n.x}" y="${n.y+14}" font-size="11" text-anchor="middle" fill="${colourFor(p)}">${p===null?"—":Math.round(p*100)+"%"}</text>`; });
+  svg += `</svg>`;
+  const tot = done.reduce((s,e)=>s+S[e.id].score,0), max = done.length*3;
+  const bars = (o,dict)=>Object.keys(o).map(k=>{ const c=o[k]; const p=c.max?c.got/c.max:null;
+      return `<tr><td>${dict[k].name}</td><td>${c.qs.join(", ")}</td><td>${c.max?c.got+" / "+c.max:"—"}</td>
+      <td><div class="bar"><i style="width:${p===null?0:p*100}%;background:${colourFor(p)}"></i></div></td></tr>`; }).join("");
+  let rows = ex.map(e=>{ const st=S[e.id]||{}; return `<tr><td>${e.label}</td><td>${DATA.concepts[e.concept].name}</td><td>${DATA.skills[e.skill].name}</td>
+      <td>${st.done?st.a+(st.rev?" + "+DATA.ui.solShort:""):"—"}</td><td><b>${st.done?st.score:"—"}</b></td><td>${st.rushed?`<span class="pill r">${DATA.ui.rushedTag}</span>`:""}</td></tr>`; }).join("");
+  let adv = "";
+  Object.keys(byC).forEach(k=>{ const c=byC[k]; if(c.max && c.got/c.max < 0.7) adv += `<div class="adv"><b>${DATA.concepts[k].name}</b> (${Math.round(100*c.got/c.max)}%) — ${DATA.concepts[k].advice}</div>`; });
+  Object.keys(byS).forEach(k=>{ const c=byS[k]; if(c.max && c.got/c.max < 0.7 && DATA.skills[k].advice) adv += `<div class="adv"><b>${DATA.skills[k].name}</b> (${Math.round(100*c.got/c.max)}%) — ${DATA.skills[k].advice}</div>`; });
+  const nr = done.filter(e=>S[e.id].rushed).length;
+  if(nr) adv += `<div class="adv"><b>${DATA.ui.rushedTag} × ${nr}</b> — ${DATA.ui.rushAdvice}</div>`;
+  if(!adv) adv = `<div class="adv" style="border-color:#2f7d4f;background:#eef7f0">${DATA.ui.allGood}</div>`;
+  host.innerHTML = `
+    <h3>${DATA.ui.mapTitle}</h3><p class="small">${DATA.ui.mapNote}</p><div class="card">${svg}</div>
+    <h3>${DATA.ui.scoreTitle}</h3><div class="card"><span class="big">${tot} / ${max}</span>
+      <span class="small"> (${max?Math.round(100*tot/max):0}%) · ${DATA.ui.scoreRule}</span></div>
+    <h3>${DATA.ui.byConcept}</h3><table><tr><th>${DATA.ui.concept}</th><th>${DATA.ui.questions}</th><th>${DATA.ui.points}</th><th></th></tr>${bars(byC,DATA.concepts)}</table>
+    <h3>${DATA.ui.bySkill}</h3><table><tr><th>${DATA.ui.skill}</th><th>${DATA.ui.questions}</th><th>${DATA.ui.points}</th><th></th></tr>${bars(byS,DATA.skills)}</table>
+    <h3>${DATA.ui.perQ}</h3><table><tr><th>#</th><th>${DATA.ui.concept}</th><th>${DATA.ui.skill}</th><th>${DATA.ui.attemptsUsed}</th><th>${DATA.ui.scoreWord}</th><th></th></tr>${rows}</table>
+    <h3>${DATA.ui.advice}</h3>${adv}
+    <p><button class="btn ghost" id="resetAll">${DATA.ui.reset}</button></p>`;
+  $("#resetAll").onclick=()=>{ if(confirm(DATA.ui.resetQ)){ try{localStorage.removeItem(LS_KEY);}catch(e){} location.reload(); } };
+}
+
+/* ================= TOOLS ================= */
+function slider(id){ const el=document.getElementById(id); return el? +el.value : 0; }
+function bindOut(ids, fn){ ids.forEach(i=>{ const el=document.getElementById(i); if(el) el.addEventListener("input",fn); }); fn(); }
+
+/* Tool A: population picture + frequency tree + two-way table */
+function toolBayes(){
+  const root=document.getElementById("toolBayes"); if(!root) return;
+  const L=DATA.toolText.bayes;
+  const draw=()=>{
+    const p=slider("bPrev")/100, se=slider("bSens")/100, fp=slider("bFp")/100, N=10000;
+    $("#bPrevO").textContent=(p*100).toFixed(1)+"%"; $("#bSensO").textContent=(se*100).toFixed(0)+"%"; $("#bFpO").textContent=(fp*100).toFixed(1)+"%";
+    const C=Math.round(p*N), TP=Math.round(C*se), FN=C-TP, H=N-C, FP=Math.round(H*fp), TN=H-FP;
+    const cv=document.getElementById("bCanvas"), cx=cv.getContext("2d"); cx.clearRect(0,0,400,400);
+    for(let i=0;i<N;i++){ const r=Math.floor(i/100), c=i%100;
+      cx.fillStyle = i<TP?"#b3261e":(i<C?"#f4a3a0":(i<C+FP?"#e8901c":"#dfe4e7")); cx.fillRect(c*4,r*4,3.4,3.4); }
+    const pos=TP+FP, neg=FN+TN;
+    $("#bTree").innerHTML = `
+      <svg viewBox="0 0 430 210" style="width:100%">
+       <text x="6" y="108" font-size="14" font-weight="700">${N}</text>
+       <line x1="52" y1="104" x2="150" y2="50" stroke="#555"/><line x1="52" y1="104" x2="150" y2="160" stroke="#555"/>
+       <text x="156" y="46" font-size="13">${L.cond} ${C}</text><text x="156" y="166" font-size="13">${L.nocond} ${H}</text>
+       <line x1="250" y1="42" x2="320" y2="18" stroke="#555"/><line x1="250" y1="42" x2="320" y2="70" stroke="#555"/>
+       <line x1="250" y1="162" x2="320" y2="140" stroke="#555"/><line x1="250" y1="162" x2="320" y2="192" stroke="#555"/>
+       <text x="324" y="22" font-size="13" fill="#b3261e" font-weight="700">+ ${TP}</text><text x="324" y="74" font-size="13">− ${FN}</text>
+       <text x="324" y="144" font-size="13" fill="#e8901c" font-weight="700">+ ${FP}</text><text x="324" y="196" font-size="13">− ${TN}</text>
+      </svg>`;
+    $("#bTable").innerHTML = `<table class="dt"><tr><th></th><th>${L.pos} (+)</th><th>${L.neg} (−)</th><th>${L.total}</th></tr>
+      <tr><th>${L.cond}</th><td style="color:#b3261e;font-weight:700">${TP}</td><td>${FN}</td><td>${C}</td></tr>
+      <tr><th>${L.nocond}</th><td style="color:#e8901c;font-weight:700">${FP}</td><td>${TN}</td><td>${H}</td></tr>
+      <tr><th>${L.total}</th><td>${pos}</td><td>${neg}</td><td>${N}</td></tr></table>`;
+    $("#bOut").innerHTML = `<div>${tex("P(+)=\\dfrac{"+pos+"}{"+N+"}="+fmt(pos/N))}</div>
+      <div>${tex("P(C\\mid +)=\\dfrac{"+TP+"}{"+TP+"+"+FP+"}="+(pos?fmt(TP/pos):"—"))} &nbsp; ← ${L.reverse}</div>
+      <div>${tex("P(C'\\mid -)=\\dfrac{"+TN+"}{"+FN+"+"+TN+"}="+(neg?fmt(TN/neg):"—"))}</div>`;
+  };
+  bindOut(["bPrev","bSens","bFp"],draw);
+  root.querySelectorAll("[data-preset]").forEach(b=>b.onclick=()=>{ const [a,s,f]=b.dataset.preset.split(",");
+    document.getElementById("bPrev").value=a; document.getElementById("bSens").value=s; document.getElementById("bFp").value=f; draw(); });
+}
+
+/* Tool B: three-set Venn */
+const VENN_REGIONS = ["a","b","c","ab","ac","bc","abc","n"];
+function toolVenn(){
+  const root=document.getElementById("toolVenn"); if(!root) return;
+  const V=DATA.toolText.venn;
+  const pos={a:[95,140],b:[275,140],c:[185,285],ab:[185,110],ac:[125,225],bc:[245,225],abc:[185,185],n:[350,330]};
+  const wrap=$("#vennWrap");
+  VENN_REGIONS.forEach(r=>{ const i=document.createElement("input"); i.id="v_"+r; i.type="text"; i.value="";
+    i.style.left=(pos[r][0]-26)+"px"; i.style.top=(pos[r][1]-14)+"px"; i.title=V.regionNames[r]; wrap.appendChild(i); i.addEventListener("input",calc); });
+  const ev=$("#vennEvent"); V.events.forEach((e,k)=>{ const o=document.createElement("option"); o.value=k; o.textContent=e.label; ev.appendChild(o); });
+  ev.onchange=calc;
+  function val(r){ const v=parseFloat(document.getElementById("v_"+r).value); return isNaN(v)?0:v; }
+  function calc(){
+    const g={}; VENN_REGIONS.forEach(r=>g[r]=val(r));
+    const N=VENN_REGIONS.reduce((s,r)=>s+g[r],0);
+    const A=g.a+g.ab+g.ac+g.abc, B=g.b+g.ab+g.bc+g.abc, Cc=g.c+g.ac+g.bc+g.abc;
+    $("#vennTot").innerHTML = `${V.names[0]} = ${A} · ${V.names[1]} = ${B} · ${V.names[2]} = ${Cc} · ${V.total} = ${N}`;
+    const e=V.events[+ev.value||0];
+    VENN_REGIONS.forEach(r=>{ const el=document.getElementById("v_"+r); el.classList.toggle("inc", e.num.includes(r)); el.classList.toggle("den", !!e.den && e.den.includes(r)); });
+    const num=e.num.reduce((s,r)=>s+g[r],0), den=e.den? e.den.reduce((s,r)=>s+g[r],0) : N;
+    $("#vennProb").innerHTML = den? tex(`${e.tex}=\\dfrac{${num}}{${den}}=${fmt(num/den)}`) : "";
+  }
+  // stepper
+  let step=0; const steps=V.steps;
+  $("#vennStep").onclick=()=>{
+    if(step===0) VENN_REGIONS.forEach(r=>document.getElementById("v_"+r).value="");
+    if(step<steps.length){ const s=steps[step]; document.getElementById("v_"+s.r).value=s.v; $("#vennMsg").innerHTML=`<b>${V.stepWord} ${step+1}.</b> ${s.t}`; km($("#vennMsg")); step++; calc(); }
+    else { $("#vennMsg").innerHTML=V.doneMsg; step=0; }
+  };
+  $("#vennClear").onclick=()=>{ VENN_REGIONS.forEach(r=>document.getElementById("v_"+r).value=""); step=0; $("#vennMsg").innerHTML=""; calc(); };
+  calc();
+}
+
+/* Tool C: joint probability grid for two independent random variables */
+function toolJoint(){
+  const root=document.getElementById("toolJoint"); if(!root) return;
+  const J=DATA.toolText.joint;
+  const rel=$("#jRel"); J.rels.forEach((r,k)=>{ const o=document.createElement("option"); o.value=k; o.textContent=r; rel.appendChild(o); });
+  const get=(p)=>[0,1,2,3,4].map(i=>{ const v=parseFloat(document.getElementById(p+i).value); return isNaN(v)?0:v; });
+  function draw(){
+    const X=get("jx"), Y=get("jy"), k=parseFloat($("#jK").value)||0, r=+rel.value;
+    const sx=X.reduce((a,b)=>a+b,0), sy=Y.reduce((a,b)=>a+b,0);
+    const test=(x,y)=>[x>y, x===y, x-y>=k, x+y<=k, Math.abs(x-y)>=k][r];
+    let h=`<table class="dt grid"><tr><th>X \\ Y</th>${[0,1,2,3,4].map(y=>`<th>${y}<br><small>${Y[y]}</small></th>`).join("")}</tr>`, tot=0;
+    for(let x=0;x<5;x++){ h+=`<tr><th>${x} <small>(${X[x]})</small></th>`;
+      for(let y=0;y<5;y++){ const pr=X[x]*Y[y], hit=test(x,y)&&pr>0; if(test(x,y)) tot+=pr;
+        h+=`<td class="${hit?"hit":""}">${pr?fmt(pr,4):""}</td>`; } h+=`</tr>`; }
+    h+=`</table>`;
+    $("#jGrid").innerHTML=h;
+    $("#jOut").innerHTML = (Math.abs(sx-1)>1e-6||Math.abs(sy-1)>1e-6? `<div style="color:#b3261e">${J.warn} (ΣX = ${fmt(sx)}, ΣY = ${fmt(sy)})</div>`:"")
+      + `<div>${J.sumWord}: <b>${fmt(tot,4)}</b></div>`;
+  }
+  root.querySelectorAll("input").forEach(i=>i.addEventListener("input",draw)); rel.onchange=draw; draw();
+}
+
+/* Tool D: area model for independence */
+function toolIndep(){
+  const root=document.getElementById("toolIndep"); if(!root) return;
+  const I=DATA.toolText.indep;
+  const draw=()=>{
+    const a=slider("iA")/100, b1=slider("iB1")/100, b2=slider("iB2")/100;
+    $("#iAO").textContent=a.toFixed(2); $("#iB1O").textContent=b1.toFixed(2); $("#iB2O").textContent=b2.toFixed(2);
+    const W=300, x=a*W;
+    const pB=a*b1+(1-a)*b2, pAB=a*b1;
+    $("#iSvg").innerHTML = `<svg viewBox="0 0 340 340" style="width:100%;max-width:340px">
+      <rect x="20" y="20" width="${W}" height="${W}" fill="#fff" stroke="#333"/>
+      <rect x="20" y="${20+W-b1*W}" width="${x}" height="${b1*W}" fill="#c4572e" opacity=".75"/>
+      <rect x="${20+x}" y="${20+W-b2*W}" width="${W-x}" height="${b2*W}" fill="#e9b28f" opacity=".85"/>
+      <line x1="${20+x}" y1="20" x2="${20+x}" y2="${20+W}" stroke="#0f5c6e" stroke-width="3"/>
+      <text x="${20+x/2}" y="14" font-size="13" text-anchor="middle" fill="#0f5c6e" font-weight="700">A</text>
+      <text x="${20+x+(W-x)/2}" y="14" font-size="13" text-anchor="middle" fill="#0f5c6e" font-weight="700">A'</text>
+      <text x="${20+x/2}" y="${20+W-b1*W/2}" font-size="12" text-anchor="middle" fill="#fff" font-weight="700">${b1>0.06&&x>40?"A∩B":""}</text>
+      <text x="${20+x+(W-x)/2}" y="${20+W-b2*W/2}" font-size="12" text-anchor="middle" font-weight="700">${b2>0.06&&W-x>40?"A'∩B":""}</text>
+      <text x="330" y="${20+W/2}" font-size="12" transform="rotate(90 330 ${20+W/2})" text-anchor="middle">${I.shaded}</text></svg>`;
+    const indep=Math.abs(b1-b2)<0.005, me=pAB<1e-9 && a>0 && pB>0;
+    $("#iOut").innerHTML = `<div>${tex("P(A\\cap B)="+fmt(pAB))}</div><div>${tex("P(A)\\times P(B)="+fmt(a)+"\\times"+fmt(pB)+"="+fmt(a*pB))}</div>
+      <div>${tex("P(B\\mid A)="+fmt(b1)+",\\quad P(B\\mid A')="+fmt(b2))}</div>
+      <div>${pB>0?tex("P(A\\mid B)=\\dfrac{P(A\\cap B)}{P(B)}="+fmt(pAB/pB)):""}</div>
+      <div style="margin-top:6px;font-weight:700;color:${indep?"#2f7d4f":"#b3261e"}">${indep?I.yes:I.no}</div>
+      ${me?`<div style="font-weight:700;color:#8b1e1e">${I.me}</div>`:""}`; km($("#iOut"));
+  };
+  bindOut(["iA","iB1","iB2"],draw);
+}
+
+/* Tool E: simulation lab */
+function toolSim(){
+  const root=document.getElementById("toolSim"); if(!root) return;
+  const T=DATA.toolText.sim;
+  function run(){
+    const p=parseNum($("#sP").value), n=parseInt($("#sN").value), k=parseInt($("#sK").value), reps=parseInt($("#sR").value)||1000, dir=$("#sDir").value;
+    if(isNaN(p)||p<0||p>1||!(n>0)||isNaN(k)){ $("#sOut").innerHTML=`<span style="color:#b3261e">${T.bad}</span>`; return; }
+    const counts=new Array(n+1).fill(0);
+    for(let r=0;r<reps;r++){ let c=0; for(let i=0;i<n;i++) if(Math.random()<p) c++; counts[c]++; }
+    const tail = counts.reduce((s,c,i)=> s + ((dir==="ge"? i>=k : i<=k)? c:0), 0);
+    let lo=0; while(lo<n && counts[lo]===0) lo++; let hi=n; while(hi>0&&counts[hi]===0) hi--;
+    lo=Math.min(lo,k); hi=Math.max(hi,k);
+    const W=560,H=200, bw=Math.max(3,(W-40)/(hi-lo+1)), mx=Math.max(...counts);
+    let svg=`<svg viewBox="0 0 ${W} ${H+40}" style="width:100%">`;
+    for(let i=lo;i<=hi;i++){ const h=counts[i]/mx*H, x=30+(i-lo)*bw, inT=(dir==="ge"? i>=k : i<=k);
+      svg+=`<rect x="${x}" y="${H-h+10}" width="${bw-1}" height="${h}" fill="${inT?"#c4572e":"#7aa5b1"}"/>`;
+      if((hi-lo)<=30 || i%Math.ceil((hi-lo)/30)===0) svg+=`<text x="${x+bw/2}" y="${H+26}" font-size="10" text-anchor="middle">${i}</text>`; }
+    const xk=30+(k-lo)*bw+bw/2; svg+=`<line x1="${xk}" y1="4" x2="${xk}" y2="${H+12}" stroke="#111" stroke-dasharray="4 3"/><text x="${xk+4}" y="14" font-size="11">${T.obs} = ${k}</text></svg>`;
+    // second view: experimental proportions on a FIXED 0-1 scale, so sample sizes can be compared fairly
+    const nb=50, pb=new Array(nb).fill(0);
+    counts.forEach((c,i)=>{ const j=Math.min(nb-1,Math.floor(i/n*nb)); pb[j]+=c; });
+    const pm=Math.max(...pb), PW=560, PH=80;
+    let ps=`<div class="small" style="margin-top:6px"><b>${T.propTitle||"Experimental proportions (fixed 0–1 scale)"}</b></div><svg viewBox="0 0 ${PW} ${PH+34}" style="width:100%">`;
+    for(let j=0;j<nb;j++){ const h=pb[j]/pm*PH, x=30+j*(PW-40)/nb;
+      ps+=`<rect x="${x}" y="${PH-h+6}" width="${(PW-40)/nb-1}" height="${h}" fill="#9fb8d6"/>`; }
+    for(let t=0;t<=10;t++){ const x=30+t/10*(PW-40); ps+=`<line x1="${x}" y1="${PH+6}" x2="${x}" y2="${PH+11}" stroke="#111"/><text x="${x}" y="${PH+24}" font-size="10" text-anchor="middle">${(t/10).toFixed(1)}</text>`; }
+    const xp=30+(k/n)*(PW-40); ps+=`<line x1="30" y1="${PH+6}" x2="${PW-10}" y2="${PH+6}" stroke="#111"/><line x1="${xp}" y1="2" x2="${xp}" y2="${PH+8}" stroke="#111" stroke-dasharray="4 3"/><text x="${xp+4}" y="12" font-size="10">${fmt(k/n)}</text></svg>`;
+    $("#sHist").innerHTML=svg+ps;
+    $("#sOut").innerHTML = `<div>${T.model}: ${tex("p="+fmt(p))} · ${T.exp}: ${tex("\\dfrac{"+k+"}{"+n+"}="+fmt(k/n))}</div>
+      <div>${T.tail.replace("{dir}", dir==="ge"?"≥":"≤").replace("{k}",k)}: <b>${tail} / ${reps} = ${fmt(tail/reps,3)}</b></div>
+      <div class="small">${tail/reps<0.05? T.rare : T.notRare}</div>`;
+  }
+  $("#sRun").onclick=run;
+  root.querySelectorAll("[data-sim]").forEach(b=>b.onclick=()=>{ const [p,n,k,d]=b.dataset.sim.split(","); $("#sP").value=p; $("#sN").value=n; $("#sK").value=k; $("#sDir").value=d; run(); });
+}
+
+/* ---------------- boot ---------------- */
+window.addEventListener("load",()=>{
+  load();
+  const nav=$("nav");
+  DATA.tabs.forEach(t=>{ const b=document.createElement("button"); b.dataset.t=t.id; b.innerHTML=t.title+(DATA.exercises.some(e=>e.tab===t.id)?'<span class="dot"></span>':""); b.onclick=()=>showTab(t.id); nav.appendChild(b); });
+  renderExercises(); bootTab0(); km(document.body);
+  toolBayes(); toolVenn(); toolJoint(); toolIndep(); toolSim();
+  updateDots(); const h0=location.hash.slice(1); showTab(DATA.tabs.some(t=>t.id===h0)?h0:DATA.tabs[0].id);
+});
+
+const minus=s=>String(s).replace(/-/g,"−");
+/* ---------- generic stepper ---------- */
+function stepper(box,steps,endHtml){
+  let i=0,fb='',fbok=true,solved=false;
+  function render(){
+    if(i>=steps.length){html(box,endHtml);return}
+    const st=steps[i];
+    let h=`<div class="steps-dots">${steps.map((_,j)=>`<i class="${j<=i?'on':''}"></i>`).join('')}</div>`;
+    if(st.vis)h+=`<div style="margin:.4rem 0">${typeof st.vis==='function'?st.vis():st.vis}</div>`;
+    h+=`<div class="tq">${st.q}</div>`;
+    if(fb)h+=`<div class="tfb ${fbok?'ok':'no'}">${fb}</div>`;
+    if(!solved){const n=st.opts.length,k=(i*2+1)%n,ord=st.opts.map((_,j)=>(j+k)%n);h+=`<div class="tbtns">${ord.map(j=>`<button type="button" class="btn" data-j="${j}">${st.opts[j][0]}</button>`).join('')}</div>`}
+    else h+=`<div class="tbtns"><button type="button" class="btn primary" id="snext">${i<steps.length-1?'Next →':'Finish ✓'}</button></div>`;
+    html(box,h);
+    box.querySelectorAll('[data-j]').forEach(b=>b.onclick=()=>{const o=st.opts[+b.dataset.j];
+      if(o[1]){fb=st.ok;fbok=true;solved=true}else{fb=o[2]||'Not quite. Have another look.';fbok=false;b.disabled=true;
+        render();const bb=box.querySelector(`[data-j="${b.dataset.j}"]`);if(bb)bb.disabled=true;return}
+      render()});
+    const n=box.querySelector('#snext');if(n)n.onclick=()=>{i++;fb='';solved=false;render()};
+  }
+  render();
+}
+const tiles=(b,n,cls,cross)=>Array.from({length:n},(_,i)=>`<span class="tileb${cls?' '+cls:''}${cross&&i<cross?' x':''}">${b}</span>`).join('');
+
+
+/* ===== Tab 0: foundations ===== */
+function html(el,h){el.innerHTML=h;km(el)}
+const T0R=String.raw;
+function venn2(a,b,ab){const f=x=>fmt(x,2);const aO=a-ab,bO=b-ab,nn=1-a-b+ab;
+  return `<svg viewBox="0 0 360 210" style="width:100%;max-width:420px"><rect x="2" y="2" width="356" height="206" rx="10" fill="#fdfcff" stroke="#9aa1ad"/>
+  <circle cx="135" cy="105" r="72" fill="#7fb3e6" fill-opacity=".35" stroke="#3b4fa8" stroke-width="2"/><circle cx="225" cy="105" r="72" fill="#f3b3cd" fill-opacity=".45" stroke="#b5487a" stroke-width="2"/>
+  <text x="70" y="40" font-size="18" font-weight="700" fill="#3b4fa8">A</text><text x="280" y="40" font-size="18" font-weight="700" fill="#b5487a">B</text>
+  <text x="105" y="111" font-size="17" text-anchor="middle">${f(aO)}</text><text x="180" y="111" font-size="17" text-anchor="middle" font-weight="700">${f(ab)}</text><text x="255" y="111" font-size="17" text-anchor="middle">${f(bO)}</text>
+  <text x="330" y="195" font-size="15" text-anchor="end" fill="#5b6475">neither ${f(nn)}</text></svg>`}
+function t0a(){const v=venn2(0.5,0.3,0.1);
+  stepper($('#t0a'),[
+    {vis:v,q:T0R`In a class, \(P(\text{sport})=0.5\), \(P(\text{music})=0.3\) and \(P(\text{both})=0.1\). First the easy one: \(P(\text{not sport})=\;?\)`,opts:[['0.5',1],['0.7',0,'Complement of sport: 1 − P(sport).'],['0.4',0,'0.4 is sport only. “Not sport” is everything outside the sport circle.']],ok:T0R`\(1-0.5=0.5\).`},
+    {q:T0R`Sport <b>only</b> (sport but not music) \(=\;?\)`,opts:[['0.4',1],['0.5',0,'0.5 includes the overlap. Take the 0.1 away.'],['0.2',0,'Inside the sport circle, outside the music circle.']],ok:T0R`\(0.5-0.1=0.4\). Fill the overlap first, then subtract.`},
+    {q:T0R`Sport <b>or</b> music: \(0.5+0.3\) counts the overlap twice. So \(P(\text{sport}\cup\text{music})=\;?\)`,opts:[['0.7',1],['0.8',0,'The 0.1 overlap has been counted twice.'],['0.9',0,'Subtract the overlap, do not add it.']],ok:T0R`\(0.5+0.3-0.1=0.7\). Or add the three regions: \(0.4+0.1+0.2=0.7\).`},
+    {q:T0R`Neither sport nor music \(=\;?\)`,opts:[['0.3',1],['0.2',0,'Neither = 1 − P(sport or music).'],['0',0,'Some students do neither.']],ok:T0R`\(1-0.7=0.3\).`},
+    {q:T0R`Are sport and music independent? Compare \(P(\text{both})=0.1\) with \(0.5\times0.3\).`,opts:[['No: 0.1 ≠ 0.15',1],['Yes: they overlap',0,'Overlapping is not the test. Compare the numbers.'],['They are mutually exclusive',0,'Mutually exclusive would need no overlap at all.']],ok:T0R`\(0.5\times0.3=0.15\neq0.1\): not independent. Students who play sport are a bit <i>less</i> likely to learn music.`}],
+    `<div class="tfb ok"><b>Tool 1 done.</b> Fill the overlap first; or = add − overlap; neither = 1 − or.</div>`);
+}
+function vennWidget(){const go=()=>{let a=+$('#vA').value,b=+$('#vB').value;const ab0=+$('#vAB').value;
+    const lo=Math.max(0,a+b-1),hi=Math.min(a,b);const ab=Math.min(hi,Math.max(lo,ab0));if(Math.abs(ab-ab0)>1e-9)$('#vAB').value=ab;
+    $('#vAo').textContent=a.toFixed(2);$('#vBo').textContent=b.toFixed(2);$('#vABo').textContent=ab.toFixed(2);
+    $('#vSvg').innerHTML=venn2(a,b,ab);const u=a+b-ab,ind=Math.abs(ab-a*b)<0.005;
+    html($('#vOut'),`\\(P(A\\cup B)=${fmt(a,2)}+${fmt(b,2)}-${fmt(ab,2)}=${fmt(u,2)}\\), \\(P(\\text{neither})=${fmt(1-u,2)}\\)<br>\\(P(A)P(B)=${fmt(a*b,4)}\\) vs \\(P(A\\cap B)=${fmt(ab,2)}\\): <b>${ind?'independent':'not independent'}</b>${ab===0&&a>0&&b>0?' · <b>mutually exclusive</b> (so dependent)':''}<br><span class="small">The overlap must be between ${fmt(lo,2)} and ${fmt(hi,2)} for these values.</span>`)};
+  ['#vA','#vB','#vAB'].forEach(s=>$(s).addEventListener('input',go));go()}
+function t0b(){
+  const tree=(late2)=>`<table class="dt"><tr><th></th><th>Late</th><th>Not late</th><th>Total</th></tr><tr><th>Bus</th><td>280</td><td>420</td><td>700</td></tr><tr><th>No bus</th><td>${late2}</td><td>${late2==='?'?'?':300-late2}</td><td>300</td></tr></table>`;
+  stepper($('#t0b'),[
+    {q:T0R`“70% of students take the bus. Of these, 40% are late.” What is the 40%?`,opts:[[T0R`\(P(\text{late}\mid\text{bus})\)`,1],[T0R`\(P(\text{late})\)`,0,'“Of these” means only the bus students.'],[T0R`\(P(\text{bus}\mid\text{late})\)`,0,'The group is the bus students, so “bus” goes after the bar.']],ok:T0R`\(P(\text{late}\mid\text{bus})=0.4\): a probability <i>within</i> the bus group.`},
+    {q:T0R`So \(P(\text{bus}\cap\text{late})=P(\text{bus})\times P(\text{late}\mid\text{bus})=\;?\)`,opts:[['0.28',1],['0.4',0,'0.4 is only within the bus group. Multiply by 0.7.'],['1.1',0,'Multiply along the branch, do not add.']],ok:T0R`\(0.7\times0.4=0.28\). In 1000 students: 700 take the bus, 280 of them are late. No independence needed.`+tree('?')},
+    {q:T0R`Can we now find \(P(\text{bus}\mid\text{late})\), the fraction of late students who take the bus?`,opts:[['No: we do not know how many non-bus students are late',1],['Yes: it is 0.4',0,'0.4 is the other direction, P(late | bus).'],['Yes: it is 0.28',0,'0.28 is a share of all students, not of the late ones.']],ok:T0R`The denominator \(P(\text{late})=0.28+P(\text{no bus}\cap\text{late})\) has an unknown part (the ? in the table). Tab 1 shows how to get a <b>bound</b> instead.`},
+    {q:T0R`Suppose we are told 10% of non-bus students are late. Then 30 of the 300 are late, so \(P(\text{bus}\mid\text{late})=\tfrac{280}{280+30}=\;?\)`,opts:[['0.903',1],['0.28',0,'Divide by the late students only: 310.'],['0.933',0,'280 ÷ 310.']],ok:T0R`\(\tfrac{280}{310}=0.903\): about 90% of late students take the bus. The extra piece of information made the calculation possible.`+tree(30)}],
+    `<div class="tfb ok"><b>Tool 2 done.</b> “Of these” is conditional; P(A ∩ B) = P(A) × P(B | A) always works.</div>`);
+}
+function t0c(){
+  stepper($('#t0c'),[
+    {q:T0R`Mia says: “A drawing pin can land point up or point down, so \(P(\text{up})=0.5\).” What kind of probability is this?`,opts:[['A model probability',1],['An experimental probability',0,'She has not done any trials.'],['The true probability',0,'It is an assumption: are the two outcomes really equally likely?']],ok:'A model, based on the assumption that both ways are equally likely. That assumption could be wrong.'},
+    {q:T0R`She drops it 100 times: it lands point up 62 times. \(\tfrac{62}{100}=0.62\) is…`,opts:[['an experimental probability',1],['the true probability',0,'Another 100 drops would give a slightly different number.'],['a model probability',0,'It comes from trials, not from an assumption.']],ok:'Experimental: an estimate from trials.'},
+    {q:T0R`Is the true probability exactly 0.62?`,opts:[['Probably not exactly, but it is likely to be near 0.62',1],['Yes, 100 is a lot of trials',0,'Experimental probabilities vary from sample to sample.'],['No, it must be 0.5',0,'The data suggest the model of 0.5 is wrong for this pin.']],ok:'We can never know the true probability exactly. 0.62 is our best estimate, and it is evidence that the 0.5 model is wrong.'},
+    {q:'Which would give a more reliable estimate of the true probability?',opts:[['1000 drops',1],['10 drops',0,'Small samples vary a lot.'],['They are equally reliable',0,'Try the widget below: compare 10 trials with 1000.']],ok:'More trials, less variation: the experimental probability settles down near the true one.'}],
+    `<div class="tfb ok"><b>Tool 3 done.</b> Model = assumption; experimental = estimate from trials; true = unknown, approached in the long run.</div>`);
+}
+function lrWidget(){let last=null;const draw=n=>{const p=+$('#lrP').value;const pts=[];let s=0;for(let i=1;i<=n;i++){s+=Math.random()<p?1:0;pts.push(s/i)}last=n;
+    const W=480,H=200,L=36,sx=i=>L+(i/(n))*(W-L-8),sy=v=>H-22-v*(H-36);
+    let g=`<svg viewBox="0 0 ${W} ${H}"><line x1="${L}" y1="${sy(0)}" x2="${W-8}" y2="${sy(0)}" stroke="#9aa1ad"/><line x1="${L}" y1="${sy(1)}" x2="${L}" y2="${sy(0)}" stroke="#9aa1ad"/>`;
+    [0,0.5,1].forEach(v=>g+=`<text x="${L-6}" y="${sy(v)+5}" font-size="13" text-anchor="end">${v}</text>`);
+    g+=`<line x1="${L}" y1="${sy(p)}" x2="${W-8}" y2="${sy(p)}" stroke="#b5487a" stroke-dasharray="6 4" stroke-width="2"/>`;
+    g+=`<polyline fill="none" stroke="#3b4fa8" stroke-width="2" points="${pts.map((v,i)=>sx(i+1).toFixed(1)+','+sy(v).toFixed(1)).join(' ')}"/>`;
+    g+=`<text x="${W-8}" y="${H-4}" font-size="13" text-anchor="end">trials: ${n}</text></svg>`;
+    $('#lrSvg').innerHTML=g;html($('#lrOut'),`After ${n} trials: ${s} successes, experimental probability \\(=\\tfrac{${s}}{${n}}=${fmt(s/n,3)}\\). True \\(p=${fmt(p,2)}\\), difference \\(${fmt(Math.abs(s/n-p),3)}\\).`)};
+  $('#lrP').addEventListener('input',()=>{$('#lrPo').textContent=(+$('#lrP').value).toFixed(2);draw(last||100)});
+  document.querySelectorAll('#start [data-n]').forEach(b=>b.onclick=()=>draw(+b.dataset.n));
+  $('#lrPo').textContent=(+$('#lrP').value).toFixed(2);draw(100)}
+function bootTab0(){[t0a,vennWidget,t0b,t0c,lrWidget].forEach(f=>{try{f()}catch(e){console.error(f.name,e)}})}
+
+</script>
+</body>
+</html>

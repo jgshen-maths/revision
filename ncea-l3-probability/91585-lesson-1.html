@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NCEA Level 3 · 91585 Probability Concepts · Lesson 1</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<style>
+:root{
+  --ink:#1c2230;--muted:#5b6475;--paper:#f7f6fb;--card:#fff;--line:#e2e0ea;
+  --a:#3b4fa8;--a-soft:#e8ebf8;--b:#b5487a;--b-soft:#f8e7ef;
+  --good:#2f8a4c;--good-soft:#e5f4ea;--warn:#b7791f;--warn-soft:#fbf1dc;--bad:#c0392b;--bad-soft:#fbe5e2;--grey:#9aa1ad;
+  --xt:#5b6fd8;--ct:#e09f3e;--neg:#c0392b;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font:18px/1.65 "Avenir Next","Segoe UI",system-ui,-apple-system,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.25;font-weight:600}
+h2{font-size:1.6rem;margin:.2rem 0 .6rem}
+h3{font-size:1.15rem;margin:1.6rem 0 .5rem}
+p{margin:.55rem 0}
+header.top{position:sticky;top:0;z-index:20;background:rgba(247,246,251,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.topin{max-width:940px;margin:0 auto;padding:.55rem 1rem .35rem;display:flex;align-items:center;gap:.8rem;flex-wrap:wrap}
+.brand{font-family:Georgia,serif;font-weight:600;font-size:1.02rem;flex:1;min-width:180px}
+.brand small{display:block;font-family:inherit;font-weight:400;color:var(--muted);font-size:.84rem}
+.prog{font-size:.82rem;color:var(--muted);text-align:right}
+.bar{height:6px;background:var(--line);border-radius:4px;overflow:hidden;width:150px;margin-top:3px}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--a),var(--b));width:0;transition:width .4s}
+nav.tabs{max-width:940px;margin:0 auto;display:flex;gap:.35rem;overflow-x:auto;padding:.1rem 1rem .6rem;scrollbar-width:thin}
+nav.tabs button{flex:0 0 auto;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;padding:.32rem .8rem;font:inherit;font-size:.9rem;cursor:pointer;white-space:nowrap}
+nav.tabs button.ga{border-color:#c9d0ef}
+nav.tabs button.gb{border-color:#eccbdb}
+nav.tabs button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+nav.tabs button .tick{color:var(--good);font-weight:700;margin-left:.25rem}
+nav.tabs button.on .tick{color:#9be3b0}
+main{max-width:940px;margin:0 auto;padding:1.2rem 1rem 4rem}
+section.tab{display:none}
+section.tab.on{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.kicker{font-size:.84rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--a)}
+.gb-sec .kicker{color:var(--b)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1rem 1.1rem;margin:1rem 0}
+.idea{border-left:5px solid var(--a)}
+.gb-sec .idea{border-left-color:var(--b)}
+.box-title{font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:.3rem}
+.key{background:var(--a-soft);border-radius:10px;padding:.6rem .8rem;margin:.6rem 0}
+.gb-sec .key{background:var(--b-soft)}
+.trap{background:var(--warn-soft);border-radius:10px;padding:.6rem .8rem;margin:.6rem 0}
+.trap b{color:#8a5a0c}
+.steps{margin:.3rem 0;padding-left:1.3rem}
+.steps li{margin:.4rem 0}
+.tblwrap{overflow-x:auto;max-width:100%}
+table.t{border-collapse:collapse;margin:.5rem 0;font-size:1rem}
+table.t th,table.t td{border:1px solid var(--line);padding:.35rem .6rem;text-align:center}
+table.t th{background:#efedf5;font-weight:600}
+.widget{background:#fdfcff;border:1px dashed #c9c5d8;border-radius:14px;padding:.9rem;margin:1rem 0}
+.widget .box-title{color:var(--a)}
+.gb-sec .widget .box-title{color:var(--b)}
+.ctrl{display:flex;flex-wrap:wrap;gap:.5rem .8rem;align-items:center;margin:.45rem 0}
+.ctrl label{font-size:.98rem;display:flex;align-items:center;gap:.4rem}
+.ctrl input[type=range]{width:150px}
+.ctrl input[type=text],.ctrl select{font:inherit;padding:.3rem .5rem;border:1px solid #c9c3d6;border-radius:8px}
+.btn{border:1px solid var(--ink);background:#fff;color:var(--ink);border-radius:8px;padding:.36rem .8rem;font:inherit;font-size:.95rem;cursor:pointer}
+.btn:hover{background:#efedf5}
+.btn.primary,.btn.on{background:var(--ink);color:#fff}
+.btn.small{padding:.24rem .6rem;font-size:.9rem}
+.readout{background:#fff;border:1px solid var(--line);border-radius:10px;padding:.55rem .75rem;margin-top:.5rem;font-size:1rem}
+svg{max-width:100%;height:auto;display:block}
+svg text{font-family:"Avenir Next","Segoe UI",system-ui,sans-serif}
+.wex{border-left:5px solid #7a6f8c}
+.wex .box-title{color:#7a6f8c}
+details.why{background:#f1eff6;border-radius:12px;padding:.5rem .9rem;margin:1rem 0}
+details.why summary{cursor:pointer;font-weight:600}
+details.why[open]{padding-bottom:.8rem}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+@media(max-width:640px){.two{grid-template-columns:1fr}h2{font-size:1.35rem}}
+.qhead{display:flex;align-items:baseline;gap:.6rem;margin-top:1.8rem}
+.qhead h3{margin:0}
+.qhead span{font-size:.92rem;color:var(--muted)}
+.q{background:#fff;border:1px solid var(--line);border-radius:14px;padding:.9rem 1rem;margin:.8rem 0}
+.q .qn{font-weight:700;color:var(--muted);font-size:.88rem;letter-spacing:.05em;display:flex;align-items:center;gap:.4rem;flex-wrap:wrap}
+.lvltag{font-size:.74rem;letter-spacing:.08em;border-radius:999px;padding:.05rem .5rem;font-weight:700}
+.lvltag.Focus{background:#e6f2ea;color:#2f7a46}.lvltag.Practice{background:#e8ebf8;color:#3b4fa8}.lvltag.Challenge{background:#f8e7ef;color:#a3376a}
+.q .prompt{margin:.3rem 0 .6rem}
+.q.done-3{border-color:#9ed1ae}.q.done-2,.q.done-1{border-color:#e7c98d}.q.done-0{border-color:#e5a69e}
+.opts{display:grid;gap:.4rem}
+.opt{text-align:left;border:1px solid var(--line);background:#fbfaff;border-radius:10px;padding:.45rem .7rem;font:inherit;cursor:pointer;color:var(--ink)}
+.opt:hover:not(:disabled){border-color:var(--ink)}
+.opt.wrong{background:var(--bad-soft);border-color:#e5a69e}
+.opt.right{background:var(--good-soft);border-color:#9ed1ae}
+.opt:disabled{cursor:default}
+.ansrow{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
+.ansrow input{font:inherit;padding:.35rem .6rem;border:1px solid #c9c3d6;border-radius:8px;width:190px}
+.preview{min-height:1.8rem;color:var(--muted);font-size:1rem;margin-top:.2rem}
+.fmt{font-size:.9rem;color:var(--muted);margin-top:.2rem}
+.dots{display:inline-flex;gap:4px;margin-left:.2rem;vertical-align:middle}
+.dots i{width:10px;height:10px;border-radius:50%;border:1.5px solid var(--grey);display:inline-block}
+.dots i.x{background:var(--bad);border-color:var(--bad)}
+.dots i.ok{background:var(--good);border-color:var(--good)}
+.fb{margin-top:.5rem;font-size:1rem}
+.fb.ok{color:var(--good)}.fb.no{color:var(--bad)}.fb.info{color:#8a5a0c}
+.hint{background:var(--warn-soft);border-radius:10px;padding:.5rem .7rem;margin-top:.5rem;font-size:1rem}
+.sol{background:#eef0fa;border-radius:10px;padding:.55rem .8rem;margin-top:.55rem;font-size:1rem}
+.gb-sec .sol{background:#faeef4}
+.next{display:flex;justify-content:flex-end;margin-top:2rem}
+.hero{padding:1.2rem 0 .4rem}
+.hero h1{font-size:2.1rem;margin:.2rem 0}
+.hero p{color:var(--muted);max-width:640px}
+.route{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.6rem;margin:1rem 0}
+.stop{background:#fff;border:1px solid var(--line);border-radius:12px;padding:.65rem .8rem;cursor:pointer;text-align:left;font:inherit;color:var(--ink)}
+.stop:hover{border-color:var(--ink)}
+.stop .n{font-size:.75rem;font-weight:700;letter-spacing:.08em;color:var(--a)}
+.stop.gb .n{color:var(--b)}.stop.rv .n{color:#6b5ca5}
+.stop .tt{font-weight:600;display:block}
+.stop .mm{font-size:.86rem;color:var(--muted)}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;margin:.6rem 0}
+.flow div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:.5rem .6rem;font-size:.95rem}
+.flow b{display:block;font-size:.95rem}
+@media(max-width:640px){.flow{grid-template-columns:1fr 1fr}.hero h1{font-size:1.6rem}}
+/* report */
+.rbar{margin:.45rem 0}
+.rbar .lab{display:flex;justify-content:space-between;font-size:.9rem;gap:.5rem}
+.rbar .tr{height:10px;background:#e9e6f0;border-radius:6px;overflow:hidden}
+.rbar .tr i{display:block;height:100%}
+.skill{display:flex;justify-content:space-between;gap:.6rem;padding:.35rem 0;border-bottom:1px solid #eeebf3;font-size:1rem}
+.lvl{font-size:.78rem;border-radius:999px;padding:.05rem .55rem;white-space:nowrap;align-self:center}
+.lvl.g{background:var(--good-soft);color:var(--good)}.lvl.a{background:var(--warn-soft);color:#8a5a0c}.lvl.r{background:var(--bad-soft);color:var(--bad)}.lvl.n{background:#eee;color:#777}
+.score{font-family:Georgia,serif;font-size:2.4rem;text-align:center;margin:.3rem 0}
+.legend{display:flex;flex-wrap:wrap;gap:.4rem 1rem;font-size:.9rem;justify-content:center;margin-top:.4rem}
+.legend span{display:inline-flex;align-items:center;gap:.35rem}
+.legend i{width:12px;height:12px;border-radius:50%;display:inline-block}
+.adv{border-left:4px solid var(--warn);padding:.3rem .8rem;margin:.6rem 0;background:#fff;border-radius:0 10px 10px 0}
+.small{font-size:.92rem;color:var(--muted)}
+/* widgets */
+.chain{display:flex;flex-wrap:wrap;gap:.35rem;align-items:center;margin:.4rem 0}
+.chain span.op{background:var(--a-soft);color:var(--a);border-radius:8px;padding:.15rem .5rem;font-weight:700;font-size:.9rem}
+.chain span.ar{color:var(--muted)}
+.flowbox{display:flex;flex-wrap:wrap;align-items:center;gap:.3rem;margin:.35rem 0}
+.flowbox .fbx{border:1.5px solid var(--ink);border-radius:8px;padding:.15rem .5rem;background:#fff;min-width:38px;text-align:center}
+.flowbox .fop{border-radius:999px;padding:.12rem .55rem;font-weight:700;font-size:.88rem}
+.flowbox.fwd .fop{background:var(--a-soft);color:var(--a)}
+.flowbox.back .fop{background:var(--b-soft);color:var(--b)}
+.flowbox .arr{color:var(--muted)}
+.tiles{display:flex;flex-wrap:wrap;gap:4px;align-items:center;margin:.25rem 0}
+.tile{min-width:30px;height:30px;padding:0 .35rem;border-radius:7px;border:1.5px solid #c9c5d8;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:.92rem}
+.tile.common{background:var(--a);border-color:var(--a);color:#fff}
+.tile.sign{border:none;background:none;min-width:12px}
+.factor-row{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin:.35rem 0}
+.factor-row .lab{min-width:70px;font-weight:600}
+.log{font-size:.9rem;color:var(--muted);margin:.4rem 0 0;padding-left:1.2rem}
+.fig{position:relative;margin:.5rem 0}
+.fig .lb{position:absolute;transform:translate(-50%,-50%);background:rgba(255,255,255,.85);padding:0 3px;white-space:nowrap;font-size:.95rem}
+.katex{font-size:1.04em}
+.katex-display{overflow-x:auto;overflow-y:hidden;padding:.15rem 0}
+.credit{text-align:center;color:var(--muted);font-size:.86rem;padding:1rem 0 2rem}
+
+/* number part A */
+#w2r table.t{font-size:.95rem}#w2r table.t th,#w2r table.t td{padding:.3rem .4rem;line-height:1.25}
+.itbl{border-collapse:collapse;margin:.5rem 0;font-size:1.05rem}
+.itbl th,.itbl td{border:1px solid var(--line);padding:.4rem .55rem;text-align:center;vertical-align:middle}
+.itbl th{background:#efedf5;font-weight:600;font-size:.9rem;line-height:1.25}
+.itbl tr.oprow td{border:none;background:none;color:var(--b);font-weight:700;padding:.05rem .3rem;font-size:.95rem;line-height:1.3}
+.itbl td input{font:inherit;width:84px;padding:.25rem .4rem;border:1px solid #c9c3d6;border-radius:7px;text-align:center}
+.itbl td{min-width:64px}.itbl .katex{font-size:1.1em}
+.itbl td.okc{background:var(--good-soft)}.itbl td.noc{background:var(--bad-soft)}
+.itbl tr.new td{animation:fade .35s ease}
+.divbtn{border:1.5px solid var(--b);color:var(--b);background:#fff;border-radius:999px;padding:.15rem .6rem;font:inherit;font-weight:700;cursor:pointer;white-space:nowrap}
+.divbtn:hover{background:var(--b-soft)}
+.note{background:var(--good-soft);border-radius:10px;padding:.55rem .8rem;margin:.5rem 0}
+.tree svg{max-width:100%}
+.tree .nd{cursor:pointer}
+.pairs{display:flex;flex-wrap:wrap;gap:.35rem;margin:.4rem 0}
+.tileb{min-width:34px;height:34px;padding:0 .3rem;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:1rem;border:2px solid #3b4fa8;background:#e8ebf8;color:#3b4fa8;position:relative}
+.tileb.p{border-color:#b5487a;background:#f8e7ef;color:#b5487a}
+.tileb.x{opacity:.45}
+.tileb.x::after{content:"";position:absolute;left:-3px;right:-3px;top:50%;border-top:2.5px solid #c0392b;transform:rotate(-35deg)}
+.trow{display:flex;flex-wrap:wrap;gap:5px;align-items:center;margin:.3rem 0}
+.grpb{display:inline-flex;gap:4px;padding:4px;border:2px dashed #b9b3c9;border-radius:10px}
+.fracbox{display:inline-flex;flex-direction:column;align-items:flex-start;gap:6px}
+.fracbox .barl{border-top:2.5px solid #1c2230;align-self:stretch}
+.pyr{display:flex;flex-direction:column;align-items:center;gap:6px;margin:.5rem 0}
+.pyr div{display:flex;gap:6px}
+.pyr span{min-width:58px;height:40px;border:1.5px solid #1c2230;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;font-weight:600;background:#fff}
+.pyr span.q{background:#f1eff6;color:#7a6f8c}
+
+/* sample: friendly style */
+.hook{background:linear-gradient(135deg,#fff7e6,#eef3ff);border:none;border-radius:18px;padding:1.2rem 1.2rem 1rem}
+.hook .big{font-family:Georgia,serif;font-size:1.35rem;font-weight:600;margin:.1rem 0 .5rem}
+.hookfig{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin:.7rem 0}
+.hookfig .num{font-family:Georgia,serif;font-size:2.2rem;font-weight:700}
+.hookfig .eq{font-size:1.6rem;color:var(--muted)}
+.brick{--c:#6b5ca5;display:inline-flex;align-items:center;justify-content:center;min-width:46px;height:40px;padding:0 .45rem;border-radius:7px;background:var(--c);color:#fff;font-weight:800;font-size:1.2rem;position:relative;margin:10px 3px 0;box-shadow:inset 0 -5px rgba(0,0,0,.18)}
+.brick::before{content:"";position:absolute;top:-8px;left:7px;right:7px;height:9px;background:radial-gradient(circle at 22% 100%,var(--c) 5px,transparent 5.6px),radial-gradient(circle at 78% 100%,var(--c) 5px,transparent 5.6px)}
+.brick.sm{min-width:36px;height:32px;font-size:1rem;margin:8px 2px 0}
+.tray{display:flex;flex-wrap:wrap;align-items:flex-end;gap:2px;min-height:48px}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin:.6rem 0}
+.chip{min-width:56px;height:50px;border-radius:12px;border:2px solid #c9c5d8;background:#fff;font:inherit;font-size:1.3rem;font-weight:700;cursor:pointer;color:var(--ink)}
+.chip.yes{border-color:#2f9e5b;background:#e5f4ea;color:#2f7a46}
+.chip.no{border-color:#e5a69e;background:#fbe5e2;color:#c0392b;animation:shake .3s}
+@keyframes shake{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+.tutor{border:2px solid #3b4fa8;border-radius:18px;background:#fff;padding:1rem}
+.tutor .who{font-size:.85rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#3b4fa8}
+.tq{font-size:1.15rem;margin:.6rem 0 .4rem}
+.tbtns{display:flex;flex-wrap:wrap;gap:.5rem;margin:.3rem 0}
+.tbtns .btn{font-size:1.05rem;padding:.45rem .9rem;border-radius:10px}
+.tfb{border-radius:10px;padding:.45rem .7rem;margin:.4rem 0;font-size:1.02rem}
+.tfb.ok{background:var(--good-soft);color:#24683b}.tfb.no{background:var(--warn-soft);color:#7a4e0a}
+.wow{background:#fdf3ff;border:2px dashed #b5487a;border-radius:18px}
+.wow .box-title{color:#b5487a}
+.shortcut{background:#1c2230;color:#fff;border-radius:16px;padding:1rem 1.1rem}
+.shortcut .box-title{color:#ffd27a}
+.shortcut .katex{color:#fff}
+details.pad{background:#f1eff6;border-radius:12px;padding:.5rem .9rem;margin:1rem 0}
+details.pad summary{cursor:pointer;font-weight:600}
+.tries{margin:.5rem 0;padding-left:0;list-style:none}
+.tries li{display:flex;align-items:flex-end;gap:.5rem;flex-wrap:wrap;margin:.2rem 0}
+.tries li span.l{font-size:.95rem;color:var(--muted);min-width:100px}
+.zones{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin:.6rem 0}
+.zone{border-radius:14px;min-height:96px;padding:.4rem .3rem;text-align:center}
+.zone .zl{font-size:.82rem;font-weight:700;line-height:1.2}
+.zone .tray{justify-content:center}
+.zone.l{background:#e8ebf8;color:#3b4fa8}.zone.m{background:#efe4f3;color:#6b3a87}.zone.r{background:#f8e7ef;color:#b5487a}
+.brow{display:flex;align-items:flex-end;gap:.4rem;flex-wrap:wrap;margin:.2rem 0}
+.brow .lab{font-weight:700;min-width:44px;font-family:Georgia,serif;font-size:1.25rem}
+.brow button.brick{border:none;cursor:pointer;font-family:inherit}
+.brow button.brick:disabled{opacity:.2;cursor:default}
+.steps-dots{display:flex;gap:5px;margin:.2rem 0 .4rem}
+.steps-dots i{width:22px;height:6px;border-radius:3px;background:#dcd8e6}
+.steps-dots i.on{background:#3b4fa8}
+.nest{border:2.5px solid #6b5ca5;border-radius:16px;padding:.5rem;background:#f6f3fb}
+.nest .nest{border-color:#3b4fa8;background:#eef1fb;margin-top:.4rem}
+.nest .nest .nest{border-color:#2f9e5b;background:#eaf6ee}
+.nest .nl{font-size:.85rem;font-weight:700}
+.nest .tray{min-height:40px;gap:6px}
+.ncard{display:inline-flex;align-items:center;justify-content:center;min-width:48px;height:38px;border-radius:10px;background:#fff;border:2px solid #1c2230;font-weight:700;font-size:1.1rem;padding:0 .4rem}
+.cotbl td,.cotbl th{padding:.3rem .45rem}
+.cotbl td.eq{background:var(--good-soft);font-weight:700}
+.pbar{display:flex;height:40px;border:2px solid #1c2230;border-radius:8px;overflow:hidden;max-width:360px;margin:.3rem 0}
+.pbar i{flex:1;border-right:1.5px solid #1c2230;background:#fff;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-style:normal;color:#5b6475}.pbar i:last-child{border-right:none}
+.pbar i.on{background:#7fb3e6;color:#1c2230}.pbar i.ex{background:#f3b3cd;color:#1c2230}.pbar i.off{background:#eee;text-decoration:line-through}
+.bm{display:flex;flex-wrap:wrap;gap:4px;margin:.3rem 0}.bm .row{display:flex;align-items:center;gap:.5rem;width:100%}
+.bm .row b{min-width:58px;font-size:.95rem}.bm .box{width:38px;height:32px;border:2px solid #1c2230;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:.82rem;font-weight:700}
+.g100{display:grid;gap:2px;margin:.4rem 0}.g100 i{width:14px;height:14px;background:#e8e6ef;border-radius:2px}.g100 i.on{background:#3b4fa8}
+.bgrp.take{border-color:#e8902a;border-style:solid}
+.scards{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin:.4rem 0}
+.scard{border:2px solid #cfd3e4;border-radius:12px;padding:.4rem .5rem;text-align:center;background:#fff}.scard b{display:block;font-size:1.15rem}
+.scard.done{border-color:#2f8a4c;background:#e5f4ea}
+.sub{border-left:5px solid #3b4fa8;padding-left:.7rem;margin:1.6rem 0 .6rem}.sub .n{font-size:.8rem;font-weight:800;letter-spacing:.06em;color:#3b4fa8}.sub h3{margin:.1rem 0}
+details.secret{background:linear-gradient(135deg,#2b2350,#4b3a8a);color:#fff;border-radius:18px;padding:.8rem 1rem;margin:1.6rem 0}
+details.secret>summary{cursor:pointer;font-weight:800;font-size:1.15rem;list-style:none}details.secret>summary::-webkit-details-marker{display:none}
+details.secret[open]{background:#f4f1ff;color:inherit;border:3px solid #4b3a8a}details.secret[open]>summary{color:#4b3a8a}
+.bead{display:inline-block;width:20px;height:20px;border-radius:50%;margin:2px}.bgrp{display:inline-flex;flex-wrap:wrap;border:2px dashed #9aa1ad;border-radius:12px;padding:3px;margin:3px;max-width:140px}
+.tins{display:flex;flex-wrap:wrap;gap:4px;align-items:center}.tin{width:26px;height:32px;border:2px solid #1c2230;border-radius:4px 4px 6px 6px}
+.swatch{width:70px;height:70px;border-radius:14px;border:2px solid #1c2230;flex:none}
+.fbar{display:flex;height:30px;border:2px solid #1c2230;border-radius:6px;overflow:hidden;max-width:340px;margin:.25rem 0}
+.fbar i{flex:1;border-right:1.5px solid #1c2230;background:#fff}.fbar i:last-child{border-right:none}
+.fbar i.on{background:#7fb3e6}.fbar i.on2{background:#f3b3cd}.fbar i.on3{background:#ffd27a}
+.fbrow{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}.fbrow .lab{min-width:58px;font-weight:700;font-size:1.05rem}
+.fbrow .fbar{flex:1;min-width:180px}
+.divm{font-family:Georgia,serif;font-size:1.2rem;line-height:1.6}
+.divm .rem{display:inline-flex;align-items:center;justify-content:center;min-width:30px;height:30px;border-radius:50%;border:2px solid #3b4fa8;margin:2px;font-weight:700;font-family:inherit;font-size:1rem}
+.divm .rem.rep{border-color:#c0392b;background:#fbe5e2;color:#c0392b}
+.divm .rem.zero{border-color:#2f8a4c;background:#e5f4ea;color:#2f8a4c}
+.dchips{display:flex;flex-wrap:wrap;gap:6px;margin:.4rem 0}
+.dchips button{min-width:56px;padding:.35rem .5rem;border-radius:10px;border:2px solid #cfd3e4;background:#fff;font:inherit;font-size:1rem;cursor:pointer}
+.dchips button.stop{border-color:#2f8a4c;background:#e5f4ea}.dchips button.rep{border-color:#c0392b;background:#fbe5e2}
+.dchips button .katex{font-size:1.3em}.sort2 .katex{font-size:1.2em}
+.dchips button small{display:block;font-size:.78rem;color:#5b6475}
+.sort2{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin:.5rem 0}
+.sort2>div{border-radius:12px;padding:.5rem .6rem;min-height:60px}
+.sort2 .s{background:#e5f4ea}.sort2 .r{background:#fbe5e2}
+.sort2 b{display:block;font-size:.9rem;margin-bottom:.2rem}
+.pies{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:.3rem 0}
+.strip3{display:flex;flex-wrap:wrap;gap:8px}.strip3 span{display:flex;width:96px;height:34px;border:2px solid #1c2230;border-radius:6px;overflow:hidden}
+.strip3 i{flex:1;border-right:1.5px solid #1c2230;background:#fff}.strip3 i:last-child{border-right:none}
+.fcard{display:inline-flex;align-items:center;justify-content:center;min-width:66px;min-height:58px;padding:.2rem .5rem;border-radius:12px;border:2px solid #cfd3e4;background:#fff;font-size:1.15rem;cursor:pointer;font:inherit}
+.fcard.sel{border-color:#3b4fa8;background:#e8ebf8}.fcard.used{opacity:.35;cursor:default}
+.fcards{display:flex;flex-wrap:wrap;gap:8px;margin:.4rem 0}
+.printonly{display:none}
+@media print{
+  @page{size:A4;margin:12mm}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{background:#fff!important}
+  header.top,nav.tabs,.noprint,.next,section.tab:not(#tab-report){display:none!important}
+  section#tab-report{display:block!important;animation:none!important}
+  main{padding:0!important;max-width:none!important}
+  .printonly{display:block}
+  .rephead{border:2px solid #1c2230}
+  .skill,.rbar,.adv,.rephead,#kmap,.score{break-inside:avoid;page-break-inside:avoid}
+  #kmap svg{max-height:240mm}
+}
+
+/* ===== NCEA lesson layer on the Maths Atlas theme ===== */
+body{font-size:17px}
+h2{color:var(--ink)}
+.lead{color:var(--muted);margin-top:0}
+.prog{display:none}
+nav.tabs button .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-left:6px;background:#d5d2de;vertical-align:middle}
+nav.tabs button .dot.part{background:var(--warn)}nav.tabs button .dot.full{background:var(--good)}
+.card .lab{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:.3rem}
+.card.tech{border-left:5px solid var(--a)}
+.card.tech .lab{color:var(--a)}
+.card.we{border-left:5px solid #7a6bb3}.card.we .lab{color:#6a5aa8}
+.card.thm{border-left:5px solid var(--b)}.card.thm .lab{color:var(--b)}
+.card.tool{background:#fdfcff;border:1px dashed #c9c5d8}.card.tool .lab{color:var(--a)}
+ol.steps{counter-reset:s;list-style:none;padding-left:0}
+ol.steps li{counter-increment:s;position:relative;padding-left:2.1rem;margin:.5rem 0}
+ol.steps li::before{content:counter(s);position:absolute;left:0;top:.15rem;width:1.5rem;height:1.5rem;border-radius:50%;background:var(--a);color:#fff;font-size:.8rem;text-align:center;line-height:1.5rem;font-weight:700}
+details{margin:.6rem 0;border-radius:12px;padding:.5rem .9rem;background:#f1eff6}
+details summary{cursor:pointer;font-weight:600;color:var(--b)}
+.frame{background:var(--a-soft);border-radius:10px;padding:.6rem .8rem;margin:.6rem 0;font-size:.98rem}
+.frame b{color:var(--a)}
+table.dt{border-collapse:collapse;margin:.5rem 0;font-size:.95rem}
+table.dt td,table.dt th{border:1px solid var(--line);padding:.3rem .6rem;text-align:center}
+table.dt th{background:#efedf5;font-weight:600}
+.ex{background:#fff;border:1px solid var(--line);border-radius:14px;padding:1rem 1.1rem 2rem;margin:1rem 0;position:relative;overflow-x:auto}
+.ex .qid{display:inline-block;background:var(--ink);color:#fff;border-radius:6px;padding:0 .5rem;font-weight:700;margin-right:.4rem;font-size:.85rem}
+.ex .meta{font-size:.8rem;color:var(--muted)}
+.ex .lvl{float:right;font-size:.75rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:.05rem .6rem}
+.lvl.A{background:#e5f4ea;color:#24683b}.lvl.M{background:#fbf1dc;color:#8a5a0c}.lvl.E{background:#f8e7ef;color:#8e2f5c}
+.ex .row{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;margin-top:.6rem}
+.ex input[type=text]{font:inherit;font-size:1.05rem;padding:.4rem .6rem;border:1.5px solid #c9c3d6;border-radius:10px;width:170px}
+.ex .pv{min-width:80px;color:var(--muted)}
+.ex button,.ex .btn{font:inherit;font-size:.95rem;padding:.36rem .9rem;border-radius:8px;border:1px solid var(--ink);background:var(--ink);color:#fff;cursor:pointer}
+.ex button.ghost,.btn.ghost{background:#fff;color:var(--ink)}
+.ex button:disabled{opacity:.4;cursor:default}
+.ex .opts label{display:block;margin:.35rem 0;padding:.45rem .6rem;border-radius:10px;border:1px solid var(--line);cursor:pointer}
+.ex .opts label:hover{background:#f7f6fb}
+.ex .sel{display:grid;grid-template-columns:1fr auto;gap:.4rem .6rem;align-items:center;margin-top:.5rem}
+.ex select{font:inherit;font-size:.95rem;padding:.25rem .4rem;border-radius:8px}
+.fb{margin-top:.5rem;font-weight:600}
+.fb.ok{color:var(--good)}.fb.no{color:var(--bad)}
+.hint{margin-top:.5rem;background:var(--warn-soft);border-radius:10px;padding:.5rem .7rem;display:none}
+.solbox{margin-top:.6rem;background:var(--good-soft);border-radius:10px;padding:.6rem .8rem;display:none}
+.att{font-size:.85rem;color:var(--muted)}
+.score{position:absolute;right:1rem;bottom:.6rem;font-weight:800;font-size:.85rem}
+.toolgrid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:760px){.toolgrid{grid-template-columns:1fr}}
+.ctl{display:grid;grid-template-columns:minmax(120px,150px) 1fr 64px;gap:.4rem .6rem;align-items:center;font-size:.92rem}
+.ctl input[type=range]{width:100%}
+.ctl output{font-weight:700;text-align:right}
+.outs{background:#fff;border:1px solid var(--line);border-radius:10px;padding:.55rem .75rem;margin-top:.5rem;font-size:.95rem}
+.outs div{margin:.2rem 0}
+.legend span{display:inline-block;margin-right:.8rem;font-size:.82rem}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:2px;margin-right:4px;vertical-align:-1px}
+.vennwrap{position:relative;width:420px;max-width:100%;margin:auto}
+.vennwrap input{position:absolute;width:52px;text-align:center;font-size:15px;padding:3px;border:1.5px solid #8a9aa3;border-radius:6px;background:#fff}
+.vennwrap input.inc{background:#ffe2c7;border-color:#c4572e;font-weight:700}
+.vennwrap input.den{outline:3px solid #2f7d4f}
+.dist input{width:58px;font-size:14px;padding:3px;text-align:center}
+.grid td.hit{background:#ffe2c7;font-weight:700}
+.stepbox{background:#f4f0fb;border-radius:10px;padding:.5rem .75rem;margin-top:.5rem;min-height:44px}
+.rep table{border-collapse:collapse;width:100%;font-size:.9rem;margin:.5rem 0;display:block;overflow-x:auto}
+.rep th,.rep td{border:1px solid var(--line);padding:.3rem .5rem;text-align:left}
+.rep th{background:#efedf5}
+.rep .bar{height:12px;border-radius:7px;background:#e6e3ee;position:relative;min-width:120px;width:auto;margin:0}
+.rep .bar i{position:absolute;left:0;top:0;bottom:0;border-radius:7px}
+.big{font-family:Georgia,serif;font-size:1.9rem;font-weight:700;color:var(--a)}
+.adv{background:var(--b-soft);border-radius:10px;padding:.55rem .75rem;margin:.5rem 0}
+.pill{display:inline-block;font-size:.75rem;border-radius:9px;padding:0 .5rem;margin-left:.3rem;font-weight:700}
+.pill.r{background:#f8d7d3;color:#8b1e1e}
+.small{font-size:.86rem;color:var(--muted)}
+canvas{max-width:100%}
+/* tab 0 widgets */
+.twt td,.twt th{min-width:62px}
+.twt td.num{background:#ffe2c7;font-weight:700}
+.twt td.den,.twt th.den{outline:3px solid var(--good);outline-offset:-3px}
+.evbtns{display:flex;flex-wrap:wrap;gap:.35rem;margin:.4rem 0}
+.evbtns .btn{font-size:.9rem}
+.tree svg{width:100%;max-width:460px}
+.ichk input{width:64px;font:inherit;text-align:center;padding:.2rem;border:1px solid #c9c3d6;border-radius:8px}
+.toolbox li{margin:.35rem 0}
+
+.katex-display{overflow-x:auto;overflow-y:hidden;padding:2px 0}
+.dist input{width:48px}
+.dist th,.dist td{padding:.25rem .3rem!important}
+#jGrid,#bTable,#bTree,#vennProb,.outs{overflow-x:auto}
+.toolgrid>div{min-width:0}
+@media(max-width:480px){.vennwrap{width:420px!important;max-width:none!important;transform:scale(.74);transform-origin:0 0;margin:0 0 -96px 0!important}}
+.exslot{margin:.8rem 0 1.4rem}.exslot h4{font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;color:var(--a);margin:.4rem 0}
+.lrchart svg{width:100%;max-width:520px}
+.ctl input:not([type]),.ctl select{font:inherit;font-size:.95rem;padding:.25rem .4rem;border:1px solid #c9c3d6;border-radius:8px;min-width:0;width:100%}
+#dXo,#dYo,#dSum{overflow-x:auto;max-width:100%}
+#nTab,#nSvg,#cSvg,#pOut,#sHist,#fSvg2{overflow-x:auto;max-width:100%}
+</style>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%20role%3D%22img%22%20aria-label%3D%22%E7%94%B3%20Shen%20Studio%22%3E%3Crect%20width%3D%22100%22%20height%3D%22100%22%20rx%3D%2212%22%20fill%3D%22%23B3261E%22/%3E%3Cpath%20d%3D%22M41.57%2027.7V42.46H27.58V27.7ZM15.1%2025.34V70.78H16.95C22.18%2070.78%2027.58%2067.91%2027.58%2066.65V62.18H41.57V90H44.01C48.82%2090%2054.3%2086.88%2054.3%2085.62V62.18H68.97V68.93H71.07C75.37%2068.93%2081.53%2066.65%2081.61%2065.89V29.64C83.38%2029.3%2084.39%2028.55%2084.9%2027.87L73.69%2019.19L68.12%2025.34H54.3V13.96C56.74%2013.62%2057.33%2012.7%2057.5%2011.52L41.57%2010V25.34H28.42L15.1%2020.2ZM54.3%2027.7H68.97V42.46H54.3ZM41.57%2059.82H27.58V44.82H41.57ZM54.3%2059.82V44.82H68.97V59.82Z%22%20fill%3D%22%23FFFFFF%22/%3E%3C/svg%3E">
+<style id="shen-brand">
+.shen-footer{display:flex;align-items:center;justify-content:center;gap:8px;padding:18px 12px 26px;font:500 13px/1.3 Inter,"Helvetica Neue",Arial,sans-serif;color:#6B6458;letter-spacing:.03em;text-align:center}
+.shen-footer svg{width:20px;height:20px;flex-shrink:0}
+.shen-footer b{font-weight:600;color:#1A1A1A}
+.shen-print-mark{display:none}
+@media print{.shen-footer{display:none!important}
+.shen-print-mark{display:flex!important;position:fixed;right:0;bottom:0;align-items:center;gap:1.5mm;font:500 7.5pt/1 Inter,Arial,sans-serif;color:#555;opacity:.75;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.shen-print-mark svg{width:4mm;height:4mm}}
+</style>
+<style id="home-link">
+.homebtn{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 12px;border:1px solid var(--line,#ddd);border-radius:999px;background:#fff;color:var(--ink,#1c2230);text-decoration:none;font:600 .88rem/1 Inter,system-ui,sans-serif;white-space:nowrap;flex-shrink:0}
+.homebtn:hover{background:#f1eff6}
+.homebtn svg{width:16px;height:16px}
+@media print{.homebtn{display:none!important}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="topin">
+    <a class="homebtn" href="../index.html" aria-label="Back to the Maths Atlas home page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>Home</a>
+    <div class="brand">NCEA Level 3 · 91585 Probability Concepts<small>Lesson 1 · Strategies for the hard calculations</small></div>
+    <div class="prog"><span id="progtxt"></span><div class="bar"><i id="progbar"></i></div></div>
+  </div>
+  <nav class="tabs" id="tabs"></nav>
+</header>
+
+<main>
+<section class="tab" id="start"><div class="kicker">Lesson 1 · Tab 0</div><h2>0 · The probability toolbox</h2>
+<p class="lead">Every hard question in 91585 is built from four basic tools. Learn them here, with a worked example and a widget for each, then check yourself. Merit and Excellence students: use the check-up questions to make sure nothing is rusty.</p>
+<div class="card hook"><div class="big">300 shoppers, one free sample.</div>
+<table class="dt"><tr><th></th><th>Tasted</th><th>Did not taste</th><th>Total</th></tr><tr><th>Female</th><td>120</td><td>80</td><td>200</td></tr><tr><th>Male</th><td>30</td><td>70</td><td>100</td></tr><tr><th>Total</th><td>150</td><td>150</td><td>300</td></tr></table>
+<p>“Women are more likely to taste the sample.” Is that true? What is the chance that a taster is a woman? Is that the same thing? By the end of this tab you will be able to answer all three, and explain why.</p></div>
+
+<div class="sub"><div class="n">TOOL 1</div><h3>Probability from a two-way table</h3></div>
+<div class="card tech"><div class="lab">The idea</div>
+<p>Probability \(=\dfrac{\text{number in the event}}{\text{number in the group you are choosing from}}\). The only question is: <b>which group?</b></p>
+<ul><li><b>“and”</b> (\(\cap\)): one cell, out of everyone.</li>
+<li><b>“or”</b> (\(\cup\)): every cell in either event, counted once, out of everyone.</li>
+<li><b>“given”</b> (\(\mid\)): the group after the bar is the new “everyone”. Cover the rest of the table.</li></ul></div>
+<div class="tutor"><div class="who">Let's do it together</div><div id="t0a"></div></div>
+<div class="card tool"><div class="lab">Widget · what is the denominator?</div>
+<p>Pick an event. Orange cells are the numerator; the green outline is the group you divide by.</p>
+<div class="evbtns" id="twtBtns"></div><div class="tblwrap" id="twtTable"></div><div class="outs" id="twtOut"></div></div>
+<div class="shortcut"><div class="box-title">Remember</div><p>Find the word <b>given</b>, <b>of those</b>, <b>if</b> or <b>out of the ___</b>. That group is the denominator. \(P(A\mid B)\) and \(P(B\mid A)\) are different numbers.</p></div>
+<div id="ex-t0a"></div>
+
+<div class="sub"><div class="n">TOOL 2</div><h3>Tree diagrams and total probability</h3></div>
+<div class="card tech"><div class="lab">The idea</div>
+<ol class="steps"><li>Each set of branches from one point adds to 1.</li>
+<li><b>Multiply along</b> a path to get “this <i>and</i> then that”.</li>
+<li><b>Add the paths</b> that end in the event you want (total probability).</li>
+<li>Same thing with counts: imagine 100 (or 1000) days and split them.</li></ol></div>
+<div class="tutor"><div class="who">Let's do it together</div><div id="t0b"></div></div>
+<div class="card tool"><div class="lab">Widget · build the tree</div>
+<div class="ctl"><span>\(P(\text{rain})\)</span><input type="range" id="trR" min="0.05" max="0.95" step="0.05" value="0.2"><output id="trRo"></output>
+<span>\(P(\text{late}\mid\text{rain})\)</span><input type="range" id="trL1" min="0" max="1" step="0.05" value="0.5"><output id="trL1o"></output>
+<span>\(P(\text{late}\mid\text{no rain})\)</span><input type="range" id="trL2" min="0" max="1" step="0.05" value="0.1"><output id="trL2o"></output></div>
+<div class="tree" id="trSvg"></div><div class="outs" id="trOut"></div></div>
+<div class="shortcut"><div class="box-title">Remember</div><p>Multiply <b>along</b>, add <b>down</b>. Check the ends add to 1. If the question then asks “given late, what is the chance it rained?”, divide the rain-and-late path by <b>all</b> the late paths: that is Tab 1.</p></div>
+<div id="ex-t0b"></div>
+
+<div class="sub"><div class="n">TOOL 3</div><h3>Independence (and the mutually exclusive trap)</h3></div>
+<div class="card tech"><div class="lab">The idea</div>
+<p>Two events are <b>independent</b> if knowing one happened does not change the probability of the other: \(P(A\mid B)=P(A)\).</p>
+<p>Then, and only then, \(P(A\cap B)=P(A)\times P(B)\). Either test works. With real data, “equal” means “close enough”, so say so.</p>
+<p class="trap"><b>Trap:</b> <i>mutually exclusive</i> means the events cannot happen together: \(P(A\cap B)=0\). That is <b>not</b> independence. If one happens, you know the other didn't, so they are strongly dependent.</p></div>
+<div class="tutor"><div class="who">Let's do it together</div><div id="t0c"></div></div>
+<div class="card tool"><div class="lab">Widget · independence checker</div>
+<p>Type the four counts. The checker compares \(P(A)\) with \(P(A\mid B)\) and \(P(A\mid B')\).</p>
+<div class="tblwrap ichk"><table class="dt"><tr><th></th><th>\(B\)</th><th>\(B'\)</th></tr><tr><th>\(A\)</th><td><input id="ic1" value="120"></td><td><input id="ic2" value="30"></td></tr><tr><th>\(A'\)</th><td><input id="ic3" value="80"></td><td><input id="ic4" value="70"></td></tr></table></div>
+<p><button class="btn small" id="icP1">Shoppers (A = tasted, B = female)</button> <button class="btn small" id="icP2">A fair example</button></p>
+<div class="outs" id="icOut"></div></div>
+<div class="shortcut"><div class="box-title">Remember</div><p>Only multiply if you can <b>justify</b> independence, and say it in your answer: “assuming the events are independent…”.</p></div>
+<div id="ex-t0c"></div>
+
+<div class="sub"><div class="n">TOOL 4</div><h3>Risk and relative risk</h3></div>
+<div class="card tech"><div class="lab">The idea</div>
+<p><b>Risk</b> is just a conditional probability: the proportion of a group that has the outcome. \(\text{risk}=\dfrac{\text{number in the group with the outcome}}{\text{group total}}\).</p>
+<p><b>Relative risk</b> compares two groups: \(\text{RR}=\dfrac{\text{risk in group 1}}{\text{risk in group 2}}\). RR \(=1\): same risk. RR \(>1\): group 1 is riskier. RR \(<1\): group 1 is safer.</p></div>
+<div class="tutor"><div class="who">Let's do it together</div><div id="t0d"></div></div>
+<div class="shortcut"><div class="box-title">Remember</div><p>Say “<b>___ times as likely</b>”, name <b>both</b> groups and the outcome, in context. Avoid “times more likely”.</p></div>
+<div id="ex-t0d"></div>
+
+<div class="card tech toolbox"><div class="lab">Your toolbox for the rest of the lesson</div>
+<ol class="steps"><li><b>Two-way table:</b> the <i>given</i> group is the denominator. \(P(\text{tasted}\mid\text{female})=\tfrac{120}{200}=0.6\).</li>
+<li><b>Tree:</b> multiply along, add the paths. \(0.2\times0.5+0.8\times0.1=0.18\).</li>
+<li><b>Reverse conditional:</b> the target path divided by all the paths with that result. \(\tfrac{0.10}{0.18}=0.556\) (Tab 1).</li>
+<li><b>Independence:</b> \(P(A\cap B)=P(A)P(B)\) only when \(P(A\mid B)=P(A)\).</li>
+<li><b>Relative risk:</b> \(\tfrac{0.06}{0.01}=6\): six times as likely.</li></ol></div>
+</section>
+<section class="tab" id="bayes"><h2>1 · Reverse conditionals</h2><p class="lead">Tool A · about 17 minutes</p><div class="card tech"><div class="lab">Technique</div><p><b>The frequency method for reverse conditional probability.</b> Use it whenever a question gives \(P(\text{result}\mid\text{situation})\) but asks for \(P(\text{situation}\mid\text{result})\). Typical results are an alarm, a test or a red light.</p>
+  <ol class="steps"><li>Imagine a convenient population, such as <b>10 000</b>.</li>
+  <li>Split it by the <b>base rate</b>: who really has the situation and who doesn't.</li>
+  <li>Split each group by the result rates. You now have four counts: TP, FN, FP and TN.</li>
+  <li>Answer the question: \(P(C\mid +)=\dfrac{TP}{TP+FP}\). The denominator is <b>everyone with that result</b>.</li>
+  <li>Write the answer as a sentence in context, and comment on what it means. This last step is where the Excellence mark is.</li></ol></div><div class="card we"><div class="lab">Worked example</div><p><b>Bank fraud alerts.</b> 0.5% of card transactions are fraudulent. The alert system flags 96% of fraudulent transactions, and it also flags 2% of genuine ones. A transaction is flagged. How likely is it to be fraud?</p>
+  <p>Take 10 000 transactions:</p>
+  <ul><li>fraud: \(0.005\times10\,000=50\), of which \(0.96\times50=48\) are flagged (TP)</li>
+  <li>genuine: \(9950\), of which \(0.02\times9950=199\) are flagged (FP)</li></ul>
+  <p>\[P(\text{fraud}\mid\text{flag})=\frac{48}{48+199}=\frac{48}{247}=0.194\]</p>
+  <div class="frame"><b>Excellence sentence:</b> “Only about 19.4% of flagged transactions are actually fraud. Because fraud is rare (0.5%), the 2% of genuine transactions that are flagged (199) far outnumber the true fraud alerts (48). So the bank should check a flagged transaction before blocking the card.”</div>
+  <p class="small">Load this example in tool A to see it.</p></div><div class="card thm"><div class="lab">Theorem</div><p><b>Law of total probability:</b> \(P(B)=P(A)P(B\mid A)+P(A')P(B\mid A')\).</p>
+  <p><b>Bayes' theorem:</b> \[P(A\mid B)=\frac{P(A)\,P(B\mid A)}{P(A)P(B\mid A)+P(A')P(B\mid A')}\]</p>
+  <p><b>What it says, with concrete examples:</b></p>
+  <ul><li><b>Medical test:</b> with base rate 2%, sensitivity 90% and false-positive rate 5%, a positive result gives only \(P(C\mid+)\approx0.27\). The test is good, but the condition is rare.</li>
+  <li><b>Same test, higher base rate:</b> if 30% of the people tested have the condition (for example, only people with symptoms are tested), \(P(C\mid+)=\frac{0.27}{0.27+0.035}=0.885\). Who is tested changes the meaning of a positive result.</li>
+  <li><b>Checkout machine (2016 exam):</b> mismatch rate 4%, red light 98% for a mismatch and 3% for a match, so \(P(\text{mismatch}\mid\text{red})=\frac{0.0392}{0.068}=0.576\).</li>
+  <li><b>What it can do:</b> it turns the probability a test-maker knows, \(P(+\mid C)\), into the one a patient or a manager needs, \(P(C\mid+)\).</li></ul>
+  <details><summary>Proof (for interested readers)</summary>
+  <p>By the definition of conditional probability, \(P(A\cap B)=P(A)P(B\mid A)\) and also \(P(A\cap B)=P(B)P(A\mid B)\).</p>
+  <p>Equate the two: \(P(A\mid B)=\dfrac{P(A)P(B\mid A)}{P(B)}\).</p>
+  <p>Next, \(B=(B\cap A)\cup(B\cap A')\), and these two pieces cannot both happen, so \(P(B)=P(B\cap A)+P(B\cap A')=P(A)P(B\mid A)+P(A')P(B\mid A')\). This is the law of total probability.</p>
+  <p>Substitute it into the denominator to get Bayes' theorem. ∎</p></details></div><div class="card tool" id="toolBayes"><div class="lab">Interactive tool A — 10 000 people</div><p>Each square is one person. Move the sliders and watch how the <b>base rate</b> controls \(P(C\mid +)\).</p>
+<div class="toolgrid"><div>
+ <div class="ctl"><span>Base rate \(P(C)\)</span><input type="range" id="bPrev" min="0.1" max="50" step="0.1" value="2"><output id="bPrevO"></output>
+ <span>Sensitivity \(P(+\mid C)\)</span><input type="range" id="bSens" min="50" max="100" step="1" value="90"><output id="bSensO"></output>
+ <span>False positive \(P(+\mid C')\)</span><input type="range" id="bFp" min="0" max="30" step="0.5" value="5"><output id="bFpO"></output></div>
+ <p><button class="btn ghost" data-preset="0.5,96,2">Load the worked example (0.5%, 96%, 2%)</button></p>
+ <canvas id="bCanvas" width="400" height="400" style="width:100%;max-width:400px;border:1px solid #ccc;border-radius:6px"></canvas>
+ <div class="legend"><span><i style="background:#b3261e"></i>has C, positive</span><span><i style="background:#f4a3a0"></i>has C, negative</span><span><i style="background:#e8901c"></i>no C, positive</span><span><i style="background:#dfe4e7"></i>no C, negative</span></div>
+</div><div><div id="bTree"></div><div id="bTable"></div><div class="outs" id="bOut"></div></div></div></div><h3>Exercises</h3><div id="ex-bayes"></div></section><section class="tab" id="venn"><h2>2 · Three-set Venn</h2><p class="lead">Tool B · about 15 minutes</p><div class="card tech"><div class="lab">Technique</div><p><b>Filling a three-set Venn diagram from clues: always work from the centre outward.</b></p>
+  <ol class="steps"><li>Put the <b>all three</b> number in the centre.</li>
+  <li>Each <b>exactly two</b> region = (pair total) − (centre).</li>
+  <li>Each <b>only</b> region = (set total) − (the three other pieces of that circle).</li>
+  <li><b>None</b> = overall total − (everything inside the circles).</li>
+  <li><b>Check:</b> the 8 regions add to the total. Then answer using the regions. For a conditional probability, the given set is the denominator.</li></ol>
+  <p><b>Watch the wording:</b> “A and B” includes the centre. “A and B but not C” is the exactly-two region. “Only A” is the outer part of A. Exam clues often mix these (for example, the 2016 Question 2(c)).</p></div><div class="card we"><div class="lab">Worked example</div><p><b>Rotorua tourists.</b> 200 tourists were asked which of three attractions they visited: Hot pools (A), Te Puia (B) and the Redwoods (C).</p>
+  <ul><li>86 visited A, 74 visited B and 74 visited C.</li>
+  <li>30 visited A and B, 22 visited A and C, and 26 visited B and C.</li>
+  <li>12 visited all three.</li></ul>
+  <p>Press <b>Next step</b> in tool B to fill the diagram one region at a time. Then choose events from the list.</p>
+  <p>For example, \(P(\text{none})=\tfrac{32}{200}=0.16\) and \(P(A\mid B)=\tfrac{30}{74}=0.405\).</p>
+  <p>Check with inclusion–exclusion: \(n(A\cup B\cup C)=86+74+74-30-22-26+12=168\), so none \(=200-168=32\) ✓</p></div><div class="card thm"><div class="lab">Theorem</div><p><b>Inclusion–exclusion for three sets:</b>
+  \[\begin{aligned}n(A\cup B\cup C)={}&n(A)+n(B)+n(C)\\&-n(A\cap B)-n(A\cap C)-n(B\cap C)\\&+n(A\cap B\cap C)\end{aligned}\]</p>
+  <p><b>What it says, with concrete examples:</b></p>
+  <ul><li><b>Rotorua:</b> \(86+74+74-30-22-26+12=168\) tourists visited at least one attraction.</li>
+  <li><b>Finding the centre:</b> if you know the union and all the other totals, you can rearrange to find \(n(A\cap B\cap C)\). Exam clues sometimes hide the centre this way.</li>
+  <li><b>Probability form:</b> divide by \(N\). For example, \(P(A\cup B)=P(A)+P(B)-P(A\cap B)\). If \(A\) and \(B\) are mutually exclusive, the last term is 0.</li></ul>
+  <details><summary>Proof (for interested readers)</summary>
+  <p>Count how many times a person in each region is counted by the right-hand side.</p>
+  <ul><li>In exactly one set: \(+1\).</li>
+  <li>In exactly two sets: \(+2-1=1\).</li>
+  <li>In all three: \(+3-3+1=1\).</li>
+  <li>In none: 0.</li></ul>
+  <p>So every person in the union is counted exactly once. ∎</p></details></div><div class="card tool" id="toolVenn"><div class="lab">Interactive tool B — Venn builder</div><p>Type a count in each region. The tool totals each circle, shades the regions in the event you choose, and outlines the denominator in green for a conditional probability.</p>
+<div class="toolgrid"><div><div class="vennwrap" id="vennWrap" style="height:380px">
+<svg viewBox="0 0 420 380" style="width:420px;max-width:100%;position:absolute;left:0;top:0">
+ <rect x="2" y="2" width="416" height="376" fill="#fffdf6" stroke="#777"/>
+ <circle cx="140" cy="150" r="98" fill="#5b8fc7" fill-opacity=".14" stroke="#24476e" stroke-width="2"/>
+ <circle cx="230" cy="150" r="98" fill="#c4572e" fill-opacity=".12" stroke="#8a3517" stroke-width="2"/>
+ <circle cx="185" cy="232" r="98" fill="#2f7d4f" fill-opacity=".12" stroke="#1f5a37" stroke-width="2"/>
+ <text x="52" y="58" font-size="20" font-weight="700" fill="#24476e">A</text><text x="356" y="58" font-size="20" font-weight="700" fill="#8a3517">B</text>
+ <text x="300" y="320" font-size="20" font-weight="700" fill="#1f5a37">C</text><text x="330" y="365" font-size="11" fill="#555">none</text></svg></div>
+ <div class="small" id="vennTot"></div></div>
+<div><p><b>Event:</b> <select id="vennEvent"></select></p><div class="outs" id="vennProb"></div>
+ <p class="small">Orange = numerator regions; green outline = denominator (the 'given' set).</p>
+ <p><button class="btn" id="vennStep">Next step (worked example)</button> <button class="btn ghost" id="vennClear">Clear</button></p><div class="stepbox" id="vennMsg"></div></div></div></div><h3>Exercises</h3><div id="ex-venn"></div></section><section class="tab" id="joint"><h2>3 · Combining distributions</h2><p class="lead">Tool C · about 12 minutes</p><div class="card tech"><div class="lab">Technique</div><p><b>Combining two independent random variables.</b> This is the 2015 'motorcycle at least two years older than the car' type of question.</p>
+  <ol class="steps"><li>If the question has a missing probability, find it first: the probabilities in a distribution add to 1.</li>
+  <li>Draw an X-by-Y grid. Each cell is \(P(X=x)\times P(Y=y)\). This uses <b>independence</b>, so state it.</li>
+  <li>Mark the cells that satisfy the condition, such as \(X-Y\ge2\), and <b>list them</b>.</li>
+  <li>Add them. Organise the sum by one variable, for example \(P(X=2)P(Y=0)+P(X=3)P(Y\le1)+\dots\)</li>
+  <li>Comment on whether the independence assumption is reasonable in context.</li></ol>
+  <p><b>Staged problems</b> (like the 2016 voucher question): split by the first stage with the law of total probability, then use the second distribution inside each branch.</p></div><div class="card we"><div class="lab">Worked example</div><p><b>Gym visits.</b> \(X\) is the number of days Aroha goes to the gym in a week, and \(Y\) is the number for Ben. Their distributions are in tool C, and we assume they are independent. Find \(P(X\ge Y+2)\).</p>
+  <p>The cells with \(X-Y\ge2\) are (2,0), (3,0), (3,1), (4,0), (4,1) and (4,2):</p>
+  \[\begin{aligned}&0.3(0.25)+0.25(0.25+0.3)\\&\quad+0.15(0.25+0.3+0.25)\\&=0.075+0.1375+0.12=0.3325\end{aligned}\]
+  <div class="frame"><b>Assumption sentence:</b> “I assumed Aroha's and Ben's gym days are independent. This may not be reasonable if they train together, because then their numbers of days would be related.”</div></div><div class="card thm"><div class="lab">Theorem</div><p><b>Product rule for independent random variables:</b> if \(X\) and \(Y\) are independent, then \(P(X=x\text{ and }Y=y)=P(X=x)\,P(Y=y)\), and for any event \(E\) about the pair, \[P(E)=\sum_{(x,y)\in E}P(X=x)P(Y=y)\]</p>
+  <p><b>What it says, with concrete examples:</b></p>
+  <ul><li><b>Gym visits:</b> \(P(X\ge Y+2)=0.3325\) (worked example).</li>
+  <li><b>A tie:</b> \(P(X=Y)\) is the sum of the diagonal cells.</li>
+  <li><b>Vouchers (2016):</b> \(P(\text{used in time})=\sum_d P(\text{delay}=d)\,P(U\le10-d)\). The same idea is applied in stages.</li></ul>
+  <details><summary>Why it works (for interested readers)</summary>
+  <p>The pairs \((x,y)\) are mutually exclusive outcomes: two different cells cannot both happen. So the probability of an event is the sum of its cells (the addition rule).</p>
+  <p>Independence means each cell's probability is the product of the two marginal probabilities. ∎</p></details></div><div class="card tool" id="toolJoint"><div class="lab">Interactive tool C — joint probability grid</div><p>Edit either distribution, choose the event, and the grid shades the cells and adds them. The grid assumes X and Y are independent.</p>
+<div class="tblwrap"><table class="dt dist"><tr><th>value</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th></tr>
+<tr><th>P(X = x)</th><td><input id="jx0" value="0.1"></td><td><input id="jx1" value="0.2"></td><td><input id="jx2" value="0.3"></td><td><input id="jx3" value="0.25"></td><td><input id="jx4" value="0.15"></td></tr>
+<tr><th>P(Y = y)</th><td><input id="jy0" value="0.25"></td><td><input id="jy1" value="0.3"></td><td><input id="jy2" value="0.25"></td><td><input id="jy3" value="0.15"></td><td><input id="jy4" value="0.05"></td></tr></table></div>
+<p><b>Event:</b> <select id="jRel"></select> &nbsp; k = <input id="jK" value="2" style="width:50px"></p>
+<div id="jGrid"></div><div class="outs" id="jOut"></div></div><h3>Exercises</h3><div id="ex-joint"></div></section><section class="tab" id="exit"><h2>4 · Exit ticket</h2><p class="lead">5 minutes, with no help.</p><div class="card tech"><div class="lab">Technique</div><p><b>When the base rate is the unknown.</b> Sometimes the question gives you \(P(+)\) and asks for the base rate. Write the total-probability equation with \(p\) as the unknown and solve it. This is the Excellence 'devise a strategy' step.</p></div><div class="card we"><div class="lab">Worked example</div><p>A smoke alarm sounds on 6% of nights. It sounds on 95% of nights with real smoke and on 4% of nights without smoke. What proportion of nights have real smoke?</p>
+  \[0.95p+0.04(1-p)=0.06\Rightarrow0.91p=0.02\Rightarrow p=0.022\]
+  <p>Then \(P(\text{smoke}\mid\text{alarm})=\dfrac{0.95\times0.022}{0.06}=0.348\).</p></div><h3>Exercises</h3><div id="ex-exit"></div></section><section class="tab" id="report"><h2>Learning report</h2><p class="lead">Generated from your attempts in this lesson.</p><div class="rep" id="reportBody"></div></section>
+</main>
+<footer class="shen-footer"><svg viewBox="0 0 100 100" role="img" aria-label="申 Shen Studio"><rect width="100" height="100" rx="12" fill="#B3261E"/><path d="M41.57 27.7V42.46H27.58V27.7ZM15.1 25.34V70.78H16.95C22.18 70.78 27.58 67.91 27.58 66.65V62.18H41.57V90H44.01C48.82 90 54.3 86.88 54.3 85.62V62.18H68.97V68.93H71.07C75.37 68.93 81.53 66.65 81.61 65.89V29.64C83.38 29.3 84.39 28.55 84.9 27.87L73.69 19.19L68.12 25.34H54.3V13.96C56.74 13.62 57.33 12.7 57.5 11.52L41.57 10V25.34H28.42L15.1 20.2ZM54.3 27.7H68.97V42.46H54.3ZM41.57 59.82H27.58V44.82H41.57ZM54.3 59.82V44.82H68.97V59.82Z" fill="#FFFFFF"/></svg><span><b>Shen Studio</b> · Designed by Mr. Shen</span></footer>
+<div class="shen-print-mark" aria-hidden="true"><svg viewBox="0 0 100 100" role="img" aria-label="申 Shen Studio"><rect width="100" height="100" rx="12" fill="#B3261E"/><path d="M41.57 27.7V42.46H27.58V27.7ZM15.1 25.34V70.78H16.95C22.18 70.78 27.58 67.91 27.58 66.65V62.18H41.57V90H44.01C48.82 90 54.3 86.88 54.3 85.62V62.18H68.97V68.93H71.07C75.37 68.93 81.53 66.65 81.61 65.89V29.64C83.38 29.3 84.39 28.55 84.9 27.87L73.69 19.19L68.12 25.34H54.3V13.96C56.74 13.62 57.33 12.7 57.5 11.52L41.57 10V25.34H28.42L15.1 20.2ZM54.3 27.7H68.97V42.46H54.3ZM41.57 59.82H27.58V44.82H41.57ZM54.3 59.82V44.82H68.97V59.82Z" fill="#FFFFFF"/></svg><span>Shen Studio</span></div>
+
+<script>
+const DATA={"lessonId": "L1", "lang": "en", "tabs": [{"id": "start", "title": "0 · The probability toolbox"}, {"id": "bayes", "title": "1 · Reverse conditionals"}, {"id": "venn", "title": "2 · Three-set Venn"}, {"id": "joint", "title": "3 · Combining distributions"}, {"id": "exit", "title": "4 · Exit ticket"}, {"id": "report", "title": "Learning report"}], "exercises": [{"id": "D2", "label": "T1", "tab": "start", "concept": "cond", "skill": "calc", "level": "A", "type": "num", "answer": 0.6, "tol": 0.001, "prompt": "Shoppers were offered a free sample:<table class=\"dt\"><tr><th></th><th>Tasted</th><th>Did not taste</th></tr><tr><th>Female</th><td>120</td><td>80</td></tr><tr><th>Male</th><td>30</td><td>70</td></tr></table>Find \\(P(\\text{tasted}\\mid\\text{female})\\).", "hint": "'Given female' means you only look at the Female row.", "solution": "The female row has \\(120+80=200\\) shoppers, and 120 of them tasted: \\(\\tfrac{120}{200}=0.6\\).", "host": "t0a"}, {"id": "D6", "tab": "start", "concept": "cond", "skill": "calc", "level": "A", "type": "num", "answer": 0.7667, "tol": 0.002, "prompt": "Same shoppers (the table at the top of this tab). Find \\(P(\\text{female}\\cup\\text{tasted})\\).", "hint": "“Or”: all the women, plus the men who tasted. Count each cell once.", "solution": "\\(\\dfrac{120+80+30}{300}=\\dfrac{230}{300}=0.767\\). Check: \\(P(F)+P(T)-P(F\\cap T)=\\tfrac{200+150-120}{300}\\) ✓", "host": "t0a", "label": "T2"}, {"id": "D3", "label": "T3", "tab": "start", "concept": "total", "skill": "model", "level": "A", "type": "num", "answer": 0.18, "tol": 0.001, "prompt": "\\(P(\\text{rain})=0.2\\). When it rains, \\(P(\\text{late})=0.5\\). When it doesn't rain, \\(P(\\text{late})=0.1\\). Find \\(P(\\text{late})\\).", "hint": "Two branches end in 'late'. Multiply along each one, then add.", "solution": "\\(0.2\\times0.5+0.8\\times0.1=0.10+0.08=0.18\\)", "host": "t0b"}, {"id": "D8", "tab": "start", "concept": "total", "skill": "calc", "level": "A", "type": "num", "answer": 0.72, "tol": 0.001, "prompt": "Same situation as T3: \\(P(\\text{rain})=0.2\\), \\(P(\\text{late}\\mid\\text{rain})=0.5\\), \\(P(\\text{late}\\mid\\text{no rain})=0.1\\).<br>Find the probability that it does <b>not</b> rain and the student is <b>on time</b>.", "hint": "Follow one path: no rain (0.8), then on time (1 − 0.1).", "solution": "\\(0.8\\times0.9=0.72\\)", "host": "t0b", "label": "T4"}, {"id": "D4", "label": "T5", "tab": "start", "concept": "bayes", "skill": "strategy", "level": "M", "type": "num", "answer": 0.5556, "tol": 0.002, "prompt": "Same situation as T3. A student arrives late. Find \\(P(\\text{rain}\\mid\\text{late})\\).", "hint": "Use the 'late' branches only: (rain and late) ÷ (all late).", "solution": "\\(\\dfrac{0.2\\times0.5}{0.18}=\\dfrac{0.10}{0.18}=0.556\\)", "host": "t0b"}, {"id": "D1", "label": "T6", "tab": "start", "concept": "indep", "skill": "calc", "level": "A", "type": "num", "answer": 0.15, "tol": 0.001, "prompt": "Events \\(A\\) and \\(B\\) are independent, with \\(P(A)=0.3\\) and \\(P(B)=0.5\\). Find \\(P(A\\cap B)\\).", "hint": "For independent events, 'and' means multiply.", "solution": "\\(P(A\\cap B)=P(A)\\times P(B)=0.3\\times0.5=0.15\\)", "host": "t0c"}, {"id": "D7", "tab": "start", "concept": "indep", "skill": "reason", "level": "A", "type": "multi", "correct": [0, 1], "prompt": "Events \\(A\\) and \\(B\\) are mutually exclusive, with \\(P(A)=0.3\\) and \\(P(B)=0.4\\). Which statements are correct?", "options": ["\\(P(A\\cap B)=0\\)", "\\(P(A\\cup B)=0.7\\)", "\\(A\\) and \\(B\\) are independent.", "\\(P(A\\cap B)=0.12\\)"], "hint": "Mutually exclusive: they cannot happen together.", "solution": "Mutually exclusive, so \\(P(A\\cap B)=0\\) and \\(P(A\\cup B)=0.3+0.4=0.7\\). They are not independent: independence would need \\(P(A\\cap B)=0.3\\times0.4=0.12\\).", "host": "t0c", "label": "T7"}, {"id": "D9", "tab": "start", "concept": "indep", "skill": "reason", "level": "M", "type": "multi", "correct": [0, 2], "prompt": "Shoppers again. Is tasting the sample independent of being female?", "options": ["Not independent: \\(P(\\text{tasted}\\mid\\text{female})=0.6\\) but \\(P(\\text{tasted})=0.5\\).", "Independent, because every shopper was offered the sample.", "Not independent: \\(P(\\text{female}\\cap\\text{tasted})=0.4\\), but \\(P(\\text{female})\\times P(\\text{tasted})=0.333\\).", "Independent, because \\(120+30=150\\)."], "hint": "Use one of the two tests: compare P(A | B) with P(A), or P(A ∩ B) with P(A) × P(B).", "solution": "Both numerical tests show the events are not independent: \\(0.6\\neq0.5\\) and \\(0.4\\neq0.333\\). Being offered the sample has nothing to do with it.", "host": "t0c", "label": "T8"}, {"id": "D5", "label": "T9", "tab": "start", "concept": "rr", "skill": "calc", "level": "A", "type": "num", "answer": 3, "tol": 0.01, "prompt": "In group 1 the risk of an outcome is 0.12. In group 2 it is 0.04. Find the relative risk of group 1 compared with group 2.", "hint": "Divide group 1's risk by group 2's risk.", "solution": "\\(\\text{RR}=\\tfrac{0.12}{0.04}=3\\). Group 1 is 3 times as likely to have the outcome as group 2.", "host": "t0d"}, {"id": "A1", "label": "A1", "tab": "bayes", "concept": "total", "skill": "model", "level": "A", "type": "num", "answer": 0.067, "tol": 0.001, "prompt": "A rapid test for an illness is used in a community. 2% of people have the illness. The test is positive for 90% of people who have it, and for 5% of people who do not.<br>Find the probability that a randomly chosen person tests positive.", "hint": "Two branches give a positive result: (ill and +) and (not ill and +).", "solution": "\\(P(+)=0.02\\times0.90+0.98\\times0.05=0.018+0.049=0.067\\)"}, {"id": "A2", "label": "A2", "tab": "bayes", "concept": "bayes", "skill": "strategy", "level": "M", "type": "num", "answer": 0.2687, "tol": 0.002, "prompt": "Same test. A person tests positive. Find the probability that they actually have the illness.", "hint": "Target branch ÷ all positive branches. You found the denominator in A1.", "solution": "\\(P(\\text{ill}\\mid+)=\\dfrac{0.018}{0.067}=0.269\\). Out of 10 000 people, 180 are true positives and 490 are false positives."}, {"id": "A3", "label": "A3", "tab": "bayes", "concept": "bayes", "skill": "strategy", "level": "M", "type": "num", "answer": 0.9979, "tol": 0.001, "prompt": "Same test. A person tests negative. Find the probability that they really do not have the illness.", "hint": "Negatives come from (ill, −) = 0.02 × 0.10 and (not ill, −) = 0.98 × 0.95.", "solution": "\\(P(\\text{not ill}\\mid-)=\\dfrac{0.931}{0.002+0.931}=\\dfrac{0.931}{0.933}=0.998\\). A negative result is very reliable here."}, {"id": "A4", "label": "A4", "tab": "bayes", "concept": "bayes", "skill": "reason", "level": "E", "type": "multi", "correct": [1, 2], "prompt": "Why is \\(P(\\text{ill}\\mid+)\\) (about 0.27) so much lower than 90%?", "options": ["The test is faulty, so the 90% figure must be wrong.", "Few people have the illness, so 5% of the large healthy group (490 per 10 000) gives more positives than 90% of the small ill group (180 per 10 000).", "\\(P(+\\mid\\text{ill})\\) and \\(P(\\text{ill}\\mid+)\\) are different conditional probabilities, and the base rate of 2% links them.", "The events 'ill' and 'positive' are mutually exclusive."], "hint": "Compare the number of true positives with the number of false positives.", "solution": "The 2nd and 3rd statements are correct. The test isn't faulty, and the events overlap (180 people are both ill and positive), so they are not mutually exclusive. The low value is a base-rate effect."}, {"id": "A5", "label": "A5", "tab": "bayes", "concept": "rr", "skill": "calc", "level": "M", "type": "num", "answer": 6, "tol": 0.01, "prompt": "Crash records from one region:<table class=\"dt\"><tr><th></th><th>Injured</th><th>Not injured</th><th>Total</th></tr><tr><th>No seatbelt</th><td>45</td><td>255</td><td>300</td></tr><tr><th>Seatbelt</th><td>60</td><td>2340</td><td>2400</td></tr></table>Find the relative risk of injury for people <b>not</b> wearing a seatbelt compared with people wearing one.", "hint": "Risk = injured ÷ row total, for each row.", "solution": "Risk without a seatbelt \\(=\\tfrac{45}{300}=0.15\\); with a seatbelt \\(=\\tfrac{60}{2400}=0.025\\). \\(\\text{RR}=\\tfrac{0.15}{0.025}=6\\)."}, {"id": "A6", "label": "A6", "tab": "bayes", "concept": "rr", "skill": "reason", "level": "E", "type": "multi", "correct": [0, 2], "prompt": "Which statements about A5 are correct, and acceptable as an exam answer?", "options": ["“In these crashes, a person not wearing a seatbelt was 6 times as likely to be injured as a person wearing one.”", "“Not wearing a seatbelt makes you 6% more likely to be injured.”", "“The risk of injury was 0.15 without a seatbelt, compared with 0.025 with one.”", "“This proves that seatbelts prevent injury in every crash in New Zealand.”"], "hint": "The examiners say: write 'times as likely', name both groups, and don't generalise beyond the data.", "solution": "Statements 1 and 3 are correct. Statement 2 confuses a ratio with a percentage change. Statement 4 over-generalises: the data comes from one region, and this is observational data, not every crash."}, {"id": "A7", "label": "A7", "tab": "bayes", "concept": "total", "skill": "strategy", "level": "E", "type": "num", "answer": 0.15, "tol": 0.002, "prompt": "A harbour ferry service has three operators. Operator A runs 50% of sailings, B runs 30% and C runs 20%. Late rates: A 10%, B 20%, C unknown (\\(x\\)). Overall, 14% of sailings are late.<br>Find \\(x\\), the late rate for operator C.", "hint": "Write the total-probability equation with one unknown: \\(0.5(0.1)+0.3(0.2)+0.2x=0.14\\).", "solution": "\\(0.05+0.06+0.2x=0.14\\Rightarrow0.2x=0.03\\Rightarrow x=0.15\\) (15% of C's sailings are late)."}, {"id": "A8", "label": "A8", "tab": "bayes", "concept": "bayes", "skill": "strategy", "level": "E", "type": "num", "answer": 0.2143, "tol": 0.002, "prompt": "Same ferries. A sailing is late. Find the probability that operator C ran it.", "hint": "Numerator: \\(0.2\\times x\\). Denominator: all late sailings.", "solution": "\\(P(C\\mid\\text{late})=\\dfrac{0.2\\times0.15}{0.14}=\\dfrac{0.03}{0.14}=0.214\\)"}, {"id": "B1", "label": "B1", "tab": "venn", "concept": "venn", "skill": "model", "level": "M", "type": "num", "answer": 0.125, "tol": 0.001, "prompt": "A survey of 120 Year 13 students asked whether they play sport (S), learn music (M) and have a part-time job (W):\n <ul><li>65 play sport, 40 learn music and 49 have a part-time job.</li>\n <li>20 play sport and learn music; 23 play sport and have a job; 14 learn music and have a job.</li>\n <li>8 do all three.</li></ul>Find the probability that a randomly chosen student does none of the three. (Use tool B with A = S, B = M, C = W.)", "hint": "Centre 8; exactly-two regions 12, 15 and 6; then the 'only' regions; none = 120 − everything else.", "solution": "Regions: centre 8; S&M only 12; S&W only 15; M&W only 6; S only 30; M only 14; W only 20. Inside the circles: 105. None \\(=120-105=15\\), so \\(P=\\tfrac{15}{120}=0.125\\)."}, {"id": "B2", "label": "B2", "tab": "venn", "concept": "venn", "skill": "calc", "level": "M", "type": "num", "answer": 0.5333, "tol": 0.002, "prompt": "Same survey. Find the probability that a student does <b>exactly one</b> of the three activities.", "hint": "Add the three 'only' regions.", "solution": "\\(\\dfrac{30+14+20}{120}=\\dfrac{64}{120}=0.533\\)"}, {"id": "B3", "label": "B3", "tab": "venn", "concept": "cond", "skill": "calc", "level": "M", "type": "num", "answer": 0.3538, "tol": 0.002, "prompt": "Same survey. A student who plays sport is chosen at random. Find the probability that they have a part-time job.", "hint": "Given sport, so the denominator is 65.", "solution": "\\(P(W\\mid S)=\\dfrac{n(S\\cap W)}{n(S)}=\\dfrac{23}{65}=0.354\\)"}, {"id": "B4", "label": "B4", "tab": "venn", "concept": "indep", "skill": "reason", "level": "E", "type": "multi", "correct": [0, 2], "prompt": "Same survey. Which statements about the events S (plays sport) and M (learns music) are correct?", "options": ["\\(P(S)P(M)=\\tfrac{65}{120}\\times\\tfrac{40}{120}=0.181\\ne P(S\\cap M)=0.167\\), so S and M are not independent.", "S and M are independent because the overlap is not zero.", "S and M are not mutually exclusive, because 20 students do both.", "S and M are mutually exclusive because \\(P(S\\cap M)\\lt P(S)\\)."], "hint": "Test independence with the product rule. Mutually exclusive means the overlap is empty.", "solution": "Statements 1 and 3 are correct. A non-zero overlap tells you the events are <i>not mutually exclusive</i>; it says nothing about independence."}, {"id": "B5", "label": "B5", "tab": "venn", "concept": "wor", "skill": "strategy", "level": "E", "type": "num", "answer": 0.2824, "tol": 0.002, "prompt": "Same survey. Two different students are chosen at random. Find the probability that <b>both</b> do exactly one activity.", "hint": "Without replacement: \\(\\tfrac{64}{120}\\times\\tfrac{?}{119}\\).", "solution": "\\(\\dfrac{64}{120}\\times\\dfrac{63}{119}=0.282\\). The second pick has one fewer student overall and one fewer 'exactly one' student."}, {"id": "C1", "label": "C1", "tab": "joint", "concept": "joint", "skill": "model", "level": "M", "type": "num", "answer": 0.3, "tol": 0.001, "prompt": "Two netball teams play each other. Goals in the final quarter: Team A scores \\(X\\) and Team B scores \\(Y\\), and we assume these are independent.\n <table class=\"dt\"><tr><th>value</th><th>0</th><th>1</th><th>2</th><th>3</th></tr><tr><th>P(X = x)</th><td>0.3</td><td>0.4</td><td>0.2</td><td>0.1</td></tr><tr><th>P(Y = y)</th><td>0.4</td><td>0.35</td><td>0.15</td><td>0.1</td></tr></table>Find \\(P(X=Y)\\), the probability that the final quarter is a tie.", "hint": "Diagonal cells: (0,0), (1,1), (2,2), (3,3).", "solution": "\\(0.3(0.4)+0.4(0.35)+0.2(0.15)+0.1(0.1)=0.12+0.14+0.03+0.01=0.30\\)"}, {"id": "C2", "label": "C2", "tab": "joint", "concept": "joint", "skill": "strategy", "level": "M", "type": "num", "answer": 0.4, "tol": 0.001, "prompt": "Same teams. Find \\(P(X\\gt Y)\\), the probability that Team A wins the final quarter.", "hint": "Organise the sum by X: \\(P(X=1)P(Y=0)+P(X=2)P(Y\\le1)+P(X=3)P(Y\\le2)\\).", "solution": "\\(0.4(0.4)+0.2(0.75)+0.1(0.9)=0.16+0.15+0.09=0.40\\)"}, {"id": "C3", "label": "C3", "tab": "joint", "concept": "joint", "skill": "strategy", "level": "E", "type": "num", "answer": 0.155, "tol": 0.001, "prompt": "Same teams. Find the probability that Team A scores <b>at least two more</b> goals than Team B.", "hint": "The cells are (2,0), (3,0) and (3,1).", "solution": "\\(P(X=2)P(Y=0)+P(X=3)P(Y\\le1)=0.2(0.4)+0.1(0.75)=0.08+0.075=0.155\\)"}, {"id": "C4", "label": "C4", "tab": "joint", "concept": "dist", "skill": "calc", "level": "A", "type": "num", "answer": 0.2, "tol": 0.001, "prompt": "\\(K\\) is the number of cups of coffee a café customer buys in a week. Its distribution is:\n <table class=\"dt\"><tr><th>k</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th></tr><tr><th>P(K = k)</th><td>0.1</td><td>0.25</td><td>\\(a\\)</td><td>\\(2a\\)</td><td>0.05</td></tr></table>Find \\(a\\).", "hint": "All the probabilities add to 1.", "solution": "\\(0.1+0.25+a+2a+0.05=1\\Rightarrow3a=0.6\\Rightarrow a=0.2\\)"}, {"id": "C5", "label": "C5", "tab": "joint", "concept": "dist", "skill": "calc", "level": "A", "type": "num", "answer": 0.65, "tol": 0.001, "prompt": "Same café. Find \\(P(K\\ge2)\\).", "hint": "Add the probabilities for k = 2, 3 and 4.", "solution": "\\(0.2+0.4+0.05=0.65\\) (or \\(1-0.1-0.25=0.65\\))"}, {"id": "C6", "label": "C6", "tab": "joint", "concept": "total", "skill": "strategy", "level": "E", "type": "num", "answer": 0.599, "tol": 0.002, "prompt": "A promo code expires 5 days after it is emailed. 70% of emails arrive the same day; 30% are delayed 1 day by a spam filter. After receiving the email, \\(P(\\text{customer uses it within 5 days})=0.62\\) and \\(P(\\text{within 4 days})=0.55\\). Find the probability that a customer uses the code before it expires.", "hint": "If the email arrives a day late, the customer has only 4 days left. Use the law of total probability.", "solution": "\\(0.7\\times0.62+0.3\\times0.55=0.434+0.165=0.599\\)"}, {"id": "C7", "label": "C7", "tab": "joint", "concept": "assume", "skill": "reason", "level": "E", "type": "multi", "correct": [0, 1], "prompt": "For C1–C3 we multiplied \\(P(X=x)P(Y=y)\\). Which statements about this assumption are correct?", "options": ["It assumes the two teams' goals in the quarter are independent.", "It may not be reasonable: in netball the teams share the same game, so pace, weather or a fast centre pass could raise or lower both teams' scores together.", "It assumes the events are mutually exclusive.", "No assumption is needed because the tables are given."], "hint": "Multiplying needs one key assumption. Then think about whether it fits a real game.", "solution": "Statements 1 and 2 are correct. An Excellence answer states the assumption AND judges it in context."}, {"id": "X1", "label": "X1", "tab": "exit", "concept": "total", "skill": "strategy", "level": "E", "type": "num", "answer": 0.03529, "tol": 0.0006, "unit": "Give your answer to 4 decimal places.", "prompt": "A screening test is positive for 8% of the people tested. It is positive for 90% of people with the condition and 5% of people without it. Find the proportion of tested people who have the condition.", "hint": "\\(0.9p+0.05(1-p)=0.08\\)", "solution": "\\(0.85p+0.05=0.08\\Rightarrow p=\\tfrac{0.03}{0.85}=0.0353\\)"}, {"id": "X2", "label": "X2", "tab": "exit", "concept": "bayes", "skill": "strategy", "level": "E", "type": "num", "answer": 0.397, "tol": 0.003, "prompt": "Same test. A person tests positive. Find the probability that they have the condition.", "hint": "Numerator \\(0.9\\times0.0353\\); denominator 0.08.", "solution": "\\(\\dfrac{0.9\\times0.03529}{0.08}=\\dfrac{0.03176}{0.08}=0.397\\)"}], "concepts": {"indep": {"name": "Independence", "advice": "Independent means knowing one event does not change the probability of the other. Only multiply probabilities if you can justify independence, and say so in the answer."}, "cond": {"name": "Conditional probability", "advice": "Find the word 'given', 'of those', 'if' or 'out of the ___'. That group is the denominator. Cover the rest of the table and work inside that row or column only."}, "total": {"name": "Tree & total probability", "advice": "Multiply ALONG branches, then add the branches that give the event. Check that each set of branches from one point adds to 1."}, "bayes": {"name": "Reverse conditional (Bayes)", "advice": "When the question gives P(test | condition) but asks P(condition | test), use the frequency method: imagine 10 000 people and fill a tree or two-way table, then divide the target branch by ALL branches with that test result."}, "rr": {"name": "Risk & relative risk", "advice": "Relative risk = risk in group 1 ÷ risk in group 2. Say 'times as likely', not 'times more likely', and name both groups in context."}, "venn": {"name": "Three-set Venn diagrams", "advice": "Fill from the centre outward: all three first, then each 'exactly two' region (pair total minus centre), then each 'only' region, then 'none' last. Check that all 8 regions add to the total."}, "joint": {"name": "Combining distributions", "advice": "Draw the X-by-Y grid. Each cell is P(X=x)×P(Y=y) (independence!). Shade the cells that satisfy the condition and add them. List the cells so the marker can follow your strategy."}, "dist": {"name": "Probability distribution tables", "advice": "All probabilities in a distribution add to 1, so use this to find a missing value first. Then add the probabilities of the values you need."}, "assume": {"name": "Assumptions & limitations", "advice": "Every time you multiply, state the assumption (independence) AND say in context whether it is reasonable."}, "wor": {"name": "Without replacement", "advice": "After the first pick, both the numerator and the total go down by one: for example, 64/120 × 63/119."}}, "skills": {"calc": {"name": "Selecting & using methods (A)", "advice": "Practise identifying which numbers the question gives you (joint, marginal or conditional) before choosing a formula."}, "model": {"name": "Building a representation (M)", "advice": "Always convert the words into a tree, two-way table or Venn diagram before calculating. Use a population of 1000 or 10 000."}, "strategy": {"name": "Devising a strategy / chain of steps (E)", "advice": "Write a plan first: 'I need P(…|…), so I need the numerator … and the denominator …'. Excellence questions hide one step: find it before calculating."}, "reason": {"name": "Explaining in context (M/E)", "advice": "Use the sentence frames: name the probability, give the number, and say what it means in the context. Excellence answers give TWO reasons that are specific to the context."}}, "map": {"w": 780, "h": 380, "nodes": [{"id": "cond", "concept": "cond", "x": 390, "y": 40, "label": "Conditional probability"}, {"id": "total", "concept": "total", "x": 130, "y": 140, "label": "Tree & total probability"}, {"id": "bayes", "concept": "bayes", "x": 390, "y": 140, "label": "Reverse conditional"}, {"id": "rr", "concept": "rr", "x": 650, "y": 140, "label": "Relative risk"}, {"id": "venn", "concept": "venn", "x": 130, "y": 250, "label": "Three-set Venn"}, {"id": "indep", "concept": "indep", "x": 390, "y": 250, "label": "Independence"}, {"id": "dist", "concept": "dist", "x": 650, "y": 250, "label": "Distribution tables"}, {"id": "wor", "concept": "wor", "x": 130, "y": 345, "label": "Without replacement"}, {"id": "joint", "concept": "joint", "x": 390, "y": 345, "label": "Combining distributions"}, {"id": "assume", "concept": "assume", "x": 650, "y": 345, "label": "Assumptions"}], "edges": [["cond", "total", ""], ["cond", "bayes", ""], ["cond", "rr", ""], ["total", "bayes", "denominator"], ["cond", "venn", ""], ["venn", "indep", ""], ["cond", "indep", ""], ["indep", "joint", "multiply cells"], ["dist", "joint", ""], ["joint", "assume", ""], ["indep", "assume", ""], ["venn", "wor", ""]]}, "ui": {"exHeading": "Exercises", "typeHere": "type your answer", "numHelp": "Type a decimal (e.g. 0.268), a fraction (e.g. 18/67) or a percentage (e.g. 26.8%). Give probabilities to 3 decimal places unless told otherwise.", "badInput": "not a number yet", "selectAll": "Tick ALL the statements that are correct.", "check": "Check", "showSol": "Show solution", "solution": "Worked solution", "attempt": "Attempt", "answerFirst": "Enter or choose an answer first.", "tryAgain": "Not yet — read the hint and try again.", "correct": ["Correct on the first try! 3/3", "Correct on the second try. 2/3", "Correct on the third try. 1/3"], "outOfTries": "Three attempts used — study the worked solution carefully.", "revealed": "Solution opened before finishing — scored 0.", "confirmReveal": "Opening the solution now ends this question with a score of 0. Continue?", "scoreWord": "Score", "rushedTag": "rushed", "solShort": "solution", "level": {"A": "Achieved", "M": "Merit", "E": "Excellence"}, "notFinished": "You have finished {d} of {n} questions. The full report appears when every question is finished.", "showAnyway": "Show the report so far", "mapTitle": "Knowledge map", "mapNote": "How today's ideas connect. Border colour shows your score on that idea: green ≥ 80%, amber 50–79%, red < 50%, grey = not attempted.", "scoreTitle": "Score", "scoreRule": "3 points if correct on the 1st try, 2 on the 2nd, 1 on the 3rd, 0 if all three tries fail or the solution is opened early.", "byConcept": "Results by concept", "bySkill": "Results by skill (NCEA thinking level)", "concept": "Concept", "skill": "Skill", "questions": "Questions", "points": "Points", "perQ": "Question by question", "attemptsUsed": "Attempts used", "advice": "Advice", "rushAdvice": "Some answers were submitted very quickly or the solution was opened early. At Excellence level, examiners reward the chain of working. Before typing, write the representation (tree, table or Venn diagram) on paper first.", "allGood": "Strong work on every concept. Next step: write full sentences in context for each answer, because that is what turns a correct number into an Excellence grade.", "reset": "Reset all my answers", "resetQ": "Delete all answers on this page?"}, "toolText": {"bayes": {"cond": "C", "nocond": "not C", "pos": "Positive", "neg": "Negative", "total": "Total", "reverse": "the reverse conditional"}, "venn": {"names": ["A", "B", "C"], "total": "total", "stepWord": "Step", "doneMsg": "Finished. All 8 regions add to 200 ✓. Press again to restart.", "regionNames": {"a": "A only", "b": "B only", "c": "C only", "ab": "A and B only", "ac": "A and C only", "bc": "B and C only", "abc": "all three", "n": "none"}, "events": [{"label": "A only", "num": ["a"], "tex": "P(A\\text{ only})"}, {"label": "exactly one", "num": ["a", "b", "c"], "tex": "P(\\text{exactly one})"}, {"label": "exactly two", "num": ["ab", "ac", "bc"], "tex": "P(\\text{exactly two})"}, {"label": "all three", "num": ["abc"], "tex": "P(A\\cap B\\cap C)"}, {"label": "at least one", "num": ["a", "b", "c", "ab", "ac", "bc", "abc"], "tex": "P(A\\cup B\\cup C)"}, {"label": "none", "num": ["n"], "tex": "P(\\text{none})"}, {"label": "A ∩ B", "num": ["ab", "abc"], "tex": "P(A\\cap B)"}, {"label": "P(A | B)", "num": ["ab", "abc"], "den": ["b", "ab", "bc", "abc"], "tex": "P(A\\mid B)"}, {"label": "P(C | A)", "num": ["ac", "abc"], "den": ["a", "ab", "ac", "abc"], "tex": "P(C\\mid A)"}, {"label": "P(B | C')", "num": ["b", "ab"], "den": ["a", "b", "ab", "n"], "tex": "P(B\\mid C')"}], "steps": [{"r": "abc", "v": 12, "t": "Centre: 12 visited all three."}, {"r": "ab", "v": 18, "t": "A and B only \\(=30-12=18\\)."}, {"r": "ac", "v": 10, "t": "A and C only \\(=22-12=10\\)."}, {"r": "bc", "v": 14, "t": "B and C only \\(=26-12=14\\)."}, {"r": "a", "v": 46, "t": "A only \\(=86-12-18-10=46\\)."}, {"r": "b", "v": 30, "t": "B only \\(=74-12-18-14=30\\)."}, {"r": "c", "v": 38, "t": "C only \\(=74-12-10-14=38\\)."}, {"r": "n", "v": 32, "t": "None \\(=200-168=32\\). Check: the regions add to 200."}]}, "joint": {"rels": ["X > Y", "X = Y", "X − Y ≥ k", "X + Y ≤ k", "|X − Y| ≥ k"], "warn": "Each distribution must add to 1", "sumWord": "Probability of the event"}}};
+
+"use strict";
+const S = {};                        // per-exercise state
+const LS_KEY = "t91585_" + DATA.lessonId + "_" + DATA.lang;
+function save(){ try{ localStorage.setItem(LS_KEY, JSON.stringify(S)); }catch(e){} }
+function load(){ try{ const v = JSON.parse(localStorage.getItem(LS_KEY)||"{}"); Object.assign(S, v);}catch(e){} }
+function km(el){ try{ renderMathInElement(el,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false}); }catch(e){} }
+function tex(s){ try{ return katex.renderToString(s,{throwOnError:false}); }catch(e){ return s; } }
+const $ = (q,el=document)=>el.querySelector(q);
+const fmt = (x,d=4)=> (Math.round(x*Math.pow(10,d))/Math.pow(10,d)).toString();
+
+/* ---------------- tabs ---------------- */
+let tabSeen = {};
+function showTab(id){
+  document.querySelectorAll("section.tab").forEach(s=>s.classList.toggle("on", s.id===id));
+  document.querySelectorAll("nav button").forEach(b=>b.classList.toggle("on", b.dataset.t===id));
+  const now = Date.now();
+  DATA.exercises.filter(e=>e.tab===id).forEach(e=>{ if(!S[e.id]) S[e.id]={a:0,done:false,ok:false,rushed:false,rev:false,times:[]}; if(!S[e.id].seen) S[e.id].seen=now; });
+  if(id==="report") buildReport();
+  window.scrollTo({top:0}); try{history.replaceState(null,"","#"+id)}catch(e){} const nb=document.querySelector("nav button.on"); if(nb) nb.scrollIntoView({inline:"center",block:"nearest"});
+}
+function updateDots(){
+  DATA.tabs.forEach(t=>{
+    const ex = DATA.exercises.filter(e=>e.tab===t.id); if(!ex.length) return;
+    const d = ex.filter(e=>S[e.id]&&S[e.id].done).length;
+    const dot = document.querySelector(`nav button[data-t="${t.id}"] .dot`);
+    if(dot) dot.className = "dot" + (d===ex.length?" full":(d>0?" part":""));
+  });
+}
+
+/* ---------------- answer parsing ---------------- */
+function parseNum(s){
+  s = (s||"").trim().replace(/\s+/g,"").replace("−","-");
+  if(!s) return NaN;
+  let pct = false; if(s.endsWith("%")){ pct=true; s=s.slice(0,-1); }
+  let v;
+  if(/^-?\d*\.?\d+\/-?\d*\.?\d+$/.test(s)){ const [a,b]=s.split("/").map(Number); v=a/b; }
+  else if(/^-?\d*\.?\d+$/.test(s)) v = Number(s);
+  else return NaN;
+  return pct ? v/100 : v;
+}
+function previewTex(s){
+  s=(s||"").trim(); if(!s) return "";
+  const m = s.match(/^(-?\d*\.?\d+)\s*\/\s*(-?\d*\.?\d+)$/);
+  if(m) return tex(`\\dfrac{${m[1]}}{${m[2]}}`);
+  if(/^-?\d*\.?\d+%$/.test(s)) return tex(s.replace("%","\\%"));
+  if(/^-?\d*\.?\d+$/.test(s)) return tex(s);
+  return `<span style="color:#b3261e">${DATA.ui.badInput}</span>`;
+}
+
+/* ---------------- exercises ---------------- */
+function renderExercises(){
+  DATA.exercises.forEach((e,i)=>{
+    const host = document.getElementById("ex-"+(e.host||e.tab)); if(!host) return;
+    const st = S[e.id] || (S[e.id]={a:0,done:false,ok:false,rushed:false,rev:false,times:[]});
+    const div = document.createElement("div"); div.className="ex"; div.id="card-"+e.id;
+    let body = `<span class="qid">${e.label}</span><span class="meta">${DATA.concepts[e.concept].name} · ${DATA.skills[e.skill].name}</span>
+      <span class="lvl ${e.level}">${DATA.ui.level[e.level]}</span><div style="margin-top:6px">${e.prompt}</div>`;
+    if(e.type==="num"){
+      body += `<div class="row"><input type="text" id="in-${e.id}" placeholder="${DATA.ui.typeHere}" autocomplete="off">
+        <span class="pv" id="pv-${e.id}"></span></div><div class="small">${e.unit||DATA.ui.numHelp}</div>`;
+    } else if(e.type==="multi"){
+      body += `<div class="small" style="margin-top:6px">${DATA.ui.selectAll}</div><div class="opts">` + e.options.map((o,k)=>
+        `<label><input type="checkbox" name="o-${e.id}" value="${k}"> ${o}</label>`).join("") + `</div>`;
+    } else if(e.type==="select"){
+      body += `<div class="sel">` + e.items.map((it,k)=>`<div>${it}</div><select id="s-${e.id}-${k}"><option value="">—</option>` +
+        e.choices.map((c,j)=>`<option value="${j}">${c}</option>`).join("") + `</select>`).join("") + `</div>`;
+    }
+    body += `<div class="row"><button id="chk-${e.id}">${DATA.ui.check}</button>
+      <button class="ghost" id="sol-${e.id}">${DATA.ui.showSol}</button><span class="att" id="att-${e.id}"></span></div>
+      <div class="fb" id="fb-${e.id}"></div><div class="hint" id="hint-${e.id}">💡 ${e.hint}</div>
+      <div class="solbox" id="sb-${e.id}"><b>${DATA.ui.solution}</b><br>${e.solution}</div><div class="score" id="sc-${e.id}"></div>`;
+    div.innerHTML = body; host.appendChild(div);
+    if(e.type==="num"){
+      const inp = $("#in-"+e.id, div), pv = $("#pv-"+e.id, div);
+      inp.addEventListener("input",()=>{ pv.innerHTML = previewTex(inp.value); });
+      inp.addEventListener("keydown",ev=>{ if(ev.key==="Enter") check(e); });
+    }
+    $("#chk-"+e.id, div).onclick = ()=>check(e);
+    $("#sol-"+e.id, div).onclick = ()=>reveal(e, true);
+    paint(e);
+  });
+}
+function grade(e){
+  if(e.type==="num"){ const v=parseNum($("#in-"+e.id).value); if(isNaN(v)) return null; return Math.abs(v-e.answer) <= e.tol; }
+  if(e.type==="multi"){
+    const got=[...document.querySelectorAll(`input[name="o-${e.id}"]:checked`)].map(x=>+x.value).sort().join(",");
+    if(!got) return null; return got === e.correct.slice().sort().join(",");
+  }
+  if(e.type==="select"){
+    const vals = e.items.map((_,k)=>$(`#s-${e.id}-${k}`).value); if(vals.some(v=>v==="")) return null;
+    return vals.every((v,k)=>+v===e.correct[k]);
+  }
+}
+function check(e){
+  const st=S[e.id]; if(st.done) return;
+  const r = grade(e);
+  if(r===null){ $("#fb-"+e.id).className="fb no"; $("#fb-"+e.id).textContent=DATA.ui.answerFirst; return; }
+  const now=Date.now(); const last = st.times.length? st.times[st.times.length-1] : (st.seen||now);
+  if(now-last < (e.type==="num"?9000:6000)) st.fast = (st.fast||0)+1;
+  st.times.push(now); st.a += 1;
+  if(r){ st.ok=true; st.done=true; st.score = 4-st.a; }
+  else if(st.a>=3){ st.done=true; st.score=0; }
+  if(st.fast && st.fast>=2) st.rushed = true;
+  if(st.a===1 && now-(st.seen||now) < 5000 && !r) st.rushed = true;
+  save(); paint(e); updateDots();
+}
+function reveal(e, byButton){
+  const st=S[e.id];
+  if(byButton && !st.done){
+    if(!confirm(DATA.ui.confirmReveal)) return;
+    st.rev=true; st.done=true; st.score=0; if(st.a<3) st.rushed=true; save(); updateDots();
+  }
+  paint(e);
+}
+function paint(e){
+  const st=S[e.id]; if(!st) return;
+  const fb=$("#fb-"+e.id), att=$("#att-"+e.id);
+  att.textContent = st.done? "" : `${DATA.ui.attempt} ${Math.min(st.a+1,3)} / 3`;
+  if(st.a>=1 && !st.ok) $("#hint-"+e.id).style.display="block";
+  if(st.done){
+    $("#sb-"+e.id).style.display="block"; $("#chk-"+e.id).disabled=true;
+    fb.className = "fb " + (st.ok?"ok":"no");
+    fb.textContent = st.ok ? DATA.ui.correct[st.a-1] : (st.rev? DATA.ui.revealed : DATA.ui.outOfTries);
+    $("#sc-"+e.id).innerHTML = `${DATA.ui.scoreWord}: ${st.score}/3` + (st.rushed?` <span class="pill r">${DATA.ui.rushedTag}</span>`:"");
+  } else if(st.a>0){ fb.className="fb no"; fb.textContent = DATA.ui.tryAgain; }
+}
+
+/* ---------------- report ---------------- */
+function colourFor(p){ return p===null?"#cfd6da":(p>=0.8?"#2f7d4f":(p>=0.5?"#d39b1f":"#b3261e")); }
+function buildReport(){
+  const ex = DATA.exercises, done = ex.filter(e=>S[e.id]&&S[e.id].done);
+  const host = $("#reportBody");
+  if(done.length < ex.length && !host.dataset.force){
+    host.innerHTML = `<div class="card"><p>${DATA.ui.notFinished.replace("{d}",done.length).replace("{n}",ex.length)}</p>
+      <button class="btn" id="forceRep">${DATA.ui.showAnyway}</button></div>`;
+    $("#forceRep").onclick=()=>{ host.dataset.force="1"; buildReport(); };
+    return;
+  }
+  const agg=(key)=>{ const o={}; ex.forEach(e=>{ const k=e[key]; o[k]=o[k]||{got:0,max:0,n:0,rushed:0,qs:[]};
+      const st=S[e.id]; if(st&&st.done){ o[k].got+=st.score; o[k].max+=3; o[k].n++; if(st.rushed) o[k].rushed++; } o[k].qs.push(e.label); }); return o; };
+  const byC=agg("concept"), byS=agg("skill");
+  // knowledge map
+  const m = DATA.map; let svg = `<svg viewBox="0 0 ${m.w} ${m.h}" style="width:100%;max-width:${m.w}px">`;
+  m.edges.forEach(([a,b,l])=>{ const A=m.nodes.find(n=>n.id===a), B=m.nodes.find(n=>n.id===b);
+    svg+=`<line x1="${A.x}" y1="${A.y}" x2="${B.x}" y2="${B.y}" stroke="#9aa6ad" stroke-width="1.6"/>`;
+    if(l) svg+=`<text x="${(A.x+B.x)/2+8}" y="${(A.y+B.y)/2+16}" font-size="11" fill="#5c6670" text-anchor="middle">${l}</text>`; });
+  m.nodes.forEach(n=>{ const c=byC[n.concept]; const p = c&&c.max? c.got/c.max : null;
+    const w = Math.max(110, n.label.length*(DATA.lang==="zh"?14:7.2)+20);
+    svg+=`<rect x="${n.x-w/2}" y="${n.y-20}" width="${w}" height="40" rx="12" fill="#fff" stroke="${colourFor(p)}" stroke-width="3"/>
+      <text x="${n.x}" y="${n.y-1}" font-size="13" text-anchor="middle" font-weight="700" fill="#1f2328">${n.label}</text>
+      <text x="${n.x}" y="${n.y+14}" font-size="11" text-anchor="middle" fill="${colourFor(p)}">${p===null?"—":Math.round(p*100)+"%"}</text>`; });
+  svg += `</svg>`;
+  const tot = done.reduce((s,e)=>s+S[e.id].score,0), max = done.length*3;
+  const bars = (o,dict)=>Object.keys(o).map(k=>{ const c=o[k]; const p=c.max?c.got/c.max:null;
+      return `<tr><td>${dict[k].name}</td><td>${c.qs.join(", ")}</td><td>${c.max?c.got+" / "+c.max:"—"}</td>
+      <td><div class="bar"><i style="width:${p===null?0:p*100}%;background:${colourFor(p)}"></i></div></td></tr>`; }).join("");
+  let rows = ex.map(e=>{ const st=S[e.id]||{}; return `<tr><td>${e.label}</td><td>${DATA.concepts[e.concept].name}</td><td>${DATA.skills[e.skill].name}</td>
+      <td>${st.done?st.a+(st.rev?" + "+DATA.ui.solShort:""):"—"}</td><td><b>${st.done?st.score:"—"}</b></td><td>${st.rushed?`<span class="pill r">${DATA.ui.rushedTag}</span>`:""}</td></tr>`; }).join("");
+  let adv = "";
+  Object.keys(byC).forEach(k=>{ const c=byC[k]; if(c.max && c.got/c.max < 0.7) adv += `<div class="adv"><b>${DATA.concepts[k].name}</b> (${Math.round(100*c.got/c.max)}%) — ${DATA.concepts[k].advice}</div>`; });
+  Object.keys(byS).forEach(k=>{ const c=byS[k]; if(c.max && c.got/c.max < 0.7 && DATA.skills[k].advice) adv += `<div class="adv"><b>${DATA.skills[k].name}</b> (${Math.round(100*c.got/c.max)}%) — ${DATA.skills[k].advice}</div>`; });
+  const nr = done.filter(e=>S[e.id].rushed).length;
+  if(nr) adv += `<div class="adv"><b>${DATA.ui.rushedTag} × ${nr}</b> — ${DATA.ui.rushAdvice}</div>`;
+  if(!adv) adv = `<div class="adv" style="border-color:#2f7d4f;background:#eef7f0">${DATA.ui.allGood}</div>`;
+  host.innerHTML = `
+    <h3>${DATA.ui.mapTitle}</h3><p class="small">${DATA.ui.mapNote}</p><div class="card">${svg}</div>
+    <h3>${DATA.ui.scoreTitle}</h3><div class="card"><span class="big">${tot} / ${max}</span>
+      <span class="small"> (${max?Math.round(100*tot/max):0}%) · ${DATA.ui.scoreRule}</span></div>
+    <h3>${DATA.ui.byConcept}</h3><table><tr><th>${DATA.ui.concept}</th><th>${DATA.ui.questions}</th><th>${DATA.ui.points}</th><th></th></tr>${bars(byC,DATA.concepts)}</table>
+    <h3>${DATA.ui.bySkill}</h3><table><tr><th>${DATA.ui.skill}</th><th>${DATA.ui.questions}</th><th>${DATA.ui.points}</th><th></th></tr>${bars(byS,DATA.skills)}</table>
+    <h3>${DATA.ui.perQ}</h3><table><tr><th>#</th><th>${DATA.ui.concept}</th><th>${DATA.ui.skill}</th><th>${DATA.ui.attemptsUsed}</th><th>${DATA.ui.scoreWord}</th><th></th></tr>${rows}</table>
+    <h3>${DATA.ui.advice}</h3>${adv}
+    <p><button class="btn ghost" id="resetAll">${DATA.ui.reset}</button></p>`;
+  $("#resetAll").onclick=()=>{ if(confirm(DATA.ui.resetQ)){ try{localStorage.removeItem(LS_KEY);}catch(e){} location.reload(); } };
+}
+
+/* ================= TOOLS ================= */
+function slider(id){ const el=document.getElementById(id); return el? +el.value : 0; }
+function bindOut(ids, fn){ ids.forEach(i=>{ const el=document.getElementById(i); if(el) el.addEventListener("input",fn); }); fn(); }
+
+/* Tool A: population picture + frequency tree + two-way table */
+function toolBayes(){
+  const root=document.getElementById("toolBayes"); if(!root) return;
+  const L=DATA.toolText.bayes;
+  const draw=()=>{
+    const p=slider("bPrev")/100, se=slider("bSens")/100, fp=slider("bFp")/100, N=10000;
+    $("#bPrevO").textContent=(p*100).toFixed(1)+"%"; $("#bSensO").textContent=(se*100).toFixed(0)+"%"; $("#bFpO").textContent=(fp*100).toFixed(1)+"%";
+    const C=Math.round(p*N), TP=Math.round(C*se), FN=C-TP, H=N-C, FP=Math.round(H*fp), TN=H-FP;
+    const cv=document.getElementById("bCanvas"), cx=cv.getContext("2d"); cx.clearRect(0,0,400,400);
+    for(let i=0;i<N;i++){ const r=Math.floor(i/100), c=i%100;
+      cx.fillStyle = i<TP?"#b3261e":(i<C?"#f4a3a0":(i<C+FP?"#e8901c":"#dfe4e7")); cx.fillRect(c*4,r*4,3.4,3.4); }
+    const pos=TP+FP, neg=FN+TN;
+    $("#bTree").innerHTML = `
+      <svg viewBox="0 0 430 210" style="width:100%">
+       <text x="6" y="108" font-size="14" font-weight="700">${N}</text>
+       <line x1="52" y1="104" x2="150" y2="50" stroke="#555"/><line x1="52" y1="104" x2="150" y2="160" stroke="#555"/>
+       <text x="156" y="46" font-size="13">${L.cond} ${C}</text><text x="156" y="166" font-size="13">${L.nocond} ${H}</text>
+       <line x1="250" y1="42" x2="320" y2="18" stroke="#555"/><line x1="250" y1="42" x2="320" y2="70" stroke="#555"/>
+       <line x1="250" y1="162" x2="320" y2="140" stroke="#555"/><line x1="250" y1="162" x2="320" y2="192" stroke="#555"/>
+       <text x="324" y="22" font-size="13" fill="#b3261e" font-weight="700">+ ${TP}</text><text x="324" y="74" font-size="13">− ${FN}</text>
+       <text x="324" y="144" font-size="13" fill="#e8901c" font-weight="700">+ ${FP}</text><text x="324" y="196" font-size="13">− ${TN}</text>
+      </svg>`;
+    $("#bTable").innerHTML = `<table class="dt"><tr><th></th><th>${L.pos} (+)</th><th>${L.neg} (−)</th><th>${L.total}</th></tr>
+      <tr><th>${L.cond}</th><td style="color:#b3261e;font-weight:700">${TP}</td><td>${FN}</td><td>${C}</td></tr>
+      <tr><th>${L.nocond}</th><td style="color:#e8901c;font-weight:700">${FP}</td><td>${TN}</td><td>${H}</td></tr>
+      <tr><th>${L.total}</th><td>${pos}</td><td>${neg}</td><td>${N}</td></tr></table>`;
+    $("#bOut").innerHTML = `<div>${tex("P(+)=\\dfrac{"+pos+"}{"+N+"}="+fmt(pos/N))}</div>
+      <div>${tex("P(C\\mid +)=\\dfrac{"+TP+"}{"+TP+"+"+FP+"}="+(pos?fmt(TP/pos):"—"))} &nbsp; ← ${L.reverse}</div>
+      <div>${tex("P(C'\\mid -)=\\dfrac{"+TN+"}{"+FN+"+"+TN+"}="+(neg?fmt(TN/neg):"—"))}</div>`;
+  };
+  bindOut(["bPrev","bSens","bFp"],draw);
+  root.querySelectorAll("[data-preset]").forEach(b=>b.onclick=()=>{ const [a,s,f]=b.dataset.preset.split(",");
+    document.getElementById("bPrev").value=a; document.getElementById("bSens").value=s; document.getElementById("bFp").value=f; draw(); });
+}
+
+/* Tool B: three-set Venn */
+const VENN_REGIONS = ["a","b","c","ab","ac","bc","abc","n"];
+function toolVenn(){
+  const root=document.getElementById("toolVenn"); if(!root) return;
+  const V=DATA.toolText.venn;
+  const pos={a:[95,140],b:[275,140],c:[185,285],ab:[185,110],ac:[125,225],bc:[245,225],abc:[185,185],n:[350,330]};
+  const wrap=$("#vennWrap");
+  VENN_REGIONS.forEach(r=>{ const i=document.createElement("input"); i.id="v_"+r; i.type="text"; i.value="";
+    i.style.left=(pos[r][0]-26)+"px"; i.style.top=(pos[r][1]-14)+"px"; i.title=V.regionNames[r]; wrap.appendChild(i); i.addEventListener("input",calc); });
+  const ev=$("#vennEvent"); V.events.forEach((e,k)=>{ const o=document.createElement("option"); o.value=k; o.textContent=e.label; ev.appendChild(o); });
+  ev.onchange=calc;
+  function val(r){ const v=parseFloat(document.getElementById("v_"+r).value); return isNaN(v)?0:v; }
+  function calc(){
+    const g={}; VENN_REGIONS.forEach(r=>g[r]=val(r));
+    const N=VENN_REGIONS.reduce((s,r)=>s+g[r],0);
+    const A=g.a+g.ab+g.ac+g.abc, B=g.b+g.ab+g.bc+g.abc, Cc=g.c+g.ac+g.bc+g.abc;
+    $("#vennTot").innerHTML = `${V.names[0]} = ${A} · ${V.names[1]} = ${B} · ${V.names[2]} = ${Cc} · ${V.total} = ${N}`;
+    const e=V.events[+ev.value||0];
+    VENN_REGIONS.forEach(r=>{ const el=document.getElementById("v_"+r); el.classList.toggle("inc", e.num.includes(r)); el.classList.toggle("den", !!e.den && e.den.includes(r)); });
+    const num=e.num.reduce((s,r)=>s+g[r],0), den=e.den? e.den.reduce((s,r)=>s+g[r],0) : N;
+    $("#vennProb").innerHTML = den? tex(`${e.tex}=\\dfrac{${num}}{${den}}=${fmt(num/den)}`) : "";
+  }
+  // stepper
+  let step=0; const steps=V.steps;
+  $("#vennStep").onclick=()=>{
+    if(step===0) VENN_REGIONS.forEach(r=>document.getElementById("v_"+r).value="");
+    if(step<steps.length){ const s=steps[step]; document.getElementById("v_"+s.r).value=s.v; $("#vennMsg").innerHTML=`<b>${V.stepWord} ${step+1}.</b> ${s.t}`; km($("#vennMsg")); step++; calc(); }
+    else { $("#vennMsg").innerHTML=V.doneMsg; step=0; }
+  };
+  $("#vennClear").onclick=()=>{ VENN_REGIONS.forEach(r=>document.getElementById("v_"+r).value=""); step=0; $("#vennMsg").innerHTML=""; calc(); };
+  calc();
+}
+
+/* Tool C: joint probability grid for two independent random variables */
+function toolJoint(){
+  const root=document.getElementById("toolJoint"); if(!root) return;
+  const J=DATA.toolText.joint;
+  const rel=$("#jRel"); J.rels.forEach((r,k)=>{ const o=document.createElement("option"); o.value=k; o.textContent=r; rel.appendChild(o); });
+  const get=(p)=>[0,1,2,3,4].map(i=>{ const v=parseFloat(document.getElementById(p+i).value); return isNaN(v)?0:v; });
+  function draw(){
+    const X=get("jx"), Y=get("jy"), k=parseFloat($("#jK").value)||0, r=+rel.value;
+    const sx=X.reduce((a,b)=>a+b,0), sy=Y.reduce((a,b)=>a+b,0);
+    const test=(x,y)=>[x>y, x===y, x-y>=k, x+y<=k, Math.abs(x-y)>=k][r];
+    let h=`<table class="dt grid"><tr><th>X \\ Y</th>${[0,1,2,3,4].map(y=>`<th>${y}<br><small>${Y[y]}</small></th>`).join("")}</tr>`, tot=0;
+    for(let x=0;x<5;x++){ h+=`<tr><th>${x} <small>(${X[x]})</small></th>`;
+      for(let y=0;y<5;y++){ const pr=X[x]*Y[y], hit=test(x,y)&&pr>0; if(test(x,y)) tot+=pr;
+        h+=`<td class="${hit?"hit":""}">${pr?fmt(pr,4):""}</td>`; } h+=`</tr>`; }
+    h+=`</table>`;
+    $("#jGrid").innerHTML=h;
+    $("#jOut").innerHTML = (Math.abs(sx-1)>1e-6||Math.abs(sy-1)>1e-6? `<div style="color:#b3261e">${J.warn} (ΣX = ${fmt(sx)}, ΣY = ${fmt(sy)})</div>`:"")
+      + `<div>${J.sumWord}: <b>${fmt(tot,4)}</b></div>`;
+  }
+  root.querySelectorAll("input").forEach(i=>i.addEventListener("input",draw)); rel.onchange=draw; draw();
+}
+
+/* Tool D: area model for independence */
+function toolIndep(){
+  const root=document.getElementById("toolIndep"); if(!root) return;
+  const I=DATA.toolText.indep;
+  const draw=()=>{
+    const a=slider("iA")/100, b1=slider("iB1")/100, b2=slider("iB2")/100;
+    $("#iAO").textContent=a.toFixed(2); $("#iB1O").textContent=b1.toFixed(2); $("#iB2O").textContent=b2.toFixed(2);
+    const W=300, x=a*W;
+    const pB=a*b1+(1-a)*b2, pAB=a*b1;
+    $("#iSvg").innerHTML = `<svg viewBox="0 0 340 340" style="width:100%;max-width:340px">
+      <rect x="20" y="20" width="${W}" height="${W}" fill="#fff" stroke="#333"/>
+      <rect x="20" y="${20+W-b1*W}" width="${x}" height="${b1*W}" fill="#c4572e" opacity=".75"/>
+      <rect x="${20+x}" y="${20+W-b2*W}" width="${W-x}" height="${b2*W}" fill="#e9b28f" opacity=".85"/>
+      <line x1="${20+x}" y1="20" x2="${20+x}" y2="${20+W}" stroke="#0f5c6e" stroke-width="3"/>
+      <text x="${20+x/2}" y="14" font-size="13" text-anchor="middle" fill="#0f5c6e" font-weight="700">A</text>
+      <text x="${20+x+(W-x)/2}" y="14" font-size="13" text-anchor="middle" fill="#0f5c6e" font-weight="700">A'</text>
+      <text x="${20+x/2}" y="${20+W-b1*W/2}" font-size="12" text-anchor="middle" fill="#fff" font-weight="700">${b1>0.06&&x>40?"A∩B":""}</text>
+      <text x="${20+x+(W-x)/2}" y="${20+W-b2*W/2}" font-size="12" text-anchor="middle" font-weight="700">${b2>0.06&&W-x>40?"A'∩B":""}</text>
+      <text x="330" y="${20+W/2}" font-size="12" transform="rotate(90 330 ${20+W/2})" text-anchor="middle">${I.shaded}</text></svg>`;
+    const indep=Math.abs(b1-b2)<0.005, me=pAB<1e-9 && a>0 && pB>0;
+    $("#iOut").innerHTML = `<div>${tex("P(A\\cap B)="+fmt(pAB))}</div><div>${tex("P(A)\\times P(B)="+fmt(a)+"\\times"+fmt(pB)+"="+fmt(a*pB))}</div>
+      <div>${tex("P(B\\mid A)="+fmt(b1)+",\\quad P(B\\mid A')="+fmt(b2))}</div>
+      <div>${pB>0?tex("P(A\\mid B)=\\dfrac{P(A\\cap B)}{P(B)}="+fmt(pAB/pB)):""}</div>
+      <div style="margin-top:6px;font-weight:700;color:${indep?"#2f7d4f":"#b3261e"}">${indep?I.yes:I.no}</div>
+      ${me?`<div style="font-weight:700;color:#8b1e1e">${I.me}</div>`:""}`; km($("#iOut"));
+  };
+  bindOut(["iA","iB1","iB2"],draw);
+}
+
+/* Tool E: simulation lab */
+function toolSim(){
+  const root=document.getElementById("toolSim"); if(!root) return;
+  const T=DATA.toolText.sim;
+  function run(){
+    const p=parseNum($("#sP").value), n=parseInt($("#sN").value), k=parseInt($("#sK").value), reps=parseInt($("#sR").value)||1000, dir=$("#sDir").value;
+    if(isNaN(p)||p<0||p>1||!(n>0)||isNaN(k)){ $("#sOut").innerHTML=`<span style="color:#b3261e">${T.bad}</span>`; return; }
+    const counts=new Array(n+1).fill(0);
+    for(let r=0;r<reps;r++){ let c=0; for(let i=0;i<n;i++) if(Math.random()<p) c++; counts[c]++; }
+    const tail = counts.reduce((s,c,i)=> s + ((dir==="ge"? i>=k : i<=k)? c:0), 0);
+    let lo=0; while(lo<n && counts[lo]===0) lo++; let hi=n; while(hi>0&&counts[hi]===0) hi--;
+    lo=Math.min(lo,k); hi=Math.max(hi,k);
+    const W=560,H=200, bw=Math.max(3,(W-40)/(hi-lo+1)), mx=Math.max(...counts);
+    let svg=`<svg viewBox="0 0 ${W} ${H+40}" style="width:100%">`;
+    for(let i=lo;i<=hi;i++){ const h=counts[i]/mx*H, x=30+(i-lo)*bw, inT=(dir==="ge"? i>=k : i<=k);
+      svg+=`<rect x="${x}" y="${H-h+10}" width="${bw-1}" height="${h}" fill="${inT?"#c4572e":"#7aa5b1"}"/>`;
+      if((hi-lo)<=30 || i%Math.ceil((hi-lo)/30)===0) svg+=`<text x="${x+bw/2}" y="${H+26}" font-size="10" text-anchor="middle">${i}</text>`; }
+    const xk=30+(k-lo)*bw+bw/2; svg+=`<line x1="${xk}" y1="4" x2="${xk}" y2="${H+12}" stroke="#111" stroke-dasharray="4 3"/><text x="${xk+4}" y="14" font-size="11">${T.obs} = ${k}</text></svg>`;
+    $("#sHist").innerHTML=svg;
+    $("#sOut").innerHTML = `<div>${T.model}: ${tex("p="+fmt(p))} · ${T.exp}: ${tex("\\dfrac{"+k+"}{"+n+"}="+fmt(k/n))}</div>
+      <div>${T.tail.replace("{dir}", dir==="ge"?"≥":"≤").replace("{k}",k)}: <b>${tail} / ${reps} = ${fmt(tail/reps,3)}</b></div>
+      <div class="small">${tail/reps<0.05? T.rare : T.notRare}</div>`;
+  }
+  $("#sRun").onclick=run;
+  root.querySelectorAll("[data-sim]").forEach(b=>b.onclick=()=>{ const [p,n,k,d]=b.dataset.sim.split(","); $("#sP").value=p; $("#sN").value=n; $("#sK").value=k; $("#sDir").value=d; run(); });
+}
+
+/* ---------------- boot ---------------- */
+window.addEventListener("load",()=>{
+  load();
+  const nav=$("nav");
+  DATA.tabs.forEach(t=>{ const b=document.createElement("button"); b.dataset.t=t.id; b.innerHTML=t.title+(DATA.exercises.some(e=>e.tab===t.id)?'<span class="dot"></span>':""); b.onclick=()=>showTab(t.id); nav.appendChild(b); });
+  renderExercises(); bootTab0(); km(document.body);
+  toolBayes(); toolVenn(); toolJoint(); toolIndep(); toolSim();
+  updateDots(); const h0=location.hash.slice(1); showTab(DATA.tabs.some(t=>t.id===h0)?h0:DATA.tabs[0].id);
+});
+
+const minus=s=>String(s).replace(/-/g,"−");
+/* ---------- generic stepper ---------- */
+function stepper(box,steps,endHtml){
+  let i=0,fb='',fbok=true,solved=false;
+  function render(){
+    if(i>=steps.length){html(box,endHtml);return}
+    const st=steps[i];
+    let h=`<div class="steps-dots">${steps.map((_,j)=>`<i class="${j<=i?'on':''}"></i>`).join('')}</div>`;
+    if(st.vis)h+=`<div style="margin:.4rem 0">${typeof st.vis==='function'?st.vis():st.vis}</div>`;
+    h+=`<div class="tq">${st.q}</div>`;
+    if(fb)h+=`<div class="tfb ${fbok?'ok':'no'}">${fb}</div>`;
+    if(!solved){const n=st.opts.length,k=(i*2+1)%n,ord=st.opts.map((_,j)=>(j+k)%n);h+=`<div class="tbtns">${ord.map(j=>`<button type="button" class="btn" data-j="${j}">${st.opts[j][0]}</button>`).join('')}</div>`}
+    else h+=`<div class="tbtns"><button type="button" class="btn primary" id="snext">${i<steps.length-1?'Next →':'Finish ✓'}</button></div>`;
+    html(box,h);
+    box.querySelectorAll('[data-j]').forEach(b=>b.onclick=()=>{const o=st.opts[+b.dataset.j];
+      if(o[1]){fb=st.ok;fbok=true;solved=true}else{fb=o[2]||'Not quite. Have another look.';fbok=false;b.disabled=true;
+        render();const bb=box.querySelector(`[data-j="${b.dataset.j}"]`);if(bb)bb.disabled=true;return}
+      render()});
+    const n=box.querySelector('#snext');if(n)n.onclick=()=>{i++;fb='';solved=false;render()};
+  }
+  render();
+}
+const tiles=(b,n,cls,cross)=>Array.from({length:n},(_,i)=>`<span class="tileb${cls?' '+cls:''}${cross&&i<cross?' x':''}">${b}</span>`).join('');
+
+
+/* ===== Tab 0: interactive toolbox lesson ===== */
+function html(el,h){el.innerHTML=h;km(el)}
+const T0R=String.raw;
+const shopTbl=(hl)=>{hl=hl||{};const c=(k,v)=>`<td class="${(hl.num||[]).includes(k)?'num':''} ${(hl.den||[]).includes(k)?'den':''}">${v}</td>`;
+  return `<table class="dt twt"><tr><th></th><th>Tasted</th><th>Did not taste</th><th>Total</th></tr><tr><th>Female</th>${c('FT',120)}${c('FN',80)}${c('F',200)}</tr><tr><th>Male</th>${c('MT',30)}${c('MN',70)}${c('M',100)}</tr><tr><th>Total</th>${c('T',150)}${c('N',150)}${c('all',300)}</tr></table>`};
+function t0a(){
+  stepper($('#t0a'),[
+    {vis:shopTbl({}),q:T0R`\(P(\text{tasted})\): how many shoppers tasted, out of how many?`,opts:[[T0R`\(\tfrac{150}{300}=0.5\)`,1],[T0R`\(\tfrac{120}{300}=0.4\)`,0,'That is only the women who tasted. Use the Tasted total.'],[T0R`\(\tfrac{150}{150}=1\)`,0,'The denominator is everyone you choose from: all 300.']],ok:T0R`\(P(\text{tasted})=\tfrac{150}{300}=0.5\).`+shopTbl({num:['FT','MT'],den:['FT','FN','MT','MN']})},
+    {q:T0R`\(P(\text{female}\cap\text{tasted})\): female <b>and</b> tasted.`,opts:[[T0R`\(\tfrac{120}{300}=0.4\)`,1],[T0R`\(\tfrac{120}{200}=0.6\)`,0,'“And” is out of everyone, not just the women.'],[T0R`\(\tfrac{350}{300}\)`,0,'“And” is one cell: both at once.']],ok:T0R`One cell, out of everyone: \(0.4\).`+shopTbl({num:['FT'],den:['FT','FN','MT','MN']})},
+    {q:T0R`\(P(\text{tasted}\mid\text{female})\): <b>given</b> the shopper is female. Who is “everyone” now?`,opts:[['Only the 200 women',1],['All 300 shoppers',0,'“Given female” means we only look at the women.'],['The 150 tasters',0,'The group after the bar is the women.']],ok:T0R`Cover the male row: \(\tfrac{120}{200}=0.6\). For men, \(\tfrac{30}{100}=0.3\). So yes, women are <b>more likely</b> to taste: 0.6 vs 0.3.`+shopTbl({num:['FT'],den:['FT','FN']})},
+    {q:T0R`Now turn it round: \(P(\text{female}\mid\text{tasted})\). The group is the tasters.`,opts:[[T0R`\(\tfrac{120}{150}=0.8\)`,1],[T0R`\(\tfrac{120}{200}=0.6\)`,0,'That is P(tasted | female). Now the given group is the tasters.'],[T0R`\(\tfrac{150}{300}=0.5\)`,0,'Only look at the Tasted column.']],ok:T0R`\(0.8\). So \(P(\text{female}\mid\text{tasted})=0.8\) but \(P(\text{tasted}\mid\text{female})=0.6\). <b>Swapping the condition changes the answer.</b>`+shopTbl({num:['FT'],den:['FT','MT']})}],
+    `<div class="tfb ok"><b>Tool 1 done.</b> The given group is the denominator, and \(P(A\mid B)\neq P(B\mid A)\) in general.</div>`);
+}
+function twtWidget(){const EV=[
+  ['P(tasted)',{num:['FT','MT'],den:['FT','FN','MT','MN']},150,300,'Everyone is the group.'],
+  ['P(female ∩ tasted)',{num:['FT'],den:['FT','FN','MT','MN']},120,300,'“And”: one cell, out of everyone.'],
+  ['P(female ∪ tasted)',{num:['FT','FN','MT'],den:['FT','FN','MT','MN']},230,300,'“Or”: female row plus the male tasters, each cell once.'],
+  ['P(tasted | female)',{num:['FT'],den:['FT','FN']},120,200,'Given female: the female row is the group.'],
+  ['P(tasted | male)',{num:['MT'],den:['MT','MN']},30,100,'Given male: the male row is the group.'],
+  ['P(female | tasted)',{num:['FT'],den:['FT','MT']},120,150,'Given tasted: the Tasted column is the group.']];
+  const go=k=>{const [n,hl,a,b,why]=EV[k];$('#twtTable').innerHTML=shopTbl(hl);
+    html($('#twtOut'),`\\(${n.replace('∩','\\cap').replace('∪','\\cup').replace('|','\\mid').replace(/(tasted|female|male)/g,'\\text{$1}')}=\\dfrac{${a}}{${b}}=${fmt(a/b,3)}\\)<br>${why}`);
+    $('#twtBtns').querySelectorAll('button').forEach((b,j)=>b.classList.toggle('on',j===k))};
+  $('#twtBtns').innerHTML=EV.map((e,k)=>`<button type="button" class="btn small" data-k="${k}">${e[0]}</button>`).join('');
+  $('#twtBtns').querySelectorAll('button').forEach(b=>b.onclick=()=>go(+b.dataset.k));go(3)}
+
+function treeSVG(r,l1,l2){const f=x=>fmt(x,3);const P=[r*l1,r*(1-l1),(1-r)*l2,(1-r)*(1-l2)],hit=[1,0,1,0];
+  const y=[34,104,196,266],ym=[69,231];let s=`<svg viewBox="0 0 400 300" style="font-family:inherit">`;
+  s+=`<line x1="8" y1="150" x2="96" y2="69" stroke="#3b4fa8" stroke-width="2.5"/><line x1="8" y1="150" x2="96" y2="231" stroke="#3b4fa8" stroke-width="2.5"/>`;
+  s+=`<text x="34" y="98" font-size="17" fill="#3b4fa8" font-weight="700">${f(r)}</text><text x="34" y="222" font-size="17" fill="#3b4fa8" font-weight="700">${f(1-r)}</text>`;
+  s+=`<text x="100" y="74" font-size="17" font-weight="700">rain</text><text x="100" y="236" font-size="17" font-weight="700">no rain</text>`;
+  [[0,l1,140],[1,l2,170]].forEach(([i,l,x0])=>{const y0=ym[i];[[y[2*i],l,'late'],[y[2*i+1],1-l,'on time']].forEach(([yy,p,lab])=>{
+    s+=`<line x1="${x0+4}" y1="${y0}" x2="238" y2="${yy}" stroke="#b5487a" stroke-width="2.5"/><text x="${(x0+238)/2-6}" y="${(y0+yy)/2+(yy<y0?-6:18)}" font-size="16" fill="#b5487a" font-weight="700">${f(p)}</text><text x="242" y="${yy+6}" font-size="16">${lab}</text>`})});
+  P.forEach((p,k)=>{s+=`<rect x="316" y="${y[k]-15}" width="80" height="30" rx="7" fill="${hit[k]?'#ffe2c7':'#f1eff6'}"/><text x="356" y="${y[k]+6}" font-size="16" text-anchor="middle" font-weight="${hit[k]?700:400}">${f(p)}</text>`});
+  return s+'</svg>'}
+function treeWidget(){const go=()=>{const r=+$('#trR').value,l1=+$('#trL1').value,l2=+$('#trL2').value;
+    $('#trRo').textContent=r.toFixed(2);$('#trL1o').textContent=l1.toFixed(2);$('#trL2o').textContent=l2.toFixed(2);
+    $('#trSvg').innerHTML=treeSVG(r,l1,l2);const a=r*l1,b=(1-r)*l2,pl=a+b;
+    html($('#trOut'),`\\(P(\\text{late})=${fmt(r,2)}\\times${fmt(l1,2)}+${fmt(1-r,2)}\\times${fmt(l2,2)}=${fmt(a,4)}+${fmt(b,4)}=${fmt(pl,4)}\\)<br>Out of 100 days: ${fmt(100*r,1)} rainy → ${fmt(100*a,1)} late; ${fmt(100*(1-r),1)} dry → ${fmt(100*b,1)} late; total ${fmt(100*pl,1)} late days.<br>Sneak peek at Tab 1: \\(P(\\text{rain}\\mid\\text{late})=\\dfrac{${fmt(a,4)}}{${fmt(pl,4)}}=${pl?fmt(a/pl,3):'–'}\\)`)};
+  ['#trR','#trL1','#trL2'].forEach(s=>$(s).addEventListener('input',go));go()}
+function t0b(){
+  stepper($('#t0b'),[
+    {vis:treeSVG(0.2,0.5,0.1),q:T0R`\(P(\text{rain})=0.2\). The two first branches must add to 1, so \(P(\text{no rain})=\;?\)`,opts:[['0.8',1],['0.2',0,'The branches from one point add to 1.'],['0.1',0,'0.1 is P(late | no rain), a second-level branch.']],ok:T0R`\(1-0.2=0.8\).`},
+    {q:T0R`Rain <b>and</b> late: multiply along the path \(0.2\times0.5=\;?\)`,opts:[['0.1',1],['0.7',0,'Along a path you multiply, not add.'],['0.5',0,'0.5 is only P(late | rain).']],ok:T0R`\(0.1\): one day in ten is rainy and late.`},
+    {q:T0R`Two paths end in “late”: \(0.2\times0.5\) and \(0.8\times0.1\). So \(P(\text{late})=\;?\)`,opts:[['0.18',1],['0.6',0,'Multiply along each path first, then add.'],['0.1',0,'Do not forget the dry-and-late path, 0.08.']],ok:T0R`\(0.10+0.08=0.18\). This is the <b>law of total probability</b>.`},
+    {q:T0R`Check with counts: in 100 days, 20 are rainy (10 late) and 80 are dry. How many dry days are late?`,opts:[['8',1],['10',0,'10% of 80.'],['72',0,'72 dry days are on time.']],ok:T0R`10 + 8 = 18 late days out of 100: \(0.18\) again. Counts and probabilities always agree.`},
+    {q:T0R`Sneak peek: you arrive late. Of the 18 late days, how many were rainy? So \(P(\text{rain}\mid\text{late})=\;?\)`,opts:[[T0R`\(\tfrac{10}{18}=0.556\)`,1],[T0R`\(\tfrac{10}{100}=0.1\)`,0,'Given late: only the 18 late days are the group.'],[T0R`\(0.5\)`,0,'0.5 is P(late | rain), the other way round.']],ok:T0R`\(0.556\). The <b>given</b> group (late days) is the denominator: this is a reverse conditional, the whole of Tab 1.`}],
+    `<div class="tfb ok"><b>Tool 2 done.</b> Multiply along, add the paths, check with counts.</div>`);
+}
+function indWidget(){const go=()=>{const v=['#ic1','#ic2','#ic3','#ic4'].map(s=>Math.max(0,+$(s).value||0));const [a,b,c,d]=v,N=a+b+c+d;
+    if(!N||!(a+c)||!(b+d)){html($('#icOut'),'Type four counts (both columns need people).');return}
+    const pA=(a+b)/N,pAB=a/(a+c),pAnB=b/(b+d),close=Math.abs(pAB-pAnB)<0.02;
+    html($('#icOut'),`\\(P(A)=\\tfrac{${a+b}}{${N}}=${fmt(pA,3)}\\)<br>\\(P(A\\mid B)=\\tfrac{${a}}{${a+c}}=${fmt(pAB,3)}\\), \\(P(A\\mid B')=\\tfrac{${b}}{${b+d}}=${fmt(pAnB,3)}\\)<br>\\(P(A)P(B)=${fmt(pA*(a+c)/N,3)}\\) vs \\(P(A\\cap B)=${fmt(a/N,3)}\\)<br><b>${close?'Independent: knowing B does not change the chance of A.':'Not independent: knowing B changes the chance of A.'}</b>`)};
+  ['#ic1','#ic2','#ic3','#ic4'].forEach(s=>$(s).addEventListener('input',go));
+  const set=a=>{['#ic1','#ic2','#ic3','#ic4'].forEach((s,i)=>$(s).value=a[i]);go()};
+  $('#icP1').onclick=()=>set([120,30,80,70]);$('#icP2').onclick=()=>set([30,45,20,30]);go()}
+function t0c(){
+  stepper($('#t0c'),[
+    {vis:shopTbl({}),q:T0R`Shoppers: \(P(\text{tasted})=0.5\) but \(P(\text{tasted}\mid\text{female})=0.6\). Are “tasted” and “female” independent?`,opts:[['No: knowing “female” changes the probability',1],['Yes: everyone was offered the sample',0,'Independence is about the numbers, not about fairness.'],['Yes: 0.5 and 0.6 are both probabilities',0,'Compare them: are they equal?']],ok:T0R`Not independent: 0.6 ≠ 0.5.`},
+    {q:T0R`Second test: \(P(\text{female})\times P(\text{tasted})=\tfrac{200}{300}\times0.5=\;?\) Compare with \(P(\text{female}\cap\text{tasted})=0.4\).`,opts:[['0.333, not 0.4: not independent',1],['0.4: independent',0,'Work out 2/3 × 0.5.'],['0.333: independent',0,'0.333 is not equal to 0.4.']],ok:T0R`\(0.333\neq0.4\). Both tests agree.`},
+    {q:T0R`Now we are <b>told</b> \(A\) and \(B\) are independent, \(P(A)=0.3\), \(P(B)=0.5\). \(P(A\cap B)=\;?\)`,opts:[['0.15',1],['0.8',0,'“And” for independent events: multiply.'],['0.65',0,'That would be P(A ∪ B).']],ok:T0R`\(0.3\times0.5=0.15\). Only allowed because they are independent.`},
+    {q:T0R`Trap: roll a fair dice once. \(A\) = “a 1”, \(B\) = “a 6”. They are mutually exclusive. Are they independent?`,opts:[['No: if A happens, B cannot',1],['Yes: they have nothing to do with each other',0,'Ask: does knowing A change the chance of B?'],['Yes: P(A ∩ B) = 0',0,'For independence we would need P(A ∩ B) = 1/6 × 1/6.']],ok:T0R`\(P(B\mid A)=0\) but \(P(B)=\tfrac16\). Mutually exclusive events (with non-zero probabilities) are <b>never</b> independent.`}],
+    `<div class="tfb ok"><b>Tool 3 done.</b> Test independence with numbers, and never confuse it with mutually exclusive.</div>`);
+}
+function t0d(){
+  const tb=`<table class="dt"><tr><th></th><th>Crashed</th><th>No crash</th><th>Total</th></tr><tr><th>Texts while driving</th><td>30</td><td>470</td><td>500</td></tr><tr><th>Does not text</th><td>15</td><td>1485</td><td>1500</td></tr></table>`;
+  stepper($('#t0d'),[
+    {vis:tb,q:T0R`Risk of a crash for drivers who text \(=\;?\)`,opts:[[T0R`\(\tfrac{30}{500}=0.06\)`,1],[T0R`\(\tfrac{30}{45}=0.667\)`,0,'That is the proportion of crashes that were texters. Risk uses the group total.'],[T0R`\(\tfrac{30}{2000}=0.015\)`,0,'Risk is within the group: out of the 500 texters.']],ok:T0R`Risk \(=0.06\): 6 in every 100 texting drivers crashed.`},
+    {q:T0R`Risk for drivers who do not text \(=\;?\)`,opts:[[T0R`\(\tfrac{15}{1500}=0.01\)`,1],[T0R`\(\tfrac{15}{45}=0.333\)`,0,'Divide by the group total, 1500.']],ok:T0R`\(0.01\).`},
+    {q:T0R`Relative risk (texting compared with not texting) \(=\;?\)`,opts:[['6',1],['0.05',0,'Divide the risks, do not subtract.'],['2',0,'Use the risks, not the counts 30 and 15.']],ok:T0R`\(\text{RR}=\tfrac{0.06}{0.01}=6\).`},
+    {q:'Which sentence would get the marks?',opts:[['Drivers who text are 6 times as likely to crash as drivers who do not text.',1],['Texting causes 6 times more crashes.',0,'This is observational data: say “as likely”, and do not claim cause.'],['6% of crashes are caused by texting.',0,'0.06 is the risk for texters, not a share of crashes.']],ok:'Name both groups, the outcome, and “times as likely”.'},
+    {q:T0R`Another study: the relative risk of injury for seatbelt wearers compared with non-wearers is \(0.17\). This means…`,opts:[['Seatbelt wearers are less likely to be injured',1],['Seatbelt wearers are 17 times as likely to be injured',0,'RR below 1 means a smaller risk.'],['17% of injuries involve seatbelts',0,'RR compares two risks.']],ok:T0R`RR \(<1\): lower risk. Seatbelt wearers are 0.17 times as likely to be injured (about \(\tfrac16\) of the risk).`}],
+    `<div class="tfb ok"><b>Tool 4 done.</b> Risk = proportion in a group; RR = one risk ÷ the other, in a sentence with both groups.</div>`);
+}
+function bootTab0(){[t0a,twtWidget,t0b,treeWidget,t0c,indWidget,t0d].forEach(f=>{try{f()}catch(e){console.error(f.name,e)}})}
+
+</script>
+</body>
+</html>
