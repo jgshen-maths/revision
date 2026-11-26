@@ -1,5 +1,5 @@
 # T003 — Make wide tables scroll inside their own box on phones
-Status: ready
+Status: done (PR #3, merged after fix round 2)
 Size: S (≤ 15 min)
 Branch: task/T003-table-scroll-fix
 Run on: MacBook
