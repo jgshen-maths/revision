@@ -1,5 +1,5 @@
 # T002 — Find what sticks out on four pages at phone width
-Status: ready
+Status: done (PR #2, merged)
 Size: S (≤ 15 min)
 Branch: task/T002-diagnose-phone-overflow
 Run on: MacBook
