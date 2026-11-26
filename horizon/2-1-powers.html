@@ -754,7 +754,8 @@ input,select,button,textarea{font-family:inherit}
     </div>
     <p class="text-sm text-slate-700 mb-4"><strong>Answer to the puzzle:</strong> the open lockers are $1,4,9,16,25,36,49,64,81,100$. Ten lockers, the squares up to $100$.</p>
 
-    <h3 class="text-xl font-bold text-slate-800 mb-3 mt-8 bg-slate-100 p-3 rounded-lg inline-block">Check your understanding</h3>
+    <div class="tutor" data-stepper="t1"></div>
+<h3 class="text-xl font-bold text-slate-800 mb-3 mt-8 bg-slate-100 p-3 rounded-lg inline-block">Check your understanding</h3>
     <div id="ex-t1"></div>
   </div>
 
@@ -871,7 +872,8 @@ input,select,button,textarea{font-family:inherit}
       </details>
     </div>
 
-    <h3 class="text-xl font-bold text-slate-800 mb-3 mt-8 bg-slate-100 p-3 rounded-lg inline-block">Check your understanding</h3>
+    <div class="tutor" data-stepper="t2"></div>
+<h3 class="text-xl font-bold text-slate-800 mb-3 mt-8 bg-slate-100 p-3 rounded-lg inline-block">Check your understanding</h3>
     <div id="ex-t2"></div>
   </div>
 
@@ -955,7 +957,8 @@ input,select,button,textarea{font-family:inherit}
       <div class="eg"><p><strong>Example:</strong> $\dfrac{48.7+151.6}{3.9^2-5.1}$. Estimate: $\dfrac{50+150}{16-5}=\dfrac{200}{11}\approx18$. Calculator: type <span class="mono">(48.7+151.6)÷(3.9^2-5.1)</span> and get $\approx19.8$. The two agree roughly, so no slip. If the calculator had shown about $53.6$ (what you get from typing the line without any brackets), you would know that brackets were missing.</p></div>
     </div>
 
-    <h3 class="text-xl font-bold text-slate-800 mb-3 mt-8 bg-slate-100 p-3 rounded-lg inline-block">Check your understanding</h3>
+    <div class="tutor" data-stepper="t3"></div>
+<h3 class="text-xl font-bold text-slate-800 mb-3 mt-8 bg-slate-100 p-3 rounded-lg inline-block">Check your understanding</h3>
     <div id="ex-t3"></div>
   </div>
 
@@ -1059,7 +1062,8 @@ input,select,button,textarea{font-family:inherit}
         <p class="mt-1"><strong>Example 4 (a sum):</strong> Last digit of $2^{30}+3^{30}$. $2^{30}$: $30=4\times7+2$, second term $4$. $3^{30}$: second term $9$. $4+9=13$, so the last digit is $3$.</p></div>
     </div>
 
-    <h3 class="text-xl font-bold text-slate-800 mb-3 mt-8 bg-slate-100 p-3 rounded-lg inline-block">Check your understanding</h3>
+    <div class="tutor" data-stepper="t4"></div>
+<h3 class="text-xl font-bold text-slate-800 mb-3 mt-8 bg-slate-100 p-3 rounded-lg inline-block">Check your understanding</h3>
     <div id="ex-t4"></div>
   </div>
 
@@ -2072,5 +2076,250 @@ window.addEventListener('DOMContentLoaded',()=>{
 </script>
 <!-- table-scroll-fix --><style id="tblfix">.katex{position:relative}.tblwrap{position:relative;display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}.tblwrap>table{display:table!important;overflow:visible!important;max-width:none!important}</style><script id="tblfix-js">(function(){function wrap(){document.querySelectorAll("table").forEach(function(t){var p=t.parentElement;if(!p||p.classList.contains("tblwrap"))return;var w=document.createElement("div");w.className="tblwrap";p.insertBefore(w,t);w.appendChild(t);});}function go(){wrap();new MutationObserver(wrap).observe(document.body,{childList:true,subtree:true});}if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",go);else go();})();</script><!-- end table-scroll-fix -->
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4572b9e5c4984cd3a0d53765770f398c"}'></script><!-- End Cloudflare Web Analytics -->
+<script id="hz-stepper-data">window.HZ_STEPPERS = {
+  t1: {
+    title: 'Find the smallest positive integer $n$ so that $240n$ is a perfect square, and find $\\sqrt{240n}$.',
+    steps: [
+      {
+        q: 'Write $240$ as a product of primes.',
+        opts: [
+          ['$2^4\\times3\\times5$', true],
+          ['$2^3\\times3\\times5$', false, '$2^3\\times3\\times5=120$, which is only half of $240$.'],
+          ['$16\\times15$', false, '$16$ and $15$ are not primes yet: keep splitting.']
+        ],
+        ok: '$240 = 16\\times15 = 2^4\\times3\\times5$.'
+      },
+      {
+        q: 'For a number to be a perfect square, what must be true about every prime index?',
+        opts: [
+          ['Every index must be even', true],
+          ['Every index must be odd', false, 'An odd index leaves an unpaired prime, so the number cannot split into two equal halves.'],
+          ['Every index must be a multiple of $3$', false, 'Multiples of $3$ make a perfect cube, not a square.']
+        ],
+        ok: 'Right: a perfect square has every prime index even (Technique 1).'
+      },
+      {
+        q: 'In $2^4\\times3^1\\times5^1$, which primes have an odd index?',
+        opts: [
+          ['$3$ and $5$', true],
+          ['Only $5$', false, '$3$ has index $1$, which is also odd.'],
+          ['$2$, $3$ and $5$', false, 'The index of $2$ is $4$, which is already even.']
+        ],
+        ok: '$3$ and $5$ each have index $1$ (odd), while $2^4$ already has an even index.'
+      },
+      {
+        q: 'What is the smallest positive integer $n$ that makes $240n$ a perfect square?',
+        opts: [
+          ['$15$', true],
+          ['$8$', false, 'Multiply the missing primes ($3\\times5$), rather than adding them ($3+5=8$).'],
+          ['$30$', false, 'We do not need another $2$, because $2^4$ already has an even index.']
+        ],
+        ok: 'Multiply by one more $3$ and one more $5$: $n = 3\\times5 = 15$.'
+      },
+      {
+        q: 'Check: $240\\times15 = 2^4\\times3^2\\times5^2 = 3600$. Halving each index, what is $\\sqrt{3600}$?',
+        opts: [
+          ['$60$', true],
+          ['$30$', false, 'Halving $2^4$ gives $2^2=4$, not $2^1$: $4\\times3\\times5=60$.'],
+          ['$1800$', false, 'Halve the indices, not the number itself ($1800^2$ is much bigger than $3600$).']
+        ],
+        ok: '$2^2\\times3\\times5 = 4\\times15 = 60$, and $60^2 = 3600$.'
+      }
+    ],
+    end: 'Done! <b>Method (Techniques 1–2):</b> split into primes, then multiply by one more copy of every prime with an odd index. Halve every index to check the square root.'
+  },
+
+  t2: {
+    title: 'Solve $16^x = 8^4$.',
+    steps: [
+      {
+        q: 'Both $16$ and $8$ are powers of the same prime. Which common base should we use?',
+        opts: [
+          ['$2$', true],
+          ['$4$', false, '$16=4^2$, but $8$ is not a whole-number power of $4$.'],
+          ['$8$', false, '$16 = 2\\times8$, not a power of $8$ ($8^2=64$).']
+        ],
+        ok: 'Use base $2$: $16=2^4$ and $8=2^3$.'
+      },
+      {
+        q: 'Rewrite the left-hand side $16^x = (2^4)^x$ using Law 3 (power of a power).',
+        opts: [
+          ['$2^{4x}$', true],
+          ['$2^{4+x}$', false, 'For a power of a power, multiply the indices rather than adding them.'],
+          ['$8^x$', false, 'Keep the base $2$ and multiply the indices $4$ and $x$.']
+        ],
+        ok: '$(2^4)^x = 2^{4x}$.'
+      },
+      {
+        q: 'Now rewrite the right-hand side $8^4 = (2^3)^4$ as a power of $2$.',
+        opts: [
+          ['$2^{12}$', true],
+          ['$2^7$', false, 'Law 3 multiplies the indices ($3\\times4=12$), rather than adding ($3+4=7$).'],
+          ['$2^{81}$', false, 'Do not compute $3^4$: $(2^3)^4$ is four copies of $2^3$, so the index is $3\\times4=12$.']
+        ],
+        ok: '$(2^3)^4 = 2^{12}$.'
+      },
+      {
+        q: 'Now we have $2^{4x} = 2^{12}$. What is $x$?',
+        opts: [
+          ['$3$', true],
+          ['$8$', false, 'Divide $12$ by $4$, rather than subtracting ($12-4=8$).'],
+          ['$48$', false, 'We want $4x=12$, so divide by $4$ instead of multiplying.']
+        ],
+        ok: 'Same base $2$, so $4x=12$ and $x=3$.'
+      },
+      {
+        q: 'Check your answer: what value do both $16^3$ and $8^4$ equal?',
+        opts: [
+          ['$4096$', true],
+          ['$512$', false, '$512 = 8^3$; multiply by $8$ once more to get $8^4$.'],
+          ['$256$', false, '$256 = 16^2$; multiply by $16$ once more to get $16^3$.']
+        ],
+        ok: '$16^3 = 256\\times16 = 4096$ and $8^4 = 64\\times64 = 4096$.'
+      }
+    ],
+    end: 'Done! <b>Method (Technique 4):</b> rewrite both sides with the same prime base, simplify with Law 3, then set the indices equal and solve.'
+  },
+
+  t3: {
+    title: 'Calculate $5 + 36 \\div (9 - 3) \\times 2^2 - 7$.',
+    steps: [
+      {
+        q: 'Which operation must we do first?',
+        opts: [
+          ['$9 - 3$ inside the brackets', true],
+          ['$2^2$ (the index)', false, 'Brackets always come before indices in BIDMAS.'],
+          ['$5 + 36$ (left to right)', false, 'Addition waits until brackets, indices, division and multiplication are done.']
+        ],
+        ok: 'Brackets first: $9 - 3 = 6$, leaving $5 + 36 \\div 6 \\times 2^2 - 7$.'
+      },
+      {
+        q: 'Now we have $5 + 36 \\div 6 \\times 2^2 - 7$. What comes next?',
+        opts: [
+          ['$2^2 = 4$', true],
+          ['$36 \\div 6 = 6$', false, 'Indices come before division and multiplication.'],
+          ['$6 \\times 2 = 12$', false, 'The power belongs only to $2$, not to $6\\times2$.']
+        ],
+        ok: 'Indices next: $2^2 = 4$, leaving $5 + 36 \\div 6 \\times 4 - 7$.'
+      },
+      {
+        q: 'In $5 + 36 \\div 6 \\times 4 - 7$, both $\\div$ and $\\times$ appear. Which is done first?',
+        opts: [
+          ['$36 \\div 6 = 6$ (left to right)', true],
+          ['$6 \\times 4 = 24$ (multiply first)', false, 'Division and multiplication have equal rank, so work left to right.'],
+          ['$5 + 36 = 41$', false, 'Division and multiplication come before addition.']
+        ],
+        ok: 'Left to right: $36 \\div 6 = 6$, leaving $5 + 6 \\times 4 - 7$.'
+      },
+      {
+        q: 'Finish the multiplication in $5 + 6 \\times 4 - 7$. What is the expression now?',
+        opts: [
+          ['$5 + 24 - 7$', true],
+          ['$11 \\times 4 - 7$', false, 'Multiply $6\\times4$ before adding $5$.'],
+          ['$5 + 6 \\times (-3)$', false, 'Multiply $6\\times4$ before subtracting $7$.']
+        ],
+        ok: '$6 \\times 4 = 24$, leaving $5 + 24 - 7$.'
+      },
+      {
+        q: 'Finally, evaluate $5 + 24 - 7$ from left to right.',
+        opts: [
+          ['$22$', true],
+          ['$36$', false, 'The $7$ is subtracted, not added ($29 - 7 = 22$).'],
+          ['$26$', false, 'Check the arithmetic: $5 + 24 = 29$, and $29 - 7 = 22$.']
+        ],
+        ok: '$5 + 24 = 29$, and $29 - 7 = 22$.'
+      }
+    ],
+    end: 'Done! <b>Method (Technique 6):</b> follow BIDMAS one step per line — brackets, then indices, then $\\div$ and $\\times$ left to right, then $+$ and $-$ left to right.'
+  },
+
+  t4: {
+    title: 'What is the last digit of $18^{75}$?',
+    steps: [
+      {
+        q: 'To find the last digit of $18^{75}$, which base do we actually need to raise to the power $75$?',
+        opts: [
+          ['$8$ (only the last digit of the base)', true],
+          ['$18$ (we must keep the whole base)', false, 'Only the last digit of a factor affects the last digit of a product.'],
+          ['$1 + 8 = 9$', false, 'Do not add the digits of the base: keep its last digit, $8$.']
+        ],
+        ok: 'Only the last digit matters, so $18^{75}$ has the same last digit as $8^{75}$.'
+      },
+      {
+        q: 'List the last digits of $8^1, 8^2, 8^3, 8^4, 8^5$. What is the repeating cycle?',
+        opts: [
+          ['$8, 4, 2, 6$ (length $4$)', true],
+          ['$8, 6, 4, 2$ (length $4$)', false, 'Check $8^2=64$ (ends in $4$), then $4\\times8=32$ (ends in $2$), then $2\\times8=16$ (ends in $6$).'],
+          ['$8, 4$ (length $2$)', false, 'Keep going past $8^2=64$: $4\\times8=32$ ends in $2$, not $8$.']
+        ],
+        ok: '$8^1=8$, $8^2=64$, $8^3\\to2$, $8^4\\to6$, and $8^5\\to8$ repeats: cycle $8,4,2,6$ of length $4$.'
+      },
+      {
+        q: 'Divide the index $75$ by the cycle length $4$. What is the remainder?',
+        opts: [
+          ['$3$', true],
+          ['$1$', false, '$4\\times18=72$, and $75-72=3$, not $1$.'],
+          ['$0$', false, '$75$ is odd, so it cannot be divisible by $4$.']
+        ],
+        ok: '$75 = 4\\times18 + 3$, so the remainder is $3$.'
+      },
+      {
+        q: 'Remainder $3$ means the 3rd term of the cycle $8, 4, 2, 6$. What is the last digit of $18^{75}$?',
+        opts: [
+          ['$2$', true],
+          ['$4$', false, '$4$ is the 2nd term of $8,4,2,6$; we need the 3rd term.'],
+          ['$6$', false, '$6$ is the 4th term (used when the remainder is $0$).']
+        ],
+        ok: 'The 3rd term of $8,4,2,6$ is $2$, so $18^{75}$ ends in $2$.'
+      },
+      {
+        q: 'Quick check on remainder $0$: if the index were $76$ instead ($76=4\\times19+0$), what would $18^{76}$ end in?',
+        opts: [
+          ['$6$ (the last term of the cycle)', true],
+          ['$8$ (the first term of the cycle)', false, 'Remainder $1$ gives the first term; remainder $0$ gives the last term of the cycle.'],
+          ['$0$', false, 'A remainder of $0$ points to the end of the cycle ($6$), not to the digit $0$.']
+        ],
+        ok: 'Remainder $0$ means the last term of the cycle, $6$ — and $2\\times8=16$ confirms it!'
+      }
+    ],
+    end: 'Done! <b>Method (Technique 14):</b> keep the last digit of the base, find its cycle of length $L$, divide the index by $L$, and read that term (remainder $0$ means the last term).'
+  }
+};
+</script>
+<!-- hz-stepper engine --><style id="hz-stepper-css">
+.tutor{border:2px solid #3b4fa8;border-radius:18px;background:#fff;padding:1rem;margin:1.25rem 0}
+.tutor .who{font-size:.8rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#3b4fa8;margin-bottom:.15rem}
+.tutor .ttl{font-weight:700;color:#1c2230;margin-bottom:.4rem}
+.tutor .tq{font-size:1.05rem;margin:.5rem 0 .7rem;line-height:1.6}
+.tutor .tbtns{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.4rem}
+.tutor .tbtns button{background:#fff;color:#1c2230;border:2px solid #c9d0ef;border-radius:.5rem;padding:.4rem .9rem;font-weight:600;cursor:pointer}
+.tutor .tbtns button:hover{border-color:#3b4fa8;background:#eef0fa}
+.tutor .tbtns button:disabled{opacity:.45;color:#64748b;text-decoration:line-through;cursor:default}
+.tutor .tbtns button.primary{background:#3b4fa8;color:#fff;border-color:#3b4fa8}
+.tutor .tfb{border-radius:10px;padding:.5rem .8rem;margin:.4rem 0;font-size:.95rem}
+.tutor .tfb.ok{background:#e5f4ea;color:#24683b}.tutor .tfb.no{background:#fdecea;color:#9b2c2c}
+.tutor .dots{display:flex;gap:5px;margin:.3rem 0}.tutor .dots i{width:22px;height:6px;border-radius:3px;background:#dcd8e6}.tutor .dots i.on{background:#3b4fa8}
+</style><script id="hz-stepper-js">
+(function(){
+function tex(el){try{if(window.MathJax&&MathJax.typesetPromise)MathJax.typesetPromise([el]);}catch(e){}}
+function run(box,S){var i=0,fb='',ok=true,solved=false;
+ function render(){var h='<div class="who">Let\'s do it together</div><div class="ttl">'+S.title+'</div>';
+  if(i>=S.steps.length){box.innerHTML=h+'<div class="tfb ok">'+S.end+'</div><div class="tbtns"><button type="button" data-again>Do it again</button></div>';
+   box.querySelector('[data-again]').onclick=function(){i=0;fb='';solved=false;render();};tex(box);return;}
+  var st=S.steps[i];h+='<div class="dots">'+S.steps.map(function(_,j){return '<i class="'+(j<=i?'on':'')+'"></i>';}).join('')+'</div>';
+  if(st.vis)h+='<div style="margin:.4rem 0">'+st.vis+'</div>';
+  h+='<div class="tq">'+st.q+'</div>';if(fb)h+='<div class="tfb '+(ok?'ok':'no')+'">'+fb+'</div>';
+  if(!solved){var n=st.opts.length,k=(i*2+1)%n;h+='<div class="tbtns">'+st.opts.map(function(_,j){return (j+k)%n;}).map(function(j){return '<button type="button" data-j="'+j+'"'+(st._off&&st._off[j]?' disabled':'')+'>'+st.opts[j][0]+'</button>';}).join('')+'</div>';}
+  else h+='<div class="tbtns"><button type="button" class="primary" data-next>'+(i<S.steps.length-1?'Next →':'Finish ✓')+'</button></div>';
+  box.innerHTML=h;
+  box.querySelectorAll('[data-j]').forEach(function(b){b.onclick=function(){var j=+b.dataset.j,o=st.opts[j];
+   if(o[1]){fb=st.ok;ok=true;solved=true;st._off=null;}else{fb=o[2]||'Not quite. Have another look.';ok=false;st._off=st._off||{};st._off[j]=1;}render();};});
+  var nx=box.querySelector('[data-next]');if(nx)nx.onclick=function(){i++;fb='';solved=false;render();};
+  tex(box);}
+ render();}
+function go(){var D=window.HZ_STEPPERS||{};document.querySelectorAll('.tutor[data-stepper]').forEach(function(box){var S=D[box.dataset.stepper];if(S)run(box,S);});}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',go);else go();
+})();
+</script><!-- end hz-stepper engine -->
 </body>
 </html>
