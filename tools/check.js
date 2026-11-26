@@ -61,7 +61,9 @@ function serve() {
         const kerr = document.querySelectorAll('.katex-error').length;
         // elements that stick out past the phone edge and are not inside a narrower scroll box
         const inScroll = e => { let a = e.parentElement; while (a && a !== document.body) { const ov = getComputedStyle(a).overflowX; if ((ov === 'auto' || ov === 'scroll' || ov === 'hidden') && a.getBoundingClientRect().right <= 392) return true; a = a.parentElement; } return false; };
-        const out = [...document.querySelectorAll('body *')].filter(e => { const b = e.getBoundingClientRect(); return b.width && b.right > 392 && !inScroll(e) && getComputedStyle(e).position !== 'fixed'; });
+        const past = e => { const b = e.getBoundingClientRect(); return b.width && b.right > 392 && getComputedStyle(e).position !== 'fixed'; };
+        let out = [...document.querySelectorAll('body *')].filter(e => past(e) && !inScroll(e));
+        if (!out.length && sw > 392) out = [...document.querySelectorAll('body *')].filter(past);   // some browsers count overflow inside scroll boxes
         // keep the outermost offenders (their children are usually offenders too)
         const top = out.filter(e => !out.includes(e.parentElement));
         const desc = e => { let d = e.tagName.toLowerCase(); if (e.id) d += '#' + e.id; if (typeof e.className === 'string' && e.className.trim()) d += '.' + e.className.trim().split(/\s+/).slice(0, 2).join('.'); const k = e.closest('.katex') || e.querySelector('.katex'); const t = (k || e).textContent.replace(/\s+/g, ' ').trim().slice(0, 60); return `${d} (right edge ${Math.round(e.getBoundingClientRect().right)}px${k ? ', inside maths' : ''}) "${t}"`; };
