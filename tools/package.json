@@ -1,0 +1,7 @@
+{
+  "name": "maths-atlas-tools",
+  "private": true,
+  "description": "Checks and screenshots for the Maths Atlas site",
+  "scripts": { "check": "node check.js" },
+  "devDependencies": { "playwright": "^1.48.0" }
+}

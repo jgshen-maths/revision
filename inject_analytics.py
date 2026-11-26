@@ -17,7 +17,8 @@ SNIPPET = (
 root = Path(__file__).resolve().parent
 updated = 0
 for f in sorted(root.rglob("*.html")):
-    if any(p.startswith(".") for p in f.relative_to(root).parts):
+    parts = f.relative_to(root).parts
+    if any(p.startswith(".") or p in ("node_modules", "tools", "tasks", "reports") for p in parts):
         continue
     text = f.read_text(encoding="utf-8")
     if TOKEN in text:
