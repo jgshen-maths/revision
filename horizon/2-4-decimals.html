@@ -1,0 +1,1838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style id="tw">/*! tailwindcss v4.3.3 | MIT License | https://tailwindcss.com */
+@layer properties;
+@layer theme, base, components, utilities;
+@layer theme {
+  :root, :host {
+    --font-sans: "Avenir Next","Segoe UI",system-ui,sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
+    monospace;
+    --color-red-700: oklch(50.5% 0.213 27.518);
+    --color-amber-50: oklch(98.7% 0.022 95.277);
+    --color-amber-400: oklch(82.8% 0.189 84.429);
+    --color-amber-700: oklch(55.5% 0.163 48.998);
+    --color-amber-800: oklch(47.3% 0.137 46.201);
+    --color-emerald-700: oklch(50.8% 0.118 165.612);
+    --color-teal-50: #f1f3fb;
+    --color-teal-200: #c9d0ef;
+    --color-teal-600: #3b4fa8;
+    --color-teal-700: #33449a;
+    --color-slate-100: oklch(96.8% 0.007 247.896);
+    --color-slate-300: oklch(86.9% 0.022 252.894);
+    --color-slate-400: oklch(70.4% 0.04 256.788);
+    --color-slate-500: oklch(55.4% 0.046 257.417);
+    --color-slate-600: oklch(44.6% 0.043 257.281);
+    --color-slate-700: oklch(37.2% 0.044 257.287);
+    --color-slate-800: oklch(27.9% 0.041 260.031);
+    --spacing: 0.25rem;
+    --text-xs: 0.75rem;
+    --text-xs--line-height: calc(1 / 0.75);
+    --text-sm: 0.875rem;
+    --text-sm--line-height: calc(1.25 / 0.875);
+    --text-lg: 1.125rem;
+    --text-lg--line-height: calc(1.75 / 1.125);
+    --text-xl: 1.25rem;
+    --text-xl--line-height: calc(1.75 / 1.25);
+    --text-2xl: 1.5rem;
+    --text-2xl--line-height: calc(2 / 1.5);
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --leading-relaxed: 1.625;
+    --radius-lg: 0.5rem;
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --default-font-family: var(--font-sans);
+    --default-mono-font-family: var(--font-mono);
+  }
+}
+@layer base {
+  *, ::after, ::before, ::backdrop, ::file-selector-button {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0 solid;
+  }
+  html, :host {
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    tab-size: 4;
+    font-family: var(--default-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji');
+    font-feature-settings: var(--default-font-feature-settings, normal);
+    font-variation-settings: var(--default-font-variation-settings, normal);
+    -webkit-tap-highlight-color: transparent;
+  }
+  hr {
+    height: 0;
+    color: inherit;
+    border-top-width: 1px;
+  }
+  abbr:where([title]) {
+    -webkit-text-decoration: underline dotted;
+    text-decoration: underline dotted;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+  a {
+    color: inherit;
+    -webkit-text-decoration: inherit;
+    text-decoration: inherit;
+  }
+  b, strong {
+    font-weight: bolder;
+  }
+  code, kbd, samp, pre {
+    font-family: var(--default-mono-font-family, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace);
+    font-feature-settings: var(--default-mono-font-feature-settings, normal);
+    font-variation-settings: var(--default-mono-font-variation-settings, normal);
+    font-size: 1em;
+  }
+  small {
+    font-size: 80%;
+  }
+  sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  sub {
+    bottom: -0.25em;
+  }
+  sup {
+    top: -0.5em;
+  }
+  table {
+    text-indent: 0;
+    border-color: inherit;
+    border-collapse: collapse;
+  }
+  :-moz-focusring:where(:not(iframe)) {
+    outline: auto;
+  }
+  progress {
+    vertical-align: baseline;
+  }
+  summary {
+    display: list-item;
+  }
+  ol, ul, menu {
+    list-style: none;
+  }
+  img, svg, video, canvas, audio, iframe, embed, object {
+    display: block;
+    vertical-align: middle;
+  }
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+  button, input, select, optgroup, textarea, ::file-selector-button {
+    font: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    border-radius: 0;
+    background-color: transparent;
+    opacity: 1;
+  }
+  :where(select:is([multiple], [size])) optgroup {
+    font-weight: bolder;
+  }
+  :where(select:is([multiple], [size])) optgroup option {
+    padding-inline-start: 20px;
+  }
+  ::file-selector-button {
+    margin-inline-end: 4px;
+  }
+  ::placeholder {
+    opacity: 1;
+  }
+  @supports (not (-webkit-appearance: -apple-pay-button))  or (contain-intrinsic-size: 1px) {
+    ::placeholder {
+      color: currentcolor;
+      @supports (color: color-mix(in lab, red, red)) {
+        color: color-mix(in oklab, currentcolor 50%, transparent);
+      }
+    }
+  }
+  textarea {
+    resize: vertical;
+  }
+  ::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+  ::-webkit-date-and-time-value {
+    min-height: 1lh;
+    text-align: inherit;
+  }
+  ::-webkit-datetime-edit {
+    display: inline-flex;
+  }
+  ::-webkit-datetime-edit-fields-wrapper {
+    padding: 0;
+  }
+  ::-webkit-datetime-edit, ::-webkit-datetime-edit-year-field, ::-webkit-datetime-edit-month-field, ::-webkit-datetime-edit-day-field, ::-webkit-datetime-edit-hour-field, ::-webkit-datetime-edit-minute-field, ::-webkit-datetime-edit-second-field, ::-webkit-datetime-edit-millisecond-field, ::-webkit-datetime-edit-meridiem-field {
+    padding-block: 0;
+  }
+  ::-webkit-calendar-picker-indicator {
+    line-height: 1;
+  }
+  :-moz-ui-invalid {
+    box-shadow: none;
+  }
+  button, input:where([type='button'], [type='reset'], [type='submit']), ::file-selector-button {
+    appearance: button;
+  }
+  ::-webkit-inner-spin-button, ::-webkit-outer-spin-button {
+    height: auto;
+  }
+  [hidden]:where(:not([hidden='until-found'])) {
+    display: none !important;
+  }
+}
+@layer utilities {
+  .mt-1 {
+    margin-top: var(--spacing);
+  }
+  .mt-2 {
+    margin-top: calc(var(--spacing) * 2);
+  }
+  .mt-3 {
+    margin-top: calc(var(--spacing) * 3);
+  }
+  .mt-4 {
+    margin-top: calc(var(--spacing) * 4);
+  }
+  .mt-5 {
+    margin-top: calc(var(--spacing) * 5);
+  }
+  .mt-6 {
+    margin-top: calc(var(--spacing) * 6);
+  }
+  .mt-8 {
+    margin-top: calc(var(--spacing) * 8);
+  }
+  .mb-1 {
+    margin-bottom: var(--spacing);
+  }
+  .mb-2 {
+    margin-bottom: calc(var(--spacing) * 2);
+  }
+  .mb-3 {
+    margin-bottom: calc(var(--spacing) * 3);
+  }
+  .mb-4 {
+    margin-bottom: calc(var(--spacing) * 4);
+  }
+  .mb-5 {
+    margin-bottom: calc(var(--spacing) * 5);
+  }
+  .block {
+    display: block;
+  }
+  .flex {
+    display: flex;
+  }
+  .grid {
+    display: grid;
+  }
+  .hidden {
+    display: none;
+  }
+  .inline-block {
+    display: inline-block;
+  }
+  .table {
+    display: table;
+  }
+  .min-w-0 {
+    min-width: 0px;
+  }
+  .flex-1 {
+    flex: 1;
+  }
+  .border-collapse {
+    border-collapse: collapse;
+  }
+  .cursor-pointer {
+    cursor: pointer;
+  }
+  .list-decimal {
+    list-style-type: decimal;
+  }
+  .list-disc {
+    list-style-type: disc;
+  }
+  .grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+  .items-center {
+    align-items: center;
+  }
+  .items-start {
+    align-items: flex-start;
+  }
+  .gap-2 {
+    gap: calc(var(--spacing) * 2);
+  }
+  .gap-3 {
+    gap: calc(var(--spacing) * 3);
+  }
+  .gap-4 {
+    gap: calc(var(--spacing) * 4);
+  }
+  :where(.space-y-1 > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(var(--spacing) * var(--tw-space-y-reverse));
+    margin-block-end: calc(var(--spacing) * calc(1 - var(--tw-space-y-reverse)));
+  }
+  .gap-x-6 {
+    column-gap: calc(var(--spacing) * 6);
+  }
+  .gap-y-1 {
+    row-gap: var(--spacing);
+  }
+  .overflow-x-auto {
+    overflow-x: auto;
+  }
+  .rounded {
+    border-radius: 0.25rem;
+  }
+  .rounded-lg {
+    border-radius: var(--radius-lg);
+  }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
+  .border-b-4 {
+    border-bottom-style: var(--tw-border-style);
+    border-bottom-width: 4px;
+  }
+  .border-l-4 {
+    border-left-style: var(--tw-border-style);
+    border-left-width: 4px;
+  }
+  .border-amber-400 {
+    border-color: var(--color-amber-400);
+  }
+  .border-teal-200 {
+    border-color: var(--color-teal-200);
+  }
+  .border-teal-600 {
+    border-color: var(--color-teal-600);
+  }
+  .bg-amber-50 {
+    background-color: var(--color-amber-50);
+  }
+  .bg-slate-100 {
+    background-color: var(--color-slate-100);
+  }
+  .bg-teal-50 {
+    background-color: var(--color-teal-50);
+  }
+  .p-3 {
+    padding: calc(var(--spacing) * 3);
+  }
+  .px-2 {
+    padding-inline: calc(var(--spacing) * 2);
+  }
+  .px-3 {
+    padding-inline: calc(var(--spacing) * 3);
+  }
+  .py-1 {
+    padding-block: var(--spacing);
+  }
+  .pl-5 {
+    padding-left: calc(var(--spacing) * 5);
+  }
+  .pl-6 {
+    padding-left: calc(var(--spacing) * 6);
+  }
+  .text-center {
+    text-align: center;
+  }
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+  .text-2xl {
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
+  }
+  .text-lg {
+    font-size: var(--text-lg);
+    line-height: var(--tw-leading, var(--text-lg--line-height));
+  }
+  .text-sm {
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
+  }
+  .text-xl {
+    font-size: var(--text-xl);
+    line-height: var(--tw-leading, var(--text-xl--line-height));
+  }
+  .text-xs {
+    font-size: var(--text-xs);
+    line-height: var(--tw-leading, var(--text-xs--line-height));
+  }
+  .leading-relaxed {
+    --tw-leading: var(--leading-relaxed);
+    line-height: var(--leading-relaxed);
+  }
+  .font-bold {
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+  }
+  .font-semibold {
+    --tw-font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
+  }
+  .text-amber-700 {
+    color: var(--color-amber-700);
+  }
+  .text-amber-800 {
+    color: var(--color-amber-800);
+  }
+  .text-emerald-700 {
+    color: var(--color-emerald-700);
+  }
+  .text-red-700 {
+    color: var(--color-red-700);
+  }
+  .text-slate-300 {
+    color: var(--color-slate-300);
+  }
+  .text-slate-400 {
+    color: var(--color-slate-400);
+  }
+  .text-slate-500 {
+    color: var(--color-slate-500);
+  }
+  .text-slate-600 {
+    color: var(--color-slate-600);
+  }
+  .text-slate-700 {
+    color: var(--color-slate-700);
+  }
+  .text-slate-800 {
+    color: var(--color-slate-800);
+  }
+  .text-teal-700 {
+    color: var(--color-teal-700);
+  }
+  .overline {
+    text-decoration-line: overline;
+  }
+  .underline {
+    text-decoration-line: underline;
+  }
+  .ease-out {
+    --tw-ease: var(--ease-out);
+    transition-timing-function: var(--ease-out);
+  }
+  @media (width >= 48rem) {
+    .md\:grid-cols-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .md\:grid-cols-5 {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+  }
+}
+@property --tw-space-y-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-leading {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ease {
+  syntax: "*";
+  inherits: false;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-space-y-reverse: 0;
+      --tw-border-style: solid;
+      --tw-leading: initial;
+      --tw-font-weight: initial;
+      --tw-ease: initial;
+    }
+  }
+}
+</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Horizon · Section 2.4 · Decimals</title>
+
+
+<style>
+  body { font-family: 'Inter', system-ui, sans-serif; background-color: #f7f6fb; color: #0f172a; overflow-x: hidden; }
+  .tab-content { display: none; animation: fadeIn 0.4s ease-out; }
+  .tab-content.active { display: block; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+  input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; background: transparent; }
+  input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; height: 20px; width: 20px; border-radius: 50%; background: #3b4fa8; cursor: pointer; margin-top: -8px; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+  input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 6px; cursor: pointer; background: #cbd5e1; border-radius: 3px; }
+  .btn { background:#3b4fa8; color:#fff; font-weight:700; padding:.45rem 1rem; border-radius:.4rem; font-size:.875rem; transition:.15s; box-shadow:0 1px 2px rgba(0,0,0,.15); }
+  .btn:hover { background:#33449a; } .btn:disabled { background:#94a3b8; cursor:not-allowed; }
+  .btn-ghost { background:#fff; color:#33449a; border:2px solid #c9d0ef; font-weight:700; padding:.3rem .75rem; border-radius:.4rem; font-size:.8rem; transition:.15s; }
+  .btn-ghost:hover { background:#eef0fa; border-color:#3b4fa8; } .btn-ghost.on { background:#3b4fa8; color:#fff; border-color:#3b4fa8; }
+  .card { background:#fff; border:1px solid #e2e8f0; border-radius:.75rem; padding:1.25rem; }
+  .key { background:#eef0fa; border-left:5px solid #3b4fa8; border-radius:.5rem; padding:1rem 1.25rem; }
+  .warn { background:#fffbeb; border-left:5px solid #f59e0b; border-radius:.5rem; padding:1rem 1.25rem; }
+  .step-badge { display:inline-flex; align-items:center; justify-content:center; width:1.75rem; height:1.75rem; border-radius:9999px; background:#3b4fa8; color:#fff; font-weight:800; font-size:.85rem; flex-shrink:0; }
+  .ex-card { background:#fff; border:1px solid #cbd5e1; border-radius:.75rem; padding:1.1rem 1.25rem; margin-bottom:1rem; }
+  .ex-card.ok { border-color:#34d399; background:#f0fdf4; } .ex-card.bad { border-color:#fca5a5; background:#fef2f2; }
+  .qnum { width:2rem; height:2rem; border-radius:.5rem; background:#1c2230; color:#fff; font-weight:800; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .inp { border:2px solid #cbd5e1; border-radius:.4rem; padding:.45rem .7rem; font-family: ui-monospace, monospace; font-weight:700; width:100%; max-width:22rem; }
+  .inp:focus { outline:none; border-color:#3b4fa8; box-shadow:0 0 0 3px #c9d0ef; }
+  .opt { display:block; width:100%; text-align:left; border:2px solid #cbd5e1; background:#fff; border-radius:.5rem; padding:.5rem .8rem; margin-bottom:.4rem; font-size:.9rem; transition:.15s; }
+  .opt:hover { border-color:#3b4fa8; background:#eef0fa; } .opt.sel { border-color:#3b4fa8; background:#dde2f6; font-weight:700; }
+  .opt.right { border-color:#10b981; background:#d1fae5; } .opt.wrong { border-color:#ef4444; background:#fee2e2; }
+  .chip { display:inline-flex; align-items:center; justify-content:center; min-width:2.6rem; height:2.4rem; padding:0 .5rem; border:2px solid #cbd5e1; border-radius:.5rem; background:#fff; font-weight:700; cursor:pointer; transition:.15s; user-select:none; }
+  .chip:hover { border-color:#3b4fa8; background:#eef0fa; transform:translateY(-2px); }
+  .chip.selA { background:#c9d0ef; border-color:#3b4fa8; color:#1c2230; } .chip.selB { background:#fde68a; border-color:#d97706; color:#78350f; }
+  .chip.pos { background:#ecfeff; border-color:#22d3ee; color:#155e75; } .chip.neg { background:#fff1f2; border-color:#fb7185; color:#9f1239; }
+  .chip.pick { outline:4px solid #f59e0b; }
+  .chip.static { cursor:default; } .chip.static:hover { transform:none; }
+  .sol-box { background:#f0fdf4; border:1px solid #bbf7d0; border-radius:.6rem; padding:1rem 1.2rem; } .sol-box.fail { background:#eef0fa; border-color:#c9d0ef; }
+  .lvl { background:#1c2230; color:#fff; border-radius:.6rem; padding:.6rem 1rem; font-weight:800; margin:1.5rem 0 .8rem; }
+  .tab-done::after { content:" ✓"; color:#10b981; }
+  .ok-t { color:#047857; font-weight:700; } .bad-t { color:#b91c1c; font-weight:700; }
+  table.tb { border-collapse:collapse; font-size:.85rem; } table.tb th, table.tb td { border:1px solid #cbd5e1; padding:.35rem .6rem; text-align:center; }
+  table.tb th { background:#eef0fa; }
+  .tech { background:#fff; border:1px solid #c9d0ef; border-left:6px solid #3b4fa8; border-radius:.6rem; padding:1rem 1.2rem; margin-bottom:1rem; }
+  .tech .tt { font-weight:800; color:#33449a; margin-bottom:.35rem; }
+  .eg { background:#f8fafc; border:1px dashed #94a3b8; border-radius:.5rem; padding:.6rem .9rem; margin-top:.5rem; font-size:.9rem; }
+  .turn { display:inline-block; background:#fef3c7; color:#92400e; font-weight:800; font-size:.72rem; padding:.1rem .5rem; border-radius:9999px; margin-bottom:.4rem; }
+  .chip.sm { min-width:2.1rem; height:2rem; font-size:.8rem; padding:0 .3rem; }
+  .chip.prime { background:#c9d0ef; border-color:#3b4fa8; color:#1c2230; }
+  .chip.struck { background:#f7f6fb; color:#94a3b8; text-decoration:line-through; border-color:#e2e8f0; }
+  .chip.one { background:#fee2e2; border-color:#f87171; color:#991b1b; }
+  .chip.oddd { background:#fef3c7; border-color:#f59e0b; color:#78350f; }
+  .dot { width:1.15rem; height:1.15rem; border-radius:9999px; background:#5b6cc0; display:inline-block; }
+  .dot.b { background:#f59e0b; }
+  sup { font-size:.7em; }
+
+  /* ---- V2 additions ---- */
+  .qtext p { margin:.4rem 0; } .qtext p:first-child { margin-top:0; } .qtext p:last-child { margin-bottom:0; }
+  .qtext ul { list-style:disc; padding-left:1.4rem; margin:.4rem 0; } .qtext li { margin:.15rem 0; }
+  .qlabel { display:inline-block; background:#dde2f6; color:#1c2230; font-weight:800; font-size:.78rem; letter-spacing:.02em; padding:.1rem .65rem; border-radius:9999px; }
+  .hint { background:#fffbeb; border-left:4px solid #f59e0b; padding:.4rem .75rem; border-radius:.35rem; font-size:.88rem; color:#78350f; }
+  .codetab { margin:.2rem 0 .5rem; } .codetab td, .codetab th { min-width:2.1rem; padding:.2rem .35rem; }
+  .codetab th { background:#dde2f6; }
+  mjx-container[display="true"] { overflow-x:auto; overflow-y:hidden; max-width:100%; }
+  .fprev { margin-top:.55rem; border:2px dashed #a7b2e2; background:#eef0fa; border-radius:.5rem; padding:.4rem .8rem; min-height:3rem; max-width:34rem; }
+  .fprev .lab { font-size:.68rem; font-weight:800; color:#33449a; text-transform:uppercase; letter-spacing:.05em; display:block; }
+  .fprev .msg { font-size:.85rem; color:#475569; }
+  kbd.k { background:#f7f6fb; border:1px solid #94a3b8; border-bottom-width:3px; border-radius:.3rem; padding:0 .4rem; font-family:ui-monospace,monospace; font-weight:700; font-size:.85em; }
+  .proof { background:#fff; border:2px solid #33449a; border-radius:.75rem; padding:1.1rem 1.3rem; margin-bottom:1.2rem; }
+  .proof .ph { font-weight:800; color:#33449a; font-size:1.05rem; margin-bottom:.4rem; }
+  .proof .ps { margin:.7rem 0; padding-left:.9rem; border-left:4px solid #c9d0ef; font-size:.92rem; color:#1e293b; }
+  .proof .ps b.n { color:#33449a; }
+  .rp-tile { background:#f8fafc; border:1px solid #cbd5e1; border-radius:.6rem; padding:.7rem .9rem; text-align:center; }
+  .rp-tile .v { font-size:1.6rem; font-weight:800; color:#1c2230; } .rp-tile .l { font-size:.72rem; color:#475569; font-weight:700; }
+  .badge { display:inline-block; font-size:.72rem; font-weight:800; padding:.1rem .55rem; border-radius:9999px; white-space:nowrap; }
+  .b-sec { background:#d1fae5; color:#065f46; } .b-dev { background:#fef3c7; color:#92400e; } .b-need { background:#fee2e2; color:#991b1b; }
+  .b-flu { background:#d1fae5; color:#065f46; } .b-per { background:#cffafe; color:#155e75; } .b-gue { background:#fef3c7; color:#92400e; } .b-rus { background:#fee2e2; color:#991b1b; } .b-str { background:#ede9fe; color:#5b21b6; }
+  .rp-bar { display:flex; height:1.6rem; border-radius:.4rem; overflow:hidden; border:1px solid #cbd5e1; }
+  .rp-bar div { display:flex; align-items:center; justify-content:center; font-size:.72rem; font-weight:800; color:#fff; }
+  .meter { height:.6rem; background:#e2e8f0; border-radius:9999px; overflow:hidden; min-width:6rem; } .meter > div { height:100%; background:#3b4fa8; }
+  table.rp { border-collapse:collapse; width:100%; font-size:.84rem; } table.rp th, table.rp td { border-bottom:1px solid #e2e8f0; padding:.45rem .5rem; text-align:left; vertical-align:top; }
+  table.rp th { background:#eef0fa; font-size:.75rem; text-transform:uppercase; letter-spacing:.03em; color:#33449a; }
+  .heat td.h { text-align:center; font-weight:800; border-radius:.3rem; }
+  .toast { position:fixed; right:1rem; bottom:1rem; background:#1c2230; color:#fff; padding:.8rem 1.1rem; border-radius:.6rem; box-shadow:0 6px 18px rgba(0,0,0,.3); z-index:50; max-width:20rem; font-size:.9rem; }
+  @media print { body { background:#fff; } .toast, .tab-link, .no-print { display:none !important; } }
+
+  /* ---- 2.3 additions ---- */
+  .chip.struck-lite { opacity:.55; }
+  select.inp { background:#fff; }
+  /* ---- V2 additions: examples, proof drawers, scenes, scoring, map ---- */
+  .seeit { background:#eef2ff; border:2px solid #a5b4fc; border-radius:.6rem; padding:.7rem 1rem; margin:.7rem 0; }
+  .seeit .sh { font-weight:800; color:#3730a3; font-size:.95rem; margin-bottom:.35rem; }
+  .seg { margin:.55rem 0; padding:.1rem 0 .1rem .8rem; border-left:4px solid #6366f1; font-size:.9rem; color:#1e293b; }
+  .seg .et { font-weight:800; color:#312e81; margin-bottom:.15rem; } .seg p { margin:.25rem 0; }
+  details.pf { border:1px dashed #a7b2e2; border-radius:.5rem; background:#f8fafc; padding:.45rem .8rem; margin:.6rem 0 .2rem; }
+  details.pf > summary { cursor:pointer; font-weight:800; color:#33449a; font-size:.92rem; }
+  details.pf[open] > summary { margin-bottom:.4rem; }
+  .scene { border:2px solid #cbd5e1; border-radius:.75rem; padding:.9rem 1.15rem; margin-bottom:1rem; background:#fff; font-size:.92rem; color:#1e293b; }
+  .scene.bad { border-color:#fca5a5; background:#fef2f2; } .scene.good { border-color:#6ee7b7; background:#ecfdf5; }
+  .scene .sh { font-weight:800; color:#33449a; font-size:.78rem; text-transform:uppercase; letter-spacing:.05em; margin-bottom:.4rem; }
+  .scene.bad .sh { color:#b91c1c; } .scene .ask { margin-top:.7rem; background:#fffbeb; border-left:4px solid #f59e0b; padding:.45rem .75rem; border-radius:.35rem; }
+  .machine { font-family:ui-monospace,Menlo,Consolas,monospace; font-size:.8rem; background:#0f172a; color:#a7f3d0; border-radius:.45rem; padding:.45rem .75rem; margin:.5rem 0; overflow-x:auto; }
+  .mono { font-family:ui-monospace,Menlo,Consolas,monospace; font-weight:700; background:#e2e8f0; padding:0 .3rem; border-radius:.25rem; }
+  .pts { display:inline-block; min-width:2.6rem; text-align:center; font-weight:800; font-size:.75rem; padding:.1rem .45rem; border-radius:9999px; color:#fff; }
+  .pts.p3 { background:#059669; } .pts.p2 { background:#0891b2; } .pts.p1 { background:#d97706; } .pts.p0 { background:#dc2626; }
+  .kmswatch { padding:.05rem .6rem; border-radius:9999px; border:1px solid #94a3b8; font-weight:700; }
+
+  /* ---- 3.4 additions ---- */
+  .qlabel { display:inline-block; background:#4f46e5; color:#fff; font-weight:800; font-size:.7rem; letter-spacing:.04em; text-transform:uppercase; border-radius:.35rem; padding:.1rem .5rem; margin-bottom:.35rem; }
+  .mono { font-family:ui-monospace,Menlo,Consolas,monospace; background:#f7f6fb; border-radius:.25rem; padding:0 .25rem; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script>
+/* MathJax-compatible shim: the lesson code calls MathJax.typesetPromise; we render with KaTeX */
+window.MathJax={typesetPromise:function(els){try{(els&&els.length?els:[document.body]).forEach(function(e){if(e&&window.renderMathInElement)renderMathInElement(e,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false}],throwOnError:false,ignoredClasses:['nomath']})})}catch(err){}return Promise.resolve()}};
+</script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%20role%3D%22img%22%20aria-label%3D%22%E7%94%B3%20Shen%20Studio%22%3E%3Crect%20width%3D%22100%22%20height%3D%22100%22%20rx%3D%2212%22%20fill%3D%22%23B3261E%22/%3E%3Cpath%20d%3D%22M41.57%2027.7V42.46H27.58V27.7ZM15.1%2025.34V70.78H16.95C22.18%2070.78%2027.58%2067.91%2027.58%2066.65V62.18H41.57V90H44.01C48.82%2090%2054.3%2086.88%2054.3%2085.62V62.18H68.97V68.93H71.07C75.37%2068.93%2081.53%2066.65%2081.61%2065.89V29.64C83.38%2029.3%2084.39%2028.55%2084.9%2027.87L73.69%2019.19L68.12%2025.34H54.3V13.96C56.74%2013.62%2057.33%2012.7%2057.5%2011.52L41.57%2010V25.34H28.42L15.1%2020.2ZM54.3%2027.7H68.97V42.46H54.3ZM41.57%2059.82H27.58V44.82H41.57ZM54.3%2059.82V44.82H68.97V59.82Z%22%20fill%3D%22%23FFFFFF%22/%3E%3C/svg%3E">
+<style id="shen-brand">
+.shen-footer{display:flex;align-items:center;justify-content:center;gap:8px;padding:18px 12px 26px;font:500 13px/1.3 Inter,"Helvetica Neue",Arial,sans-serif;color:#6B6458;letter-spacing:.03em;text-align:center}
+.shen-footer svg{width:20px;height:20px;flex-shrink:0}
+.shen-footer b{font-weight:600;color:#1A1A1A}
+.shen-print-mark{display:none}
+@media print{.shen-footer{display:none!important}
+.shen-print-mark{display:flex!important;position:fixed;right:0;bottom:0;align-items:center;gap:1.5mm;font:500 7.5pt/1 Inter,Arial,sans-serif;color:#555;opacity:.75;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.shen-print-mark svg{width:4mm;height:4mm}}
+</style>
+<style id="home-link">
+.homebtn{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 12px;border:1px solid var(--line,#ddd);border-radius:999px;background:#fff;color:var(--ink,#1c2230);text-decoration:none;font:600 .88rem/1 Inter,system-ui,sans-serif;white-space:nowrap;flex-shrink:0}
+.homebtn:hover{background:#f1eff6}
+.homebtn svg{width:16px;height:16px}
+@media print{.homebtn{display:none!important}}
+</style>
+<style id="hz">/* ===== Horizon lessons on the Maths Atlas theme ===== */
+:root{--ink:#1c2230;--muted:#5b6475;--paper:#f7f6fb;--line:#e2e0ea;--a:#3b4fa8;--a-soft:#e8ebf8;--b:#b5487a;--hz:#d4693a;--hz-soft:#fdf0e8}
+html,body{margin:0;padding:0}
+body{background:var(--paper)!important;color:var(--ink);font:17px/1.62 "Avenir Next","Segoe UI",system-ui,-apple-system,sans-serif!important;overflow-x:hidden}
+h1,h2,h3,h4{font-family:Georgia,"Times New Roman",serif}
+h2{color:var(--ink)}
+header.top{position:sticky;top:0;z-index:30;background:rgba(247,246,251,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.topin{max-width:980px;margin:0 auto;padding:.55rem 1rem .35rem;display:flex;align-items:center;gap:.8rem;flex-wrap:wrap}
+.brand{font-family:Georgia,serif;font-weight:600;font-size:1.02rem;flex:1;min-width:180px;line-height:1.3}
+.brand .hzk{display:inline-block;font:700 .66rem/1 "Avenir Next",system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#fff;background:linear-gradient(90deg,#2b2350,var(--hz));border-radius:999px;padding:.28rem .6rem;margin-right:.4rem;vertical-align:2px}
+.brand small{display:block;font-weight:400;color:var(--muted);font-size:.84rem}
+.prog{font-size:.82rem;color:var(--muted);text-align:right;white-space:nowrap}
+nav.tabs{max-width:980px;margin:0 auto;display:flex;gap:.35rem;overflow-x:auto;padding:.1rem 1rem .6rem;scrollbar-width:thin}
+nav.tabs .tab-link{flex:0 0 auto;border:1px solid var(--line)!important;background:#fff!important;color:var(--ink)!important;border-radius:999px!important;padding:.32rem .8rem!important;font:400 .9rem/1.4 "Avenir Next",system-ui,sans-serif!important;cursor:pointer;white-space:nowrap}
+nav.tabs .tab-link.border-teal-600{background:var(--ink)!important;color:#fff!important;border-color:var(--ink)!important}
+nav.tabs .tab-link.tab-done::after{color:#2f8a4c}
+nav.tabs .tab-link.border-teal-600.tab-done::after{color:#9be3b0}
+main.hzmain{max-width:980px;margin:0 auto;padding:1.4rem 1rem 3rem}
+main.hzmain h2{font-size:1.65rem!important}
+main.hzmain .card{border-color:var(--line)}
+.katex{font-size:1.06em}
+.katex-display{overflow-x:auto;overflow-y:hidden;padding:2px 0}
+input,select,button,textarea{font-family:inherit}
+@media print{header.top{position:static}}
+
+.hzr h3{font-size:1.15rem;margin:1.4rem 0 .4rem;font-weight:600}
+.hzr .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:.8rem 1rem;margin:.5rem 0}
+.hzr-t{overflow-x:auto}.hzr-t table{width:100%;border-collapse:collapse}
+.hzr-t td{padding:.3rem .35rem;vertical-align:middle;font-size:.95rem}
+.hzr-t td:last-child{white-space:nowrap;font-size:.82rem}
+.hzr-ul{list-style:disc;padding-left:1.2rem;margin:.2rem 0}.hzr-ul li{margin:.25rem 0}
+@media(max-width:480px){.hzr-t td:nth-child(2){min-width:70px}.hzr-t td:nth-child(2) div{min-width:60px!important}}
+.codetab,table.tb,table.rp{display:block;overflow-x:auto;max-width:100%}
+</style>
+</head>
+<body>
+<header class="top"><div class="topin"><a class="homebtn" href="../index.html#horizon" aria-label="Back to the Maths Atlas home page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>Home</a><div class="brand"><span class="hzk">Horizon</span>Chapter 2 · Rational Numbers<small>Section 2.4 · Decimals: the other face of the rationals</small></div><div class="prog"><span id="prog-count">0</span> / <span id="prog-total">0</span> done</div></div><nav class="tabs" id="tabs"><button type="button" class="tab-link text-teal-700 border-b-4 border-teal-600 font-bold" data-tab="t1" onclick="openTab(event,'t1')">1. Place Value</button><button type="button" class="tab-link" data-tab="t2" onclick="openTab(event,'t2')">2. Fractions to Decimals</button><button type="button" class="tab-link" data-tab="t3" onclick="openTab(event,'t3')">3. Recurring Decimals</button><button type="button" class="tab-link" data-tab="t4" onclick="openTab(event,'t4')">4. Cycles &amp; Remainders</button><button type="button" class="tab-link" data-tab="t5" onclick="openTab(event,'t5')">5. Smart Thinking</button><button type="button" class="tab-link" data-tab="t6" onclick="openTab(event,'t6')">6. Homework</button><button type="button" class="tab-link" data-tab="t7" onclick="openTab(event,'t7')"><span id="t7-label">7. Learning Report</span></button></nav></header>
+<main class="hzmain">
+
+  <div id="t1" class="tab-content">
+    <h2 class="text-2xl font-bold text-slate-800 mb-1">Step 1: Place Value and the Powers of Ten</h2>
+    <p class="text-slate-600 mb-5">A decimal is a fraction written in a special costume: its denominator is always a power of ten. In this tab you will see why the decimal point works, how to turn decimals into fractions, and why the rules for adding, multiplying and dividing decimals are exactly the fraction rules from 2.3.</p>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">1</span><h3 class="text-lg font-bold text-slate-800">Real life first: the 100 m sprint</h3></div>
+    <div class="scene">
+      <div class="sh">Scene 1: a hundredth of a second</div>
+      <p>Two sprinters finish a $100$ m race. Mia's time is $11.43$ s and Leo's is $11.4$ s. Who won? Many people think $11.43$ is &ldquo;bigger&rdquo; because it has more digits, but the digits do not decide. Write both with the same number of places: $11.43$ and $11.40$. Now compare: $11.40<11.43$, so <strong>Leo</strong> was faster, by $\dfrac3{100}$ of a second.</p>
+      <p class="mt-2">What does the digit $3$ mean in $11.43$? It is in the second place after the point, so it counts <em>hundredths</em>: $3\times\dfrac1{100}$. Every place to the right of the decimal point is a power of ten in the denominator: $\dfrac1{10}$, $\dfrac1{100}$, $\dfrac1{1000}$, and so on. From 2.1 these are the negative powers $10^{-1},10^{-2},10^{-3},\ldots$.</p>
+      <div class="ask">A decimal is a sum of digits times powers of ten. Theorem 1 says that this makes every terminating decimal a fraction, with a denominator that is a power of ten.</div>
+    </div>
+
+    <div class="proof">
+      <div class="ph">Theorem 1: a terminating decimal is a fraction over a power of ten</div>
+      <p class="text-sm">If a decimal has $k$ digits after the point, then it equals $\dfrac N{10^k}$, where $N$ is the integer formed by all its digits with the point removed. Conversely, every fraction $\dfrac N{10^k}$ has a decimal with at most $k$ digits after the point. Multiplying a decimal by $10^k$ moves the point $k$ places to the right; dividing moves it $k$ places to the left.</p>
+      <div class="seeit"><div class="sh">What this theorem says, with examples</div>
+        <div class="seg"><p class="et">Example 1: sprint times</p><p>$11.43=\dfrac{1143}{100}$ and $11.4=\dfrac{114}{10}=\dfrac{1140}{100}$. The common denominator shows $1140<1143$.</p></div>
+        <div class="seg"><p class="et">Example 2: decimal to simplest fraction</p><p>$0.375=\dfrac{375}{1000}$. The HCF of $375$ and $1000$ is $125$, so $0.375=\dfrac38$.</p></div>
+        <div class="seg"><p class="et">Example 3: a fraction over a power of ten</p><p>$\dfrac{7}{1000}=0.007$: seven thousandths, so the $7$ sits in the third place.</p></div>
+        <div class="seg"><p class="et">Example 4: moving the point</p><p>$0.00472\times10^4=47.2$ and $360\div10^3=0.36$.</p></div>
+      </div>
+      <details class="pf"><summary>Show the proof (optional reading for the curious)</summary>
+      <div class="ps"><b class="n">Place value.</b> A decimal such as $d_1d_2\ldots d_k$ after the point means $\dfrac{d_1}{10}+\dfrac{d_2}{100}+\cdots+\dfrac{d_k}{10^k}$.</div>
+      <div class="ps"><b class="n">Common denominator.</b> Over the common denominator $10^k$ this is $\dfrac{d_1\times10^{k-1}+d_2\times10^{k-2}+\cdots+d_k}{10^k}$. The top is exactly the integer $N$ written with digits $d_1d_2\ldots d_k$ (any whole-number part joins the front).</div>
+      <div class="ps"><b class="n">Shifting.</b> Multiplying $\dfrac N{10^k}$ by $10^j$ gives $\dfrac N{10^{k-j}}$, which has $j$ fewer places: the point has moved $j$ places right. Dividing is the reverse. $\blacksquare$</div>
+      </details>
+    </div>
+
+    <p class="text-sm font-bold text-slate-700 mb-2">Try it: the Place Value Machine</p>
+    <div class="card mb-5">
+      <div class="flex items-center gap-2 flex-wrap mb-2">
+        <label class="text-sm font-bold" for="pl-x">Decimal:</label>
+        <input type="text" id="pl-x" class="inp" style="max-width:10rem" value="11.43" oninput="plUpdate()" aria-label="a decimal number">
+      </div>
+      <div class="flex gap-2 flex-wrap mb-2"><button class="btn-ghost" onclick="plSet('11.43')">11.43</button><button class="btn-ghost" onclick="plSet('0.375')">0.375</button><button class="btn-ghost" onclick="plSet('2.0625')">2.0625</button><button class="btn-ghost" onclick="plSet('0.00472')">0.00472</button></div>
+      <div id="pl-table" class="overflow-x-auto"></div>
+      <div id="pl-out" class="text-sm space-y-1 mt-2"></div>
+    </div>
+
+    <div class="tech">
+      <div class="tt">Technique 1: read, write and compare decimals</div>
+      <ol class="list-decimal pl-6 text-sm text-slate-700 space-y-1">
+        <li>Say the place of each digit: tenths, hundredths, thousandths, &hellip;</li>
+        <li>To <strong>compare</strong>, pad with zeros so both have the same number of places, then compare as whole numbers. (Zeros at the end of a decimal do not change its value: $0.4=0.40=0.400$.)</li>
+        <li>To <strong>convert to a fraction</strong>, write the digits over $10^k$ and simplify with the HCF.</li>
+      </ol>
+      <div class="eg"><p><strong>Example 1:</strong> Order $0.409,\ 0.41,\ 0.4009,\ 0.4091$. Pad to four places: $0.4090,\ 0.4100,\ 0.4009,\ 0.4091$. Increasing: $0.4009<0.4090<0.4091<0.4100$.</p>
+        <p class="mt-1"><strong>Example 2:</strong> $2.64=\dfrac{264}{100}=\dfrac{66}{25}$ (divide top and bottom by $4$). As a mixed number it is $2\dfrac{16}{25}$.</p>
+        <p class="mt-1"><strong>Example 3:</strong> $0.0125=\dfrac{125}{10000}=\dfrac1{80}$ (the HCF is $125$).</p></div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3 mt-6"><span class="step-badge">2</span><h3 class="text-lg font-bold text-slate-800">Decimal arithmetic is fraction arithmetic</h3></div>
+    <div class="key mb-4 text-sm text-slate-800">
+      <p>You already know how to add, multiply and divide fractions (2.3). A decimal is a fraction with denominator $10^k$, so the usual decimal rules are the fraction rules in disguise. Here are the three rules and why each one is true.</p>
+    </div>
+    <div class="proof">
+      <div class="ph">Theorem 2: the rules for decimal arithmetic</div>
+      <p class="text-sm"><strong>(i) Add or subtract:</strong> line up the decimal points. <strong>(ii) Multiply:</strong> multiply the numbers as integers; the answer has as many decimal places as the two factors <em>together</em>. <strong>(iii) Divide:</strong> multiply the dividend and the divisor by the same power of ten so the divisor is a whole number; the quotient does not change.</p>
+      <div class="seeit"><div class="sh">What this theorem says, with examples</div>
+        <div class="seg"><p class="et">Example 1: adding</p><p>$3.45+12.8-0.275$: write $3.450+12.800-0.275=16.025$.</p></div>
+        <div class="seg"><p class="et">Example 2: multiplying</p><p>$0.36\times0.25$: $36\times25=900$. There are $2+2=4$ decimal places, so the answer is $0.0900=0.09$.</p></div>
+        <div class="seg"><p class="et">Example 3: using a known product</p><p>Given $237\times46=10902$, then $2.37\times0.46=1.0902$ (two places plus two places make four places).</p></div>
+        <div class="seg"><p class="et">Example 4: dividing</p><p>$7.56\div0.12$: multiply both by $100$ to get $756\div12=63$.</p></div>
+      </div>
+      <details class="pf"><summary>Show the proof (optional reading for the curious)</summary>
+      <div class="ps"><b class="n">Adding.</b> $\dfrac a{10^k}+\dfrac b{10^k}=\dfrac{a+b}{10^k}$ (same denominator, Theorem 1 of 2.3). Lining up the points is the same as giving all the numbers the same $10^k$.</div>
+      <div class="ps"><b class="n">Multiplying.</b> $\dfrac a{10^j}\times\dfrac b{10^k}=\dfrac{ab}{10^{j+k}}$ (Theorem 3 of 2.3 and the index law $10^j\times10^k=10^{j+k}$). So the integer $ab$ has $j+k$ places.</div>
+      <div class="ps"><b class="n">Dividing.</b> $x\div y=\dfrac{x\times10^m}{y\times10^m}$ for any $m$, because multiplying top and bottom by the same non-zero number does not change a fraction (Theorem 1 of 2.2). Choose $m$ so that $y\times10^m$ is a whole number. $\blacksquare$</div>
+      </details>
+    </div>
+    <div class="tech">
+      <div class="tt">Technique 2: decimal word problems</div>
+      <p class="text-sm text-slate-700">Write down the operation, then do the calculation by the rule above, and finally check that the answer has a sensible size by rounding each number to one significant figure.</p>
+      <div class="eg"><p><strong>Example 1:</strong> Three notebooks cost $\$2.35$ each and two pens cost $\$1.80$ each. The change from $\$20$: $3\times2.35=7.05$ and $2\times1.80=3.60$, total $10.65$, so the change is $20-10.65=\$9.35$.</p>
+        <p class="mt-1"><strong>Example 2:</strong> A $1.8$ m ribbon is cut into pieces of $0.12$ m. $1.8\div0.12=180\div12=15$ pieces.</p></div>
+    </div>
+
+    <h3 class="text-xl font-bold text-slate-800 mb-3 mt-8 bg-slate-100 p-3 rounded-lg inline-block">Check your understanding</h3>
+    <div id="ex-t1"></div>
+  </div>
+
+  <div id="t2" class="tab-content">
+    <h2 class="text-2xl font-bold text-slate-800 mb-1">Step 2: From Fractions to Decimals: Stop or Repeat?</h2>
+    <p class="text-slate-600 mb-5">Some fractions turn into tidy decimals such as $\dfrac14=0.25$. Others never stop: $\dfrac13=0.3333\ldots$ and $\dfrac17=0.142857142857\ldots$ What decides which? The answer uses two ideas from Chapter 1: <strong>remainders</strong> (1.3) and <strong>prime factors</strong> (1.2).</p>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">1</span><h3 class="text-lg font-bold text-slate-800">Real life first: sharing one dollar</h3></div>
+    <div class="scene">
+      <div class="sh">Scene 1: three, four and seven friends</div>
+      <p>You share $\$1$ fairly. With $4$ friends each gets $\$0.25$: the sharing finishes exactly. With $3$ friends each gets $\$0.33$ and a cent is left over. You cannot split that cent three ways, but you can split <em>tenths of it</em>: that gives another $3$ in the next place, and a left-over again, and so on forever. With $7$ friends the left-overs go round in a loop: $0.14\;28\;57\;14\;28\;57\ldots$</p>
+      <p class="mt-2">This is exactly <strong>long division</strong>. At each step we have a <em>remainder</em>. Multiply it by $10$, divide by the denominator, write the quotient digit, and keep the new remainder. If the remainder ever becomes $0$ the decimal <strong>stops</strong>. If a remainder ever <strong>repeats</strong>, then everything after it repeats too, because the next digit depends only on the current remainder.</p>
+    </div>
+
+    <p class="text-sm font-bold text-slate-700 mb-2">Try it: the Long Division Stepper</p>
+    <div class="card mb-5">
+      <div class="flex items-center gap-2 flex-wrap mb-2">
+        <input type="number" id="ld-a" class="inp" style="max-width:5.5rem" value="1" min="0" oninput="ldRun()" aria-label="numerator"><span class="font-bold">/</span><input type="number" id="ld-b" class="inp" style="max-width:5.5rem" value="7" min="1" max="200" oninput="ldRun()" aria-label="denominator">
+      </div>
+      <div class="flex gap-2 flex-wrap mb-2"><button class="btn-ghost" onclick="ldSet(1,4)">1/4</button><button class="btn-ghost" onclick="ldSet(1,3)">1/3</button><button class="btn-ghost" onclick="ldSet(1,7)">1/7</button><button class="btn-ghost" onclick="ldSet(5,12)">5/12</button><button class="btn-ghost" onclick="ldSet(3,16)">3/16</button><button class="btn-ghost" onclick="ldSet(1,13)">1/13</button></div>
+      <div id="ld-out" class="text-sm space-y-1"></div>
+    </div>
+
+    <div class="proof">
+      <div class="ph">Theorem 3: every rational number has a decimal that stops or repeats</div>
+      <p class="text-sm">For integers $a$ and $b>0$, the decimal expansion of $\dfrac ab$ either <strong>terminates</strong> or <strong>eventually repeats</strong> a block of digits. The repeating block has at most $b-1$ digits.</p>
+      <div class="seeit"><div class="sh">What this theorem says, with examples</div>
+        <div class="seg"><p class="et">Example 1: stops</p><p>$\dfrac78=0.875$. The remainders are $6,\ 4,\ 0$, and $0$ ends it.</p></div>
+        <div class="seg"><p class="et">Example 2: repeats at once</p><p>$\dfrac13=0.\overline3$. The only remainder is $1$, every time.</p></div>
+        <div class="seg"><p class="et">Example 3: repeats after a loop</p><p>$\dfrac17=0.\overline{142857}$. The remainders are $3,2,6,4,5,1,3,2,\ldots$: all six non-zero remainders appear before $1$ comes back.</p></div>
+        <div class="seg"><p class="et">Example 4: a late start</p><p>$\dfrac5{12}=0.41\overline6$. The remainders are $2,\ 8,\ 8,\ 8,\ldots$: once the remainder $8$ appears, it never changes, so the repeat starts at the third place.</p></div>
+      </div>
+      <details class="pf"><summary>Show the proof (optional reading for the curious)</summary>
+      <div class="ps"><b class="n">Remainders are few.</b> Each remainder is one of $0,1,2,\ldots,b-1$, so there are only $b$ possible values.</div>
+      <div class="ps"><b class="n">Zero or a repeat.</b> If a remainder is $0$, the division ends. Otherwise, after at most $b$ steps two remainders must be equal (the pigeonhole principle: more steps than possible remainders).</div>
+      <div class="ps"><b class="n">Everything after repeats.</b> The next digit and the next remainder are determined by the current remainder alone. So from the first repeated remainder onwards, the digits repeat in a loop. The loop uses only non-zero remainders, so it has at most $b-1$ digits. $\blacksquare$</div>
+      </details>
+    </div>
+    <div class="tech">
+      <div class="tt">Technique 3: convert a fraction to a decimal by long division</div>
+      <ol class="list-decimal pl-6 text-sm text-slate-700 space-y-1">
+        <li>Write the whole part, then keep the remainder.</li>
+        <li>Multiply the remainder by $10$, divide by $b$: write the quotient digit and keep the new remainder.</li>
+        <li>Stop at remainder $0$, or when a remainder repeats. Put a bar over the repeating block.</li>
+      </ol>
+      <div class="eg"><p><strong>Example:</strong> $\dfrac3{16}$. $30\div16=1$ r $14$; $140\div16=8$ r $12$; $120\div16=7$ r $8$; $80\div16=5$ r $0$. So $\dfrac3{16}=0.1875$.</p></div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3 mt-6"><span class="step-badge">2</span><h3 class="text-lg font-bold text-slate-800">Which denominators stop? Prime factors decide</h3></div>
+    <div class="scene">
+      <div class="sh">Scene 2: the pattern in a table</div>
+      <p>Try $\dfrac12,\dfrac14,\dfrac15,\dfrac18,\dfrac1{10},\dfrac1{16},\dfrac1{20},\dfrac1{25}$: all stop. Then $\dfrac13,\dfrac16,\dfrac17,\dfrac19,\dfrac1{11},\dfrac1{12},\dfrac1{14},\dfrac1{15}$: none stops. The stopping denominators are $2,4,5,8,10,16,20,25$, which are made only of the primes $2$ and $5$. The failing denominators all contain another prime: $3$, $7$, or $11$.</p>
+      <div class="ask">This is not a coincidence. A decimal that stops is a fraction over $10^k=2^k\times5^k$. So only the primes $2$ and $5$ can be hiding in the denominator. Theorem 4 makes this exact, and also counts the decimal places.</div>
+    </div>
+    <div class="proof">
+      <div class="ph">Theorem 4: when does a fraction terminate?</div>
+      <p class="text-sm">Let $\dfrac ab$ be in simplest form with $b>0$. Then $\dfrac ab$ is a terminating decimal <strong>if and only if</strong> $b=2^m\times5^n$ for some $m,n\ge0$. In that case the number of decimal places is exactly $\max(m,n)$.</p>
+      <div class="seeit"><div class="sh">What this theorem says, with examples</div>
+        <div class="seg"><p class="et">Example 1: count the places</p><p>$\dfrac7{8}$: $8=2^3$, so $\max(3,0)=3$ places: $0.875$. And $\dfrac{13}{40}$: $40=2^3\times5$, so $3$ places: $0.325$.</p></div>
+        <div class="seg"><p class="et">Example 2: the bigger exponent wins</p><p>$\dfrac3{64}$: $64=2^6$, so $6$ places: $0.046875$. And $\dfrac7{2^3\times5^5}$ has $\max(3,5)=5$ places.</p></div>
+        <div class="seg"><p class="et">Example 3: simplify first</p><p>$\dfrac{21}{70}$ contains the prime $7$ in $70=2\times5\times7$, but $\dfrac{21}{70}=\dfrac3{10}$ in simplest form, so it <strong>does</strong> terminate: $0.3$.</p></div>
+        <div class="seg"><p class="et">Example 4: a failure</p><p>$\dfrac5{12}$: $12=2^2\times3$ has the prime $3$, so it does not terminate.</p></div>
+      </div>
+      <details class="pf"><summary>Show the proof (optional reading for the curious)</summary>
+      <div class="ps"><b class="n">If $b=2^m5^n$, it terminates.</b> Let $k=\max(m,n)$. Multiply top and bottom by $2^{k-m}5^{k-n}$: the bottom becomes $2^k5^k=10^k$. By Theorem 1, $\dfrac ab=\dfrac N{10^k}$ has at most $k$ places.</div>
+      <div class="ps"><b class="n">If it terminates, $b=2^m5^n$.</b> Suppose $\dfrac ab=\dfrac N{10^k}$. Then $a\times10^k=b\times N$, so $b$ divides $a\times10^k$. Since $\dfrac ab$ is in simplest form, $a$ and $b$ share no prime, so $b$ divides $10^k=2^k5^k$. By the Fundamental Theorem of Arithmetic (1.2), the only primes that can divide $b$ are $2$ and $5$.</div>
+      <div class="ps"><b class="n">Exactly $\max(m,n)$ places.</b> The fraction has at most $j$ places precisely when $b$ divides $10^j$, that is $j\ge m$ and $j\ge n$. The least such $j$ is $\max(m,n)$. $\blacksquare$</div>
+      </details>
+    </div>
+    <div class="tech">
+      <div class="tt">Technique 4: decide at once whether a fraction terminates</div>
+      <ol class="list-decimal pl-6 text-sm text-slate-700 space-y-1">
+        <li><strong>Simplify</strong> the fraction first.</li>
+        <li><strong>Factorise the denominator.</strong> Only $2$s and $5$s means it terminates; the places are the larger of the two exponents.</li>
+        <li>Anything else means it repeats (and Tab 3 and Tab 4 show how to find the repeating block).</li>
+      </ol>
+      <div class="eg"><p><strong>Example 1:</strong> Which of $\dfrac7{12},\dfrac5{14},\dfrac9{40},\dfrac4{15}$ terminates? $12=2^2\times3$ (no), $14=2\times7$ (no), $40=2^3\times5$ (<strong>yes</strong>), $15=3\times5$ (no). Only $\dfrac9{40}=0.225$.</p>
+        <p class="mt-1"><strong>Example 2:</strong> How many of $\dfrac1n$ for $n=1,\ldots,20$ terminate? The $n$ made only of $2$s and $5$s are $1,2,4,5,8,10,16,20$: $\mathbf8$ of them.</p></div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3 mt-6"><span class="step-badge">3</span><h3 class="text-lg font-bold text-slate-800">A surprise: halves and the digits of $5^n$</h3></div>
+    <div class="scene">
+      <div class="sh">Scene 3: the powers-of-5 connection</div>
+      <p>In 2.1 you counted the digits of $2^{18}\times5^{12}$ and $5^{130}$. Decimals give a second view of the same idea. Since $\dfrac1{2^n}=\dfrac{5^n}{10^n}$, the decimal for $\dfrac1{2^n}$ is the number $5^n$ <strong>shifted $n$ places to the right</strong>, so it has exactly $n$ decimal places and always ends in $5$.</p>
+      <p class="mt-2"><strong>Example.</strong> $\dfrac1{2^6}=\dfrac1{64}=\dfrac{15625}{10^6}=0.015625$: $6$ places, and the digits are those of $5^6=15625$ with a leading zero. Similarly $\dfrac1{2^{10}}=0.0009765625$ has $10$ places; its leading zeros are the places that $5^{10}=9765625$ does not need, so $5^{10}$ has $10-3=7$ digits. <strong>And</strong> $2^{18}\times5^{12}=2^6\times10^{12}=64\times10^{12}$, a number with $14$ digits.</p>
+    </div>
+
+    <h3 class="text-xl font-bold text-slate-800 mb-3 mt-8 bg-slate-100 p-3 rounded-lg inline-block">Check your understanding</h3>
+    <div id="ex-t2"></div>
+  </div>
+
+  <div id="t3" class="tab-content">
+    <h2 class="text-2xl font-bold text-slate-800 mb-1">Step 3: Recurring Decimals Are Fractions Too</h2>
+    <p class="text-slate-600 mb-5">We now go the other way: given a recurring decimal such as $0.\overline{36}$, which fraction is it? You will meet a clever <strong>multiply and subtract</strong> trick, and settle a famous argument: is $0.999\ldots$ equal to $1$?</p>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">1</span><h3 class="text-lg font-bold text-slate-800">Real life first: a bar that never ends</h3></div>
+    <div class="scene">
+      <div class="sh">Scene 1: the stopwatch that cannot stop</div>
+      <p>A shared timer shows $0.3333\ldots$ of a minute. Is that a real, exact amount of time? Yes: it is $\dfrac13$ of a minute, which is $20$ seconds. The infinite string of $3$s is just the way a decimal tries to write the fraction $\dfrac13$.</p>
+      <p class="mt-2">Notation: a bar over the digits that repeat. $0.\overline3=0.333\ldots$, $0.\overline{36}=0.363636\ldots$ and $0.1\overline6=0.16666\ldots$ The digits under the bar are the <strong>repeating block</strong>; the digits before the bar are the <strong>non-repeating part</strong>.</p>
+      <div class="ask">The trick for turning a bar into a fraction is to <strong>shift the decimal so the repeating tails line up, then subtract so the tails vanish</strong>. Theorem 5 states the result for a pure repeating block.</div>
+    </div>
+
+    <div class="proof">
+      <div class="ph">Theorem 5: a repeating block is a fraction over $10^k-1$</div>
+      <p class="text-sm">If a block of $k$ digits forms the integer $N$, then $$0.\overline{N}=\frac N{10^k-1}=\frac N{99\ldots9}\quad(k\text{ nines}).$$ A block that follows a non-repeating part of $j$ digits is obtained by shifting: first find the fraction for the block, then divide by $10^j$ and add the non-repeating part.</p>
+      <div class="seeit"><div class="sh">What this theorem says, with examples</div>
+        <div class="seg"><p class="et">Example 1: one digit</p><p>$0.\overline7=\dfrac79$. And $0.\overline3=\dfrac39=\dfrac13$.</p></div>
+        <div class="seg"><p class="et">Example 2: two digits</p><p>$0.\overline{36}=\dfrac{36}{99}=\dfrac4{11}$ (divide by $9$).</p></div>
+        <div class="seg"><p class="et">Example 3: three digits, with leading zeros</p><p>$0.\overline{027}=\dfrac{27}{999}=\dfrac1{37}$ (divide by $27$). The leading zero is part of the block.</p></div>
+        <div class="seg"><p class="et">Example 4: a whole part</p><p>$2.\overline{45}=2+\dfrac{45}{99}=2+\dfrac5{11}=\dfrac{27}{11}$.</p></div>
+      </div>
+      <details class="pf"><summary>Show the proof (optional reading for the curious)</summary>
+      <div class="ps"><b class="n">Name it and shift.</b> Let $x=0.\overline N$. Shifting the point $k$ places gives $10^kx=N.\overline N$, which is $N+x$ (the same tail comes after the whole number $N$).</div>
+      <div class="ps"><b class="n">Subtract.</b> $10^kx-x=N$, so $(10^k-1)x=N$ and $x=\dfrac N{10^k-1}$. $\blacksquare$</div>
+      <div class="ps"><b class="n">Why subtracting is legal.</b> Both $10^kx$ and $x$ have the identical infinite tail, so term by term it cancels exactly.</div>
+      </details>
+    </div>
+
+    <p class="text-sm font-bold text-slate-700 mb-2">Try it: the Recurring Decimal Converter</p>
+    <div class="card mb-5">
+      <div class="flex items-center gap-2 flex-wrap mb-2">
+        <label class="text-sm font-bold" for="rc-ip">Whole part</label><input type="number" id="rc-ip" class="inp" style="max-width:5rem" value="0" min="0" oninput="rcRun()">
+        <label class="text-sm font-bold" for="rc-nr">Non-repeating digits</label><input type="text" id="rc-nr" class="inp" style="max-width:6rem" value="1" oninput="rcRun()">
+        <label class="text-sm font-bold" for="rc-rp">Repeating digits</label><input type="text" id="rc-rp" class="inp" style="max-width:6rem" value="6" oninput="rcRun()">
+      </div>
+      <div class="flex gap-2 flex-wrap mb-2"><button class="btn-ghost" onclick="rcSet(0,'','3')">0.(3)</button><button class="btn-ghost" onclick="rcSet(0,'','36')">0.(36)</button><button class="btn-ghost" onclick="rcSet(0,'1','6')">0.1(6)</button><button class="btn-ghost" onclick="rcSet(0,'58','3')">0.58(3)</button><button class="btn-ghost" onclick="rcSet(0,'','9')">0.(9)</button></div>
+      <p class="text-xs text-slate-500 mb-2">In the buttons, brackets mark the repeating block: $0.1(6)$ means $0.1\overline6$.</p>
+      <div id="rc-out" class="text-sm space-y-1"></div>
+    </div>
+
+    <div class="tech">
+      <div class="tt">Technique 5: recurring decimal to fraction (the multiply and subtract method)</div>
+      <ol class="list-decimal pl-6 text-sm text-slate-700 space-y-1">
+        <li>Call the number $x$.</li>
+        <li>Multiply by $10^j$ to put the non-repeating digits to the left of the point ($j$ = number of non-repeating digits).</li>
+        <li>Multiply by $10^{j+k}$ to move one full block more ($k$ = length of the block). The two tails now match.</li>
+        <li>Subtract the two equations, and solve for $x$. Simplify.</li>
+      </ol>
+      <div class="eg"><p><strong>Example 1:</strong> $x=0.1\overline6$. $10x=1.\overline6$ and $100x=16.\overline6$. Subtract: $90x=15$, so $x=\dfrac{15}{90}=\dfrac16$.</p>
+        <p class="mt-1"><strong>Example 2:</strong> $x=0.2\overline3$. $10x=2.\overline3$, $100x=23.\overline3$. Subtract: $90x=21$, so $x=\dfrac{21}{90}=\dfrac7{30}$.</p>
+        <p class="mt-1"><strong>Example 3:</strong> $x=0.58\overline3$. $100x=58.\overline3$, $1000x=583.\overline3$. Subtract: $900x=525$, so $x=\dfrac{525}{900}=\dfrac7{12}$.</p>
+        <p class="mt-1"><strong>Example 4 (arithmetic with recurring decimals):</strong> $0.\overline{12}+0.\overline{21}=\dfrac{12}{99}+\dfrac{21}{99}=\dfrac{33}{99}=\dfrac13$. Convert to fractions first; the arithmetic of 2.3 then does the work.</p></div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3 mt-6"><span class="step-badge">2</span><h3 class="text-lg font-bold text-slate-800">The famous question: is $0.999\ldots=1$?</h3></div>
+    <div class="scene">
+      <div class="sh">Scene 2: the argument in the classroom</div>
+      <p>Many students are sure that $0.999\ldots$ is &ldquo;just below&rdquo; $1$, getting closer and closer but never arriving. Others say it equals $1$. Who is right? Theorem 5 settles it: $0.\overline9=\dfrac99=1$.</p>
+    </div>
+    <div class="proof">
+      <div class="ph">Theorem 6: $0.\overline9=1$</div>
+      <p class="text-sm">The recurring decimal $0.999\ldots$ is another name for the number $1$. Likewise every terminating decimal has a second form ending in $9$s: $0.5=0.4\overline9$ and $2.37=2.36\overline9$.</p>
+      <div class="seeit"><div class="sh">What this theorem says, with examples</div>
+        <div class="seg"><p class="et">Example 1: from thirds</p><p>$\dfrac13=0.\overline3$, so $3\times\dfrac13=3\times0.\overline3=0.\overline9$. But $3\times\dfrac13=1$.</p></div>
+        <div class="seg"><p class="et">Example 2: a second name for $0.5$</p><p>$0.4\overline9=0.4+\dfrac1{10}\times0.\overline9=0.4+0.1=0.5$.</p></div>
+        <div class="seg"><p class="et">Example 3: no room between</p><p>In 2.2 we proved there is always a fraction between two different numbers. Try to find a number strictly between $0.\overline9$ and $1$: there is none (the digits $9,9,9,\ldots$ never let the number fall below $1$ by any amount). So they are not two different numbers.</p></div>
+      </div>
+      <details class="pf"><summary>Show the proof (optional reading for the curious)</summary>
+      <div class="ps"><b class="n">Multiply and subtract.</b> Let $x=0.\overline9$. Then $10x=9.\overline9$. Subtract: $10x-x=9$, so $9x=9$ and $x=1$.</div>
+      <div class="ps"><b class="n">The gap argument.</b> Suppose $x=0.\overline9<1$. Then $1-x>0$, but $1-x$ is smaller than $\dfrac1{10^n}$ for every $n$ (the first $n$ digits of $x$ are $9$s), and the only non-negative number smaller than every $\dfrac1{10^n}$ is $0$. So $1-x=0$. $\blacksquare$</div>
+      </details>
+    </div>
+    <div class="tech">
+      <div class="tt">Technique 6: order numbers written in mixed forms</div>
+      <p class="text-sm text-slate-700">When fractions, decimals and recurring decimals are mixed, write each as a decimal to enough places, or each as a fraction, and compare.</p>
+      <div class="eg"><p><strong>Example:</strong> Order $a=0.7$, $b=0.72$, $c=0.\overline7$, $d=0.7\overline2$. To five places: $0.70000,\ 0.72000,\ 0.77777,\ 0.72222$. So $a<b<d<c$.</p></div>
+    </div>
+
+    <h3 class="text-xl font-bold text-slate-800 mb-3 mt-8 bg-slate-100 p-3 rounded-lg inline-block">Check your understanding</h3>
+    <div id="ex-t3"></div>
+  </div>
+
+  <div id="t4" class="tab-content">
+    <h2 class="text-2xl font-bold text-slate-800 mb-1">Step 4: The Cycle of $\tfrac17$ and the Clock of Remainders</h2>
+    <p class="text-slate-600 mb-5">Why does $\dfrac17$ repeat after exactly six digits, $\dfrac1{11}$ after two, and $\dfrac1{13}$ after six? The answer is the modular arithmetic of 1.3: the repeating block is a <strong>clock of remainders</strong>, and its length is how long $10^k$ takes to return to $1$ on a clock with $b$ hours.</p>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">1</span><h3 class="text-lg font-bold text-slate-800">Real life first: the week and the wheel</h3></div>
+    <div class="scene">
+      <div class="sh">Scene 1: seven days, six digits</div>
+      <p>A week has $7$ days. If today is Monday, which day is it in $10$ days? In $100$ days? In $1000$ days? On the clock of $7$ the powers of ten land at $10\equiv3$, $100\equiv2$, $1000\equiv6$, $10^4\equiv4$, $10^5\equiv5$, $10^6\equiv1$ (mod $7$). Six steps and you are back at $1$, then everything repeats.</p>
+      <p class="mt-2">These are exactly the remainders you saw in the Long Division Stepper for $\dfrac17$: $3,2,6,4,5,1$. The digit written at each step is the quotient: $1,4,2,8,5,7$. After six steps the remainder is $1$ again, so the block $142857$ starts over.</p>
+      <div class="ask">The number of digits in the repeating block of $\dfrac1b$ is the number of steps $10^k$ needs to come back to $1$ on the clock of $b$. Theorem 7 turns this into a rule.</div>
+    </div>
+
+    <div class="proof">
+      <div class="ph">Theorem 7: the period of $\dfrac ab$</div>
+      <p class="text-sm">Let $\dfrac ab$ be in simplest form, and write $b=2^m5^n\,c$ with $c$ coprime to $10$. If $c=1$ the decimal terminates. Otherwise the decimal has exactly $s=\max(m,n)$ digits <strong>before</strong> the repeating block starts, and the repeating block has length $k$, where $k$ is the <strong>smallest positive integer with $10^k\equiv1\pmod c$</strong>, that is, with $c\mid10^k-1$.</p>
+      <div class="seeit"><div class="sh">What this theorem says, with examples</div>
+        <div class="seg"><p class="et">Example 1: $\dfrac17$</p><p>$c=7$. Powers of ten mod $7$: $3,2,6,4,5,1$. The first return to $1$ is at $k=6$. So the block has $6$ digits.</p></div>
+        <div class="seg"><p class="et">Example 2: small periods</p><p>$\dfrac13$: $10\equiv1$, so $k=1$. $\dfrac1{11}$: $10\equiv-1$ and $100\equiv1$, so $k=2$. $\dfrac1{37}$: $999=27\times37$, so $k=3$. $\dfrac1{101}$: $9999=99\times101$, so $k=4$.</p></div>
+        <div class="seg"><p class="et">Example 3: a mixed denominator</p><p>$\dfrac1{12}$: $12=2^2\times3$, so $s=2$ and $c=3$ with $k=1$. $\dfrac1{12}=0.08\overline3$: two digits, then $3$ repeating. And $\dfrac1{21}$: $c=21$, powers of $10$ mod $21$ are $10,16,13,4,19,1$, so $k=6$: $\dfrac1{21}=0.\overline{047619}$.</p></div>
+        <div class="seg"><p class="et">Example 4: the pre-period is made by the $2$s and $5$s</p><p>$\dfrac1{6}=0.1\overline6$ has $s=1$, and $\dfrac7{30}=0.2\overline3$ has $s=1$ ($30=2\times3\times5$).</p></div>
+      </div>
+      <details class="pf"><summary>Show the proof (optional reading for the curious)</summary>
+      <div class="ps"><b class="n">A pure repeat when $\gcd(b,10)=1$.</b> Start the long division of $\dfrac ab$ with remainder $a$. After $k$ digits the remainder is $a\times10^k\bmod b$. The digits repeat from the start exactly when this remainder equals $a$ again, that is $a(10^k-1)\equiv0\pmod b$, which (as $\gcd(a,b)=1$) means $b\mid10^k-1$. Such a $k$ exists: the powers $10,10^2,\ldots$ cannot all be different mod $b$, and $10^i\equiv10^j$ with $\gcd(10,b)=1$ lets us cancel to get $10^{j-i}\equiv1$.</div>
+      <div class="ps"><b class="n">Removing the $2$s and $5$s.</b> Let $s=\max(m,n)$. Then $10^s\times\dfrac ab=\dfrac Ac$ where $A$ is an integer coprime to $c$ (we multiplied by $2^s5^s$, which cancels $2^m5^n$ and leaves only $2$s and $5$s on top). Write $\dfrac Ac=w+\dfrac rc$, with $0<r<c$, $\gcd(r,c)=1$. The decimal of $\dfrac rc$ is purely repeating with the period $k$ above, and dividing by $10^s$ moves it $s$ places right.</div>
+      <div class="ps"><b class="n">Why the pre-period is exactly $s$.</b> A purely repeating decimal equals $\dfrac N{10^k-1}$ (Theorem 5), whose denominator in simplest form is coprime to $10$. If $\dfrac ab$ started to repeat earlier than $s$ places, shifting by one fewer place, $10^{s-1}\dfrac ab$ would be a purely repeating number plus an integer with a denominator still divisible by $2$ or $5$. That is impossible. $\blacksquare$</div>
+      </details>
+    </div>
+
+    <p class="text-sm font-bold text-slate-700 mb-2">Try it: the Period Finder</p>
+    <div class="card mb-5">
+      <div class="flex items-center gap-2 flex-wrap mb-2">
+        <label class="text-sm font-bold" for="pd-b">Denominator $b=$</label><input type="number" id="pd-b" class="inp" style="max-width:6rem" value="7" min="2" max="1000" oninput="pdRun()">
+      </div>
+      <div class="flex gap-2 flex-wrap mb-2"><button class="btn-ghost" onclick="pdSet(7)">7</button><button class="btn-ghost" onclick="pdSet(13)">13</button><button class="btn-ghost" onclick="pdSet(37)">37</button><button class="btn-ghost" onclick="pdSet(21)">21</button><button class="btn-ghost" onclick="pdSet(12)">12</button><button class="btn-ghost" onclick="pdSet(17)">17</button></div>
+      <div id="pd-out" class="text-sm space-y-1"></div>
+    </div>
+
+    <div class="tech">
+      <div class="tt">Technique 7: find the period using powers of ten</div>
+      <ol class="list-decimal pl-6 text-sm text-slate-700 space-y-1">
+        <li>Simplify the fraction, and remove the $2$s and $5$s from the denominator to leave $c$.</li>
+        <li>Compute $10,\ 10^2,\ 10^3,\ \ldots$ modulo $c$ (each time multiply the last remainder by $10$ and reduce).</li>
+        <li>The first time you reach $1$ is the period $k$.</li>
+      </ol>
+      <div class="eg"><p><strong>Example:</strong> $\dfrac1{13}$. $10$, then $100\equiv9$, $90\equiv12$, $120\equiv3$, $30\equiv4$, $40\equiv1$. That is $k=6$: $\dfrac1{13}=0.\overline{076923}$.</p></div>
+    </div>
+    <div class="tech">
+      <div class="tt">Technique 8: find a far-away digit, or a sum of digits</div>
+      <ol class="list-decimal pl-6 text-sm text-slate-700 space-y-1">
+        <li>Write the non-repeating part and the block.</li>
+        <li>Subtract the pre-period length from the position, then divide by the period. The <strong>remainder</strong> says which digit of the block it is (remainder $0$ means the last digit of the block).</li>
+        <li>For sums: count full blocks, then add the leftover digits.</li>
+      </ol>
+      <div class="eg"><p><strong>Example 1:</strong> The $2026$th digit of $\dfrac17=0.\overline{142857}$. $2026=6\times337+4$, so it is the $4$th digit of the block: $\mathbf8$.</p>
+        <p class="mt-1"><strong>Example 2:</strong> The sum of the first $100$ digits of $\dfrac17$. $100=6\times16+4$. Each block sums to $1+4+2+8+5+7=27$, so $16\times27=432$, plus the next four digits $1+4+2+8=15$. Total $\mathbf{447}$.</p>
+        <p class="mt-1"><strong>Example 3 (with a pre-period):</strong> The $50$th digit of $\dfrac5{12}=0.41\overline6$. The first $2$ digits are $4,1$; every digit after that is $6$. So the $50$th digit is $\mathbf6$.</p></div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3 mt-6"><span class="step-badge">2</span><h3 class="text-lg font-bold text-slate-800">The cyclic number</h3></div>
+    <div class="scene">
+      <div class="sh">Scene 2: a number that rotates</div>
+      <p>The block $142857$ has a strange property. Multiply it by $2,3,4,5,6$: $142857\times2=285714$, $\times3=428571$, $\times4=571428$, $\times5=714285$, $\times6=857142$. The <strong>same six digits</strong> appear in a rotated order! And $\times7=999999$.</p>
+      <p class="mt-2">Why? The decimal of $\dfrac27$ is $2\times0.\overline{142857}=0.\overline{285714}$. The fractions $\dfrac17,\dfrac27,\ldots,\dfrac67$ use the six remainders $1,\ldots,6$ in one big loop, so each of their decimals is the loop started in a different place.</p>
+    </div>
+
+    <h3 class="text-xl font-bold text-slate-800 mb-3 mt-8 bg-slate-100 p-3 rounded-lg inline-block">Check your understanding</h3>
+    <div id="ex-t4"></div>
+  </div>
+
+  <div id="t5" class="tab-content">
+    <h2 class="text-2xl font-bold text-slate-800 mb-1">Step 5: Rounding, Bounds and Smart Thinking</h2>
+    <p class="text-slate-600 mb-5">Most decimals in real life are <em>approximations</em>. This tab teaches how to round correctly, how to say exactly how wrong a rounded value can be, and how to use decimals cleverly in competition questions. It ends with an optional Investigation Lab where you discover Theorem 3 for yourself.</p>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">1</span><h3 class="text-lg font-bold text-slate-800">Rounding and significant figures</h3></div>
+    <div class="scene">
+      <div class="sh">Scene 1: the photo finish</div>
+      <p>A stopwatch shows $11.4386$ s. The official result is only recorded to $2$ decimal places: $11.44$ s. A news report says &ldquo;about $11$ seconds&rdquo;. All three numbers describe the same race, but with different precision. Rounding is the honest way to give up some digits.</p>
+    </div>
+    <div class="proof">
+      <div class="ph">Theorem 8: rounding</div>
+      <p class="text-sm"><strong>To $n$ decimal places:</strong> look at the digit in the $(n+1)$th place. If it is $5$ or more, add $1$ to the $n$th digit (carrying if needed); otherwise leave the $n$th digit alone. Then drop everything after the $n$th place.</p>
+      <p class="text-sm mt-1"><strong>To $s$ significant figures:</strong> the first significant figure is the first non-zero digit from the left. Count $s$ digits from there and round at that place. Zeros before the first non-zero digit are never significant.</p>
+      <p class="text-sm mt-1"><strong>Truncating</strong> to $n$ places simply drops the later digits without adding $1$ ever.</p>
+      <div class="seeit"><div class="sh">What this theorem says, with examples</div>
+        <div class="seg"><p class="et">Example 1: decimal places</p><p>$3.14159$ to $2$ d.p.: the third digit is $1$, so $\mathbf{3.14}$. To $4$ d.p.: the fifth digit is $9$, so round up: $\mathbf{3.1416}$.</p></div>
+        <div class="seg"><p class="et">Example 2: carrying</p><p>$2.9996$ to $2$ d.p.: the third digit is $9$, so add $1$ to $2.99$ and get $\mathbf{3.00}$. Keep the zeros: they show the precision.</p></div>
+        <div class="seg"><p class="et">Example 3: significant figures</p><p>$0.004083$ to $2$ s.f.: the first significant figure is $4$, the second is $0$, the next digit is $8$ so round up: $\mathbf{0.0041}$. And $5\,382$ to $2$ s.f. is $\mathbf{5400}$ (the zeros are place-holders).</p></div>
+        <div class="seg"><p class="et">Example 4: truncating is different</p><p>$7.3968$ truncated to $2$ d.p. is $7.39$, but rounded to $2$ d.p. is $7.40$.</p></div>
+      </div>
+    </div>
+
+    <p class="text-sm font-bold text-slate-700 mb-2">Try it: the Rounding Machine</p>
+    <div class="card mb-5">
+      <div class="flex items-center gap-2 flex-wrap mb-2">
+        <label class="text-sm font-bold" for="rd-x">Number</label><input type="text" id="rd-x" class="inp" style="max-width:10rem" value="0.004083" oninput="rdUpdate()">
+        <label class="text-sm font-bold" for="rd-n">to</label><input type="number" id="rd-n" class="inp" style="max-width:5rem" value="2" min="0" max="8" oninput="rdUpdate()">
+        <select id="rd-mode" class="inp" style="max-width:11rem" onchange="rdUpdate()"><option value="dp">decimal places</option><option value="sf" selected>significant figures</option></select>
+      </div>
+      <div class="flex gap-2 flex-wrap mb-2"><button class="btn-ghost" onclick="rdSet('3.14159',3,'dp')">3.14159, 3 d.p.</button><button class="btn-ghost" onclick="rdSet('2.9996',2,'dp')">2.9996, 2 d.p.</button><button class="btn-ghost" onclick="rdSet('0.004083',2,'sf')">0.004083, 2 s.f.</button><button class="btn-ghost" onclick="rdSet('5382',2,'sf')">5382, 2 s.f.</button></div>
+      <div id="rd-out" class="text-sm space-y-1"></div>
+    </div>
+
+    <div class="tech">
+      <div class="tt">Technique 9: round correctly</div>
+      <ol class="list-decimal pl-6 text-sm text-slate-700 space-y-1">
+        <li>Mark the place where you must stop (underline that digit).</li>
+        <li>Look only at the <strong>next one digit</strong>. Do not round twice: $2.3452$ to $1$ d.p. is $2.3$, not $2.4$.</li>
+        <li>Write the zeros that show the precision, and state the unit of precision.</li>
+      </ol>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3 mt-6"><span class="step-badge">2</span><h3 class="text-lg font-bold text-slate-800">Bounds: how wrong can a rounded number be?</h3></div>
+    <div class="proof">
+      <div class="ph">Theorem 9: bounds of a rounded value</div>
+      <p class="text-sm">If $x$ is rounded to a place whose unit is $u$ (for example $u=0.01$ for $2$ d.p.), the true value lies in $\left[\,x-\tfrac u2,\ x+\tfrac u2\right)$. That is, the error is at most <strong>half a unit</strong>. The lower bound is included and the upper bound is not.</p>
+      <div class="seeit"><div class="sh">What this theorem says, with examples</div>
+        <div class="seg"><p class="et">Example 1</p><p>A length is $4.7$ cm, to $1$ d.p. Then $4.65\le L<4.75$.</p></div>
+        <div class="seg"><p class="et">Example 2: using bounds</p><p>A rectangle is $4.7$ cm by $3.2$ cm, both to $1$ d.p. The largest possible area is just under $4.75\times3.25=15.4375$, and the smallest is $4.65\times3.15=14.6475$.</p></div>
+      </div>
+    </div>
+    <div class="tech">
+      <div class="tt">Technique 10: make the bounds work for you</div>
+      <ol class="list-decimal pl-6 text-sm text-slate-700 space-y-1">
+        <li>Write each rounded number as an interval with half-unit error.</li>
+        <li>For a sum or product of positives, use all lower bounds for the smallest result and all upper bounds for the largest.</li>
+        <li>For a difference or a quotient, mix them: the largest $a-b$ uses the largest $a$ and the <strong>smallest</strong> $b$.</li>
+      </ol>
+      <div class="eg"><p><strong>Example:</strong> $a=8.6$ and $b=2.4$ to $1$ d.p. The largest $a-b$ is $8.65-2.35=\mathbf{6.30}$ (just under), and the smallest is $8.55-2.45=\mathbf{6.10}$.</p></div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3 mt-6"><span class="step-badge">3</span><h3 class="text-lg font-bold text-slate-800">Smart thinking with decimals</h3></div>
+    <div class="scene">
+      <div class="sh">Scene 2: three tricks that save a calculator</div>
+      <p><strong>Trick 1: multiply by a power of ten to clear the point.</strong> $0.36\times0.25=\dfrac{36\times25}{10000}=\dfrac{900}{10000}=0.09$. And $1.2\div0.04=\dfrac{120}{4}=30$.</p>
+      <p class="mt-2"><strong>Trick 2: use fractions you know.</strong> $0.125=\dfrac18$, $0.375=\dfrac38$, $0.2\overline3=\dfrac7{30}$. So $48\times0.375=48\times\dfrac38=18$.</p>
+      <p class="mt-2"><strong>Trick 3: look for sums of $1$.</strong> $0.\overline3+0.\overline6=1$ and $0.\overline{27}+0.\overline{72}=1$, because $\dfrac3{11}+\dfrac8{11}=1$.</p>
+      <div class="ask">Calculators round! If a display shows $0.3333333333$ it is not $\dfrac13$, and $0.9999999999$ is not $1$. Use the calculator for checking, and algebra for deciding.</div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3 mt-6"><span class="step-badge">4</span><h3 class="text-lg font-bold text-slate-800">Optional Investigation Lab: discover Theorem 3 yourself</h3></div>
+    <div class="scene">
+      <div class="sh">Not scored, just for curiosity</div>
+      <p>Mathematicians discover results by collecting data and looking for patterns. Choose a range below and scan the table. <strong>Questions to answer in your book:</strong> (1) Which denominators give terminating decimals? What do they have in common? (2) For the repeating ones, how does the period compare with $b-1$? When is it exactly $b-1$? (3) Can you predict the number of digits <em>before</em> the repeat from the factorisation of $b$?</p>
+    </div>
+    <div class="card mb-5">
+      <div class="flex items-center gap-2 flex-wrap mb-2">
+        <label class="text-sm font-bold" for="lab-lo">Show denominators from</label><input type="number" id="lab-lo" class="inp" style="max-width:5rem" value="2" min="2" max="150" oninput="labRun()">
+        <label class="text-sm font-bold" for="lab-hi">to</label><input type="number" id="lab-hi" class="inp" style="max-width:5rem" value="30" min="2" max="150" oninput="labRun()">
+      </div>
+      <div id="lab-out" class="text-sm overflow-x-auto"></div>
+      <details class="pf mt-3"><summary>Show what the data says</summary>
+        <div class="ps">Terminating exactly when $b=2^m5^n$ (such as $2,4,5,8,10,16,20,25$). For the others, the period is the smallest $k$ with $10^k\equiv1$ modulo the part of $b$ free of $2$ and $5$, so it is at most $c-1$. It equals $b-1$ for $b=7,17,19,23,29,\ldots$ (the &ldquo;full-reptend primes&rdquo;). The pre-period is $\max(m,n)$. Note that every row you see is a case of Theorems 3 and 7.</div>
+      </details>
+    </div>
+
+    <h3 class="text-xl font-bold text-slate-800 mb-3 mt-8 bg-slate-100 p-3 rounded-lg inline-block">Smart-thinking questions</h3>
+    <div id="ex-t5"></div>
+  </div>
+
+  <div id="t6" class="tab-content">
+    <h2 class="text-2xl font-bold text-slate-800 mb-1">Homework: Decimals</h2>
+    <p class="text-slate-600 mb-3">Three levels, from understanding to challenge, including set notation (Section 1.0) and HCF and coprime numbers (Chapter 1). Each question gives you 3 attempts, then shows the full solution. When every question in the chapter is finished, your <strong>Learning Report</strong> unlocks in Tab 7.</p>
+    <div class="card mb-3 bg-teal-50 border-teal-200"><p class="text-sm text-slate-800" id="hw-score">Homework status: 0 correct, 0 revealed, 0 remaining</p></div>
+    <div id="ex-t6"></div>
+  </div>
+
+  <div id="t7" class="tab-content">
+    <h2 class="text-2xl font-bold text-slate-800 mb-1">Your Learning Report</h2>
+    <div id="report-root"></div>
+  </div>
+
+  </main>
+<footer class="shen-footer"><svg viewBox="0 0 100 100" role="img" aria-label="申 Shen Studio"><rect width="100" height="100" rx="12" fill="#B3261E"/><path d="M41.57 27.7V42.46H27.58V27.7ZM15.1 25.34V70.78H16.95C22.18 70.78 27.58 67.91 27.58 66.65V62.18H41.57V90H44.01C48.82 90 54.3 86.88 54.3 85.62V62.18H68.97V68.93H71.07C75.37 68.93 81.53 66.65 81.61 65.89V29.64C83.38 29.3 84.39 28.55 84.9 27.87L73.69 19.19L68.12 25.34H54.3V13.96C56.74 13.62 57.33 12.7 57.5 11.52L41.57 10V25.34H28.42L15.1 20.2ZM54.3 27.7H68.97V42.46H54.3ZM41.57 59.82H27.58V44.82H41.57ZM54.3 59.82V44.82H68.97V59.82Z" fill="#FFFFFF"/></svg><span><b>Shen Studio</b> · Designed by Mr. Shen</span></footer>
+<div class="shen-print-mark" aria-hidden="true"><svg viewBox="0 0 100 100" role="img" aria-label="申 Shen Studio"><rect width="100" height="100" rx="12" fill="#B3261E"/><path d="M41.57 27.7V42.46H27.58V27.7ZM15.1 25.34V70.78H16.95C22.18 70.78 27.58 67.91 27.58 66.65V62.18H41.57V90H44.01C48.82 90 54.3 86.88 54.3 85.62V62.18H68.97V68.93H71.07C75.37 68.93 81.53 66.65 81.61 65.89V29.64C83.38 29.3 84.39 28.55 84.9 27.87L73.69 19.19L68.12 25.34H54.3V13.96C56.74 13.62 57.33 12.7 57.5 11.52L41.57 10V25.34H28.42L15.1 20.2ZM54.3 27.7H68.97V42.46H54.3ZM41.57 59.82H27.58V44.82H41.57ZM54.3 59.82V44.82H68.97V59.82Z" fill="#FFFFFF"/></svg><span>Shen Studio</span></div>
+
+
+<script>
+
+/* ============ helpers ============ */
+const R = String.raw;
+function typeset(el){ try{ if(window.MathJax && MathJax.typesetPromise){ MathJax.typesetPromise(el?[el]:undefined).catch(()=>{}); } }catch(e){} }
+function sorter(a,b){ const na=Number(a), nb=Number(b); if(!isNaN(na)&&!isNaN(nb)) return na-nb; return String(a)<String(b)?-1:String(a)>String(b)?1:0; }
+function fm(n){ return n<0 ? '−'+(-n) : ''+n; }
+function fp(n){ return n<0 ? '(−'+(-n)+')' : ''+n; }
+function range(a,b){ const r=[]; for(let i=a;i<=b;i++) r.push(i); return r; }
+function fmtSet(arr){ return arr.length? '{ '+arr.join(', ')+' }' : '∅'; }
+function cleanNum(s){ return String(s).replace(/[−–—]/g,'-'); }
+function gcd(a,b){ while(b){ [a,b]=[b,a%b]; } return a; }
+function isPrime(n){ if(n<2) return false; for(let i=2;i*i<=n;i++) if(n%i===0) return false; return true; }
+function factorize(n){ const f={}; let d=2; while(d*d<=n){ while(n%d===0){ f[d]=(f[d]||0)+1; n/=d; } d++; } if(n>1) f[n]=(f[n]||0)+1; return f; }
+function indexForm(f){ const ks=Object.keys(f).map(Number).sort((a,b)=>a-b); return ks.map(p=>f[p]>1? p+'<sup>'+f[p]+'</sup>' : ''+p).join(' × ') || '1'; }
+function divisorsOf(n){ const r=[]; for(let d=1; d<=n; d++) if(n%d===0) r.push(d); return r; }
+function clampInt(v,lo,hi){ v=parseInt(v); if(isNaN(v)) return lo; return Math.max(lo,Math.min(hi,v)); }
+
+function openTab(evt, id){
+  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab-link').forEach(b=>{ b.classList.remove('text-teal-700','border-b-4','border-teal-600','font-bold'); b.classList.add('text-slate-500','font-semibold'); });
+  document.getElementById(id).classList.add('active');
+  const btn=document.querySelector('.tab-link[data-tab="'+id+'"]'); btn.classList.remove('text-slate-500','font-semibold'); btn.classList.add('text-teal-700','border-b-4','border-teal-600','font-bold');
+  if(id==='t7') buildReport();
+  typeset(document.getElementById(id)); window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ============ modular helpers ============ */
+
+function S(steps){ return '<ol class="list-decimal pl-5 space-y-1 text-sm text-slate-700">'+steps.map(s=>'<li>'+s+'</li>').join('')+'</ol>'; }
+const EX={};
+const P=(...ps)=>ps.map(p=>`<p>${p}</p>`).join('');
+
+function parseFrac(raw){ const v=cleanNum(raw).replace(/\s/g,''); const m=v.match(/^(-?\d+)(?:\/(-?\d+))?$/); if(!m) return null; return {n:parseInt(m[1],10), d:m[2]===undefined?1:parseInt(m[2],10)}; }
+var _pf={};
+function fracPreview(id){
+  const el=document.getElementById('prev-'+id), inp=document.getElementById('inp-'+id); if(!el||!inp) return;
+  const f=parseFrac(inp.value); let h='<span class="lab">Preview</span>';
+  if(inp.value.trim()==='') h+='<span class="msg">Your fraction will appear here as you type, for example $\\dfrac{3}{4}$ is typed as 3/4.</span>';
+  else if(!f) h+='<span class="msg">This cannot be read yet. Type a whole number, or two whole numbers with / between them.</span>';
+  else if(f.d===0) h+='<span class="msg">The denominator cannot be 0.</span>';
+  else if(f.d<0) h+='<span class="block text-xs text-amber-700 font-semibold">Put the minus sign on the top.</span>';
+  else h+='<span class="text-lg">$'+(f.d===1? String(f.n) : (f.n<0?'-':'')+'\\dfrac{'+Math.abs(f.n)+'}{'+f.d+'}')+'$</span>';
+  el.innerHTML=h; clearTimeout(_pf[id]); _pf[id]=setTimeout(()=>typeset(el),120);
+}
+/* ============ 3.4 widgets ============ */
+function gcd2(a,b){ a=Math.abs(a); b=Math.abs(b); while(b){ const t=a%b; a=b; b=t; } return a; }
+function gv(id){ return Number(document.getElementById(id).value); }
+function sv(id){ return document.getElementById(id).value.trim(); }
+function setv(id,v){ document.getElementById(id).value=v; }
+function digitsOnly(s){ return /^\d*$/.test(s); }
+/* ---- Tab 1: Place Value Machine ---- */
+function plSet(x){ setv('pl-x',x); plUpdate(); }
+function plUpdate(){
+  const s=sv('pl-x'), tb=document.getElementById('pl-table'), out=document.getElementById('pl-out');
+  const m=s.match(/^(\d+)(?:\.(\d+))?$/);
+  if(!m||s.length>14){ tb.innerHTML=''; out.innerHTML='<p class="text-amber-700 font-semibold">Type a positive decimal such as 11.43 (at most 14 characters).</p>'; return; }
+  const ip=m[1], fp=m[2]||'';
+  const names=['units','tenths','hundredths','thousandths','ten-thousandths','hundred-thousandths','millionths','10^-7','10^-8','10^-9','10^-10','10^-11','10^-12','10^-13'];
+  const ipn=['units','tens','hundreds','thousands','ten-thousands','hundred-thousands','millions','10^7','10^8','10^9','10^10','10^11','10^12','10^13'];
+  let head='<tr>',row='<tr>',val='<tr>';
+  for(let i=0;i<ip.length;i++){ const p=ip.length-1-i; head+=`<th class="border px-2 py-1 text-xs bg-teal-50">${ipn[p]}</th>`; row+=`<td class="border px-2 py-1 text-center text-lg font-bold">${ip[i]}</td>`; val+=`<td class="border px-2 py-1 text-center text-xs">$${ip[i]}\\times10^{${p}}$</td>`; }
+  for(let i=0;i<fp.length;i++){ head+=`<th class="border px-2 py-1 text-xs bg-amber-50">${names[i+1]}</th>`; row+=`<td class="border px-2 py-1 text-center text-lg font-bold">${fp[i]}</td>`; val+=`<td class="border px-2 py-1 text-center text-xs">$${fp[i]}\\times10^{-${i+1}}$</td>`; }
+  tb.innerHTML=`<table class="border-collapse text-sm">${head}</tr>${row}</tr>${val}</tr></table>`;
+  const num=BigInt(ip+fp), den=10n**BigInt(fp.length);
+  let a=num,b=den; while(b){ [a,b]=[b,a%b]; }
+  const sn=num/a, sd=den/a;
+  const fr = fp.length===0 ? `$${ip}$ is a whole number` : `$${s} = \\dfrac{${num}}{${den}} = ${sd===1n? String(sn) : '\\dfrac{'+sn+'}{'+sd+'}'}$ in simplest form`;
+  out.innerHTML=`<p>${fr}.</p><p>It has $${fp.length}$ decimal place${fp.length===1?'':'s'}, so its denominator before simplifying is $10^{${fp.length}}$.</p>`;
+  typeset(tb); typeset(out);
+}
+/* ---- Tab 2: Long Division Stepper ---- */
+function ldSet(a,b){ setv('ld-a',a); setv('ld-b',b); ldRun(); }
+function longDiv(a,b,maxDigits){
+  const ip=Math.floor(a/b); let r=a%b; const digs=[], rems=[], seen={}; let start=-1;
+  while(r!==0 && digs.length<maxDigits){
+    if(seen[r]!==undefined){ start=seen[r]; break; }
+    seen[r]=digs.length; r*=10; digs.push(Math.floor(r/b)); r%=b; rems.push(r);
+  }
+  return {ip,digs,rems,start,term:(r===0)};
+}
+function ldRun(){
+  const a=gv('ld-a'), b=gv('ld-b'), out=document.getElementById('ld-out');
+  if(!Number.isInteger(a)||!Number.isInteger(b)||a<0||b<1||b>200||a>=b*100){ out.innerHTML='<p class="text-amber-700 font-semibold">Use a whole-number numerator and a denominator from 1 to 200.</p>'; return; }
+  const d=longDiv(a,b,60);
+  let rows=`<tr><th class="border px-2 py-1">Step</th><th class="border px-2 py-1">Digit</th><th class="border px-2 py-1">Remainder after</th></tr>`;
+  const shown=Math.min(d.digs.length,14);
+  for(let i=0;i<shown;i++){ const hl = d.start>=0 && i>=d.start ? ' style="background:#dde2f6"' : ''; rows+=`<tr${hl}><td class="border px-2 py-1 text-center">${i+1}</td><td class="border px-2 py-1 text-center font-bold">${d.digs[i]}</td><td class="border px-2 py-1 text-center">${d.rems[i]}</td></tr>`; }
+  let txt;
+  if(d.term){ txt=`$\\dfrac{${a}}{${b}} = ${d.ip}${d.digs.length?'.'+d.digs.join(''):''}$ <strong>terminates</strong> after ${d.digs.length} place${d.digs.length===1?'':'s'}: the remainder reached $0$.`; }
+  else if(d.start>=0){ const nr=d.digs.slice(0,d.start).join(''), rp=d.digs.slice(d.start).join(''); txt=`$\\dfrac{${a}}{${b}} = ${d.ip}.${nr}\\overline{${rp}}$. A remainder repeated, so the block of <strong>${rp.length}</strong> digit${rp.length===1?'':'s'} starts at place ${d.start+1}. (Pigeonhole: at most $${b-1}$ non-zero remainders exist.)`; }
+  else txt='The pattern is longer than 60 digits.';
+  out.innerHTML=`<p>${txt}</p><div class="overflow-x-auto"><table class="border-collapse text-sm mt-1">${rows}</table></div>${d.digs.length>shown?'<p class="text-xs text-slate-500">Only the first 14 steps are shown.</p>':''}`;
+  typeset(out);
+}
+/* ---- Tab 3: Recurring Decimal Converter ---- */
+function rcSet(ip,nr,rp){ setv('rc-ip',ip); setv('rc-nr',nr); setv('rc-rp',rp); rcRun(); }
+function rcRun(){
+  const out=document.getElementById('rc-out'), ip=sv('rc-ip'), nr=sv('rc-nr'), rp=sv('rc-rp');
+  if(!/^\d{1,6}$/.test(ip)||!digitsOnly(nr)||!/^\d+$/.test(rp)||nr.length>8||rp.length>8){ out.innerHTML='<p class="text-amber-700 font-semibold">Use digits only. The repeating part cannot be empty.</p>'; return; }
+  const k=nr.length, n=rp.length;
+  // value = ip + (nr rp - nr) / (10^k (10^n - 1))
+  const all=BigInt((nr||'0')+rp), nn=BigInt(nr||'0');
+  let num=all-nn, den=10n**BigInt(k)*(10n**BigInt(n)-1n);
+  num+=BigInt(ip)*den;
+  let a=num,b=den; while(b){ [a,b]=[b,a%b]; }
+  const sn=num/a, sd=den/a;
+  const dec=`${ip}.${nr}\\overline{${rp}}`;
+  out.innerHTML=`<p>$${dec}$</p>`+
+   `<p>Shift the point so a block sits just left of it: multiply by $10^{${k+n}}$. Shift again to put the same block just right: multiply by $10^{${k}}$. Subtract: $(10^{${k+n}}-10^{${k}})x$ is a whole number.</p>`+
+   `<p><strong>$x=\\dfrac{${num}}{${den}} = ${sd===1n? String(sn) : '\\dfrac{'+sn+'}{'+sd+'}'}$</strong></p>`;
+  typeset(out);
+}
+/* ---- Tab 4: Period Finder ---- */
+function pdSet(b){ setv('pd-b',b); pdRun(); }
+function factorTwoFive(b){ let m=0,n=0,c=b; while(c%2===0){ c/=2; m++; } while(c%5===0){ c/=5; n++; } return {m,n,c}; }
+function periodOf(c){ if(c===1) return 0; let r=10%c,k=1; while(r!==1){ r=(r*10)%c; k++; if(k>c+1) return -1; } return k; }
+function pdRun(){
+  const b=gv('pd-b'), out=document.getElementById('pd-out');
+  if(!Number.isInteger(b)||b<2||b>1000){ out.innerHTML='<p class="text-amber-700 font-semibold">Use a whole number from 2 to 1000.</p>'; return; }
+  const f=factorTwoFive(b), k=periodOf(f.c), s=Math.max(f.m,f.n);
+  let h=`<p>$${b}=2^{${f.m}}\\times5^{${f.n}}\\times${f.c}$</p>`;
+  if(f.c===1) h+=`<p>Only $2$s and $5$s: <strong>$\\dfrac1{${b}}$ terminates</strong>, with $${s}$ decimal place${s===1?'':'s'}.</p>`;
+  else {
+    const d=longDiv(1,b,k+s+4);
+    let r=10%f.c, seq=[]; for(let i=0;i<Math.min(k,12);i++){ seq.push(r); r=(r*10)%f.c; }
+    h+=`<p>Powers of ten modulo $${f.c}$: $${seq.join(',\\ ')}${k>12?',\\ \\ldots':''}$. The first return to $1$ is at $k=\\mathbf{${k}}$.</p>`;
+    h+=`<p>So $\\dfrac1{${b}}$ has <strong>${s}</strong> digit${s===1?'':'s'} before the repeat, and a block of <strong>${k}</strong> digit${k===1?'':'s'}${k===b-1?' (the longest possible: $b-1$)':''}.</p>`;
+    if(d.start>=0){ h+=`<p>Check by long division: $\\dfrac1{${b}}=0.${d.digs.slice(0,d.start).join('')}\\overline{${d.digs.slice(d.start).join('')}}$</p>`; }
+  }
+  out.innerHTML=h; typeset(out);
+}
+/* ---- Tab 5: Rounding Machine ---- */
+function roundStr(s,dp){
+  const m=s.match(/^(\d+)(?:\.(\d+))?$/); if(!m) return null;
+  const ip=m[1], fp=(m[2]||'');
+  const pad=fp.padEnd(dp+1,'0');
+  const keep=BigInt(ip+pad.slice(0,dp)); const up = pad.charCodeAt(dp)>=53;
+  const r=(up? keep+1n : keep).toString().padStart(dp+1,'0');
+  return dp===0 ? r : r.slice(0,r.length-dp)+'.'+r.slice(r.length-dp);
+}
+function truncStr(s,dp){
+  const m=s.match(/^(\d+)(?:\.(\d+))?$/); if(!m) return null;
+  const fp=(m[2]||'').padEnd(dp,'0').slice(0,dp); return dp===0? m[1] : m[1]+'.'+fp;
+}
+function rdSet(x,n,mode){ setv('rd-x',x); setv('rd-n',n); document.getElementById('rd-mode').value=mode; rdUpdate(); }
+function rdUpdate(){
+  const s=sv('rd-x'), n=gv('rd-n'), mode=document.getElementById('rd-mode').value, out=document.getElementById('rd-out');
+  if(!/^\d+(\.\d+)?$/.test(s)||s.length>16||!Number.isInteger(n)||n<0||n>8||(mode==='sf'&&n<1)){ out.innerHTML='<p class="text-amber-700 font-semibold">Type a positive decimal, and a whole-number precision (for significant figures, at least 1).</p>'; return; }
+  let dp, note='';
+  if(mode==='dp') dp=n;
+  else {
+    const [ip,fp='']=s.split('.'); const all=ip+fp; const first=all.search(/[1-9]/);
+    if(first<0){ out.innerHTML='<p>The number is zero.</p>'; return; }
+    const mag = ip.length-1-first;   // power of ten of first significant digit
+    dp = n-1-mag;
+    note=`<p>The first significant figure is the digit worth $10^{${mag}}$. Counting ${n} significant figure${n===1?'':'s'} ends at the place worth $10^{${mag-n+1}}$.</p>`;
+  }
+  let r, t;
+  if(dp>=0){ r=roundStr(s,dp); t=truncStr(s,dp); }
+  else { const sh=BigInt(-dp), pw=10n**sh, v=BigInt(s.split('.')[0]); let q=v/pw; if((v%pw)*2n>=pw) q+=1n; r=(q*pw).toString(); t=((v/pw)*pw).toString(); }
+  out.innerHTML=note+`<p>Rounded: <strong class="text-lg">${r}</strong> &nbsp; Truncated: <strong>${t}</strong></p><p class="text-xs text-slate-500">Any true value from ${r} minus half a unit up to (not including) ${r} plus half a unit would round to this result.</p>`;
+}
+/* ---- Tab 5: Investigation Lab ---- */
+function labRun(){
+  const lo=gv('lab-lo'), hi=gv('lab-hi'), out=document.getElementById('lab-out');
+  if(!Number.isInteger(lo)||!Number.isInteger(hi)||lo<2||hi<lo||hi>150||hi-lo>60){ out.innerHTML='<p class="text-amber-700 font-semibold">Choose whole numbers from 2 to 150, showing at most 60 rows.</p>'; return; }
+  let rows='<table class="border-collapse text-xs"><tr>'+['b','factorisation','1/b','pre-period','period'].map(h=>`<th class="border px-2 py-1 bg-teal-50">${h}</th>`).join('')+'</tr>';
+  for(let b=lo;b<=hi;b++){
+    const f=factorTwoFive(b), k=periodOf(f.c), s=Math.max(f.m,f.n); const d=longDiv(1,b,k+s+3);
+    const dec = f.c===1 ? '0.'+d.digs.join('') : '0.'+d.digs.slice(0,d.start).join('')+'('+d.digs.slice(d.start).join('').slice(0,16)+(k>16?'…':'')+')';
+    const fac=(f.m? '2^'+f.m+' ':'')+(f.n? '5^'+f.n+' ':'')+(f.c>1? '× '+f.c : '');
+    rows+=`<tr${f.c===1?' style="background:#dde2f6"':''}><td class="border px-2 py-1 text-center">${b}</td><td class="border px-2 py-1">${fac.replace(/^× /,'')}</td><td class="border px-2 py-1 font-mono">${dec}</td><td class="border px-2 py-1 text-center">${f.c===1? s+' (ends)' : s}</td><td class="border px-2 py-1 text-center">${f.c===1? '-' : k}</td></tr>`;
+  }
+  out.innerHTML=rows+'</table><p class="text-xs text-slate-500 mt-1">Shaded rows terminate. In the 1/b column, brackets mark the repeating block.</p>';
+}
+
+EX.t1=[
+ { level:'A. Place value and conversion', id:'t1q1', type:'frac', q:R`Write $0.375$ as a fraction in simplest form.`, ans:'3/8',
+   sol:S([R`$0.375=\dfrac{375}{1000}$ (three decimal places, so the denominator is $10^3$).`,R`Divide top and bottom by $125$: $\dfrac{3}{8}$.`]) },
+ { id:'t1q2', type:'frac', q:P(R`Write $2.04$ as an improper fraction in simplest form.`,R`Type it as $a/b$.`), ans:'51/25',
+   sol:S([R`$2.04=\dfrac{204}{100}$.`,R`Divide by $4$: $\dfrac{51}{25}$ (and $51=3\times17$ shares no factor with $25$).`]) },
+ { id:'t1q3', type:'num', q:R`In $70.4082$, what is the value of the digit $8$, written as a decimal?`, ans:0.008,
+   sol:S([R`Digits after the point: $4$ tenths, $0$ hundredths, $8$ thousandths, $2$ ten-thousandths.`,R`So the $8$ is worth $8\times10^{-3}=\mathbf{0.008}$.`]) },
+ { id:'t1q4', type:'mc', q:R`Which of these is the largest?`, opts:[R`$0.7$`,R`$0.699$`,R`$0.71$`,R`$0.069$`], ans:2,
+   sol:S([R`Compare place by place and pad with zeros: $0.700,\ 0.699,\ 0.710,\ 0.069$.`,R`$0.710$ is the largest. Length does not matter: $0.699$ has more digits but is smaller than $0.7$.`]) },
+ { id:'t1q5', type:'num', q:R`Calculate $3.7+0.48$.`, ans:4.18,
+   sol:S([R`Line up the decimal points: $3.70+0.48$.`,R`$\mathbf{4.18}$.`]) },
+ { id:'t1q6', type:'mc', q:R`A student says &ldquo;$0.35>0.4$ because $35>4$.&rdquo; What is wrong?`, opts:[R`Nothing is wrong`,R`Decimals must be compared place by place: $0.35$ has $3$ tenths but $0.4$ has $4$ tenths, so $0.35<0.40$`,R`$0.4$ is smaller because it has fewer digits`,R`They are equal`], ans:1,
+   sol:S([R`Pad to the same number of places: $0.35$ and $0.40$.`,R`Tenths decide first: $3<4$, so $0.35<0.4$.`]) },
+ { level:'B. Arithmetic with decimals', id:'t1q7', type:'num', q:R`Calculate $12.5-7.86$.`, ans:4.64,
+   sol:S([R`Line up: $12.50-7.86$.`,R`$\mathbf{4.64}$. (Check: $4.64+7.86=12.50$.)`]) },
+ { id:'t1q8', type:'num', q:R`Calculate $0.36\times0.25$.`, ans:0.09,
+   sol:S([R`$36\times25=900$.`,R`There are $2+2=4$ decimal places in the question, so the answer has $4$: $0.0900=\mathbf{0.09}$.`]) },
+ { id:'t1q9', type:'num', q:R`Calculate $4.8\times0.15$.`, ans:0.72,
+   sol:S([R`$48\times15=720$.`,R`Decimal places: $1+2=3$, so $0.720=\mathbf{0.72}$.`]) },
+ { id:'t1q10', type:'num', q:R`Calculate $7.2\div0.09$.`, ans:80,
+   sol:S([R`Multiply both numbers by $100$ to make the divisor whole: $720\div9$.`,R`$=\mathbf{80}$.`]) },
+ { id:'t1q11', type:'num', q:R`Calculate $0.045\div0.15$.`, ans:0.3,
+   sol:S([R`Multiply both by $100$: $4.5\div15$.`,R`$4.5\div15=\mathbf{0.3}$. (Check: $0.3\times15=4.5$.)`]) },
+ { level:'C. Using structure', id:'t1q12', type:'num', q:P(R`Given that $37\times43=1591$, find $3.7\times0.43$.`), ans:1.591,
+   sol:S([R`$3.7$ has $1$ decimal place and $0.43$ has $2$, so the answer has $3$ decimal places.`,R`$1591\to\mathbf{1.591}$.`]) },
+ { id:'t1q13', type:'num', q:R`Calculate $0.25\times17.6\times4$.`, ans:17.6,
+   sol:S([R`Regroup: $0.25\times4=1$.`,R`So the product is $1\times17.6=\mathbf{17.6}$.`]) },
+ { id:'t1q14', type:'num', q:R`A $5$ m rope has pieces of length $1.25$ m, $0.8$ m and $2.05$ m cut from it. How many metres are left?`, ans:0.9,
+   sol:S([R`Cut: $1.25+0.8+2.05=4.1$ m.`,R`Left: $5-4.1=\mathbf{0.9}$ m.`]) },
+ { id:'t1q15', type:'num', q:R`Two sprinters run $100$ m in $11.43$ s and $11.4$ s. By how many seconds do the times differ?`, ans:0.03,
+   sol:S([R`Pad: $11.43-11.40=\mathbf{0.03}$ s.`,R`Notice the longer decimal is the <em>larger</em> time here, but only by a hundredth.`]) }
+];
+EX.t2=[
+ { level:'A. Fractions that stop', id:'t2q1', type:'num', q:R`Write $\dfrac78$ as a decimal.`, ans:0.875,
+   sol:S([R`$\dfrac78=\dfrac{7\times125}{8\times125}=\dfrac{875}{1000}$.`,R`$\mathbf{0.875}$.`]) },
+ { id:'t2q2', type:'num', q:R`Write $\dfrac3{20}$ as a decimal.`, ans:0.15,
+   sol:S([R`$\dfrac3{20}=\dfrac{15}{100}=\mathbf{0.15}$.`]) },
+ { id:'t2q3', type:'num', q:R`How many decimal places does $\dfrac7{40}$ have?`, ans:3,
+   sol:S([R`$40=2^3\times5$, and $\dfrac7{40}$ is already in simplest form.`,R`The number of places is $\max(3,1)=\mathbf3$. ($\dfrac7{40}=0.175$.)`]) },
+ { id:'t2q4', type:'mc', q:R`Which of these fractions terminates?`, opts:[R`$\dfrac5{12}$`,R`$\dfrac7{15}$`,R`$\dfrac9{40}$`,R`$\dfrac4{21}$`], ans:2,
+   sol:S([R`Only simplest-form denominators of the form $2^m5^n$ terminate.`,R`$12=2^2\times3$, $15=3\times5$ and $21=3\times7$ all contain a bad prime. $40=2^3\times5$ is fine: $\dfrac9{40}=0.225$.`]) },
+ { id:'t2q5', type:'mc', q:R`Why does $\dfrac3{14}$ not terminate?`, opts:[R`$14$ is even`,R`In simplest form the denominator $14=2\times7$ contains the prime $7$, which cannot divide any power of $10$`,R`$3$ is too small`,R`Because $14>10$`], ans:1,
+   sol:S([R`A terminating decimal equals $\dfrac N{10^k}$, whose denominator only has the primes $2$ and $5$.`,R`$\dfrac3{14}$ is in simplest form, so the $7$ cannot be removed.`]) },
+ { id:'t2q6', type:'num', q:R`Among the fractions $\dfrac12,\dfrac13,\dfrac14,\dots,\dfrac1{12}$, how many are terminating decimals?`, ans:5,
+   sol:S([R`The denominators $b$ from $2$ to $12$ with only the primes $2$ and $5$: $2,4,5,8,10$.`,R`So there are $\mathbf5$. (Note $6=2\times3$ and $12=2^2\times3$ fail.)`]) },
+ { level:'B. Long division and repeats', id:'t2q7', type:'num', q:R`In the long division of $\dfrac17$, what is the remainder after the first digit?`, ans:3,
+   sol:S([R`Bring down a zero: $10\div7=1$ remainder $\mathbf3$.`,R`The digit is $1$, the remainder is $3$.`]) },
+ { id:'t2q8', type:'num', q:R`What is the first digit after the decimal point of $\dfrac37$?`, ans:4,
+   sol:S([R`$30\div7=4$ remainder $2$.`,R`The first digit is $\mathbf4$. ($\dfrac37=0.428571\ldots$)`]) },
+ { id:'t2q9', type:'mc', q:R`Why must the decimal of $\dfrac ab$ either stop or repeat?`, opts:[R`Because $b$ is always small`,R`There are only $b$ possible remainders ($0,1,\dots,b-1$), so within $b$ steps a remainder is either $0$ or one we have seen before, and the digits then repeat`,R`Because calculators round`,R`Because every decimal is a fraction`], ans:1,
+   sol:S([R`Each digit depends only on the current remainder.`,R`Pigeonhole: after at most $b$ steps a remainder repeats (or hits $0$), so the digits cycle.`]) },
+ { id:'t2q10', type:'num', q:R`What is the greatest possible length of the repeating block of $\dfrac1{19}$?`, ans:18,
+   sol:S([R`The non-zero remainders are $1,2,\dots,18$, so at most $18$ steps happen before one repeats.`,R`The maximum is $\mathbf{18}$. (It is attained for $\dfrac1{19}$.)`]) },
+ { id:'t2q11', type:'num', q:R`Write $\dfrac{13}{50}$ as a decimal.`, ans:0.26,
+   sol:S([R`$\dfrac{13}{50}=\dfrac{26}{100}=\mathbf{0.26}$.`]) },
+ { id:'t2q12', type:'num', q:R`Write $\dfrac1{16}$ as a decimal.`, ans:0.0625,
+   sol:S([R`$16=2^4$, so multiply top and bottom by $5^4=625$: $\dfrac{625}{10000}$.`,R`$\mathbf{0.0625}$.`]) },
+ { level:'C. Reasoning', id:'t2q13', type:'num', q:R`For how many integers $a$ with $1\le a\le29$ is $\dfrac a{30}$ a terminating decimal?`, ans:9,
+   sol:S([R`$30=2\times3\times5$. The fraction terminates exactly when the factor $3$ cancels, that is when $3\mid a$.`,R`Multiples of $3$ from $3$ to $27$: $\mathbf9$ of them.`]) },
+ { id:'t2q14', type:'num', q:R`What is the smallest positive integer $n$ for which $\dfrac1n$ is a terminating decimal with exactly $4$ decimal places?`, ans:16,
+   sol:S([R`For $n=2^m5^k$ the number of places is $\max(m,k)$.`,R`We need $\max(m,k)=4$, so $2^4=16$ or $5^4=625$ is needed. The smallest is $\mathbf{16}$. ($\dfrac1{16}=0.0625$.)`]) },
+ { id:'t2q15', type:'mc', q:R`A student claims: &ldquo;$\dfrac1n$ terminates whenever $n$ is even.&rdquo; Which counterexample shows this is false?`, opts:[R`$n=4$`,R`$n=6$`,R`$n=8$`,R`$n=10$`], ans:1,
+   sol:S([R`$\dfrac16=0.1\overline6$ does not terminate, since $6=2\times3$ contains the prime $3$.`,R`The other options are $2^2,\ 2^3,\ 2\times5$, which terminate.`]) }
+];
+EX.t3=[
+ { level:'A. Recurring decimals to fractions', id:'t3q1', type:'frac', q:R`Write $0.\overline6$ as a fraction in simplest form.`, ans:'2/3',
+   sol:S([R`$x=0.666\ldots$, $10x=6.666\ldots$. Subtract: $9x=6$.`,R`$x=\dfrac69=\dfrac23$.`]) },
+ { id:'t3q2', type:'frac', q:R`Write $0.\overline{45}$ as a fraction in simplest form.`, ans:'5/11',
+   sol:S([R`Two digits repeat, so use $100x-x=45$.`,R`$x=\dfrac{45}{99}=\dfrac5{11}$.`]) },
+ { id:'t3q3', type:'frac', q:R`Write $0.\overline{027}$ as a fraction in simplest form.`, ans:'1/37',
+   sol:S([R`Three digits repeat: $999x=27$.`,R`$x=\dfrac{27}{999}=\dfrac1{37}$ (divide by $27$).`]) },
+ { id:'t3q4', type:'frac', q:R`Write $0.\overline{12}$ as a fraction in simplest form.`, ans:'4/33',
+   sol:S([R`$99x=12$, so $x=\dfrac{12}{99}=\dfrac4{33}$.`]) },
+ { id:'t3q5', type:'frac', q:R`Write $0.1\overline6$ as a fraction in simplest form.`, ans:'1/6',
+   sol:S([R`$x=0.1666\ldots$. Then $10x=1.666\ldots$ and $100x=16.666\ldots$.`,R`Subtract: $90x=15$, so $x=\dfrac{15}{90}=\dfrac16$.`]) },
+ { id:'t3q6', type:'frac', q:R`Write $0.58\overline3$ as a fraction in simplest form.`, ans:'7/12',
+   sol:S([R`$100x=58.333\ldots$ and $1000x=583.333\ldots$.`,R`Subtract: $900x=525$, so $x=\dfrac{525}{900}=\dfrac7{12}$.`]) },
+ { id:'t3q7', type:'frac', q:P(R`Write $2.\overline{18}$ as an improper fraction in simplest form.`,R`Type it as $a/b$.`), ans:'24/11',
+   sol:S([R`$0.\overline{18}=\dfrac{18}{99}=\dfrac2{11}$.`,R`$2+\dfrac2{11}=\dfrac{24}{11}$.`]) },
+ { id:'t3q8', type:'mc', q:R`What is $0.\overline9$ ($0.999\ldots$ with the nines going on for ever)?`, opts:[R`Just less than $1$`,R`Exactly $1$`,R`$0.9$`,R`It has no value`], ans:1,
+   sol:S([R`$x=0.999\ldots$, $10x=9.999\ldots$. Subtract: $9x=9$, so $x=1$.`,R`Also $\dfrac13\times3=0.\overline3\times3=0.\overline9=1$.`]) },
+ { id:'t3q9', type:'frac', q:R`Write $0.\overline{0495}$ as a fraction in simplest form.`, ans:'5/101',
+   sol:S([R`Four digits repeat: $9999x=495$.`,R`$x=\dfrac{495}{9999}=\dfrac5{101}$ (divide by $99$).`]) },
+ { level:'B. Mixed repeats and comparisons', id:'t3q10', type:'frac', q:R`Write $0.4\overline{27}$ as a fraction in simplest form.`, ans:'47/110',
+   sol:S([R`$10x=4.2727\ldots$ and $1000x=427.2727\ldots$.`,R`Subtract: $990x=423$, so $x=\dfrac{423}{990}=\dfrac{47}{110}$.`]) },
+ { id:'t3q11', type:'num', q:R`Calculate $9\times0.\overline7$.`, ans:7,
+   sol:S([R`$0.\overline7=\dfrac79$.`,R`$9\times\dfrac79=\mathbf7$.`]) },
+ { id:'t3q12', type:'frac', q:R`Calculate $0.\overline3\div0.\overline6$ as a fraction.`, ans:'1/2',
+   sol:S([R`$0.\overline3=\dfrac13$ and $0.\overline6=\dfrac23$.`,R`$\dfrac13\div\dfrac23=\dfrac12$.`]) },
+ { id:'t3q13', type:'mc', q:R`Which is the largest of $0.7,\ 0.7\overline6,\ 0.\overline7$?`, opts:[R`$0.7$`,R`$0.7\overline6$`,R`$0.\overline7$`,R`They are equal`], ans:2,
+   sol:S([R`Write more digits: $0.7000\ldots,\ 0.7666\ldots,\ 0.7777\ldots$.`,R`Tenths agree, hundredths: $0<6<7$. So $0.\overline7$ is largest.`]) },
+ { level:'C. Reasoning', id:'t3q14', type:'num', q:R`Given $0.\overline{ab}=\dfrac7{33}$, where $a,b$ are digits, find $a+b$.`, ans:3,
+   sol:S([R`$\dfrac7{33}=\dfrac{21}{99}$, so $0.\overline{ab}=0.\overline{21}$.`,R`$a=2$, $b=1$, and $a+b=\mathbf3$.`]) },
+ { id:'t3q15', type:'frac', q:R`Calculate $0.\overline3+0.0\overline3$ as a fraction in simplest form.`, ans:'11/30',
+   sol:S([R`$0.\overline3=\dfrac13$ and $0.0\overline3=\dfrac1{30}$ (one tenth of $\dfrac13$).`,R`$\dfrac{10}{30}+\dfrac1{30}=\dfrac{11}{30}$.`]) }
+];
+EX.t4=[
+ { level:'A. Finding the period', id:'t4q1', type:'num', q:R`How many digits are in the repeating block of $\dfrac17$?`, ans:6,
+   sol:S([R`Powers of ten mod $7$: $3,2,6,4,5,1$. The first return to $1$ is at $k=\mathbf6$.`]) },
+ { id:'t4q2', type:'num', q:R`How many digits are in the repeating block of $\dfrac1{11}$?`, ans:2,
+   sol:S([R`$10\equiv-1$ and $100\equiv1\pmod{11}$, so $k=\mathbf2$. ($\dfrac1{11}=0.\overline{09}$.)`]) },
+ { id:'t4q3', type:'num', q:R`How many digits are in the repeating block of $\dfrac1{13}$?`, ans:6,
+   sol:S([R`Powers of ten mod $13$: $10,9,12,3,4,1$. So $k=\mathbf6$.`]) },
+ { id:'t4q4', type:'num', q:R`How many digits are in the repeating block of $\dfrac1{37}$?`, ans:3,
+   sol:S([R`$999=27\times37$, so $37\mid10^3-1$ and $k\le3$. $37$ divides neither $9$ nor $99$, so $k=\mathbf3$.`]) },
+ { id:'t4q5', type:'num', q:R`How many digits are in the repeating block of $\dfrac1{21}$?`, ans:6,
+   sol:S([R`Powers of ten mod $21$: $10,16,13,4,19,1$.`,R`The first return to $1$ is at $k=\mathbf6$.`]) },
+ { id:'t4q6', type:'num', q:R`How many digits come <em>before</em> the repeating block of $\dfrac1{12}$?`, ans:2,
+   sol:S([R`$12=2^2\times3$, so the pre-period is $\max(2,0)=\mathbf2$.`,R`Indeed $\dfrac1{12}=0.08\overline3$.`]) },
+ { level:'B. Far-away digits and sums', id:'t4q7', type:'num', q:R`What is the $2025$th digit after the decimal point of $\dfrac17=0.\overline{142857}$?`, ans:2,
+   sol:S([R`$2025=6\times337+3$.`,R`It is the $3$rd digit of the block $142857$: $\mathbf2$.`]) },
+ { id:'t4q8', type:'num', q:R`Find the sum of the first $60$ digits after the decimal point of $\dfrac17$.`, ans:270,
+   sol:S([R`Each block sums to $1+4+2+8+5+7=27$.`,R`$60=6\times10$, so the sum is $10\times27=\mathbf{270}$.`]) },
+ { id:'t4q9', type:'num', q:R`What is the $50$th digit after the decimal point of $\dfrac5{12}=0.41\overline6$?`, ans:6,
+   sol:S([R`After the first two digits $4,1$ every digit is $6$.`,R`So the $50$th digit is $\mathbf6$.`]) },
+ { id:'t4q10', type:'num', q:R`What is the $20$th digit after the decimal point of $\dfrac1{13}=0.\overline{076923}$?`, ans:7,
+   sol:S([R`$20=6\times3+2$.`,R`The $2$nd digit of $076923$ is $\mathbf7$.`]) },
+ { id:'t4q11', type:'num', q:R`Find the sum of the first $100$ digits after the decimal point of $\dfrac1{13}=0.\overline{076923}$.`, ans:454,
+   sol:S([R`One block sums to $0+7+6+9+2+3=27$.`,R`$100=6\times16+4$. So $16\times27=432$, plus the next four digits $0+7+6+9=22$.`,R`Total $\mathbf{454}$.`]) },
+ { level:'C. Cycles and reasoning', id:'t4q12', type:'num', q:R`Calculate $142857\times5$.`, ans:714285,
+   sol:S([R`$142857\times5=714285$: the same six digits, rotated. (Because $\dfrac57=0.\overline{714285}$.)`]) },
+ { id:'t4q13', type:'num', q:R`What is the $4$th digit after the decimal point of $\dfrac37=0.\overline{428571}$?`, ans:5,
+   sol:S([R`Digits: $4,2,8,5,7,1$. The $4$th is $\mathbf5$.`]) },
+ { id:'t4q14', type:'mc', q:R`Which fraction equals $0.\overline{571428}$?`, opts:[R`$\dfrac37$`,R`$\dfrac47$`,R`$\dfrac57$`,R`$\dfrac67$`], ans:1,
+   sol:S([R`The fractions $\dfrac k7$ use the same loop of digits $142857$ started in different places.`,R`$\dfrac47=4\times0.\overline{142857}=0.\overline{571428}$.`]) },
+ { id:'t4q15', type:'set', q:P(R`<span class="qlabel">Smart question</span>`,R`List all denominators $b\le100$ that are coprime to $10$ and for which $\dfrac1b$ has a repeating block of exactly $2$ digits.`,R`Type the values separated by commas.`), ans:'11,33,99',
+   sol:S([R`With $\gcd(b,10)=1$ the period is $2$ exactly when $b\mid10^2-1=99$ but $b\nmid10^1-1=9$.`,R`Divisors of $99$: $1,3,9,11,33,99$. Remove those dividing $9$ ($1,3,9$).`,R`The answer is $\{11,33,99\}$.`]) }
+];
+EX.t5=[
+ { level:'A. Rounding', id:'t5q1', type:'num', q:R`Round $3.14159$ to $3$ decimal places.`, ans:3.142,
+   sol:S([R`The fourth decimal digit is $5$, so round the third digit up: $3.141\to\mathbf{3.142}$.`]) },
+ { id:'t5q2', type:'num', q:R`Round $0.004083$ to $2$ significant figures.`, ans:0.0041,
+   sol:S([R`The first significant figure is the $4$. The second is $0$, and the next digit is $8$, so round up.`,R`$\mathbf{0.0041}$.`]) },
+ { id:'t5q3', type:'num', q:R`Round $5382$ to $2$ significant figures.`, ans:5400,
+   sol:S([R`Keep $5$ and $3$; the next digit is $8$, so round up to $54$.`,R`The zeros are place-holders: $\mathbf{5400}$.`]) },
+ { id:'t5q4', type:'num', q:R`Round $2.9996$ to $2$ decimal places.`, ans:3,
+   sol:S([R`The third decimal digit is $9$, so add $1$ to $2.99$ and carry: $3.00$.`,R`The answer is $\mathbf{3.00}$ (typing $3$ is fine).`]) },
+ { id:'t5q5', type:'num', q:R`Truncate $7.3968$ to $2$ decimal places (drop the later digits without rounding).`, ans:7.39,
+   sol:S([R`Drop everything after the second decimal place: $\mathbf{7.39}$.`,R`Rounded, it would have been $7.40$.`]) },
+ { id:'t5q6', type:'mc', q:R`A student rounds $2.3452$ to $1$ decimal place by first rounding to $2.35$ and then to $2.4$. What is the correct answer?`, opts:[R`$2.4$`,R`$2.3$`,R`$2.35$`,R`$2.5$`], ans:1,
+   sol:S([R`Look only at the <em>next one</em> digit: the second decimal digit is $4$, so round down.`,R`The answer is $2.3$. Rounding twice gives the wrong result.`]) },
+ { level:'B. Bounds', id:'t5q7', type:'num', q:R`A length is $4.7$ cm to $1$ decimal place. What is its lower bound?`, ans:4.65,
+   sol:S([R`The unit is $0.1$, so the error is at most half a unit, $0.05$.`,R`Lower bound $4.7-0.05=\mathbf{4.65}$.`]) },
+ { id:'t5q8', type:'num', q:R`A rectangle has sides $4.7$ cm and $3.2$ cm, each to $1$ decimal place. What is the upper bound of its area?`, ans:15.4375,
+   sol:S([R`Upper bounds of the sides: $4.75$ and $3.25$.`,R`$4.75\times3.25=\mathbf{15.4375}$ (the area is always just under this).`]) },
+ { id:'t5q9', type:'num', q:R`Given $a=8.6$ and $b=2.4$, each to $1$ decimal place, find the upper bound of $a-b$.`, ans:6.3,
+   sol:S([R`For the largest difference, take the largest $a$ and the <strong>smallest</strong> $b$.`,R`$8.65-2.35=\mathbf{6.3}$.`]) },
+ { id:'t5q10', type:'num', q:R`What is the smallest number that rounds to $7.4$ when rounded to $1$ decimal place?`, ans:7.35,
+   sol:S([R`The numbers that round to $7.4$ run from $7.35$ (included) up to $7.45$ (not included).`,R`The smallest is $\mathbf{7.35}$.`]) },
+ { level:'C. Smart thinking', id:'t5q11', type:'num', q:P(R`<span class="qlabel">Smart question</span>`,R`How many digits does $2^{20}\times5^{15}$ have?`), ans:17,
+   sol:S([R`Pair $5^{15}$ with $2^{15}$ to make $10^{15}$: $2^{20}\times5^{15}=2^5\times10^{15}=32\times10^{15}$.`,R`That is $32$ followed by $15$ zeros: $2+15=\mathbf{17}$ digits.`]) },
+ { id:'t5q12', type:'num', q:R`Write $\dfrac1{2^6}$ as a decimal.`, ans:0.015625,
+   sol:S([R`Multiply top and bottom by $5^6=15625$: $\dfrac{15625}{10^6}$.`,R`$\mathbf{0.015625}$.`]) },
+ { id:'t5q13', type:'num', q:R`How many decimal places does $\dfrac1{2^7\times5^3}$ have?`, ans:7,
+   sol:S([R`Multiply by $5^4$ on top and bottom to make $2^75^7=10^7$.`,R`So there are $\max(7,3)=\mathbf7$ decimal places.`]) },
+ { id:'t5q14', type:'num', q:R`Calculate $48\times0.375$ without a calculator.`, ans:18,
+   sol:S([R`$0.375=\dfrac38$.`,R`$48\times\dfrac38=6\times3=\mathbf{18}$.`]) },
+ { id:'t5q15', type:'num', q:R`Calculate $11\times0.\overline{27}$.`, ans:3,
+   sol:S([R`$0.\overline{27}=\dfrac{27}{99}=\dfrac3{11}$.`,R`$11\times\dfrac3{11}=\mathbf3$.`]) }
+];
+EX.t6=[
+ { level:'Level 1: Understanding', id:'h1', type:'frac', q:R`Write $0.64$ as a fraction in simplest form.`, ans:'16/25',
+   sol:S([R`$\dfrac{64}{100}=\dfrac{16}{25}$.`]) },
+ { id:'h2', type:'num', q:R`Write $\dfrac5{16}$ as a decimal.`, ans:0.3125,
+   sol:S([R`$\dfrac5{16}=\dfrac{5\times625}{10000}=\dfrac{3125}{10000}=\mathbf{0.3125}$.`]) },
+ { id:'h3', type:'num', q:R`Calculate $3.6\times0.25$.`, ans:0.9,
+   sol:S([R`$36\times25=900$, with $1+2=3$ decimal places: $0.900=\mathbf{0.9}$.`]) },
+ { id:'h4', type:'num', q:R`How many of the fractions $\dfrac5{12},\ \dfrac7{15},\ \dfrac{11}{20},\ \dfrac4{21}$ are terminating decimals?`, ans:1,
+   sol:S([R`Only $\dfrac{11}{20}$ has a denominator of the form $2^m5^n$ ($20=2^2\times5$).`,R`The others contain the prime $3$ or $7$. The answer is $\mathbf1$.`]) },
+ { id:'h5', type:'frac', q:R`Write $0.\overline{81}$ as a fraction in simplest form.`, ans:'9/11',
+   sol:S([R`$\dfrac{81}{99}=\dfrac9{11}$.`]) },
+ { id:'h6', type:'num', q:R`Round $0.07351$ to $2$ significant figures.`, ans:0.074,
+   sol:S([R`The first significant figure is $7$, the second is $3$, and the next digit is $5$, so round up.`,R`$\mathbf{0.074}$.`]) },
+ { id:'h7', type:'set', q:P(R`Let $A=\{b\in\mathbb N: 2\le b\le12,\ \dfrac1b \text{ is a terminating decimal}\}$.`,R`List the elements of $A$, separated by commas.`), ans:'2,4,5,8,10',
+   sol:S([R`We need $b=2^m5^n$ in the range: $2,4,5,8,10$.`,R`$A=\{2,4,5,8,10\}$.`]) },
+ { level:'Level 2: Fluency and application', id:'h8', type:'num', q:R`Calculate $9.6\div0.12$.`, ans:80,
+   sol:S([R`Multiply both by $100$: $960\div12=\mathbf{80}$.`]) },
+ { id:'h9', type:'frac', q:P(R`Write $3.125$ as an improper fraction in simplest form.`,R`Type it as $a/b$.`), ans:'25/8',
+   sol:S([R`$3.125=\dfrac{3125}{1000}=\dfrac{25}8$ (divide by $125$).`]) },
+ { id:'h10', type:'num', q:R`How many digits are in the repeating block of $\dfrac1{17}$?`, ans:16,
+   sol:S([R`The order of $10$ modulo $17$: the powers $10^1,10^2,\ldots$ first return to $1$ at $k=16$ (the longest possible, since there are only $16$ non-zero remainders).`]) },
+ { id:'h11', type:'frac', q:R`Write $0.2\overline{45}$ as a fraction in simplest form.`, ans:'27/110',
+   sol:S([R`$10x=2.4545\ldots$ and $1000x=245.4545\ldots$.`,R`$990x=243$, so $x=\dfrac{243}{990}=\dfrac{27}{110}$.`]) },
+ { id:'h12', type:'num', q:R`What is the $100$th digit after the decimal point of $\dfrac37=0.\overline{428571}$?`, ans:5,
+   sol:S([R`$100=6\times16+4$, so it is the $4$th digit of the block.`,R`Digits $4,2,8,5,7,1$: the answer is $\mathbf5$.`]) },
+ { id:'h13', type:'num', q:R`Write $0.\overline{36}$ as a fraction $\dfrac ab$ in simplest form. Find $a+b$.`, ans:15,
+   sol:S([R`$\dfrac{36}{99}=\dfrac4{11}$, since $\gcd(36,99)=9$.`,R`$a+b=4+11=\mathbf{15}$.`]) },
+ { id:'h14', type:'set', q:P(R`Let $A=\{b\in\mathbb N: 2\le b\le20,\ \dfrac1b\text{ terminates}\}$ and $B=\{b\in\mathbb N: 2\le b\le20,\ b\text{ is even}\}$.`,R`List the elements of $A\cap B$, separated by commas.`), ans:'2,4,8,10,16,20',
+   sol:S([R`$A=\{2,4,5,8,10,16,20\}$.`,R`Remove the odd member $5$: $A\cap B=\{2,4,8,10,16,20\}$.`]) },
+ { id:'h15', type:'num', q:R`$a=6.4$ and $b=2.7$, each to $1$ decimal place. Find the upper bound of $a+b$.`, ans:9.2,
+   sol:S([R`Upper bounds: $6.45$ and $2.75$.`,R`$6.45+2.75=\mathbf{9.2}$.`]) },
+ { id:'h16', type:'num', q:R`Three notebooks cost $\$2.35$ each and four pens cost $\$0.85$ each. Find the total cost in dollars.`, ans:10.45,
+   sol:S([R`Notebooks: $3\times2.35=7.05$. Pens: $4\times0.85=3.40$.`,R`Total $\mathbf{10.45}$.`]) },
+ { id:'h17', type:'num', q:R`Calculate $\dfrac18+\dfrac1{25}$ as a decimal.`, ans:0.165,
+   sol:S([R`$\dfrac18=0.125$ and $\dfrac1{25}=0.04$.`,R`Sum $\mathbf{0.165}$.`]) },
+ { level:'Level 3: Challenge and smart thinking', id:'h18', type:'frac', q:R`Write $0.1\overline{234}$ as a fraction in simplest form.`, ans:'137/1110',
+   sol:S([R`$10x=1.234234\ldots$ and $10000x=1234.234234\ldots$.`,R`$9990x=1233$, so $x=\dfrac{1233}{9990}=\dfrac{137}{1110}$ (divide by $9$).`]) },
+ { id:'h19', type:'num', q:R`Find the sum of the first $200$ digits after the decimal point of $\dfrac17$.`, ans:896,
+   sol:S([R`$200=6\times33+2$. Each block sums to $27$, so $33\times27=891$.`,R`Add the next two digits $1+4=5$. Total $\mathbf{896}$.`]) },
+ { id:'h20', type:'num', q:R`What is the smallest positive integer $n$ for which $\dfrac1n$ terminates with exactly $5$ decimal places?`, ans:32,
+   sol:S([R`We need $n=2^m5^k$ with $\max(m,k)=5$, so $2^5=32$ or $5^5=3125$ must divide $n$.`,R`The smallest is $\mathbf{32}$.`]) },
+ { id:'h21', type:'num', q:R`For how many positive integers $n\le100$ is $\dfrac1n$ a terminating decimal? (Count $n=1$ too.)`, ans:15,
+   sol:S([R`List the numbers $2^m5^k\le100$: $1,2,4,5,8,10,16,20,25,32,40,50,64,80,100$.`,R`There are $\mathbf{15}$.`]) },
+ { id:'h22', type:'num', q:R`The digits $a\ne b$ satisfy $0.\overline{ab}+0.\overline{ba}=1$. Find $a+b$.`, ans:9,
+   sol:S([R`$\dfrac{10a+b}{99}+\dfrac{10b+a}{99}=\dfrac{11(a+b)}{99}=\dfrac{a+b}9$.`,R`Setting this equal to $1$ gives $a+b=\mathbf9$.`]) },
+ { id:'h23', type:'num', q:R`What is the smallest positive integer $n$ for which $n\times0.\overline{36}$ is a whole number?`, ans:11,
+   sol:S([R`$0.\overline{36}=\dfrac4{11}$ in simplest form.`,R`$\dfrac{4n}{11}$ is an integer only when $11\mid n$ (as $\gcd(4,11)=1$). So $n=\mathbf{11}$.`]) },
+ { id:'h24', type:'num', q:P(R`<span class="qlabel">Smart question</span>`,R`How many digits does $2^{15}\times5^{10}$ have?`), ans:12,
+   sol:S([R`$2^{15}\times5^{10}=2^5\times10^{10}=32\times10^{10}$.`,R`That is $2$ digits followed by $10$ zeros: $\mathbf{12}$ digits.`]) },
+ { id:'h25', type:'num', q:R`What is the $2026$th digit after the decimal point of $\dfrac3{13}=0.\overline{230769}$?`, ans:7,
+   sol:S([R`$2026=6\times337+4$.`,R`The $4$th digit of $230769$ is $\mathbf7$.`]) }
+];
+const CONCEPTS={
+ plv:{label:'Place value and decimal arithmetic',tab:'t1',where:'Tab 1, Theorems 1 and 2',
+   tips:['Compare decimals place by place from the left, and pad with zeros so that they have the same number of places.','Add and subtract with the decimal points lined up. To multiply, ignore the points, then count the total decimal places. To divide, scale both numbers to make the divisor whole.','$0.375=\\dfrac{375}{10^3}$: the number of decimal places is the power of ten in the denominator.']},
+ f2d:{label:'Fractions to decimals: stop or repeat?',tab:'t2',where:'Tab 2, Theorems 3 and 4',
+   tips:['Simplify the fraction first. It terminates exactly when the denominator has only the primes $2$ and $5$.','The number of decimal places of a terminating decimal is $\\max(m,n)$ for the denominator $2^m5^n$.','In long division, a repeated remainder means the digits repeat from there. There are at most $b-1$ different non-zero remainders.']},
+ rec:{label:'Recurring decimals to fractions',tab:'t3',where:'Tab 3, Theorems 5 and 6',
+   tips:['Multiply by a power of ten so that a block of repeats sits just left of the point, and by another so the same block sits just right. Subtract to cancel the tails.','A purely repeating block of $n$ digits is the block over $99\\ldots9$ ($n$ nines). Always simplify at the end.','Remember $0.\\overline9=1$.']},
+ per:{label:'Periods, cycles and far-away digits',tab:'t4',where:'Tab 4, Theorem 7 and Techniques 7 and 8',
+   tips:['The period is the smallest $k$ with $10^k\\equiv1$ modulo the part of the denominator that is free of $2$ and $5$.','To find the $N$th digit, subtract the pre-period, then divide by the period. The remainder says which digit of the block it is.','For sums of digits, count full blocks, then add the leftover digits.']},
+ rnd:{label:'Rounding and significant figures',tab:'t5',where:'Tab 5, Step 1',
+   tips:['Underline the last digit you keep and look only at the <strong>next one</strong> digit: $5$ or more rounds up.','Zeros before the first non-zero digit are never significant. Keep place-holder zeros to show the size.','Never round twice.']},
+ bnd:{label:'Bounds of rounded values',tab:'t5',where:'Tab 5, Step 2',
+   tips:['A value rounded to a unit $u$ lies within half a unit: $x-\\tfrac u2\\le \\text{true}<x+\\tfrac u2$.','For a difference, mix the bounds: the largest $a-b$ uses the largest $a$ and the smallest $b$.','For sums and products of positive numbers use all upper (or all lower) bounds.']}
+};
+const SKILLS={
+ U:{label:'Understand (definitions and properties)',tips:['Before choosing an answer, <strong>explain the idea in one full sentence</strong> in your own words, then match it to an option.']},
+ C:{label:'Compute (carry out a method)',tips:['Cover the worked example, redo it yourself, then compare line by line. <strong>Write every step</strong> rather than doing it in your head.']},
+ A:{label:'Apply (use it in a problem or context)',tips:['Underline what is <strong>given</strong> and what is <strong>asked</strong>, turn the story into a maths sentence, and only then calculate. Check that the answer makes sense in the story.']},
+ Rz:{label:'Reason (multi-step and challenge problems)',tips:['Break the problem into small steps. After each step ask &ldquo;what does this tell me?&rdquo; and test a small case before the big one.']}
+};
+const TAGS={
+ t1q1:['plv','C'],t1q2:['plv','C'],t1q3:['plv','U'],t1q4:['plv','U'],t1q5:['plv','C'],t1q6:['plv','U'],t1q7:['plv','C'],t1q8:['plv','C'],t1q9:['plv','C'],t1q10:['plv','C'],t1q11:['plv','C'],t1q12:['plv','Rz'],t1q13:['plv','Rz'],t1q14:['plv','A'],t1q15:['plv','A'],
+ t2q1:['f2d','C'],t2q2:['f2d','C'],t2q3:['f2d','C'],t2q4:['f2d','U'],t2q5:['f2d','U'],t2q6:['f2d','A'],t2q7:['f2d','C'],t2q8:['f2d','C'],t2q9:['f2d','U'],t2q10:['f2d','Rz'],t2q11:['f2d','C'],t2q12:['f2d','C'],t2q13:['f2d','Rz'],t2q14:['f2d','Rz'],t2q15:['f2d','U'],
+ t3q1:['rec','C'],t3q2:['rec','C'],t3q3:['rec','C'],t3q4:['rec','C'],t3q5:['rec','C'],t3q6:['rec','C'],t3q7:['rec','C'],t3q8:['rec','U'],t3q9:['rec','C'],t3q10:['rec','C'],t3q11:['rec','C'],t3q12:['rec','C'],t3q13:['rec','U'],t3q14:['rec','Rz'],t3q15:['rec','Rz'],
+ t4q1:['per','C'],t4q2:['per','C'],t4q3:['per','C'],t4q4:['per','C'],t4q5:['per','C'],t4q6:['per','C'],t4q7:['per','A'],t4q8:['per','A'],t4q9:['per','A'],t4q10:['per','A'],t4q11:['per','A'],t4q12:['per','C'],t4q13:['per','C'],t4q14:['per','U'],t4q15:['per','Rz'],
+ t5q1:['rnd','C'],t5q2:['rnd','C'],t5q3:['rnd','C'],t5q4:['rnd','C'],t5q5:['rnd','C'],t5q6:['rnd','U'],t5q7:['bnd','U'],t5q8:['bnd','C'],t5q9:['bnd','C'],t5q10:['bnd','U'],
+ t5q11:['plv','Rz'],t5q12:['f2d','C'],t5q13:['f2d','Rz'],t5q14:['plv','C'],t5q15:['rec','Rz'],
+ h1:['plv','C'],h2:['f2d','C'],h3:['plv','C'],h4:['f2d','U'],h5:['rec','C'],h6:['rnd','C'],h7:['f2d','U'],
+ h8:['plv','C'],h9:['plv','C'],h10:['per','C'],h11:['rec','C'],h12:['per','A'],h13:['rec','A'],h14:['f2d','U'],h15:['bnd','C'],h16:['plv','A'],h17:['f2d','C'],
+ h18:['rec','Rz'],h19:['per','Rz'],h20:['f2d','Rz'],h21:['f2d','Rz'],h22:['rec','Rz'],h23:['rec','Rz'],h24:['plv','Rz'],h25:['per','Rz']
+};
+const TAB_NAMES={t1:'Tab 1 Place Value',t2:'Tab 2 Fractions to Decimals',t3:'Tab 3 Recurring Decimals',t4:'Tab 4 Cycles and Remainders',t5:'Tab 5 Rounding and Smart Thinking',t6:'Tab 6 Homework'};
+
+/* ============ EXERCISE ENGINE ============ */
+const EXMAP={}, ST={};
+const now=()=>Date.now()+(window.__skew||0);
+function normSet(s){
+  s=cleanNum(s).toLowerCase().trim();
+  if(/∅|empty|^\{\s*\}$/.test(s)) return '';
+  s=s.replace(/[{}\s]/g,''); const arr=s.split(',').filter(x=>x!==''); arr.sort(sorter); return arr.join(',');
+}
+function parseFact(s){
+  s=String(s).toLowerCase().replace(/[×x·\*]/g,'*').replace(/²/g,'^2').replace(/³/g,'^3').replace(/\s/g,'');
+  if(!s) return null; const m={};
+  for(const t of s.split('*')){ const mm=t.match(/^(\d+)(?:\^(\d+))?$/); if(!mm) return null; const p=+mm[1], k=mm[2]?+mm[2]:1; m[p]=(m[p]||0)+k; }
+  return m;
+}
+function sameFact(a,b){ const ka=Object.keys(a), kb=Object.keys(b); return ka.length===kb.length && ka.every(k=>a[k]===b[k]); }
+
+/* live LaTeX preview of a typed factorisation */
+function factToLatex(raw){
+  const s0=String(raw).trim(); if(!s0) return {state:'empty'};
+  let t=s0.toLowerCase().replace(/[×x·]/g,'*').replace(/²/g,'^2').replace(/³/g,'^3').replace(/\s/g,'');
+  const tm=t.match(/[*^]+$/); let dang='';
+  if(tm){ if(tm[0].length>1) return {state:'bad'}; dang=tm[0]; t=t.slice(0,-1); }
+  if(!t) return {state:'bad'};
+  const out=[], bases=[];
+  for(const p of t.split('*')){ const m=p.match(/^(\d+)(?:\^(\d+))?$/); if(!m) return {state:'bad'}; bases.push(+m[1]); out.push(m[2]!==undefined? m[1]+'^{'+m[2]+'}' : m[1]); }
+  if(dang==='^') out[out.length-1]+='^{\\square}';
+  let tex=out.join('\\times ');
+  if(dang==='*') tex+='\\times\\,\\square';
+  const notPrime=[...new Set(bases.filter(b=>!isPrime(b)))];
+  return {state:'ok',tex,notPrime};
+}
+const _pt={};
+function factPreview(id){
+  const el=document.getElementById('prev-'+id), inp=document.getElementById('inp-'+id); if(!el||!inp) return;
+  const r=factToLatex(inp.value); let h='<span class="lab">Preview</span>';
+  if(r.state==='empty') h+='<span class="msg">Your answer will appear here as you type, for example $2^3\\times3\\times5$.</span>';
+  else if(r.state==='bad') h+='<span class="msg">This cannot be read yet. Use numbers, <kbd class="k">^</kbd> and <kbd class="k">*</kbd> only.</span>';
+  else { h+='<span class="text-lg">$'+r.tex+'$</span>'; if(r.notPrime.length) h+='<span class="block text-xs text-amber-700 font-semibold mt-1">Not all factors are prime yet: '+r.notPrime.map(b=>'$'+b+'$').join(', ')+' can be split further.</span>'; }
+  el.innerHTML=h; clearTimeout(_pt[id]); _pt[id]=setTimeout(()=>typeset(el),120);
+}
+
+function exHTML(e,n){
+  let inp='';
+  const enter=`onkeydown="if(event.key==='Enter')checkEx('${e.id}')"`;
+  if(e.type==='num') inp=`<input type="text" inputmode="decimal" class="inp" id="inp-${e.id}" placeholder="Your answer" ${enter}>`;
+  else if(e.type==='set') inp=`<input type="text" class="inp" id="inp-${e.id}" placeholder="e.g. 2, 3, 5" ${enter}><p class="text-xs text-slate-500 mt-1">Type the elements separated by commas.</p>`;
+  else if(e.type==='fact') inp=`<input type="text" class="inp" id="inp-${e.id}" placeholder="Type your factorisation" oninput="factPreview('${e.id}')" ${enter}><p class="text-xs text-slate-500 mt-1">Use <kbd class="k">^</kbd> for a power and <kbd class="k">*</kbd> for $\\times$. Primes only.</p><div class="fprev" id="prev-${e.id}"></div>`;
+  else if(e.type==='text') inp=`<input type="text" class="inp" id="inp-${e.id}" placeholder="Your answer" ${enter}>`;
+  else if(e.type==='frac') inp=`<input type="text" class="inp" id="inp-${e.id}" placeholder="e.g. 3/4" oninput="fracPreview('${e.id}')" ${enter}><p class="text-xs text-slate-500 mt-1">Type a fraction as <kbd class="k">a/b</kbd> (or a whole number).${e.simp===false?'':' Give it in simplest form.'}</p><div class="fprev" id="prev-${e.id}"></div>`;
+  else if(e.type==='mc') inp=e.opts.map((o,i)=>`<button class="opt" id="opt-${e.id}-${i}" onclick="pickOpt('${e.id}',${i})">${o}</button>`).join('');
+  return `<div class="ex-card" id="card-${e.id}" onfocusin="markSeen('${e.id}')" onclick="markSeen('${e.id}')"><div class="flex items-start gap-3"><div class="qnum">${n}</div><div class="flex-1 min-w-0">
+    <div class="qtext text-slate-800 leading-relaxed">${e.q}</div>
+    <div class="mt-3">${inp}</div>
+    <div class="mt-3 flex items-center gap-3 flex-wrap"><button class="btn" id="btn-${e.id}" onclick="checkEx('${e.id}')">Check answer</button><span id="att-${e.id}" class="text-xs font-semibold text-slate-500">Attempts left: 3</span></div>
+    <div id="fb-${e.id}" class="mt-2 text-sm font-semibold"></div>
+    <div id="sol-${e.id}" class="hidden mt-3 sol-box"><h4 class="font-bold text-slate-800 mb-1" id="solh-${e.id}">Step-by-step solution</h4>${e.sol}</div>
+  </div></div></div>`;
+}
+function markSeen(id){ const st=ST[id]; if(st && !st.t0 && !st.done){ st.t0=st.last=now(); } }
+function mountEx(key){
+  const box=document.getElementById('ex-'+key); let h='', lv='', n=0;
+  EX[key].forEach(e=>{ if(e.level&&e.level!==lv){ lv=e.level; h+=`<div class="lvl">${lv}</div>`; } e.lv=lv; n++; e.no=n; h+=exHTML(e,n); });
+  box.innerHTML=h;
+  EX[key].forEach(e=>{ EXMAP[e.id]=e; ST[e.id]={tries:0,done:false,pick:null,tab:key,correct:false,t0:null,last:null,log:[]}; });
+  if('IntersectionObserver' in window){
+    const io=new IntersectionObserver(es=>es.forEach(en=>{ if(en.isIntersecting && (en.intersectionRatio>=0.15 || en.intersectionRect.height>=180)) markSeen(en.target.id.slice(5)); }),{threshold:[0.05,0.15,0.3,0.5]});
+    box.querySelectorAll('.ex-card').forEach(c=>io.observe(c));
+  }
+}
+function pickOpt(id,i){ const st=ST[id]; if(st.done) return; markSeen(id); st.pick=i; EXMAP[id].opts.forEach((_,k)=>document.getElementById(`opt-${id}-${k}`).classList.toggle('sel',k===i)); }
+function checkEx(id){
+  const e=EXMAP[id], st=ST[id]; if(st.done) return;
+  const fb=document.getElementById('fb-'+id); let correct=false, ansText=''; const warn=m=>{ fb.className='mt-2 text-sm font-semibold text-amber-700'; fb.textContent=m; };
+  if(e.type==='num'){
+    const raw=document.getElementById('inp-'+id).value; const v=cleanNum(raw).replace(/[, ]/g,''); if(v===''||isNaN(Number(v))) return warn('Type a number first.');
+    ansText=raw.trim(); correct=Math.abs(Number(v)-e.ans)<1e-9;
+  } else if(e.type==='frac'){
+    const raw=document.getElementById('inp-'+id).value; const f=parseFrac(raw); if(!f) return warn('Type a fraction like 3/4, or a whole number.');
+    if(f.d===0) return warn('The denominator cannot be 0.');
+    if(f.d<0) return warn('Put any minus sign on the top. The bottom must be a positive number.');
+    const t=parseFrac(e.ans); ansText=raw.trim(); correct = f.n*t.d===f.d*t.n;
+    if(correct && e.simp!==false && gcd2(f.n,f.d)!==1) return warn('That fraction has the right value, but it is not in simplest form yet. Simplify it and try again (this does not use up an attempt).');
+  } else if(e.type==='set'){
+    const v=document.getElementById('inp-'+id).value; if(v.trim()==='') return warn('Type your answer first.'); ansText=v.trim(); correct=normSet(v)===normSet(e.ans);
+  } else if(e.type==='fact'){
+    const v=document.getElementById('inp-'+id).value; if(v.trim()==='') return warn('Type your answer first.');
+    const pf=parseFact(v); if(!pf) return warn('This cannot be read yet. Use numbers, ^ and * only (see the preview).');
+    ansText=v.trim(); correct = sameFact(pf, parseFact(e.ans)) && Object.keys(pf).every(k=>isPrime(+k));
+  } else if(e.type==='text'){
+    const v=document.getElementById('inp-'+id).value.toLowerCase().replace(/[^a-z0-9]/g,''); if(v==='') return warn('Type your answer first.'); ansText=v; correct=e.ans.includes(v);
+  } else if(e.type==='mc'){
+    if(st.pick===null) return warn('Choose an option first.'); ansText=String(e.opts[st.pick]); correct=st.pick===e.ans;
+  }
+  const t=now(); if(!st.t0){ st.t0=st.last=t; }
+  st.log.push({dt:t-st.last, ans:ansText, ok:correct}); st.last=t;
+  st.tries++; const left=3-st.tries; document.getElementById('att-'+id).textContent='Attempts left: '+Math.max(left,0);
+  if(correct) finishEx(id,true); else if(left<=0) finishEx(id,false);
+  else { fb.className='mt-2 text-sm font-semibold text-red-700'; fb.textContent='Not quite. Try again: '+left+' attempt'+(left===1?'':'s')+' left.'; const c=document.getElementById('card-'+id); c.classList.add('bad'); setTimeout(()=>{ if(!st.done) c.classList.remove('bad'); },900); }
+}
+function finishEx(id,ok){
+  const e=EXMAP[id], st=ST[id]; st.done=true; st.correct=ok;
+  const card=document.getElementById('card-'+id), fb=document.getElementById('fb-'+id), sol=document.getElementById('sol-'+id);
+  card.classList.remove('bad'); if(ok) card.classList.add('ok');
+  fb.className='mt-2 text-sm font-bold '+(ok?'text-emerald-700':'text-red-700');
+  { const pts=ok?4-st.tries:0; fb.textContent= ok?`Correct! You earned ${pts} point${pts>1?'s':''} (correct on attempt ${st.tries} of 3).`:'All 3 attempts used: 0 points. Study the full solution below.'; }
+  sol.classList.remove('hidden'); if(!ok) sol.classList.add('fail');
+  document.getElementById('solh-'+id).textContent= ok?'Full solution (compare with your method)':'Full step-by-step solution';
+  document.getElementById('btn-'+id).disabled=true;
+  if(e.type==='mc') e.opts.forEach((_,k)=>{ const b=document.getElementById(`opt-${id}-${k}`); b.disabled=true; b.classList.remove('sel'); if(k===e.ans) b.classList.add('right'); else if(k===st.pick) b.classList.add('wrong'); });
+  else document.getElementById('inp-'+id).disabled=true;
+  typeset(sol); refreshProgress();
+}
+let reportUnlocked=false;
+function allDone(){ return Object.keys(EX).every(k=>EX[k].every(e=>ST[e.id]&&ST[e.id].done)); }
+function refreshProgress(){
+  let done=0,total=0;
+  Object.keys(EX).forEach(k=>{ let d=0; EX[k].forEach(e=>{ total++; if(ST[e.id]&&ST[e.id].done){done++;d++;} }); const b=document.querySelector('.tab-link[data-tab="'+k+'"]'); if(b) b.classList.toggle('tab-done',d===EX[k].length); });
+  document.getElementById('prog-count').textContent=done; document.getElementById('prog-total').textContent=total;
+  let c=0,r=0; EX.t6.forEach(e=>{ if(ST[e.id].done){ ST[e.id].correct?c++:r++; } });
+  document.getElementById('hw-score').textContent=`Homework status: ${c} correct, ${r} revealed after 3 attempts, ${EX.t6.length-c-r} remaining`;
+  const ready=allDone(); const lab=document.getElementById('t7-label');
+  if(lab) lab.textContent='7. Learning Report';
+  if(ready && !reportUnlocked){ reportUnlocked=true; showToast(); }
+  if(document.getElementById('t7').classList.contains('active')) buildReport();
+}
+function showToast(){
+  const t=document.createElement('div'); t.className='toast no-print'; t.id='report-toast';
+  t.innerHTML='<strong>All questions finished.</strong> Your Learning Report is ready.<div class="mt-2"><button class="btn" style="background:#fff;color:#1c2230" onclick="document.getElementById(\'report-toast\').remove();openTab(null,\'t7\')">View my report</button></div>';
+  document.body.appendChild(t);
+}
+
+/* ============ LEARNING REPORT ============ */
+const EFFORT={
+ flu:{label:'Secure',long:'Correct first time',cls:'b-flu',score:1},
+ per:{label:'Persistent',long:'Corrected with real thought between attempts',cls:'b-per',score:0.8},
+ gue:{label:'Guess-and-check',long:'Quick retries, close to guessing',cls:'b-gue',score:0.45},
+ rus:{label:'Rushed',long:'Used the attempts quickly to reach the solution',cls:'b-rus',score:0},
+ str:{label:'Needs support',long:'Real effort, but the idea is not secure yet',cls:'b-str',score:0.2}
+};
+function thrFor(e){
+  const base={mc:4,num:7,set:9,fact:10,text:6,frac:8}[e.type]||7; const tg=TAGS[e.id]||[]; let f=1;
+  if(tg[1]==='Rz') f=1.5; else if(tg[1]==='A') f=1.25;
+  if(/Level 2/.test(e.lv||'')) f*=1.2; if(/Level 3/.test(e.lv||'')) f*=1.5;
+  return base*f*1000;
+}
+function analyzeQ(e){
+  const st=ST[e.id], thr=thrFor(e), L=st.log, n=L.length, quick=L.map(a=>a.dt<thr);
+  const norm=a=>String(a).toLowerCase().replace(/\s/g,'');
+  const wrong=L.filter(a=>!a.ok); const repeated=wrong.length>1 && new Set(wrong.map(a=>norm(a.ans))).size<wrong.length;
+  let key;
+  if(st.correct){ if(n===1) key='flu'; else { const qr=quick.slice(1).filter(Boolean).length; key= qr===0?'per':'gue'; } }
+  else { const q=quick.filter(Boolean).length; key= q===n?'rus' : q>=2?'gue':'str'; }
+  const tg=TAGS[e.id]||['smart','C'];
+  return {id:e.id, tab:st.tab, no:e.no, concept:tg[0], skill:tg[1], n, ok:st.correct, key, repeated, score:EFFORT[key].score, pts:(st.correct?4-n:0), log:L, thr};
+}
+function aggregate(rows){
+  const n=rows.length; if(!n) return null;
+  const sum=f=>rows.reduce((a,r)=>a+f(r),0);
+  const first=rows.filter(r=>r.ok&&r.n===1).length, rev=rows.filter(r=>!r.ok).length;
+  const rush=rows.filter(r=>r.key==='rus'||r.key==='gue').length;
+  const pts=sum(r=>r.pts), score=pts/(3*n);
+  const status= score>=0.8?'sec': score>=0.5?'dev':'need';
+  const by=[0,1,2,3].map(p=>rows.filter(r=>r.pts===p).length);
+  return {n, first, rev, rush, att:sum(r=>r.n)/n, score, pts, max:3*n, by, status, habit: rush/n>=0.34, str: rows.filter(r=>r.key==='str').length};
+}
+const STAT={sec:['Secure','b-sec'],dev:['Developing','b-dev'],need:['Needs support','b-need']};
+function pct(x){ return Math.round(x*100)+'%'; }
+function secs(ms){ return (ms/1000).toFixed(ms<10000?1:0)+'s'; }
+/* ============ KNOWLEDGE MAP (V2) ============ */
+const KM_NODES={
+ plv:[90,175,'Place value and decimal arithmetic'], f2d:[290,70,'Stop or repeat?'], rec:[290,300,'Recurring decimals to fractions'],
+ per:[500,175,'Periods and cycles'], rnd:[700,70,'Rounding'], bnd:[700,300,'Bounds']
+};
+const KM_EDGES=[
+ ['plv','f2d','Decimals are fractions over powers of ten, so we ask which fractions fit'],
+ ['plv','rec','Place value shows why a repeating block needs a denominator of nines'],
+ ['f2d','rec','Both describe the same decimals, in the two directions'],
+ ['f2d','per','The remainders in long division create the cycle'],
+ ['rec','per','The block length is the number of nines in the denominator'],
+ ['plv','rnd','Rounding works place by place'],
+ ['rnd','bnd','Half a unit of the rounding place is the error'],
+ ['per','rnd','Long decimals are rounded when we use them']
+];
+function kmWrap(s,n){ const w=s.split(' '), L=[]; let cur=''; w.forEach(x=>{ if((cur+' '+x).trim().length>n && cur){ L.push(cur); cur=x; } else cur=(cur+' '+x).trim(); }); if(cur) L.push(cur); return L; }
+function kmDownstream(c){ const out=new Set(), q=[c]; while(q.length){ const x=q.pop(); KM_EDGES.forEach(([a,b])=>{ if(a===x && !out.has(b)){ out.add(b); q.push(b); } }); } return [...out]; }
+function kmSupports(c){ const d=kmDownstream(c); if(!d.length) return ''; return `<p class="text-sm text-slate-700 mt-2"><strong>Why fix this first:</strong> this idea feeds ${d.map(x=>'<em>'+KM_NODES[x][2]+'</em>').join(', ')} on the knowledge map.</p>`; }
+function kmapHTML(agg){
+  const W=160, H=62;
+  const edge=(a,b)=>{
+    const [x1,y1]=KM_NODES[a], [x2,y2]=KM_NODES[b]; const dx=x2-x1, dy=y2-y1;
+    const t=Math.min((W/2)/Math.abs(dx||1e-9),(H/2)/Math.abs(dy||1e-9));
+    const sx=x1+dx*t, sy=y1+dy*t, ex=x2-dx*t-Math.sign(dx)*2, ey=y2-dy*t-Math.sign(dy)*2;
+    const risk=agg[a]&&agg[a].status==='need';
+    return `<line x1="${sx.toFixed(1)}" y1="${sy.toFixed(1)}" x2="${ex.toFixed(1)}" y2="${ey.toFixed(1)}" stroke="${risk?'#dc2626':'#64748b'}" stroke-width="${risk?2.6:2}" ${risk?'stroke-dasharray="7 5"':''} marker-end="url(#${risk?'kmr':'kmg'})"><title>${KM_NODES[a][2]} leads to ${KM_NODES[b][2]}</title></line>`;
+  };
+  let svg=`<svg viewBox="0 0 1010 390" style="min-width:780px;width:100%" role="img" aria-label="Knowledge map: how the ideas of this chapter connect, coloured by your score"><defs><marker id="kmg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#64748b"/></marker><marker id="kmr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#dc2626"/></marker></defs>`;
+  svg+=KM_EDGES.map(([a,b])=>edge(a,b)).join('');
+  Object.keys(KM_NODES).forEach(c=>{
+    const [x,y,label]=KM_NODES[c], g=agg[c]; const f=g?g.score:0, hue=Math.round(f*120);
+    const lines=kmWrap(label,19), total=lines.length+1, y0=y-(total*14)/2+11;
+    const stroke=g&&g.status==='need'?'#dc2626':`hsl(${hue},55%,32%)`;
+    svg+=`<g style="cursor:pointer" onclick="openTab(null,'${CONCEPTS[c].tab}')"><title>${CONCEPTS[c].label}: ${g?g.pts+' of '+g.max+' points':'no questions'}. Click to revisit ${CONCEPTS[c].where}.</title>
+      <rect x="${x-W/2}" y="${y-H/2}" width="${W}" height="${H}" rx="12" fill="hsl(${hue},70%,86%)" stroke="${stroke}" stroke-width="${g&&g.status==='need'?3.5:2}"/>`+
+      lines.map((l,i)=>`<text x="${x}" y="${y0+i*14}" text-anchor="middle" font-size="12" font-weight="700" fill="hsl(${hue},60%,16%)" font-family="Inter,Arial,sans-serif">${l}</text>`).join('')+
+      `<text x="${x}" y="${y0+lines.length*14}" text-anchor="middle" font-size="12" font-weight="800" fill="hsl(${hue},65%,22%)" font-family="Inter,Arial,sans-serif">${g?pct(f)+' ('+g.pts+'/'+g.max+')':'-'}</text></g>`;
+  });
+  svg+='</svg>';
+  const weak=Object.keys(KM_NODES).filter(c=>agg[c]&&agg[c].status==='need');
+  const mid=Object.keys(KM_NODES).filter(c=>agg[c]&&agg[c].status==='dev');
+  let note='';
+  if(weak.length){
+    note=`<div class="warn text-sm text-slate-800 mb-3"><p class="font-bold">Where to start</p><p class="mt-1">The red dashed arrows leave a concept with a low score. Ideas further along those arrows are built on it, so improve the <strong>earliest</strong> red concept first: ${weak.map(c=>'<em>'+KM_NODES[c][2]+'</em>').join(', ')}.</p></div>`;
+  } else if(mid.length){
+    note=`<div class="key text-sm text-slate-800 mb-3"><strong>No concept is in the red.</strong> The amber-looking ones (${mid.map(c=>'<em>'+KM_NODES[c][2]+'</em>').join(', ')}) are the best place to gain more points.</div>`;
+  } else {
+    note=`<div class="key text-sm text-slate-800 mb-3"><strong>The whole network is green.</strong> Every idea is secure, and the ideas that depend on each other support each other.</div>`;
+  }
+  const legend=`<div class="flex items-center gap-2 flex-wrap text-xs text-slate-600 mb-2"><span>Node colour = your score:</span><span class="kmswatch" style="background:hsl(0,70%,86%)">low</span><span class="kmswatch" style="background:hsl(60,70%,86%)">middle</span><span class="kmswatch" style="background:hsl(120,70%,86%)">high</span><span>Arrow A &rarr; B means &ldquo;B builds on A&rdquo;. Click a concept to revisit it.</span></div>`;
+  const how=`<details class="mt-2"><summary class="cursor-pointer font-bold text-slate-800 text-sm">How the ideas connect</summary><ul class="list-disc pl-6 text-sm text-slate-700 mt-2 grid md:grid-cols-2 gap-x-6 gap-y-1">${KM_EDGES.map(([a,b,r])=>`<li><strong>${KM_NODES[a][2]} &rarr; ${KM_NODES[b][2]}:</strong> ${r}.</li>`).join('')}</ul></details>`;
+  return `<h3 class="text-lg font-bold text-slate-800 mt-2 mb-2">Your knowledge map</h3><p class="text-sm text-slate-600 mb-2">The ideas of this chapter form a network. Each box is a concept, coloured by how many points you earned on its questions. Arrows show which idea builds on which.</p>${legend}<div class="card mb-3 overflow-x-auto">${svg}</div>${note}${how}`;
+}
+/* ============ SCORE (V2) ============ */
+function scoreHTML(rows,A){
+  const tot=rows.length, max=3*tot, st=STAT[A.status];
+  const cols=['#dc2626','#d97706','#0891b2','#059669'], labs=['0 points: not solved in 3 attempts','1 point: correct on attempt 3','2 points: correct on attempt 2','3 points: correct on attempt 1'];
+  let h=`<h3 class="text-lg font-bold text-slate-800 mt-6 mb-2">Your score</h3><div class="card mb-3">
+   <p class="text-sm text-slate-700 mb-3"><strong>How points work.</strong> Each question is worth up to <strong>3 points</strong>: <strong>3</strong> if you are correct on the first attempt, <strong>2</strong> on the second, <strong>1</strong> on the third, and <strong>0</strong> if all three attempts fail. Points show how securely you knew the idea. The effort check below shows <em>how</em> you worked.</p>
+   <div class="flex items-center gap-4 flex-wrap mb-3"><div class="rp-tile" style="min-width:13rem"><div class="v">${A.pts} / ${max}</div><div class="l">total points (${pct(A.score)})</div></div><div><span class="badge ${st[1]}">${st[0]}</span><div class="text-xs text-slate-600 mt-1">Secure from 80%, Developing from 50%</div></div></div>
+   <div class="rp-bar mb-2">${[3,2,1,0].filter(p=>A.by[p]).map(p=>`<div style="width:${A.by[p]/tot*100}%;background:${cols[p]}" title="${labs[p]}">${A.by[p]}</div>`).join('')}</div>
+   <div class="grid md:grid-cols-2 gap-x-6 gap-y-1 text-sm mb-3">${[3,2,1,0].map(p=>`<div><span class="pts p${p}">${p}</span> <strong>${A.by[p]}</strong> &nbsp;${labs[p].split(': ')[1]}</div>`).join('')}</div>
+   <table class="rp"><tr><th>Tab</th><th>Questions</th><th>Points</th><th>Score</th></tr>`;
+  Object.keys(EX).forEach(k=>{ const rs=rows.filter(r=>r.tab===k), p=rs.reduce((a,r)=>a+r.pts,0), m=3*rs.length, f=p/m, s=STAT[f>=0.8?'sec':f>=0.5?'dev':'need'];
+    h+=`<tr><td class="font-semibold">${TAB_NAMES[k]}</td><td>${rs.length}</td><td>${p} / ${m}</td><td>${pct(f)}<div class="meter mt-1"><div style="width:${f*100}%"></div></div></td></tr>`; });
+  return h+'</table></div>';
+}
+
+function reportPart(rows,title,note){
+  if(!rows.length) return `<h2 class="text-xl font-bold text-slate-800 mt-8 mb-2">${title}</h2><div class="card mb-3 text-slate-600">No questions finished in this part yet. ${note}</div>`;
+  const A=aggregate(rows), tot=rows.length;
+  const cnt={flu:0,per:0,gue:0,rus:0,str:0}; rows.forEach(r=>cnt[r.key]++);
+  const firstDt=rows.map(r=>r.log[0]?r.log[0].dt:0), avgThink=firstDt.reduce((a,b)=>a+b,0)/tot;
+  const habitShare=(cnt.rus+cnt.gue)/tot;
+  let h='';
+  h+=`<p class="text-slate-600 mb-4">This report is built automatically from what you did on the ${tot} questions you have finished in this part. It looks at <strong>what you got right</strong> and also at <strong>how you got there</strong>: how many attempts you used and whether each attempt showed real thinking. Timing is only a guide, so read the advice as suggestions, not a verdict.</p>`;
+  const concAggAll={}; Object.keys(CONCEPTS).forEach(c=>{ const rs=rows.filter(r=>r.concept===c); if(rs.length) concAggAll[c]=aggregate(rs); });
+  h+=kmapHTML(concAggAll);
+  h+=scoreHTML(rows,A);
+  h+='<h3 class="text-lg font-bold text-slate-800 mt-6 mb-2">At a glance</h3>';
+  h+=`<div class="grid grid-cols-2 md:grid-cols-5 gap-3 mb-5">
+    <div class="rp-tile"><div class="v">${tot}</div><div class="l">questions finished</div></div>
+    <div class="rp-tile"><div class="v">${pct(A.first/tot)}</div><div class="l">correct on the first attempt</div></div>
+    <div class="rp-tile"><div class="v">${A.att.toFixed(1)}</div><div class="l">average attempts per question</div></div>
+    <div class="rp-tile"><div class="v">${A.rev}</div><div class="l">solutions revealed after 3 attempts</div></div>
+    <div class="rp-tile"><div class="v">${secs(avgThink)}</div><div class="l">average thinking time before the first answer</div></div></div>`;
+  // effort
+  const order=['flu','per','gue','rus','str'], colors={flu:'#059669',per:'#0891b2',gue:'#d97706',rus:'#dc2626',str:'#7c3aed'};
+  h+=`<h3 class="text-lg font-bold text-slate-800 mb-2">1. Effort check: how you got your answers</h3><div class="card mb-3"><div class="rp-bar mb-3">${order.filter(k=>cnt[k]).map(k=>`<div style="width:${cnt[k]/tot*100}%;background:${colors[k]}" title="${EFFORT[k].label}">${cnt[k]}</div>`).join('')}</div>
+   <div class="grid md:grid-cols-2 gap-x-6 gap-y-1 text-sm">${order.map(k=>`<div><span class="badge ${EFFORT[k].cls}">${EFFORT[k].label}</span> <strong>${cnt[k]}</strong> &nbsp;${EFFORT[k].long}</div>`).join('')}</div></div>`;
+  if(habitShare>=0.2){
+    h+=`<div class="warn mb-4 text-sm text-slate-800"><p class="font-bold">Work habit to fix: slow down on retries</p><p class="mt-1">On ${cnt.rus+cnt.gue} of ${tot} questions (${pct(habitShare)}) your attempts came very quickly, one after another. The three attempts are there for <em>thinking</em>, not for trying the next answer. After a wrong answer, do this before you click again:</p>
+    <ol class="list-decimal pl-6 mt-1"><li>Re-read the question and underline what is asked.</li><li>Look back at the worked example in the tab and find the step you skipped.</li><li>Change something in your method, then answer.</li></ol></div>`;
+  } else if(cnt.rus+cnt.gue===0){
+    h+=`<div class="key mb-4 text-sm text-slate-800"><strong>Good work habits.</strong> You did not rush to a solution on any question. Where an answer was wrong, you took time between attempts.</div>`;
+  } else {
+    h+=`<div class="key mb-4 text-sm text-slate-800"><strong>Mostly steady.</strong> A few questions (${cnt.rus+cnt.gue}) had very quick retries. They are marked in the table below. Slow down on those and compare with the worked solution.</div>`;
+  }
+  // concept table
+  const concRows=Object.keys(CONCEPTS).map(c=>({c, rows:rows.filter(r=>r.concept===c)})).filter(x=>x.rows.length);
+  h+=`<h3 class="text-lg font-bold text-slate-800 mt-6 mb-2">2. Results by concept</h3><div class="card mb-3 overflow-x-auto"><table class="rp"><tr><th>Concept</th><th>Questions</th><th>Score</th><th>First attempt</th><th>Avg attempts</th><th>Effort flags</th><th>Understanding</th></tr>`;
+  const concAgg={};
+  concRows.forEach(({c,rows:rs})=>{ const g=aggregate(rs); concAgg[c]=g; const st=STAT[g.status];
+    h+=`<tr><td class="font-semibold">${CONCEPTS[c].label}</td><td>${g.n}</td><td>${g.pts} / ${g.max}<div class="meter mt-1"><div style="width:${g.score*100}%"></div></div></td><td>${g.first} of ${g.n}<div class="meter mt-1"><div style="width:${g.first/g.n*100}%"></div></div></td><td>${g.att.toFixed(1)}</td><td>${g.rush?`<span class="badge b-rus">${g.rush} quick</span>`:'<span class="text-slate-400">none</span>'}${g.str?` <span class="badge b-str">${g.str} struggled</span>`:''}</td><td><span class="badge ${st[1]}">${st[0]}</span></td></tr>`; });
+  h+='</table></div>';
+  // skills
+  h+=`<h3 class="text-lg font-bold text-slate-800 mt-6 mb-2">3. Results by skill</h3><div class="card mb-3 overflow-x-auto"><table class="rp"><tr><th>Skill</th><th>Questions</th><th>Score</th><th>First attempt</th><th>Avg attempts</th><th>Effort flags</th><th>Level</th></tr>`;
+  const skAgg={};
+  Object.keys(SKILLS).forEach(k=>{ const rs=rows.filter(r=>r.skill===k); if(!rs.length) return; const g=aggregate(rs); skAgg[k]=g; const st=STAT[g.status];
+    h+=`<tr><td class="font-semibold">${SKILLS[k].label}</td><td>${g.n}</td><td>${g.pts} / ${g.max}<div class="meter mt-1"><div style="width:${g.score*100}%"></div></div></td><td>${g.first} of ${g.n}<div class="meter mt-1"><div style="width:${g.first/g.n*100}%"></div></div></td><td>${g.att.toFixed(1)}</td><td>${g.rush?`<span class="badge b-rus">${g.rush} quick</span>`:'<span class="text-slate-400">none</span>'}</td><td><span class="badge ${st[1]}">${st[0]}</span></td></tr>`; });
+  h+='</table></div>';
+  // heat map
+  h+=`<p class="text-sm font-bold text-slate-700 mt-4 mb-1">Concept by skill (each cell: average score, number of questions)</p><div class="card mb-3 overflow-x-auto"><table class="rp heat"><tr><th>Concept</th>${Object.keys(SKILLS).map(k=>`<th>${SKILLS[k].label.split(' (')[0]}</th>`).join('')}</tr>`;
+  concRows.forEach(({c,rows:rs})=>{ h+=`<tr><td class="font-semibold">${CONCEPTS[c].label}</td>`+Object.keys(SKILLS).map(k=>{ const cell=rs.filter(r=>r.skill===k); if(!cell.length) return '<td class="h text-slate-300">&ndash;</td>'; const sc=cell.reduce((a,r)=>a+r.pts/3,0)/cell.length; const hue=Math.round(sc*120); return `<td class="h" style="background:hsl(${hue},70%,88%);color:hsl(${hue},60%,22%)">${Math.round(sc*100)}%<div class="text-xs font-semibold">${cell.length} q</div></td>`; }).join('')+'</tr>'; });
+  h+='</table></div>';
+  // study plan
+  const weak=concRows.map(x=>({c:x.c,g:concAgg[x.c]})).filter(x=>x.g.status!=='sec').sort((a,b)=>a.g.score-b.g.score);
+  h+=`<h3 class="text-lg font-bold text-slate-800 mt-6 mb-2">4. How to understand better: your study plan</h3>`;
+  if(!weak.length){
+    h+=`<div class="key text-sm text-slate-800 mb-3"><strong>Every concept looks secure.</strong> Next step: choose the skill with the lowest result in the table above and explain one solved <em>Reason</em> question aloud to a friend, step by step. Then try writing out the printable homework by hand.</div>`;
+  } else {
+    weak.forEach(({c,g})=>{ const cc=CONCEPTS[c], st=STAT[g.status];
+      h+=`<div class="card mb-3"><div class="flex items-center gap-2 flex-wrap mb-1"><span class="font-bold text-slate-800">${cc.label}</span><span class="badge ${st[1]}">${st[0]}</span><span class="text-xs text-slate-500">${g.first} of ${g.n} correct first time</span></div>`;
+      if(g.habit) h+=`<p class="text-sm text-amber-800 bg-amber-50 border-l-4 border-amber-400 rounded px-3 py-1 mb-2"><strong>First, slow down.</strong> Many attempts here were very quick, so the result may show haste more than a gap in understanding. Redo these questions carefully, writing each step.</p>`;
+      h+=`<ul class="list-disc pl-6 text-sm text-slate-700 space-y-1">${cc.tips.map(t=>`<li>${t}</li>`).join('')}</ul>
+        ${kmSupports(c)}<div class="mt-2 flex items-center gap-2 flex-wrap"><button class="btn-ghost" onclick="openTab(null,'${cc.tab}')">Revisit: ${cc.where}</button></div></div>`; });
+  }
+  const weakSk=Object.keys(skAgg).filter(k=>skAgg[k].status!=='sec');
+  if(weakSk.length){
+    h+=`<div class="card mb-3"><p class="font-bold text-slate-800 mb-1">Skill advice</p><ul class="list-disc pl-6 text-sm text-slate-700 space-y-1">${weakSk.map(k=>`<li><strong>${SKILLS[k].label}.</strong> ${SKILLS[k].tips[0]}</li>`).join('')}</ul></div>`;
+  }
+  // question table
+  h+=`<details class="mt-4"><summary class="cursor-pointer font-bold text-slate-800 text-lg">5. Question by question</summary><div class="card mt-2 overflow-x-auto"><table class="rp"><tr><th>Question</th><th>Concept</th><th>Skill</th><th>Attempts</th><th>Result</th><th>Points</th><th>Effort</th><th>Time before each attempt</th></tr>`;
+  rows.forEach(r=>{ const dots=r.log.map(a=>a.ok?'<span class="ok-t">&#10003;</span>':'<span class="bad-t">&#10007;</span>').join(' ');
+    h+=`<tr><td>${TAB_NAMES[r.tab].split(' ').slice(0,2).join(' ')} Q${r.no}</td><td>${CONCEPTS[r.concept].label}</td><td>${SKILLS[r.skill].label.split(' (')[0]}</td><td>${dots}</td><td>${r.ok?'Correct on attempt '+r.n:'Not solved (solution revealed)'}</td><td><span class="pts p${r.pts}">${r.pts} / 3</span></td><td><span class="badge ${EFFORT[r.key].cls}">${EFFORT[r.key].label}</span>${r.repeated?' <span class="text-xs text-slate-500">repeated the same wrong answer</span>':''}</td><td class="text-xs text-slate-600">${r.log.map(a=>secs(a.dt)).join(', ')}</td></tr>`; });
+  h+='</table></div></details>';
+  h+=``;
+  return `<h2 class="text-xl font-bold text-slate-800 mt-8 mb-2">${title}</h2><p class="text-sm text-slate-500 mb-3">${note}</p>`+h;
+}
+
+
+function isComp(e){ return e.tab==='t5' || /^Level 3/.test(e.lv||''); }
+function buildReport(){
+  const root=document.getElementById('report-root');
+  const all=[]; Object.keys(EX).forEach(k=>EX[k].forEach(e=>{ if(ST[e.id]&&ST[e.id].done){ const r=analyzeQ(e); r.comp=isComp(Object.assign({tab:k},e)); all.push(r); } }));
+  const nCore=Object.keys(EX).reduce((n,k)=>n+EX[k].filter(e=>!isComp(Object.assign({tab:k},e))).length,0), nAll=Object.keys(EX).reduce((n,k)=>n+EX[k].length,0);
+  const core=all.filter(r=>!r.comp), comp=all.filter(r=>r.comp);
+  let h=`<div class="card mb-3"><p class="text-slate-700">Your report grows as you work. It is built from the questions you have <strong>finished</strong> (correct, or all 3 attempts used): how many attempts you used, whether you made a real effort on each try, and which ideas are secure. Finished so far: <strong>${all.length} of ${nAll}</strong>.</p>
+  <p class="text-slate-700 mt-2">It has two parts. <strong>Part A</strong> is the core knowledge of this section (Tabs 1 to 4 and homework Levels 1 and 2). <strong>Part B</strong> is the competition side (Tab 5 Smart Thinking and homework Level 3). Your core result is not lowered by the competition questions.</p></div>`;
+  if(!all.length){ root.innerHTML=h+'<div class="card text-slate-600">Finish a few questions and come back: your report will start here.</div>'; return; }
+  h+=reportPart(core,'Part A · Core knowledge',`Tabs 1 to 4 and homework Levels 1 and 2 (${core.length} of ${nCore} finished).`);
+  h+=reportPart(comp,'Part B · Competition thinking',`Tab 5 Smart Thinking and homework Level 3 (${comp.length} of ${nAll-nCore} finished). These questions go beyond the core: treat this part as a challenge.`);
+  h+=`<div class="mt-5 flex gap-2 flex-wrap no-print"><button class="btn" onclick="window.print()">Print or save this report</button><button class="btn-ghost" onclick="openTab(null,'t6')">Back to homework</button></div>`;
+  root.innerHTML=h; typeset(root);
+}
+
+window.addEventListener('DOMContentLoaded',()=>{
+  Object.keys(EX).forEach(mountEx);
+  Object.keys(EXMAP).forEach(id=>{ if(!TAGS[id]) console.error('missing tag for '+id); else if(!CONCEPTS[TAGS[id][0]]) console.error('bad concept '+id); });
+  Object.keys(TAGS).forEach(id=>{ if(!EXMAP[id]) console.error('tag without question '+id); });
+  plUpdate(); ldRun(); rcRun(); pdRun(); rdUpdate(); labRun();
+  refreshProgress(); buildReport(); typeset();
+});
+</script>
+<!-- table-scroll-fix --><style id="tblfix">.katex{position:relative}.tblwrap{position:relative;display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}.tblwrap>table{display:table!important;overflow:visible!important;max-width:none!important}</style><script id="tblfix-js">(function(){function wrap(){document.querySelectorAll("table").forEach(function(t){var p=t.parentElement;if(!p||p.classList.contains("tblwrap"))return;var w=document.createElement("div");w.className="tblwrap";p.insertBefore(w,t);w.appendChild(t);});}function go(){wrap();new MutationObserver(wrap).observe(document.body,{childList:true,subtree:true});}if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",go);else go();})();</script><!-- end table-scroll-fix -->
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4572b9e5c4984cd3a0d53765770f398c"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

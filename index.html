@@ -224,9 +224,17 @@ const HORIZON = {
       {n:'1.2', title:'Multiplication and primes', d:'Multiplication as an operator, primes, prime factorisation, HCF and LCM.', href:'horizon/1-2-primes.html', tags:['Proofs to explore','Learning report']},
       {n:'1.3', title:'Modular arithmetic', d:'The arithmetic of the clock: remainders, congruence and check digits.', href:'horizon/1-3-modular.html', tags:['Real-life codes','Learning report']}
      ],
-     gate:{title:'HORIZON GATE', sub:"The Queen's Kingdom", d:'A reading journey beyond the integers: the stories, open questions and great ideas this chapter leads to. No exercises, just the view.', href:'horizon/gate.html'}}
+     gate:{title:'HORIZON GATE', sub:"The Queen's Kingdom", d:'A reading journey beyond the integers: the stories, open questions and great ideas this chapter leads to. No exercises, just the view.', href:'horizon/gate.html'}},
+    {n:2, name:'Rational Numbers', tag:'Divide one integer by another and a new kind of number appears: powers lead to fractions, fractions build the rationals, and decimals show their other face.',
+     sections:[
+      {n:'2.1', title:'Powers and roots', d:'Squares, cubes and roots, the index laws, the order of calculation, estimation and last digits.', href:'horizon/2-1-powers.html', tags:['5 steps','Smart Thinking','Learning report']},
+      {n:'2.2', title:'Fractions', d:'Where fractions come from, the number line, fractions as operators, comparing, and what lies between two fractions.', href:'horizon/2-2-fractions.html', tags:['5 steps','Smart Thinking','Learning report']},
+      {n:'2.3', title:'Arithmetic of the rationals', d:'Adding, multiplying and dividing fractions, reciprocals, mixed calculations and fraction stories.', href:'horizon/2-3-rationals.html', tags:['5 steps','Smart Thinking','Learning report']},
+      {n:'2.4', title:'Decimals', d:'Place value, which fractions stop or repeat, recurring decimals as fractions, rounding and bounds.', href:'horizon/2-4-decimals.html', tags:['5 steps','Smart Thinking','Learning report']}
+     ],
+     gate:{title:'HORIZON GATE', sub:'The Space Between', d:'Between any two numbers there is always another: Ford circles, Egyptian fractions and the music of ratios. A reading journey, no exercises.', href:'horizon/gate-2.html'}}
   ],
-  next:'Chapter 2 is on the horizon.'
+  next:'Chapter 3 is on the horizon.'
 };
 function horizonScene(){
   let st='';const R=(a,b)=>a+Math.random()*(b-a);
@@ -243,7 +251,7 @@ function horizonScene(){
   <path d="M 330,340 C 450,314 520,292 575,272 S 610,254 620,250" fill="none" stroke="#f4c95d" stroke-opacity=".35" stroke-width="26" stroke-linecap="round"/>
   <path d="M 330,340 C 450,314 520,292 575,272 S 610,254 620,250" fill="none" stroke="#ffe3a1" stroke-width="2" stroke-dasharray="10 9"/>
   <line x1="0" y1="250" x2="1000" y2="250" stroke="#ffd58a" stroke-opacity=".6"/>
-  ${mk(470,312,8,true,'Chapter 1')}${mk(548,284,5,false,'')}${mk(598,262,3.5,false,'')}
+  ${mk(470,312,8,true,'Chapter 1')}${mk(548,284,6,true,'Chapter 2')}${mk(598,262,3.5,false,'')}
   </svg>`;
 }
 function renderHorizon(){

@@ -1,0 +1,2076 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style id="tw">/*! tailwindcss v4.3.3 | MIT License | https://tailwindcss.com */
+@layer properties;
+@layer theme, base, components, utilities;
+@layer theme {
+  :root, :host {
+    --font-sans: "Avenir Next","Segoe UI",system-ui,sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
+    monospace;
+    --color-red-700: oklch(50.5% 0.213 27.518);
+    --color-amber-50: oklch(98.7% 0.022 95.277);
+    --color-amber-400: oklch(82.8% 0.189 84.429);
+    --color-amber-700: oklch(55.5% 0.163 48.998);
+    --color-amber-800: oklch(47.3% 0.137 46.201);
+    --color-emerald-700: oklch(50.8% 0.118 165.612);
+    --color-teal-50: #f1f3fb;
+    --color-teal-200: #c9d0ef;
+    --color-teal-600: #3b4fa8;
+    --color-teal-700: #33449a;
+    --color-slate-100: oklch(96.8% 0.007 247.896);
+    --color-slate-300: oklch(86.9% 0.022 252.894);
+    --color-slate-400: oklch(70.4% 0.04 256.788);
+    --color-slate-500: oklch(55.4% 0.046 257.417);
+    --color-slate-600: oklch(44.6% 0.043 257.281);
+    --color-slate-700: oklch(37.2% 0.044 257.287);
+    --color-slate-800: oklch(27.9% 0.041 260.031);
+    --spacing: 0.25rem;
+    --text-xs: 0.75rem;
+    --text-xs--line-height: calc(1 / 0.75);
+    --text-sm: 0.875rem;
+    --text-sm--line-height: calc(1.25 / 0.875);
+    --text-lg: 1.125rem;
+    --text-lg--line-height: calc(1.75 / 1.125);
+    --text-xl: 1.25rem;
+    --text-xl--line-height: calc(1.75 / 1.25);
+    --text-2xl: 1.5rem;
+    --text-2xl--line-height: calc(2 / 1.5);
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --leading-relaxed: 1.625;
+    --radius-lg: 0.5rem;
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --default-font-family: var(--font-sans);
+    --default-mono-font-family: var(--font-mono);
+  }
+}
+@layer base {
+  *, ::after, ::before, ::backdrop, ::file-selector-button {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0 solid;
+  }
+  html, :host {
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    tab-size: 4;
+    font-family: var(--default-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji');
+    font-feature-settings: var(--default-font-feature-settings, normal);
+    font-variation-settings: var(--default-font-variation-settings, normal);
+    -webkit-tap-highlight-color: transparent;
+  }
+  hr {
+    height: 0;
+    color: inherit;
+    border-top-width: 1px;
+  }
+  abbr:where([title]) {
+    -webkit-text-decoration: underline dotted;
+    text-decoration: underline dotted;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+  a {
+    color: inherit;
+    -webkit-text-decoration: inherit;
+    text-decoration: inherit;
+  }
+  b, strong {
+    font-weight: bolder;
+  }
+  code, kbd, samp, pre {
+    font-family: var(--default-mono-font-family, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace);
+    font-feature-settings: var(--default-mono-font-feature-settings, normal);
+    font-variation-settings: var(--default-mono-font-variation-settings, normal);
+    font-size: 1em;
+  }
+  small {
+    font-size: 80%;
+  }
+  sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  sub {
+    bottom: -0.25em;
+  }
+  sup {
+    top: -0.5em;
+  }
+  table {
+    text-indent: 0;
+    border-color: inherit;
+    border-collapse: collapse;
+  }
+  :-moz-focusring:where(:not(iframe)) {
+    outline: auto;
+  }
+  progress {
+    vertical-align: baseline;
+  }
+  summary {
+    display: list-item;
+  }
+  ol, ul, menu {
+    list-style: none;
+  }
+  img, svg, video, canvas, audio, iframe, embed, object {
+    display: block;
+    vertical-align: middle;
+  }
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+  button, input, select, optgroup, textarea, ::file-selector-button {
+    font: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    border-radius: 0;
+    background-color: transparent;
+    opacity: 1;
+  }
+  :where(select:is([multiple], [size])) optgroup {
+    font-weight: bolder;
+  }
+  :where(select:is([multiple], [size])) optgroup option {
+    padding-inline-start: 20px;
+  }
+  ::file-selector-button {
+    margin-inline-end: 4px;
+  }
+  ::placeholder {
+    opacity: 1;
+  }
+  @supports (not (-webkit-appearance: -apple-pay-button))  or (contain-intrinsic-size: 1px) {
+    ::placeholder {
+      color: currentcolor;
+      @supports (color: color-mix(in lab, red, red)) {
+        color: color-mix(in oklab, currentcolor 50%, transparent);
+      }
+    }
+  }
+  textarea {
+    resize: vertical;
+  }
+  ::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+  ::-webkit-date-and-time-value {
+    min-height: 1lh;
+    text-align: inherit;
+  }
+  ::-webkit-datetime-edit {
+    display: inline-flex;
+  }
+  ::-webkit-datetime-edit-fields-wrapper {
+    padding: 0;
+  }
+  ::-webkit-datetime-edit, ::-webkit-datetime-edit-year-field, ::-webkit-datetime-edit-month-field, ::-webkit-datetime-edit-day-field, ::-webkit-datetime-edit-hour-field, ::-webkit-datetime-edit-minute-field, ::-webkit-datetime-edit-second-field, ::-webkit-datetime-edit-millisecond-field, ::-webkit-datetime-edit-meridiem-field {
+    padding-block: 0;
+  }
+  ::-webkit-calendar-picker-indicator {
+    line-height: 1;
+  }
+  :-moz-ui-invalid {
+    box-shadow: none;
+  }
+  button, input:where([type='button'], [type='reset'], [type='submit']), ::file-selector-button {
+    appearance: button;
+  }
+  ::-webkit-inner-spin-button, ::-webkit-outer-spin-button {
+    height: auto;
+  }
+  [hidden]:where(:not([hidden='until-found'])) {
+    display: none !important;
+  }
+}
+@layer utilities {
+  .static {
+    position: static;
+  }
+  .mt-0\.5 {
+    margin-top: calc(var(--spacing) * 0.5);
+  }
+  .mt-1 {
+    margin-top: var(--spacing);
+  }
+  .mt-2 {
+    margin-top: calc(var(--spacing) * 2);
+  }
+  .mt-3 {
+    margin-top: calc(var(--spacing) * 3);
+  }
+  .mt-4 {
+    margin-top: calc(var(--spacing) * 4);
+  }
+  .mt-5 {
+    margin-top: calc(var(--spacing) * 5);
+  }
+  .mt-6 {
+    margin-top: calc(var(--spacing) * 6);
+  }
+  .mt-8 {
+    margin-top: calc(var(--spacing) * 8);
+  }
+  .mb-1 {
+    margin-bottom: var(--spacing);
+  }
+  .mb-2 {
+    margin-bottom: calc(var(--spacing) * 2);
+  }
+  .mb-3 {
+    margin-bottom: calc(var(--spacing) * 3);
+  }
+  .mb-4 {
+    margin-bottom: calc(var(--spacing) * 4);
+  }
+  .mb-5 {
+    margin-bottom: calc(var(--spacing) * 5);
+  }
+  .block {
+    display: block;
+  }
+  .flex {
+    display: flex;
+  }
+  .grid {
+    display: grid;
+  }
+  .hidden {
+    display: none;
+  }
+  .inline-block {
+    display: inline-block;
+  }
+  .table {
+    display: table;
+  }
+  .min-w-0 {
+    min-width: 0px;
+  }
+  .flex-1 {
+    flex: 1;
+  }
+  .grow {
+    flex-grow: 1;
+  }
+  .cursor-pointer {
+    cursor: pointer;
+  }
+  .list-decimal {
+    list-style-type: decimal;
+  }
+  .list-disc {
+    list-style-type: disc;
+  }
+  .grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+  .items-center {
+    align-items: center;
+  }
+  .items-start {
+    align-items: flex-start;
+  }
+  .justify-center {
+    justify-content: center;
+  }
+  .gap-1 {
+    gap: var(--spacing);
+  }
+  .gap-2 {
+    gap: calc(var(--spacing) * 2);
+  }
+  .gap-3 {
+    gap: calc(var(--spacing) * 3);
+  }
+  .gap-4 {
+    gap: calc(var(--spacing) * 4);
+  }
+  :where(.space-y-1 > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(var(--spacing) * var(--tw-space-y-reverse));
+    margin-block-end: calc(var(--spacing) * calc(1 - var(--tw-space-y-reverse)));
+  }
+  :where(.space-y-2 > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(calc(var(--spacing) * 2) * var(--tw-space-y-reverse));
+    margin-block-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-y-reverse)));
+  }
+  .gap-x-6 {
+    column-gap: calc(var(--spacing) * 6);
+  }
+  .gap-y-1 {
+    row-gap: var(--spacing);
+  }
+  .overflow-x-auto {
+    overflow-x: auto;
+  }
+  .rounded {
+    border-radius: 0.25rem;
+  }
+  .rounded-lg {
+    border-radius: var(--radius-lg);
+  }
+  .border-b-4 {
+    border-bottom-style: var(--tw-border-style);
+    border-bottom-width: 4px;
+  }
+  .border-l-4 {
+    border-left-style: var(--tw-border-style);
+    border-left-width: 4px;
+  }
+  .border-amber-400 {
+    border-color: var(--color-amber-400);
+  }
+  .border-teal-200 {
+    border-color: var(--color-teal-200);
+  }
+  .border-teal-600 {
+    border-color: var(--color-teal-600);
+  }
+  .bg-amber-50 {
+    background-color: var(--color-amber-50);
+  }
+  .bg-slate-100 {
+    background-color: var(--color-slate-100);
+  }
+  .bg-teal-50 {
+    background-color: var(--color-teal-50);
+  }
+  .p-1 {
+    padding: var(--spacing);
+  }
+  .p-3 {
+    padding: calc(var(--spacing) * 3);
+  }
+  .px-3 {
+    padding-inline: calc(var(--spacing) * 3);
+  }
+  .py-1 {
+    padding-block: var(--spacing);
+  }
+  .pl-5 {
+    padding-left: calc(var(--spacing) * 5);
+  }
+  .pl-6 {
+    padding-left: calc(var(--spacing) * 6);
+  }
+  .text-2xl {
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
+  }
+  .text-lg {
+    font-size: var(--text-lg);
+    line-height: var(--tw-leading, var(--text-lg--line-height));
+  }
+  .text-sm {
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
+  }
+  .text-xl {
+    font-size: var(--text-xl);
+    line-height: var(--tw-leading, var(--text-xl--line-height));
+  }
+  .text-xs {
+    font-size: var(--text-xs);
+    line-height: var(--tw-leading, var(--text-xs--line-height));
+  }
+  .leading-relaxed {
+    --tw-leading: var(--leading-relaxed);
+    line-height: var(--leading-relaxed);
+  }
+  .font-bold {
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+  }
+  .font-semibold {
+    --tw-font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
+  }
+  .break-all {
+    word-break: break-all;
+  }
+  .text-amber-700 {
+    color: var(--color-amber-700);
+  }
+  .text-amber-800 {
+    color: var(--color-amber-800);
+  }
+  .text-emerald-700 {
+    color: var(--color-emerald-700);
+  }
+  .text-red-700 {
+    color: var(--color-red-700);
+  }
+  .text-slate-300 {
+    color: var(--color-slate-300);
+  }
+  .text-slate-400 {
+    color: var(--color-slate-400);
+  }
+  .text-slate-500 {
+    color: var(--color-slate-500);
+  }
+  .text-slate-600 {
+    color: var(--color-slate-600);
+  }
+  .text-slate-700 {
+    color: var(--color-slate-700);
+  }
+  .text-slate-800 {
+    color: var(--color-slate-800);
+  }
+  .text-teal-700 {
+    color: var(--color-teal-700);
+  }
+  .underline {
+    text-decoration-line: underline;
+  }
+  .ease-out {
+    --tw-ease: var(--ease-out);
+    transition-timing-function: var(--ease-out);
+  }
+  @media (width >= 48rem) {
+    .md\:grid-cols-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .md\:grid-cols-5 {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+  }
+}
+@property --tw-space-y-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-leading {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ease {
+  syntax: "*";
+  inherits: false;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-space-y-reverse: 0;
+      --tw-border-style: solid;
+      --tw-leading: initial;
+      --tw-font-weight: initial;
+      --tw-ease: initial;
+    }
+  }
+}
+</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Horizon · Section 2.1 · Powers and roots</title>
+
+
+<style>
+  body { font-family: 'Inter', system-ui, sans-serif; background-color: #f7f6fb; color: #0f172a; overflow-x: hidden; }
+  .tab-content { display: none; animation: fadeIn 0.4s ease-out; }
+  .tab-content.active { display: block; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+  input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; background: transparent; }
+  input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; height: 20px; width: 20px; border-radius: 50%; background: #3b4fa8; cursor: pointer; margin-top: -8px; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+  input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 6px; cursor: pointer; background: #cbd5e1; border-radius: 3px; }
+  .btn { background:#3b4fa8; color:#fff; font-weight:700; padding:.45rem 1rem; border-radius:.4rem; font-size:.875rem; transition:.15s; box-shadow:0 1px 2px rgba(0,0,0,.15); }
+  .btn:hover { background:#33449a; } .btn:disabled { background:#94a3b8; cursor:not-allowed; }
+  .btn-ghost { background:#fff; color:#33449a; border:2px solid #c9d0ef; font-weight:700; padding:.3rem .75rem; border-radius:.4rem; font-size:.8rem; transition:.15s; }
+  .btn-ghost:hover { background:#eef0fa; border-color:#3b4fa8; } .btn-ghost.on { background:#3b4fa8; color:#fff; border-color:#3b4fa8; }
+  .card { background:#fff; border:1px solid #e2e8f0; border-radius:.75rem; padding:1.25rem; }
+  .key { background:#eef0fa; border-left:5px solid #3b4fa8; border-radius:.5rem; padding:1rem 1.25rem; }
+  .warn { background:#fffbeb; border-left:5px solid #f59e0b; border-radius:.5rem; padding:1rem 1.25rem; }
+  .step-badge { display:inline-flex; align-items:center; justify-content:center; width:1.75rem; height:1.75rem; border-radius:9999px; background:#3b4fa8; color:#fff; font-weight:800; font-size:.85rem; flex-shrink:0; }
+  .ex-card { background:#fff; border:1px solid #cbd5e1; border-radius:.75rem; padding:1.1rem 1.25rem; margin-bottom:1rem; }
+  .ex-card.ok { border-color:#34d399; background:#f0fdf4; } .ex-card.bad { border-color:#fca5a5; background:#fef2f2; }
+  .qnum { width:2rem; height:2rem; border-radius:.5rem; background:#1c2230; color:#fff; font-weight:800; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .inp { border:2px solid #cbd5e1; border-radius:.4rem; padding:.45rem .7rem; font-family: ui-monospace, monospace; font-weight:700; width:100%; max-width:22rem; }
+  .inp:focus { outline:none; border-color:#3b4fa8; box-shadow:0 0 0 3px #c9d0ef; }
+  .opt { display:block; width:100%; text-align:left; border:2px solid #cbd5e1; background:#fff; border-radius:.5rem; padding:.5rem .8rem; margin-bottom:.4rem; font-size:.9rem; transition:.15s; }
+  .opt:hover { border-color:#3b4fa8; background:#eef0fa; } .opt.sel { border-color:#3b4fa8; background:#dde2f6; font-weight:700; }
+  .opt.right { border-color:#10b981; background:#d1fae5; } .opt.wrong { border-color:#ef4444; background:#fee2e2; }
+  .chip { display:inline-flex; align-items:center; justify-content:center; min-width:2.6rem; height:2.4rem; padding:0 .5rem; border:2px solid #cbd5e1; border-radius:.5rem; background:#fff; font-weight:700; cursor:pointer; transition:.15s; user-select:none; }
+  .chip:hover { border-color:#3b4fa8; background:#eef0fa; transform:translateY(-2px); }
+  .chip.selA { background:#c9d0ef; border-color:#3b4fa8; color:#1c2230; } .chip.selB { background:#fde68a; border-color:#d97706; color:#78350f; }
+  .chip.pos { background:#ecfeff; border-color:#22d3ee; color:#155e75; } .chip.neg { background:#fff1f2; border-color:#fb7185; color:#9f1239; }
+  .chip.pick { outline:4px solid #f59e0b; }
+  .chip.static { cursor:default; } .chip.static:hover { transform:none; }
+  .sol-box { background:#f0fdf4; border:1px solid #bbf7d0; border-radius:.6rem; padding:1rem 1.2rem; } .sol-box.fail { background:#eef0fa; border-color:#c9d0ef; }
+  .lvl { background:#1c2230; color:#fff; border-radius:.6rem; padding:.6rem 1rem; font-weight:800; margin:1.5rem 0 .8rem; }
+  .tab-done::after { content:" ✓"; color:#10b981; }
+  .ok-t { color:#047857; font-weight:700; } .bad-t { color:#b91c1c; font-weight:700; }
+  table.tb { border-collapse:collapse; font-size:.85rem; } table.tb th, table.tb td { border:1px solid #cbd5e1; padding:.35rem .6rem; text-align:center; }
+  table.tb th { background:#eef0fa; }
+  .tech { background:#fff; border:1px solid #c9d0ef; border-left:6px solid #3b4fa8; border-radius:.6rem; padding:1rem 1.2rem; margin-bottom:1rem; }
+  .tech .tt { font-weight:800; color:#33449a; margin-bottom:.35rem; }
+  .eg { background:#f8fafc; border:1px dashed #94a3b8; border-radius:.5rem; padding:.6rem .9rem; margin-top:.5rem; font-size:.9rem; }
+  .turn { display:inline-block; background:#fef3c7; color:#92400e; font-weight:800; font-size:.72rem; padding:.1rem .5rem; border-radius:9999px; margin-bottom:.4rem; }
+  .chip.sm { min-width:2.1rem; height:2rem; font-size:.8rem; padding:0 .3rem; }
+  .chip.prime { background:#c9d0ef; border-color:#3b4fa8; color:#1c2230; }
+  .chip.struck { background:#f7f6fb; color:#94a3b8; text-decoration:line-through; border-color:#e2e8f0; }
+  .chip.one { background:#fee2e2; border-color:#f87171; color:#991b1b; }
+  .chip.oddd { background:#fef3c7; border-color:#f59e0b; color:#78350f; }
+  .dot { width:1.15rem; height:1.15rem; border-radius:9999px; background:#5b6cc0; display:inline-block; }
+  .dot.b { background:#f59e0b; }
+  sup { font-size:.7em; }
+
+  /* ---- V2 additions ---- */
+  .qtext p { margin:.4rem 0; } .qtext p:first-child { margin-top:0; } .qtext p:last-child { margin-bottom:0; }
+  .qtext ul { list-style:disc; padding-left:1.4rem; margin:.4rem 0; } .qtext li { margin:.15rem 0; }
+  .qlabel { display:inline-block; background:#dde2f6; color:#1c2230; font-weight:800; font-size:.78rem; letter-spacing:.02em; padding:.1rem .65rem; border-radius:9999px; }
+  .hint { background:#fffbeb; border-left:4px solid #f59e0b; padding:.4rem .75rem; border-radius:.35rem; font-size:.88rem; color:#78350f; }
+  .codetab { margin:.2rem 0 .5rem; } .codetab td, .codetab th { min-width:2.1rem; padding:.2rem .35rem; }
+  .codetab th { background:#dde2f6; }
+  mjx-container[display="true"] { overflow-x:auto; overflow-y:hidden; max-width:100%; }
+  .fprev { margin-top:.55rem; border:2px dashed #a7b2e2; background:#eef0fa; border-radius:.5rem; padding:.4rem .8rem; min-height:3rem; max-width:34rem; }
+  .fprev .lab { font-size:.68rem; font-weight:800; color:#33449a; text-transform:uppercase; letter-spacing:.05em; display:block; }
+  .fprev .msg { font-size:.85rem; color:#475569; }
+  kbd.k { background:#f7f6fb; border:1px solid #94a3b8; border-bottom-width:3px; border-radius:.3rem; padding:0 .4rem; font-family:ui-monospace,monospace; font-weight:700; font-size:.85em; }
+  .proof { background:#fff; border:2px solid #33449a; border-radius:.75rem; padding:1.1rem 1.3rem; margin-bottom:1.2rem; }
+  .proof .ph { font-weight:800; color:#33449a; font-size:1.05rem; margin-bottom:.4rem; }
+  .proof .ps { margin:.7rem 0; padding-left:.9rem; border-left:4px solid #c9d0ef; font-size:.92rem; color:#1e293b; }
+  .proof .ps b.n { color:#33449a; }
+  .rp-tile { background:#f8fafc; border:1px solid #cbd5e1; border-radius:.6rem; padding:.7rem .9rem; text-align:center; }
+  .rp-tile .v { font-size:1.6rem; font-weight:800; color:#1c2230; } .rp-tile .l { font-size:.72rem; color:#475569; font-weight:700; }
+  .badge { display:inline-block; font-size:.72rem; font-weight:800; padding:.1rem .55rem; border-radius:9999px; white-space:nowrap; }
+  .b-sec { background:#d1fae5; color:#065f46; } .b-dev { background:#fef3c7; color:#92400e; } .b-need { background:#fee2e2; color:#991b1b; }
+  .b-flu { background:#d1fae5; color:#065f46; } .b-per { background:#cffafe; color:#155e75; } .b-gue { background:#fef3c7; color:#92400e; } .b-rus { background:#fee2e2; color:#991b1b; } .b-str { background:#ede9fe; color:#5b21b6; }
+  .rp-bar { display:flex; height:1.6rem; border-radius:.4rem; overflow:hidden; border:1px solid #cbd5e1; }
+  .rp-bar div { display:flex; align-items:center; justify-content:center; font-size:.72rem; font-weight:800; color:#fff; }
+  .meter { height:.6rem; background:#e2e8f0; border-radius:9999px; overflow:hidden; min-width:6rem; } .meter > div { height:100%; background:#3b4fa8; }
+  table.rp { border-collapse:collapse; width:100%; font-size:.84rem; } table.rp th, table.rp td { border-bottom:1px solid #e2e8f0; padding:.45rem .5rem; text-align:left; vertical-align:top; }
+  table.rp th { background:#eef0fa; font-size:.75rem; text-transform:uppercase; letter-spacing:.03em; color:#33449a; }
+  .heat td.h { text-align:center; font-weight:800; border-radius:.3rem; }
+  .toast { position:fixed; right:1rem; bottom:1rem; background:#1c2230; color:#fff; padding:.8rem 1.1rem; border-radius:.6rem; box-shadow:0 6px 18px rgba(0,0,0,.3); z-index:50; max-width:20rem; font-size:.9rem; }
+  @media print { body { background:#fff; } .toast, .tab-link, .no-print { display:none !important; } }
+
+  /* ---- 2.3 additions ---- */
+  .chip.struck-lite { opacity:.55; }
+  select.inp { background:#fff; }
+  /* ---- V2 additions: examples, proof drawers, scenes, scoring, map ---- */
+  .seeit { background:#eef2ff; border:2px solid #a5b4fc; border-radius:.6rem; padding:.7rem 1rem; margin:.7rem 0; }
+  .seeit .sh { font-weight:800; color:#3730a3; font-size:.95rem; margin-bottom:.35rem; }
+  .seg { margin:.55rem 0; padding:.1rem 0 .1rem .8rem; border-left:4px solid #6366f1; font-size:.9rem; color:#1e293b; }
+  .seg .et { font-weight:800; color:#312e81; margin-bottom:.15rem; } .seg p { margin:.25rem 0; }
+  details.pf { border:1px dashed #a7b2e2; border-radius:.5rem; background:#f8fafc; padding:.45rem .8rem; margin:.6rem 0 .2rem; }
+  details.pf > summary { cursor:pointer; font-weight:800; color:#33449a; font-size:.92rem; }
+  details.pf[open] > summary { margin-bottom:.4rem; }
+  .scene { border:2px solid #cbd5e1; border-radius:.75rem; padding:.9rem 1.15rem; margin-bottom:1rem; background:#fff; font-size:.92rem; color:#1e293b; }
+  .scene.bad { border-color:#fca5a5; background:#fef2f2; } .scene.good { border-color:#6ee7b7; background:#ecfdf5; }
+  .scene .sh { font-weight:800; color:#33449a; font-size:.78rem; text-transform:uppercase; letter-spacing:.05em; margin-bottom:.4rem; }
+  .scene.bad .sh { color:#b91c1c; } .scene .ask { margin-top:.7rem; background:#fffbeb; border-left:4px solid #f59e0b; padding:.45rem .75rem; border-radius:.35rem; }
+  .machine { font-family:ui-monospace,Menlo,Consolas,monospace; font-size:.8rem; background:#0f172a; color:#a7f3d0; border-radius:.45rem; padding:.45rem .75rem; margin:.5rem 0; overflow-x:auto; }
+  .mono { font-family:ui-monospace,Menlo,Consolas,monospace; font-weight:700; background:#e2e8f0; padding:0 .3rem; border-radius:.25rem; }
+  .pts { display:inline-block; min-width:2.6rem; text-align:center; font-weight:800; font-size:.75rem; padding:.1rem .45rem; border-radius:9999px; color:#fff; }
+  .pts.p3 { background:#059669; } .pts.p2 { background:#0891b2; } .pts.p1 { background:#d97706; } .pts.p0 { background:#dc2626; }
+  .kmswatch { padding:.05rem .6rem; border-radius:9999px; border:1px solid #94a3b8; font-weight:700; }
+
+  /* ---- 3.1 additions ---- */
+  .os-line { background:#f8fafc; border:1px solid #cbd5e1; border-radius:.4rem; padding:.25rem .7rem; display:inline-block; max-width:100%; overflow-x:auto; }
+  .chip.sm { cursor:pointer; }
+  .tb th, .tb td { vertical-align:middle; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script>
+/* MathJax-compatible shim: the lesson code calls MathJax.typesetPromise; we render with KaTeX */
+window.MathJax={typesetPromise:function(els){try{(els&&els.length?els:[document.body]).forEach(function(e){if(e&&window.renderMathInElement)renderMathInElement(e,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false}],throwOnError:false,ignoredClasses:['nomath']})})}catch(err){}return Promise.resolve()}};
+</script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%20role%3D%22img%22%20aria-label%3D%22%E7%94%B3%20Shen%20Studio%22%3E%3Crect%20width%3D%22100%22%20height%3D%22100%22%20rx%3D%2212%22%20fill%3D%22%23B3261E%22/%3E%3Cpath%20d%3D%22M41.57%2027.7V42.46H27.58V27.7ZM15.1%2025.34V70.78H16.95C22.18%2070.78%2027.58%2067.91%2027.58%2066.65V62.18H41.57V90H44.01C48.82%2090%2054.3%2086.88%2054.3%2085.62V62.18H68.97V68.93H71.07C75.37%2068.93%2081.53%2066.65%2081.61%2065.89V29.64C83.38%2029.3%2084.39%2028.55%2084.9%2027.87L73.69%2019.19L68.12%2025.34H54.3V13.96C56.74%2013.62%2057.33%2012.7%2057.5%2011.52L41.57%2010V25.34H28.42L15.1%2020.2ZM54.3%2027.7H68.97V42.46H54.3ZM41.57%2059.82H27.58V44.82H41.57ZM54.3%2059.82V44.82H68.97V59.82Z%22%20fill%3D%22%23FFFFFF%22/%3E%3C/svg%3E">
+<style id="shen-brand">
+.shen-footer{display:flex;align-items:center;justify-content:center;gap:8px;padding:18px 12px 26px;font:500 13px/1.3 Inter,"Helvetica Neue",Arial,sans-serif;color:#6B6458;letter-spacing:.03em;text-align:center}
+.shen-footer svg{width:20px;height:20px;flex-shrink:0}
+.shen-footer b{font-weight:600;color:#1A1A1A}
+.shen-print-mark{display:none}
+@media print{.shen-footer{display:none!important}
+.shen-print-mark{display:flex!important;position:fixed;right:0;bottom:0;align-items:center;gap:1.5mm;font:500 7.5pt/1 Inter,Arial,sans-serif;color:#555;opacity:.75;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.shen-print-mark svg{width:4mm;height:4mm}}
+</style>
+<style id="home-link">
+.homebtn{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 12px;border:1px solid var(--line,#ddd);border-radius:999px;background:#fff;color:var(--ink,#1c2230);text-decoration:none;font:600 .88rem/1 Inter,system-ui,sans-serif;white-space:nowrap;flex-shrink:0}
+.homebtn:hover{background:#f1eff6}
+.homebtn svg{width:16px;height:16px}
+@media print{.homebtn{display:none!important}}
+</style>
+<style id="hz">/* ===== Horizon lessons on the Maths Atlas theme ===== */
+:root{--ink:#1c2230;--muted:#5b6475;--paper:#f7f6fb;--line:#e2e0ea;--a:#3b4fa8;--a-soft:#e8ebf8;--b:#b5487a;--hz:#d4693a;--hz-soft:#fdf0e8}
+html,body{margin:0;padding:0}
+body{background:var(--paper)!important;color:var(--ink);font:17px/1.62 "Avenir Next","Segoe UI",system-ui,-apple-system,sans-serif!important;overflow-x:hidden}
+h1,h2,h3,h4{font-family:Georgia,"Times New Roman",serif}
+h2{color:var(--ink)}
+header.top{position:sticky;top:0;z-index:30;background:rgba(247,246,251,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.topin{max-width:980px;margin:0 auto;padding:.55rem 1rem .35rem;display:flex;align-items:center;gap:.8rem;flex-wrap:wrap}
+.brand{font-family:Georgia,serif;font-weight:600;font-size:1.02rem;flex:1;min-width:180px;line-height:1.3}
+.brand .hzk{display:inline-block;font:700 .66rem/1 "Avenir Next",system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#fff;background:linear-gradient(90deg,#2b2350,var(--hz));border-radius:999px;padding:.28rem .6rem;margin-right:.4rem;vertical-align:2px}
+.brand small{display:block;font-weight:400;color:var(--muted);font-size:.84rem}
+.prog{font-size:.82rem;color:var(--muted);text-align:right;white-space:nowrap}
+nav.tabs{max-width:980px;margin:0 auto;display:flex;gap:.35rem;overflow-x:auto;padding:.1rem 1rem .6rem;scrollbar-width:thin}
+nav.tabs .tab-link{flex:0 0 auto;border:1px solid var(--line)!important;background:#fff!important;color:var(--ink)!important;border-radius:999px!important;padding:.32rem .8rem!important;font:400 .9rem/1.4 "Avenir Next",system-ui,sans-serif!important;cursor:pointer;white-space:nowrap}
+nav.tabs .tab-link.border-teal-600{background:var(--ink)!important;color:#fff!important;border-color:var(--ink)!important}
+nav.tabs .tab-link.tab-done::after{color:#2f8a4c}
+nav.tabs .tab-link.border-teal-600.tab-done::after{color:#9be3b0}
+main.hzmain{max-width:980px;margin:0 auto;padding:1.4rem 1rem 3rem}
+main.hzmain h2{font-size:1.65rem!important}
+main.hzmain .card{border-color:var(--line)}
+.katex{font-size:1.06em}
+.katex-display{overflow-x:auto;overflow-y:hidden;padding:2px 0}
+input,select,button,textarea{font-family:inherit}
+@media print{header.top{position:static}}
+
+.hzr h3{font-size:1.15rem;margin:1.4rem 0 .4rem;font-weight:600}
+.hzr .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:.8rem 1rem;margin:.5rem 0}
+.hzr-t{overflow-x:auto}.hzr-t table{width:100%;border-collapse:collapse}
+.hzr-t td{padding:.3rem .35rem;vertical-align:middle;font-size:.95rem}
+.hzr-t td:last-child{white-space:nowrap;font-size:.82rem}
+.hzr-ul{list-style:disc;padding-left:1.2rem;margin:.2rem 0}.hzr-ul li{margin:.25rem 0}
+@media(max-width:480px){.hzr-t td:nth-child(2){min-width:70px}.hzr-t td:nth-child(2) div{min-width:60px!important}}
+.codetab,table.tb,table.rp{display:block;overflow-x:auto;max-width:100%}
+</style>
+</head>
+<body>
+<header class="top"><div class="topin"><a class="homebtn" href="../index.html#horizon" aria-label="Back to the Maths Atlas home page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>Home</a><div class="brand"><span class="hzk">Horizon</span>Chapter 2 · Rational Numbers<small>Section 2.1 · Powers, roots and the order of calculation</small></div><div class="prog"><span id="prog-count">0</span> / <span id="prog-total">0</span> done</div></div><nav class="tabs" id="tabs"><button type="button" class="tab-link text-teal-700 border-b-4 border-teal-600 font-bold" data-tab="t1" onclick="openTab(event,'t1')">1. Squares, Cubes &amp; Roots</button><button type="button" class="tab-link" data-tab="t2" onclick="openTab(event,'t2')">2. Index Laws</button><button type="button" class="tab-link" data-tab="t3" onclick="openTab(event,'t3')">3. Order of Calculation</button><button type="button" class="tab-link" data-tab="t4" onclick="openTab(event,'t4')">4. Estimation &amp; Digits</button><button type="button" class="tab-link" data-tab="t5" onclick="openTab(event,'t5')">5. Smart Thinking</button><button type="button" class="tab-link" data-tab="t6" onclick="openTab(event,'t6')">6. Homework</button><button type="button" class="tab-link" data-tab="t7" onclick="openTab(event,'t7')"><span id="t7-label">7. Learning Report</span></button></nav></header>
+<main class="hzmain">
+
+  <div id="t1" class="tab-content active">
+    <h2 class="text-2xl font-bold text-slate-800 mb-1">Step 1: Squares, Cubes and Roots</h2>
+    <p class="text-slate-600 mb-5">In Chapter 1 you built $\mathbb{Z}$ and learned to split numbers into primes. Chapter 2 extends our number system to the <strong>rational numbers</strong>. Before fractions arrive, we sharpen the tools that every later chapter leans on: <strong>powers, roots and the correct order of calculation</strong>. We start with the most famous powers of all: squares and cubes.</p>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">1</span><h3 class="text-lg font-bold text-slate-800">Square numbers and cube numbers are sets</h3></div>
+    <div class="key mb-4 text-sm text-slate-800">
+      <p>Use the set language of Chapters 1 and 2. Let $\mathbb{Z}^+=\{1,2,3,\ldots\}$. The set of <strong>square numbers</strong> and the set of <strong>cube numbers</strong> are</p>
+      <p class="mt-1">$$Sq=\{n^2:\ n\in\mathbb{Z}^+\}=\{1,4,9,16,25,\ldots\},\qquad Cb=\{n^3:\ n\in\mathbb{Z}^+\}=\{1,8,27,64,125,\ldots\}.$$</p>
+      <ul class="list-disc pl-6 mt-2 space-y-1">
+        <li>$49\in Sq$ because $49=7^2$, but $50\notin Sq$ (it lies between $7^2=49$ and $8^2=64$).</li>
+        <li>$n(Sq\cap\{1,2,\ldots,100\})=10$, the squares $1^2,2^2,\ldots,10^2$.</li>
+        <li>$Sq\cap Cb=\{1,64,729,\ldots\}$: numbers that are <em>both</em>. $64=8^2=4^3$. You will see in Step 1 of Tab 5 why these are exactly the sixth powers $n^6$.</li>
+      </ul>
+      <p class="mt-2">The <strong>root</strong> undoes the power. $\sqrt{x}$ (the <em>square root</em>) means the <strong>non-negative</strong> number whose square is $x$, so $\sqrt{49}=7$ (the other number whose square is $49$ is $-7$, but $\sqrt{\ }$ always gives the non-negative one). $\sqrt[3]{x}$ (the <em>cube root</em>) is the number whose cube is $x$, and it can be negative: $\sqrt[3]{-27}=-3$.</p>
+    </div>
+    <p class="text-sm font-bold text-slate-700 mb-2">Try it: the Square and Cube Explorer</p>
+    <div class="card mb-5">
+      <div class="grid md:grid-cols-2 gap-4 items-start">
+        <div>
+          <label class="text-sm font-bold" for="sq-n">Side length $n=$ <span id="sq-nv" class="text-teal-700">6</span></label>
+          <input type="range" id="sq-n" min="1" max="15" value="6" oninput="sqUpdate()">
+          <div id="sq-msg" class="mt-3 text-sm space-y-1"></div>
+        </div>
+        <div id="sq-svg" class="flex justify-center overflow-x-auto"></div>
+      </div>
+      <p class="text-xs text-slate-500 mt-2">Each colour is one L-shaped layer. Count the dots in the layers: $1,3,5,7,\ldots$</p>
+    </div>
+
+    <div class="proof">
+      <div class="ph">Theorem 1: the sum of the first $n$ odd numbers is $n^2$</div>
+      <p class="text-sm">$1+3+5+\cdots+(2n-1)=n^2$ for every positive integer $n$.</p>
+      <div class="seeit"><div class="sh">What this theorem says, with examples</div>
+        <div class="seg"><p class="et">Example 1: small cases</p><p>$1=1^2$. $\;1+3=4=2^2$. $\;1+3+5=9=3^2$. $\;1+3+5+7=16=4^2$. Each new odd number completes a bigger square.</p></div>
+        <div class="seg"><p class="et">Example 2: a quick sum</p><p>Add the first $12$ odd numbers. There is no need to add them one by one: the answer is $12^2=144$. The last number added is $2\times12-1=23$.</p></div>
+        <div class="seg"><p class="et">Example 3: working backwards</p><p>If $1+3+5+\cdots+L=441$, then $441=21^2$, so $21$ odd numbers were added and the last one is $L=2\times21-1=41$.</p></div>
+      </div>
+      <details class="pf"><summary>Show the proof (optional reading for the curious)</summary>
+      <div class="ps"><b class="n">Picture.</b> Take an $n\times n$ square of dots. Remove the top row and the right column together: they form an L-shape (a <em>gnomon</em>) of $2n-1$ dots, because the corner dot is shared. What is left is an $(n-1)\times(n-1)$ square.</div>
+      <div class="ps"><b class="n">Repeat.</b> Remove an L of $2n-3$ dots, then $2n-5$, and so on down to a single dot. So $n^2=(2n-1)+(2n-3)+\cdots+3+1$. $\blacksquare$</div>
+      </details>
+    </div>
+
+    <div class="tech">
+      <div class="tt">Technique 1: decide whether a number is a perfect square (or cube)</div>
+      <p class="text-sm text-slate-700">Two quick tests, from fastest to most certain.</p>
+      <ol class="list-decimal pl-6 text-sm text-slate-700 mt-1 space-y-1">
+        <li><strong>Last-digit test (can only say NO).</strong> A square ends in $0,1,4,5,6$ or $9$. It never ends in $2,3,7$ or $8$. (Check: $1^2,2^2,\ldots,9^2$ end in $1,4,9,6,5,6,9,4,1$.)</li>
+        <li><strong>Prime-factor test (decides it).</strong> Write the number as a product of primes. It is a perfect <strong>square</strong> exactly when <em>every</em> index is even, and a perfect <strong>cube</strong> exactly when every index is a multiple of $3$.</li>
+      </ol>
+      <div class="eg"><p><strong>Example 1:</strong> Is $3528$ a perfect square? It ends in $8$, so <strong>no</strong>, immediately.</p>
+        <p class="mt-1"><strong>Example 2:</strong> Is $7056$ a perfect square? It ends in $6$, so it might be. Factorise: $7056=2^4\times3^2\times7^2$. All indices ($4,2,2$) are even, so yes, and $\sqrt{7056}=2^2\times3\times7=84$ (halve each index).</p>
+        <p class="mt-1"><strong>Example 3:</strong> $1728=2^6\times3^3$. Indices $6$ and $3$ are both multiples of $3$, so $1728$ is a perfect cube: $\sqrt[3]{1728}=2^2\times3=12$ (divide each index by $3$).</p></div>
+    </div>
+
+    <div class="tech">
+      <div class="tt">Technique 2: the smallest multiplier that makes a perfect square or cube</div>
+      <p class="text-sm text-slate-700">Factorise. For a square, look at every prime whose index is <strong>odd</strong> and multiply by one more copy of it. For a cube, top each index up to the next multiple of $3$.</p>
+      <div class="eg"><p><strong>Example 1:</strong> Smallest $n$ so that $50n$ is a perfect square. $50=2\times5^2$. The index of $2$ is odd, so $n=2$, giving $100=10^2$.</p>
+        <p class="mt-1"><strong>Example 2:</strong> Smallest $n$ so that $54n$ is a perfect cube. $54=2\times3^3$. The index of $2$ is $1$, which must become $3$, so we need $2^2$ more: $n=4$. Check: $54\times4=216=6^3$.</p></div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3 mt-6"><span class="step-badge">2</span><h3 class="text-lg font-bold text-slate-800">The Locker Puzzle: why are square numbers special?</h3></div>
+    <div class="scene">
+      <div class="sh">A real puzzle from a school corridor</div>
+      <p>A corridor has $100$ lockers, all <strong>closed</strong>. Student $1$ walks down and opens <em>every</em> locker. Student $2$ walks down and <em>flips</em> every second locker (open becomes closed, closed becomes open). Student $3$ flips every third locker, student $4$ every fourth, and so on, until student $100$ flips just locker $100$.</p>
+      <div class="ask">Which lockers are open at the end? Run the experiment below and look at the pattern before reading on.</div>
+    </div>
+    <div class="card mb-4">
+      <div class="flex items-center gap-3 flex-wrap mb-2">
+        <label class="text-sm font-bold" for="lk-n">Number of lockers:</label><input type="number" id="lk-n" class="inp" style="max-width:6rem" min="1" max="200" value="100">
+        <button class="btn" onclick="lkRun()">Run all the students</button>
+        <button class="btn-ghost" onclick="lkSet(36)">36</button><button class="btn-ghost" onclick="lkSet(100)">100</button><button class="btn-ghost" onclick="lkSet(150)">150</button>
+      </div>
+      <p class="text-xs text-slate-500 mb-2">Orange = open at the end. Click any locker to see how many times it was flipped (one flip for each factor of its number).</p>
+      <div id="lk-grid" class="flex flex-wrap gap-1"></div>
+      <div id="lk-msg" class="mt-3 text-sm space-y-1"></div>
+    </div>
+    <div class="key mb-4 text-sm text-slate-800">
+      <p><strong>The clue.</strong> Locker $k$ is flipped by student $d$ exactly when $d$ is a <strong>factor</strong> of $k$. It starts closed, so it ends open only if it was flipped an <strong>odd</strong> number of times. So the open lockers are those whose number has an <em>odd number of factors</em>. And that is exactly the square numbers.</p>
+    </div>
+    <div class="proof">
+      <div class="ph">Theorem 2: a positive integer has an odd number of factors if and only if it is a perfect square</div>
+      <div class="seeit"><div class="sh">What this theorem says, with examples</div>
+        <div class="seg"><p class="et">Example 1: a square, an odd count</p><p>The factors of $36$ are $1,2,3,4,6,9,12,18,36$. That is $9$ factors, an odd number. Pair them: $(1,36),(2,18),(3,12),(4,9)$ and the lonely $6$, which is paired with itself because $6\times6=36$.</p></div>
+        <div class="seg"><p class="et">Example 2: a non-square, an even count</p><p>The factors of $20$ are $1,2,4,5,10,20$: $6$ factors, all in pairs $(1,20),(2,10),(4,5)$. There is no lonely factor because $20$ is not a square.</p></div>
+        <div class="seg"><p class="et">Example 3: using the factor-counting box from 1.2</p><p>$144=2^4\times3^2$ has $(4+1)(2+1)=15$ factors: odd, and $144=12^2$. In general, the number of factors is a product of $(\text{index}+1)$ terms, which is odd only when <em>every</em> index is even.</p></div>
+      </div>
+      <details class="pf"><summary>Show the proof (optional reading for the curious)</summary>
+      <div class="ps"><b class="n">Pairing.</b> If $d$ is a factor of $n$, then so is $n\div d$. This pairs each factor $d$ with a partner $n\div d$, and $d\times(n\div d)=n$.</div>
+      <div class="ps"><b class="n">When is a factor its own partner?</b> Exactly when $d=n\div d$, that is $d^2=n$. This can only happen if $n$ is a perfect square, and then there is exactly one such $d$, namely $\sqrt n$.</div>
+      <div class="ps"><b class="n">Count.</b> If $n$ is not a perfect square, all factors come in pairs of two different numbers, so the count is even. If $n$ is a perfect square, the pairs use an even number of factors and $\sqrt n$ is left over, so the count is odd. $\blacksquare$</div>
+      </details>
+    </div>
+    <p class="text-sm text-slate-700 mb-4"><strong>Answer to the puzzle:</strong> the open lockers are $1,4,9,16,25,36,49,64,81,100$. Ten lockers, the squares up to $100$.</p>
+
+    <h3 class="text-xl font-bold text-slate-800 mb-3 mt-8 bg-slate-100 p-3 rounded-lg inline-block">Check your understanding</h3>
+    <div id="ex-t1"></div>
+  </div>
+
+  <div id="t2" class="tab-content">
+    <h2 class="text-2xl font-bold text-slate-800 mb-1">Step 2: Index Notation and the Index Laws</h2>
+    <p class="text-slate-600 mb-5">Squares and cubes are only the first two members of a huge family: $2^{10}$, $5^{130}$, $10^{-3}$. This tab explains where powers come from, why the <strong>index laws</strong> work (by simply counting factors), and why $2^0$ <em>has</em> to equal $1$.</p>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">1</span><h3 class="text-lg font-bold text-slate-800">Where powers come from: the paper-folding story</h3></div>
+    <div class="scene">
+      <div class="sh">Scene 1: fold a sheet of paper in half, again and again</div>
+      <p>A sheet of paper is about $0.1$ mm thick. Fold it in half: $2$ layers, $0.2$ mm. Fold again: $4$ layers. Fold again: $8$ layers. Every fold <strong>doubles</strong> the number of layers.</p>
+      <table class="tb mt-2 text-sm"><tr><th>Folds</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>10</th><th>20</th></tr><tr><th>Layers</th><td>2</td><td>4</td><td>8</td><td>16</td><td>32</td><td>1024</td><td>1&nbsp;048&nbsp;576</td></tr><tr><th>Thickness</th><td>0.2 mm</td><td>0.4 mm</td><td>0.8 mm</td><td>1.6 mm</td><td>3.2 mm</td><td>about 10 cm</td><td>about 105 m</td></tr></table>
+      <p class="mt-2">After $10$ folds the stack is as thick as a hand. After $20$ it is as tall as a 30-storey building. After $42$ folds it would be about $440\,000$ km tall, further than the Moon! (This is a thought experiment: nobody can fold a sheet more than about $7$ or $8$ times.)</p>
+      <div class="ask">After $n$ folds there are $2\times2\times\cdots\times2$ ($n$ twos) layers. Writing that out for $n=42$ is painful. So we invented a short way to write it.</div>
+    </div>
+
+    <div class="key mb-4 text-sm text-slate-800">
+      <p><strong>Index notation.</strong> $a^n$ means $a$ multiplied by itself $n$ times:</p>
+      <p class="mt-1">$$a^n=\underbrace{a\times a\times\cdots\times a}_{n\text{ factors}}.$$</p>
+      <p class="mt-1">$a$ is the <strong>base</strong> and $n$ is the <strong>index</strong> (or <em>exponent</em>). So the paper stack after $n$ folds has $2^n$ layers. Reading aloud: $5^3$ is &ldquo;five to the power three&rdquo; or &ldquo;five cubed&rdquo;, and $5^2$ is &ldquo;five squared&rdquo;. A power is a <strong>bundle of repeated multiplication</strong>, just as $3\times2$ is a bundle of repeated addition.</p>
+      <p class="mt-2"><strong>Powers worth knowing by heart.</strong></p>
+      <table class="tb mt-1"><tr><th>Powers of 2</th><td>2</td><td>4</td><td>8</td><td>16</td><td>32</td><td>64</td><td>128</td><td>256</td><td>512</td><td>1024</td></tr><tr><th>Powers of 3</th><td>3</td><td>9</td><td>27</td><td>81</td><td>243</td><td>729</td><td colspan="4"></td></tr><tr><th>Powers of 5</th><td>5</td><td>25</td><td>125</td><td>625</td><td>3125</td><td colspan="5"></td></tr></table>
+    </div>
+    <p class="text-sm font-bold text-slate-700 mb-2">Try it: the Power Explorer (also works with negative indices, see Step 3)</p>
+    <div class="card mb-5">
+      <div class="grid md:grid-cols-2 gap-4 items-start">
+        <div>
+          <div class="flex items-center gap-3 flex-wrap"><label class="text-sm font-bold" for="pw-a">Base $a=$ <span id="pw-av" class="text-teal-700">2</span></label></div>
+          <input type="range" id="pw-a" min="2" max="12" value="2" oninput="pwUpdate()">
+          <div class="flex items-center gap-3 flex-wrap mt-2"><label class="text-sm font-bold" for="pw-n">Index $n=$ <span id="pw-nv" class="text-teal-700">5</span></label></div>
+          <input type="range" id="pw-n" min="-6" max="16" value="5" oninput="pwUpdate()">
+        </div>
+        <div id="pw-out" class="text-sm space-y-2"></div>
+      </div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3 mt-6"><span class="step-badge">2</span><h3 class="text-lg font-bold text-slate-800">The index laws: just count the factors</h3></div>
+    <div class="proof">
+      <div class="ph">Theorem 3: the index laws (positive whole-number indices $m$ and $n$, non-zero bases $a$ and $b$)</div>
+      <ol class="list-decimal pl-6 text-sm space-y-1">
+        <li><strong>Multiply, same base:</strong> $a^m\times a^n=a^{m+n}$.</li>
+        <li><strong>Divide, same base ($m>n$):</strong> $a^m\div a^n=a^{m-n}$.</li>
+        <li><strong>Power of a power:</strong> $(a^m)^n=a^{mn}$.</li>
+        <li><strong>Power of a product:</strong> $(ab)^n=a^n\,b^n$, and likewise $\left(\dfrac ab\right)^n=\dfrac{a^n}{b^n}$.</li>
+      </ol>
+      <div class="seeit"><div class="sh">What these laws say, with examples</div>
+        <div class="seg"><p class="et">Law 1: $2^3\times2^4$</p><p>$(2\times2\times2)\times(2\times2\times2\times2)$ is seven twos in a row, so it is $2^7=128$. Check with numbers: $8\times16=128$. &#10003; The indices <em>add</em> because we are counting factors.</p></div>
+        <div class="seg"><p class="et">Law 2: $5^6\div5^4$</p><p>$\dfrac{5\times5\times5\times5\times5\times5}{5\times5\times5\times5}$: four fives cancel, leaving $5^2=25$. Check: $15625\div625=25$. &#10003;</p></div>
+        <div class="seg"><p class="et">Law 3: $(3^2)^3$</p><p>$(3\times3)\times(3\times3)\times(3\times3)$: three groups of two threes, so $3^6=729$. Check: $9^3=729$. &#10003; The indices <em>multiply</em> because we have $n$ groups of $m$ factors.</p></div>
+        <div class="seg"><p class="et">Law 4: $(2\times5)^3$ and $6^4$</p><p>$(2\times5)^3=2^3\times5^3=8\times125=1000=10^3$. &#10003; And $6^4=(2\times3)^4=2^4\times3^4=16\times81=1296$. Splitting a base into prime factors splits the power too.</p></div>
+        <div class="seg"><p class="et">What the laws do <em>not</em> say</p><p>$2^3\times3^2$ cannot be combined: the bases differ, so it is just $8\times9=72$. And $2^3+2^4$ is <strong>not</strong> $2^7$: it is $8+16=24$. The laws are about <em>multiplying and dividing</em>, never adding. Likewise $(3+4)^2=49$ but $3^2+4^2=25$.</p></div>
+      </div>
+      <details class="pf"><summary>Show the proof (optional reading for the curious)</summary>
+      <div class="ps"><b class="n">Law 1.</b> $a^m$ is $m$ factors of $a$ and $a^n$ is $n$ factors of $a$. Multiplying them puts $m+n$ factors of $a$ in a row, which is $a^{m+n}$.</div>
+      <div class="ps"><b class="n">Law 2.</b> $a^m\div a^n$ is a fraction with $m$ factors of $a$ on top and $n$ on the bottom. Cancel $n$ pairs: $m-n$ factors remain on top.</div>
+      <div class="ps"><b class="n">Law 3.</b> $(a^m)^n$ is $n$ copies of $a^m$ multiplied together. By Law 1 the indices add $n$ times: $m+m+\cdots+m=mn$.</div>
+      <div class="ps"><b class="n">Law 4.</b> $(ab)^n=(ab)(ab)\cdots(ab)$. Multiplication can be reordered (commutativity and associativity from 1.1 and 2.2), so collect the $a$'s and the $b$'s: $a^n b^n$. $\blacksquare$</div>
+      </details>
+    </div>
+
+    <div class="warn mb-4 text-sm text-slate-800">
+      <p class="font-bold">Three classic traps</p>
+      <ul class="list-disc pl-6 mt-1 space-y-1">
+        <li>$2^3\times2^4$ is <strong>not</strong> $4^7$. Only the <em>indices</em> add. The base stays $2$.</li>
+        <li>$-3^2$ means $-(3^2)=-9$, but $(-3)^2=9$. The power belongs to what is directly in front of it.</li>
+        <li>$3\times4^2$ is $3\times16=48$, not $12^2=144$.</li>
+      </ul>
+    </div>
+
+    <div class="tech">
+      <div class="tt">Technique 3: simplify a numerical expression with the index laws</div>
+      <p class="text-sm text-slate-700">Keep the <strong>same base</strong>. Add indices when multiplying, subtract when dividing, multiply when raising a power to a power. Only then evaluate.</p>
+      <div class="eg"><p><strong>Example 1:</strong> $\dfrac{2^7\times2^2}{2^4}=2^{7+2-4}=2^5=32$.</p>
+        <p class="mt-1"><strong>Example 2:</strong> $(5^2)^3\div5^4=5^6\div5^4=5^2=25$.</p>
+        <p class="mt-1"><strong>Example 3:</strong> $(-2)^3\times(-2)^2=(-2)^5=-32$ (the base is $-2$, and five negative factors give a negative result).</p></div>
+    </div>
+
+    <div class="tech">
+      <div class="tt">Technique 4: write everything as a power of the same prime (common base)</div>
+      <p class="text-sm text-slate-700">Many different-looking numbers are secretly powers of one prime: $4=2^2$, $8=2^3$, $16=2^4$, $32=2^5$, $64=2^6$; $9=3^2$, $27=3^3$, $81=3^4$; $25=5^2$, $125=5^3$. Rewrite with a common base, then use the rule: <strong>if $a>1$ and $a^x=a^y$, then $x=y$</strong> (the powers of $a$ keep growing, so they never repeat).</p>
+      <div class="eg"><p><strong>Example 1:</strong> Solve $4^x=32$. Write $4=2^2$ and $32=2^5$: $2^{2x}=2^5$, so $2x=5$ and $x=2.5$.</p>
+        <p class="mt-1"><strong>Example 2:</strong> To what power must we raise $9^2$ to get $27^4$? $9^2=(3^2)^2=3^4$ and $27^4=(3^3)^4=3^{12}$. Then $(3^4)^x=3^{4x}=3^{12}$, so $x=3$.</p>
+        <p class="mt-1"><strong>Example 3:</strong> Which power of $8$ equals $32^{6}$? $32^6=(2^5)^6=2^{30}$ and $8^x=2^{3x}$, so $3x=30$ and $x=10$.</p></div>
+    </div>
+
+    <div class="tech">
+      <div class="tt">Technique 5: factor out the smallest power</div>
+      <p class="text-sm text-slate-700">Index laws do not work on sums, but you can <strong>factor</strong> a sum of powers: take out the smallest power, using Law 1 backwards.</p>
+      <div class="eg"><p><strong>Example 1:</strong> $2^{10}+2^9=2^9\times(2+1)=3\times2^9$.</p>
+        <p class="mt-1"><strong>Example 2:</strong> $\dfrac{3^{20}-3^{18}}{3^{18}}=\dfrac{3^{18}(3^2-1)}{3^{18}}=3^2-1=8$.</p>
+        <p class="mt-1"><strong>Example 3:</strong> $2^{101}-2^{100}=2^{100}(2-1)=2^{100}$: one doubling step leaves exactly what it started with.</p></div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3 mt-6"><span class="step-badge">3</span><h3 class="text-lg font-bold text-slate-800">What must $2^0$ be? Powers that keep going down</h3></div>
+    <div class="scene">
+      <div class="sh">Scene 2: keep halving</div>
+      <p>Read the powers of $2$ from the top, each time one index lower:</p>
+      <table class="tb mt-2 text-sm"><tr><th>$2^4$</th><th>$2^3$</th><th>$2^2$</th><th>$2^1$</th><th>$2^0$</th><th>$2^{-1}$</th><th>$2^{-2}$</th><th>$2^{-3}$</th></tr><tr><td>16</td><td>8</td><td>4</td><td>2</td><td><strong>?</strong></td><td><strong>?</strong></td><td><strong>?</strong></td><td><strong>?</strong></td></tr></table>
+      <p class="mt-2">Every step to the right <strong>divides by $2$</strong>: $16,8,4,2,\ldots$ The pattern says $2^0=1$, then $2^{-1}=\tfrac12$, $2^{-2}=\tfrac14$, $2^{-3}=\tfrac18$. The fraction numbers you will study next in 2.2 appear naturally here.</p>
+      <div class="ask">Is that just a nice pattern, or is it forced on us? Open the proof in Theorem 4.</div>
+    </div>
+    <div class="proof">
+      <div class="ph">Theorem 4: zero and negative indices (for $a\ne0$)</div>
+      <p class="text-sm">If the index laws are to keep working for <em>all</em> whole-number indices, then we must have $$a^0=1\qquad\text{and}\qquad a^{-n}=\frac1{a^n}.$$</p>
+      <div class="seeit"><div class="sh">What this theorem says, with examples</div>
+        <div class="seg"><p class="et">Example 1: zero index</p><p>$7^0=1$, $\;(-5)^0=1$, $\;2026^0=1$. Every non-zero number to the power zero is $1$.</p></div>
+        <div class="seg"><p class="et">Example 2: negative index means reciprocal</p><p>$10^{-3}=\dfrac1{10^3}=\dfrac1{1000}=0.001$. $\;5^{-2}=\dfrac1{25}=0.04$. $\;2^{-4}=\dfrac1{16}$. The minus sign in the index does <em>not</em> make the number negative: it flips to a reciprocal.</p></div>
+        <div class="seg"><p class="et">Example 3: the laws still work</p><p>$2^3\times2^{-5}=2^{3-5}=2^{-2}=\dfrac14$. Check by hand: $8\times\dfrac1{32}=\dfrac8{32}=\dfrac14$. &#10003; And $\dfrac{5^2}{5^6}=5^{2-6}=5^{-4}=\dfrac1{625}$.</p></div>
+      </div>
+      <details class="pf"><summary>Show the proof (why there is no other choice)</summary>
+      <div class="ps"><b class="n">Zero index.</b> Law 1 says $a^m\times a^n=a^{m+n}$. If this is to hold with $m=0$, then $a^0\times a^n=a^{0+n}=a^n$. Dividing both sides by $a^n$ (which is not zero) gives $a^0=1$. (Another view: Law 2 gives $a^n\div a^n=a^{n-n}=a^0$, and anything divided by itself is $1$.)</div>
+      <div class="ps"><b class="n">Negative index.</b> With $m=-n$: $a^{-n}\times a^n=a^{-n+n}=a^0=1$. So $a^{-n}$ is the number that multiplies $a^n$ to give $1$, which is the reciprocal $\dfrac1{a^n}$. $\blacksquare$</div>
+      <div class="ps"><b class="n">Note.</b> This is not a theorem found by calculation. It is a <em>definition</em> that mathematicians chose, because it is the only one that keeps the old laws true. Mathematics often grows this way.</div>
+      </details>
+    </div>
+
+    <h3 class="text-xl font-bold text-slate-800 mb-3 mt-8 bg-slate-100 p-3 rounded-lg inline-block">Check your understanding</h3>
+    <div id="ex-t2"></div>
+  </div>
+
+  <div id="t3" class="tab-content">
+    <h2 class="text-2xl font-bold text-slate-800 mb-1">Step 3: The Order of Calculation</h2>
+    <p class="text-slate-600 mb-5">What is $2+3\times4$? Two careful people can get two different answers. This tab explains why we all agree on one, how brackets let us override the agreement, and how to make a calculator obey us.</p>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">1</span><h3 class="text-lg font-bold text-slate-800">Why do we need an agreed order?</h3></div>
+    <div class="scene bad">
+      <div class="sh">Scene 1: two friends, one text message</div>
+      <p>Ana texts Ben: <span class="mono">2+3×4</span>. &ldquo;What is it?&rdquo; Ben works left to right: $2+3=5$, then $5\times4=20$. Ana says $14$. They both used a calculator, and the calculators disagreed with each other!</p>
+      <p class="mt-2">Think of a snack bar: a drink costs $2$ points and chips cost $4$ points a pack. You buy a drink and $3$ packs of chips. The total is <em>obviously</em> $2+(3\times4)=2+12=14$ points. The $3\times4$ is one <strong>bundle</strong> (three packs), and the drink is added on top.</p>
+      <div class="ask">The order of calculation is not a theorem we proved. It is a <strong>convention</strong>, like driving on the left in New Zealand: everyone agrees so that a message means the same to every reader. But there is a sensible reason behind it, as you will see.</div>
+    </div>
+    <div class="key mb-4 text-sm text-slate-800">
+      <p><strong>The order of calculation (BIDMAS)</strong></p>
+      <ol class="list-decimal pl-6 mt-1 space-y-1">
+        <li><strong>B</strong>rackets first, working from the <em>innermost</em> pair outwards.</li>
+        <li><strong>I</strong>ndices (powers and roots).</li>
+        <li><strong>D</strong>ivision and <strong>M</strong>ultiplication, <em>equal rank</em>: work <strong>left to right</strong>.</li>
+        <li><strong>A</strong>ddition and <strong>S</strong>ubtraction, <em>equal rank</em>: work <strong>left to right</strong>.</li>
+      </ol>
+      <p class="mt-2"><strong>Why this order?</strong> Each level is a bundle of the level below. A power is repeated multiplication ($4^2=4\times4$), and multiplication is repeated addition ($3\times4=4+4+4$). Bundles are done before they are combined with a plain neighbour. Division and multiplication share a rank because division is multiplication by a reciprocal; subtraction and addition share a rank because subtraction is addition of the opposite (the idea from 1.1).</p>
+      <p class="mt-2">Other countries say <em>PEMDAS</em> or <em>BODMAS</em>. The rule is the same. Careful: &ldquo;D before M&rdquo; in the word does <strong>not</strong> mean division beats multiplication. $48\div6\times2=8\times2=16$, not $48\div12=4$.</p>
+    </div>
+    <p class="text-sm font-bold text-slate-700 mb-2">Try it: the Order Stepper (type any expression and watch each step, the underlined part is done next)</p>
+    <div class="card mb-5">
+      <div class="flex items-center gap-2 flex-wrap mb-2">
+        <label class="text-sm font-bold" for="os-in">Expression:</label>
+        <input type="text" id="os-in" class="inp" style="max-width:22rem" value="6+4*3^2" oninput="osReset()" aria-describedby="os-help">
+        <button class="btn" onclick="osNext()">Next step</button><button class="btn-ghost" onclick="osNext(true)">Show all steps</button><button class="btn-ghost" onclick="osReset()">Restart</button>
+      </div>
+      <p id="os-help" class="text-xs text-slate-500 mb-2">Type <kbd class="k">*</kbd> for &times;, <kbd class="k">/</kbd> for &divide;, <kbd class="k">^</kbd> for a power, and use brackets. Try these:</p>
+      <div class="flex gap-2 flex-wrap mb-2">
+        <button class="btn-ghost" onclick="osLoad('6+4*3^2')">$6+4\times3^2$</button>
+        <button class="btn-ghost" onclick="osLoad('(6+4)*3^2')">$(6+4)\times3^2$</button>
+        <button class="btn-ghost" onclick="osLoad('48/6*2')">$48\div6\times2$</button>
+        <button class="btn-ghost" onclick="osLoad('3*(2+(8-5)^2)-4')">$3(2+(8-5)^2)-4$</button>
+        <button class="btn-ghost" onclick="osLoad('-3^2+(-3)^2')">$-3^2+(-3)^2$</button>
+        <button class="btn-ghost" onclick="osLoad('2^3^2')">$2^{3^2}$</button>
+        <button class="btn-ghost" onclick="osLoad('(2^3)^2')">$(2^3)^2$</button>
+      </div>
+      <div class="fprev" id="os-prev"></div>
+      <div id="os-out" class="mt-3 text-sm"></div>
+    </div>
+
+    <div class="tech">
+      <div class="tt">Technique 6: calculate in the right order, and write one step per line</div>
+      <p class="text-sm text-slate-700">Underline the <em>next</em> operation, do only that, and copy everything else unchanged. Never do two levels in one line when you are learning.</p>
+      <div class="eg"><p><strong>Example 1:</strong> $6+4\times3^2$. Index first: $6+4\times9$. Then multiply: $6+36=42$.</p>
+        <p class="mt-1"><strong>Example 2:</strong> $(6+4)\times3^2$. Brackets first: $10\times3^2$. Index: $10\times9=90$. The brackets changed the answer from $42$ to $90$.</p>
+        <p class="mt-1"><strong>Example 3 (nested brackets):</strong> $3\times[2+(8-5)^2]-4$. Innermost bracket: $8-5=3$. Then $3\times[2+3^2]-4=3\times[2+9]-4=3\times11-4=33-4=29$.</p></div>
+    </div>
+
+    <div class="tech">
+      <div class="tt">Technique 7: fraction bars and root signs are hidden brackets</div>
+      <p class="text-sm text-slate-700">A fraction bar groups the whole top and the whole bottom, and a root sign groups everything under it. Calculate the top, the bottom, or the radicand first.</p>
+      <div class="eg"><p><strong>Example 1:</strong> $\dfrac{3^2+4^2}{10-5}=\dfrac{9+16}{5}=\dfrac{25}{5}=5$.</p>
+        <p class="mt-1"><strong>Example 2:</strong> $\sqrt{3^2+4^2}=\sqrt{25}=5$. This is <em>not</em> $3+4=7$. (Roots do not split over addition.)</p>
+        <p class="mt-1"><strong>Example 3 (typing it):</strong> to calculate $\dfrac{12+8}{4}$ on a calculator, type <span class="mono">(12+8)÷4</span> and get $5$. Typing <span class="mono">12+8÷4</span> gives $14$, because the calculator divides first. The brackets you <em>see</em> in the fraction must be <em>typed</em>.</p></div>
+    </div>
+
+    <div class="tech">
+      <div class="tt">Technique 8: negatives and powers, and towers of powers</div>
+      <p class="text-sm text-slate-700">The power belongs to what is <strong>directly</strong> in front of it. For a tower $a^{b^c}$, the convention is to work from the <strong>top down</strong>: $a^{(b^c)}$.</p>
+      <div class="eg"><p><strong>Example 1:</strong> $-3^2=-(3\times3)=-9$, but $(-3)^2=(-3)\times(-3)=9$. So $-3^2+(-3)^2=-9+9=0$.</p>
+        <p class="mt-1"><strong>Example 2:</strong> $2^{3^2}=2^9=512$, but $(2^3)^2=8^2=64$. Two quite different numbers from the same digits! By Law 3, $(2^3)^2=2^6$.</p></div>
+    </div>
+
+    <div class="tech">
+      <div class="tt">Technique 9: look at the structure before you calculate (grouping)</div>
+      <p class="text-sm text-slate-700">Addition and subtraction chains can be <strong>grouped</strong> (associativity, 2.1) into pairs that behave simply. Spot the pattern with a short case first.</p>
+      <div class="eg"><p><strong>Example 1:</strong> $1-2+3-4+5-6=(1-2)+(3-4)+(5-6)=-1-1-1=-3$. Three pairs, each worth $-1$.</p>
+        <p class="mt-1"><strong>Example 2:</strong> $1-2+3-4+\cdots+9-10$. There are $5$ pairs, each $-1$, so the answer is $-5$.</p>
+        <p class="mt-1"><strong>Example 3:</strong> $2+4+6+\cdots+20$. Pair first with last: $2+20=22$, $4+18=22,\ldots$ There are $5$ such pairs: $5\times22=110$.</p></div>
+    </div>
+
+    <div class="tech">
+      <div class="tt">Technique 10: use the calculator wisely, and check it by estimation</div>
+      <p class="text-sm text-slate-700">A calculator obeys the order of calculation exactly, and does only what you type. So: (1) type brackets wherever you see grouping; (2) key in negatives with the &ldquo;(-)&rdquo; key, inside brackets when squared: <span class="mono">(-3)^2</span>; (3) <strong>estimate first</strong> by rounding each number, so a typing slip shows up at once.</p>
+      <div class="eg"><p><strong>Example:</strong> $\dfrac{48.7+151.6}{3.9^2-5.1}$. Estimate: $\dfrac{50+150}{16-5}=\dfrac{200}{11}\approx18$. Calculator: type <span class="mono">(48.7+151.6)÷(3.9^2-5.1)</span> and get $\approx19.8$. The two agree roughly, so no slip. If the calculator had shown about $53.6$ (what you get from typing the line without any brackets), you would know that brackets were missing.</p></div>
+    </div>
+
+    <h3 class="text-xl font-bold text-slate-800 mb-3 mt-8 bg-slate-100 p-3 rounded-lg inline-block">Check your understanding</h3>
+    <div id="ex-t3"></div>
+  </div>
+
+  <div id="t4" class="tab-content">
+    <h2 class="text-2xl font-bold text-slate-800 mb-1">Step 4: How Big Is Big? Estimation, Digits and Last Digits</h2>
+    <p class="text-slate-600 mb-5">Powers grow terrifyingly fast. A calculator shows only &ldquo;E+&rdquo; for the big ones, so we need skills a calculator does not have: to <strong>estimate</strong> the size of a number, to <strong>count its digits</strong>, and to find its <strong>last digit</strong> with a little help from the clock arithmetic of 1.3.</p>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">1</span><h3 class="text-lg font-bold text-slate-800">Real life first: how long to guess a password?</h3></div>
+    <div class="scene">
+      <div class="sh">Scene 1: a PIN versus a word</div>
+      <p>An online game protects your account with an <strong>8-digit PIN</strong>. A thief&rsquo;s program can try $1\,000\,000$ guesses every second. A friend uses an <strong>8-letter password</strong> instead (lower-case letters only).</p>
+      <ul class="list-disc pl-6 mt-2 space-y-1">
+        <li>Each digit has $10$ choices, so there are $10\times10\times\cdots\times10=10^8=100\,000\,000$ PINs. At $10^6$ guesses a second, the thief needs at most $10^8\div10^6=100$ seconds, under two minutes.</li>
+        <li>Each letter has $26$ choices, so there are $26^8$ passwords. Estimate: $26^8\approx(2.6\times10)^8$, and $2.6^8\approx2.1\times10^3$, so $26^8\approx2\times10^{11}$. That takes $2\times10^{5}$ seconds, about <strong>2.4 days</strong>.</li>
+      </ul>
+      <div class="ask">The same number of characters, but about two thousand times more work for the thief. Powers show <em>why</em>: the base ($26$ against $10$) matters as much as the length. To compare such huge numbers we estimate with powers of $10$, which is the skill of this tab.</div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3 mt-6"><span class="step-badge">2</span><h3 class="text-lg font-bold text-slate-800">Estimating with squares, cubes and powers of ten</h3></div>
+    <div class="tech">
+      <div class="tt">Technique 11: sandwich a root between two perfect powers</div>
+      <p class="text-sm text-slate-700">To estimate $\sqrt N$, find the two perfect squares that $N$ lies between. To estimate $\sqrt[3]{N}$, use the two perfect cubes around it. Then use how close $N$ is to each to refine your guess.</p>
+      <div class="eg"><p><strong>Example 1:</strong> $\sqrt{200}$. $14^2=196$ and $15^2=225$, so $14\lt\sqrt{200}\lt15$. Since $200$ is only $4$ above $196$ but $25$ below $225$, the root is just above $14$: about $14.1$. (A calculator says $14.142\ldots$)</p>
+        <p class="mt-1"><strong>Example 2:</strong> $\sqrt[3]{300}$. $6^3=216$ and $7^3=343$, so the root is between $6$ and $7$, closer to $7$ (as $300$ is nearer $343$): about $6.7$.</p></div>
+    </div>
+    <div class="key mb-4 text-sm text-slate-800">
+      <p><strong>Two facts that make big numbers manageable.</strong></p>
+      <ol class="list-decimal pl-6 mt-1 space-y-1">
+        <li>$2^{10}=1024\approx10^3$. So $2^{20}\approx10^6$, $2^{30}\approx10^9$, $2^{40}\approx10^{12}$. (Each factor $1024$ is $2.4\%$ above $1000$, so the approximation drifts slowly upwards.)</li>
+        <li>A positive integer $N$ has exactly $d$ digits when $10^{d-1}\le N\lt10^d$. For example $10^{12}$ is the smallest $13$-digit number.</li>
+      </ol>
+    </div>
+    <p class="text-sm font-bold text-slate-700 mb-2">Try it: the Digit Counter (exact digits, first digits and last digit)</p>
+    <div class="card mb-5">
+      <div class="flex items-center gap-3 flex-wrap mb-2">
+        <label class="text-sm font-bold" for="dg-a">Base:</label><input type="number" id="dg-a" class="inp" style="max-width:5.5rem" min="2" max="99" value="2" oninput="dgUpdate()">
+        <label class="text-sm font-bold" for="dg-n">Index:</label><input type="number" id="dg-n" class="inp" style="max-width:6.5rem" min="1" max="2500" value="130" oninput="dgUpdate()">
+        <button class="btn-ghost" onclick="dgSet(2,40)">$2^{40}$</button><button class="btn-ghost" onclick="dgSet(2,130)">$2^{130}$</button><button class="btn-ghost" onclick="dgSet(5,130)">$5^{130}$</button><button class="btn-ghost" onclick="dgSet(26,8)">$26^8$</button>
+      </div>
+      <div id="dg-out" class="text-sm space-y-1"></div>
+    </div>
+
+    <div class="proof">
+      <div class="ph">Theorem 5: if $2^n$ has $k$ digits, then $5^n$ has $n-k+1$ digits</div>
+      <p class="text-sm">Because $2^n\times5^n=10^n$, the digit counts of $2^n$ and $5^n$ are linked.</p>
+      <div class="seeit"><div class="sh">What this theorem says, with examples</div>
+        <div class="seg"><p class="et">Example 1: a small check</p><p>$2^{10}=1024$ has $k=4$ digits. So $5^{10}$ has $10-4+1=7$ digits. Indeed $5^{10}=9\,765\,625$, seven digits. &#10003;</p></div>
+        <div class="seg"><p class="et">Example 2: $5^{20}$</p><p>$2^{20}=1\,048\,576$ has $7$ digits, so $5^{20}$ has $20-7+1=14$ digits ($5^{20}=95\,367\,431\,640\,625$). &#10003;</p></div>
+        <div class="seg"><p class="et">Example 3: a number too big for a calculator</p><p>$5^{130}$: first count the digits of $2^{130}$. Since $2^{130}=(2^{10})^{13}=1024^{13}$ and $1000^{13}=10^{39}\le1024^{13}\lt(1.1\times1000)^{13}\lt10^{40}$ (because $1.1^{13}\lt10$), the number $2^{130}$ has $40$ digits. So $5^{130}$ has $130-40+1=\mathbf{91}$ digits.</p></div>
+      </div>
+      <details class="pf"><summary>Show the proof (optional reading for the curious)</summary>
+      <div class="ps"><b class="n">Setup.</b> Suppose $2^n$ has $k$ digits: $10^{k-1}\le2^n\lt10^k$ (the number is never equal to $10^k$ because $2^n$ has no factor $5$).</div>
+      <div class="ps"><b class="n">Divide.</b> $5^n=\dfrac{10^n}{2^n}$. Dividing $10^n$ by a number in $[10^{k-1},10^k)$ gives a result in $(10^{n-k},10^{n-k+1}]$. And $5^n\ne10^{n-k+1}$ since $5^n$ is odd, so $10^{n-k}\lt5^n\lt10^{n-k+1}$.</div>
+      <div class="ps"><b class="n">Conclude.</b> A number at least $10^{n-k}$ (strictly above) but below $10^{n-k+1}$ has exactly $n-k+1$ digits. $\blacksquare$</div>
+      </details>
+    </div>
+
+    <div class="tech">
+      <div class="tt">Technique 12: pair every 2 with a 5 to make a power of ten</div>
+      <p class="text-sm text-slate-700">A product of powers of $2$ and $5$ is easy to read when you pair them off: $2^a\times5^a=10^a$. The leftover factor tells you the leading digits, and $10^a$ adds $a$ zeros.</p>
+      <div class="eg"><p><strong>Example 1:</strong> $2^{12}\times5^{9}=2^3\times(2^9\times5^9)=8\times10^9$. That is an $8$ followed by $9$ zeros: $10$ digits.</p>
+        <p class="mt-1"><strong>Example 2:</strong> $4^{10}\times25^{8}=2^{20}\times5^{16}=2^4\times10^{16}=16\times10^{16}$: the digits $16$ then $16$ zeros, so $18$ digits. (Rewrite $4=2^2$ and $25=5^2$ first: that is common-base thinking from Tab 2.)</p>
+        <p class="mt-1"><strong>Example 3:</strong> $8^{5}\times5^{15}=2^{15}\times5^{15}=10^{15}$, which has $16$ digits.</p></div>
+    </div>
+
+    <div class="tech">
+      <div class="tt">Technique 13: count the digits of a power of 5 (or any hard power)</div>
+      <p class="text-sm text-slate-700">Use Theorem 5: count the digits of $2^n$ by sandwiching with $2^{10}\approx10^3$, then subtract. For a base like $5$, write $5^n=\dfrac{10^n}{2^n}$.</p>
+      <div class="eg"><p><strong>Example:</strong> How many digits has $5^{40}$? $2^{40}=1024^4\approx1.1\times10^{12}$, which has $13$ digits. So $5^{40}$ has $40-13+1=28$ digits. (Exactly: $5^{40}=9.09\ldots\times10^{27}$.)</p></div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3 mt-6"><span class="step-badge">3</span><h3 class="text-lg font-bold text-slate-800">The last digit: powers on the clock</h3></div>
+    <div class="key mb-4 text-sm text-slate-800">
+      <p>In 1.3 you learned that the last digit of $N$ is $N\bmod10$, and that powers cycle on the clock. Let us use that. The last digit of a product depends only on the last digits of its factors. Look at the last digits of $a^1,a^2,a^3,\ldots$:</p>
+      <table class="tb mt-2 text-sm"><tr><th>Last digit of $a$</th><th>Last digits of $a^1,a^2,a^3,\ldots$ (the cycle)</th><th>Cycle length</th></tr>
+        <tr><td>0, 1, 5, 6</td><td>the same digit forever</td><td>1</td></tr>
+        <tr><td>4, 9</td><td>$4,6,4,6,\ldots$ and $9,1,9,1,\ldots$</td><td>2</td></tr>
+        <tr><td>2</td><td>$2,4,8,6,\ldots$</td><td>4</td></tr>
+        <tr><td>3</td><td>$3,9,7,1,\ldots$</td><td>4</td></tr>
+        <tr><td>7</td><td>$7,9,3,1,\ldots$</td><td>4</td></tr>
+        <tr><td>8</td><td>$8,4,2,6,\ldots$</td><td>4</td></tr></table>
+    </div>
+    <p class="text-sm font-bold text-slate-700 mb-2">Try it: the Last-Digit Cycle Finder</p>
+    <div class="card mb-5">
+      <div class="flex items-center gap-3 flex-wrap mb-2">
+        <label class="text-sm font-bold" for="ld-a">Base:</label><input type="number" id="ld-a" class="inp" style="max-width:6rem" min="2" max="999" value="7" oninput="ldUpdate()">
+        <label class="text-sm font-bold" for="ld-n">Index:</label><input type="number" id="ld-n" class="inp" style="max-width:7.5rem" min="1" max="999999" value="2026" oninput="ldUpdate()">
+      </div>
+      <div id="ld-out" class="text-sm space-y-2"></div>
+    </div>
+    <div class="tech">
+      <div class="tt">Technique 14: the last digit of $a^n$ (find the cycle, then reduce the index)</div>
+      <ol class="list-decimal pl-6 text-sm text-slate-700 space-y-1">
+        <li>Keep only the last digit of the base.</li>
+        <li>List its powers until the last digit repeats. Count the cycle length $L$.</li>
+        <li>Divide the index by $L$. The <strong>remainder</strong> says which term of the cycle to read; a remainder of $0$ means the <em>last</em> term of the cycle.</li>
+      </ol>
+      <div class="eg"><p><strong>Example 1:</strong> Last digit of $7^{2026}$. Cycle $7,9,3,1$ (length $4$). $2026=4\times506+2$, remainder $2$, so the second term: $9$.</p>
+        <p class="mt-1"><strong>Example 2:</strong> Last digit of $2^{100}$. Cycle $2,4,8,6$. $100=4\times25+0$, remainder $0$, so the last term: $6$.</p>
+        <p class="mt-1"><strong>Example 3:</strong> Last digit of $13^{13}$. Only the last digit of the base matters: $3^{13}$. Cycle $3,9,7,1$. $13=4\times3+1$, so the first term: $3$.</p>
+        <p class="mt-1"><strong>Example 4 (a sum):</strong> Last digit of $2^{30}+3^{30}$. $2^{30}$: $30=4\times7+2$, second term $4$. $3^{30}$: second term $9$. $4+9=13$, so the last digit is $3$.</p></div>
+    </div>
+
+    <h3 class="text-xl font-bold text-slate-800 mb-3 mt-8 bg-slate-100 p-3 rounded-lg inline-block">Check your understanding</h3>
+    <div id="ex-t4"></div>
+  </div>
+
+  <div id="t5" class="tab-content">
+    <h2 class="text-2xl font-bold text-slate-800 mb-1">Step 5: Smart Thinking with Powers (Competition Techniques)</h2>
+    <p class="text-slate-600 mb-5">Competition problems rarely ask for a long calculation. They ask whether you can <em>see</em> a structure: compare two giants without computing them, trap a number between two easy bounds, or add a long list in one move. Four techniques cover almost everything in this tab.</p>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">1</span><h3 class="text-lg font-bold text-slate-800">Comparing giants: bring them to a common exponent</h3></div>
+    <div class="key mb-4 text-sm text-slate-800">
+      <p><strong>The idea.</strong> Two powers with <em>different</em> bases and <em>different</em> indices are hard to compare. But if the indices share a common factor $g$, we can rewrite both as something to the power $g$ using Law 3 backwards, $a^{gk}=(a^k)^g$. Then <strong>the bigger base wins</strong>, because for $g>0$ and positive bases, a larger base gives a larger power.</p>
+      <p class="mt-2"><strong>Same trick for the sets of 2.1:</strong> $Sq\cap Cb$ is the set of numbers that are both squares and cubes. In prime factors, every index must be even <em>and</em> a multiple of $3$, so a multiple of $6$: they are exactly the sixth powers $1,64,729,4096,\ldots$</p>
+    </div>
+    <p class="text-sm font-bold text-slate-700 mb-2">Try it: the Giant Comparer</p>
+    <div class="card mb-5">
+      <div class="flex items-center gap-2 flex-wrap mb-2">
+        <input type="number" id="gc-a" class="inp" style="max-width:5rem" min="2" max="99" value="2"><span class="font-bold">to the power</span><input type="number" id="gc-m" class="inp" style="max-width:6rem" min="1" max="3000" value="300">
+        <span class="font-bold">versus</span>
+        <input type="number" id="gc-b" class="inp" style="max-width:5rem" min="2" max="99" value="3"><span class="font-bold">to the power</span><input type="number" id="gc-n" class="inp" style="max-width:6rem" min="1" max="3000" value="200">
+        <button class="btn" onclick="gcRun()">Compare</button>
+      </div>
+      <div id="gc-out" class="text-sm space-y-2"></div>
+    </div>
+    <div class="tech">
+      <div class="tt">Technique 15: compare or order large powers</div>
+      <ol class="list-decimal pl-6 text-sm text-slate-700 space-y-1">
+        <li>Find the HCF $g$ of the indices.</li>
+        <li>Rewrite each power as (base to the power $\text{index}\div g$) to the power $g$.</li>
+        <li>Compute the small bases $a^{m/g}$ and compare them. The order of the small numbers is the order of the giants.</li>
+        <li>If there is no useful common factor, <strong>squeeze</strong> with an easy intermediate number (see Example 3).</li>
+      </ol>
+      <div class="eg"><p><strong>Example 1:</strong> Which is bigger, $2^{300}$ or $3^{200}$? HCF$(300,200)=100$. $2^{300}=(2^3)^{100}=8^{100}$ and $3^{200}=(3^2)^{100}=9^{100}$. Since $8\lt9$, $3^{200}$ is bigger.</p>
+        <p class="mt-1"><strong>Example 2:</strong> Order $2^{60},\ 3^{40},\ 5^{20}$ from smallest to largest. HCF of $60,40,20$ is $20$: $2^{60}=8^{20}$, $3^{40}=9^{20}$, $5^{20}=5^{20}$. So $5^{20}\lt2^{60}\lt3^{40}$.</p>
+        <p class="mt-1"><strong>Example 3 (squeeze with a power of ten):</strong> Compare $2^{50}$ and $10^{15}$. The indices $50$ and $15$ have HCF $5$: $2^{50}=(2^{10})^5=1024^5$ and $10^{15}=(10^3)^5=1000^5$. Since $1024>1000$, $2^{50}>10^{15}$. This is the fact $2^{10}\approx10^3$ from Tab 4 at work.</p></div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3 mt-6"><span class="step-badge">2</span><h3 class="text-lg font-bold text-slate-800">Squeezing with Bernoulli: how fast does $(1+x)^n$ grow?</h3></div>
+    <div class="scene">
+      <div class="sh">Scene 1: a savings account</div>
+      <p>A savings account pays $1\%$ interest a year, added to the balance each year. After $n$ years your money is multiplied by $1.01\times1.01\times\cdots\times1.01=1.01^n$. A natural question: how long until the money has at least doubled? Could $100$ years do it? You cannot compute $1.01^{100}$ in your head, but you <em>can</em> bound it, and that is enough.</p>
+      <div class="ask">Key insight: when you expand a product of many $(1+x)$ factors, the answer is at least $1+nx$, because there are $n$ ways to pick one $x$ and all the other parts are positive.</div>
+    </div>
+    <div class="proof">
+      <div class="ph">Theorem 6 (Bernoulli&rsquo;s inequality): for $x\ge0$ and a positive integer $n$, $(1+x)^n\ge1+nx$</div>
+      <div class="seeit"><div class="sh">What this theorem says, with applications</div>
+        <div class="seg"><p class="et">Application 1: doubling money</p><p>$1.01^{100}\ge1+100\times0.01=2$. So after $100$ years at $1\%$, money has <em>at least</em> doubled. (It really becomes about $2.7$ times as much.)</p></div>
+        <div class="seg"><p class="et">Application 2: a competition result, $1.01^{300}>4$</p><p>Split the index with Law 3: $1.01^{300}=(1.01^{100})^3\ge2^3=8>4$. We did not compute anything big, yet the inequality is proved (the true value is about $19.8$).</p></div>
+        <div class="seg"><p class="et">Application 3: splitting gives a better bound</p><p>Direct use on $1.001^{2000}$ gives only $1+2000\times0.001=3$. Split first: $1.001^{1000}\ge1+1=2$, so $1.001^{2000}=(1.001^{1000})^2\ge4$. A sharper bound, from one extra Law 3 step.</p></div>
+        <div class="seg"><p class="et">Application 4: a quick lower bound for a power of $1.1$</p><p>$1.1^{10}\ge1+10\times0.1=2$. So at $10\%$ a year, money doubles in at most $10$ years (in fact $7.3$ years).</p></div>
+      </div>
+      <details class="pf"><summary>Show the proof (optional reading for the curious)</summary>
+      <div class="ps"><b class="n">Induction idea.</b> For $n=1$: $(1+x)^1=1+x\ge1+1\cdot x$. &#10003;</div>
+      <div class="ps"><b class="n">Step.</b> Assume $(1+x)^n\ge1+nx$. Multiply both sides by $1+x$ (positive): $(1+x)^{n+1}\ge(1+nx)(1+x)=1+(n+1)x+nx^2\ge1+(n+1)x$, since $nx^2\ge0$. So the statement for $n$ gives the statement for $n+1$, and so it holds for every $n$. $\blacksquare$</div>
+      <div class="ps"><b class="n">Intuition.</b> Expanding $(1+x)(1+x)\cdots(1+x)$ gives $1+nx$ plus many more non-negative terms such as $x^2$.</div>
+      </details>
+    </div>
+    <div class="tech">
+      <div class="tt">Technique 16: prove a big power exceeds a target (split, bound, cube)</div>
+      <ol class="list-decimal pl-6 text-sm text-slate-700 space-y-1">
+        <li>Write the base as $1+x$ with $x$ small and positive.</li>
+        <li>Split the index so that one piece makes $nx$ about $1$: this gives a power that is at least $2$.</li>
+        <li>Raise that bound to the remaining power using Law 3.</li>
+      </ol>
+      <div class="eg"><p><strong>Example:</strong> Show $1.02^{150}>8$. $1.02^{50}\ge1+50\times0.02=2$. Then $1.02^{150}=(1.02^{50})^3\ge2^3=8$. (In fact it is greater than $8$ strictly, because Bernoulli drops positive terms.)</p></div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3 mt-6"><span class="step-badge">3</span><h3 class="text-lg font-bold text-slate-800">Adding a long list of powers in one move</h3></div>
+    <div class="scene">
+      <div class="sh">Scene 2: the paper-folding bill</div>
+      <p>A magazine offers you a deal: on day $1$ it pays you $1$ point, on day $2$ it pays $2$ points, on day $3$ it pays $4$, and the payment <strong>doubles every day</strong> for $10$ days. How many points altogether? Adding $1+2+4+8+\cdots+512$ is slow. There is a shortcut that works for any number of days.</p>
+    </div>
+    <div class="proof">
+      <div class="ph">Theorem 7: $1+2+4+\cdots+2^{n}=2^{n+1}-1$</div>
+      <div class="seeit"><div class="sh">What this theorem says, with examples</div>
+        <div class="seg"><p class="et">Example 1: the 10-day bill</p><p>$1+2+4+\cdots+2^9=2^{10}-1=1023$ points.</p></div>
+        <div class="seg"><p class="et">Example 2: a binary fact</p><p>$1+2+4+8+16=31=2^5-1$. Any number up to $31$ can be built by choosing from the pieces $1,2,4,8,16$: that is how binary numbers work.</p></div>
+        <div class="seg"><p class="et">Example 3: starting later</p><p>$2+4+8+\cdots+2^{10}=(1+2+4+\cdots+2^{10})-1=(2^{11}-1)-1=2^{11}-2=2046$.</p></div>
+        <div class="seg"><p class="et">Example 4: the same trick with ratio $3$</p><p>Let $T=1+3+9+27+81$. Multiply by $3$: $3T=3+9+27+81+243$. Subtract: $3T-T=243-1$, so $2T=242$ and $T=121$.</p></div>
+      </div>
+      <details class="pf"><summary>Show the proof (optional reading for the curious)</summary>
+      <div class="ps"><b class="n">The doubling trick.</b> Let $S=1+2+4+\cdots+2^n$. Then $2S=2+4+8+\cdots+2^{n+1}$.</div>
+      <div class="ps"><b class="n">Subtract.</b> $2S-S$: every term cancels except the last term of $2S$ and the first term of $S$. So $S=2^{n+1}-1$. $\blacksquare$</div>
+      </details>
+    </div>
+    <div class="tech">
+      <div class="tt">Technique 17: sum a doubling (or tripling) list</div>
+      <p class="text-sm text-slate-700">Name the sum, multiply it by the ratio, subtract, and read the answer off the two ends. Check by testing the first few terms.</p>
+      <div class="eg"><p><strong>Example:</strong> $1+2+4+\cdots+2^{12}=2^{13}-1=8191$. Check the pattern on a short version: $1+2+4=7=2^3-1$. &#10003;</p></div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3 mt-6"><span class="step-badge">4</span><h3 class="text-lg font-bold text-slate-800">Squares in disguise: the difference of two squares</h3></div>
+    <div class="proof">
+      <div class="ph">Theorem 8: $a^2-b^2=(a-b)(a+b)$</div>
+      <div class="seeit"><div class="sh">What this theorem says, with examples</div>
+        <div class="seg"><p class="et">Example 1: a mental calculation</p><p>$101^2-99^2=(101-99)(101+99)=2\times200=400$. Check: $10201-9801=400$. &#10003;</p></div>
+        <div class="seg"><p class="et">Example 2: near a round number</p><p>$999^2-1=(999-1)(999+1)=998\times1000=998\,000$.</p></div>
+        <div class="seg"><p class="et">Example 3: with powers</p><p>$(2^{10}+1)(2^{10}-1)=(2^{10})^2-1=2^{20}-1$. This is the law in reverse: a product of $(a+b)(a-b)$ collapses to a difference of squares.</p></div>
+      </div>
+      <details class="pf"><summary>Show the proof (optional reading for the curious)</summary>
+      <div class="ps"><b class="n">Area picture.</b> Take a square of side $a$ and cut out a corner square of side $b$. What is left is an L-shape of area $a^2-b^2$. Cut the L into two rectangles and rearrange them: they form one rectangle with sides $a-b$ and $a+b$.</div>
+      <div class="ps"><b class="n">Expanding.</b> $(a-b)(a+b)=a(a+b)-b(a+b)=a^2+ab-ab-b^2=a^2-b^2$. $\blacksquare$</div>
+      </details>
+    </div>
+    <div class="tech">
+      <div class="tt">Technique 18: spot $a^2-b^2$ in a calculation</div>
+      <p class="text-sm text-slate-700">If you see two squares being subtracted, or a pair like $(N-k)(N+k)$, switch to the other form. It turns two big squares into one easy product.</p>
+      <div class="eg"><p><strong>Example:</strong> $51^2-49^2=(51-49)(51+49)=2\times100=200$. And $(2^{50}+1)(2^{50}-1)+1=2^{100}-1+1=2^{100}$.</p></div>
+    </div>
+
+    <h3 class="text-xl font-bold text-slate-800 mb-3 mt-8 bg-slate-100 p-3 rounded-lg inline-block">Check your understanding</h3>
+    <div id="ex-t5"></div>
+  </div>
+
+  <div id="t6" class="tab-content">
+    <h2 class="text-2xl font-bold text-slate-800 mb-1">Homework: Powers, Roots and the Order of Calculation</h2>
+    <p class="text-slate-600 mb-3">Three levels, from understanding to challenge, including set notation (Section 1.0), factors and last digits (Chapter 1).  Each question gives you 3 attempts, then shows the full solution. When every question in the chapter is finished, your <strong>Learning Report</strong> unlocks in Tab 7.</p>
+    <div class="card mb-3 bg-teal-50 border-teal-200"><p class="text-sm text-slate-800" id="hw-score">Homework status: 0 correct, 0 revealed, 0 remaining</p></div>
+    <div id="ex-t6"></div>
+  </div>
+
+  <div id="t7" class="tab-content">
+    <h2 class="text-2xl font-bold text-slate-800 mb-1">Your Learning Report</h2>
+    <div id="report-root"></div>
+  </div>
+
+  </main>
+<footer class="shen-footer"><svg viewBox="0 0 100 100" role="img" aria-label="申 Shen Studio"><rect width="100" height="100" rx="12" fill="#B3261E"/><path d="M41.57 27.7V42.46H27.58V27.7ZM15.1 25.34V70.78H16.95C22.18 70.78 27.58 67.91 27.58 66.65V62.18H41.57V90H44.01C48.82 90 54.3 86.88 54.3 85.62V62.18H68.97V68.93H71.07C75.37 68.93 81.53 66.65 81.61 65.89V29.64C83.38 29.3 84.39 28.55 84.9 27.87L73.69 19.19L68.12 25.34H54.3V13.96C56.74 13.62 57.33 12.7 57.5 11.52L41.57 10V25.34H28.42L15.1 20.2ZM54.3 27.7H68.97V42.46H54.3ZM41.57 59.82H27.58V44.82H41.57ZM54.3 59.82V44.82H68.97V59.82Z" fill="#FFFFFF"/></svg><span><b>Shen Studio</b> · Designed by Mr. Shen</span></footer>
+<div class="shen-print-mark" aria-hidden="true"><svg viewBox="0 0 100 100" role="img" aria-label="申 Shen Studio"><rect width="100" height="100" rx="12" fill="#B3261E"/><path d="M41.57 27.7V42.46H27.58V27.7ZM15.1 25.34V70.78H16.95C22.18 70.78 27.58 67.91 27.58 66.65V62.18H41.57V90H44.01C48.82 90 54.3 86.88 54.3 85.62V62.18H68.97V68.93H71.07C75.37 68.93 81.53 66.65 81.61 65.89V29.64C83.38 29.3 84.39 28.55 84.9 27.87L73.69 19.19L68.12 25.34H54.3V13.96C56.74 13.62 57.33 12.7 57.5 11.52L41.57 10V25.34H28.42L15.1 20.2ZM54.3 27.7H68.97V42.46H54.3ZM41.57 59.82H27.58V44.82H41.57ZM54.3 59.82V44.82H68.97V59.82Z" fill="#FFFFFF"/></svg><span>Shen Studio</span></div>
+
+
+<script>
+
+/* ============ helpers ============ */
+const R = String.raw;
+function typeset(el){ try{ if(window.MathJax && MathJax.typesetPromise){ MathJax.typesetPromise(el?[el]:undefined).catch(()=>{}); } }catch(e){} }
+function sorter(a,b){ const na=Number(a), nb=Number(b); if(!isNaN(na)&&!isNaN(nb)) return na-nb; return String(a)<String(b)?-1:String(a)>String(b)?1:0; }
+function fm(n){ return n<0 ? '−'+(-n) : ''+n; }
+function fp(n){ return n<0 ? '(−'+(-n)+')' : ''+n; }
+function range(a,b){ const r=[]; for(let i=a;i<=b;i++) r.push(i); return r; }
+function fmtSet(arr){ return arr.length? '{ '+arr.join(', ')+' }' : '∅'; }
+function cleanNum(s){ return String(s).replace(/[−–—]/g,'-'); }
+function gcd(a,b){ while(b){ [a,b]=[b,a%b]; } return a; }
+function isPrime(n){ if(n<2) return false; for(let i=2;i*i<=n;i++) if(n%i===0) return false; return true; }
+function factorize(n){ const f={}; let d=2; while(d*d<=n){ while(n%d===0){ f[d]=(f[d]||0)+1; n/=d; } d++; } if(n>1) f[n]=(f[n]||0)+1; return f; }
+function indexForm(f){ const ks=Object.keys(f).map(Number).sort((a,b)=>a-b); return ks.map(p=>f[p]>1? p+'<sup>'+f[p]+'</sup>' : ''+p).join(' × ') || '1'; }
+function divisorsOf(n){ const r=[]; for(let d=1; d<=n; d++) if(n%d===0) r.push(d); return r; }
+function clampInt(v,lo,hi){ v=parseInt(v); if(isNaN(v)) return lo; return Math.max(lo,Math.min(hi,v)); }
+
+function openTab(evt, id){
+  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab-link').forEach(b=>{ b.classList.remove('text-teal-700','border-b-4','border-teal-600','font-bold'); b.classList.add('text-slate-500','font-semibold'); });
+  document.getElementById(id).classList.add('active');
+  const btn=document.querySelector('.tab-link[data-tab="'+id+'"]'); btn.classList.remove('text-slate-500','font-semibold'); btn.classList.add('text-teal-700','border-b-4','border-teal-600','font-bold');
+  if(id==='t7') buildReport();
+  typeset(document.getElementById(id)); window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ============ modular helpers ============ */
+
+function S(steps){ return '<ol class="list-decimal pl-5 space-y-1 text-sm text-slate-700">'+steps.map(s=>'<li>'+s+'</li>').join('')+'</ol>'; }
+const EX={};
+const P=(...ps)=>ps.map(p=>`<p>${p}</p>`).join('');
+
+function parseNum(raw){ let v=cleanNum(raw).replace(/[, ]/g,''); if(v==='') return null; const m=v.match(/^(-?\d+(?:\.\d+)?)\/(-?\d+(?:\.\d+)?)$/); if(m){ const d=parseFloat(m[2]); if(d===0) return null; return parseFloat(m[1])/d; } if(!/^-?\d*\.?\d+$/.test(v)) return null; return Number(v); }
+/* ============ expression engine: tokens, evaluator, stepper, LaTeX renderer ============ */
+function tokenize(str){
+  const s=String(str).replace(/\s/g,'').replace(/[×x*·]/gi,'*').replace(/[÷\/]/g,'/').replace(/[−–—]/g,'-');
+  if(!s) return {err:'empty'};
+  const T=[]; let i=0;
+  while(i<s.length){
+    const c=s[i];
+    if(/[0-9.]/.test(c)){ let j=i; while(j<s.length && /[0-9.]/.test(s[j])) j++; const w=s.slice(i,j); if(!/^\d+(\.\d+)?$/.test(w)) return {err:'bad number'}; T.push({t:'n',v:parseFloat(w)}); i=j; continue; }
+    if(c==='('||c===')'){ T.push({t:c}); i++; continue; }
+    if('+*/^'.includes(c)){ T.push({t:'op',v:c}); i++; continue; }
+    if(c==='-'){ const p=T[T.length-1]; if(!p || p.t==='op' || p.t==='neg' || p.t==='(') T.push({t:'neg'}); else T.push({t:'op',v:'-'}); i++; continue; }
+    return {err:'bad character'};
+  }
+  return {T};
+}
+function evalTokens(T){
+  let p=0;
+  const fail=m=>{ throw new Error(m); };
+  function expr(){ let v=term(); while(p<T.length && T[p].t==='op' && (T[p].v==='+'||T[p].v==='-')){ const o=T[p++].v; const r=term(); v= o==='+'? v+r : v-r; } return v; }
+  function term(){ let v=unary(); while(p<T.length && T[p].t==='op' && (T[p].v==='*'||T[p].v==='/')){ const o=T[p++].v; const r=unary(); if(o==='/'){ if(r===0) fail('Division by zero'); v=v/r; } else v=v*r; } return v; }
+  function unary(){ if(p<T.length && T[p].t==='neg'){ p++; return -unary(); } return power(); }
+  function power(){ const b=atom(); if(p<T.length && T[p].t==='op' && T[p].v==='^'){ p++; const e=unary(); return Math.pow(b,e); } return b; }
+  function atom(){ const k=T[p]; if(!k) fail('Unfinished expression'); if(k.t==='n'){ p++; return k.v; } if(k.t==='('){ p++; const v=expr(); if(!T[p]||T[p].t!==')') fail('Missing )'); p++; return v; } fail('Unexpected symbol'); }
+  try{ const v=expr(); if(p!==T.length) fail('Unexpected symbol'); if(!isFinite(v)||Math.abs(v)>1e15) fail('Too large'); return {ok:true,val:v}; }catch(e){ return {ok:false,msg:e.message}; }
+}
+function evalExpr(str){ const t=tokenize(str); if(t.err) return {ok:false,msg:t.err}; return evalTokens(t.T); }
+function fmtNum(v){ if(Number.isInteger(v)) return String(v); let s=v.toFixed(6); s=s.replace(/0+$/,'').replace(/\.$/,''); return s; }
+/* LaTeX of a token list; hl=[i,j] wraps tokens i..j in a red underline */
+function toTeX(T,hl){
+  const piece=[], st=[];
+  const closeE=(i)=>{ let s=''; while(st.length && st[st.length-1].k==='e' && !(T[i+1] && T[i+1].t==='op' && T[i+1].v==='^')){ st.pop(); s+='}'; } return s; };
+  for(let i=0;i<T.length;i++){
+    const k=T[i], prev=T[i-1]; let s='';
+    if(k.t==='n'){
+      const neg=k.v<0, num=fmtNum(Math.abs(k.v));
+      const inExp=st.length && st[st.length-1].k==='e';
+      const isBase=T[i+1]&&T[i+1].t==='op'&&T[i+1].v==='^';
+      s= neg? (!isBase&&(inExp||!prev||prev.t==='(')? '-'+num : '(-'+num+')') : num;
+      s+=closeE(i);
+    } else if(k.t==='neg'){ s='-'; }
+    else if(k.t==='op'){
+      if(k.v==='^'){ s='^{'; st.push({k:'e'}); }
+      else s=' '+({'*':'\\times','/':'\\div','-':'-','+':'+'}[k.v])+' ';
+    }
+    else if(k.t==='('){ const top=st[st.length-1]; const exp=!!(top&&top.k==='e'); if(exp) st.pop(); st.push({k:'p',exp}); s='('; }
+    else if(k.t===')'){ const top=st.pop(); s=')'; if(top&&top.exp) s+='}'; s+=closeE(i); }
+    piece.push(s);
+  }
+  let out='';
+  piece.forEach((s,i)=>{ if(hl&&i===hl[0]) out+='{\\color{#dc2626}\\underline{'; out+=s; if(hl&&i===hl[1]) out+='}}'; });
+  return out;
+}
+/* one step of the order of calculation; null if already a single number */
+function stepOnce(T){
+  if(T.length===1 && T[0].t==='n') return null;
+  let lo=0, hi=T.length, paren=false, i0=-1, j0=-1;
+  const j=T.findIndex(k=>k.t===')');
+  if(j>=0){ let i=j; while(T[i].t!=='(') i--; lo=i+1; hi=j; paren=true; i0=i; j0=j; }
+  const seg=T.slice(lo,hi);
+  const rep=(a,b,tok)=>T.slice(0,lo+a).concat([tok],T.slice(lo+b+1));
+  const note= paren? 'Inside the brackets: ' : '';
+  const N=v=>(v<0?'(-'+fmtNum(-v)+')':fmtNum(v));
+  for(let p=seg.length-1;p>=0;p--){
+    if(seg[p].t==='op' && seg[p].v==='^' && seg[p-1] && seg[p-1].t==='n' && seg[p+1] && seg[p+1].t==='n'){
+      const v=Math.pow(seg[p-1].v,seg[p+1].v); if(!isFinite(v)||Math.abs(v)>1e15) return {err:'The numbers are too large for the stepper.'};
+      return {T2:rep(p-1,p+1,{t:'n',v}), pre:[lo+p-1,lo+p+1], why:note+'<b>Indices (powers) first:</b> $'+N(seg[p-1].v)+'^{'+fmtNum(seg[p+1].v)+'}='+N(v)+'$'};
+    }
+  }
+  for(let p=0;p<seg.length;p++){
+    if(seg[p].t==='neg' && seg[p+1] && seg[p+1].t==='n'){ const v=-seg[p+1].v; return {T2:rep(p,p+1,{t:'n',v}), pre:[lo+p,lo+p+1], why:note+'<b>The minus sign applies after the power is done:</b> $-'+fmtNum(seg[p+1].v)+'='+N(v)+'$'}; }
+  }
+  for(let p=0;p<seg.length;p++){
+    if(seg[p].t==='op' && (seg[p].v==='*'||seg[p].v==='/')){
+      const a=seg[p-1].v, b=seg[p+1].v; if(seg[p].v==='/' && b===0) return {err:'Division by zero is undefined.'};
+      const v=seg[p].v==='*'? a*b : a/b;
+      return {T2:rep(p-1,p+1,{t:'n',v}), pre:[lo+p-1,lo+p+1], why:note+'<b>Multiplication and division, left to right:</b> $'+N(a)+(seg[p].v==='*'?'\\times':'\\div')+N(b)+'='+N(v)+'$'};
+    }
+  }
+  for(let p=0;p<seg.length;p++){
+    if(seg[p].t==='op' && (seg[p].v==='+'||seg[p].v==='-')){
+      const a=seg[p-1].v, b=seg[p+1].v; const v=seg[p].v==='+'? a+b : a-b;
+      return {T2:rep(p-1,p+1,{t:'n',v}), pre:[lo+p-1,lo+p+1], why:note+'<b>Addition and subtraction, left to right:</b> $'+N(a)+(seg[p].v==='+'?'+':'-')+N(b)+'='+N(v)+'$'};
+    }
+  }
+  if(paren && seg.length===1 && seg[0].t==='n'){ return {T2:T.slice(0,i0).concat([seg[0]],T.slice(j0+1)), pre:[i0,j0], why:'<b>Brackets done:</b> the brackets now hold a single number, so they disappear.'}; }
+  return {err:'Cannot continue.'};
+}
+/* ---- Order Stepper widget ---- */
+let OS={T:null,lines:[],done:false,cur:null};
+function osLoad(str){ document.getElementById('os-in').value=str; osReset(); }
+function osPreview(){
+  const el=document.getElementById('os-prev'), v=document.getElementById('os-in').value.trim();
+  const lab='<span class="lab">Preview</span>';
+  if(!v){ el.innerHTML=lab+'<span class="msg">Type an expression, for example $3+4\\times2^2$ is typed as 3+4*2^2. Use <kbd class="k">^</kbd> for powers.</span>'; typeset(el); return null; }
+  const t=tokenize(v); if(t.err){ el.innerHTML=lab+'<span class="msg">This cannot be read yet. Use numbers, + - * / ^ and brackets only.</span>'; return null; }
+  const r=evalTokens(t.T); if(!r.ok){ el.innerHTML=lab+'<span class="text-lg">$'+toTeX(t.T)+'$</span><span class="block text-xs text-amber-700 font-semibold mt-1">'+r.msg+'</span>'; typeset(el); return null; }
+  el.innerHTML=lab+'<span class="text-lg">$'+toTeX(t.T)+'$</span>'; typeset(el); return t.T;
+}
+function osReset(){
+  const T=osPreview(); OS={T:T,lines:[],done:false,cur:T};
+  const o=document.getElementById('os-out'); o.innerHTML=T?'<p class="text-sm text-slate-500">Press <strong>Next step</strong> to see which operation is done first, and why.</p>':'';
+}
+function osNext(all){
+  if(!OS.cur) return; let guard=0;
+  do{
+    const s=stepOnce(OS.cur);
+    if(!s){ OS.done=true; break; }
+    if(s.err){ OS.lines.push({html:'<span class="text-red-700 font-bold">'+s.err+'</span>'}); OS.done=true; break; }
+    OS.lines.push({html:'$'+toTeX(OS.cur,s.pre)+'$', why:s.why}); OS.cur=s.T2; guard++;
+  }while(all && guard<60);
+  if(OS.cur && OS.cur.length===1) OS.done=true;
+  osRender();
+}
+function osRender(){
+  let h='<ol class="space-y-2">';
+  OS.lines.forEach((l,i)=>{ h+=`<li class="flex gap-2"><span class="step-badge" style="width:1.5rem;height:1.5rem;font-size:.75rem">${i+1}</span><div><div class="os-line">${l.html}</div>${l.why?`<div class="text-xs text-slate-600 mt-0.5">${l.why}</div>`:''}</div></li>`; });
+  h+='</ol>';
+  if(OS.done && OS.cur && OS.cur.length===1) h+=`<div class="mt-3 os-line" style="background:#d1fae5;border-color:#10b981">Result: $${toTeX(OS.cur)}$</div>`;
+  const o=document.getElementById('os-out'); o.innerHTML=h; typeset(o);
+}
+/* ---- typed-expression exercises ---- */
+const _pe={};
+function exprPreview(id){
+  const el=document.getElementById('prev-'+id), v=document.getElementById('inp-'+id).value; if(!el) return;
+  let h='<span class="lab">Preview</span>';
+  if(!v.trim()) h+='<span class="msg">Your expression will appear here as you type, for example $(4+4)\\times4\\div4$ is typed as (4+4)*4/4.</span>';
+  else { const t=tokenize(v); if(t.err) h+='<span class="msg">This cannot be read yet. Use numbers, + - * / ^ and brackets only.</span>';
+    else { const r=evalTokens(t.T); h+='<span class="text-lg">$'+toTeX(t.T)+'$</span>'+(r.ok?'<span class="block text-sm text-slate-600 mt-1">$='+fmtNum(r.val)+'$</span>':'<span class="block text-xs text-amber-700 font-semibold mt-1">'+r.msg+'</span>'); } }
+  el.innerHTML=h; clearTimeout(_pe[id]); _pe[id]=setTimeout(()=>typeset(el),120);
+}
+function exprCheck(e,v){
+  const t=tokenize(v); if(t.err) return {warn:'This cannot be read yet. Use numbers, + - * / ^ and brackets only.'};
+  const r=evalTokens(t.T); if(!r.ok) return {warn:r.msg+'. Fix the expression first.'};
+  const used=t.T.filter(k=>k.t==='n').map(k=>k.v).sort((a,b)=>a-b), need=e.nums.slice().sort((a,b)=>a-b);
+  const sameNums= used.length===need.length && used.every((x,i)=>x===need[i]);
+  return {ok: sameNums && Math.abs(r.val-e.target)<1e-9, val:r.val, sameNums};
+}
+
+/* ============ 3.1 widgets ============ */
+function pctOf(x){ return x; }
+/* ---- Tab 1: Square and Cube Explorer ---- */
+function sqUpdate(){
+  const n=+document.getElementById('sq-n').value; document.getElementById('sq-nv').textContent=n;
+  const c=18, pad=8, W=n*c+pad*2;
+  let svg=`<svg viewBox="0 0 ${W} ${W}" width="${Math.min(W,300)}" height="${Math.min(W,300)}" role="img" aria-label="${n} by ${n} grid of dots coloured in L-shaped layers">`;
+  for(let i=1;i<=n;i++) for(let j=1;j<=n;j++){ const k=Math.max(i,j); svg+=`<circle cx="${pad+(j-.5)*c}" cy="${pad+(n-i+.5)*c}" r="6.2" fill="hsl(${(k*47)%360},70%,52%)"/>`; }
+  svg+='</svg>'; document.getElementById('sq-svg').innerHTML=svg;
+  const odds=[]; for(let k=1;k<=n;k++) odds.push(2*k-1);
+  const oddTxt= odds.length<=8? odds.join('+') : odds.slice(0,4).join('+')+'+\\cdots+'+odds[odds.length-1];
+  document.getElementById('sq-msg').innerHTML=
+   `<p>$n^2=${n}^2=${n*n}$ &nbsp; and &nbsp; $n^3=${n}^3=${n*n*n}$</p>`+
+   `<p>$${oddTxt}=${n*n}=${n}^2$ &nbsp;(the first ${n} odd number${n>1?'s':''})</p>`+
+   `<p>$\\sqrt{${n*n}}=${n}$ &nbsp; and &nbsp; $\\sqrt[3]{${n*n*n}}=${n}$</p>`;
+  typeset(document.getElementById('sq-msg'));
+}
+/* ---- Tab 1: Locker Puzzle ---- */
+function lkSet(n){ document.getElementById('lk-n').value=n; lkRun(); }
+let LK=null;
+function lkRun(){
+  const N=clampInt(document.getElementById('lk-n').value,1,200); document.getElementById('lk-n').value=N;
+  const open=new Array(N+1).fill(false);
+  for(let s=1;s<=N;s++) for(let k=s;k<=N;k+=s) open[k]=!open[k];
+  LK={N,open};
+  let h=''; for(let k=1;k<=N;k++) h+=`<button class="chip sm" style="${open[k]?'background:#a7b2e2;border-color:#3b4fa8;color:#1c2230':''}" onclick="lkInfo(${k})" aria-label="Locker ${k}, ${open[k]?'open':'closed'}">${k}</button>`;
+  document.getElementById('lk-grid').innerHTML=h;
+  const list=range(1,N).filter(k=>open[k]), sq=range(1,Math.floor(Math.sqrt(N))).map(k=>k*k);
+  const same=list.length===sq.length && list.every((v,i)=>v===sq[i]);
+  document.getElementById('lk-msg').innerHTML=`<p><strong>${list.length}</strong> lockers are open: ${list.join(', ')}.</p><p>${same?'These are exactly the perfect squares up to '+N+': '+sq.map(x=>Math.sqrt(x)+'&sup2;').join(', ')+'.':''}</p>`;
+}
+function lkInfo(k){
+  const f=divisorsOf(k); const odd=f.length%2===1;
+  document.getElementById('lk-msg').innerHTML=`<p><strong>Locker ${k}</strong> is flipped by students ${f.join(', ')}: <strong>${f.length}</strong> flips, an ${odd?'odd number, so it ends <strong>open</strong>':'even number, so it ends <strong>closed</strong>'}. ${odd?'And '+k+' = '+Math.sqrt(k)+'&sup2;, a perfect square.':'And '+k+' is not a perfect square.'}</p><p><button class="btn-ghost" onclick="lkRun()">Back to the full result</button></p>`;
+}
+/* ---- Tab 2: Power Explorer ---- */
+function sciOf(s){ return s[0]+'.'+(s.slice(1,5)||'0')+'\\times10^{'+(s.length-1)+'}'; }
+function pwUpdate(){
+  const a=+document.getElementById('pw-a').value, n=+document.getElementById('pw-n').value;
+  document.getElementById('pw-av').textContent=a; document.getElementById('pw-nv').textContent=n;
+  let h='';
+  if(n>=1){
+    const v=(BigInt(a)**BigInt(n)).toString();
+    const exp= n<=8? Array(n).fill(a).join('\\times') : a+'\\times'+a+'\\times\\cdots\\times'+a+'\\ \\ (\\text{'+n+' factors})';
+    h+=`<p>$${a}^{${n}}=${exp}$</p>`;
+    h+= v.length<=12? `<p>$=${v}$</p>` : `<p>$\\approx${sciOf(v)}$ &nbsp;(${v.length} digits)</p>`;
+  } else if(n===0){
+    h+=`<p>$${a}^{0}=1$</p><p class="text-slate-600">Zero copies of $${a}$, and the value that keeps the index laws true.</p>`;
+  } else {
+    const m=-n, d=BigInt(a)**BigInt(m);
+    h+=`<p>$${a}^{${n}}=\\dfrac{1}{${a}^{${m}}}=\\dfrac{1}{${d}}$</p><p>$\\approx${(1/Number(d)).toPrecision(4)}$</p>`;
+  }
+  h+=`<p class="text-slate-600">Laws check: $${a}^{${n}}\\times${a}^{${-n}}=${a}^{0}=1$.</p>`;
+  const o=document.getElementById('pw-out'); o.innerHTML=h; typeset(o);
+}
+/* ---- Tab 4: Digit Counter ---- */
+function dgSet(a,n){ document.getElementById('dg-a').value=a; document.getElementById('dg-n').value=n; dgUpdate(); }
+function dgUpdate(){
+  const a=clampInt(document.getElementById('dg-a').value,2,99), n=clampInt(document.getElementById('dg-n').value,1,2500);
+  const s=(BigInt(a)**BigInt(n)).toString(), L=s.length;
+  const k2=(2n**BigInt(n)).toString().length, k5=(5n**BigInt(n)).toString().length;
+  let shown= L<=40? s : s.slice(0,18)+'&hellip;'+s.slice(-12);
+  const o=document.getElementById('dg-out');
+  o.innerHTML=`<p>$${a}^{${n}}$ has <strong>${L}</strong> digits.</p>
+   <p>In scientific form: $\\approx${sciOf(s)}$. First digits: <span class="mono">${s.slice(0,6)}</span>. Last digit: <span class="mono">${s[L-1]}</span>.</p>
+   <p class="break-all">All of it: <span class="mono" style="word-break:break-all">${shown}</span></p>
+   <p class="mt-2 text-slate-700"><strong>Theorem 5 check for $n=${n}$:</strong> $2^{${n}}$ has $${k2}$ digits and $5^{${n}}$ has $${k5}$ digits, and $${k2}+${k5}=${k2+k5}=${n}+1$. &#10003;</p>`;
+  typeset(o);
+}
+/* ---- Tab 4: Last-Digit Cycle Finder ---- */
+function ldUpdate(){
+  const a=clampInt(document.getElementById('ld-a').value,2,999), n=clampInt(document.getElementById('ld-n').value,1,999999);
+  const b=a%10, cyc=[]; let x=b;
+  do{ cyc.push(x); x=(x*b)%10; }while(x!==cyc[0] && cyc.length<12);
+  const L=cyc.length, r=n%L, idx=r===0?L:r, ans=cyc[idx-1];
+  let chk=1; { let base=b, e=n; while(e>0){ if(e&1) chk=(chk*base)%10; base=(base*base)%10; e=Math.floor(e/2); } }
+  const chips=cyc.map((d,i)=>`<span class="chip sm static" style="${i===idx-1?'background:#a7b2e2;border-color:#3b4fa8':''}">${d}</span>`).join(' ');
+  const o=document.getElementById('ld-out');
+  o.innerHTML=`<p>The last digit of the base $${a}$ is $${b}$. The last digits of $${b}^1,${b}^2,${b}^3,\\ldots$ are:</p><div class="flex gap-1 flex-wrap items-center">${chips}<span class="text-slate-500">&nbsp;then it repeats</span></div>
+   <p>Cycle length $L=${L}$. Divide the index: $${n}=${L}\\times${Math.floor(n/L)}+${r}$, remainder $${r}$${r===0?', so read the <em>last</em> term of the cycle':', so read term number '+r}.</p>
+   <p>So the last digit of $${a}^{${n}}$ is <strong>${ans}</strong>. <span class="text-slate-500">(Direct check with the clock arithmetic of 1.3: $${a}^{${n}}\\bmod10=${chk}$.)</span></p>`;
+  typeset(o);
+}
+/* ---- Tab 5: Giant Comparer ---- */
+function gcRun(){
+  const a=clampInt(document.getElementById('gc-a').value,2,99), m=clampInt(document.getElementById('gc-m').value,1,3000), b=clampInt(document.getElementById('gc-b').value,2,99), n=clampInt(document.getElementById('gc-n').value,1,3000);
+  const g=gcd(m,n), A=BigInt(a)**BigInt(m/g), B=BigInt(b)**BigInt(n/g);
+  const show=v=>{ const s=v.toString(); return s.length<=14? s : '\\approx'+sciOf(s); };
+  const wrapS=v=>{ const t=show(v); return /^\d+$/.test(t)? t : '('+t+')'; };
+  const sym= A>B?'>':A<B?'\\lt':'=';
+  const winner= A>B? `$${a}^{${m}}$ is bigger` : A<B? `$${b}^{${n}}$ is bigger` : 'they are equal';
+  let h=`<p>HCF of the indices $(${m},${n})=${g}$.</p>`;
+  if(g===1) h+=`<p>The indices have no common factor, so there is nothing to factor out. The program compares the exact numbers instead: $${a}^{${m}}$ has ${(BigInt(a)**BigInt(m)).toString().length} digits and $${b}^{${n}}$ has ${(BigInt(b)**BigInt(n)).toString().length} digits.</p>`;
+  else h+=`<p>$${a}^{${m}}=(${a}^{${m/g}})^{${g}}=${wrapS(A)}^{${g}}$ &nbsp; and &nbsp; $${b}^{${n}}=(${b}^{${n/g}})^{${g}}=${wrapS(B)}^{${g}}$.</p><p>Compare the small numbers: $${show(A)}\\ ${sym}\\ ${show(B)}$.</p>`;
+  h+=`<p class="font-bold">Verdict: ${winner}.</p>`;
+  const o=document.getElementById('gc-out'); o.innerHTML=h; typeset(o);
+}
+
+EX.t1=[
+ { level:'A. Squares, cubes and roots', id:'t1q1', type:'num', q:R`Find $17^2$.`, ans:289,
+   sol:S([R`$17^2=17\times17=170+119=289$.`,R`The answer is $\mathbf{289}$.`]) },
+ { id:'t1q2', type:'num', q:R`Find $\sqrt[3]{1728}$.`, ans:12,
+   sol:S([R`Factorise: $1728=2^6\times3^3$.`,R`Divide each index by $3$: $2^2\times3=12$.`,R`Check: $12^3=144\times12=1728$. The answer is $\mathbf{12}$.`]) },
+ { id:'t1q3', type:'num', q:R`Find $\sqrt{15^2+8^2}$. (Remember the root sign groups everything under it.)`, ans:17,
+   sol:S([R`$15^2=225$ and $8^2=64$, so under the root: $225+64=289$.`,R`$\sqrt{289}=17$ because $17^2=289$.`,R`The answer is $\mathbf{17}$ (not $15+8=23$).`]) },
+ { id:'t1q4', type:'num', q:R`Find the sum $1+3+5+\cdots+39$ of the first $20$ odd numbers.`, ans:400,
+   sol:S([R`The last term is $39=2\times20-1$, so there are $20$ terms.`,R`By Theorem 1 the sum is $20^2=\mathbf{400}$.`]) },
+ { id:'t1q5', type:'set', q:P(R`List all the perfect squares between $50$ and $200$ (inclusive).`,R`Type the numbers separated by commas.`), ans:'64,81,100,121,144,169,196',
+   sol:S([R`$7^2=49$ is too small and $8^2=64$ is the first square above $50$.`,R`Continue: $9^2=81,\ 10^2=100,\ 11^2=121,\ 12^2=144,\ 13^2=169,\ 14^2=196$.`,R`$15^2=225$ is above $200$. The set is $\{64,81,100,121,144,169,196\}$.`]) },
+ { id:'t1q6', type:'mc', q:R`Which of these numbers is <strong>not</strong> a perfect square?`, opts:[R`$1225$`,R`$1369$`,R`$1444$`,R`$1458$`], ans:3,
+   sol:S([R`A perfect square can only end in $0,1,4,5,6,9$.`,R`$1458$ ends in $8$, so it cannot be a square. (The others: $35^2=1225$, $37^2=1369$, $38^2=1444$.)`]) },
+ { level:'B. Prime factors and perfect powers', id:'t1q7', type:'num', q:R`Use prime factors to find $\sqrt{7056}$.`, ans:84,
+   sol:S([R`$7056=16\times441=2^4\times3^2\times7^2$ (since $441=21^2=3^2\times7^2$).`,R`Halve every index: $2^2\times3\times7=4\times21=84$.`,R`Check: $84^2=7056$. The answer is $\mathbf{84}$.`]) },
+ { id:'t1q8', type:'num', q:R`Find the smallest positive integer $n$ such that $72n$ is a perfect square.`, ans:2,
+   sol:S([R`$72=2^3\times3^2$.`,R`The index of $2$ is odd ($3$), so we need one more $2$. The index of $3$ is already even.`,R`$n=\mathbf{2}$, giving $144=12^2$.`]) },
+ { id:'t1q9', type:'num', q:R`Find the smallest positive integer $n$ such that $1800n$ is a perfect <strong>cube</strong>.`, ans:15,
+   sol:S([R`$1800=2^3\times3^2\times5^2$.`,R`For a cube, every index must be a multiple of $3$. The $2^3$ is fine. The $3^2$ needs one more $3$, and the $5^2$ needs one more $5$.`,R`$n=3\times5=\mathbf{15}$. Check: $1800\times15=27000=30^3$.`]) },
+ { id:'t1q10', type:'num', q:R`How many positive factors does $144$ have?`, ans:15,
+   sol:S([R`$144=2^4\times3^2$.`,R`Use the factor-counting box from 1.2: $(4+1)(2+1)=15$.`,R`The answer is $\mathbf{15}$, odd, as expected because $144=12^2$.`]) },
+ { id:'t1q11', type:'mc', q:R`Which of these numbers has an <strong>odd</strong> number of positive factors?`, opts:[R`$48$`,R`$64$`,R`$90$`,R`$120$`], ans:1,
+   sol:S([R`By Theorem 2, only perfect squares have an odd number of factors.`,R`$64=8^2$ is the only perfect square on the list.`,R`Check: $64=2^6$ has $6+1=7$ factors; $48$ has $10$, $90$ has $12$, $120$ has $16$.`]) },
+ { level:'C. Reasoning and applications', id:'t1q12', type:'num', q:P(R`There are $100$ lockers, all closed. Student $k$ flips every $k$th locker ($k=1,2,\ldots,100$).`,R`<strong>Question:</strong> how many lockers are open at the end?`), ans:10,
+   sol:S([R`Locker $n$ is flipped once for each factor of $n$, so it ends open only if $n$ has an odd number of factors.`,R`By Theorem 2 these are the perfect squares: $1,4,9,\ldots,100$.`,R`That is $1^2,2^2,\ldots,10^2$: $\mathbf{10}$ lockers.`]) },
+ { id:'t1q13', type:'num', q:R`How many three-digit numbers are perfect squares?`, ans:22,
+   sol:S([R`The smallest three-digit square is $10^2=100$. The largest is $31^2=961$ (since $32^2=1024$ has four digits).`,R`So $n=10,11,\ldots,31$, which is $31-10+1=\mathbf{22}$ squares.`]) },
+ { id:'t1q14', type:'num', q:R`How many positive integers $n$ satisfy $n^2\le2026$?`, ans:45,
+   sol:S([R`$45^2=2025\le2026$ and $46^2=2116>2026$.`,R`So $n=1,2,\ldots,45$: $\mathbf{45}$ integers.`]) },
+ { id:'t1q15', type:'mc', q:R`Which number is <strong>both</strong> a perfect square and a perfect cube?`, opts:[R`$36$`,R`$64$`,R`$100$`,R`$125$`], ans:1,
+   sol:S([R`$64=8^2=4^3$. It is $2^6$: the index $6$ is even and a multiple of $3$.`,R`$36=6^2$ is not a cube; $100=10^2$ is not a cube; $125=5^3$ is not a square.`]) }
+];
+EX.t2=[
+ { level:'A. Using the index laws on numbers', id:'t2q1', type:'num', q:R`Evaluate $\dfrac{2^5\times2^3}{2^6}$.`, ans:4,
+   sol:S([R`Same base: $2^{5+3-6}=2^2$.`,R`$2^2=\mathbf{4}$. (Check: $32\times8\div64=4$.)`]) },
+ { id:'t2q2', type:'num', q:R`Evaluate $(3^2)^3\div3^4$.`, ans:9,
+   sol:S([R`$(3^2)^3=3^6$ (power of a power).`,R`$3^6\div3^4=3^2=\mathbf{9}$.`]) },
+ { id:'t2q3', type:'num', q:R`Evaluate $(-2)^3\times(-2)^2$.`, ans:-32,
+   sol:S([R`The base is $-2$ in both: $(-2)^{3+2}=(-2)^5$.`,R`Five negative factors give a negative answer: $-32$.`]) },
+ { id:'t2q4', type:'num', q:R`Evaluate $2^0+3^0+(-5)^0$.`, ans:3,
+   sol:S([R`Every non-zero number to the power $0$ is $1$.`,R`$1+1+1=\mathbf{3}$.`]) },
+ { id:'t2q5', type:'num', q:P(R`Evaluate $2^{-3}$.`,R`Type a decimal or a fraction such as <span class="mono">1/8</span>.`), ans:0.125,
+   sol:S([R`$2^{-3}=\dfrac1{2^3}=\dfrac18$.`,R`As a decimal: $\mathbf{0.125}$.`]) },
+ { id:'t2q6', type:'num', q:R`Evaluate $5^{-2}\times5^{4}$.`, ans:25,
+   sol:S([R`Same base, add the indices: $5^{-2+4}=5^2$.`,R`$5^2=\mathbf{25}$.`]) },
+ { level:'B. Understanding the laws', id:'t2q7', type:'mc', q:R`Which of these equals $2^3\times2^4$?`, opts:[R`$2^7$`,R`$4^7$`,R`$2^{12}$`,R`$4^{12}$`], ans:0,
+   sol:S([R`$2^3\times2^4=(2\times2\times2)\times(2\times2\times2\times2)$: seven factors of $2$.`,R`So it is $2^7=128$. Only the index changes; the base stays $2$.`]) },
+ { id:'t2q8', type:'mc', q:R`Which of these statements is <strong>false</strong>?`, opts:[R`$3^2\times3^3=3^5$`,R`$(3^2)^3=3^6$`,R`$3^2+3^3=3^5$`,R`$3^5\div3^2=3^3$`], ans:2,
+   sol:S([R`The index laws apply to multiplying and dividing, never adding.`,R`$3^2+3^3=9+27=36$, but $3^5=243$. So the third statement is false.`]) },
+ { id:'t2q9', type:'mc', q:R`Why do we define $2^0=1$?`, opts:[R`Because $2^3\div2^3=1$, and for the law $a^m\div a^n=a^{m-n}$ to still work this must equal $2^{3-3}=2^0$`,R`Because $2^0$ means &ldquo;no twos&rdquo;, and no twos is $0$`,R`Because mathematicians chose a value at random`,R`Because $2^0=2\times0=0$ so it must be $1$ instead`], ans:0,
+   sol:S([R`The only value that keeps the index laws true for every index is $2^0=1$.`,R`Also the halving pattern $16,8,4,2,\ldots$ continues with $1$.`]) },
+ { level:'C. Common base', id:'t2q10', type:'num', q:R`Solve $8^x=4^6$.`, ans:4,
+   sol:S([R`Write both as powers of $2$: $8^x=(2^3)^x=2^{3x}$ and $4^6=(2^2)^6=2^{12}$.`,R`$3x=12$, so $x=\mathbf{4}$.`]) },
+ { id:'t2q11', type:'num', q:R`Solve $9^x=27^4$.`, ans:6,
+   sol:S([R`Base $3$: $9^x=3^{2x}$ and $27^4=3^{12}$.`,R`$2x=12$, so $x=\mathbf{6}$.`]) },
+ { id:'t2q12', type:'num', q:P(R`<span class="qlabel">Competition question</span>`,R`To what power should we raise $4^4$ to get $8^8$?`), ans:3,
+   sol:S([R`Write both in base $2$: $4^4=(2^2)^4=2^8$ and $8^8=(2^3)^8=2^{24}$.`,R`We need $(2^8)^x=2^{8x}=2^{24}$, so $8x=24$.`,R`$x=\mathbf{3}$. Check: $(4^4)^3=4^{12}=2^{24}=8^8$. &#10003;`]) },
+ { id:'t2q13', type:'num', q:P(R`<span class="qlabel">Competition question</span>`,R`Which power of $16$ is equal to $64^6$?`), ans:9,
+   sol:S([R`Base $2$: $64^6=(2^6)^6=2^{36}$ and $16^x=(2^4)^x=2^{4x}$.`,R`$4x=36$, so $x=\mathbf{9}$.`,R`Check: $16^9=2^{36}=64^6$. &#10003;`]) },
+ { id:'t2q14', type:'num', q:R`Solve $2^x\times4^x=2^{15}$.`, ans:5,
+   sol:S([R`$4^x=(2^2)^x=2^{2x}$.`,R`$2^x\times2^{2x}=2^{3x}=2^{15}$, so $3x=15$.`,R`$x=\mathbf{5}$.`]) },
+ { level:'D. Factoring out the smallest power', id:'t2q15', type:'num', q:R`Evaluate $\dfrac{2^{2026}+2^{2025}}{2^{2025}}$.`, ans:3,
+   sol:S([R`Factor the top: $2^{2026}+2^{2025}=2^{2025}(2+1)$.`,R`The fraction is $\dfrac{2^{2025}\times3}{2^{2025}}=\mathbf{3}$.`]) },
+ { id:'t2q16', type:'num', q:R`Evaluate $\dfrac{5^{12}-5^{10}}{5^{10}}$.`, ans:24,
+   sol:S([R`Factor the top: $5^{12}-5^{10}=5^{10}(5^2-1)=5^{10}\times24$.`,R`Divide by $5^{10}$: $\mathbf{24}$.`]) }
+];
+EX.t3=[
+ { level:'A. Calculating in order', id:'t3q1', type:'num', q:R`Calculate $6+4\times3^2$.`, ans:42,
+   sol:S([R`Index first: $3^2=9$.`,R`Multiply: $4\times9=36$.`,R`Add: $6+36=\mathbf{42}$.`]) },
+ { id:'t3q2', type:'num', q:R`Calculate $(6+4)\times3^2$.`, ans:90,
+   sol:S([R`Brackets: $6+4=10$.`,R`Index: $3^2=9$.`,R`Multiply: $10\times9=\mathbf{90}$.`]) },
+ { id:'t3q3', type:'num', q:R`Calculate $20-12\div4+2$.`, ans:19,
+   sol:S([R`Division first: $12\div4=3$.`,R`Then left to right: $20-3=17$, and $17+2=\mathbf{19}$.`]) },
+ { id:'t3q4', type:'num', q:R`Calculate $48\div6\times2$.`, ans:16,
+   sol:S([R`Division and multiplication have equal rank: go <strong>left to right</strong>.`,R`$48\div6=8$, then $8\times2=\mathbf{16}$.`,R`(It is not $48\div12=4$.)`]) },
+ { id:'t3q5', type:'num', q:R`Calculate $2\times(3+4^2)-5$.`, ans:33,
+   sol:S([R`Inside the bracket, the index first: $4^2=16$, so $3+16=19$.`,R`$2\times19=38$.`,R`$38-5=\mathbf{33}$.`]) },
+ { level:'B. Brackets, fractions, roots and powers', id:'t3q6', type:'num', q:R`Calculate $3\times[2+(8-5)^2]-4$.`, ans:29,
+   sol:S([R`Innermost bracket: $8-5=3$.`,R`Index: $3^2=9$, so the square bracket is $2+9=11$.`,R`$3\times11=33$, then $33-4=\mathbf{29}$.`]) },
+ { id:'t3q7', type:'num', q:R`Calculate $\dfrac{3^2+4^2}{10-5}$.`, ans:5,
+   sol:S([R`The fraction bar groups the top and the bottom.`,R`Top: $9+16=25$. Bottom: $10-5=5$.`,R`$25\div5=\mathbf{5}$.`]) },
+ { id:'t3q8', type:'num', q:R`Calculate $\sqrt{3^2+4^2}\times2^3$.`, ans:40,
+   sol:S([R`Under the root: $9+16=25$, and $\sqrt{25}=5$.`,R`$2^3=8$.`,R`$5\times8=\mathbf{40}$.`]) },
+ { id:'t3q9', type:'num', q:R`Calculate $2^{3^2}$ (a tower: work from the top down).`, ans:512,
+   sol:S([R`Top first: $3^2=9$.`,R`Then $2^9=\mathbf{512}$.`,R`(The different reading $(2^3)^2=64$ is <em>not</em> the convention for a tower.)`]) },
+ { id:'t3q10', type:'mc', q:R`Which of these expressions equals $64$?`, opts:[R`$2^3\times2^2$`,R`$(2^3)^2$`,R`$2^{3^2}$`,R`$2^3+2^3$`], ans:1,
+   sol:S([R`$2^3\times2^2=2^5=32$.`,R`$(2^3)^2=2^6=64$. &#10003;`,R`$2^{3^2}=2^9=512$ and $2^3+2^3=16$.`]) },
+ { id:'t3q11', type:'mc', q:P(R`A student wants to calculate $\dfrac{12+8}{4}$ on a calculator. They type <span class="mono">12+8÷4</span> and see $14$.`,R`What should they type?`), opts:[R`(12+8)÷4`,R`12+(8÷4)`,R`12+8÷4`,R`(12+8÷4)`], ans:0,
+   sol:S([R`The fraction bar is a hidden bracket: the whole top $12+8$ is divided by $4$.`,R`Type <span class="mono">(12+8)÷4</span> to get $20\div4=5$.`,R`The other options are still $14$.`]) },
+ { level:'C. Structure and reasoning', id:'t3q12', type:'num', q:P(R`Insert <strong>one pair of brackets</strong> into $2+3\times4+5$ (anywhere) to make the value as large as possible.`,R`<strong>Question:</strong> what is the largest value you can get?`), ans:29,
+   sol:S([R`Without brackets the value is $2+12+5=19$.`,R`The brackets that help most make a sum <em>multiplied</em>: $2+3\times(4+5)=2+27=29$.`,R`Other placements give less: $(2+3)\times4+5=25$, $(3\times4+5)+2=19$, $2+(3\times4)+5=19$. The largest is $\mathbf{29}$.`]) },
+ { id:'t3q13', type:'num', q:R`Calculate $1-2+3-4+5-6+\cdots+99-100$.`, ans:-50,
+   sol:S([R`Group in pairs: $(1-2)+(3-4)+\cdots+(99-100)$.`,R`Each pair is $-1$ and there are $50$ pairs.`,R`The answer is $\mathbf{-50}$.`]) },
+ { id:'t3q14', type:'num', q:R`Calculate $100-99+98-97+\cdots+2-1$.`, ans:50,
+   sol:S([R`Group in pairs: $(100-99)+(98-97)+\cdots+(2-1)$.`,R`Each pair is $+1$, and there are $50$ pairs.`,R`The answer is $\mathbf{50}$.`]) },
+ { id:'t3q15', type:'num', q:P(R`Use a calculator if you like. Calculate $(1+2+3+\cdots+10)^2-(1^3+2^3+3^3+\cdots+10^3)$.`,R`Then look at your answer: surprised?`), ans:0,
+   sol:S([R`$1+2+\cdots+10=55$, so $55^2=3025$.`,R`$1+8+27+64+125+216+343+512+729+1000=3025$.`,R`The difference is $\mathbf{0}$. This is a famous identity: the sum of the first $n$ cubes is always the square of the sum of the first $n$ numbers.`]) },
+ { id:'t3q16', type:'expr', nums:[4,4,4,4], target:17, q:P(R`<strong>Puzzle.</strong> Use the four numbers $4,\,4,\,4,\,4$ <strong>once each</strong> with $+,\ -,\ \times,\ \div$, powers and brackets to make $17$.`,R`Type your expression, for example <kbd class="k">(4+4)*4/4</kbd>. You choose where the brackets go.`), 
+   sol:S([R`One answer: $4\times4+4\div4$.`,R`Order of calculation: $4\times4=16$ and $4\div4=1$ first, then $16+1=\mathbf{17}$.`,R`Other answers exist, such as $4\times4+4^{4-4}$.`]) },
+ { id:'t3q17', type:'expr', nums:[1,2,3,4], target:25, q:P(R`Use $1,\,2,\,3,\,4$ <strong>once each</strong> with $+,\ -,\ \times,\ \div$, powers and brackets to make $25$.`,R`Type your expression.`),
+   sol:S([R`One answer: $(1+4)\times(3+2)$. The two brackets are each worked out first: $5\times5=\mathbf{25}$.`,R`Other answers exist. Whatever you type, check that each of $1,2,3,4$ is used exactly once.`]) },
+ { id:'t3q18', type:'expr', nums:[3,3,8,8], target:24, q:P(R`<strong>Challenge.</strong> Use $3,\,3,\,8,\,8$ <strong>once each</strong> with $+,\ -,\ \times,\ \div$ and brackets to make $24$.`,R`You may need a fraction in the middle.`),
+   sol:S([R`One answer: $8\div(3-8\div3)$.`,R`Inside the bracket: $8\div3=\tfrac83$, so $3-\tfrac83=\tfrac13$.`,R`Then $8\div\tfrac13=8\times3=\mathbf{24}$.`]) }
+];
+EX.t4=[
+ { level:'A. Estimating size', id:'t4q1', type:'mc', q:R`Between which two whole numbers does $\sqrt{200}$ lie?`, opts:[R`$13$ and $14$`,R`$14$ and $15$`,R`$15$ and $16$`,R`$19$ and $20$`], ans:1,
+   sol:S([R`$14^2=196$ and $15^2=225$.`,R`$196\lt200\lt225$, so $14\lt\sqrt{200}\lt15$.`]) },
+ { id:'t4q2', type:'mc', q:R`Between which two whole numbers does $\sqrt[3]{100}$ lie?`, opts:[R`$3$ and $4$`,R`$4$ and $5$`,R`$5$ and $6$`,R`$9$ and $10$`], ans:1,
+   sol:S([R`$4^3=64$ and $5^3=125$.`,R`$64\lt100\lt125$, so $4\lt\sqrt[3]{100}\lt5$.`]) },
+ { id:'t4q3', type:'num', q:P(R`How many digits does $2^{40}$ have?`,R`(Use $2^{10}=1024$, a little more than $1000$.)`), ans:13,
+   sol:S([R`$2^{40}=(2^{10})^4=1024^4$.`,R`$1000^4=10^{12}\le1024^4\lt(1.1\times1000)^4\lt10^{13}$, since $1.1^4\lt10$.`,R`So $2^{40}$ has $\mathbf{13}$ digits ($2^{40}=1\,099\,511\,627\,776$).`]) },
+ { id:'t4q4', type:'num', q:R`How many digits does $4^{15}$ have?`, ans:10,
+   sol:S([R`$4^{15}=(2^2)^{15}=2^{30}=(2^{10})^3=1024^3$.`,R`$10^9\le1024^3\lt10^{10}$ (since $1.1^3\lt10$), so it has $\mathbf{10}$ digits.`,R`Exactly: $2^{30}=1\,073\,741\,824$.`]) },
+ { id:'t4q5', type:'num', q:R`How many different 6-digit PINs are there if each digit can be $0$ to $9$ (leading zeros allowed)?`, ans:1000000,
+   sol:S([R`Each of the $6$ positions has $10$ choices.`,R`$10\times10\times10\times10\times10\times10=10^6=\mathbf{1\,000\,000}$.`]) },
+ { level:'B. The last digit of a power', id:'t4q6', type:'num', q:R`What is the last digit of $7^{2026}$?`, ans:9,
+   sol:S([R`Last digits of powers of $7$: $7,9,3,1,7,\ldots$ cycle length $4$.`,R`$2026=4\times506+2$, remainder $2$: the second term, $\mathbf{9}$.`]) },
+ { id:'t4q7', type:'num', q:R`What is the last digit of $2^{100}$?`, ans:6,
+   sol:S([R`Powers of $2$: $2,4,8,6$, cycle length $4$.`,R`$100=4\times25+0$, remainder $0$: the <em>last</em> term of the cycle, $\mathbf{6}$.`]) },
+ { id:'t4q8', type:'num', q:R`What is the last digit of $3^{45}$?`, ans:3,
+   sol:S([R`Powers of $3$: $3,9,7,1$, cycle length $4$.`,R`$45=4\times11+1$, remainder $1$: the first term, $\mathbf{3}$.`]) },
+ { id:'t4q9', type:'num', q:R`What is the last digit of $13^{13}$?`, ans:3,
+   sol:S([R`Only the last digit of the base matters, so this is the last digit of $3^{13}$.`,R`$13=4\times3+1$, so the first term of the cycle $3,9,7,1$: $\mathbf{3}$.`]) },
+ { id:'t4q10', type:'num', q:R`What is the last digit of $2^{2026}+3^{2026}$?`, ans:3,
+   sol:S([R`$2^{2026}$: cycle $2,4,8,6$; $2026=4\times506+2$, second term $4$.`,R`$3^{2026}$: cycle $3,9,7,1$; remainder $2$, second term $9$.`,R`$4+9=13$, so the last digit is $\mathbf{3}$.`]) },
+ { id:'t4q11', type:'num', q:R`What is the last digit of $6^{99}\times5^{99}$?`, ans:0,
+   sol:S([R`$6^{99}\times5^{99}=(6\times5)^{99}=30^{99}$, which ends in $0$.`,R`(Or: $6^{99}$ ends in $6$, $5^{99}$ ends in $5$, and $6\times5=30$.) The last digit is $\mathbf{0}$.`]) },
+ { level:'C. Counting digits of huge numbers', id:'t4q12', type:'num', q:P(R`<span class="qlabel">Competition question</span>`,R`How many digits are in the product $2^{18}\times5^{12}$?`), ans:14,
+   sol:S([R`Pair each $5$ with a $2$: $2^{18}\times5^{12}=2^6\times(2^{12}\times5^{12})=2^6\times10^{12}$.`,R`$2^6=64$, so the number is $64$ followed by $12$ zeros.`,R`That is $2+12=\mathbf{14}$ digits.`]) },
+ { id:'t4q13', type:'num', q:P(R`<span class="qlabel">Competition question</span>`,R`How many digits does $5^{130}$ have?`,R`(Idea: $5^{130}=\dfrac{10^{130}}{2^{130}}$. You may use that $2^{130}$ has $40$ digits.)`), ans:91,
+   sol:S([R`$2^{130}=1024^{13}$ lies between $10^{39}$ and $10^{40}$, so it has $40$ digits.`,R`Theorem 5: $5^{130}$ has $130-40+1=\mathbf{91}$ digits.`,R`Check by the board method: $5^{130}=\dfrac{10^{130}}{2^{130}}\approx\dfrac{10^{130}}{1.36\times10^{39}}\approx7.3\times10^{90}$, a $91$-digit number.`]) },
+ { id:'t4q14', type:'num', q:R`How many digits does $2^{30}\times5^{20}$ have?`, ans:24,
+   sol:S([R`$2^{30}\times5^{20}=2^{10}\times(2^{20}\times5^{20})=1024\times10^{20}$.`,R`$1024$ has $4$ digits, followed by $20$ zeros: $4+20=\mathbf{24}$ digits.`]) },
+ { id:'t4q15', type:'num', q:R`How many digits does $4^{20}\times25^{15}$ have?`, ans:34,
+   sol:S([R`Common base: $4^{20}=2^{40}$ and $25^{15}=5^{30}$.`,R`$2^{40}\times5^{30}=2^{10}\times10^{30}=1024\times10^{30}$.`,R`$4+30=\mathbf{34}$ digits.`]) },
+ { id:'t4q16', type:'num', q:R`How many digits does $5^{40}$ have? (You are told $2^{40}=1\,099\,511\,627\,776$.)`, ans:28,
+   sol:S([R`$2^{40}$ has $13$ digits (count them in the number given).`,R`Theorem 5: $5^{40}$ has $40-13+1=\mathbf{28}$ digits.`]) }
+];
+EX.t5=[
+ { level:'A. Comparing giants', id:'t5q1', type:'mc', q:R`Which is bigger, $2^{300}$ or $3^{200}$?`, opts:[R`$2^{300}$`,R`$3^{200}$`,R`They are equal`,R`Cannot be decided without a calculator`], ans:1,
+   sol:S([R`HCF$(300,200)=100$.`,R`$2^{300}=(2^3)^{100}=8^{100}$ and $3^{200}=(3^2)^{100}=9^{100}$.`,R`$9>8$, so $3^{200}$ is bigger.`]) },
+ { id:'t5q2', type:'text', q:P(R`<span class="qlabel">Competition question</span>`,R`Let $A=2^{25}$, $B=8^8$ and $C=3^{11}$.`,R`List them in <strong>increasing</strong> order. Type the letters, for example <span class="mono">ABC</span>.`), ans:['cba'],
+   sol:S([R`$B=8^8=(2^3)^8=2^{24}$, so $B\lt A$ (the same base, a smaller index).`,R`For $C$: $3^{11}\lt4^{11}=(2^2)^{11}=2^{22}\lt2^{24}=B$.`,R`So $C\lt B\lt A$: the order is $\mathbf{C,B,A}$. (Check: $177\,147\lt16\,777\,216\lt33\,554\,432$.)`]) },
+ { id:'t5q3', type:'text', q:P(R`<span class="qlabel">Competition question</span>`,R`Let $A=2^{800}$, $B=3^{500}$, $C=5^{400}$ and $D=6^{300}$.`,R`Put them in order from <strong>smallest to largest</strong>. Type the four letters, for example <span class="mono">ABCD</span>.`), ans:['dbac'],
+   sol:S([R`The indices $800,500,400,300$ have HCF $100$.`,R`$A=(2^8)^{100}=256^{100}$, $B=(3^5)^{100}=243^{100}$, $C=(5^4)^{100}=625^{100}$, $D=(6^3)^{100}=216^{100}$.`,R`Compare the bases: $216\lt243\lt256\lt625$, so $D\lt B\lt A\lt C$.`,R`The order is $\mathbf{D,B,A,C}$.`]) },
+ { id:'t5q4', type:'mc', q:R`Which is bigger, $7^{50}$ or $5^{60}$?`, opts:[R`$7^{50}$`,R`$5^{60}$`,R`They are equal`,R`Cannot be decided`], ans:0,
+   sol:S([R`HCF$(50,60)=10$.`,R`$7^{50}=(7^5)^{10}=16807^{10}$ and $5^{60}=(5^6)^{10}=15625^{10}$.`,R`$16807>15625$, so $7^{50}$ is bigger.`]) },
+ { level:'B. Squeezing with Bernoulli', id:'t5q5', type:'num', q:R`Bernoulli&rsquo;s inequality gives $1.05^{20}\ge1+20\times0.05$. What is this lower bound?`, ans:2,
+   sol:S([R`$20\times0.05=1$.`,R`$1+1=\mathbf{2}$. So $1.05^{20}\ge2$: money at $5\%$ a year at least doubles in $20$ years.`]) },
+ { id:'t5q6', type:'num', q:P(R`<span class="qlabel">Competition question</span> Prove that $1.01^{300}>4$.`,R`<strong>Guided step.</strong> By Bernoulli, $1.01^{100}\ge1+100\times0.01=2$. Since $1.01^{300}=(1.01^{100})^3$, we get $1.01^{300}\ge2^3$.`,R`<strong>Question:</strong> what number is $2^3$? (It is bigger than $4$, which completes the proof.)`), ans:8,
+   sol:S([R`$1.01^{300}=(1.01^{100})^3$ by Law 3.`,R`Bernoulli: $1.01^{100}\ge1+100\times0.01=2$.`,R`So $1.01^{300}\ge2^3=\mathbf{8}>4$. &#10003; Proof complete.`]) },
+ { id:'t5q7', type:'num', q:P(R`Direct Bernoulli on $1.001^{2000}$ gives only $1+2000\times0.001=3$.`,R`Instead split: $1.001^{2000}=(1.001^{1000})^2$ and use Bernoulli on $1.001^{1000}$.`,R`<strong>Question:</strong> what is the best whole-number lower bound $n$ you can prove in the form $1.001^{2000}\ge n$ this way?`), ans:4,
+   sol:S([R`$1.001^{1000}\ge1+1000\times0.001=2$.`,R`$1.001^{2000}=(1.001^{1000})^2\ge2^2=\mathbf{4}$.`,R`A better bound than the direct $3$, from one extra application of Law 3.`]) },
+ { level:'C. Sums of doubling lists, and paper folding', id:'t5q8', type:'num', q:R`Evaluate $1+2+4+8+\cdots+2^{12}$.`, ans:8191,
+   sol:S([R`By Theorem 7: $1+2+\cdots+2^{n}=2^{n+1}-1$ with $n=12$.`,R`$2^{13}-1=8192-1=\mathbf{8191}$.`]) },
+ { id:'t5q9', type:'num', q:R`Evaluate $2+4+8+\cdots+2^{10}$.`, ans:2046,
+   sol:S([R`Add $1$ and subtract $1$: $(1+2+4+\cdots+2^{10})-1$.`,R`$=(2^{11}-1)-1=2048-2=\mathbf{2046}$.`]) },
+ { id:'t5q10', type:'num', q:P(R`Evaluate $1+3+9+27+81+243$.`,R`(Use the doubling trick, but multiply by $3$.)`), ans:364,
+   sol:S([R`Let $T=1+3+9+27+81+243$. Then $3T=3+9+27+81+243+729$.`,R`Subtract: $3T-T=729-1=728$, so $2T=728$.`,R`$T=\mathbf{364}$.`]) },
+ { id:'t5q11', type:'num', q:P(R`A sheet of paper is $0.1$ mm thick. It is folded in half $20$ times (a thought experiment).`,R`<strong>Question:</strong> how thick is the stack, in <strong>metres</strong>? Give the exact decimal.`), ans:104.8576,
+   sol:S([R`There are $2^{20}=1\,048\,576$ layers.`,R`Thickness $=1\,048\,576\times0.1$ mm $=104\,857.6$ mm.`,R`Divide by $1000$ to convert to metres: $\mathbf{104.8576}$ m, taller than a 30-storey building.`]) },
+ { level:'D. Difference of two squares', id:'t5q12', type:'num', q:R`Evaluate $101^2-99^2$ without computing either square.`, ans:400,
+   sol:S([R`$a^2-b^2=(a-b)(a+b)$ with $a=101$, $b=99$.`,R`$(101-99)(101+99)=2\times200=\mathbf{400}$.`]) },
+ { id:'t5q13', type:'num', q:R`Evaluate $2026^2-2024^2$.`, ans:8100,
+   sol:S([R`$(2026-2024)(2026+2024)=2\times4050=\mathbf{8100}$.`]) },
+ { id:'t5q14', type:'num', q:R`Evaluate $1002^2-998^2$.`, ans:8000,
+   sol:S([R`$(1002-998)(1002+998)=4\times2000=\mathbf{8000}$.`]) },
+ { id:'t5q15', type:'num', q:P(R`Find the value of $x$ if $(2^{50}+1)(2^{50}-1)+1=2^x$.`), ans:100,
+   sol:S([R`The product is a difference of squares: $(2^{50}+1)(2^{50}-1)=(2^{50})^2-1^2=2^{100}-1$.`,R`Add $1$: $2^{100}-1+1=2^{100}$.`,R`So $x=\mathbf{100}$.`]) }
+];
+EX.t6=[
+ { level:'Level 1: Understanding', id:'h1', type:'mc', q:R`Which of these is the set of cube numbers?`, opts:[R`$\{n^3:\ n\in\mathbb{Z}^+\}$`,R`$\{3n:\ n\in\mathbb{Z}^+\}$`,R`$\{3^n:\ n\in\mathbb{Z}^+\}$`,R`$\{n+3:\ n\in\mathbb{Z}^+\}$`], ans:0,
+   sol:S([R`A cube number is a number of the form $n^3$ with $n$ a positive integer: $1,8,27,64,\ldots$`,R`$\{3n\}$ is the multiples of $3$, and $\{3^n\}$ is the powers of $3$.`]) },
+ { id:'h2', type:'set', q:P(R`List the elements of the set $\{n^2:\ n\in\mathbb{Z},\ -3\le n\le3\}$.`,R`Type the elements separated by commas, each element only once.`), ans:'0,1,4,9',
+   sol:S([R`$n=-3,-2,-1,0,1,2,3$ gives $9,4,1,0,1,4,9$.`,R`A set lists each element once: $\{0,1,4,9\}$.`]) },
+ { id:'h3', type:'mc', q:R`Which of these equals $2^4\times2^6$?`, opts:[R`$2^{10}$`,R`$4^{10}$`,R`$2^{24}$`,R`$4^{24}$`], ans:0,
+   sol:S([R`Four twos times six twos is ten twos: $2^{4+6}=2^{10}$.`,R`The base stays $2$ and the indices add.`]) },
+ { id:'h4', type:'mc', q:R`Which statement is true?`, opts:[R`$-2^4=16$`,R`$(-2)^4=16$`,R`$(-2)^4=-16$`,R`$-2^4=(-2)^4$`], ans:1,
+   sol:S([R`$(-2)^4=(-2)(-2)(-2)(-2)=16$ (an even number of negative factors).`,R`$-2^4=-(2^4)=-16$, because the power acts on $2$ only.`]) },
+ { id:'h5', type:'mc', q:R`In $5+2\times3^2$, which operation is done <strong>first</strong>?`, opts:[R`The addition $5+2$`,R`The multiplication $2\times3$`,R`The power $3^2$`,R`It does not matter`], ans:2,
+   sol:S([R`Indices come before multiplication, which comes before addition.`,R`$5+2\times9=5+18=23$.`]) },
+ { id:'h6', type:'num', q:R`Find $\sqrt[3]{-125}$.`, ans:-5,
+   sol:S([R`$(-5)^3=-125$ (three negative factors give a negative).`,R`So $\sqrt[3]{-125}=\mathbf{-5}$. A cube root, unlike a square root, can be negative.`]) },
+ { id:'h7', type:'num', q:R`How many digits does $10^{12}$ have?`, ans:13,
+   sol:S([R`$10^{12}$ is a $1$ followed by $12$ zeros.`,R`That is $\mathbf{13}$ digits.`]) },
+ { level:'Level 2: Techniques', id:'h8', type:'num', q:R`Find $\sqrt{2^6\times3^4\times5^2}$.`, ans:360,
+   sol:S([R`Halve every index: $2^3\times3^2\times5$.`,R`$8\times9\times5=\mathbf{360}$.`]) },
+ { id:'h9', type:'num', q:R`Find the smallest positive integer $n$ such that $90n$ is a perfect square.`, ans:10,
+   sol:S([R`$90=2\times3^2\times5$.`,R`The indices of $2$ and $5$ are odd, so multiply by $2\times5=10$.`,R`$n=\mathbf{10}$, giving $900=30^2$.`]) },
+ { id:'h10', type:'num', q:R`Evaluate $(2^5)^4\div(2^3)^6$.`, ans:4,
+   sol:S([R`$(2^5)^4=2^{20}$ and $(2^3)^6=2^{18}$.`,R`$2^{20}\div2^{18}=2^2=\mathbf{4}$.`]) },
+ { id:'h11', type:'num', q:R`Solve $27^x=9^6$.`, ans:4,
+   sol:S([R`Base $3$: $27^x=3^{3x}$ and $9^6=3^{12}$.`,R`$3x=12$, so $x=\mathbf{4}$.`]) },
+ { id:'h12', type:'num', q:R`Calculate $4\times(3+2\times5)-(10-4)^2\div6$.`, ans:46,
+   sol:S([R`First bracket: $3+2\times5=3+10=13$, so $4\times13=52$.`,R`Second bracket: $10-4=6$, and $6^2=36$, so $36\div6=6$.`,R`$52-6=\mathbf{46}$.`]) },
+ { id:'h13', type:'num', q:R`What is the last digit of $3^{2027}$?`, ans:7,
+   sol:S([R`Cycle of last digits of powers of $3$: $3,9,7,1$.`,R`$2027=4\times506+3$, so the third term: $\mathbf{7}$.`]) },
+ { id:'h14', type:'num', q:R`How many digits does $8^{10}\times5^{30}$ have?`, ans:31,
+   sol:S([R`$8^{10}=2^{30}$, so the product is $2^{30}\times5^{30}=10^{30}$.`,R`$10^{30}$ has $\mathbf{31}$ digits.`]) },
+ { id:'h15', type:'num', q:R`Evaluate $1+2+4+8+\cdots+2^{15}$.`, ans:65535,
+   sol:S([R`$1+2+\cdots+2^{n}=2^{n+1}-1$ with $n=15$.`,R`$2^{16}-1=65536-1=\mathbf{65535}$.`]) },
+ { id:'h16', type:'text', q:P(R`Let $A=2^{90}$, $B=3^{60}$ and $C=7^{30}$.`,R`Order them from <strong>smallest to largest</strong>. Type the three letters, for example <span class="mono">ABC</span>.`), ans:['cab'],
+   sol:S([R`HCF of the indices $=30$.`,R`$A=(2^3)^{30}=8^{30}$, $B=(3^2)^{30}=9^{30}$, $C=7^{30}$.`,R`$7\lt8\lt9$, so $C\lt A\lt B$: the order is $\mathbf{C,A,B}$.`]) },
+ { level:'Level 3: Challenge and creative', id:'h17', type:'num', q:P(R`How many digits does $2^{100}$ have?`,R`(Write $2^{100}=(2^{10})^{10}=1024^{10}$ and sandwich it.)`), ans:31,
+   sol:S([R`$1.024^{10}\approx1.27$ (it is between $1$ and $10$).`,R`So $2^{100}=1.024^{10}\times10^{30}\approx1.27\times10^{30}$.`,R`A number of the form $1.27\times10^{30}$ has $\mathbf{31}$ digits.`]) },
+ { id:'h18', type:'num', q:P(R`$2^{200}\approx1.6\times10^{60}$.`,R`<strong>Question:</strong> how many digits does $5^{200}$ have?`), ans:140,
+   sol:S([R`$2^{200}\approx1.6\times10^{60}$ has $61$ digits.`,R`Theorem 5: $5^{200}$ has $200-61+1=\mathbf{140}$ digits.`]) },
+ { id:'h19', type:'num', q:R`What is the last digit of $2^{2026}\times3^{2026}$?`, ans:6,
+   sol:S([R`$2^{2026}\times3^{2026}=6^{2026}$ (Law 4 backwards).`,R`Every power of $6$ ends in $6$.`,R`The last digit is $\mathbf{6}$.`]) },
+ { id:'h20', type:'num', q:P(R`<strong>The pond puzzle.</strong> A patch of weed on a pond doubles in area every day. It takes $30$ days to cover the whole pond.`,R`<strong>Question:</strong> on which day was <strong>half</strong> of the pond covered?`), ans:29,
+   sol:S([R`The patch doubles each day, so the day <em>before</em> it covered the whole pond it covered half.`,R`That is day $\mathbf{29}$ (not day $15$!). On day $30$ the area is $2\times$ the area on day $29$.`]) },
+ { id:'h21', type:'num', q:R`Evaluate $(10^4+1)(10^4-1)$.`, ans:99999999,
+   sol:S([R`Difference of two squares: $(10^4)^2-1^2=10^8-1$.`,R`$10^8=100\,000\,000$, so the value is $\mathbf{99\,999\,999}$.`]) },
+ { id:'h22', type:'num', q:R`Evaluate $1+3+9+27+\cdots+3^9$.`, ans:29524,
+   sol:S([R`Let $T=1+3+\cdots+3^9$. Then $3T=3+9+\cdots+3^{10}$.`,R`$3T-T=3^{10}-1=59049-1=59048$, so $2T=59048$.`,R`$T=\mathbf{29524}$.`]) },
+ { id:'h23', type:'mc', q:R`Which is bigger, $100^{50}$ or $50^{100}$?`, opts:[R`$100^{50}$`,R`$50^{100}$`,R`They are equal`,R`Cannot be decided`], ans:1,
+   sol:S([R`HCF$(50,100)=50$.`,R`$50^{100}=(50^2)^{50}=2500^{50}$ and $100^{50}$ is $100^{50}$.`,R`$2500>100$, so $50^{100}$ is bigger.`]) },
+ { id:'h24', type:'num', q:R`How many positive integers $n$ satisfy $n^3\le5000$?`, ans:17,
+   sol:S([R`$17^3=4913\le5000$ and $18^3=5832>5000$.`,R`So $n=1,2,\ldots,17$: $\mathbf{17}$ integers.`]) },
+ { id:'h25', type:'num', q:P(R`Let $A=\{n^2:\ n\in\mathbb{Z},\ -10\le n\le10\}$.`,R`<strong>Question:</strong> find $n(A)$, the number of elements of $A$.`), ans:11,
+   sol:S([R`$n$ and $-n$ give the same square, so each positive square appears twice but is listed once.`,R`$A=\{0,1,4,9,\ldots,100\}$: the squares $0^2,1^2,\ldots,10^2$.`,R`That is $\mathbf{11}$ elements.`]) }
+];
+
+const CONCEPTS={
+ sq:{label:'Squares, cubes and roots',tab:'t1',where:'Tab 1, Step 1',
+   tips:['Write the number as $n^2$ or $n^3$ and name $n$. Use the last-digit test to rule a number <em>out</em>: squares never end in $2,3,7,8$.','$\\sqrt{x}$ is the <strong>non-negative</strong> number whose square is $x$; a cube root can be negative: $\\sqrt[3]{-125}=-5$. Replay the Square and Cube Explorer.','For counting questions ($n^2\\le2026$), find the last $n$ that works by testing $45^2$ and $46^2$.']},
+ pf:{label:'Prime factors and perfect powers',tab:'t1',where:'Tab 1, Technique 1, Technique 2 and Theorem 2',
+   tips:['Factorise first. A perfect square has <strong>all indices even</strong>; a perfect cube has all indices multiples of $3$.','To make a square, multiply by one more copy of each prime with an <em>odd</em> index. To make a cube, top each index up to the next multiple of $3$.','A number has an odd number of factors exactly when it is a perfect square: replay the Locker Puzzle.']},
+ idx:{label:'Index laws',tab:'t2',where:'Tab 2, Step 2',
+   tips:['Keep the <strong>same base</strong>. Multiply: add indices. Divide: subtract. Power of a power: multiply.','The laws never apply to addition: $2^3+2^4=24$, not $2^7$. To tackle a sum, <em>factor out</em> the smallest power.','Expand a small case by hand, such as $2^3\\times2^4$, to see why the indices add.']},
+ zer:{label:'Zero and negative indices',tab:'t2',where:'Tab 2, Step 3',
+   tips:['$a^0=1$ and $a^{-n}=\\dfrac1{a^n}$. Use the halving pattern $16,8,4,2,1,\\tfrac12$ to see it.','The minus sign in the index makes a <strong>reciprocal</strong>, not a negative number.','Open the proof of Theorem 4: these values are forced by the law $a^m\\times a^n=a^{m+n}$.']},
+ bas:{label:'Common base thinking',tab:'t2',where:'Tab 2, Technique 4',
+   tips:['Rewrite every number as a power of one prime: $4=2^2$, $8=2^3$, $16=2^4$, $64=2^6$; $9=3^2$, $27=3^3$.','Then compare indices: if $a>1$ and $a^x=a^y$, then $x=y$.','Write each line of work clearly: $(2^8)^x=2^{8x}$ and $8^8=2^{24}$.']},
+ ord:{label:'Order of calculation',tab:'t3',where:'Tab 3, Steps 1 to 3',
+   tips:['Brackets (innermost first), then indices, then multiplication and division <strong>left to right</strong>, then addition and subtraction left to right.','Write one operation per line and copy the rest unchanged. Replay the Order Stepper.','Fraction bars and root signs are hidden brackets, and $-3^2=-9$ but $(-3)^2=9$.']},
+ est:{label:'Estimation and size',tab:'t4',where:'Tab 4, Steps 1 and 2',
+   tips:['Sandwich a root between two perfect powers: $14^2=196\\lt200\\lt225=15^2$.','Use $2^{10}=1024\\approx10^3$ to size big powers of $2$.','A number has $d$ digits when $10^{d-1}\\le N\\lt10^d$.']},
+ dig:{label:'Last digits and digit counts',tab:'t4',where:'Tab 4, Steps 2 and 3',
+   tips:['For last digits: list the cycle, divide the index by the cycle length, and read the term. A remainder of $0$ means the <em>last</em> term.','To count digits, pair each $2$ with a $5$ to make $10$s: $2^a\\times5^a=10^a$.','For $5^n$ use Theorem 5: if $2^n$ has $k$ digits, then $5^n$ has $n-k+1$.']},
+ cmp:{label:'Comparing large powers',tab:'t5',where:'Tab 5, Step 1',
+   tips:['Find the HCF $g$ of the indices and rewrite each power as (something)$^g$. The larger base wins.','Write out the small bases carefully: $2^8=256$, $3^5=243$, $5^4=625$, $6^3=216$.','Use the Giant Comparer to see the rewriting for any pair.']},
+ smt:{label:'Smart tools: Bernoulli, doubling sums, difference of squares',tab:'t5',where:'Tab 5, Steps 2 to 4',
+   tips:['Bernoulli: $(1+x)^n\\ge1+nx$. Split the index with Law 3 so that the bound is a whole number.','To sum a doubling or tripling list: multiply by the ratio, subtract, and read off the two ends.','When two squares are subtracted, use $a^2-b^2=(a-b)(a+b)$.']}
+};
+const SKILLS={
+ U:{label:'Understand (definitions and properties)',tips:['Before choosing an answer, <strong>explain the idea in one full sentence</strong> in your own words, then match it to an option.']},
+ C:{label:'Compute (carry out a method)',tips:['Cover the worked example, redo it yourself, then compare line by line. <strong>Write every step</strong> rather than doing it in your head.']},
+ A:{label:'Apply (use it in a problem or context)',tips:['Underline what is <strong>given</strong> and what is <strong>asked</strong>, turn the story into a maths sentence, and only then calculate. Check that the answer makes sense in the story.']},
+ Rz:{label:'Reason (multi-step and challenge problems)',tips:['Break the problem into small steps. After each step ask &ldquo;what does this tell me?&rdquo; and test a small case before the big one.']}
+};
+const TAGS={
+ t1q1:['sq','C'],t1q2:['sq','C'],t1q3:['sq','C'],t1q4:['sq','A'],t1q5:['sq','C'],t1q6:['sq','U'],
+ t1q7:['pf','C'],t1q8:['pf','C'],t1q9:['pf','C'],t1q10:['pf','C'],t1q11:['pf','U'],t1q12:['pf','Rz'],t1q13:['sq','A'],t1q14:['sq','A'],t1q15:['pf','U'],
+ t2q1:['idx','C'],t2q2:['idx','C'],t2q3:['idx','C'],t2q4:['zer','C'],t2q5:['zer','C'],t2q6:['zer','C'],
+ t2q7:['idx','U'],t2q8:['idx','U'],t2q9:['zer','U'],
+ t2q10:['bas','C'],t2q11:['bas','C'],t2q12:['bas','A'],t2q13:['bas','A'],t2q14:['bas','C'],t2q15:['idx','Rz'],t2q16:['idx','Rz'],
+ t3q1:['ord','C'],t3q2:['ord','C'],t3q3:['ord','C'],t3q4:['ord','C'],t3q5:['ord','C'],
+ t3q6:['ord','C'],t3q7:['ord','C'],t3q8:['ord','C'],t3q9:['ord','U'],t3q10:['ord','U'],t3q11:['ord','A'],
+ t3q12:['ord','Rz'],t3q16:['ord','A'],t3q17:['ord','A'],t3q18:['ord','Rz'],t3q13:['ord','Rz'],t3q14:['ord','Rz'],t3q15:['ord','Rz'],
+ t4q1:['est','U'],t4q2:['est','U'],t4q3:['est','C'],t4q4:['est','C'],t4q5:['est','A'],
+ t4q6:['dig','C'],t4q7:['dig','C'],t4q8:['dig','C'],t4q9:['dig','C'],t4q10:['dig','A'],t4q11:['dig','A'],
+ t4q12:['dig','A'],t4q13:['dig','A'],t4q14:['dig','C'],t4q15:['dig','C'],t4q16:['dig','Rz'],
+ t5q1:['cmp','U'],t5q2:['cmp','A'],t5q3:['cmp','A'],t5q4:['cmp','C'],
+ t5q5:['smt','C'],t5q6:['smt','A'],t5q7:['smt','Rz'],
+ t5q8:['smt','C'],t5q9:['smt','C'],t5q10:['smt','C'],t5q11:['smt','A'],
+ t5q12:['smt','C'],t5q13:['smt','C'],t5q14:['smt','C'],t5q15:['smt','Rz'],
+ h1:['sq','U'],h2:['sq','U'],h3:['idx','U'],h4:['ord','U'],h5:['ord','U'],h6:['sq','C'],h7:['dig','U'],
+ h8:['pf','C'],h9:['pf','C'],h10:['idx','C'],h11:['bas','C'],h12:['ord','C'],h13:['dig','C'],h14:['dig','C'],h15:['smt','C'],h16:['cmp','C'],
+ h17:['est','A'],h18:['dig','Rz'],h19:['dig','Rz'],h20:['idx','A'],h21:['smt','C'],h22:['smt','Rz'],h23:['cmp','Rz'],h24:['sq','Rz'],h25:['sq','A']
+};
+const TAB_NAMES={t1:'Tab 1 Squares, Cubes and Roots',t2:'Tab 2 Index Laws',t3:'Tab 3 Order of Calculation',t4:'Tab 4 Estimation, Digits and Last Digits',t5:'Tab 5 Smart Thinking',t6:'Tab 6 Homework'};
+
+/* ============ EXERCISE ENGINE ============ */
+const EXMAP={}, ST={};
+const now=()=>Date.now()+(window.__skew||0);
+function normSet(s){
+  s=cleanNum(s).toLowerCase().trim();
+  if(/∅|empty|^\{\s*\}$/.test(s)) return '';
+  s=s.replace(/[{}\s]/g,''); const arr=s.split(',').filter(x=>x!==''); arr.sort(sorter); return arr.join(',');
+}
+function parseFact(s){
+  s=String(s).toLowerCase().replace(/[×x·\*]/g,'*').replace(/²/g,'^2').replace(/³/g,'^3').replace(/\s/g,'');
+  if(!s) return null; const m={};
+  for(const t of s.split('*')){ const mm=t.match(/^(\d+)(?:\^(\d+))?$/); if(!mm) return null; const p=+mm[1], k=mm[2]?+mm[2]:1; m[p]=(m[p]||0)+k; }
+  return m;
+}
+function sameFact(a,b){ const ka=Object.keys(a), kb=Object.keys(b); return ka.length===kb.length && ka.every(k=>a[k]===b[k]); }
+
+/* live LaTeX preview of a typed factorisation */
+function factToLatex(raw){
+  const s0=String(raw).trim(); if(!s0) return {state:'empty'};
+  let t=s0.toLowerCase().replace(/[×x·]/g,'*').replace(/²/g,'^2').replace(/³/g,'^3').replace(/\s/g,'');
+  const tm=t.match(/[*^]+$/); let dang='';
+  if(tm){ if(tm[0].length>1) return {state:'bad'}; dang=tm[0]; t=t.slice(0,-1); }
+  if(!t) return {state:'bad'};
+  const out=[], bases=[];
+  for(const p of t.split('*')){ const m=p.match(/^(\d+)(?:\^(\d+))?$/); if(!m) return {state:'bad'}; bases.push(+m[1]); out.push(m[2]!==undefined? m[1]+'^{'+m[2]+'}' : m[1]); }
+  if(dang==='^') out[out.length-1]+='^{\\square}';
+  let tex=out.join('\\times ');
+  if(dang==='*') tex+='\\times\\,\\square';
+  const notPrime=[...new Set(bases.filter(b=>!isPrime(b)))];
+  return {state:'ok',tex,notPrime};
+}
+const _pt={};
+function factPreview(id){
+  const el=document.getElementById('prev-'+id), inp=document.getElementById('inp-'+id); if(!el||!inp) return;
+  const r=factToLatex(inp.value); let h='<span class="lab">Preview</span>';
+  if(r.state==='empty') h+='<span class="msg">Your answer will appear here as you type, for example $2^3\\times3\\times5$.</span>';
+  else if(r.state==='bad') h+='<span class="msg">This cannot be read yet. Use numbers, <kbd class="k">^</kbd> and <kbd class="k">*</kbd> only.</span>';
+  else { h+='<span class="text-lg">$'+r.tex+'$</span>'; if(r.notPrime.length) h+='<span class="block text-xs text-amber-700 font-semibold mt-1">Not all factors are prime yet: '+r.notPrime.map(b=>'$'+b+'$').join(', ')+' can be split further.</span>'; }
+  el.innerHTML=h; clearTimeout(_pt[id]); _pt[id]=setTimeout(()=>typeset(el),120);
+}
+
+function exHTML(e,n){
+  let inp='';
+  const enter=`onkeydown="if(event.key==='Enter')checkEx('${e.id}')"`;
+  if(e.type==='num') inp=`<input type="text" inputmode="decimal" class="inp" id="inp-${e.id}" placeholder="Your answer" ${enter}>`;
+  else if(e.type==='set') inp=`<input type="text" class="inp" id="inp-${e.id}" placeholder="e.g. 2, 3, 5" ${enter}><p class="text-xs text-slate-500 mt-1">Type the elements separated by commas.</p>`;
+  else if(e.type==='fact') inp=`<input type="text" class="inp" id="inp-${e.id}" placeholder="Type your factorisation" oninput="factPreview('${e.id}')" ${enter}><p class="text-xs text-slate-500 mt-1">Use <kbd class="k">^</kbd> for a power and <kbd class="k">*</kbd> for $\\times$. Primes only.</p><div class="fprev" id="prev-${e.id}"></div>`;
+  else if(e.type==='text') inp=`<input type="text" class="inp" id="inp-${e.id}" placeholder="Your answer" ${enter}>`;
+  else if(e.type==='expr') inp=`<input type="text" class="inp" id="inp-${e.id}" placeholder="Type your expression" oninput="exprPreview('${e.id}')" ${enter}><p class="text-xs text-slate-500 mt-1">Use <kbd class="k">*</kbd> for $\\times$, <kbd class="k">/</kbd> for $\\div$, <kbd class="k">^</kbd> for powers, and brackets.</p><div class="fprev" id="prev-${e.id}"></div>`;
+  else if(e.type==='mc') inp=e.opts.map((o,i)=>`<button class="opt" id="opt-${e.id}-${i}" onclick="pickOpt('${e.id}',${i})">${o}</button>`).join('');
+  return `<div class="ex-card" id="card-${e.id}" onfocusin="markSeen('${e.id}')" onclick="markSeen('${e.id}')"><div class="flex items-start gap-3"><div class="qnum">${n}</div><div class="flex-1 min-w-0">
+    <div class="qtext text-slate-800 leading-relaxed">${e.q}</div>
+    <div class="mt-3">${inp}</div>
+    <div class="mt-3 flex items-center gap-3 flex-wrap"><button class="btn" id="btn-${e.id}" onclick="checkEx('${e.id}')">Check answer</button><span id="att-${e.id}" class="text-xs font-semibold text-slate-500">Attempts left: 3</span></div>
+    <div id="fb-${e.id}" class="mt-2 text-sm font-semibold"></div>
+    <div id="sol-${e.id}" class="hidden mt-3 sol-box"><h4 class="font-bold text-slate-800 mb-1" id="solh-${e.id}">Step-by-step solution</h4>${e.sol}</div>
+  </div></div></div>`;
+}
+function markSeen(id){ const st=ST[id]; if(st && !st.t0 && !st.done){ st.t0=st.last=now(); } }
+function mountEx(key){
+  const box=document.getElementById('ex-'+key); let h='', lv='', n=0;
+  EX[key].forEach(e=>{ if(e.level&&e.level!==lv){ lv=e.level; h+=`<div class="lvl">${lv}</div>`; } e.lv=lv; n++; e.no=n; h+=exHTML(e,n); });
+  box.innerHTML=h;
+  EX[key].forEach(e=>{ EXMAP[e.id]=e; ST[e.id]={tries:0,done:false,pick:null,tab:key,correct:false,t0:null,last:null,log:[]}; });
+  if('IntersectionObserver' in window){
+    const io=new IntersectionObserver(es=>es.forEach(en=>{ if(en.isIntersecting && (en.intersectionRatio>=0.15 || en.intersectionRect.height>=180)) markSeen(en.target.id.slice(5)); }),{threshold:[0.05,0.15,0.3,0.5]});
+    box.querySelectorAll('.ex-card').forEach(c=>io.observe(c));
+  }
+}
+function pickOpt(id,i){ const st=ST[id]; if(st.done) return; markSeen(id); st.pick=i; EXMAP[id].opts.forEach((_,k)=>document.getElementById(`opt-${id}-${k}`).classList.toggle('sel',k===i)); }
+function checkEx(id){
+  const e=EXMAP[id], st=ST[id]; if(st.done) return;
+  const fb=document.getElementById('fb-'+id); let correct=false, ansText=''; const warn=m=>{ fb.className='mt-2 text-sm font-semibold text-amber-700'; fb.textContent=m; };
+  if(e.type==='num'){
+    const raw=document.getElementById('inp-'+id).value; const nv=parseNum(raw); if(nv===null) return warn('Type a number first (a decimal or a fraction like 1/8).');
+    ansText=raw.trim(); correct=Math.abs(nv-e.ans)<1e-9*Math.max(1,Math.abs(e.ans));
+  } else if(e.type==='set'){
+    const v=document.getElementById('inp-'+id).value; if(v.trim()==='') return warn('Type your answer first.'); ansText=v.trim(); correct=normSet(v)===normSet(e.ans);
+  } else if(e.type==='fact'){
+    const v=document.getElementById('inp-'+id).value; if(v.trim()==='') return warn('Type your answer first.');
+    const pf=parseFact(v); if(!pf) return warn('This cannot be read yet. Use numbers, ^ and * only (see the preview).');
+    ansText=v.trim(); correct = sameFact(pf, parseFact(e.ans)) && Object.keys(pf).every(k=>isPrime(+k));
+  } else if(e.type==='text'){
+    const v=document.getElementById('inp-'+id).value.toLowerCase().replace(/[^a-z0-9]/g,''); if(v==='') return warn('Type your answer first.'); ansText=v; correct=e.ans.includes(v);
+  } else if(e.type==='expr'){
+    const v=document.getElementById('inp-'+id).value; if(v.trim()==='') return warn('Type your expression first.');
+    const c=exprCheck(e,v); if(c.warn) return warn(c.warn); ansText=v.trim(); correct=c.ok;
+    if(!correct){ const fb2=document.getElementById('fb-'+id); fb2.dataset.extra= !c.sameNums? 'Use each of the given numbers exactly once.' : 'Your expression equals '+fmtNum(c.val)+', not '+e.target+'.'; }
+  } else if(e.type==='mc'){
+    if(st.pick===null) return warn('Choose an option first.'); ansText=String(e.opts[st.pick]); correct=st.pick===e.ans;
+  }
+  const t=now(); if(!st.t0){ st.t0=st.last=t; }
+  st.log.push({dt:t-st.last, ans:ansText, ok:correct}); st.last=t;
+  st.tries++; const left=3-st.tries; document.getElementById('att-'+id).textContent='Attempts left: '+Math.max(left,0);
+  if(correct) finishEx(id,true); else if(left<=0) finishEx(id,false);
+  else { fb.className='mt-2 text-sm font-semibold text-red-700'; fb.textContent='Not quite. '+(fb.dataset.extra?fb.dataset.extra+' ':'')+'Try again: '+left+' attempt'+(left===1?'':'s')+' left.'; const c=document.getElementById('card-'+id); c.classList.add('bad'); setTimeout(()=>{ if(!st.done) c.classList.remove('bad'); },900); }
+}
+function finishEx(id,ok){
+  const e=EXMAP[id], st=ST[id]; st.done=true; st.correct=ok;
+  const card=document.getElementById('card-'+id), fb=document.getElementById('fb-'+id), sol=document.getElementById('sol-'+id);
+  card.classList.remove('bad'); if(ok) card.classList.add('ok');
+  fb.className='mt-2 text-sm font-bold '+(ok?'text-emerald-700':'text-red-700');
+  { const pts=ok?4-st.tries:0; fb.textContent= ok?`Correct! You earned ${pts} point${pts>1?'s':''} (correct on attempt ${st.tries} of 3).`:'All 3 attempts used: 0 points. Study the full solution below.'; }
+  sol.classList.remove('hidden'); if(!ok) sol.classList.add('fail');
+  document.getElementById('solh-'+id).textContent= ok?'Full solution (compare with your method)':'Full step-by-step solution';
+  document.getElementById('btn-'+id).disabled=true;
+  if(e.type==='mc') e.opts.forEach((_,k)=>{ const b=document.getElementById(`opt-${id}-${k}`); b.disabled=true; b.classList.remove('sel'); if(k===e.ans) b.classList.add('right'); else if(k===st.pick) b.classList.add('wrong'); });
+  else document.getElementById('inp-'+id).disabled=true;
+  typeset(sol); refreshProgress();
+}
+let reportUnlocked=false;
+function allDone(){ return Object.keys(EX).every(k=>EX[k].every(e=>ST[e.id]&&ST[e.id].done)); }
+function refreshProgress(){
+  let done=0,total=0;
+  Object.keys(EX).forEach(k=>{ let d=0; EX[k].forEach(e=>{ total++; if(ST[e.id]&&ST[e.id].done){done++;d++;} }); const b=document.querySelector('.tab-link[data-tab="'+k+'"]'); if(b) b.classList.toggle('tab-done',d===EX[k].length); });
+  document.getElementById('prog-count').textContent=done; document.getElementById('prog-total').textContent=total;
+  let c=0,r=0; EX.t6.forEach(e=>{ if(ST[e.id].done){ ST[e.id].correct?c++:r++; } });
+  document.getElementById('hw-score').textContent=`Homework status: ${c} correct, ${r} revealed after 3 attempts, ${EX.t6.length-c-r} remaining`;
+  const ready=allDone(); const lab=document.getElementById('t7-label');
+  if(lab) lab.textContent='7. Learning Report';
+  if(ready && !reportUnlocked){ reportUnlocked=true; showToast(); }
+  if(document.getElementById('t7').classList.contains('active')) buildReport();
+}
+function showToast(){
+  const t=document.createElement('div'); t.className='toast no-print'; t.id='report-toast';
+  t.innerHTML='<strong>All questions finished.</strong> Your Learning Report is ready.<div class="mt-2"><button class="btn" style="background:#fff;color:#1c2230" onclick="document.getElementById(\'report-toast\').remove();openTab(null,\'t7\')">View my report</button></div>';
+  document.body.appendChild(t);
+}
+
+/* ============ LEARNING REPORT ============ */
+const EFFORT={
+ flu:{label:'Secure',long:'Correct first time',cls:'b-flu',score:1},
+ per:{label:'Persistent',long:'Corrected with real thought between attempts',cls:'b-per',score:0.8},
+ gue:{label:'Guess-and-check',long:'Quick retries, close to guessing',cls:'b-gue',score:0.45},
+ rus:{label:'Rushed',long:'Used the attempts quickly to reach the solution',cls:'b-rus',score:0},
+ str:{label:'Needs support',long:'Real effort, but the idea is not secure yet',cls:'b-str',score:0.2}
+};
+function thrFor(e){
+  const base={mc:4,num:7,set:9,fact:10,text:6,expr:12}[e.type]||7; const tg=TAGS[e.id]||[]; let f=1;
+  if(tg[1]==='Rz') f=1.5; else if(tg[1]==='A') f=1.25;
+  if(/Level 2/.test(e.lv||'')) f*=1.2; if(/Level 3/.test(e.lv||'')) f*=1.5;
+  return base*f*1000;
+}
+function analyzeQ(e){
+  const st=ST[e.id], thr=thrFor(e), L=st.log, n=L.length, quick=L.map(a=>a.dt<thr);
+  const norm=a=>String(a).toLowerCase().replace(/\s/g,'');
+  const wrong=L.filter(a=>!a.ok); const repeated=wrong.length>1 && new Set(wrong.map(a=>norm(a.ans))).size<wrong.length;
+  let key;
+  if(st.correct){ if(n===1) key='flu'; else { const qr=quick.slice(1).filter(Boolean).length; key= qr===0?'per':'gue'; } }
+  else { const q=quick.filter(Boolean).length; key= q===n?'rus' : q>=2?'gue':'str'; }
+  const tg=TAGS[e.id]||['smart','C'];
+  return {id:e.id, tab:st.tab, no:e.no, concept:tg[0], skill:tg[1], n, ok:st.correct, key, repeated, score:EFFORT[key].score, pts:(st.correct?4-n:0), log:L, thr};
+}
+function aggregate(rows){
+  const n=rows.length; if(!n) return null;
+  const sum=f=>rows.reduce((a,r)=>a+f(r),0);
+  const first=rows.filter(r=>r.ok&&r.n===1).length, rev=rows.filter(r=>!r.ok).length;
+  const rush=rows.filter(r=>r.key==='rus'||r.key==='gue').length;
+  const pts=sum(r=>r.pts), score=pts/(3*n);
+  const status= score>=0.8?'sec': score>=0.5?'dev':'need';
+  const by=[0,1,2,3].map(p=>rows.filter(r=>r.pts===p).length);
+  return {n, first, rev, rush, att:sum(r=>r.n)/n, score, pts, max:3*n, by, status, habit: rush/n>=0.34, str: rows.filter(r=>r.key==='str').length};
+}
+const STAT={sec:['Secure','b-sec'],dev:['Developing','b-dev'],need:['Needs support','b-need']};
+function pct(x){ return Math.round(x*100)+'%'; }
+function secs(ms){ return (ms/1000).toFixed(ms<10000?1:0)+'s'; }
+/* ============ KNOWLEDGE MAP (V2) ============ */
+const KM_NODES={
+ sq:[90,80,'Squares, cubes and roots'], ord:[90,300,'Order of calculation'],
+ pf:[290,80,'Prime factors and perfect powers'], idx:[290,230,'Index laws'],
+ est:[490,60,'Estimation and size'], bas:[490,185,'Common base thinking'], zer:[490,320,'Zero and negative indices'],
+ dig:[690,60,'Last digits and digit counts'], cmp:[690,200,'Comparing large powers'],
+ smt:[890,200,'Smart tools']
+};
+const KM_EDGES=[
+ ['sq','pf','A square has every prime index even'],
+ ['pf','bas','Common base thinking starts from prime factors'],
+ ['idx','bas','The index laws let us change bases and compare indices'],
+ ['idx','zer','Extending the laws forces $a^0=1$ and $a^{-n}=1/a^n$'],
+ ['bas','cmp','Comparing giants rewrites each with a common exponent'],
+ ['bas','dig','Pairing 2s and 5s into 10s is common-base thinking'],
+ ['est','dig','Sizing powers of 2 with $2^{10}\\approx10^3$ counts digits'],
+ ['ord','est','Check a calculator answer by estimating first'],
+ ['ord','idx','A power is done before multiplication, so we read $3\\times4^2$ correctly'],
+ ['cmp','smt','Splitting indices is the heart of Bernoulli and doubling sums'],
+ ['sq','smt','Difference of two squares uses squares'],
+ ['idx','smt','Law 3 powers every smart technique']
+];
+function kmWrap(s,n){ const w=s.split(' '), L=[]; let cur=''; w.forEach(x=>{ if((cur+' '+x).trim().length>n && cur){ L.push(cur); cur=x; } else cur=(cur+' '+x).trim(); }); if(cur) L.push(cur); return L; }
+function kmDownstream(c){ const out=new Set(), q=[c]; while(q.length){ const x=q.pop(); KM_EDGES.forEach(([a,b])=>{ if(a===x && !out.has(b)){ out.add(b); q.push(b); } }); } return [...out]; }
+function kmSupports(c){ const d=kmDownstream(c); if(!d.length) return ''; return `<p class="text-sm text-slate-700 mt-2"><strong>Why fix this first:</strong> this idea feeds ${d.map(x=>'<em>'+KM_NODES[x][2]+'</em>').join(', ')} on the knowledge map.</p>`; }
+function kmapHTML(agg){
+  const W=160, H=62;
+  const edge=(a,b)=>{
+    const [x1,y1]=KM_NODES[a], [x2,y2]=KM_NODES[b]; const dx=x2-x1, dy=y2-y1;
+    const t=Math.min((W/2)/Math.abs(dx||1e-9),(H/2)/Math.abs(dy||1e-9));
+    const sx=x1+dx*t, sy=y1+dy*t, ex=x2-dx*t-Math.sign(dx)*2, ey=y2-dy*t-Math.sign(dy)*2;
+    const risk=agg[a]&&agg[a].status==='need';
+    return `<line x1="${sx.toFixed(1)}" y1="${sy.toFixed(1)}" x2="${ex.toFixed(1)}" y2="${ey.toFixed(1)}" stroke="${risk?'#dc2626':'#64748b'}" stroke-width="${risk?2.6:2}" ${risk?'stroke-dasharray="7 5"':''} marker-end="url(#${risk?'kmr':'kmg'})"><title>${KM_NODES[a][2]} leads to ${KM_NODES[b][2]}</title></line>`;
+  };
+  let svg=`<svg viewBox="0 0 1010 390" style="min-width:780px;width:100%" role="img" aria-label="Knowledge map: how the ideas of this chapter connect, coloured by your score"><defs><marker id="kmg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#64748b"/></marker><marker id="kmr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#dc2626"/></marker></defs>`;
+  svg+=KM_EDGES.map(([a,b])=>edge(a,b)).join('');
+  Object.keys(KM_NODES).forEach(c=>{
+    const [x,y,label]=KM_NODES[c], g=agg[c]; const f=g?g.score:0, hue=Math.round(f*120);
+    const lines=kmWrap(label,19), total=lines.length+1, y0=y-(total*14)/2+11;
+    const stroke=g&&g.status==='need'?'#dc2626':`hsl(${hue},55%,32%)`;
+    svg+=`<g style="cursor:pointer" onclick="openTab(null,'${CONCEPTS[c].tab}')"><title>${CONCEPTS[c].label}: ${g?g.pts+' of '+g.max+' points':'no questions'}. Click to revisit ${CONCEPTS[c].where}.</title>
+      <rect x="${x-W/2}" y="${y-H/2}" width="${W}" height="${H}" rx="12" fill="hsl(${hue},70%,86%)" stroke="${stroke}" stroke-width="${g&&g.status==='need'?3.5:2}"/>`+
+      lines.map((l,i)=>`<text x="${x}" y="${y0+i*14}" text-anchor="middle" font-size="12" font-weight="700" fill="hsl(${hue},60%,16%)" font-family="Inter,Arial,sans-serif">${l}</text>`).join('')+
+      `<text x="${x}" y="${y0+lines.length*14}" text-anchor="middle" font-size="12" font-weight="800" fill="hsl(${hue},65%,22%)" font-family="Inter,Arial,sans-serif">${g?pct(f)+' ('+g.pts+'/'+g.max+')':'-'}</text></g>`;
+  });
+  svg+='</svg>';
+  const weak=Object.keys(KM_NODES).filter(c=>agg[c]&&agg[c].status==='need');
+  const mid=Object.keys(KM_NODES).filter(c=>agg[c]&&agg[c].status==='dev');
+  let note='';
+  if(weak.length){
+    note=`<div class="warn text-sm text-slate-800 mb-3"><p class="font-bold">Where to start</p><p class="mt-1">The red dashed arrows leave a concept with a low score. Ideas further along those arrows are built on it, so improve the <strong>earliest</strong> red concept first: ${weak.map(c=>'<em>'+KM_NODES[c][2]+'</em>').join(', ')}.</p></div>`;
+  } else if(mid.length){
+    note=`<div class="key text-sm text-slate-800 mb-3"><strong>No concept is in the red.</strong> The amber-looking ones (${mid.map(c=>'<em>'+KM_NODES[c][2]+'</em>').join(', ')}) are the best place to gain more points.</div>`;
+  } else {
+    note=`<div class="key text-sm text-slate-800 mb-3"><strong>The whole network is green.</strong> Every idea is secure, and the ideas that depend on each other support each other.</div>`;
+  }
+  const legend=`<div class="flex items-center gap-2 flex-wrap text-xs text-slate-600 mb-2"><span>Node colour = your score:</span><span class="kmswatch" style="background:hsl(0,70%,86%)">low</span><span class="kmswatch" style="background:hsl(60,70%,86%)">middle</span><span class="kmswatch" style="background:hsl(120,70%,86%)">high</span><span>Arrow A &rarr; B means &ldquo;B builds on A&rdquo;. Click a concept to revisit it.</span></div>`;
+  const how=`<details class="mt-2"><summary class="cursor-pointer font-bold text-slate-800 text-sm">How the ideas connect</summary><ul class="list-disc pl-6 text-sm text-slate-700 mt-2 grid md:grid-cols-2 gap-x-6 gap-y-1">${KM_EDGES.map(([a,b,r])=>`<li><strong>${KM_NODES[a][2]} &rarr; ${KM_NODES[b][2]}:</strong> ${r}.</li>`).join('')}</ul></details>`;
+  return `<h3 class="text-lg font-bold text-slate-800 mt-2 mb-2">Your knowledge map</h3><p class="text-sm text-slate-600 mb-2">The ideas of this chapter form a network. Each box is a concept, coloured by how many points you earned on its questions. Arrows show which idea builds on which.</p>${legend}<div class="card mb-3 overflow-x-auto">${svg}</div>${note}${how}`;
+}
+/* ============ SCORE (V2) ============ */
+function scoreHTML(rows,A){
+  const tot=rows.length, max=3*tot, st=STAT[A.status];
+  const cols=['#dc2626','#d97706','#0891b2','#059669'], labs=['0 points: not solved in 3 attempts','1 point: correct on attempt 3','2 points: correct on attempt 2','3 points: correct on attempt 1'];
+  let h=`<h3 class="text-lg font-bold text-slate-800 mt-6 mb-2">Your score</h3><div class="card mb-3">
+   <p class="text-sm text-slate-700 mb-3"><strong>How points work.</strong> Each question is worth up to <strong>3 points</strong>: <strong>3</strong> if you are correct on the first attempt, <strong>2</strong> on the second, <strong>1</strong> on the third, and <strong>0</strong> if all three attempts fail. Points show how securely you knew the idea. The effort check below shows <em>how</em> you worked.</p>
+   <div class="flex items-center gap-4 flex-wrap mb-3"><div class="rp-tile" style="min-width:13rem"><div class="v">${A.pts} / ${max}</div><div class="l">total points (${pct(A.score)})</div></div><div><span class="badge ${st[1]}">${st[0]}</span><div class="text-xs text-slate-600 mt-1">Secure from 80%, Developing from 50%</div></div></div>
+   <div class="rp-bar mb-2">${[3,2,1,0].filter(p=>A.by[p]).map(p=>`<div style="width:${A.by[p]/tot*100}%;background:${cols[p]}" title="${labs[p]}">${A.by[p]}</div>`).join('')}</div>
+   <div class="grid md:grid-cols-2 gap-x-6 gap-y-1 text-sm mb-3">${[3,2,1,0].map(p=>`<div><span class="pts p${p}">${p}</span> <strong>${A.by[p]}</strong> &nbsp;${labs[p].split(': ')[1]}</div>`).join('')}</div>
+   <table class="rp"><tr><th>Tab</th><th>Questions</th><th>Points</th><th>Score</th></tr>`;
+  Object.keys(EX).forEach(k=>{ const rs=rows.filter(r=>r.tab===k), p=rs.reduce((a,r)=>a+r.pts,0), m=3*rs.length, f=p/m, s=STAT[f>=0.8?'sec':f>=0.5?'dev':'need'];
+    h+=`<tr><td class="font-semibold">${TAB_NAMES[k]}</td><td>${rs.length}</td><td>${p} / ${m}</td><td>${pct(f)}<div class="meter mt-1"><div style="width:${f*100}%"></div></div></td></tr>`; });
+  return h+'</table></div>';
+}
+
+function reportPart(rows,title,note){
+  if(!rows.length) return `<h2 class="text-xl font-bold text-slate-800 mt-8 mb-2">${title}</h2><div class="card mb-3 text-slate-600">No questions finished in this part yet. ${note}</div>`;
+  const A=aggregate(rows), tot=rows.length;
+  const cnt={flu:0,per:0,gue:0,rus:0,str:0}; rows.forEach(r=>cnt[r.key]++);
+  const firstDt=rows.map(r=>r.log[0]?r.log[0].dt:0), avgThink=firstDt.reduce((a,b)=>a+b,0)/tot;
+  const habitShare=(cnt.rus+cnt.gue)/tot;
+  let h='';
+  h+=`<p class="text-slate-600 mb-4">This report is built automatically from what you did on the ${tot} questions you have finished in this part. It looks at <strong>what you got right</strong> and also at <strong>how you got there</strong>: how many attempts you used and whether each attempt showed real thinking. Timing is only a guide, so read the advice as suggestions, not a verdict.</p>`;
+  const concAggAll={}; Object.keys(CONCEPTS).forEach(c=>{ const rs=rows.filter(r=>r.concept===c); if(rs.length) concAggAll[c]=aggregate(rs); });
+  h+=kmapHTML(concAggAll);
+  h+=scoreHTML(rows,A);
+  h+='<h3 class="text-lg font-bold text-slate-800 mt-6 mb-2">At a glance</h3>';
+  h+=`<div class="grid grid-cols-2 md:grid-cols-5 gap-3 mb-5">
+    <div class="rp-tile"><div class="v">${tot}</div><div class="l">questions finished</div></div>
+    <div class="rp-tile"><div class="v">${pct(A.first/tot)}</div><div class="l">correct on the first attempt</div></div>
+    <div class="rp-tile"><div class="v">${A.att.toFixed(1)}</div><div class="l">average attempts per question</div></div>
+    <div class="rp-tile"><div class="v">${A.rev}</div><div class="l">solutions revealed after 3 attempts</div></div>
+    <div class="rp-tile"><div class="v">${secs(avgThink)}</div><div class="l">average thinking time before the first answer</div></div></div>`;
+  // effort
+  const order=['flu','per','gue','rus','str'], colors={flu:'#059669',per:'#0891b2',gue:'#d97706',rus:'#dc2626',str:'#7c3aed'};
+  h+=`<h3 class="text-lg font-bold text-slate-800 mb-2">1. Effort check: how you got your answers</h3><div class="card mb-3"><div class="rp-bar mb-3">${order.filter(k=>cnt[k]).map(k=>`<div style="width:${cnt[k]/tot*100}%;background:${colors[k]}" title="${EFFORT[k].label}">${cnt[k]}</div>`).join('')}</div>
+   <div class="grid md:grid-cols-2 gap-x-6 gap-y-1 text-sm">${order.map(k=>`<div><span class="badge ${EFFORT[k].cls}">${EFFORT[k].label}</span> <strong>${cnt[k]}</strong> &nbsp;${EFFORT[k].long}</div>`).join('')}</div></div>`;
+  if(habitShare>=0.2){
+    h+=`<div class="warn mb-4 text-sm text-slate-800"><p class="font-bold">Work habit to fix: slow down on retries</p><p class="mt-1">On ${cnt.rus+cnt.gue} of ${tot} questions (${pct(habitShare)}) your attempts came very quickly, one after another. The three attempts are there for <em>thinking</em>, not for trying the next answer. After a wrong answer, do this before you click again:</p>
+    <ol class="list-decimal pl-6 mt-1"><li>Re-read the question and underline what is asked.</li><li>Look back at the worked example in the tab and find the step you skipped.</li><li>Change something in your method, then answer.</li></ol></div>`;
+  } else if(cnt.rus+cnt.gue===0){
+    h+=`<div class="key mb-4 text-sm text-slate-800"><strong>Good work habits.</strong> You did not rush to a solution on any question. Where an answer was wrong, you took time between attempts.</div>`;
+  } else {
+    h+=`<div class="key mb-4 text-sm text-slate-800"><strong>Mostly steady.</strong> A few questions (${cnt.rus+cnt.gue}) had very quick retries. They are marked in the table below. Slow down on those and compare with the worked solution.</div>`;
+  }
+  // concept table
+  const concRows=Object.keys(CONCEPTS).map(c=>({c, rows:rows.filter(r=>r.concept===c)})).filter(x=>x.rows.length);
+  h+=`<h3 class="text-lg font-bold text-slate-800 mt-6 mb-2">2. Results by concept</h3><div class="card mb-3 overflow-x-auto"><table class="rp"><tr><th>Concept</th><th>Questions</th><th>Score</th><th>First attempt</th><th>Avg attempts</th><th>Effort flags</th><th>Understanding</th></tr>`;
+  const concAgg={};
+  concRows.forEach(({c,rows:rs})=>{ const g=aggregate(rs); concAgg[c]=g; const st=STAT[g.status];
+    h+=`<tr><td class="font-semibold">${CONCEPTS[c].label}</td><td>${g.n}</td><td>${g.pts} / ${g.max}<div class="meter mt-1"><div style="width:${g.score*100}%"></div></div></td><td>${g.first} of ${g.n}<div class="meter mt-1"><div style="width:${g.first/g.n*100}%"></div></div></td><td>${g.att.toFixed(1)}</td><td>${g.rush?`<span class="badge b-rus">${g.rush} quick</span>`:'<span class="text-slate-400">none</span>'}${g.str?` <span class="badge b-str">${g.str} struggled</span>`:''}</td><td><span class="badge ${st[1]}">${st[0]}</span></td></tr>`; });
+  h+='</table></div>';
+  // skills
+  h+=`<h3 class="text-lg font-bold text-slate-800 mt-6 mb-2">3. Results by skill</h3><div class="card mb-3 overflow-x-auto"><table class="rp"><tr><th>Skill</th><th>Questions</th><th>Score</th><th>First attempt</th><th>Avg attempts</th><th>Effort flags</th><th>Level</th></tr>`;
+  const skAgg={};
+  Object.keys(SKILLS).forEach(k=>{ const rs=rows.filter(r=>r.skill===k); if(!rs.length) return; const g=aggregate(rs); skAgg[k]=g; const st=STAT[g.status];
+    h+=`<tr><td class="font-semibold">${SKILLS[k].label}</td><td>${g.n}</td><td>${g.pts} / ${g.max}<div class="meter mt-1"><div style="width:${g.score*100}%"></div></div></td><td>${g.first} of ${g.n}<div class="meter mt-1"><div style="width:${g.first/g.n*100}%"></div></div></td><td>${g.att.toFixed(1)}</td><td>${g.rush?`<span class="badge b-rus">${g.rush} quick</span>`:'<span class="text-slate-400">none</span>'}</td><td><span class="badge ${st[1]}">${st[0]}</span></td></tr>`; });
+  h+='</table></div>';
+  // heat map
+  h+=`<p class="text-sm font-bold text-slate-700 mt-4 mb-1">Concept by skill (each cell: average score, number of questions)</p><div class="card mb-3 overflow-x-auto"><table class="rp heat"><tr><th>Concept</th>${Object.keys(SKILLS).map(k=>`<th>${SKILLS[k].label.split(' (')[0]}</th>`).join('')}</tr>`;
+  concRows.forEach(({c,rows:rs})=>{ h+=`<tr><td class="font-semibold">${CONCEPTS[c].label}</td>`+Object.keys(SKILLS).map(k=>{ const cell=rs.filter(r=>r.skill===k); if(!cell.length) return '<td class="h text-slate-300">&ndash;</td>'; const sc=cell.reduce((a,r)=>a+r.pts/3,0)/cell.length; const hue=Math.round(sc*120); return `<td class="h" style="background:hsl(${hue},70%,88%);color:hsl(${hue},60%,22%)">${Math.round(sc*100)}%<div class="text-xs font-semibold">${cell.length} q</div></td>`; }).join('')+'</tr>'; });
+  h+='</table></div>';
+  // study plan
+  const weak=concRows.map(x=>({c:x.c,g:concAgg[x.c]})).filter(x=>x.g.status!=='sec').sort((a,b)=>a.g.score-b.g.score);
+  h+=`<h3 class="text-lg font-bold text-slate-800 mt-6 mb-2">4. How to understand better: your study plan</h3>`;
+  if(!weak.length){
+    h+=`<div class="key text-sm text-slate-800 mb-3"><strong>Every concept looks secure.</strong> Next step: choose the skill with the lowest result in the table above and explain one solved <em>Reason</em> question aloud to a friend, step by step. Then try writing out the printable homework by hand.</div>`;
+  } else {
+    weak.forEach(({c,g})=>{ const cc=CONCEPTS[c], st=STAT[g.status];
+      h+=`<div class="card mb-3"><div class="flex items-center gap-2 flex-wrap mb-1"><span class="font-bold text-slate-800">${cc.label}</span><span class="badge ${st[1]}">${st[0]}</span><span class="text-xs text-slate-500">${g.first} of ${g.n} correct first time</span></div>`;
+      if(g.habit) h+=`<p class="text-sm text-amber-800 bg-amber-50 border-l-4 border-amber-400 rounded px-3 py-1 mb-2"><strong>First, slow down.</strong> Many attempts here were very quick, so the result may show haste more than a gap in understanding. Redo these questions carefully, writing each step.</p>`;
+      h+=`<ul class="list-disc pl-6 text-sm text-slate-700 space-y-1">${cc.tips.map(t=>`<li>${t}</li>`).join('')}</ul>
+        ${kmSupports(c)}<div class="mt-2 flex items-center gap-2 flex-wrap"><button class="btn-ghost" onclick="openTab(null,'${cc.tab}')">Revisit: ${cc.where}</button></div></div>`; });
+  }
+  const weakSk=Object.keys(skAgg).filter(k=>skAgg[k].status!=='sec');
+  if(weakSk.length){
+    h+=`<div class="card mb-3"><p class="font-bold text-slate-800 mb-1">Skill advice</p><ul class="list-disc pl-6 text-sm text-slate-700 space-y-1">${weakSk.map(k=>`<li><strong>${SKILLS[k].label}.</strong> ${SKILLS[k].tips[0]}</li>`).join('')}</ul></div>`;
+  }
+  // question table
+  h+=`<details class="mt-4"><summary class="cursor-pointer font-bold text-slate-800 text-lg">5. Question by question</summary><div class="card mt-2 overflow-x-auto"><table class="rp"><tr><th>Question</th><th>Concept</th><th>Skill</th><th>Attempts</th><th>Result</th><th>Points</th><th>Effort</th><th>Time before each attempt</th></tr>`;
+  rows.forEach(r=>{ const dots=r.log.map(a=>a.ok?'<span class="ok-t">&#10003;</span>':'<span class="bad-t">&#10007;</span>').join(' ');
+    h+=`<tr><td>${TAB_NAMES[r.tab].split(' ').slice(0,2).join(' ')} Q${r.no}</td><td>${CONCEPTS[r.concept].label}</td><td>${SKILLS[r.skill].label.split(' (')[0]}</td><td>${dots}</td><td>${r.ok?'Correct on attempt '+r.n:'Not solved (solution revealed)'}</td><td><span class="pts p${r.pts}">${r.pts} / 3</span></td><td><span class="badge ${EFFORT[r.key].cls}">${EFFORT[r.key].label}</span>${r.repeated?' <span class="text-xs text-slate-500">repeated the same wrong answer</span>':''}</td><td class="text-xs text-slate-600">${r.log.map(a=>secs(a.dt)).join(', ')}</td></tr>`; });
+  h+='</table></div></details>';
+  h+=``;
+  return `<h2 class="text-xl font-bold text-slate-800 mt-8 mb-2">${title}</h2><p class="text-sm text-slate-500 mb-3">${note}</p>`+h;
+}
+
+
+function isComp(e){ return e.tab==='t5' || /^Level 3/.test(e.lv||''); }
+function buildReport(){
+  const root=document.getElementById('report-root');
+  const all=[]; Object.keys(EX).forEach(k=>EX[k].forEach(e=>{ if(ST[e.id]&&ST[e.id].done){ const r=analyzeQ(e); r.comp=isComp(Object.assign({tab:k},e)); all.push(r); } }));
+  const nCore=Object.keys(EX).reduce((n,k)=>n+EX[k].filter(e=>!isComp(Object.assign({tab:k},e))).length,0), nAll=Object.keys(EX).reduce((n,k)=>n+EX[k].length,0);
+  const core=all.filter(r=>!r.comp), comp=all.filter(r=>r.comp);
+  let h=`<div class="card mb-3"><p class="text-slate-700">Your report grows as you work. It is built from the questions you have <strong>finished</strong> (correct, or all 3 attempts used): how many attempts you used, whether you made a real effort on each try, and which ideas are secure. Finished so far: <strong>${all.length} of ${nAll}</strong>.</p>
+  <p class="text-slate-700 mt-2">It has two parts. <strong>Part A</strong> is the core knowledge of this section (Tabs 1 to 4 and homework Levels 1 and 2). <strong>Part B</strong> is the competition side (Tab 5 Smart Thinking and homework Level 3). Your core result is not lowered by the competition questions.</p></div>`;
+  if(!all.length){ root.innerHTML=h+'<div class="card text-slate-600">Finish a few questions and come back: your report will start here.</div>'; return; }
+  h+=reportPart(core,'Part A · Core knowledge',`Tabs 1 to 4 and homework Levels 1 and 2 (${core.length} of ${nCore} finished).`);
+  h+=reportPart(comp,'Part B · Competition thinking',`Tab 5 Smart Thinking and homework Level 3 (${comp.length} of ${nAll-nCore} finished). These questions go beyond the core: treat this part as a challenge.`);
+  h+=`<div class="mt-5 flex gap-2 flex-wrap no-print"><button class="btn" onclick="window.print()">Print or save this report</button><button class="btn-ghost" onclick="openTab(null,'t6')">Back to homework</button></div>`;
+  root.innerHTML=h; typeset(root);
+}
+
+window.addEventListener('DOMContentLoaded',()=>{
+  Object.keys(EX).forEach(mountEx);
+  Object.keys(EXMAP).forEach(id=>{ if(!TAGS[id]) console.error('missing tag for '+id); if(!CONCEPTS[TAGS[id][0]]) console.error('bad concept '+id); });
+  Object.keys(TAGS).forEach(id=>{ if(!EXMAP[id]) console.error('tag without question '+id); });
+  Object.keys(EXMAP).forEach(id=>{ if(EXMAP[id].type==='expr') exprPreview(id); });
+  sqUpdate(); lkRun(); pwUpdate(); osReset(); dgUpdate(); ldUpdate(); gcRun();
+  refreshProgress(); buildReport(); typeset();
+});
+</script>
+<!-- table-scroll-fix --><style id="tblfix">.katex{position:relative}.tblwrap{position:relative;display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}.tblwrap>table{display:table!important;overflow:visible!important;max-width:none!important}</style><script id="tblfix-js">(function(){function wrap(){document.querySelectorAll("table").forEach(function(t){var p=t.parentElement;if(!p||p.classList.contains("tblwrap"))return;var w=document.createElement("div");w.className="tblwrap";p.insertBefore(w,t);w.appendChild(t);});}function go(){wrap();new MutationObserver(wrap).observe(document.body,{childList:true,subtree:true});}if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",go);else go();})();</script><!-- end table-scroll-fix -->
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4572b9e5c4984cd3a0d53765770f398c"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

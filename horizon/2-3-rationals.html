@@ -1,0 +1,1776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style id="tw">/*! tailwindcss v4.3.3 | MIT License | https://tailwindcss.com */
+@layer properties;
+@layer theme, base, components, utilities;
+@layer theme {
+  :root, :host {
+    --font-sans: "Avenir Next","Segoe UI",system-ui,sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
+    monospace;
+    --color-red-700: oklch(50.5% 0.213 27.518);
+    --color-amber-50: oklch(98.7% 0.022 95.277);
+    --color-amber-400: oklch(82.8% 0.189 84.429);
+    --color-amber-700: oklch(55.5% 0.163 48.998);
+    --color-amber-800: oklch(47.3% 0.137 46.201);
+    --color-emerald-700: oklch(50.8% 0.118 165.612);
+    --color-teal-50: #f1f3fb;
+    --color-teal-200: #c9d0ef;
+    --color-teal-600: #3b4fa8;
+    --color-teal-700: #33449a;
+    --color-teal-800: #2a3880;
+    --color-slate-100: oklch(96.8% 0.007 247.896);
+    --color-slate-300: oklch(86.9% 0.022 252.894);
+    --color-slate-400: oklch(70.4% 0.04 256.788);
+    --color-slate-500: oklch(55.4% 0.046 257.417);
+    --color-slate-600: oklch(44.6% 0.043 257.281);
+    --color-slate-700: oklch(37.2% 0.044 257.287);
+    --color-slate-800: oklch(27.9% 0.041 260.031);
+    --spacing: 0.25rem;
+    --text-xs: 0.75rem;
+    --text-xs--line-height: calc(1 / 0.75);
+    --text-sm: 0.875rem;
+    --text-sm--line-height: calc(1.25 / 0.875);
+    --text-lg: 1.125rem;
+    --text-lg--line-height: calc(1.75 / 1.125);
+    --text-xl: 1.25rem;
+    --text-xl--line-height: calc(1.75 / 1.25);
+    --text-2xl: 1.5rem;
+    --text-2xl--line-height: calc(2 / 1.5);
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --leading-relaxed: 1.625;
+    --radius-lg: 0.5rem;
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --default-font-family: var(--font-sans);
+    --default-mono-font-family: var(--font-mono);
+  }
+}
+@layer base {
+  *, ::after, ::before, ::backdrop, ::file-selector-button {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0 solid;
+  }
+  html, :host {
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    tab-size: 4;
+    font-family: var(--default-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji');
+    font-feature-settings: var(--default-font-feature-settings, normal);
+    font-variation-settings: var(--default-font-variation-settings, normal);
+    -webkit-tap-highlight-color: transparent;
+  }
+  hr {
+    height: 0;
+    color: inherit;
+    border-top-width: 1px;
+  }
+  abbr:where([title]) {
+    -webkit-text-decoration: underline dotted;
+    text-decoration: underline dotted;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+  a {
+    color: inherit;
+    -webkit-text-decoration: inherit;
+    text-decoration: inherit;
+  }
+  b, strong {
+    font-weight: bolder;
+  }
+  code, kbd, samp, pre {
+    font-family: var(--default-mono-font-family, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace);
+    font-feature-settings: var(--default-mono-font-feature-settings, normal);
+    font-variation-settings: var(--default-mono-font-variation-settings, normal);
+    font-size: 1em;
+  }
+  small {
+    font-size: 80%;
+  }
+  sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  sub {
+    bottom: -0.25em;
+  }
+  sup {
+    top: -0.5em;
+  }
+  table {
+    text-indent: 0;
+    border-color: inherit;
+    border-collapse: collapse;
+  }
+  :-moz-focusring:where(:not(iframe)) {
+    outline: auto;
+  }
+  progress {
+    vertical-align: baseline;
+  }
+  summary {
+    display: list-item;
+  }
+  ol, ul, menu {
+    list-style: none;
+  }
+  img, svg, video, canvas, audio, iframe, embed, object {
+    display: block;
+    vertical-align: middle;
+  }
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+  button, input, select, optgroup, textarea, ::file-selector-button {
+    font: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    border-radius: 0;
+    background-color: transparent;
+    opacity: 1;
+  }
+  :where(select:is([multiple], [size])) optgroup {
+    font-weight: bolder;
+  }
+  :where(select:is([multiple], [size])) optgroup option {
+    padding-inline-start: 20px;
+  }
+  ::file-selector-button {
+    margin-inline-end: 4px;
+  }
+  ::placeholder {
+    opacity: 1;
+  }
+  @supports (not (-webkit-appearance: -apple-pay-button))  or (contain-intrinsic-size: 1px) {
+    ::placeholder {
+      color: currentcolor;
+      @supports (color: color-mix(in lab, red, red)) {
+        color: color-mix(in oklab, currentcolor 50%, transparent);
+      }
+    }
+  }
+  textarea {
+    resize: vertical;
+  }
+  ::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+  ::-webkit-date-and-time-value {
+    min-height: 1lh;
+    text-align: inherit;
+  }
+  ::-webkit-datetime-edit {
+    display: inline-flex;
+  }
+  ::-webkit-datetime-edit-fields-wrapper {
+    padding: 0;
+  }
+  ::-webkit-datetime-edit, ::-webkit-datetime-edit-year-field, ::-webkit-datetime-edit-month-field, ::-webkit-datetime-edit-day-field, ::-webkit-datetime-edit-hour-field, ::-webkit-datetime-edit-minute-field, ::-webkit-datetime-edit-second-field, ::-webkit-datetime-edit-millisecond-field, ::-webkit-datetime-edit-meridiem-field {
+    padding-block: 0;
+  }
+  ::-webkit-calendar-picker-indicator {
+    line-height: 1;
+  }
+  :-moz-ui-invalid {
+    box-shadow: none;
+  }
+  button, input:where([type='button'], [type='reset'], [type='submit']), ::file-selector-button {
+    appearance: button;
+  }
+  ::-webkit-inner-spin-button, ::-webkit-outer-spin-button {
+    height: auto;
+  }
+  [hidden]:where(:not([hidden='until-found'])) {
+    display: none !important;
+  }
+}
+@layer utilities {
+  .fixed {
+    position: fixed;
+  }
+  .mt-1 {
+    margin-top: var(--spacing);
+  }
+  .mt-2 {
+    margin-top: calc(var(--spacing) * 2);
+  }
+  .mt-3 {
+    margin-top: calc(var(--spacing) * 3);
+  }
+  .mt-4 {
+    margin-top: calc(var(--spacing) * 4);
+  }
+  .mt-5 {
+    margin-top: calc(var(--spacing) * 5);
+  }
+  .mt-6 {
+    margin-top: calc(var(--spacing) * 6);
+  }
+  .mt-8 {
+    margin-top: calc(var(--spacing) * 8);
+  }
+  .mb-1 {
+    margin-bottom: var(--spacing);
+  }
+  .mb-2 {
+    margin-bottom: calc(var(--spacing) * 2);
+  }
+  .mb-3 {
+    margin-bottom: calc(var(--spacing) * 3);
+  }
+  .mb-4 {
+    margin-bottom: calc(var(--spacing) * 4);
+  }
+  .mb-5 {
+    margin-bottom: calc(var(--spacing) * 5);
+  }
+  .block {
+    display: block;
+  }
+  .flex {
+    display: flex;
+  }
+  .grid {
+    display: grid;
+  }
+  .hidden {
+    display: none;
+  }
+  .inline-block {
+    display: inline-block;
+  }
+  .table {
+    display: table;
+  }
+  .w-full {
+    width: 100%;
+  }
+  .min-w-0 {
+    min-width: 0px;
+  }
+  .flex-1 {
+    flex: 1;
+  }
+  .shrink {
+    flex-shrink: 1;
+  }
+  .border-collapse {
+    border-collapse: collapse;
+  }
+  .cursor-pointer {
+    cursor: pointer;
+  }
+  .list-decimal {
+    list-style-type: decimal;
+  }
+  .list-disc {
+    list-style-type: disc;
+  }
+  .grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+  .items-center {
+    align-items: center;
+  }
+  .items-start {
+    align-items: flex-start;
+  }
+  .gap-2 {
+    gap: calc(var(--spacing) * 2);
+  }
+  .gap-3 {
+    gap: calc(var(--spacing) * 3);
+  }
+  .gap-4 {
+    gap: calc(var(--spacing) * 4);
+  }
+  :where(.space-y-1 > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(var(--spacing) * var(--tw-space-y-reverse));
+    margin-block-end: calc(var(--spacing) * calc(1 - var(--tw-space-y-reverse)));
+  }
+  .gap-x-6 {
+    column-gap: calc(var(--spacing) * 6);
+  }
+  .gap-y-1 {
+    row-gap: var(--spacing);
+  }
+  .overflow-x-auto {
+    overflow-x: auto;
+  }
+  .rounded {
+    border-radius: 0.25rem;
+  }
+  .rounded-lg {
+    border-radius: var(--radius-lg);
+  }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
+  .border-b-4 {
+    border-bottom-style: var(--tw-border-style);
+    border-bottom-width: 4px;
+  }
+  .border-l-4 {
+    border-left-style: var(--tw-border-style);
+    border-left-width: 4px;
+  }
+  .border-amber-400 {
+    border-color: var(--color-amber-400);
+  }
+  .border-slate-300 {
+    border-color: var(--color-slate-300);
+  }
+  .border-teal-200 {
+    border-color: var(--color-teal-200);
+  }
+  .border-teal-600 {
+    border-color: var(--color-teal-600);
+  }
+  .bg-amber-50 {
+    background-color: var(--color-amber-50);
+  }
+  .bg-slate-100 {
+    background-color: var(--color-slate-100);
+  }
+  .bg-teal-50 {
+    background-color: var(--color-teal-50);
+  }
+  .p-3 {
+    padding: calc(var(--spacing) * 3);
+  }
+  .px-2 {
+    padding-inline: calc(var(--spacing) * 2);
+  }
+  .px-3 {
+    padding-inline: calc(var(--spacing) * 3);
+  }
+  .py-1 {
+    padding-block: var(--spacing);
+  }
+  .pl-5 {
+    padding-left: calc(var(--spacing) * 5);
+  }
+  .pl-6 {
+    padding-left: calc(var(--spacing) * 6);
+  }
+  .text-2xl {
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
+  }
+  .text-lg {
+    font-size: var(--text-lg);
+    line-height: var(--tw-leading, var(--text-lg--line-height));
+  }
+  .text-sm {
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
+  }
+  .text-xl {
+    font-size: var(--text-xl);
+    line-height: var(--tw-leading, var(--text-xl--line-height));
+  }
+  .text-xs {
+    font-size: var(--text-xs);
+    line-height: var(--tw-leading, var(--text-xs--line-height));
+  }
+  .leading-relaxed {
+    --tw-leading: var(--leading-relaxed);
+    line-height: var(--leading-relaxed);
+  }
+  .font-bold {
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+  }
+  .font-semibold {
+    --tw-font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
+  }
+  .text-amber-700 {
+    color: var(--color-amber-700);
+  }
+  .text-amber-800 {
+    color: var(--color-amber-800);
+  }
+  .text-emerald-700 {
+    color: var(--color-emerald-700);
+  }
+  .text-red-700 {
+    color: var(--color-red-700);
+  }
+  .text-slate-300 {
+    color: var(--color-slate-300);
+  }
+  .text-slate-400 {
+    color: var(--color-slate-400);
+  }
+  .text-slate-500 {
+    color: var(--color-slate-500);
+  }
+  .text-slate-600 {
+    color: var(--color-slate-600);
+  }
+  .text-slate-700 {
+    color: var(--color-slate-700);
+  }
+  .text-slate-800 {
+    color: var(--color-slate-800);
+  }
+  .text-teal-700 {
+    color: var(--color-teal-700);
+  }
+  .text-teal-800 {
+    color: var(--color-teal-800);
+  }
+  .underline {
+    text-decoration-line: underline;
+  }
+  .ease-out {
+    --tw-ease: var(--ease-out);
+    transition-timing-function: var(--ease-out);
+  }
+  @media (width >= 48rem) {
+    .md\:grid-cols-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .md\:grid-cols-5 {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+  }
+}
+@property --tw-space-y-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-leading {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ease {
+  syntax: "*";
+  inherits: false;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-space-y-reverse: 0;
+      --tw-border-style: solid;
+      --tw-leading: initial;
+      --tw-font-weight: initial;
+      --tw-ease: initial;
+    }
+  }
+}
+</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Horizon · Section 2.3 · Arithmetic of the rationals</title>
+
+
+<style>
+  body { font-family: 'Inter', system-ui, sans-serif; background-color: #f7f6fb; color: #0f172a; overflow-x: hidden; }
+  .tab-content { display: none; animation: fadeIn 0.4s ease-out; }
+  .tab-content.active { display: block; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+  input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; background: transparent; }
+  input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; height: 20px; width: 20px; border-radius: 50%; background: #3b4fa8; cursor: pointer; margin-top: -8px; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+  input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 6px; cursor: pointer; background: #cbd5e1; border-radius: 3px; }
+  .btn { background:#3b4fa8; color:#fff; font-weight:700; padding:.45rem 1rem; border-radius:.4rem; font-size:.875rem; transition:.15s; box-shadow:0 1px 2px rgba(0,0,0,.15); }
+  .btn:hover { background:#33449a; } .btn:disabled { background:#94a3b8; cursor:not-allowed; }
+  .btn-ghost { background:#fff; color:#33449a; border:2px solid #c9d0ef; font-weight:700; padding:.3rem .75rem; border-radius:.4rem; font-size:.8rem; transition:.15s; }
+  .btn-ghost:hover { background:#eef0fa; border-color:#3b4fa8; } .btn-ghost.on { background:#3b4fa8; color:#fff; border-color:#3b4fa8; }
+  .card { background:#fff; border:1px solid #e2e8f0; border-radius:.75rem; padding:1.25rem; }
+  .key { background:#eef0fa; border-left:5px solid #3b4fa8; border-radius:.5rem; padding:1rem 1.25rem; }
+  .warn { background:#fffbeb; border-left:5px solid #f59e0b; border-radius:.5rem; padding:1rem 1.25rem; }
+  .step-badge { display:inline-flex; align-items:center; justify-content:center; width:1.75rem; height:1.75rem; border-radius:9999px; background:#3b4fa8; color:#fff; font-weight:800; font-size:.85rem; flex-shrink:0; }
+  .ex-card { background:#fff; border:1px solid #cbd5e1; border-radius:.75rem; padding:1.1rem 1.25rem; margin-bottom:1rem; }
+  .ex-card.ok { border-color:#34d399; background:#f0fdf4; } .ex-card.bad { border-color:#fca5a5; background:#fef2f2; }
+  .qnum { width:2rem; height:2rem; border-radius:.5rem; background:#1c2230; color:#fff; font-weight:800; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .inp { border:2px solid #cbd5e1; border-radius:.4rem; padding:.45rem .7rem; font-family: ui-monospace, monospace; font-weight:700; width:100%; max-width:22rem; }
+  .inp:focus { outline:none; border-color:#3b4fa8; box-shadow:0 0 0 3px #c9d0ef; }
+  .opt { display:block; width:100%; text-align:left; border:2px solid #cbd5e1; background:#fff; border-radius:.5rem; padding:.5rem .8rem; margin-bottom:.4rem; font-size:.9rem; transition:.15s; }
+  .opt:hover { border-color:#3b4fa8; background:#eef0fa; } .opt.sel { border-color:#3b4fa8; background:#dde2f6; font-weight:700; }
+  .opt.right { border-color:#10b981; background:#d1fae5; } .opt.wrong { border-color:#ef4444; background:#fee2e2; }
+  .chip { display:inline-flex; align-items:center; justify-content:center; min-width:2.6rem; height:2.4rem; padding:0 .5rem; border:2px solid #cbd5e1; border-radius:.5rem; background:#fff; font-weight:700; cursor:pointer; transition:.15s; user-select:none; }
+  .chip:hover { border-color:#3b4fa8; background:#eef0fa; transform:translateY(-2px); }
+  .chip.selA { background:#c9d0ef; border-color:#3b4fa8; color:#1c2230; } .chip.selB { background:#fde68a; border-color:#d97706; color:#78350f; }
+  .chip.pos { background:#ecfeff; border-color:#22d3ee; color:#155e75; } .chip.neg { background:#fff1f2; border-color:#fb7185; color:#9f1239; }
+  .chip.pick { outline:4px solid #f59e0b; }
+  .chip.static { cursor:default; } .chip.static:hover { transform:none; }
+  .sol-box { background:#f0fdf4; border:1px solid #bbf7d0; border-radius:.6rem; padding:1rem 1.2rem; } .sol-box.fail { background:#eef0fa; border-color:#c9d0ef; }
+  .lvl { background:#1c2230; color:#fff; border-radius:.6rem; padding:.6rem 1rem; font-weight:800; margin:1.5rem 0 .8rem; }
+  .tab-done::after { content:" ✓"; color:#10b981; }
+  .ok-t { color:#047857; font-weight:700; } .bad-t { color:#b91c1c; font-weight:700; }
+  table.tb { border-collapse:collapse; font-size:.85rem; } table.tb th, table.tb td { border:1px solid #cbd5e1; padding:.35rem .6rem; text-align:center; }
+  table.tb th { background:#eef0fa; }
+  .tech { background:#fff; border:1px solid #c9d0ef; border-left:6px solid #3b4fa8; border-radius:.6rem; padding:1rem 1.2rem; margin-bottom:1rem; }
+  .tech .tt { font-weight:800; color:#33449a; margin-bottom:.35rem; }
+  .eg { background:#f8fafc; border:1px dashed #94a3b8; border-radius:.5rem; padding:.6rem .9rem; margin-top:.5rem; font-size:.9rem; }
+  .turn { display:inline-block; background:#fef3c7; color:#92400e; font-weight:800; font-size:.72rem; padding:.1rem .5rem; border-radius:9999px; margin-bottom:.4rem; }
+  .chip.sm { min-width:2.1rem; height:2rem; font-size:.8rem; padding:0 .3rem; }
+  .chip.prime { background:#c9d0ef; border-color:#3b4fa8; color:#1c2230; }
+  .chip.struck { background:#f7f6fb; color:#94a3b8; text-decoration:line-through; border-color:#e2e8f0; }
+  .chip.one { background:#fee2e2; border-color:#f87171; color:#991b1b; }
+  .chip.oddd { background:#fef3c7; border-color:#f59e0b; color:#78350f; }
+  .dot { width:1.15rem; height:1.15rem; border-radius:9999px; background:#5b6cc0; display:inline-block; }
+  .dot.b { background:#f59e0b; }
+  sup { font-size:.7em; }
+
+  /* ---- V2 additions ---- */
+  .qtext p { margin:.4rem 0; } .qtext p:first-child { margin-top:0; } .qtext p:last-child { margin-bottom:0; }
+  .qtext ul { list-style:disc; padding-left:1.4rem; margin:.4rem 0; } .qtext li { margin:.15rem 0; }
+  .qlabel { display:inline-block; background:#dde2f6; color:#1c2230; font-weight:800; font-size:.78rem; letter-spacing:.02em; padding:.1rem .65rem; border-radius:9999px; }
+  .hint { background:#fffbeb; border-left:4px solid #f59e0b; padding:.4rem .75rem; border-radius:.35rem; font-size:.88rem; color:#78350f; }
+  .codetab { margin:.2rem 0 .5rem; } .codetab td, .codetab th { min-width:2.1rem; padding:.2rem .35rem; }
+  .codetab th { background:#dde2f6; }
+  mjx-container[display="true"] { overflow-x:auto; overflow-y:hidden; max-width:100%; }
+  .fprev { margin-top:.55rem; border:2px dashed #a7b2e2; background:#eef0fa; border-radius:.5rem; padding:.4rem .8rem; min-height:3rem; max-width:34rem; }
+  .fprev .lab { font-size:.68rem; font-weight:800; color:#33449a; text-transform:uppercase; letter-spacing:.05em; display:block; }
+  .fprev .msg { font-size:.85rem; color:#475569; }
+  kbd.k { background:#f7f6fb; border:1px solid #94a3b8; border-bottom-width:3px; border-radius:.3rem; padding:0 .4rem; font-family:ui-monospace,monospace; font-weight:700; font-size:.85em; }
+  .proof { background:#fff; border:2px solid #33449a; border-radius:.75rem; padding:1.1rem 1.3rem; margin-bottom:1.2rem; }
+  .proof .ph { font-weight:800; color:#33449a; font-size:1.05rem; margin-bottom:.4rem; }
+  .proof .ps { margin:.7rem 0; padding-left:.9rem; border-left:4px solid #c9d0ef; font-size:.92rem; color:#1e293b; }
+  .proof .ps b.n { color:#33449a; }
+  .rp-tile { background:#f8fafc; border:1px solid #cbd5e1; border-radius:.6rem; padding:.7rem .9rem; text-align:center; }
+  .rp-tile .v { font-size:1.6rem; font-weight:800; color:#1c2230; } .rp-tile .l { font-size:.72rem; color:#475569; font-weight:700; }
+  .badge { display:inline-block; font-size:.72rem; font-weight:800; padding:.1rem .55rem; border-radius:9999px; white-space:nowrap; }
+  .b-sec { background:#d1fae5; color:#065f46; } .b-dev { background:#fef3c7; color:#92400e; } .b-need { background:#fee2e2; color:#991b1b; }
+  .b-flu { background:#d1fae5; color:#065f46; } .b-per { background:#cffafe; color:#155e75; } .b-gue { background:#fef3c7; color:#92400e; } .b-rus { background:#fee2e2; color:#991b1b; } .b-str { background:#ede9fe; color:#5b21b6; }
+  .rp-bar { display:flex; height:1.6rem; border-radius:.4rem; overflow:hidden; border:1px solid #cbd5e1; }
+  .rp-bar div { display:flex; align-items:center; justify-content:center; font-size:.72rem; font-weight:800; color:#fff; }
+  .meter { height:.6rem; background:#e2e8f0; border-radius:9999px; overflow:hidden; min-width:6rem; } .meter > div { height:100%; background:#3b4fa8; }
+  table.rp { border-collapse:collapse; width:100%; font-size:.84rem; } table.rp th, table.rp td { border-bottom:1px solid #e2e8f0; padding:.45rem .5rem; text-align:left; vertical-align:top; }
+  table.rp th { background:#eef0fa; font-size:.75rem; text-transform:uppercase; letter-spacing:.03em; color:#33449a; }
+  .heat td.h { text-align:center; font-weight:800; border-radius:.3rem; }
+  .toast { position:fixed; right:1rem; bottom:1rem; background:#1c2230; color:#fff; padding:.8rem 1.1rem; border-radius:.6rem; box-shadow:0 6px 18px rgba(0,0,0,.3); z-index:50; max-width:20rem; font-size:.9rem; }
+  @media print { body { background:#fff; } .toast, .tab-link, .no-print { display:none !important; } }
+
+  /* ---- 2.3 additions ---- */
+  .chip.struck-lite { opacity:.55; }
+  select.inp { background:#fff; }
+  /* ---- V2 additions: examples, proof drawers, scenes, scoring, map ---- */
+  .seeit { background:#eef2ff; border:2px solid #a5b4fc; border-radius:.6rem; padding:.7rem 1rem; margin:.7rem 0; }
+  .seeit .sh { font-weight:800; color:#3730a3; font-size:.95rem; margin-bottom:.35rem; }
+  .seg { margin:.55rem 0; padding:.1rem 0 .1rem .8rem; border-left:4px solid #6366f1; font-size:.9rem; color:#1e293b; }
+  .seg .et { font-weight:800; color:#312e81; margin-bottom:.15rem; } .seg p { margin:.25rem 0; }
+  details.pf { border:1px dashed #a7b2e2; border-radius:.5rem; background:#f8fafc; padding:.45rem .8rem; margin:.6rem 0 .2rem; }
+  details.pf > summary { cursor:pointer; font-weight:800; color:#33449a; font-size:.92rem; }
+  details.pf[open] > summary { margin-bottom:.4rem; }
+  .scene { border:2px solid #cbd5e1; border-radius:.75rem; padding:.9rem 1.15rem; margin-bottom:1rem; background:#fff; font-size:.92rem; color:#1e293b; }
+  .scene.bad { border-color:#fca5a5; background:#fef2f2; } .scene.good { border-color:#6ee7b7; background:#ecfdf5; }
+  .scene .sh { font-weight:800; color:#33449a; font-size:.78rem; text-transform:uppercase; letter-spacing:.05em; margin-bottom:.4rem; }
+  .scene.bad .sh { color:#b91c1c; } .scene .ask { margin-top:.7rem; background:#fffbeb; border-left:4px solid #f59e0b; padding:.45rem .75rem; border-radius:.35rem; }
+  .machine { font-family:ui-monospace,Menlo,Consolas,monospace; font-size:.8rem; background:#0f172a; color:#a7f3d0; border-radius:.45rem; padding:.45rem .75rem; margin:.5rem 0; overflow-x:auto; }
+  .mono { font-family:ui-monospace,Menlo,Consolas,monospace; font-weight:700; background:#e2e8f0; padding:0 .3rem; border-radius:.25rem; }
+  .pts { display:inline-block; min-width:2.6rem; text-align:center; font-weight:800; font-size:.75rem; padding:.1rem .45rem; border-radius:9999px; color:#fff; }
+  .pts.p3 { background:#059669; } .pts.p2 { background:#0891b2; } .pts.p1 { background:#d97706; } .pts.p0 { background:#dc2626; }
+  .kmswatch { padding:.05rem .6rem; border-radius:9999px; border:1px solid #94a3b8; font-weight:700; }
+
+  /* ---- 3.3 additions ---- */
+  .qlabel { display:inline-block; background:#4f46e5; color:#fff; font-weight:800; font-size:.7rem; letter-spacing:.04em; text-transform:uppercase; border-radius:.35rem; padding:.1rem .5rem; margin-bottom:.35rem; }
+  .mono { font-family:ui-monospace,Menlo,Consolas,monospace; background:#f7f6fb; border-radius:.25rem; padding:0 .25rem; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script>
+/* MathJax-compatible shim: the lesson code calls MathJax.typesetPromise; we render with KaTeX */
+window.MathJax={typesetPromise:function(els){try{(els&&els.length?els:[document.body]).forEach(function(e){if(e&&window.renderMathInElement)renderMathInElement(e,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false}],throwOnError:false,ignoredClasses:['nomath']})})}catch(err){}return Promise.resolve()}};
+</script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%20role%3D%22img%22%20aria-label%3D%22%E7%94%B3%20Shen%20Studio%22%3E%3Crect%20width%3D%22100%22%20height%3D%22100%22%20rx%3D%2212%22%20fill%3D%22%23B3261E%22/%3E%3Cpath%20d%3D%22M41.57%2027.7V42.46H27.58V27.7ZM15.1%2025.34V70.78H16.95C22.18%2070.78%2027.58%2067.91%2027.58%2066.65V62.18H41.57V90H44.01C48.82%2090%2054.3%2086.88%2054.3%2085.62V62.18H68.97V68.93H71.07C75.37%2068.93%2081.53%2066.65%2081.61%2065.89V29.64C83.38%2029.3%2084.39%2028.55%2084.9%2027.87L73.69%2019.19L68.12%2025.34H54.3V13.96C56.74%2013.62%2057.33%2012.7%2057.5%2011.52L41.57%2010V25.34H28.42L15.1%2020.2ZM54.3%2027.7H68.97V42.46H54.3ZM41.57%2059.82H27.58V44.82H41.57ZM54.3%2059.82V44.82H68.97V59.82Z%22%20fill%3D%22%23FFFFFF%22/%3E%3C/svg%3E">
+<style id="shen-brand">
+.shen-footer{display:flex;align-items:center;justify-content:center;gap:8px;padding:18px 12px 26px;font:500 13px/1.3 Inter,"Helvetica Neue",Arial,sans-serif;color:#6B6458;letter-spacing:.03em;text-align:center}
+.shen-footer svg{width:20px;height:20px;flex-shrink:0}
+.shen-footer b{font-weight:600;color:#1A1A1A}
+.shen-print-mark{display:none}
+@media print{.shen-footer{display:none!important}
+.shen-print-mark{display:flex!important;position:fixed;right:0;bottom:0;align-items:center;gap:1.5mm;font:500 7.5pt/1 Inter,Arial,sans-serif;color:#555;opacity:.75;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.shen-print-mark svg{width:4mm;height:4mm}}
+</style>
+<style id="home-link">
+.homebtn{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 12px;border:1px solid var(--line,#ddd);border-radius:999px;background:#fff;color:var(--ink,#1c2230);text-decoration:none;font:600 .88rem/1 Inter,system-ui,sans-serif;white-space:nowrap;flex-shrink:0}
+.homebtn:hover{background:#f1eff6}
+.homebtn svg{width:16px;height:16px}
+@media print{.homebtn{display:none!important}}
+</style>
+<style id="hz">/* ===== Horizon lessons on the Maths Atlas theme ===== */
+:root{--ink:#1c2230;--muted:#5b6475;--paper:#f7f6fb;--line:#e2e0ea;--a:#3b4fa8;--a-soft:#e8ebf8;--b:#b5487a;--hz:#d4693a;--hz-soft:#fdf0e8}
+html,body{margin:0;padding:0}
+body{background:var(--paper)!important;color:var(--ink);font:17px/1.62 "Avenir Next","Segoe UI",system-ui,-apple-system,sans-serif!important;overflow-x:hidden}
+h1,h2,h3,h4{font-family:Georgia,"Times New Roman",serif}
+h2{color:var(--ink)}
+header.top{position:sticky;top:0;z-index:30;background:rgba(247,246,251,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.topin{max-width:980px;margin:0 auto;padding:.55rem 1rem .35rem;display:flex;align-items:center;gap:.8rem;flex-wrap:wrap}
+.brand{font-family:Georgia,serif;font-weight:600;font-size:1.02rem;flex:1;min-width:180px;line-height:1.3}
+.brand .hzk{display:inline-block;font:700 .66rem/1 "Avenir Next",system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#fff;background:linear-gradient(90deg,#2b2350,var(--hz));border-radius:999px;padding:.28rem .6rem;margin-right:.4rem;vertical-align:2px}
+.brand small{display:block;font-weight:400;color:var(--muted);font-size:.84rem}
+.prog{font-size:.82rem;color:var(--muted);text-align:right;white-space:nowrap}
+nav.tabs{max-width:980px;margin:0 auto;display:flex;gap:.35rem;overflow-x:auto;padding:.1rem 1rem .6rem;scrollbar-width:thin}
+nav.tabs .tab-link{flex:0 0 auto;border:1px solid var(--line)!important;background:#fff!important;color:var(--ink)!important;border-radius:999px!important;padding:.32rem .8rem!important;font:400 .9rem/1.4 "Avenir Next",system-ui,sans-serif!important;cursor:pointer;white-space:nowrap}
+nav.tabs .tab-link.border-teal-600{background:var(--ink)!important;color:#fff!important;border-color:var(--ink)!important}
+nav.tabs .tab-link.tab-done::after{color:#2f8a4c}
+nav.tabs .tab-link.border-teal-600.tab-done::after{color:#9be3b0}
+main.hzmain{max-width:980px;margin:0 auto;padding:1.4rem 1rem 3rem}
+main.hzmain h2{font-size:1.65rem!important}
+main.hzmain .card{border-color:var(--line)}
+.katex{font-size:1.06em}
+.katex-display{overflow-x:auto;overflow-y:hidden;padding:2px 0}
+input,select,button,textarea{font-family:inherit}
+@media print{header.top{position:static}}
+
+.hzr h3{font-size:1.15rem;margin:1.4rem 0 .4rem;font-weight:600}
+.hzr .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:.8rem 1rem;margin:.5rem 0}
+.hzr-t{overflow-x:auto}.hzr-t table{width:100%;border-collapse:collapse}
+.hzr-t td{padding:.3rem .35rem;vertical-align:middle;font-size:.95rem}
+.hzr-t td:last-child{white-space:nowrap;font-size:.82rem}
+.hzr-ul{list-style:disc;padding-left:1.2rem;margin:.2rem 0}.hzr-ul li{margin:.25rem 0}
+@media(max-width:480px){.hzr-t td:nth-child(2){min-width:70px}.hzr-t td:nth-child(2) div{min-width:60px!important}}
+.codetab,table.tb,table.rp{display:block;overflow-x:auto;max-width:100%}
+</style>
+</head>
+<body>
+<header class="top"><div class="topin"><a class="homebtn" href="../index.html#horizon" aria-label="Back to the Maths Atlas home page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>Home</a><div class="brand"><span class="hzk">Horizon</span>Chapter 2 · Rational Numbers<small>Section 2.3 · Arithmetic of the rationals</small></div><div class="prog"><span id="prog-count">0</span> / <span id="prog-total">0</span> done</div></div><nav class="tabs" id="tabs"><button type="button" class="tab-link text-teal-700 border-b-4 border-teal-600 font-bold" data-tab="t1" onclick="openTab(event,'t1')">1. Adding &amp; Subtracting</button><button type="button" class="tab-link" data-tab="t2" onclick="openTab(event,'t2')">2. Multiplying</button><button type="button" class="tab-link" data-tab="t3" onclick="openTab(event,'t3')">3. Dividing &amp; Reciprocals</button><button type="button" class="tab-link" data-tab="t4" onclick="openTab(event,'t4')">4. Mixed Calculations &amp; Stories</button><button type="button" class="tab-link" data-tab="t5" onclick="openTab(event,'t5')">5. Smart Thinking</button><button type="button" class="tab-link" data-tab="t6" onclick="openTab(event,'t6')">6. Homework</button><button type="button" class="tab-link" data-tab="t7" onclick="openTab(event,'t7')"><span id="t7-label">7. Learning Report</span></button></nav></header>
+<main class="hzmain">
+
+  <div id="t1" class="tab-content">
+    <h2 class="text-2xl font-bold text-slate-800 mb-1">Step 1: Adding and Subtracting Fractions</h2>
+    <p class="text-slate-600 mb-5">In 2.2 you met the rational numbers $\mathbb{Q}$. Now we give them an arithmetic. The first rule of adding is simple: you can only count pieces that are the <strong>same size</strong>. Everything in this tab follows from that one idea.</p>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">1</span><h3 class="text-lg font-bold text-slate-800">Real life first: how long was the evening?</h3></div>
+    <div class="scene">
+      <div class="sh">Scene 1: homework and reading</div>
+      <p>Ayla spends $\dfrac12$ of an hour on homework and $\dfrac13$ of an hour reading. How much time is that altogether?</p>
+      <p class="mt-2">It is tempting to say &ldquo;$1+1=2$ pieces&rdquo; but the pieces are different: a half-hour block and a third-hour block. Cut the hour into $6$ equal slices of $10$ minutes. A half is $3$ slices and a third is $2$ slices, so together we have $5$ slices of the <em>same</em> size: $\dfrac12+\dfrac13=\dfrac36+\dfrac26=\dfrac56$ of an hour, which is $50$ minutes.</p>
+      <div class="ask">The recipe is the same every time: <strong>rewrite both fractions with the same denominator, then add or subtract the numerators and keep the denominator.</strong> Theorem 1 turns this recipe into one formula that always works.</div>
+    </div>
+
+    <div class="proof">
+      <div class="ph">Theorem 1: adding and subtracting fractions</div>
+      <p class="text-sm">For integers $a,b,c,d$ with $b\ne0$ and $d\ne0$: $$\frac ab+\frac cd=\frac{ad+bc}{bd},\qquad \frac ab-\frac cd=\frac{ad-bc}{bd}.$$ If the denominators are already equal, this reduces to $\dfrac ab+\dfrac cb=\dfrac{a+c}b$.</p>
+      <div class="seeit"><div class="sh">What this theorem says, with examples</div>
+        <div class="seg"><p class="et">Example 1: Ayla's evening</p><p>$\dfrac12+\dfrac13=\dfrac{1\times3+2\times1}{2\times3}=\dfrac56$. &#10003;</p></div>
+        <div class="seg"><p class="et">Example 2: subtraction</p><p>$\dfrac34-\dfrac25=\dfrac{3\times5-4\times2}{4\times5}=\dfrac{15-8}{20}=\dfrac7{20}$.</p></div>
+        <div class="seg"><p class="et">Example 3: a negative fraction</p><p>$-\dfrac23+\dfrac14=\dfrac{-2\times4+3\times1}{3\times4}=\dfrac{-8+3}{12}=-\dfrac5{12}$. The negative part is bigger, so the answer is negative.</p></div>
+        <div class="seg"><p class="et">Example 4: why &ldquo;add the tops and the bottoms&rdquo; is wrong</p><p>$\dfrac12+\dfrac13$ is <strong>not</strong> $\dfrac25$. That number is smaller than $\dfrac12$, but we added something to $\dfrac12$. The mediant from 2.2 lies <em>between</em> two fractions; a sum is bigger than both (for positive fractions).</p></div>
+      </div>
+      <details class="pf"><summary>Show the proof (optional reading for the curious)</summary>
+      <div class="ps"><b class="n">Same-size pieces.</b> Multiply the top and bottom of $\dfrac ab$ by $d$ and of $\dfrac cd$ by $b$ (Theorem 1 of 2.2: equal fractions): $\dfrac ab=\dfrac{ad}{bd}$ and $\dfrac cd=\dfrac{bc}{bd}$. Both are now counted in pieces of size $\dfrac1{bd}$.</div>
+      <div class="ps"><b class="n">Count the pieces.</b> $ad$ pieces plus $bc$ pieces is $(ad+bc)$ pieces, each of size $\dfrac1{bd}$. That is $\dfrac{ad+bc}{bd}$. Subtraction is the same with $ad-bc$ pieces. $\blacksquare$</div>
+      </details>
+    </div>
+
+    <p class="text-sm font-bold text-slate-700 mb-2">Try it: the Fraction Adder</p>
+    <div class="card mb-5">
+      <div class="flex items-center gap-2 flex-wrap mb-2">
+        <input type="number" id="ad-a" class="inp" style="max-width:5.5rem" value="1" oninput="adUpdate()" aria-label="first numerator"><span class="font-bold">/</span><input type="number" id="ad-b" class="inp" style="max-width:5.5rem" value="2" min="1" oninput="adUpdate()" aria-label="first denominator">
+        <select id="ad-op" class="inp" style="max-width:4.5rem" onchange="adUpdate()" aria-label="operation"><option value="+">+</option><option value="-">&minus;</option></select>
+        <input type="number" id="ad-c" class="inp" style="max-width:5.5rem" value="1" oninput="adUpdate()" aria-label="second numerator"><span class="font-bold">/</span><input type="number" id="ad-d" class="inp" style="max-width:5.5rem" value="3" min="1" oninput="adUpdate()" aria-label="second denominator">
+      </div>
+      <div class="flex gap-2 flex-wrap mb-2"><button class="btn-ghost" onclick="adSet(1,2,'+',1,3)">1/2 + 1/3</button><button class="btn-ghost" onclick="adSet(5,12,'+',7,18)">5/12 + 7/18</button><button class="btn-ghost" onclick="adSet(7,15,'-',3,10)">7/15 &minus; 3/10</button></div>
+      <div id="ad-bars" class="overflow-x-auto"></div>
+      <div id="ad-out" class="text-sm space-y-1 mt-2"></div>
+    </div>
+
+    <div class="tech">
+      <div class="tt">Technique 1: use the lowest common denominator</div>
+      <p class="text-sm text-slate-700">The formula of Theorem 1 uses the denominator $bd$, which can be large. It is neater to use the <strong>LCM</strong> of the denominators (from 1.2). Rewrite each fraction with that denominator, add or subtract the numerators, then simplify.</p>
+      <div class="eg"><p><strong>Example 1:</strong> $\dfrac5{12}+\dfrac7{18}$. $\text{LCM}(12,18)=36$. $\dfrac{15}{36}+\dfrac{14}{36}=\dfrac{29}{36}$.</p>
+        <p class="mt-1"><strong>Example 2:</strong> $\dfrac7{15}-\dfrac3{10}$. $\text{LCM}(15,10)=30$. $\dfrac{14}{30}-\dfrac9{30}=\dfrac5{30}=\dfrac16$.</p>
+        <p class="mt-1"><strong>Example 3 (three fractions):</strong> $\dfrac29+\dfrac5{12}+\dfrac16$. $\text{LCM}(9,12,6)=36$. $\dfrac8{36}+\dfrac{15}{36}+\dfrac6{36}=\dfrac{29}{36}$.</p></div>
+    </div>
+    <div class="tech">
+      <div class="tt">Technique 2: mixed numbers</div>
+      <p class="text-sm text-slate-700">Two safe ways. <strong>(i)</strong> Change both to improper fractions, calculate, and change back. <strong>(ii)</strong> Add the whole parts and the fraction parts separately (for subtraction you may need to &ldquo;borrow&rdquo; one whole as $\dfrac bb$).</p>
+      <div class="eg"><p><strong>Example 1:</strong> $2\dfrac13+1\dfrac34$. Wholes: $2+1=3$. Fractions: $\dfrac4{12}+\dfrac9{12}=\dfrac{13}{12}=1\dfrac1{12}$. Total $4\dfrac1{12}$.</p>
+        <p class="mt-1"><strong>Example 2:</strong> $3\dfrac14-1\dfrac56=\dfrac{13}4-\dfrac{11}6=\dfrac{39}{12}-\dfrac{22}{12}=\dfrac{17}{12}=1\dfrac5{12}$.</p>
+        <p class="mt-1"><strong>Example 3:</strong> $5-2\dfrac38$. Borrow a whole: $5=4\dfrac88$, so $4\dfrac88-2\dfrac38=2\dfrac58$.</p></div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3 mt-6"><span class="step-badge">2</span><h3 class="text-lg font-bold text-slate-800">Does $\mathbb{Q}$ stay closed? And the laws we know</h3></div>
+    <div class="key mb-4 text-sm text-slate-800">
+      <p>In Chapter 1 we asked whether a set is <strong>closed</strong> under an operation: do the answers stay inside the set? $\mathbb{Z}$ is closed under $+$, $-$ and $\times$ but <em>not</em> under $\div$. The rational numbers repair that failure, and we now check the first two operations.</p>
+    </div>
+    <div class="proof">
+      <div class="ph">Theorem 2: $\mathbb{Q}$ is closed under addition and subtraction, and the usual laws hold</div>
+      <p class="text-sm">If $x,y,z\in\mathbb{Q}$ then $x+y\in\mathbb{Q}$ and $x-y\in\mathbb{Q}$. Moreover $x+y=y+x$ (commutative), $(x+y)+z=x+(y+z)$ (associative), $x+0=x$, and every $x$ has an opposite $-x$ with $x+(-x)=0$.</p>
+      <div class="seeit"><div class="sh">What this theorem says, with examples</div>
+        <div class="seg"><p class="et">Example 1: closure</p><p>$\dfrac35+\dfrac{-7}{4}=\dfrac{12-35}{20}=-\dfrac{23}{20}$, again a fraction of two integers with a non-zero denominator.</p></div>
+        <div class="seg"><p class="et">Example 2: regrouping</p><p>Because of the commutative and associative laws we may add in any order and any grouping: $\dfrac37+\dfrac25+\dfrac47+\dfrac35=\left(\dfrac37+\dfrac47\right)+\left(\dfrac25+\dfrac35\right)=1+1=2$.</p></div>
+        <div class="seg"><p class="et">Example 3: opposites</p><p>$\dfrac79+\left(-\dfrac25\right)+\dfrac29+\left(-\dfrac35\right)=\left(\dfrac79+\dfrac29\right)-\left(\dfrac25+\dfrac35\right)=1-1=0$.</p></div>
+      </div>
+      <details class="pf"><summary>Show the proof (optional reading for the curious)</summary>
+      <div class="ps"><b class="n">Closure.</b> By Theorem 1, $\dfrac ab\pm\dfrac cd=\dfrac{ad\pm bc}{bd}$. The top $ad\pm bc$ is an integer because $\mathbb{Z}$ is closed under $\times$ and $\pm$. The bottom $bd$ is a non-zero integer, because a product of non-zero integers is non-zero. So the answer is in $\mathbb{Q}$.</div>
+      <div class="ps"><b class="n">The laws.</b> $\dfrac{ad+bc}{bd}=\dfrac{cb+da}{db}$ because the integers satisfy $ad+bc=cb+da$ and $bd=db$. This gives commutativity. Associativity follows the same way from the associative law of the integers, by putting all three fractions on the common denominator $bdf$. The opposite of $\dfrac ab$ is $\dfrac{-a}b$. $\blacksquare$</div>
+      </details>
+    </div>
+    <div class="tech">
+      <div class="tt">Technique 3: regroup before you calculate</div>
+      <p class="text-sm text-slate-700">Look for terms with the <strong>same denominator</strong>, or terms that are <strong>opposites</strong>, or pairs that make exactly $1$. Move them together first (the laws allow it), and the work shrinks.</p>
+      <div class="eg"><p><strong>Example 1:</strong> $\dfrac{11}{13}+\dfrac27+\dfrac2{13}+\dfrac57=\left(\dfrac{11}{13}+\dfrac2{13}\right)+\left(\dfrac27+\dfrac57\right)=1+1=2$.</p>
+        <p class="mt-1"><strong>Example 2:</strong> $\dfrac12+\dfrac13+\dfrac16$. The pair $\dfrac13+\dfrac16=\dfrac12$, and then $\dfrac12+\dfrac12=1$.</p></div>
+    </div>
+
+    <h3 class="text-xl font-bold text-slate-800 mb-3 mt-8 bg-slate-100 p-3 rounded-lg inline-block">Check your understanding</h3>
+    <div id="ex-t1"></div>
+  </div>
+
+  <div id="t2" class="tab-content">
+    <h2 class="text-2xl font-bold text-slate-800 mb-1">Step 2: Multiplying Fractions, the Operator Way</h2>
+    <p class="text-slate-600 mb-5">In 2.2 a fraction acted as an <strong>operator</strong>: $\dfrac34$ of $20$ means shrink by $\div4$, then stretch by $\times3$. Multiplying fractions is simply applying one operator after another. This tab shows why the rule is so simple, and uses it for some beautiful chains.</p>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">1</span><h3 class="text-lg font-bold text-slate-800">Real life first: half of a third of a chocolate bar</h3></div>
+    <div class="scene">
+      <div class="sh">Scene 1: sharing what is left</div>
+      <p>A chocolate bar has $\dfrac13$ left. You give half of that to a friend. What fraction of the <em>whole bar</em> does your friend get?</p>
+      <p class="mt-2">Cut the whole bar into thirds, then cut each third in half. You now have $6$ equal pieces of the whole bar, and your friend gets one: $\dfrac12\text{ of }\dfrac13=\dfrac12\times\dfrac13=\dfrac16$. The word &ldquo;of&rdquo; means <strong>multiply</strong>: apply the operator $\dfrac12$ to the number $\dfrac13$.</p>
+      <div class="ask">Notice that the answer is smaller than both $\dfrac12$ and $\dfrac13$. Multiplying by a fraction between $0$ and $1$ <em>shrinks</em>. This is the opposite of what happens with whole numbers, and it is the key idea of this tab.</div>
+    </div>
+
+    <div class="proof">
+      <div class="ph">Theorem 3: multiplying fractions</div>
+      <p class="text-sm">For integers $a,b,c,d$ with $b\ne0$ and $d\ne0$: $$\frac ab\times\frac cd=\frac{ac}{bd}.$$ In words: multiply the tops, multiply the bottoms. $\mathbb{Q}$ is closed under multiplication.</p>
+      <div class="seeit"><div class="sh">What this theorem says, with examples</div>
+        <div class="seg"><p class="et">Example 1: the chocolate</p><p>$\dfrac12\times\dfrac13=\dfrac{1\times1}{2\times3}=\dfrac16$.</p></div>
+        <div class="seg"><p class="et">Example 2: a fraction that stretches</p><p>$\dfrac32\times\dfrac43=\dfrac{12}{6}=2$. Both operators stretch (each is bigger than $1$), so the result is bigger than both.</p></div>
+        <div class="seg"><p class="et">Example 3: negative fractions</p><p>$\left(-\dfrac56\right)\times\dfrac9{10}=-\dfrac{45}{60}=-\dfrac34$. The operator $-\dfrac56$ shrinks and also flips direction on the number line. Two negatives give a positive: $\left(-\dfrac23\right)\times\left(-\dfrac94\right)=\dfrac32$.</p></div>
+      </div>
+      <details class="pf"><summary>Show the proof (optional reading for the curious)</summary>
+      <div class="ps"><b class="n">Name the numbers.</b> Let $x=\dfrac ab$ and $y=\dfrac cd$. By the meaning of a fraction, $bx=a$ and $dy=c$.</div>
+      <div class="ps"><b class="n">Multiply.</b> $(bd)(xy)=(bx)(dy)=ac$. So $xy$ is the number that, multiplied by $bd$, gives $ac$. That number is $\dfrac{ac}{bd}$. Since $ac$ and $bd$ are integers and $bd\ne0$, the product is in $\mathbb{Q}$. $\blacksquare$</div>
+      <div class="ps"><b class="n">A picture.</b> Cut a unit square into $b$ columns and $d$ rows, which gives $bd$ cells. Shade $a$ columns and $c$ rows. The overlap is $ac$ cells out of $bd$.</div>
+      </details>
+    </div>
+
+    <p class="text-sm font-bold text-slate-700 mb-2">Try it: the Area Model</p>
+    <div class="card mb-5">
+      <div class="flex items-center gap-2 flex-wrap mb-2">
+        <input type="number" id="am-a" class="inp" style="max-width:5.5rem" value="2" min="0" oninput="amUpdate()" aria-label="first numerator"><span class="font-bold">/</span><input type="number" id="am-b" class="inp" style="max-width:5.5rem" value="3" min="1" max="10" oninput="amUpdate()" aria-label="first denominator">
+        <span class="font-bold px-2">&times;</span>
+        <input type="number" id="am-c" class="inp" style="max-width:5.5rem" value="3" min="0" oninput="amUpdate()" aria-label="second numerator"><span class="font-bold">/</span><input type="number" id="am-d" class="inp" style="max-width:5.5rem" value="4" min="1" max="10" oninput="amUpdate()" aria-label="second denominator">
+      </div>
+      <div class="flex gap-2 flex-wrap mb-2"><button class="btn-ghost" onclick="amSet(1,2,1,3)">1/2 &times; 1/3</button><button class="btn-ghost" onclick="amSet(2,3,3,4)">2/3 &times; 3/4</button><button class="btn-ghost" onclick="amSet(3,5,5,6)">3/5 &times; 5/6</button></div>
+      <div id="am-svg" class="overflow-x-auto"></div>
+      <div id="am-out" class="text-sm space-y-1 mt-2"></div>
+    </div>
+
+    <div class="tech">
+      <div class="tt">Technique 4: cancel before you multiply</div>
+      <p class="text-sm text-slate-700">Any factor on a top may cancel with any factor on a bottom, even in different fractions. Cancelling first keeps the numbers small and the answer already in simplest form.</p>
+      <div class="eg"><p><strong>Example 1:</strong> $\dfrac{14}{15}\times\dfrac{25}{21}$. Cancel $7$ ($14$ and $21$) and $5$ ($25$ and $15$): $\dfrac{2}{3}\times\dfrac{5}{3}=\dfrac{10}9$.</p>
+        <p class="mt-1"><strong>Example 2:</strong> $\dfrac{8}{9}\times\dfrac{3}{16}=\dfrac{1}{3}\times\dfrac{1}{2}=\dfrac16$ (cancel $8$ and $16$, then $3$ and $9$).</p></div>
+    </div>
+    <div class="tech">
+      <div class="tt">Technique 5: mixed numbers, powers and &ldquo;of&rdquo;</div>
+      <ul class="list-disc pl-6 text-sm text-slate-700 space-y-1">
+        <li>Change mixed numbers to improper fractions <strong>before</strong> multiplying: $2\dfrac14\times1\dfrac23=\dfrac94\times\dfrac53=\dfrac{15}4$.</li>
+        <li>A power of a fraction raises both parts: $\left(\dfrac ab\right)^n=\dfrac{a^n}{b^n}$. For example $\left(\dfrac23\right)^3=\dfrac8{27}$.</li>
+        <li>&ldquo;$\dfrac23$ of $\dfrac35$ of $30$&rdquo; means $\dfrac23\times\dfrac35\times30=12$. Do the multiplications in any order.</li>
+      </ul>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3 mt-6"><span class="step-badge">2</span><h3 class="text-lg font-bold text-slate-800">A chain of operators that collapses</h3></div>
+    <div class="scene">
+      <div class="sh">Scene 2: nine operators in a row</div>
+      <p>Take $1000$ sweets. Take $\dfrac9{10}$ of them. Take $\dfrac89$ of what you hold. Then $\dfrac78$ of that, and so on, down to $\dfrac12$. How many sweets are left at the end?</p>
+      <p class="mt-2">Instead of nine calculations, multiply the operators first. In $\dfrac12\times\dfrac23\times\dfrac34\times\cdots\times\dfrac9{10}$, each top cancels with the bottom of the next fraction, like a telescope folding up.</p>
+    </div>
+    <div class="proof">
+      <div class="ph">Theorem 4: the telescoping product</div>
+      <p class="text-sm">For every positive integer $n$: $$\frac12\times\frac23\times\frac34\times\cdots\times\frac n{n+1}=\frac1{n+1}.$$</p>
+      <div class="seeit"><div class="sh">What this theorem says, with examples</div>
+        <div class="seg"><p class="et">Example 1: nine operators</p><p>$n=9$ gives $\dfrac1{10}$. So $\dfrac12\text{ of }\dfrac23\text{ of }\cdots\text{ of }\dfrac9{10}\text{ of }1000=\dfrac1{10}\times1000=\mathbf{100}$. (This is the competition question in the exercises.)</p></div>
+        <div class="seg"><p class="et">Example 2: a shifted chain</p><p>$\left(1-\dfrac12\right)\allowbreak\left(1-\dfrac13\right)\cdots\left(1-\dfrac1{50}\right)=\dfrac12\times\dfrac23\times\cdots\times\dfrac{49}{50}=\dfrac1{50}$.</p></div>
+        <div class="seg"><p class="et">Example 3: growing operators</p><p>$\dfrac32\times\dfrac43\times\dfrac54\times\cdots\times\dfrac{21}{20}$: everything cancels except the first bottom and the last top, giving $\dfrac{21}2$.</p></div>
+      </div>
+      <details class="pf"><summary>Show the proof (optional reading for the curious)</summary>
+      <div class="ps"><b class="n">Write it all out.</b> $\dfrac{1\times2\times3\times\cdots\times n}{2\times3\times4\times\cdots\times(n+1)}$.</div>
+      <div class="ps"><b class="n">Cancel.</b> The factors $2,3,\ldots,n$ appear on top and bottom and cancel. Only the $1$ on top and the $(n+1)$ on the bottom remain: $\dfrac1{n+1}$. $\blacksquare$</div>
+      </details>
+    </div>
+    <div class="tech">
+      <div class="tt">Technique 6: spot the telescope</div>
+      <p class="text-sm text-slate-700">When a product of many fractions has the pattern &ldquo;each top equals the previous bottom&rdquo;, write the first few and last few fractions and cancel through. Rewrite $1-\dfrac1k=\dfrac{k-1}k$ to reveal the pattern. Remember that an operator chain is just a product, so the order does not matter.</p>
+      <div class="eg"><p><strong>Example:</strong> $\left(1-\dfrac12\right)\allowbreak\left(1-\dfrac13\right)\allowbreak\left(1-\dfrac14\right)\allowbreak\left(1-\dfrac15\right)\allowbreak\left(1-\dfrac16\right)=\dfrac12\times\dfrac23\times\dfrac34\times\dfrac45\times\dfrac56=\dfrac16$.</p></div>
+    </div>
+
+    <h3 class="text-xl font-bold text-slate-800 mb-3 mt-8 bg-slate-100 p-3 rounded-lg inline-block">Check your understanding</h3>
+    <div id="ex-t2"></div>
+  </div>
+
+  <div id="t3" class="tab-content">
+    <h2 class="text-2xl font-bold text-slate-800 mb-1">Step 3: Dividing Fractions and the Reciprocal</h2>
+    <p class="text-slate-600 mb-5">In Chapter 1 we found that $\mathbb{Z}$ is <strong>not</strong> closed under division: $7\div2$ left the integers. The rational numbers were invented to fix this. In this tab we see how, why &ldquo;flip and multiply&rdquo; works, and what happens when fractions are stacked inside fractions.</p>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">1</span><h3 class="text-lg font-bold text-slate-800">Real life first: how many glasses can we fill?</h3></div>
+    <div class="scene">
+      <div class="sh">Scene 1: the juice jug</div>
+      <p>A jug holds $6$ litres of juice. Each glass takes $\dfrac34$ of a litre. How many glasses can we fill?</p>
+      <p class="mt-2">Think of it as an <strong>undo question</strong>. One glass is $\dfrac34$ L, so $n$ glasses is $n\times\dfrac34$ L. We want $n\times\dfrac34=6$. The operator $\times\dfrac34$ means shrink by $\div4$, stretch by $\times3$. To undo it we must <strong>shrink by $\div3$ and stretch by $\times4$</strong>, which is the operator $\times\dfrac43$. So $n=6\times\dfrac43=8$ glasses.</p>
+      <div class="ask">Dividing by $\dfrac34$ means applying the <strong>undo operator</strong> $\dfrac43$. That upside-down fraction has a name: the <strong>reciprocal</strong>. Theorem 5 shows this always works.</div>
+    </div>
+
+    <div class="proof">
+      <div class="ph">Theorem 5: dividing by a fraction is multiplying by its reciprocal</div>
+      <p class="text-sm">The <strong>reciprocal</strong> of a non-zero fraction $\dfrac cd$ is $\dfrac dc$, and $\dfrac cd\times\dfrac dc=1$. For $c\ne0$: $$\frac ab\div\frac cd=\frac ab\times\frac dc.$$ Every non-zero rational has a reciprocal, so $\mathbb{Q}$ is closed under division by non-zero numbers. Zero has no reciprocal.</p>
+      <div class="seeit"><div class="sh">What this theorem says, with examples</div>
+        <div class="seg"><p class="et">Example 1: the jug</p><p>$6\div\dfrac34=6\times\dfrac43=8$. &#10003; Check: $8\times\dfrac34=6$.</p></div>
+        <div class="seg"><p class="et">Example 2: fraction by fraction</p><p>$\dfrac34\div\dfrac9{10}=\dfrac34\times\dfrac{10}9=\dfrac{30}{36}=\dfrac56$. Check by multiplying back: $\dfrac56\times\dfrac9{10}=\dfrac{45}{60}=\dfrac34$. &#10003;</p></div>
+        <div class="seg"><p class="et">Example 3: reciprocals of other numbers</p><p>The reciprocal of $5$ is $\dfrac15$, of $-\dfrac37$ is $-\dfrac73$ (the sign stays), and of $2\dfrac12=\dfrac52$ is $\dfrac25$. The number $0$ has none, because $0\times x=1$ is impossible. This is why we cannot divide by $0$.</p></div>
+      </div>
+      <details class="pf"><summary>Show the proof (optional reading for the curious)</summary>
+      <div class="ps"><b class="n">What division means.</b> $\dfrac ab\div\dfrac cd$ is the number $q$ with $q\times\dfrac cd=\dfrac ab$.</div>
+      <div class="ps"><b class="n">Test the candidate.</b> Let $q=\dfrac ab\times\dfrac dc$. Then $q\times\dfrac cd=\dfrac ab\times\dfrac dc\times\dfrac cd=\dfrac ab\times1=\dfrac ab$ (Theorem 3 gives $\dfrac dc\times\dfrac cd=\dfrac{dc}{cd}=1$). So $q$ has the property that defines the quotient, and there is only one such number. $\blacksquare$</div>
+      </details>
+    </div>
+
+    <p class="text-sm font-bold text-slate-700 mb-2">Try it: the Division Machine</p>
+    <div class="card mb-5">
+      <div class="flex items-center gap-2 flex-wrap mb-2">
+        <input type="number" id="dv-a" class="inp" style="max-width:5.5rem" value="3" oninput="dvUpdate()" aria-label="first numerator"><span class="font-bold">/</span><input type="number" id="dv-b" class="inp" style="max-width:5.5rem" value="4" min="1" oninput="dvUpdate()" aria-label="first denominator">
+        <span class="font-bold px-2">&divide;</span>
+        <input type="number" id="dv-c" class="inp" style="max-width:5.5rem" value="9" oninput="dvUpdate()" aria-label="second numerator"><span class="font-bold">/</span><input type="number" id="dv-d" class="inp" style="max-width:5.5rem" value="10" min="1" oninput="dvUpdate()" aria-label="second denominator">
+      </div>
+      <div class="flex gap-2 flex-wrap mb-2"><button class="btn-ghost" onclick="dvSet(6,1,3,4)">6 &divide; 3/4</button><button class="btn-ghost" onclick="dvSet(3,4,9,10)">3/4 &divide; 9/10</button><button class="btn-ghost" onclick="dvSet(-3,8,9,16)">&minus;3/8 &divide; 9/16</button></div>
+      <div id="dv-out" class="text-sm space-y-1"></div>
+    </div>
+
+    <div class="tech">
+      <div class="tt">Technique 7: divide fractions and mixed numbers</div>
+      <p class="text-sm text-slate-700">Change mixed numbers to improper fractions, <strong>flip the second fraction</strong> (the divisor), multiply (cancelling first), and simplify. Always check by multiplying the answer by the divisor.</p>
+      <div class="eg"><p><strong>Example 1:</strong> $2\dfrac12\div1\dfrac14=\dfrac52\div\dfrac54=\dfrac52\times\dfrac45=2$.</p>
+        <p class="mt-1"><strong>Example 2:</strong> A ribbon $5\dfrac12$ m long is cut into pieces $\dfrac{11}{12}$ m long. $\dfrac{11}2\div\dfrac{11}{12}=\dfrac{11}2\times\dfrac{12}{11}=6$ pieces.</p>
+        <p class="mt-1"><strong>Example 3 (finding the missing factor):</strong> $\dfrac35\times?=\dfrac9{10}$. The missing number is $\dfrac9{10}\div\dfrac35=\dfrac9{10}\times\dfrac53=\dfrac32$.</p></div>
+    </div>
+    <div class="tech">
+      <div class="tt">Technique 8: negative powers of a fraction</div>
+      <p class="text-sm text-slate-700">From 2.1 we know $a^{-n}=\dfrac1{a^n}$: a negative index means &ldquo;reciprocal&rdquo;. For a fraction this flips it: $$\left(\frac ab\right)^{-n}=\left(\frac ba\right)^n.$$</p>
+      <div class="eg"><p><strong>Example:</strong> $\left(\dfrac23\right)^{-2}=\left(\dfrac32\right)^2=\dfrac94$. And $\left(\dfrac12\right)^{-3}=2^3=8$.</p></div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3 mt-6"><span class="step-badge">2</span><h3 class="text-lg font-bold text-slate-800">Fractions inside fractions</h3></div>
+    <div class="key mb-4 text-sm text-slate-800">
+      <p>A fraction bar means <strong>divide</strong>, and it also acts as a <strong>bracket</strong> around everything above it and everything below it. A <em>complex</em> (stacked) fraction such as $\dfrac{\frac23}{\frac49}$ is just $\dfrac23\div\dfrac49$.</p>
+    </div>
+    <div class="tech">
+      <div class="tt">Technique 9: simplify complex fractions from the inside out</div>
+      <ol class="list-decimal pl-6 text-sm text-slate-700 space-y-1">
+        <li>Work out the numerator and the denominator separately, each as a single fraction (the bar is a bracket).</li>
+        <li>Then divide: top $\div$ bottom $=$ top $\times$ flipped bottom.</li>
+        <li>For nested reciprocals, start at the <strong>innermost</strong> fraction and work outwards one layer at a time.</li>
+      </ol>
+      <div class="eg"><p><strong>Example 1:</strong> $\dfrac{\frac12+\frac13}{\frac12-\frac13}=\dfrac{\frac56}{\frac16}=\dfrac56\times6=5$.</p>
+        <p class="mt-1"><strong>Example 2 (nested reciprocals):</strong> $2+\dfrac1{3+\frac14}$. Innermost: $3+\dfrac14=\dfrac{13}4$. Its reciprocal is $\dfrac4{13}$. Then $2+\dfrac4{13}=\dfrac{30}{13}$.</p>
+        <p class="mt-1"><strong>Example 3 (a competition question):</strong> $\dfrac{20+\dfrac1{25-\frac1{20}}}{25+\dfrac1{20-\frac1{25}}}$. Inner layers: $25-\dfrac1{20}=\dfrac{499}{20}$ and $20-\dfrac1{25}=\dfrac{499}{25}$. Reciprocals: $\dfrac{20}{499}$ and $\dfrac{25}{499}$. Top: $20+\dfrac{20}{499}=\dfrac{20\times500}{499}$. Bottom: $25+\dfrac{25}{499}=\dfrac{25\times500}{499}$. The common factors $\dfrac{500}{499}$ cancel, leaving $\dfrac{20}{25}=\dfrac45$.</p></div>
+    </div>
+    <p class="text-sm text-slate-700 mb-2">Notice the pattern in Example 3: top $=20\times\dfrac{500}{499}$ and bottom $=25\times\dfrac{500}{499}$. Seeing a <strong>common factor</strong> in the top and bottom saved a long calculation. Always look for one before you simplify.</p>
+
+    <h3 class="text-xl font-bold text-slate-800 mb-3 mt-8 bg-slate-100 p-3 rounded-lg inline-block">Check your understanding</h3>
+    <div id="ex-t3"></div>
+  </div>
+
+  <div id="t4" class="tab-content">
+    <h2 class="text-2xl font-bold text-slate-800 mb-1">Step 4: Mixed Calculations and Fraction Stories</h2>
+    <p class="text-slate-600 mb-5">Now we combine the four operations. You will learn the order of calculation with fractions, how to model a story with &ldquo;fraction of the <em>remainder</em>&rdquo;, and a powerful method for problems that run through several days: <strong>start at the end and undo</strong>.</p>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">1</span><h3 class="text-lg font-bold text-slate-800">The order of calculation with fractions</h3></div>
+    <div class="key mb-4 text-sm text-slate-800">
+      <p>The rules from 2.1 do not change: <strong>brackets, indices, then multiplication and division left to right, then addition and subtraction left to right</strong>. A fraction bar and a root sign are hidden brackets.</p>
+    </div>
+    <div class="tech">
+      <div class="tt">Technique 10: calculate with all four operations</div>
+      <p class="text-sm text-slate-700">Write one operation per line. Multiplication and division first (after brackets), then add and subtract with a common denominator.</p>
+      <div class="eg"><p><strong>Example 1:</strong> $\dfrac12+\dfrac23\times\dfrac34$. Multiply first: $\dfrac23\times\dfrac34=\dfrac12$. Then $\dfrac12+\dfrac12=1$.</p>
+        <p class="mt-1"><strong>Example 2:</strong> $\left(\dfrac12+\dfrac23\right)\times\dfrac34$. Bracket first: $\dfrac76$. Then $\dfrac76\times\dfrac34=\dfrac78$.</p>
+        <p class="mt-1"><strong>Example 3:</strong> $\dfrac56-\dfrac14\div\dfrac38$. Divide first: $\dfrac14\times\dfrac83=\dfrac23$. Then $\dfrac56-\dfrac23=\dfrac16$.</p></div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3 mt-6"><span class="step-badge">2</span><h3 class="text-lg font-bold text-slate-800">Real life first: the shopping trip</h3></div>
+    <div class="scene">
+      <div class="sh">Scene 1: spending in stages</div>
+      <p>Sam has some money. He spends $\dfrac13$ of it on a book. Then he spends $\dfrac14$ of the <strong>money he still has</strong> on lunch. He is left with $\$18$. How much did he start with?</p>
+      <p class="mt-2">The trap: the second fraction is $\dfrac14$ of the <em>remainder</em>, not of the original. After the book Sam has $\dfrac23$ of his money. After lunch he keeps $\dfrac34$ of that: $\dfrac23\times\dfrac34=\dfrac12$ of his original money. So $\dfrac12$ of the start is $\$18$, and he started with $\$36$.</p>
+      <div class="ask">&ldquo;Fraction of what?&rdquo; is the question to ask every time. When a fraction is taken of the <strong>remainder</strong>, use the <strong>fraction that is kept</strong> as the operator and multiply them.</div>
+    </div>
+    <div class="tech">
+      <div class="tt">Technique 11: the keep-fraction method</div>
+      <ol class="list-decimal pl-6 text-sm text-slate-700 space-y-1">
+        <li>For each stage, write the fraction that is <strong>kept</strong> ($1-\text{fraction spent}$).</li>
+        <li>Multiply the kept fractions. This gives the fraction of the <em>original</em> that is left.</li>
+        <li>Set that equal to the known amount and undo the operator (divide, then multiply) to get the start.</li>
+      </ol>
+      <div class="eg"><p><strong>Example 1:</strong> A class of $30$. $\dfrac35$ are girls. $\dfrac23$ of the girls and $\dfrac14$ of the boys play sport. Girls: $18$, sport: $12$. Boys: $12$, sport: $3$. Total playing sport: $15$, which is $\dfrac{15}{30}=\dfrac12$ of the class.</p>
+        <p class="mt-1"><strong>Example 2:</strong> A tank is $\dfrac25$ full. After $36$ litres are added it is $\dfrac7{10}$ full. The $36$ litres is the difference $\dfrac7{10}-\dfrac25=\dfrac3{10}$ of the capacity, so the capacity is $36\div3\times10=120$ litres.</p>
+        <p class="mt-1"><strong>Example 3 (a trap):</strong> A price goes up by $\dfrac15$, then down by $\dfrac15$ of the <em>new</em> price. The operators are $\dfrac65$ and $\dfrac45$: $\dfrac65\times\dfrac45=\dfrac{24}{25}$ of the original, which is <strong>not</strong> the original price.</p></div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3 mt-6"><span class="step-badge">3</span><h3 class="text-lg font-bold text-slate-800">Start at the end: the cookie problem</h3></div>
+    <div class="scene">
+      <div class="sh">Scene 2: a baker gives cookies away</div>
+      <p>Aerith bakes some cookies. On the first day she gives away $1$ cookie and then $\dfrac12$ of the remaining cookies. On the second day she gives away $2$ cookies and then $\dfrac12$ of the remaining. On the third day she gives away $3$ cookies and then <em>none are left</em>. How many cookies did she bake?</p>
+      <p class="mt-2">We know how the story <em>ends</em>, so we go <strong>backwards</strong>, undoing each step.</p>
+      <ul class="list-disc pl-6 mt-1 text-sm">
+        <li><strong>Day 3.</strong> She gives $3$ and has none left, so she began day 3 with $\mathbf3$.</li>
+        <li><strong>Day 2.</strong> She ended day 2 with $3$. Giving away half of the remainder left $3$, so before that gift she had $3\times2=6$. Before giving $2$ cookies she had $6+2=\mathbf8$.</li>
+        <li><strong>Day 1.</strong> She ended day 1 with $8$, so before the half-gift she had $16$, and before giving $1$ cookie she had $16+1=\mathbf{17}$.</li>
+      </ul>
+      <p class="mt-2">Check forwards: $17-1=16$, half gone: $8$. $8-2=6$, half gone: $3$. $3-3=0$. &#10003;</p>
+      <div class="ask">To undo &ldquo;gives away $\dfrac12$ of the remainder&rdquo; (keep $\dfrac12$) we multiply by $2$. To undo &ldquo;gives away $\dfrac18$ of the remainder&rdquo; (keep $\dfrac78$) we multiply by $\dfrac87$. To undo &ldquo;gives away $k$ cookies&rdquo; we add $k$. Always undo in the <strong>reverse order</strong>.</div>
+    </div>
+    <p class="text-sm font-bold text-slate-700 mb-2">Try it: the Backward Cookie Tracer</p>
+    <div class="card mb-5">
+      <div class="flex items-center gap-3 flex-wrap mb-2">
+        <label class="text-sm font-bold" for="ck-n">Days $n=$ <span id="ck-nv" class="text-teal-700">3</span></label><input type="range" id="ck-n" min="2" max="10" value="3" oninput="ckUpdate()" style="max-width:10rem">
+        <label class="text-sm font-bold" for="ck-m">Gives $\dfrac1m$ of the remainder, $m=$ <span id="ck-mv" class="text-teal-700">2</span></label><input type="range" id="ck-m" min="2" max="10" value="2" oninput="ckUpdate()" style="max-width:10rem">
+      </div>
+      <div class="flex gap-2 flex-wrap mb-2"><button class="btn-ghost" onclick="ckSet(3,2)">3 days, 1/2</button><button class="btn-ghost" onclick="ckSet(7,8)">7 days, 1/8 (competition)</button></div>
+      <div id="ck-out" class="text-sm"></div>
+    </div>
+    <div class="tech">
+      <div class="tt">Technique 12: work backwards with undo operators</div>
+      <ol class="list-decimal pl-6 text-sm text-slate-700 space-y-1">
+        <li>Write the known <strong>end state</strong> first.</li>
+        <li>For each step, from last to first, apply its <strong>undo</strong>: undo &ldquo;give $k$&rdquo; by adding $k$; undo &ldquo;keep $\dfrac pq$&rdquo; by multiplying by $\dfrac qp$.</li>
+        <li>Check by running the story forwards.</li>
+      </ol>
+      <div class="eg"><p><strong>The competition version.</strong> Each day $k$ she gives $k$ cookies and then $\dfrac18$ of the rest, for $7$ days, ending with none. Day 7: she begins with $7$. Day 6: the rest after giving $6$ must satisfy $\dfrac78\times\text{rest}=7$, so rest $=8$, and she began with $8+6=14$. Day 5: $\dfrac78\times\text{rest}=14$, rest $=16$, start $16+5=21$. The totals read $7,14,21,28,35,42,49$. She baked $\mathbf{49}$ cookies.</p>
+        <p class="mt-1"><strong>An elegant pattern.</strong> Each day she gives away exactly $7$ cookies in total ($k$ cookies plus $\dfrac18$ of the rest). Over $7$ days that is $7\times7=49$.</p></div>
+    </div>
+
+    <h3 class="text-xl font-bold text-slate-800 mb-3 mt-8 bg-slate-100 p-3 rounded-lg inline-block">Check your understanding</h3>
+    <div id="ex-t4"></div>
+  </div>
+
+  <div id="t5" class="tab-content">
+    <h2 class="text-2xl font-bold text-slate-800 mb-1">Step 5: Smart Thinking with Fractions</h2>
+    <p class="text-slate-600 mb-5">Some sums look terrifying, but each hides a pattern. In this tab we meet four big ideas: <strong>grouping</strong> into easy pieces, <strong>telescoping</strong> sums, <strong>pairing</strong> terms, and <strong>sandwiching</strong> a sum between two simple bounds.</p>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">1</span><h3 class="text-lg font-bold text-slate-800">Real life first: the thirteen-fraction puzzle</h3></div>
+    <div class="scene">
+      <div class="sh">Scene 1: a sum without a calculator</div>
+      <p>A teacher writes this on the board and says &ldquo;no calculators&rdquo;: $$\frac17+\frac18+\frac19+\frac1{10}+\frac1{11}+\frac1{12}+\frac1{14}+\frac1{15}+\frac1{18}+\frac1{22}+\frac1{24}+\frac1{28}+\frac1{33}.$$</p>
+      <p class="mt-2">There are two good ways. <strong>Brute force:</strong> the LCM of all the denominators is $2^3\times3^2\times5\times7\times11=27720$. Writing each fraction over $27720$ gives numerators $3960,\allowbreak 3465,\allowbreak 3080,\allowbreak 2772,\allowbreak 2520,\allowbreak 2310,\allowbreak 1980,\allowbreak 1848,\allowbreak 1540,\allowbreak 1260,\allowbreak 1155,\allowbreak 990,\allowbreak 840$, which add up to $27720$. So the sum is $1$. That works, but it is heavy. <strong>Smart way:</strong> look for small groups that give a nice answer. We build the idea in Theorem 6.</p>
+    </div>
+    <div class="proof">
+      <div class="ph">Theorem 6: a family of unit fractions with a neat sum</div>
+      <p class="text-sm">For positive integers $n$: $$\frac1n+\frac1{2n}=\frac3{2n},\qquad \frac1n+\frac1{2n}+\frac1{3n}=\frac{11}{6n},\qquad \frac1n+\frac1{2n}+\frac1{4n}=\frac7{4n}.$$ In general, $\dfrac1n\left(1+\dfrac1{k_1}+\dfrac1{k_2}+\cdots\right)$: pull out the common factor $\dfrac1n$, and the bracket is a sum of small unit fractions.</p>
+      <div class="seeit"><div class="sh">What this theorem says, with examples</div>
+        <div class="seg"><p class="et">Example 1: a pair</p><p>$\dfrac19+\dfrac1{18}=\dfrac19\left(1+\dfrac12\right)=\dfrac19\times\dfrac32=\dfrac16$.</p></div>
+        <div class="seg"><p class="et">Example 2: a triple with ratio $1:2:4$</p><p>$\dfrac17+\dfrac1{14}+\dfrac1{28}=\dfrac17\left(1+\dfrac12+\dfrac14\right)=\dfrac17\times\dfrac74=\dfrac14$.</p></div>
+        <div class="seg"><p class="et">Example 3: a triple with ratio $1:2:3$</p><p>$\dfrac1{11}+\dfrac1{22}+\dfrac1{33}=\dfrac1{11}\left(1+\dfrac12+\dfrac13\right)=\dfrac1{11}\times\dfrac{11}6=\dfrac16$.</p></div>
+        <div class="seg"><p class="et">Example 4: pairs from different families</p><p>$\dfrac18+\dfrac1{24}=\dfrac18\left(1+\dfrac13\right)=\dfrac16$ and $\dfrac1{10}+\dfrac1{15}=\dfrac1{10}\left(1+\dfrac23\right)=\dfrac16$.</p></div>
+      </div>
+      <details class="pf"><summary>Show the proof (optional reading for the curious)</summary>
+      <div class="ps"><b class="n">Factor out.</b> $\dfrac1{kn}=\dfrac1n\times\dfrac1k$, so $\dfrac1n+\dfrac1{2n}+\dfrac1{4n}=\dfrac1n\left(1+\dfrac12+\dfrac14\right)$ by the distributive law.</div>
+      <div class="ps"><b class="n">Evaluate the bracket.</b> $1+\dfrac12+\dfrac14=\dfrac74$, so the sum is $\dfrac1n\times\dfrac74=\dfrac7{4n}$. For $n=7$ this is $\dfrac14$. The other cases are the same. $\blacksquare$</div>
+      </details>
+    </div>
+    <div class="tech">
+      <div class="tt">Technique 13: group denominators that are multiples of a common number</div>
+      <p class="text-sm text-slate-700">Scan the denominators for ones related by simple ratios ($1:2$, $1:2:4$, $1:2:3$, $2:3$). Gather them, factor out the common unit fraction, and evaluate the small bracket. Hope for groups worth $\dfrac16$, $\dfrac14$, $\dfrac12$, whole numbers.</p>
+      <div class="eg"><p><strong>The thirteen-fraction puzzle.</strong> Groups: $\{9,18\}\to\dfrac16$, $\{10,15\}\to\dfrac16$, $\{8,24\}\to\dfrac16$, $\{11,22,33\}\to\dfrac16$, $\{7,14,28\}\to\dfrac14$. Only $\dfrac1{12}$ remains. Total: $4\times\dfrac16+\dfrac14+\dfrac1{12}=\dfrac23+\dfrac13=\mathbf1$. Both methods agree.</p></div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3 mt-6"><span class="step-badge">2</span><h3 class="text-lg font-bold text-slate-800">Telescoping sums and Egyptian fractions</h3></div>
+    <div class="scene">
+      <div class="sh">Scene 2: the shrinking list</div>
+      <p>Can you add $\dfrac1{1\times2}+\dfrac1{2\times3}+\dfrac1{3\times4}+\cdots+\dfrac1{99\times100}$? One hundred terms! The secret is to split each term in two, so that most pieces cancel.</p>
+    </div>
+    <div class="proof">
+      <div class="ph">Theorem 7: splitting $\dfrac1{n(n+k)}$</div>
+      <p class="text-sm">For positive integers $n$ and $k$: $$\frac1{n(n+k)}=\frac1k\left(\frac1n-\frac1{n+k}\right).$$ In particular, $\dfrac1{n(n+1)}=\dfrac1n-\dfrac1{n+1}$, and therefore $$\frac1{1\times2}+\frac1{2\times3}+\cdots+\frac1{N(N+1)}=1-\frac1{N+1}=\frac N{N+1}.$$</p>
+      <div class="seeit"><div class="sh">What this theorem says, with examples</div>
+        <div class="seg"><p class="et">Example 1: a short sum</p><p>$\dfrac1{1\times2}+\dfrac1{2\times3}+\dfrac1{3\times4}=\left(1-\dfrac12\right)+\left(\dfrac12-\dfrac13\right)+\left(\dfrac13-\dfrac14\right)=1-\dfrac14=\dfrac34$.</p></div>
+        <div class="seg"><p class="et">Example 2: one hundred terms</p><p>$N=99$ gives $\dfrac{99}{100}$.</p></div>
+        <div class="seg"><p class="et">Example 3: gaps of $2$</p><p>$\dfrac1{2\times4}+\dfrac1{4\times6}+\dfrac1{6\times8}=\dfrac12\left(\dfrac12-\dfrac14+\dfrac14-\dfrac16+\dfrac16-\dfrac18\right)=\dfrac12\left(\dfrac12-\dfrac18\right)=\dfrac3{16}$.</p></div>
+        <div class="seg"><p class="et">Example 4: Egyptian fractions</p><p>$\dfrac16=\dfrac12-\dfrac13$ and $\dfrac1{12}=\dfrac13-\dfrac14$. Every unit fraction $\dfrac1{n(n+1)}$ is a difference of two unit fractions.</p></div>
+      </div>
+      <details class="pf"><summary>Show the proof (optional reading for the curious)</summary>
+      <div class="ps"><b class="n">The identity.</b> $\dfrac1n-\dfrac1{n+k}=\dfrac{(n+k)-n}{n(n+k)}=\dfrac k{n(n+k)}$. Dividing both sides by $k$ gives $\dfrac1{n(n+k)}=\dfrac1k\left(\dfrac1n-\dfrac1{n+k}\right)$.</div>
+      <div class="ps"><b class="n">Telescope.</b> Using $k=1$: $\left(1-\dfrac12\right)+\left(\dfrac12-\dfrac13\right)+\cdots+\left(\dfrac1N-\dfrac1{N+1}\right)$. Every middle term appears once with $+$ and once with $-$, so only $1-\dfrac1{N+1}$ remains. $\blacksquare$</div>
+      </details>
+    </div>
+    <div class="tech">
+      <div class="tt">Technique 14: write 1 over a number as a difference of two unit fractions</div>
+      <p class="text-sm text-slate-700">If $a<b$ are two <strong>divisors</strong> of $N$ with $b-a=1$, then $\dfrac1N=\dfrac{b-a}N=\dfrac bN-\dfrac aN=\dfrac1{N/b}-\dfrac1{N/a}$. Find two consecutive divisors of $N$.</p>
+      <div class="eg"><p><strong>Example 1:</strong> $N=6$: divisors $2$ and $3$. $\dfrac16=\dfrac36-\dfrac26=\dfrac12-\dfrac13$.</p>
+        <p class="mt-1"><strong>Example 2 (a competition question):</strong> $N=2022=2\times3\times337$. The divisors $2$ and $3$ differ by $1$. $\dfrac1{2022}=\dfrac3{2022}-\dfrac2{2022}=\dfrac1{674}-\dfrac1{1011}$. Both denominators are smaller than $2022$.</p></div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3 mt-6"><span class="step-badge">3</span><h3 class="text-lg font-bold text-slate-800">Pairing terms in an alternating sum</h3></div>
+    <div class="scene">
+      <div class="sh">Scene 3: plus, minus, plus, minus</div>
+      <p>Find $x$ if $$\frac12-\frac14+\frac18-\frac1{16}+\cdots-\frac1{1024}=\frac x{1024}.$$ The terms are half of the previous in size and alternate in sign. Since the right side has denominator $1024$, multiply the whole equation by $1024$. Every term becomes a whole number: $$x=512-256+128-64+32-16+8-4+2-1.$$</p>
+      <p class="mt-2">Pair them: $(512-256)+(128-64)+(32-16)+(8-4)+(2-1)=256+64+16+4+1=341$. Each pair is a power of $4$, and $1+4+16+64+256=341$.</p>
+    </div>
+    <div class="tech">
+      <div class="tt">Technique 15: clear the denominators, then pair</div>
+      <p class="text-sm text-slate-700">If every denominator divides one number $D$, multiply the equation by $D$ to turn the fractions into integers. Alternating signs invite pairing neighbours. A list that multiplies by a fixed ratio (a geometric list) has a short formula; here we simply pair and add.</p>
+      <div class="eg"><p><strong>Example:</strong> $\dfrac13-\dfrac19+\dfrac1{27}-\dfrac1{81}$. Multiply by $81$: $27-9+3-1=20$. So the sum is $\dfrac{20}{81}$.</p></div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3 mt-6"><span class="step-badge">4</span><h3 class="text-lg font-bold text-slate-800">Sandwiching a sum between two easy numbers</h3></div>
+    <div class="scene">
+      <div class="sh">Scene 4: between which two whole numbers?</div>
+      <p>Which two <strong>consecutive</strong> whole numbers surround $S=5\times\left(\dfrac1{11}+\dfrac1{12}+\dfrac1{13}+\cdots+\dfrac1{20}\right)$? Adding ten fractions exactly is painful, and we only need a rough place. Replace groups of terms by <strong>simpler fractions that are a little bigger or a little smaller</strong>, so that we trap the sum.</p>
+    </div>
+    <div class="tech">
+      <div class="tt">Technique 16: grouped bounds</div>
+      <ol class="list-decimal pl-6 text-sm text-slate-700 space-y-1">
+        <li>Split the terms into a few groups.</li>
+        <li><strong>Lower bound:</strong> replace every term in a group by the <em>smallest</em> term of that group (the last one). Each group becomes (number of terms)$\times$(smallest term).</li>
+        <li><strong>Upper bound:</strong> replace every term by the <em>biggest</em> term of the group (the first one).</li>
+        <li>Compute both bounds and read off the whole numbers.</li>
+      </ol>
+      <div class="eg"><p><strong>Lower bound.</strong> Groups $\{\tfrac1{11},\tfrac1{12}\}$, $\{\tfrac1{13},\tfrac1{14},\tfrac1{15}\}$, $\{\tfrac1{16},\tfrac1{17},\tfrac1{18}\}$, $\{\tfrac1{19},\tfrac1{20}\}$. Each term is at least the last of its group, so $$\sum>\frac2{12}+\frac3{15}+\frac3{18}+\frac2{20}=\frac16+\frac15+\frac16+\frac1{10}=\frac{19}{30},\quad\text{so }S>\frac{19}6>3.$$</p>
+        <p class="mt-1"><strong>Upper bound.</strong> Each term is at most the first of its group, so $$\sum<\frac2{11}+\frac3{13}+\frac3{16}+\frac2{19}\lt0.71,\quad\text{so }S\lt3.55\lt4.$$</p>
+        <p class="mt-1">Therefore $3<S<4$: the two consecutive whole numbers are $\mathbf3$ and $\mathbf4$.</p></div>
+    </div>
+
+    <h3 class="text-xl font-bold text-slate-800 mb-3 mt-8 bg-slate-100 p-3 rounded-lg inline-block">Check your understanding</h3>
+    <div id="ex-t5"></div>
+  </div>
+
+  <div id="t6" class="tab-content">
+    <h2 class="text-2xl font-bold text-slate-800 mb-1">Homework: Arithmetic of the Rationals</h2>
+    <p class="text-slate-600 mb-3">Three levels, from understanding to challenge, including set notation (Section 1.0) and HCF and coprime numbers (Chapter 1). Each question gives you 3 attempts, then shows the full solution. When every question in the chapter is finished, your <strong>Learning Report</strong> unlocks in Tab 7.</p>
+    <div class="card mb-3 bg-teal-50 border-teal-200"><p class="text-sm text-slate-800" id="hw-score">Homework status: 0 correct, 0 revealed, 0 remaining</p></div>
+    <div id="ex-t6"></div>
+  </div>
+
+  <div id="t7" class="tab-content">
+    <h2 class="text-2xl font-bold text-slate-800 mb-1">Your Learning Report</h2>
+    <div id="report-root"></div>
+  </div>
+
+  </main>
+<footer class="shen-footer"><svg viewBox="0 0 100 100" role="img" aria-label="申 Shen Studio"><rect width="100" height="100" rx="12" fill="#B3261E"/><path d="M41.57 27.7V42.46H27.58V27.7ZM15.1 25.34V70.78H16.95C22.18 70.78 27.58 67.91 27.58 66.65V62.18H41.57V90H44.01C48.82 90 54.3 86.88 54.3 85.62V62.18H68.97V68.93H71.07C75.37 68.93 81.53 66.65 81.61 65.89V29.64C83.38 29.3 84.39 28.55 84.9 27.87L73.69 19.19L68.12 25.34H54.3V13.96C56.74 13.62 57.33 12.7 57.5 11.52L41.57 10V25.34H28.42L15.1 20.2ZM54.3 27.7H68.97V42.46H54.3ZM41.57 59.82H27.58V44.82H41.57ZM54.3 59.82V44.82H68.97V59.82Z" fill="#FFFFFF"/></svg><span><b>Shen Studio</b> · Designed by Mr. Shen</span></footer>
+<div class="shen-print-mark" aria-hidden="true"><svg viewBox="0 0 100 100" role="img" aria-label="申 Shen Studio"><rect width="100" height="100" rx="12" fill="#B3261E"/><path d="M41.57 27.7V42.46H27.58V27.7ZM15.1 25.34V70.78H16.95C22.18 70.78 27.58 67.91 27.58 66.65V62.18H41.57V90H44.01C48.82 90 54.3 86.88 54.3 85.62V62.18H68.97V68.93H71.07C75.37 68.93 81.53 66.65 81.61 65.89V29.64C83.38 29.3 84.39 28.55 84.9 27.87L73.69 19.19L68.12 25.34H54.3V13.96C56.74 13.62 57.33 12.7 57.5 11.52L41.57 10V25.34H28.42L15.1 20.2ZM54.3 27.7H68.97V42.46H54.3ZM41.57 59.82H27.58V44.82H41.57ZM54.3 59.82V44.82H68.97V59.82Z" fill="#FFFFFF"/></svg><span>Shen Studio</span></div>
+
+
+<script>
+
+/* ============ helpers ============ */
+const R = String.raw;
+function typeset(el){ try{ if(window.MathJax && MathJax.typesetPromise){ MathJax.typesetPromise(el?[el]:undefined).catch(()=>{}); } }catch(e){} }
+function sorter(a,b){ const na=Number(a), nb=Number(b); if(!isNaN(na)&&!isNaN(nb)) return na-nb; return String(a)<String(b)?-1:String(a)>String(b)?1:0; }
+function fm(n){ return n<0 ? '−'+(-n) : ''+n; }
+function fp(n){ return n<0 ? '(−'+(-n)+')' : ''+n; }
+function range(a,b){ const r=[]; for(let i=a;i<=b;i++) r.push(i); return r; }
+function fmtSet(arr){ return arr.length? '{ '+arr.join(', ')+' }' : '∅'; }
+function cleanNum(s){ return String(s).replace(/[−–—]/g,'-'); }
+function gcd(a,b){ while(b){ [a,b]=[b,a%b]; } return a; }
+function isPrime(n){ if(n<2) return false; for(let i=2;i*i<=n;i++) if(n%i===0) return false; return true; }
+function factorize(n){ const f={}; let d=2; while(d*d<=n){ while(n%d===0){ f[d]=(f[d]||0)+1; n/=d; } d++; } if(n>1) f[n]=(f[n]||0)+1; return f; }
+function indexForm(f){ const ks=Object.keys(f).map(Number).sort((a,b)=>a-b); return ks.map(p=>f[p]>1? p+'<sup>'+f[p]+'</sup>' : ''+p).join(' × ') || '1'; }
+function divisorsOf(n){ const r=[]; for(let d=1; d<=n; d++) if(n%d===0) r.push(d); return r; }
+function clampInt(v,lo,hi){ v=parseInt(v); if(isNaN(v)) return lo; return Math.max(lo,Math.min(hi,v)); }
+
+function openTab(evt, id){
+  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab-link').forEach(b=>{ b.classList.remove('text-teal-700','border-b-4','border-teal-600','font-bold'); b.classList.add('text-slate-500','font-semibold'); });
+  document.getElementById(id).classList.add('active');
+  const btn=document.querySelector('.tab-link[data-tab="'+id+'"]'); btn.classList.remove('text-slate-500','font-semibold'); btn.classList.add('text-teal-700','border-b-4','border-teal-600','font-bold');
+  if(id==='t7') buildReport();
+  typeset(document.getElementById(id)); window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ============ modular helpers ============ */
+
+function S(steps){ return '<ol class="list-decimal pl-5 space-y-1 text-sm text-slate-700">'+steps.map(s=>'<li>'+s+'</li>').join('')+'</ol>'; }
+const EX={};
+const P=(...ps)=>ps.map(p=>`<p>${p}</p>`).join('');
+
+function parseFrac(raw){ const v=cleanNum(raw).replace(/\s/g,''); const m=v.match(/^(-?\d+)(?:\/(-?\d+))?$/); if(!m) return null; return {n:parseInt(m[1],10), d:m[2]===undefined?1:parseInt(m[2],10)}; }
+var _pf={};
+function fracPreview(id){
+  const el=document.getElementById('prev-'+id), inp=document.getElementById('inp-'+id); if(!el||!inp) return;
+  const f=parseFrac(inp.value); let h='<span class="lab">Preview</span>';
+  if(inp.value.trim()==='') h+='<span class="msg">Your fraction will appear here as you type, for example $\\dfrac{3}{4}$ is typed as 3/4.</span>';
+  else if(!f) h+='<span class="msg">This cannot be read yet. Type a whole number, or two whole numbers with / between them.</span>';
+  else if(f.d===0) h+='<span class="msg">The denominator cannot be 0.</span>';
+  else if(f.d<0) h+='<span class="block text-xs text-amber-700 font-semibold">Put the minus sign on the top.</span>';
+  else h+='<span class="text-lg">$'+(f.d===1? String(f.n) : (f.n<0?'-':'')+'\\dfrac{'+Math.abs(f.n)+'}{'+f.d+'}')+'$</span>';
+  el.innerHTML=h; clearTimeout(_pf[id]); _pf[id]=setTimeout(()=>typeset(el),120);
+}
+/* ============ 3.3 widgets ============ */
+function gcd2(a,b){ a=Math.abs(a); b=Math.abs(b); while(b){ const t=a%b; a=b; b=t; } return a; }
+function ftex(n,d){ const g=gcd2(n,d)||1; n/=g; d/=g; if(d<0){ n=-n; d=-d; } return d===1? String(n) : (n<0? '-':'')+'\\dfrac{'+Math.abs(n)+'}{'+d+'}'; }
+function gv(id){ return Number(document.getElementById(id).value); }
+function okInts(){ return [...arguments].every(x=>Number.isInteger(x)); }
+function lcm2(a,b){ return a/gcd2(a,b)*b; }
+/* ---- Tab 1: Fraction Adder ---- */
+function adSet(a,b,op,c,d){ document.getElementById('ad-a').value=a; document.getElementById('ad-b').value=b; document.getElementById('ad-op').value=op; document.getElementById('ad-c').value=c; document.getElementById('ad-d').value=d; adUpdate(); }
+function adUpdate(){
+  const a=gv('ad-a'), b=gv('ad-b'), c=gv('ad-c'), d=gv('ad-d'), op=document.getElementById('ad-op').value, out=document.getElementById('ad-out'), bars=document.getElementById('ad-bars');
+  if(!okInts(a,b,c,d)||b<=0||d<=0){ out.innerHTML='<p class="text-amber-700 font-semibold">Use whole numbers, and make both denominators positive.</p>'; bars.innerHTML=''; return; }
+  const L=lcm2(b,d), x=a*(L/b), y=c*(L/d), r= op==='+'? x+y : x-y, sym= op==='+'? '+':'-';
+  const bar=(num,den,col,label)=>{ const W=320,h=24; let s=`<svg viewBox="0 0 ${W+4} ${h+4}" width="${W+4}" height="${h+4}" style="display:block;margin:2px 0" role="img" aria-label="${label}">`; const k=Math.min(Math.max(num,0),den); for(let i=0;i<den;i++) s+=`<rect x="${2+i*W/den}" y="2" width="${W/den}" height="${h}" fill="${i<k?col:'#eef0fa'}" stroke="#1c2230" stroke-width="${den>40?0.3:1}"/>`; return s+'</svg>'; };
+  if(a>=0&&c>=0&&a<=b&&c<=d&&L<=60){ bars.innerHTML=`<div class="text-xs font-bold text-slate-600">$\\dfrac{${a}}{${b}}$ in pieces of $\\dfrac1{${b}}$</div>`+bar(a,b,'#5b6cc0','first fraction')+`<div class="text-xs font-bold text-slate-600">$\\dfrac{${c}}{${d}}$ in pieces of $\\dfrac1{${d}}$</div>`+bar(c,d,'#6366f1','second fraction')+`<div class="text-xs font-bold text-slate-600">Same-size pieces, $\\dfrac1{${L}}$ each: ${x} and ${y}</div>`+bar(x,L,'#5b6cc0','first on common denominator')+bar(y,L,'#6366f1','second on common denominator'); }
+  else bars.innerHTML='';
+  let h=`<p>$\\text{LCM}(${b},${d})=${L}$</p><p>$\\dfrac{${a}}{${b}}=\\dfrac{${x}}{${L}}$ and $\\dfrac{${c}}{${d}}=\\dfrac{${y}}{${L}}$</p>`;
+  h+=`<p class="font-bold text-teal-800">$\\dfrac{${x}}{${L}}\\ ${sym}\\ \\dfrac{${y}}{${L}}=\\dfrac{${r}}{${L}}${ftex(r,L)==='\\dfrac{'+r+'}{'+L+'}'?'':'='+ftex(r,L)}$</p>`;
+  { const ar=Math.abs(r), wh=Math.floor(ar/L), rem=ar%L; if(wh>0&&rem>0) h+=`<p class="text-slate-600">As a mixed number: $${r<0?'-':''}${wh}\\dfrac{${rem/gcd2(rem,L)}}{${L/gcd2(rem,L)}}$</p>`; }
+  out.innerHTML=h; typeset(out); typeset(bars);
+}
+/* ---- Tab 2: Area Model ---- */
+function amSet(a,b,c,d){ document.getElementById('am-a').value=a; document.getElementById('am-b').value=b; document.getElementById('am-c').value=c; document.getElementById('am-d').value=d; amUpdate(); }
+function amUpdate(){
+  const a=gv('am-a'), b=gv('am-b'), c=gv('am-c'), d=gv('am-d'), out=document.getElementById('am-out'), svg=document.getElementById('am-svg');
+  if(!okInts(a,b,c,d)||b<=0||d<=0||a<0||c<0||a>b||c>d||b>10||d>10){ out.innerHTML='<p class="text-amber-700 font-semibold">For the picture, use proper fractions (top at most bottom) with denominators from 1 to 10.</p>'; svg.innerHTML=''; return; }
+  const S=240, w=S/b, h=S/d; let s=`<svg viewBox="0 0 ${S+4} ${S+4}" width="${S+4}" height="${S+4}" role="img" aria-label="unit square cut into ${b} columns and ${d} rows, ${a} columns and ${c} rows shaded">`;
+  for(let i=0;i<b;i++) for(let j=0;j<d;j++){ const col=i<a, row=j<c; let f='#eef0fa'; if(col&&row) f='#3b4fa8'; else if(col) f='#a7b2e2'; else if(row) f='#a5b4fc'; s+=`<rect x="${2+i*w}" y="${2+j*h}" width="${w}" height="${h}" fill="${f}" stroke="#334155" stroke-width="1"/>`; }
+  svg.innerHTML=s+'</svg>';
+  let m=`<p>The square has $${b}\\times${d}=${b*d}$ equal cells. The first fraction shades $${a}$ columns (light orange). The second shades $${c}$ rows (blue). The dark cells are in both: $${a}\\times${c}=${a*c}$ cells.</p>`;
+  m+=`<p class="font-bold text-teal-800">$\\dfrac{${a}}{${b}}\\times\\dfrac{${c}}{${d}}=\\dfrac{${a*c}}{${b*d}}=${ftex(a*c,b*d)}$</p>`;
+  out.innerHTML=m; typeset(out);
+}
+/* ---- Tab 3: Division Machine ---- */
+function dvSet(a,b,c,d){ document.getElementById('dv-a').value=a; document.getElementById('dv-b').value=b; document.getElementById('dv-c').value=c; document.getElementById('dv-d').value=d; dvUpdate(); }
+function dvUpdate(){
+  const a=gv('dv-a'), b=gv('dv-b'), c=gv('dv-c'), d=gv('dv-d'), out=document.getElementById('dv-out');
+  if(!okInts(a,b,c,d)||b<=0||d<=0){ out.innerHTML='<p class="text-amber-700 font-semibold">Use whole numbers, and make both denominators positive.</p>'; return; }
+  if(c===0){ out.innerHTML='<p class="text-amber-700 font-semibold">The divisor is $0$, which has no reciprocal. We cannot divide by zero.</p>'; typeset(out); return; }
+  let rn=d, rd=c; if(rd<0){ rn=-rn; rd=-rd; }
+  const n=a*rn, m=b*rd;
+  let h=`<p>Reciprocal of $\\dfrac{${c}}{${d}}$ is $\\dfrac{${rn}}{${rd}}$ (flip it, keep the sign).</p>`;
+  h+=`<p>$\\dfrac{${a}}{${b}}\\div\\dfrac{${c}}{${d}}=\\dfrac{${a}}{${b}}\\times\\dfrac{${rn}}{${rd}}=\\dfrac{${n}}{${m}}=${ftex(n,m)}$</p>`;
+  h+=`<p class="text-slate-600">Check: $${ftex(n,m)}\\times\\dfrac{${c}}{${d}}=${ftex(n*c,m*d)}$, which equals the first fraction $${ftex(a,b)}$.</p>`;
+  const q=(a/b)/(c/d); if(q>0&&a/b>0) h+=`<p class="text-slate-600">Meaning: $\\dfrac{${c}}{${d}}$ fits into $\\dfrac{${a}}{${b}}$ about ${+q.toFixed(3)} times.</p>`;
+  out.innerHTML=h; typeset(out);
+}
+/* ---- Tab 4: Backward Cookie Tracer ---- */
+function ckSet(n,m){ document.getElementById('ck-n').value=n; document.getElementById('ck-m').value=m; ckUpdate(); }
+function ckUpdate(){
+  const n=gv('ck-n'), m=gv('ck-m'); document.getElementById('ck-nv').textContent=n; document.getElementById('ck-mv').textContent=m;
+  // backward: N_n = n ; N_k = k + N_{k+1} * m/(m-1)   (fractions as [num,den])
+  const fr=(p,q)=>{ const g=gcd2(p,q)||1; return [p/g,q/g]; };
+  let cur=[n,1]; const rows=[[n,cur,[n,1],'gives all '+n]];
+  const seq=[]; seq[n]=cur;
+  for(let k=n-1;k>=1;k--){ const next=seq[k+1]; const rest=fr(next[0]*m,next[1]*(m-1)); const start=fr(rest[0]+k*rest[1],rest[1]); seq[k]=start; }
+  const show=f=> f[1]===1? String(f[0]) : f[0]+'/'+f[1];
+  let h='<table class="tb text-sm border-collapse w-full"><thead><tr class="bg-slate-100"><th class="border border-slate-300 px-2 py-1">Day</th><th class="border border-slate-300 px-2 py-1">Cookies at the start of the day</th></tr></thead><tbody>';
+  let whole=true;
+  for(let k=1;k<=n;k++){ const f=seq[k]; if(f[1]!==1) whole=false; h+=`<tr><td class="border border-slate-300 px-2 py-1">${k}</td><td class="border border-slate-300 px-2 py-1">${show(f)}</td></tr>`; }
+  h+='</tbody></table>';
+  h+= whole? `<p class="mt-2 font-semibold">She baked <span class="text-teal-800">${show(seq[1])}</span> cookies. `+`</p>` : `<p class="mt-2 font-semibold text-amber-700">The start is not a whole number of cookies (${show(seq[1])}), so this story is impossible. Try other values.</p>`;
+  if(whole){ const per=seq[n][0]; const eq=seq.slice(1).every((f,i)=>{ const k=i+1; const rest=f[0]-k; return k+rest/m===per; }); h+= eq? `<p class="text-slate-600">Each day she gives away exactly ${per} cookies in total.</p>` : ''; }
+  document.getElementById('ck-out').innerHTML=h;
+}
+
+EX.t1=[
+ { level:'A. Adding and subtracting', id:'t1q1', type:'frac', q:R`Calculate $\dfrac5{12}+\dfrac7{18}$.`, ans:'29/36',
+   sol:S([R`$\text{LCM}(12,18)=36$.`,R`$\dfrac{15}{36}+\dfrac{14}{36}=\dfrac{29}{36}$.`]) },
+ { id:'t1q2', type:'frac', q:R`Calculate $\dfrac7{15}-\dfrac3{10}$.`, ans:'1/6',
+   sol:S([R`$\text{LCM}(15,10)=30$.`,R`$\dfrac{14}{30}-\dfrac9{30}=\dfrac5{30}=\dfrac16$.`]) },
+ { id:'t1q3', type:'frac', q:R`Calculate $\dfrac56-\dfrac38$.`, ans:'11/24',
+   sol:S([R`$\text{LCM}(6,8)=24$.`,R`$\dfrac{20}{24}-\dfrac9{24}=\dfrac{11}{24}$.`]) },
+ { id:'t1q4', type:'frac', q:R`Calculate $-\dfrac35+\dfrac16$.`, ans:'-13/30',
+   sol:S([R`$\text{LCM}(5,6)=30$.`,R`$-\dfrac{18}{30}+\dfrac5{30}=-\dfrac{13}{30}$.`]) },
+ { id:'t1q5', type:'frac', q:R`Calculate $\dfrac29+\dfrac5{12}+\dfrac16$.`, ans:'29/36',
+   sol:S([R`$\text{LCM}(9,12,6)=36$.`,R`$\dfrac8{36}+\dfrac{15}{36}+\dfrac6{36}=\dfrac{29}{36}$.`]) },
+ { id:'t1q6', type:'mc', q:R`A student writes $\dfrac12+\dfrac13=\dfrac25$. What is wrong?`, opts:[R`Pieces of different sizes cannot be counted together. The correct sum is $\dfrac56$, and $\dfrac25$ is even smaller than $\dfrac12$`,R`Nothing is wrong`,R`The answer should be $\dfrac15$`,R`The student should have multiplied the denominators only`], ans:0,
+   sol:S([R`The sum of two positive fractions must be bigger than each of them. $\dfrac25<\dfrac12$, so $\dfrac25$ cannot be the sum.`,R`Rewrite with sixths: $\dfrac36+\dfrac26=\dfrac56$.`]) },
+ { level:'B. Mixed numbers', id:'t1q7', type:'frac', q:P(R`Calculate $2\dfrac13+1\dfrac34$.`,R`Type the answer as an improper fraction $a/b$.`), ans:'49/12',
+   sol:S([R`Wholes: $2+1=3$. Fractions: $\dfrac4{12}+\dfrac9{12}=\dfrac{13}{12}=1\dfrac1{12}$.`,R`Total $4\dfrac1{12}=\dfrac{49}{12}$.`]) },
+ { id:'t1q8', type:'frac', q:P(R`Calculate $3\dfrac14-1\dfrac56$.`,R`Type the answer as a fraction $a/b$.`), ans:'17/12',
+   sol:S([R`$3\dfrac14=\dfrac{13}4=\dfrac{39}{12}$ and $1\dfrac56=\dfrac{11}6=\dfrac{22}{12}$.`,R`$\dfrac{39-22}{12}=\dfrac{17}{12}=1\dfrac5{12}$.`]) },
+ { id:'t1q9', type:'frac', q:P(R`Calculate $5-2\dfrac38$.`,R`Type the answer as a fraction $a/b$.`), ans:'21/8',
+   sol:S([R`$5=\dfrac{40}8$ and $2\dfrac38=\dfrac{19}8$.`,R`$\dfrac{40-19}8=\dfrac{21}8=2\dfrac58$.`]) },
+ { id:'t1q10', type:'frac', q:P(R`Calculate $4\dfrac25-1\dfrac7{10}$.`,R`Type the answer as a fraction $a/b$.`), ans:'27/10',
+   sol:S([R`$\dfrac{22}5-\dfrac{17}{10}=\dfrac{44}{10}-\dfrac{17}{10}=\dfrac{27}{10}$.`,R`That is $2\dfrac7{10}$.`]) },
+ { level:'C. Regrouping, closure and stories', id:'t1q11', type:'num', q:R`Calculate $\dfrac37+\dfrac25+\dfrac47+\dfrac35$ by regrouping.`, ans:2,
+   sol:S([R`$\left(\dfrac37+\dfrac47\right)+\left(\dfrac25+\dfrac35\right)=1+1=\mathbf2$.`]) },
+ { id:'t1q12', type:'num', q:R`Calculate $\dfrac79+\left(-\dfrac25\right)+\dfrac29+\left(-\dfrac35\right)$.`, ans:0,
+   sol:S([R`$\left(\dfrac79+\dfrac29\right)-\left(\dfrac25+\dfrac35\right)=1-1=\mathbf0$.`]) },
+ { id:'t1q13', type:'mc', q:R`Which statement about the rational numbers $\mathbb{Q}$ is true?`, opts:[R`The sum and the difference of two rationals are always rational`,R`The difference of two rationals can be irrational`,R`$\mathbb{Q}$ is not closed under addition`,R`Subtraction in $\mathbb{Q}$ is commutative`], ans:0,
+   sol:S([R`$\dfrac ab\pm\dfrac cd=\dfrac{ad\pm bc}{bd}$ with integer top and non-zero integer bottom, so $\mathbb{Q}$ is closed under $+$ and $-$.`,R`Subtraction is not commutative: $\dfrac12-\dfrac13\ne\dfrac13-\dfrac12$.`]) },
+ { id:'t1q14', type:'frac', q:R`Tom walks $\dfrac38$ km east, then $\dfrac56$ km east, then returns $\dfrac14$ km west. How far is he from the start? (Fraction of a km.)`, ans:'23/24',
+   sol:S([R`$\dfrac38+\dfrac56-\dfrac14=\dfrac9{24}+\dfrac{20}{24}-\dfrac6{24}=\dfrac{23}{24}$ km.`]) },
+ { id:'t1q15', type:'frac', q:R`Tap A fills $\dfrac25$ of a tank in an hour and tap B fills $\dfrac13$ of it in the same hour. After one hour with both taps on, what fraction of the tank is still empty?`, ans:'4/15',
+   sol:S([R`Filled: $\dfrac25+\dfrac13=\dfrac6{15}+\dfrac5{15}=\dfrac{11}{15}$.`,R`Empty: $1-\dfrac{11}{15}=\dfrac4{15}$.`]) }
+];
+EX.t2=[
+ { level:'A. Multiplying', id:'t2q1', type:'frac', q:R`Calculate $\dfrac{14}{15}\times\dfrac{25}{21}$.`, ans:'10/9',
+   sol:S([R`Cancel $7$ (from $14$ and $21$) and $5$ (from $25$ and $15$): $\dfrac23\times\dfrac53=\dfrac{10}9$.`]) },
+ { id:'t2q2', type:'frac', q:R`Calculate $\dfrac38\times\dfrac49$.`, ans:'1/6',
+   sol:S([R`$\dfrac{3\times4}{8\times9}=\dfrac{12}{72}=\dfrac16$.`]) },
+ { id:'t2q3', type:'frac', q:R`Calculate $\left(-\dfrac56\right)\times\dfrac9{10}$.`, ans:'-3/4',
+   sol:S([R`$-\dfrac{5\times9}{6\times10}=-\dfrac{45}{60}=-\dfrac34$.`]) },
+ { id:'t2q4', type:'frac', q:P(R`Calculate $2\dfrac14\times1\dfrac23$.`,R`Type it as a fraction $a/b$.`), ans:'15/4',
+   sol:S([R`$\dfrac94\times\dfrac53=\dfrac{45}{12}=\dfrac{15}4$.`]) },
+ { id:'t2q5', type:'frac', q:R`Calculate $\left(\dfrac23\right)^3$.`, ans:'8/27',
+   sol:S([R`$\dfrac{2^3}{3^3}=\dfrac8{27}$.`]) },
+ { id:'t2q6', type:'mc', q:R`Which of these operators makes a positive number <strong>smaller</strong> when you multiply by it?`, opts:[R`$\dfrac54$`,R`$1$`,R`$\dfrac78$`,R`$\dfrac{11}{10}$`], ans:2,
+   sol:S([R`Multiplying by a number between $0$ and $1$ shrinks. $\dfrac78<1$ shrinks; $\dfrac54$ and $\dfrac{11}{10}$ stretch; $1$ leaves the number unchanged.`]) },
+ { level:'B. Chains of operators', id:'t2q7', type:'num', q:R`Find $\dfrac23$ of $\dfrac35$ of $30$.`, ans:12,
+   sol:S([R`$\dfrac23\times\dfrac35=\dfrac25$, and $\dfrac25\times30=\mathbf{12}$.`]) },
+ { id:'t2q8', type:'num', q:R`Find $\dfrac34$ of $\dfrac25$ of $80$.`, ans:24,
+   sol:S([R`$\dfrac25$ of $80=32$, and $\dfrac34$ of $32=\mathbf{24}$.`]) },
+ { id:'t2q9', type:'num', q:P(R`<span class="qlabel">Competition question</span>`,R`What is the value of $\dfrac12$ of $\dfrac23$ of $\dfrac34$ of $\dfrac45$ of $\dfrac56$ of $\dfrac67$ of $\dfrac78$ of $\dfrac89$ of $\dfrac9{10}$ of $1000$?`), ans:100,
+   sol:S([R`Write it as a product: $\dfrac12\times\dfrac23\times\dfrac34\times\cdots\times\dfrac9{10}\times1000$.`,R`Each top cancels with the next bottom (Theorem 4). Only $\dfrac1{10}$ remains.`,R`$\dfrac1{10}\times1000=\mathbf{100}$.`]) },
+ { id:'t2q10', type:'frac', q:R`Calculate $\left(1-\dfrac12\right)\allowbreak\left(1-\dfrac13\right)\allowbreak\left(1-\dfrac14\right)\allowbreak\left(1-\dfrac15\right)\allowbreak\left(1-\dfrac16\right)$.`, ans:'1/6',
+   sol:S([R`It equals $\dfrac12\times\dfrac23\times\dfrac34\times\dfrac45\times\dfrac56=\dfrac16$.`]) },
+ { id:'t2q11', type:'frac', q:R`Calculate $\left(1-\dfrac12\right)\allowbreak\left(1-\dfrac13\right)\cdots\left(1-\dfrac1{50}\right)$.`, ans:'1/50',
+   sol:S([R`Each bracket $1-\dfrac1k=\dfrac{k-1}k$. The product is $\dfrac12\times\dfrac23\times\cdots\times\dfrac{49}{50}=\dfrac1{50}$.`]) },
+ { id:'t2q12', type:'frac', q:R`Calculate $\dfrac32\times\dfrac43\times\dfrac54\times\cdots\times\dfrac{21}{20}$.`, ans:'21/2',
+   sol:S([R`Everything cancels except the first bottom $2$ and the last top $21$.`,R`The product is $\dfrac{21}2$.`]) },
+ { level:'C. Applications', id:'t2q13', type:'frac', q:R`A rectangle is $\dfrac34$ m long and $\dfrac23$ m wide. What is its area in square metres?`, ans:'1/2',
+   sol:S([R`Area $=\dfrac34\times\dfrac23=\dfrac12$ m$^2$.`]) },
+ { id:'t2q14', type:'num', q:R`A jacket costs $\$60$. In a sale its price is multiplied by $\dfrac34$, and a member discount then multiplies the sale price by $\dfrac23$. What is the final price in dollars?`, ans:30,
+   sol:S([R`$\dfrac34\times\dfrac23=\dfrac12$.`,R`$\dfrac12\times60=\mathbf{30}$ dollars.`]) },
+ { id:'t2q15', type:'frac', q:R`Calculate $\left(-\dfrac23\right)\times\left(-\dfrac94\right)$.`, ans:'3/2',
+   sol:S([R`Two negatives give a positive: $\dfrac{2\times9}{3\times4}=\dfrac{18}{12}=\dfrac32$.`]) }
+];
+EX.t3=[
+ { level:'A. Dividing by a fraction', id:'t3q1', type:'frac', q:R`Calculate $\dfrac34\div\dfrac9{10}$.`, ans:'5/6',
+   sol:S([R`Flip the divisor: $\dfrac34\times\dfrac{10}9=\dfrac{30}{36}=\dfrac56$.`,R`Check: $\dfrac56\times\dfrac9{10}=\dfrac34$. &#10003;`]) },
+ { id:'t3q2', type:'frac', q:R`Calculate $\dfrac56\div\dfrac{10}9$.`, ans:'3/4',
+   sol:S([R`$\dfrac56\times\dfrac9{10}=\dfrac{45}{60}=\dfrac34$.`]) },
+ { id:'t3q3', type:'num', q:R`Calculate $4\div\dfrac23$.`, ans:6,
+   sol:S([R`$4\times\dfrac32=\mathbf6$. (There are six $\dfrac23$s in $4$.)`]) },
+ { id:'t3q4', type:'num', q:R`Calculate $2\dfrac12\div1\dfrac14$.`, ans:2,
+   sol:S([R`$\dfrac52\div\dfrac54=\dfrac52\times\dfrac45=\mathbf2$.`]) },
+ { id:'t3q5', type:'frac', q:R`Calculate $\left(-\dfrac38\right)\div\dfrac9{16}$.`, ans:'-2/3',
+   sol:S([R`$-\dfrac38\times\dfrac{16}9=-\dfrac{48}{72}=-\dfrac23$.`]) },
+ { id:'t3q6', type:'num', q:R`A jug holds $6$ litres. How many glasses of $\dfrac34$ litre can be filled?`, ans:8,
+   sol:S([R`$6\div\dfrac34=6\times\dfrac43=\mathbf8$ glasses.`]) },
+ { level:'B. Reciprocals and powers', id:'t3q7', type:'mc', q:R`What is the reciprocal of $-\dfrac37$?`, opts:[R`$\dfrac73$`,R`$-\dfrac73$`,R`$\dfrac37$`,R`$-\dfrac37$`], ans:1,
+   sol:S([R`Flip the fraction and keep the sign: $-\dfrac73$. Check: $-\dfrac37\times\left(-\dfrac73\right)=1$.`]) },
+ { id:'t3q8', type:'mc', q:R`Which number has <strong>no</strong> reciprocal?`, opts:[R`$1$`,R`$-1$`,R`$0$`,R`$\dfrac1{100}$`], ans:2,
+   sol:S([R`A reciprocal of $x$ must satisfy $x\times y=1$. For $x=0$ this is $0\times y=1$, which is impossible.`]) },
+ { id:'t3q9', type:'frac', q:R`Calculate $\left(\dfrac23\right)^{-2}$.`, ans:'9/4',
+   sol:S([R`A negative index flips the fraction: $\left(\dfrac32\right)^2=\dfrac94$.`]) },
+ { id:'t3q10', type:'frac', q:R`Find the number $x$ such that $\dfrac35\times x=\dfrac9{10}$.`, ans:'3/2',
+   sol:S([R`$x=\dfrac9{10}\div\dfrac35=\dfrac9{10}\times\dfrac53=\dfrac{45}{30}=\dfrac32$.`]) },
+ { id:'t3q11', type:'num', q:R`A ribbon $5\dfrac12$ m long is cut into pieces of $\dfrac{11}{12}$ m. How many pieces?`, ans:6,
+   sol:S([R`$\dfrac{11}2\div\dfrac{11}{12}=\dfrac{11}2\times\dfrac{12}{11}=\mathbf6$.`]) },
+ { level:'C. Fractions inside fractions', id:'t3q12', type:'frac', q:R`Simplify $\dfrac{\frac23}{\frac49}$.`, ans:'3/2',
+   sol:S([R`The bar means divide: $\dfrac23\div\dfrac49=\dfrac23\times\dfrac94=\dfrac{18}{12}=\dfrac32$.`]) },
+ { id:'t3q13', type:'num', q:R`Calculate $\dfrac{\frac12+\frac13}{\frac12-\frac13}$.`, ans:5,
+   sol:S([R`Top: $\dfrac56$. Bottom: $\dfrac16$.`,R`$\dfrac56\div\dfrac16=\dfrac56\times6=\mathbf5$.`]) },
+ { id:'t3q14', type:'frac', q:P(R`<span class="qlabel">Competition question</span>`,R`Compute $$\dfrac{20+\dfrac1{25-\frac1{20}}}{25+\dfrac1{20-\frac1{25}}}$$`), ans:'4/5',
+   sol:S([R`Inner layers: $25-\dfrac1{20}=\dfrac{499}{20}$ and $20-\dfrac1{25}=\dfrac{499}{25}$.`,R`Reciprocals: $\dfrac{20}{499}$ and $\dfrac{25}{499}$.`,R`Top: $20+\dfrac{20}{499}=20\times\dfrac{500}{499}$. Bottom: $25+\dfrac{25}{499}=25\times\dfrac{500}{499}$.`,R`The common factor $\dfrac{500}{499}$ cancels, leaving $\dfrac{20}{25}=\dfrac45$.`]) }
+];
+EX.t4=[
+ { level:'A. Mixed calculations', id:'t4q1', type:'num', q:R`Calculate $\dfrac12+\dfrac23\times\dfrac34$.`, ans:1,
+   sol:S([R`Multiply first: $\dfrac23\times\dfrac34=\dfrac12$.`,R`$\dfrac12+\dfrac12=\mathbf1$.`]) },
+ { id:'t4q2', type:'frac', q:R`Calculate $\left(\dfrac12+\dfrac23\right)\times\dfrac34$.`, ans:'7/8',
+   sol:S([R`Bracket: $\dfrac76$. Then $\dfrac76\times\dfrac34=\dfrac{21}{24}=\dfrac78$.`]) },
+ { id:'t4q3', type:'frac', q:R`Calculate $\dfrac56-\dfrac14\div\dfrac38$.`, ans:'1/6',
+   sol:S([R`Divide first: $\dfrac14\times\dfrac83=\dfrac23$.`,R`$\dfrac56-\dfrac23=\dfrac56-\dfrac46=\dfrac16$.`]) },
+ { id:'t4q4', type:'frac', q:R`Calculate $\dfrac{\frac23-\frac14}{\frac16+\frac13}$.`, ans:'5/6',
+   sol:S([R`Top: $\dfrac8{12}-\dfrac3{12}=\dfrac5{12}$. Bottom: $\dfrac16+\dfrac26=\dfrac12$.`,R`$\dfrac5{12}\div\dfrac12=\dfrac56$.`]) },
+ { id:'t4q5', type:'mc', q:R`In $\dfrac12+\dfrac34\div\dfrac38$, which operation is done <strong>first</strong>?`, opts:[R`$\dfrac12+\dfrac34$`,R`$\dfrac34\div\dfrac38$`,R`$\dfrac12+\dfrac38$`,R`It does not matter`], ans:1,
+   sol:S([R`Division comes before addition. $\dfrac34\div\dfrac38=2$, so the total is $\dfrac12+2=\dfrac52$.`]) },
+ { level:'B. Fraction stories', id:'t4q6', type:'num', q:P(R`Sam spends $\dfrac13$ of his money on a book. He then spends $\dfrac14$ of the money he still has on lunch, and is left with $\$18$.`,R`<strong>Question:</strong> how many dollars did he start with?`), ans:36,
+   sol:S([R`Kept: $\dfrac23$, then $\dfrac34$. $\dfrac23\times\dfrac34=\dfrac12$ of the start remains.`,R`$\dfrac12$ of the start is $18$, so the start was $\mathbf{36}$.`]) },
+ { id:'t4q7', type:'num', q:P(R`In a class of $30$, $\dfrac35$ are girls. $\dfrac23$ of the girls and $\dfrac14$ of the boys play sport.`,R`<strong>Question:</strong> how many students play sport?`), ans:15,
+   sol:S([R`Girls: $18$, and $\dfrac23\times18=12$ play sport.`,R`Boys: $12$, and $\dfrac14\times12=3$ play sport.`,R`Total $12+3=\mathbf{15}$.`]) },
+ { id:'t4q8', type:'frac', q:R`In the same class, what fraction of the whole class plays sport?`, ans:'1/2',
+   sol:S([R`$\dfrac{15}{30}=\dfrac12$.`]) },
+ { id:'t4q9', type:'num', q:P(R`A tank is $\dfrac25$ full. After $36$ litres are added it is $\dfrac7{10}$ full.`,R`<strong>Question:</strong> what is the capacity in litres?`), ans:120,
+   sol:S([R`The $36$ litres is $\dfrac7{10}-\dfrac25=\dfrac3{10}$ of the capacity.`,R`$\dfrac1{10}$ is $12$ litres, so the capacity is $\mathbf{120}$ litres.`]) },
+ { id:'t4q10', type:'frac', q:P(R`A price rises by $\dfrac15$, and then the <strong>new</strong> price falls by $\dfrac15$.`,R`<strong>Question:</strong> what fraction of the original price is the final price?`), ans:'24/25',
+   sol:S([R`The operators are $\dfrac65$ and $\dfrac45$.`,R`$\dfrac65\times\dfrac45=\dfrac{24}{25}$. The final price is lower than the start.`]) },
+ { level:'C. Working backwards', id:'t4q11', type:'mc', q:R`To undo &ldquo;she gives away $\dfrac15$ of the cookies she has&rdquo; (she keeps $\dfrac45$), you multiply by...`, opts:[R`$\dfrac15$`,R`$\dfrac54$`,R`$\dfrac45$`,R`$5$`], ans:1,
+   sol:S([R`The step multiplied by $\dfrac45$. Its undo is the reciprocal operator $\dfrac54$.`]) },
+ { id:'t4q12', type:'num', q:P(R`A baker has some cookies. Each day $k$ ($k=1,2,3$) she gives away $k$ cookies and then $\dfrac14$ of the cookies that remain. After day $3$ none are left.`,R`<strong>Question:</strong> how many cookies did she start with?`), ans:9,
+   sol:S([R`Day 3: she starts with $3$ and gives all of them.`,R`Day 2: after giving $2$ the rest $r$ satisfies $\dfrac34r=3$, so $r=4$; she started the day with $4+2=6$.`,R`Day 1: $\dfrac34r=6$, $r=8$, start $8+1=\mathbf9$.`,R`Check forwards: $9-1=8$, a quarter gone leaves $6$; $6-2=4$, leaves $3$; $3-3=0$. &#10003;`]) },
+ { id:'t4q13', type:'num', q:P(R`<span class="qlabel">Competition question</span>`,R`Aerith bakes some cookies. On the first day she gives away $1$ cookie and then $\dfrac18$ of the remaining cookies. On the second day she gives away $2$ cookies and then $\dfrac18$ of the remaining cookies, and so on. On the $7$th day she gives away $7$ cookies and then there are none left.`,R`<strong>Question:</strong> how many cookies did she bake?`), ans:49,
+   sol:S([R`Work backwards. Day 7: starts with $7$.`,R`Day 6: the rest $r$ satisfies $\dfrac78r=7$, so $r=8$, and she started with $8+6=14$.`,R`Day 5: $\dfrac78r=14$, $r=16$, start $16+5=21$. Continuing: $28,35,42,49$.`,R`She baked $\mathbf{49}$ cookies. (Each day she gives exactly $7$, and $7\times7=49$.)`]) },
+ { id:'t4q14', type:'num', q:R`In the competition problem, how many cookies does Aerith give away in total on <strong>each</strong> day?`, ans:7,
+   sol:S([R`On day 7 she gives $7$ and has none left, so she gave exactly $7$ that day.`,R`On day 1: $49-1=48$, one eighth is $6$, so she gives $1+6=\mathbf7$. The same holds every day.`]) }
+];
+EX.t5=[
+ { level:'A. Grouping unit fractions', id:'t5q1', type:'frac', q:R`Calculate $\dfrac19+\dfrac1{18}$.`, ans:'1/6',
+   sol:S([R`Factor out $\dfrac19$: $\dfrac19\left(1+\dfrac12\right)=\dfrac19\times\dfrac32=\dfrac16$.`]) },
+ { id:'t5q2', type:'frac', q:R`Calculate $\dfrac17+\dfrac1{14}+\dfrac1{28}$.`, ans:'1/4',
+   sol:S([R`$\dfrac17\left(1+\dfrac12+\dfrac14\right)=\dfrac17\times\dfrac74=\dfrac14$.`]) },
+ { id:'t5q3', type:'frac', q:R`Calculate $\dfrac1{11}+\dfrac1{22}+\dfrac1{33}$.`, ans:'1/6',
+   sol:S([R`$\dfrac1{11}\left(1+\dfrac12+\dfrac13\right)=\dfrac1{11}\times\dfrac{11}6=\dfrac16$.`]) },
+ { id:'t5q4', type:'num', q:P(R`<span class="qlabel">Competition question</span>`,R`Find this sum without a calculator:`,R`$$\frac17+\frac18+\frac19+\frac1{10}+\frac1{11}+\frac1{12}+\frac1{14}+\frac1{15}+\frac1{18}+\frac1{22}+\frac1{24}+\frac1{28}+\frac1{33}$$`), ans:1,
+   sol:S([R`Group: $\left(\dfrac19+\dfrac1{18}\right)+\left(\dfrac1{10}+\dfrac1{15}\right)+\left(\dfrac18+\dfrac1{24}\right)+\left(\dfrac1{11}+\dfrac1{22}+\dfrac1{33}\right)=4\times\dfrac16$.`,R`The $\{7,14,28\}$ group gives $\dfrac14$, and $\dfrac1{12}$ remains.`,R`Total: $\dfrac23+\dfrac14+\dfrac1{12}=\dfrac23+\dfrac13=\mathbf1$.`,R`(Check with the LCM: the numerators over $27720$ add up to $27720$.)`]) },
+ { id:'t5q5', type:'num', q:R`What is the LCM of the denominators $7,8,9,10,11,12,14,15,18,22,24,28,33$?`, ans:27720,
+   sol:S([R`The highest powers of the primes that appear are $2^3$ (from $8,24$), $3^2$ (from $9,18$), $5$, $7$ and $11$.`,R`$8\times9\times5\times7\times11=\mathbf{27720}$.`]) },
+ { level:'B. Telescoping and Egyptian fractions', id:'t5q6', type:'frac', q:R`Calculate $\dfrac1{1\times2}+\dfrac1{2\times3}+\cdots+\dfrac1{9\times10}$.`, ans:'9/10',
+   sol:S([R`Each term is $\dfrac1n-\dfrac1{n+1}$, so the sum is $1-\dfrac1{10}=\dfrac9{10}$.`]) },
+ { id:'t5q7', type:'frac', q:R`Calculate $\dfrac1{1\times2}+\dfrac1{2\times3}+\cdots+\dfrac1{99\times100}$.`, ans:'99/100',
+   sol:S([R`The sum telescopes to $1-\dfrac1{100}=\dfrac{99}{100}$.`]) },
+ { id:'t5q8', type:'frac', q:R`Calculate $\dfrac1{2\times4}+\dfrac1{4\times6}+\dfrac1{6\times8}+\cdots+\dfrac1{18\times20}$.`, ans:'9/40',
+   sol:S([R`Each term is $\dfrac1{n(n+2)}=\dfrac12\left(\dfrac1n-\dfrac1{n+2}\right)$ with $n=2,4,\ldots,18$.`,R`The sum is $\dfrac12\left(\dfrac12-\dfrac1{20}\right)=\dfrac12\times\dfrac9{20}=\dfrac9{40}$.`]) },
+ { id:'t5q9', type:'mc', q:R`Which expression equals $\dfrac1{n(n+3)}$?`, opts:[R`$\dfrac13\left(\dfrac1n-\dfrac1{n+3}\right)$`,R`$\dfrac1n-\dfrac1{n+3}$`,R`$\dfrac13\left(\dfrac1n+\dfrac1{n+3}\right)$`,R`$3\left(\dfrac1n-\dfrac1{n+3}\right)$`], ans:0,
+   sol:S([R`$\dfrac1n-\dfrac1{n+3}=\dfrac3{n(n+3)}$, so divide by $3$: $\dfrac1{n(n+3)}=\dfrac13\left(\dfrac1n-\dfrac1{n+3}\right)$.`]) },
+ { id:'t5q10', type:'set', q:P(R`<span class="qlabel">Competition question</span>`,R`Write $\dfrac1{2022}$ as a difference of two unit fractions $\dfrac1a-\dfrac1b$ with both denominators smaller than $2022$.`,R`Type the two denominators $a$ and $b$, separated by a comma.`), ans:'674,1011',
+   sol:S([R`$2022=2\times3\times337$. The divisors $2$ and $3$ differ by $1$.`,R`$\dfrac1{2022}=\dfrac{3-2}{2022}=\dfrac3{2022}-\dfrac2{2022}=\dfrac1{674}-\dfrac1{1011}$.`,R`The denominators are $674$ and $1011$.`]) },
+ { level:'C. Pairing and sandwiching', id:'t5q11', type:'num', q:R`Calculate $512-256+128-64+32-16+8-4+2-1$.`, ans:341,
+   sol:S([R`Pair: $256+64+16+4+1=\mathbf{341}$.`]) },
+ { id:'t5q12', type:'num', q:P(R`<span class="qlabel">Competition question</span>`,R`Find $x$, where $$\dfrac12-\dfrac14+\dfrac18-\dfrac1{16}+\cdots-\dfrac1{1024}=\dfrac x{1024}.$$`), ans:341,
+   sol:S([R`Multiply by $1024$: $x=512-256+128-64+32-16+8-4+2-1$.`,R`Pair the terms: $(512-256)+(128-64)+(32-16)+(8-4)+(2-1)=256+64+16+4+1=\mathbf{341}$.`]) },
+ { id:'t5q13', type:'frac', q:R`In the sandwich method for $\dfrac1{11}+\cdots+\dfrac1{20}$, replace each term in the groups $\{11,12\}$, $\{13,14,15\}$, $\{16,17,18\}$, $\{19,20\}$ by the <strong>last</strong> term of its group. What lower bound for $5\times\left(\dfrac1{11}+\cdots+\dfrac1{20}\right)$ do you get?`, ans:'19/6',
+   sol:S([R`$\dfrac2{12}+\dfrac3{15}+\dfrac3{18}+\dfrac2{20}=\dfrac16+\dfrac15+\dfrac16+\dfrac1{10}=\dfrac{19}{30}$.`,R`Multiply by $5$: $\dfrac{19}6$, which is just over $3$.`]) },
+ { id:'t5q14', type:'set', q:P(R`<span class="qlabel">Competition question</span>`,R`Write two <strong>adjacent</strong> natural numbers in the boxes so that $$\square<\left(\dfrac1{11}+\dfrac1{12}+\dfrac1{13}+\cdots+\dfrac1{20}\right)\times5<\square.$$`,R`Type the two numbers, smaller first, separated by a comma.`), ans:'3,4',
+   sol:S([R`Lower bound: $\dfrac{19}6>3$ (each group replaced by its smallest term).`,R`Upper bound: $5\times\left(\dfrac2{11}+\dfrac3{13}+\dfrac3{16}+\dfrac2{19}\right)<5\times0.71=3.55<4$.`,R`So $3<\text{the expression}<4$: the numbers are $\mathbf{3}$ and $\mathbf{4}$.`]) }
+];
+EX.t6=[
+ { level:'Level 1: Understanding', id:'h1', type:'frac', q:R`Calculate $\dfrac25+\dfrac13$.`, ans:'11/15',
+   sol:S([R`$\dfrac6{15}+\dfrac5{15}=\dfrac{11}{15}$.`]) },
+ { id:'h2', type:'frac', q:R`Calculate $\dfrac34-\dfrac16$.`, ans:'7/12',
+   sol:S([R`$\dfrac9{12}-\dfrac2{12}=\dfrac7{12}$.`]) },
+ { id:'h3', type:'frac', q:R`Calculate $\dfrac23\times\dfrac9{10}$.`, ans:'3/5',
+   sol:S([R`Cancel $3$ and $3$ ($9$ and $3$), and $2$ and $10$: $\dfrac1{1}\times\dfrac35=\dfrac35$.`]) },
+ { id:'h4', type:'frac', q:R`Calculate $\dfrac58\div\dfrac54$.`, ans:'1/2',
+   sol:S([R`$\dfrac58\times\dfrac45=\dfrac{20}{40}=\dfrac12$.`]) },
+ { id:'h5', type:'mc', q:R`What is the reciprocal of $\dfrac49$?`, opts:[R`$\dfrac94$`,R`$-\dfrac49$`,R`$\dfrac49$`,R`$4\dfrac19$`], ans:0,
+   sol:S([R`Flip it: $\dfrac94$. Check $\dfrac49\times\dfrac94=1$.`]) },
+ { id:'h6', type:'mc', q:R`Which of these is <strong>not</strong> equal to $1$?`, opts:[R`$\dfrac34+\dfrac14$`,R`$\dfrac56\div\dfrac56$`,R`$\dfrac12\times2$`,R`$\dfrac23\times\dfrac34$`], ans:3,
+   sol:S([R`$\dfrac23\times\dfrac34=\dfrac12$. The other three all equal $1$.`]) },
+ { id:'h7', type:'mc', q:R`Why was $\mathbb{Q}$ needed after $\mathbb{Z}$?`, opts:[R`Because $\mathbb{Z}$ is not closed under division: $3\div4$ is not an integer`,R`Because $\mathbb{Z}$ is not closed under addition`,R`Because $\mathbb{Z}$ has no negative numbers`,R`Because $\mathbb{Z}$ is not closed under multiplication`], ans:0,
+   sol:S([R`$\mathbb{Z}$ is closed under $+$, $-$ and $\times$. Division fails, and $\mathbb{Q}$ repairs this (for non-zero divisors).`]) },
+ { level:'Level 2: Fluency and application', id:'h8', type:'frac', q:P(R`Calculate $3\dfrac25+2\dfrac34$.`,R`Type it as an improper fraction.`), ans:'123/20',
+   sol:S([R`$\dfrac{17}5+\dfrac{11}4=\dfrac{68}{20}+\dfrac{55}{20}=\dfrac{123}{20}$ ($=6\dfrac3{20}$).`]) },
+ { id:'h9', type:'frac', q:P(R`Calculate $4\dfrac16-2\dfrac34$.`,R`Type it as a fraction.`), ans:'17/12',
+   sol:S([R`$\dfrac{25}6-\dfrac{11}4=\dfrac{50}{12}-\dfrac{33}{12}=\dfrac{17}{12}$.`]) },
+ { id:'h10', type:'frac', q:R`Calculate $\left(\dfrac34\right)^2\times\left(\dfrac23\right)^3$.`, ans:'1/6',
+   sol:S([R`$\dfrac9{16}\times\dfrac8{27}=\dfrac{72}{432}=\dfrac16$.`]) },
+ { id:'h11', type:'num', q:R`Find $\dfrac56$ of $\dfrac3{10}$ of $40$.`, ans:10,
+   sol:S([R`$\dfrac56\times\dfrac3{10}=\dfrac14$, and $\dfrac14\times40=\mathbf{10}$.`]) },
+ { id:'h12', type:'frac', q:R`Calculate $\dfrac{\frac12-\frac13}{\frac14+\frac16}$.`, ans:'2/5',
+   sol:S([R`Top: $\dfrac16$. Bottom: $\dfrac5{12}$.`,R`$\dfrac16\times\dfrac{12}5=\dfrac25$.`]) },
+ { id:'h13', type:'num', q:P(R`A bottle is $\dfrac35$ full. After $\dfrac13$ of the water is poured out, $120$ mL remain.`,R`<strong>Question:</strong> what is the capacity of the bottle in mL?`), ans:300,
+   sol:S([R`Remaining water: $\dfrac23\times\dfrac35=\dfrac25$ of the capacity.`,R`$\dfrac25$ is $120$, so $\dfrac15$ is $60$ and the capacity is $\mathbf{300}$ mL.`]) },
+ { id:'h14', type:'num', q:P(R`In a school, $\dfrac25$ of the students are in Year 7. Of the <strong>rest</strong>, $\dfrac14$ are in Year 8, and the remaining $90$ students are in Year 9.`,R`<strong>Question:</strong> how many students are in the school?`), ans:200,
+   sol:S([R`After Year 7: $\dfrac35$ remain. After Year 8: $\dfrac34\times\dfrac35=\dfrac9{20}$ remain.`,R`$\dfrac9{20}$ of the school is $90$, so $\dfrac1{20}$ is $10$ and the school has $\mathbf{200}$ students.`]) },
+ { id:'h15', type:'frac', q:R`Calculate $\dfrac16+\dfrac1{12}+\dfrac1{20}+\dfrac1{30}$.`, ans:'1/3',
+   sol:S([R`The terms are $\dfrac1{2\times3},\dfrac1{3\times4},\dfrac1{4\times5},\dfrac1{5\times6}$.`,R`Telescoping: $\dfrac12-\dfrac16=\dfrac13$.`]) },
+ { id:'h16', type:'frac', q:R`Calculate $\left(1-\dfrac13\right)\allowbreak\left(1-\dfrac14\right)\cdots\left(1-\dfrac1{20}\right)$.`, ans:'1/10',
+   sol:S([R`$\dfrac23\times\dfrac34\times\cdots\times\dfrac{19}{20}=\dfrac2{20}=\dfrac1{10}$.`]) },
+ { level:'Level 3: Challenge and smart thinking', id:'h17', type:'frac', q:R`Calculate $\dfrac1{1\times3}+\dfrac1{3\times5}+\dfrac1{5\times7}+\cdots+\dfrac1{19\times21}$.`, ans:'10/21',
+   sol:S([R`Each term is $\dfrac12\left(\dfrac1n-\dfrac1{n+2}\right)$ with $n=1,3,5,\ldots,19$.`,R`The sum is $\dfrac12\left(1-\dfrac1{21}\right)=\dfrac12\times\dfrac{20}{21}=\dfrac{10}{21}$.`]) },
+ { id:'h18', type:'set', q:P(R`Write $\dfrac1{20}$ as $\dfrac1a-\dfrac1b$ with $a<b<20$.`,R`Type $a,b$ separated by a comma.`), ans:'4,5',
+   sol:S([R`The divisors $4$ and $5$ of $20$ differ by $1$.`,R`$\dfrac1{20}=\dfrac5{20}-\dfrac4{20}=\dfrac14-\dfrac15$.`]) },
+ { id:'h19', type:'set', q:P(R`Which two adjacent whole numbers surround $6\times\left(\dfrac1{21}+\dfrac1{22}+\cdots+\dfrac1{30}\right)$?`,R`Type them, smaller first, separated by a comma.`), ans:'2,3',
+   sol:S([R`Split the ten terms into $\{21,\ldots,25\}$ and $\{26,\ldots,30\}$.`,R`Lower bound: replace each term by the last of its group: $\dfrac5{25}+\dfrac5{30}=\dfrac15+\dfrac16=\dfrac{11}{30}$, and $6\times\dfrac{11}{30}=2.2>2$.`,R`Upper bound: replace each by the first of its group: $\dfrac5{21}+\dfrac5{26}<0.43$, and $6\times0.43=2.58<3$.`,R`So the expression lies between $2$ and $3$.`]) },
+ { id:'h20', type:'num', q:P(R`A baker has some cookies. On each of $5$ days, day $k$, she gives away $k$ cookies and then $\dfrac16$ of the cookies that remain. After day $5$ none are left.`,R`<strong>Question:</strong> how many cookies did she start with?`), ans:25,
+   sol:S([R`Work backwards. Day 5: starts with $5$.`,R`Day 4: $\dfrac56r=5$, $r=6$, start $6+4=10$.`,R`Day 3: $\dfrac56r=10$, $r=12$, start $15$. Day 2: $r=18$, start $20$. Day 1: $r=24$, start $\mathbf{25}$.`,R`(Each day she gives exactly $5$ cookies: $5\times5=25$.)`]) },
+ { id:'h21', type:'frac', q:R`Calculate $\dfrac1{1+\dfrac1{1+\frac12}}$.`, ans:'3/5',
+   sol:S([R`Innermost: $1+\dfrac12=\dfrac32$. Reciprocal: $\dfrac23$.`,R`Next: $1+\dfrac23=\dfrac53$. Reciprocal: $\dfrac35$.`]) },
+ { id:'h22', type:'frac', q:R`Compute $$\dfrac{10+\dfrac1{15-\frac1{10}}}{15+\dfrac1{10-\frac1{15}}}$$`, ans:'2/3',
+   sol:S([R`$15-\dfrac1{10}=\dfrac{149}{10}$ and $10-\dfrac1{15}=\dfrac{149}{15}$.`,R`Top: $10+\dfrac{10}{149}=10\times\dfrac{150}{149}$. Bottom: $15+\dfrac{15}{149}=15\times\dfrac{150}{149}$.`,R`The ratio is $\dfrac{10}{15}=\dfrac23$.`]) },
+ { id:'h23', type:'frac', q:R`Calculate $\dfrac12-\dfrac14+\dfrac18-\dfrac1{16}+\dfrac1{32}-\dfrac1{64}$.`, ans:'21/64',
+   sol:S([R`Multiply by $64$: $32-16+8-4+2-1=21$.`,R`So the sum is $\dfrac{21}{64}$.`]) },
+ { id:'h24', type:'num', q:R`A number is multiplied by $\dfrac23$ and then divided by $\dfrac49$. The result is $18$. What was the number?`, ans:12,
+   sol:S([R`The two steps together are $\times\dfrac23\times\dfrac94=\times\dfrac32$.`,R`To undo, multiply by $\dfrac23$: $18\times\dfrac23=\mathbf{12}$.`]) },
+ { id:'h25', type:'num', q:R`Find $\dfrac23$ of $\dfrac34$ of $\dfrac45$ of $\cdots$ of $\dfrac{99}{100}$ of $5000$.`, ans:100,
+   sol:S([R`The product telescopes: $\dfrac23\times\dfrac34\times\cdots\times\dfrac{99}{100}=\dfrac2{100}=\dfrac1{50}$.`,R`$\dfrac1{50}\times5000=\mathbf{100}$.`]) }
+];
+const CONCEPTS={
+ adt:{label:'Adding and subtracting fractions',tab:'t1',where:'Tab 1, Theorem 1 and Techniques 1 and 2',
+   tips:['Only pieces of the <strong>same size</strong> can be counted together. Find the LCM of the denominators first.','Rewrite every fraction over that denominator, add or subtract the tops, keep the bottom, then simplify.','For mixed numbers, change to improper fractions, or borrow one whole as $\\dfrac bb$. Check that your answer is sensible in size.']},
+ mul:{label:'Multiplying fractions and chains',tab:'t2',where:'Tab 2, Theorems 3 and 4',
+   tips:['Multiply the tops and the bottoms, and <strong>cancel first</strong> to keep the numbers small.','A chain of operators is a product. Write the first and last few fractions and look for tops that cancel with the next bottom.','&ldquo;of&rdquo; means $\\times$. Multiplying by a number between $0$ and $1$ makes things smaller.']},
+ dvd:{label:'Dividing, reciprocals and complex fractions',tab:'t3',where:'Tab 3, Theorem 5 and Techniques 7 to 9',
+   tips:['Dividing by a fraction means multiplying by its <strong>reciprocal</strong>: flip the divisor, never the first fraction.','Check every division by multiplying the answer by the divisor.','For stacked fractions, simplify the inside first. Look for a <strong>common factor</strong> in the top and bottom before doing heavy arithmetic.']},
+ ord:{label:'Mixed calculations and order',tab:'t4',where:'Tab 4, Step 1',
+   tips:['Brackets first, then multiplication and division from left to right, then addition and subtraction. A fraction bar is a hidden bracket.','Write one operation per line and copy the rest unchanged.','When unsure, estimate first, so you can see if your answer is sensible.']},
+ sto:{label:'Fraction stories and working backwards',tab:'t4',where:'Tab 4, Steps 2 and 3',
+   tips:['Ask &ldquo;fraction of <em>what</em>?&rdquo;. A fraction of the remainder uses the <strong>kept</strong> fraction, and the kept fractions multiply.','Work backwards from the end: undo &ldquo;give $k$&rdquo; by adding $k$, and undo &ldquo;keep $\\dfrac pq$&rdquo; by multiplying by $\\dfrac qp$.','Always check by running the story forwards.']},
+ tel:{label:'Grouping, telescoping and Egyptian fractions',tab:'t5',where:'Tab 5, Steps 1 to 3',
+   tips:['Group denominators that are multiples of one number, factor out the common unit fraction, and evaluate the small bracket.','Split $\\dfrac1{n(n+k)}=\\dfrac1k\\left(\\dfrac1n-\\dfrac1{n+k}\\right)$ so that the terms cancel in pairs.','For alternating sums, multiply by the common denominator to get integers, then pair neighbours.']},
+ bnd:{label:'Sandwiching a sum between bounds',tab:'t5',where:'Tab 5, Step 4',
+   tips:['Split the terms into groups. Replace each term by the <em>smallest</em> in its group for a lower bound, and by the <em>biggest</em> for an upper bound.','You only need bounds that trap the answer between two consecutive whole numbers.','Always state both bounds, not just one.']}
+};
+const SKILLS={
+ U:{label:'Understand (definitions and properties)',tips:['Before choosing an answer, <strong>explain the idea in one full sentence</strong> in your own words, then match it to an option.']},
+ C:{label:'Compute (carry out a method)',tips:['Cover the worked example, redo it yourself, then compare line by line. <strong>Write every step</strong> rather than doing it in your head.']},
+ A:{label:'Apply (use it in a problem or context)',tips:['Underline what is <strong>given</strong> and what is <strong>asked</strong>, turn the story into a maths sentence, and only then calculate. Check that the answer makes sense in the story.']},
+ Rz:{label:'Reason (multi-step and challenge problems)',tips:['Break the problem into small steps. After each step ask &ldquo;what does this tell me?&rdquo; and test a small case before the big one.']}
+};
+const TAGS={
+ t1q1:['adt','C'],t1q2:['adt','C'],t1q3:['adt','C'],t1q4:['adt','C'],t1q5:['adt','C'],t1q6:['adt','U'],
+ t1q7:['adt','C'],t1q8:['adt','C'],t1q9:['adt','C'],t1q10:['adt','C'],
+ t1q11:['adt','Rz'],t1q12:['adt','Rz'],t1q13:['adt','U'],t1q14:['adt','A'],t1q15:['adt','A'],
+ t2q1:['mul','C'],t2q2:['mul','C'],t2q3:['mul','C'],t2q4:['mul','C'],t2q5:['mul','C'],t2q6:['mul','U'],
+ t2q7:['mul','C'],t2q8:['mul','A'],t2q9:['mul','Rz'],t2q10:['mul','Rz'],t2q11:['mul','Rz'],t2q12:['mul','Rz'],
+ t2q13:['mul','A'],t2q14:['mul','A'],t2q15:['mul','C'],
+ t3q1:['dvd','C'],t3q2:['dvd','C'],t3q3:['dvd','C'],t3q4:['dvd','C'],t3q5:['dvd','C'],t3q6:['dvd','A'],
+ t3q7:['dvd','U'],t3q8:['dvd','U'],t3q9:['dvd','C'],t3q10:['dvd','A'],t3q11:['dvd','A'],
+ t3q12:['dvd','C'],t3q13:['dvd','C'],t3q14:['dvd','Rz'],
+ t4q1:['ord','C'],t4q2:['ord','C'],t4q3:['ord','C'],t4q4:['ord','C'],t4q5:['ord','U'],
+ t4q6:['sto','A'],t4q7:['sto','A'],t4q8:['sto','A'],t4q9:['sto','A'],t4q10:['sto','Rz'],
+ t4q11:['sto','U'],t4q12:['sto','Rz'],t4q13:['sto','Rz'],t4q14:['sto','Rz'],
+ t5q1:['tel','C'],t5q2:['tel','C'],t5q3:['tel','C'],t5q4:['tel','Rz'],t5q5:['tel','C'],
+ t5q6:['tel','C'],t5q7:['tel','C'],t5q8:['tel','Rz'],t5q9:['tel','U'],t5q10:['tel','Rz'],
+ t5q11:['tel','C'],t5q12:['tel','Rz'],t5q13:['bnd','C'],t5q14:['bnd','Rz'],
+ h1:['adt','C'],h2:['adt','C'],h3:['mul','C'],h4:['dvd','C'],h5:['dvd','U'],h6:['ord','U'],h7:['dvd','U'],
+ h8:['adt','C'],h9:['adt','C'],h10:['mul','C'],h11:['mul','A'],h12:['dvd','C'],h13:['sto','A'],h14:['sto','A'],h15:['tel','C'],h16:['mul','Rz'],
+ h17:['tel','Rz'],h18:['tel','Rz'],h19:['bnd','Rz'],h20:['sto','Rz'],h21:['dvd','C'],h22:['dvd','Rz'],h23:['tel','C'],h24:['dvd','A'],h25:['mul','Rz']
+};
+const TAB_NAMES={t1:'Tab 1 Adding and Subtracting',t2:'Tab 2 Multiplying',t3:'Tab 3 Dividing and Reciprocals',t4:'Tab 4 Mixed Calculations and Stories',t5:'Tab 5 Smart Thinking',t6:'Tab 6 Homework'};
+
+/* ============ EXERCISE ENGINE ============ */
+const EXMAP={}, ST={};
+const now=()=>Date.now()+(window.__skew||0);
+function normSet(s){
+  s=cleanNum(s).toLowerCase().trim();
+  if(/∅|empty|^\{\s*\}$/.test(s)) return '';
+  s=s.replace(/[{}\s]/g,''); const arr=s.split(',').filter(x=>x!==''); arr.sort(sorter); return arr.join(',');
+}
+function parseFact(s){
+  s=String(s).toLowerCase().replace(/[×x·\*]/g,'*').replace(/²/g,'^2').replace(/³/g,'^3').replace(/\s/g,'');
+  if(!s) return null; const m={};
+  for(const t of s.split('*')){ const mm=t.match(/^(\d+)(?:\^(\d+))?$/); if(!mm) return null; const p=+mm[1], k=mm[2]?+mm[2]:1; m[p]=(m[p]||0)+k; }
+  return m;
+}
+function sameFact(a,b){ const ka=Object.keys(a), kb=Object.keys(b); return ka.length===kb.length && ka.every(k=>a[k]===b[k]); }
+
+/* live LaTeX preview of a typed factorisation */
+function factToLatex(raw){
+  const s0=String(raw).trim(); if(!s0) return {state:'empty'};
+  let t=s0.toLowerCase().replace(/[×x·]/g,'*').replace(/²/g,'^2').replace(/³/g,'^3').replace(/\s/g,'');
+  const tm=t.match(/[*^]+$/); let dang='';
+  if(tm){ if(tm[0].length>1) return {state:'bad'}; dang=tm[0]; t=t.slice(0,-1); }
+  if(!t) return {state:'bad'};
+  const out=[], bases=[];
+  for(const p of t.split('*')){ const m=p.match(/^(\d+)(?:\^(\d+))?$/); if(!m) return {state:'bad'}; bases.push(+m[1]); out.push(m[2]!==undefined? m[1]+'^{'+m[2]+'}' : m[1]); }
+  if(dang==='^') out[out.length-1]+='^{\\square}';
+  let tex=out.join('\\times ');
+  if(dang==='*') tex+='\\times\\,\\square';
+  const notPrime=[...new Set(bases.filter(b=>!isPrime(b)))];
+  return {state:'ok',tex,notPrime};
+}
+const _pt={};
+function factPreview(id){
+  const el=document.getElementById('prev-'+id), inp=document.getElementById('inp-'+id); if(!el||!inp) return;
+  const r=factToLatex(inp.value); let h='<span class="lab">Preview</span>';
+  if(r.state==='empty') h+='<span class="msg">Your answer will appear here as you type, for example $2^3\\times3\\times5$.</span>';
+  else if(r.state==='bad') h+='<span class="msg">This cannot be read yet. Use numbers, <kbd class="k">^</kbd> and <kbd class="k">*</kbd> only.</span>';
+  else { h+='<span class="text-lg">$'+r.tex+'$</span>'; if(r.notPrime.length) h+='<span class="block text-xs text-amber-700 font-semibold mt-1">Not all factors are prime yet: '+r.notPrime.map(b=>'$'+b+'$').join(', ')+' can be split further.</span>'; }
+  el.innerHTML=h; clearTimeout(_pt[id]); _pt[id]=setTimeout(()=>typeset(el),120);
+}
+
+function exHTML(e,n){
+  let inp='';
+  const enter=`onkeydown="if(event.key==='Enter')checkEx('${e.id}')"`;
+  if(e.type==='num') inp=`<input type="text" inputmode="decimal" class="inp" id="inp-${e.id}" placeholder="Your answer" ${enter}>`;
+  else if(e.type==='set') inp=`<input type="text" class="inp" id="inp-${e.id}" placeholder="e.g. 2, 3, 5" ${enter}><p class="text-xs text-slate-500 mt-1">Type the elements separated by commas.</p>`;
+  else if(e.type==='fact') inp=`<input type="text" class="inp" id="inp-${e.id}" placeholder="Type your factorisation" oninput="factPreview('${e.id}')" ${enter}><p class="text-xs text-slate-500 mt-1">Use <kbd class="k">^</kbd> for a power and <kbd class="k">*</kbd> for $\\times$. Primes only.</p><div class="fprev" id="prev-${e.id}"></div>`;
+  else if(e.type==='text') inp=`<input type="text" class="inp" id="inp-${e.id}" placeholder="Your answer" ${enter}>`;
+  else if(e.type==='frac') inp=`<input type="text" class="inp" id="inp-${e.id}" placeholder="e.g. 3/4" oninput="fracPreview('${e.id}')" ${enter}><p class="text-xs text-slate-500 mt-1">Type a fraction as <kbd class="k">a/b</kbd> (or a whole number).${e.simp===false?'':' Give it in simplest form.'}</p><div class="fprev" id="prev-${e.id}"></div>`;
+  else if(e.type==='mc') inp=e.opts.map((o,i)=>`<button class="opt" id="opt-${e.id}-${i}" onclick="pickOpt('${e.id}',${i})">${o}</button>`).join('');
+  return `<div class="ex-card" id="card-${e.id}" onfocusin="markSeen('${e.id}')" onclick="markSeen('${e.id}')"><div class="flex items-start gap-3"><div class="qnum">${n}</div><div class="flex-1 min-w-0">
+    <div class="qtext text-slate-800 leading-relaxed">${e.q}</div>
+    <div class="mt-3">${inp}</div>
+    <div class="mt-3 flex items-center gap-3 flex-wrap"><button class="btn" id="btn-${e.id}" onclick="checkEx('${e.id}')">Check answer</button><span id="att-${e.id}" class="text-xs font-semibold text-slate-500">Attempts left: 3</span></div>
+    <div id="fb-${e.id}" class="mt-2 text-sm font-semibold"></div>
+    <div id="sol-${e.id}" class="hidden mt-3 sol-box"><h4 class="font-bold text-slate-800 mb-1" id="solh-${e.id}">Step-by-step solution</h4>${e.sol}</div>
+  </div></div></div>`;
+}
+function markSeen(id){ const st=ST[id]; if(st && !st.t0 && !st.done){ st.t0=st.last=now(); } }
+function mountEx(key){
+  const box=document.getElementById('ex-'+key); let h='', lv='', n=0;
+  EX[key].forEach(e=>{ if(e.level&&e.level!==lv){ lv=e.level; h+=`<div class="lvl">${lv}</div>`; } e.lv=lv; n++; e.no=n; h+=exHTML(e,n); });
+  box.innerHTML=h;
+  EX[key].forEach(e=>{ EXMAP[e.id]=e; ST[e.id]={tries:0,done:false,pick:null,tab:key,correct:false,t0:null,last:null,log:[]}; });
+  if('IntersectionObserver' in window){
+    const io=new IntersectionObserver(es=>es.forEach(en=>{ if(en.isIntersecting && (en.intersectionRatio>=0.15 || en.intersectionRect.height>=180)) markSeen(en.target.id.slice(5)); }),{threshold:[0.05,0.15,0.3,0.5]});
+    box.querySelectorAll('.ex-card').forEach(c=>io.observe(c));
+  }
+}
+function pickOpt(id,i){ const st=ST[id]; if(st.done) return; markSeen(id); st.pick=i; EXMAP[id].opts.forEach((_,k)=>document.getElementById(`opt-${id}-${k}`).classList.toggle('sel',k===i)); }
+function checkEx(id){
+  const e=EXMAP[id], st=ST[id]; if(st.done) return;
+  const fb=document.getElementById('fb-'+id); let correct=false, ansText=''; const warn=m=>{ fb.className='mt-2 text-sm font-semibold text-amber-700'; fb.textContent=m; };
+  if(e.type==='num'){
+    const raw=document.getElementById('inp-'+id).value; const v=cleanNum(raw).replace(/[, ]/g,''); if(v===''||isNaN(Number(v))) return warn('Type a number first.');
+    ansText=raw.trim(); correct=Math.abs(Number(v)-e.ans)<1e-9;
+  } else if(e.type==='frac'){
+    const raw=document.getElementById('inp-'+id).value; const f=parseFrac(raw); if(!f) return warn('Type a fraction like 3/4, or a whole number.');
+    if(f.d===0) return warn('The denominator cannot be 0.');
+    if(f.d<0) return warn('Put any minus sign on the top. The bottom must be a positive number.');
+    const t=parseFrac(e.ans); ansText=raw.trim(); correct = f.n*t.d===f.d*t.n;
+    if(correct && e.simp!==false && gcd2(f.n,f.d)!==1) return warn('That fraction has the right value, but it is not in simplest form yet. Simplify it and try again (this does not use up an attempt).');
+  } else if(e.type==='set'){
+    const v=document.getElementById('inp-'+id).value; if(v.trim()==='') return warn('Type your answer first.'); ansText=v.trim(); correct=normSet(v)===normSet(e.ans);
+  } else if(e.type==='fact'){
+    const v=document.getElementById('inp-'+id).value; if(v.trim()==='') return warn('Type your answer first.');
+    const pf=parseFact(v); if(!pf) return warn('This cannot be read yet. Use numbers, ^ and * only (see the preview).');
+    ansText=v.trim(); correct = sameFact(pf, parseFact(e.ans)) && Object.keys(pf).every(k=>isPrime(+k));
+  } else if(e.type==='text'){
+    const v=document.getElementById('inp-'+id).value.toLowerCase().replace(/[^a-z0-9]/g,''); if(v==='') return warn('Type your answer first.'); ansText=v; correct=e.ans.includes(v);
+  } else if(e.type==='mc'){
+    if(st.pick===null) return warn('Choose an option first.'); ansText=String(e.opts[st.pick]); correct=st.pick===e.ans;
+  }
+  const t=now(); if(!st.t0){ st.t0=st.last=t; }
+  st.log.push({dt:t-st.last, ans:ansText, ok:correct}); st.last=t;
+  st.tries++; const left=3-st.tries; document.getElementById('att-'+id).textContent='Attempts left: '+Math.max(left,0);
+  if(correct) finishEx(id,true); else if(left<=0) finishEx(id,false);
+  else { fb.className='mt-2 text-sm font-semibold text-red-700'; fb.textContent='Not quite. Try again: '+left+' attempt'+(left===1?'':'s')+' left.'; const c=document.getElementById('card-'+id); c.classList.add('bad'); setTimeout(()=>{ if(!st.done) c.classList.remove('bad'); },900); }
+}
+function finishEx(id,ok){
+  const e=EXMAP[id], st=ST[id]; st.done=true; st.correct=ok;
+  const card=document.getElementById('card-'+id), fb=document.getElementById('fb-'+id), sol=document.getElementById('sol-'+id);
+  card.classList.remove('bad'); if(ok) card.classList.add('ok');
+  fb.className='mt-2 text-sm font-bold '+(ok?'text-emerald-700':'text-red-700');
+  { const pts=ok?4-st.tries:0; fb.textContent= ok?`Correct! You earned ${pts} point${pts>1?'s':''} (correct on attempt ${st.tries} of 3).`:'All 3 attempts used: 0 points. Study the full solution below.'; }
+  sol.classList.remove('hidden'); if(!ok) sol.classList.add('fail');
+  document.getElementById('solh-'+id).textContent= ok?'Full solution (compare with your method)':'Full step-by-step solution';
+  document.getElementById('btn-'+id).disabled=true;
+  if(e.type==='mc') e.opts.forEach((_,k)=>{ const b=document.getElementById(`opt-${id}-${k}`); b.disabled=true; b.classList.remove('sel'); if(k===e.ans) b.classList.add('right'); else if(k===st.pick) b.classList.add('wrong'); });
+  else document.getElementById('inp-'+id).disabled=true;
+  typeset(sol); refreshProgress();
+}
+let reportUnlocked=false;
+function allDone(){ return Object.keys(EX).every(k=>EX[k].every(e=>ST[e.id]&&ST[e.id].done)); }
+function refreshProgress(){
+  let done=0,total=0;
+  Object.keys(EX).forEach(k=>{ let d=0; EX[k].forEach(e=>{ total++; if(ST[e.id]&&ST[e.id].done){done++;d++;} }); const b=document.querySelector('.tab-link[data-tab="'+k+'"]'); if(b) b.classList.toggle('tab-done',d===EX[k].length); });
+  document.getElementById('prog-count').textContent=done; document.getElementById('prog-total').textContent=total;
+  let c=0,r=0; EX.t6.forEach(e=>{ if(ST[e.id].done){ ST[e.id].correct?c++:r++; } });
+  document.getElementById('hw-score').textContent=`Homework status: ${c} correct, ${r} revealed after 3 attempts, ${EX.t6.length-c-r} remaining`;
+  const ready=allDone(); const lab=document.getElementById('t7-label');
+  if(lab) lab.textContent='7. Learning Report';
+  if(ready && !reportUnlocked){ reportUnlocked=true; showToast(); }
+  if(document.getElementById('t7').classList.contains('active')) buildReport();
+}
+function showToast(){
+  const t=document.createElement('div'); t.className='toast no-print'; t.id='report-toast';
+  t.innerHTML='<strong>All questions finished.</strong> Your Learning Report is ready.<div class="mt-2"><button class="btn" style="background:#fff;color:#1c2230" onclick="document.getElementById(\'report-toast\').remove();openTab(null,\'t7\')">View my report</button></div>';
+  document.body.appendChild(t);
+}
+
+/* ============ LEARNING REPORT ============ */
+const EFFORT={
+ flu:{label:'Secure',long:'Correct first time',cls:'b-flu',score:1},
+ per:{label:'Persistent',long:'Corrected with real thought between attempts',cls:'b-per',score:0.8},
+ gue:{label:'Guess-and-check',long:'Quick retries, close to guessing',cls:'b-gue',score:0.45},
+ rus:{label:'Rushed',long:'Used the attempts quickly to reach the solution',cls:'b-rus',score:0},
+ str:{label:'Needs support',long:'Real effort, but the idea is not secure yet',cls:'b-str',score:0.2}
+};
+function thrFor(e){
+  const base={mc:4,num:7,set:9,fact:10,text:6,frac:8}[e.type]||7; const tg=TAGS[e.id]||[]; let f=1;
+  if(tg[1]==='Rz') f=1.5; else if(tg[1]==='A') f=1.25;
+  if(/Level 2/.test(e.lv||'')) f*=1.2; if(/Level 3/.test(e.lv||'')) f*=1.5;
+  return base*f*1000;
+}
+function analyzeQ(e){
+  const st=ST[e.id], thr=thrFor(e), L=st.log, n=L.length, quick=L.map(a=>a.dt<thr);
+  const norm=a=>String(a).toLowerCase().replace(/\s/g,'');
+  const wrong=L.filter(a=>!a.ok); const repeated=wrong.length>1 && new Set(wrong.map(a=>norm(a.ans))).size<wrong.length;
+  let key;
+  if(st.correct){ if(n===1) key='flu'; else { const qr=quick.slice(1).filter(Boolean).length; key= qr===0?'per':'gue'; } }
+  else { const q=quick.filter(Boolean).length; key= q===n?'rus' : q>=2?'gue':'str'; }
+  const tg=TAGS[e.id]||['smart','C'];
+  return {id:e.id, tab:st.tab, no:e.no, concept:tg[0], skill:tg[1], n, ok:st.correct, key, repeated, score:EFFORT[key].score, pts:(st.correct?4-n:0), log:L, thr};
+}
+function aggregate(rows){
+  const n=rows.length; if(!n) return null;
+  const sum=f=>rows.reduce((a,r)=>a+f(r),0);
+  const first=rows.filter(r=>r.ok&&r.n===1).length, rev=rows.filter(r=>!r.ok).length;
+  const rush=rows.filter(r=>r.key==='rus'||r.key==='gue').length;
+  const pts=sum(r=>r.pts), score=pts/(3*n);
+  const status= score>=0.8?'sec': score>=0.5?'dev':'need';
+  const by=[0,1,2,3].map(p=>rows.filter(r=>r.pts===p).length);
+  return {n, first, rev, rush, att:sum(r=>r.n)/n, score, pts, max:3*n, by, status, habit: rush/n>=0.34, str: rows.filter(r=>r.key==='str').length};
+}
+const STAT={sec:['Secure','b-sec'],dev:['Developing','b-dev'],need:['Needs support','b-need']};
+function pct(x){ return Math.round(x*100)+'%'; }
+function secs(ms){ return (ms/1000).toFixed(ms<10000?1:0)+'s'; }
+/* ============ KNOWLEDGE MAP (V2) ============ */
+const KM_NODES={
+ adt:[90,175,'Adding and subtracting'], mul:[290,70,'Multiplying and chains'], dvd:[290,300,'Dividing and reciprocals'],
+ ord:[490,175,'Mixed calculations'], sto:[690,70,'Stories and working backwards'], tel:[690,300,'Grouping and telescoping'],
+ bnd:[890,185,'Sandwiching sums']
+};
+const KM_EDGES=[
+ ['adt','mul','Both build on same-size pieces and simplest form'],
+ ['adt','dvd','Division is the undo of multiplication, and subtraction is the undo of addition'],
+ ['mul','dvd','Dividing by a fraction is multiplying by its reciprocal'],
+ ['mul','ord','Multiplication and division come before addition'],
+ ['dvd','ord','Complex fractions combine every operation'],
+ ['adt','ord','Addition and subtraction come last in the order'],
+ ['ord','sto','Stories are mixed calculations in disguise'],
+ ['dvd','sto','Undoing a step means dividing, or multiplying by the reciprocal'],
+ ['mul','tel','Telescoping products cancel tops against bottoms'],
+ ['adt','tel','Telescoping sums split one fraction into two'],
+ ['tel','bnd','Grouping terms is also how we bound a sum'],
+ ['adt','bnd','Bounds compare and add fractions of different sizes']
+];
+function kmWrap(s,n){ const w=s.split(' '), L=[]; let cur=''; w.forEach(x=>{ if((cur+' '+x).trim().length>n && cur){ L.push(cur); cur=x; } else cur=(cur+' '+x).trim(); }); if(cur) L.push(cur); return L; }
+function kmDownstream(c){ const out=new Set(), q=[c]; while(q.length){ const x=q.pop(); KM_EDGES.forEach(([a,b])=>{ if(a===x && !out.has(b)){ out.add(b); q.push(b); } }); } return [...out]; }
+function kmSupports(c){ const d=kmDownstream(c); if(!d.length) return ''; return `<p class="text-sm text-slate-700 mt-2"><strong>Why fix this first:</strong> this idea feeds ${d.map(x=>'<em>'+KM_NODES[x][2]+'</em>').join(', ')} on the knowledge map.</p>`; }
+function kmapHTML(agg){
+  const W=160, H=62;
+  const edge=(a,b)=>{
+    const [x1,y1]=KM_NODES[a], [x2,y2]=KM_NODES[b]; const dx=x2-x1, dy=y2-y1;
+    const t=Math.min((W/2)/Math.abs(dx||1e-9),(H/2)/Math.abs(dy||1e-9));
+    const sx=x1+dx*t, sy=y1+dy*t, ex=x2-dx*t-Math.sign(dx)*2, ey=y2-dy*t-Math.sign(dy)*2;
+    const risk=agg[a]&&agg[a].status==='need';
+    return `<line x1="${sx.toFixed(1)}" y1="${sy.toFixed(1)}" x2="${ex.toFixed(1)}" y2="${ey.toFixed(1)}" stroke="${risk?'#dc2626':'#64748b'}" stroke-width="${risk?2.6:2}" ${risk?'stroke-dasharray="7 5"':''} marker-end="url(#${risk?'kmr':'kmg'})"><title>${KM_NODES[a][2]} leads to ${KM_NODES[b][2]}</title></line>`;
+  };
+  let svg=`<svg viewBox="0 0 1010 390" style="min-width:780px;width:100%" role="img" aria-label="Knowledge map: how the ideas of this chapter connect, coloured by your score"><defs><marker id="kmg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#64748b"/></marker><marker id="kmr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#dc2626"/></marker></defs>`;
+  svg+=KM_EDGES.map(([a,b])=>edge(a,b)).join('');
+  Object.keys(KM_NODES).forEach(c=>{
+    const [x,y,label]=KM_NODES[c], g=agg[c]; const f=g?g.score:0, hue=Math.round(f*120);
+    const lines=kmWrap(label,19), total=lines.length+1, y0=y-(total*14)/2+11;
+    const stroke=g&&g.status==='need'?'#dc2626':`hsl(${hue},55%,32%)`;
+    svg+=`<g style="cursor:pointer" onclick="openTab(null,'${CONCEPTS[c].tab}')"><title>${CONCEPTS[c].label}: ${g?g.pts+' of '+g.max+' points':'no questions'}. Click to revisit ${CONCEPTS[c].where}.</title>
+      <rect x="${x-W/2}" y="${y-H/2}" width="${W}" height="${H}" rx="12" fill="hsl(${hue},70%,86%)" stroke="${stroke}" stroke-width="${g&&g.status==='need'?3.5:2}"/>`+
+      lines.map((l,i)=>`<text x="${x}" y="${y0+i*14}" text-anchor="middle" font-size="12" font-weight="700" fill="hsl(${hue},60%,16%)" font-family="Inter,Arial,sans-serif">${l}</text>`).join('')+
+      `<text x="${x}" y="${y0+lines.length*14}" text-anchor="middle" font-size="12" font-weight="800" fill="hsl(${hue},65%,22%)" font-family="Inter,Arial,sans-serif">${g?pct(f)+' ('+g.pts+'/'+g.max+')':'-'}</text></g>`;
+  });
+  svg+='</svg>';
+  const weak=Object.keys(KM_NODES).filter(c=>agg[c]&&agg[c].status==='need');
+  const mid=Object.keys(KM_NODES).filter(c=>agg[c]&&agg[c].status==='dev');
+  let note='';
+  if(weak.length){
+    note=`<div class="warn text-sm text-slate-800 mb-3"><p class="font-bold">Where to start</p><p class="mt-1">The red dashed arrows leave a concept with a low score. Ideas further along those arrows are built on it, so improve the <strong>earliest</strong> red concept first: ${weak.map(c=>'<em>'+KM_NODES[c][2]+'</em>').join(', ')}.</p></div>`;
+  } else if(mid.length){
+    note=`<div class="key text-sm text-slate-800 mb-3"><strong>No concept is in the red.</strong> The amber-looking ones (${mid.map(c=>'<em>'+KM_NODES[c][2]+'</em>').join(', ')}) are the best place to gain more points.</div>`;
+  } else {
+    note=`<div class="key text-sm text-slate-800 mb-3"><strong>The whole network is green.</strong> Every idea is secure, and the ideas that depend on each other support each other.</div>`;
+  }
+  const legend=`<div class="flex items-center gap-2 flex-wrap text-xs text-slate-600 mb-2"><span>Node colour = your score:</span><span class="kmswatch" style="background:hsl(0,70%,86%)">low</span><span class="kmswatch" style="background:hsl(60,70%,86%)">middle</span><span class="kmswatch" style="background:hsl(120,70%,86%)">high</span><span>Arrow A &rarr; B means &ldquo;B builds on A&rdquo;. Click a concept to revisit it.</span></div>`;
+  const how=`<details class="mt-2"><summary class="cursor-pointer font-bold text-slate-800 text-sm">How the ideas connect</summary><ul class="list-disc pl-6 text-sm text-slate-700 mt-2 grid md:grid-cols-2 gap-x-6 gap-y-1">${KM_EDGES.map(([a,b,r])=>`<li><strong>${KM_NODES[a][2]} &rarr; ${KM_NODES[b][2]}:</strong> ${r}.</li>`).join('')}</ul></details>`;
+  return `<h3 class="text-lg font-bold text-slate-800 mt-2 mb-2">Your knowledge map</h3><p class="text-sm text-slate-600 mb-2">The ideas of this chapter form a network. Each box is a concept, coloured by how many points you earned on its questions. Arrows show which idea builds on which.</p>${legend}<div class="card mb-3 overflow-x-auto">${svg}</div>${note}${how}`;
+}
+/* ============ SCORE (V2) ============ */
+function scoreHTML(rows,A){
+  const tot=rows.length, max=3*tot, st=STAT[A.status];
+  const cols=['#dc2626','#d97706','#0891b2','#059669'], labs=['0 points: not solved in 3 attempts','1 point: correct on attempt 3','2 points: correct on attempt 2','3 points: correct on attempt 1'];
+  let h=`<h3 class="text-lg font-bold text-slate-800 mt-6 mb-2">Your score</h3><div class="card mb-3">
+   <p class="text-sm text-slate-700 mb-3"><strong>How points work.</strong> Each question is worth up to <strong>3 points</strong>: <strong>3</strong> if you are correct on the first attempt, <strong>2</strong> on the second, <strong>1</strong> on the third, and <strong>0</strong> if all three attempts fail. Points show how securely you knew the idea. The effort check below shows <em>how</em> you worked.</p>
+   <div class="flex items-center gap-4 flex-wrap mb-3"><div class="rp-tile" style="min-width:13rem"><div class="v">${A.pts} / ${max}</div><div class="l">total points (${pct(A.score)})</div></div><div><span class="badge ${st[1]}">${st[0]}</span><div class="text-xs text-slate-600 mt-1">Secure from 80%, Developing from 50%</div></div></div>
+   <div class="rp-bar mb-2">${[3,2,1,0].filter(p=>A.by[p]).map(p=>`<div style="width:${A.by[p]/tot*100}%;background:${cols[p]}" title="${labs[p]}">${A.by[p]}</div>`).join('')}</div>
+   <div class="grid md:grid-cols-2 gap-x-6 gap-y-1 text-sm mb-3">${[3,2,1,0].map(p=>`<div><span class="pts p${p}">${p}</span> <strong>${A.by[p]}</strong> &nbsp;${labs[p].split(': ')[1]}</div>`).join('')}</div>
+   <table class="rp"><tr><th>Tab</th><th>Questions</th><th>Points</th><th>Score</th></tr>`;
+  Object.keys(EX).forEach(k=>{ const rs=rows.filter(r=>r.tab===k), p=rs.reduce((a,r)=>a+r.pts,0), m=3*rs.length, f=p/m, s=STAT[f>=0.8?'sec':f>=0.5?'dev':'need'];
+    h+=`<tr><td class="font-semibold">${TAB_NAMES[k]}</td><td>${rs.length}</td><td>${p} / ${m}</td><td>${pct(f)}<div class="meter mt-1"><div style="width:${f*100}%"></div></div></td></tr>`; });
+  return h+'</table></div>';
+}
+
+function reportPart(rows,title,note){
+  if(!rows.length) return `<h2 class="text-xl font-bold text-slate-800 mt-8 mb-2">${title}</h2><div class="card mb-3 text-slate-600">No questions finished in this part yet. ${note}</div>`;
+  const A=aggregate(rows), tot=rows.length;
+  const cnt={flu:0,per:0,gue:0,rus:0,str:0}; rows.forEach(r=>cnt[r.key]++);
+  const firstDt=rows.map(r=>r.log[0]?r.log[0].dt:0), avgThink=firstDt.reduce((a,b)=>a+b,0)/tot;
+  const habitShare=(cnt.rus+cnt.gue)/tot;
+  let h='';
+  h+=`<p class="text-slate-600 mb-4">This report is built automatically from what you did on the ${tot} questions you have finished in this part. It looks at <strong>what you got right</strong> and also at <strong>how you got there</strong>: how many attempts you used and whether each attempt showed real thinking. Timing is only a guide, so read the advice as suggestions, not a verdict.</p>`;
+  const concAggAll={}; Object.keys(CONCEPTS).forEach(c=>{ const rs=rows.filter(r=>r.concept===c); if(rs.length) concAggAll[c]=aggregate(rs); });
+  h+=kmapHTML(concAggAll);
+  h+=scoreHTML(rows,A);
+  h+='<h3 class="text-lg font-bold text-slate-800 mt-6 mb-2">At a glance</h3>';
+  h+=`<div class="grid grid-cols-2 md:grid-cols-5 gap-3 mb-5">
+    <div class="rp-tile"><div class="v">${tot}</div><div class="l">questions finished</div></div>
+    <div class="rp-tile"><div class="v">${pct(A.first/tot)}</div><div class="l">correct on the first attempt</div></div>
+    <div class="rp-tile"><div class="v">${A.att.toFixed(1)}</div><div class="l">average attempts per question</div></div>
+    <div class="rp-tile"><div class="v">${A.rev}</div><div class="l">solutions revealed after 3 attempts</div></div>
+    <div class="rp-tile"><div class="v">${secs(avgThink)}</div><div class="l">average thinking time before the first answer</div></div></div>`;
+  // effort
+  const order=['flu','per','gue','rus','str'], colors={flu:'#059669',per:'#0891b2',gue:'#d97706',rus:'#dc2626',str:'#7c3aed'};
+  h+=`<h3 class="text-lg font-bold text-slate-800 mb-2">1. Effort check: how you got your answers</h3><div class="card mb-3"><div class="rp-bar mb-3">${order.filter(k=>cnt[k]).map(k=>`<div style="width:${cnt[k]/tot*100}%;background:${colors[k]}" title="${EFFORT[k].label}">${cnt[k]}</div>`).join('')}</div>
+   <div class="grid md:grid-cols-2 gap-x-6 gap-y-1 text-sm">${order.map(k=>`<div><span class="badge ${EFFORT[k].cls}">${EFFORT[k].label}</span> <strong>${cnt[k]}</strong> &nbsp;${EFFORT[k].long}</div>`).join('')}</div></div>`;
+  if(habitShare>=0.2){
+    h+=`<div class="warn mb-4 text-sm text-slate-800"><p class="font-bold">Work habit to fix: slow down on retries</p><p class="mt-1">On ${cnt.rus+cnt.gue} of ${tot} questions (${pct(habitShare)}) your attempts came very quickly, one after another. The three attempts are there for <em>thinking</em>, not for trying the next answer. After a wrong answer, do this before you click again:</p>
+    <ol class="list-decimal pl-6 mt-1"><li>Re-read the question and underline what is asked.</li><li>Look back at the worked example in the tab and find the step you skipped.</li><li>Change something in your method, then answer.</li></ol></div>`;
+  } else if(cnt.rus+cnt.gue===0){
+    h+=`<div class="key mb-4 text-sm text-slate-800"><strong>Good work habits.</strong> You did not rush to a solution on any question. Where an answer was wrong, you took time between attempts.</div>`;
+  } else {
+    h+=`<div class="key mb-4 text-sm text-slate-800"><strong>Mostly steady.</strong> A few questions (${cnt.rus+cnt.gue}) had very quick retries. They are marked in the table below. Slow down on those and compare with the worked solution.</div>`;
+  }
+  // concept table
+  const concRows=Object.keys(CONCEPTS).map(c=>({c, rows:rows.filter(r=>r.concept===c)})).filter(x=>x.rows.length);
+  h+=`<h3 class="text-lg font-bold text-slate-800 mt-6 mb-2">2. Results by concept</h3><div class="card mb-3 overflow-x-auto"><table class="rp"><tr><th>Concept</th><th>Questions</th><th>Score</th><th>First attempt</th><th>Avg attempts</th><th>Effort flags</th><th>Understanding</th></tr>`;
+  const concAgg={};
+  concRows.forEach(({c,rows:rs})=>{ const g=aggregate(rs); concAgg[c]=g; const st=STAT[g.status];
+    h+=`<tr><td class="font-semibold">${CONCEPTS[c].label}</td><td>${g.n}</td><td>${g.pts} / ${g.max}<div class="meter mt-1"><div style="width:${g.score*100}%"></div></div></td><td>${g.first} of ${g.n}<div class="meter mt-1"><div style="width:${g.first/g.n*100}%"></div></div></td><td>${g.att.toFixed(1)}</td><td>${g.rush?`<span class="badge b-rus">${g.rush} quick</span>`:'<span class="text-slate-400">none</span>'}${g.str?` <span class="badge b-str">${g.str} struggled</span>`:''}</td><td><span class="badge ${st[1]}">${st[0]}</span></td></tr>`; });
+  h+='</table></div>';
+  // skills
+  h+=`<h3 class="text-lg font-bold text-slate-800 mt-6 mb-2">3. Results by skill</h3><div class="card mb-3 overflow-x-auto"><table class="rp"><tr><th>Skill</th><th>Questions</th><th>Score</th><th>First attempt</th><th>Avg attempts</th><th>Effort flags</th><th>Level</th></tr>`;
+  const skAgg={};
+  Object.keys(SKILLS).forEach(k=>{ const rs=rows.filter(r=>r.skill===k); if(!rs.length) return; const g=aggregate(rs); skAgg[k]=g; const st=STAT[g.status];
+    h+=`<tr><td class="font-semibold">${SKILLS[k].label}</td><td>${g.n}</td><td>${g.pts} / ${g.max}<div class="meter mt-1"><div style="width:${g.score*100}%"></div></div></td><td>${g.first} of ${g.n}<div class="meter mt-1"><div style="width:${g.first/g.n*100}%"></div></div></td><td>${g.att.toFixed(1)}</td><td>${g.rush?`<span class="badge b-rus">${g.rush} quick</span>`:'<span class="text-slate-400">none</span>'}</td><td><span class="badge ${st[1]}">${st[0]}</span></td></tr>`; });
+  h+='</table></div>';
+  // heat map
+  h+=`<p class="text-sm font-bold text-slate-700 mt-4 mb-1">Concept by skill (each cell: average score, number of questions)</p><div class="card mb-3 overflow-x-auto"><table class="rp heat"><tr><th>Concept</th>${Object.keys(SKILLS).map(k=>`<th>${SKILLS[k].label.split(' (')[0]}</th>`).join('')}</tr>`;
+  concRows.forEach(({c,rows:rs})=>{ h+=`<tr><td class="font-semibold">${CONCEPTS[c].label}</td>`+Object.keys(SKILLS).map(k=>{ const cell=rs.filter(r=>r.skill===k); if(!cell.length) return '<td class="h text-slate-300">&ndash;</td>'; const sc=cell.reduce((a,r)=>a+r.pts/3,0)/cell.length; const hue=Math.round(sc*120); return `<td class="h" style="background:hsl(${hue},70%,88%);color:hsl(${hue},60%,22%)">${Math.round(sc*100)}%<div class="text-xs font-semibold">${cell.length} q</div></td>`; }).join('')+'</tr>'; });
+  h+='</table></div>';
+  // study plan
+  const weak=concRows.map(x=>({c:x.c,g:concAgg[x.c]})).filter(x=>x.g.status!=='sec').sort((a,b)=>a.g.score-b.g.score);
+  h+=`<h3 class="text-lg font-bold text-slate-800 mt-6 mb-2">4. How to understand better: your study plan</h3>`;
+  if(!weak.length){
+    h+=`<div class="key text-sm text-slate-800 mb-3"><strong>Every concept looks secure.</strong> Next step: choose the skill with the lowest result in the table above and explain one solved <em>Reason</em> question aloud to a friend, step by step. Then try writing out the printable homework by hand.</div>`;
+  } else {
+    weak.forEach(({c,g})=>{ const cc=CONCEPTS[c], st=STAT[g.status];
+      h+=`<div class="card mb-3"><div class="flex items-center gap-2 flex-wrap mb-1"><span class="font-bold text-slate-800">${cc.label}</span><span class="badge ${st[1]}">${st[0]}</span><span class="text-xs text-slate-500">${g.first} of ${g.n} correct first time</span></div>`;
+      if(g.habit) h+=`<p class="text-sm text-amber-800 bg-amber-50 border-l-4 border-amber-400 rounded px-3 py-1 mb-2"><strong>First, slow down.</strong> Many attempts here were very quick, so the result may show haste more than a gap in understanding. Redo these questions carefully, writing each step.</p>`;
+      h+=`<ul class="list-disc pl-6 text-sm text-slate-700 space-y-1">${cc.tips.map(t=>`<li>${t}</li>`).join('')}</ul>
+        ${kmSupports(c)}<div class="mt-2 flex items-center gap-2 flex-wrap"><button class="btn-ghost" onclick="openTab(null,'${cc.tab}')">Revisit: ${cc.where}</button></div></div>`; });
+  }
+  const weakSk=Object.keys(skAgg).filter(k=>skAgg[k].status!=='sec');
+  if(weakSk.length){
+    h+=`<div class="card mb-3"><p class="font-bold text-slate-800 mb-1">Skill advice</p><ul class="list-disc pl-6 text-sm text-slate-700 space-y-1">${weakSk.map(k=>`<li><strong>${SKILLS[k].label}.</strong> ${SKILLS[k].tips[0]}</li>`).join('')}</ul></div>`;
+  }
+  // question table
+  h+=`<details class="mt-4"><summary class="cursor-pointer font-bold text-slate-800 text-lg">5. Question by question</summary><div class="card mt-2 overflow-x-auto"><table class="rp"><tr><th>Question</th><th>Concept</th><th>Skill</th><th>Attempts</th><th>Result</th><th>Points</th><th>Effort</th><th>Time before each attempt</th></tr>`;
+  rows.forEach(r=>{ const dots=r.log.map(a=>a.ok?'<span class="ok-t">&#10003;</span>':'<span class="bad-t">&#10007;</span>').join(' ');
+    h+=`<tr><td>${TAB_NAMES[r.tab].split(' ').slice(0,2).join(' ')} Q${r.no}</td><td>${CONCEPTS[r.concept].label}</td><td>${SKILLS[r.skill].label.split(' (')[0]}</td><td>${dots}</td><td>${r.ok?'Correct on attempt '+r.n:'Not solved (solution revealed)'}</td><td><span class="pts p${r.pts}">${r.pts} / 3</span></td><td><span class="badge ${EFFORT[r.key].cls}">${EFFORT[r.key].label}</span>${r.repeated?' <span class="text-xs text-slate-500">repeated the same wrong answer</span>':''}</td><td class="text-xs text-slate-600">${r.log.map(a=>secs(a.dt)).join(', ')}</td></tr>`; });
+  h+='</table></div></details>';
+  h+=``;
+  return `<h2 class="text-xl font-bold text-slate-800 mt-8 mb-2">${title}</h2><p class="text-sm text-slate-500 mb-3">${note}</p>`+h;
+}
+
+
+function isComp(e){ return e.tab==='t5' || /^Level 3/.test(e.lv||''); }
+function buildReport(){
+  const root=document.getElementById('report-root');
+  const all=[]; Object.keys(EX).forEach(k=>EX[k].forEach(e=>{ if(ST[e.id]&&ST[e.id].done){ const r=analyzeQ(e); r.comp=isComp(Object.assign({tab:k},e)); all.push(r); } }));
+  const nCore=Object.keys(EX).reduce((n,k)=>n+EX[k].filter(e=>!isComp(Object.assign({tab:k},e))).length,0), nAll=Object.keys(EX).reduce((n,k)=>n+EX[k].length,0);
+  const core=all.filter(r=>!r.comp), comp=all.filter(r=>r.comp);
+  let h=`<div class="card mb-3"><p class="text-slate-700">Your report grows as you work. It is built from the questions you have <strong>finished</strong> (correct, or all 3 attempts used): how many attempts you used, whether you made a real effort on each try, and which ideas are secure. Finished so far: <strong>${all.length} of ${nAll}</strong>.</p>
+  <p class="text-slate-700 mt-2">It has two parts. <strong>Part A</strong> is the core knowledge of this section (Tabs 1 to 4 and homework Levels 1 and 2). <strong>Part B</strong> is the competition side (Tab 5 Smart Thinking and homework Level 3). Your core result is not lowered by the competition questions.</p></div>`;
+  if(!all.length){ root.innerHTML=h+'<div class="card text-slate-600">Finish a few questions and come back: your report will start here.</div>'; return; }
+  h+=reportPart(core,'Part A · Core knowledge',`Tabs 1 to 4 and homework Levels 1 and 2 (${core.length} of ${nCore} finished).`);
+  h+=reportPart(comp,'Part B · Competition thinking',`Tab 5 Smart Thinking and homework Level 3 (${comp.length} of ${nAll-nCore} finished). These questions go beyond the core: treat this part as a challenge.`);
+  h+=`<div class="mt-5 flex gap-2 flex-wrap no-print"><button class="btn" onclick="window.print()">Print or save this report</button><button class="btn-ghost" onclick="openTab(null,'t6')">Back to homework</button></div>`;
+  root.innerHTML=h; typeset(root);
+}
+
+window.addEventListener('DOMContentLoaded',()=>{
+  Object.keys(EX).forEach(mountEx);
+  Object.keys(EXMAP).forEach(id=>{ if(!TAGS[id]) console.error('missing tag for '+id); else if(!CONCEPTS[TAGS[id][0]]) console.error('bad concept '+id); });
+  Object.keys(TAGS).forEach(id=>{ if(!EXMAP[id]) console.error('tag without question '+id); });
+  adUpdate(); amUpdate(); dvUpdate(); ckUpdate();
+  refreshProgress(); buildReport(); typeset();
+});
+</script>
+<!-- table-scroll-fix --><style id="tblfix">.katex{position:relative}.tblwrap{position:relative;display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}.tblwrap>table{display:table!important;overflow:visible!important;max-width:none!important}</style><script id="tblfix-js">(function(){function wrap(){document.querySelectorAll("table").forEach(function(t){var p=t.parentElement;if(!p||p.classList.contains("tblwrap"))return;var w=document.createElement("div");w.className="tblwrap";p.insertBefore(w,t);w.appendChild(t);});}function go(){wrap();new MutationObserver(wrap).observe(document.body,{childList:true,subtree:true});}if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",go);else go();})();</script><!-- end table-scroll-fix -->
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4572b9e5c4984cd3a0d53765770f398c"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
