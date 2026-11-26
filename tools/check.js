@@ -16,7 +16,7 @@ const SHOT_DIR = '/tmp/atlas-shots';
 
 function listPages(dir = ROOT, out = []) {
   for (const n of fs.readdirSync(dir)) {
-    if (n.startsWith('.') || n === 'node_modules' || n === 'tools' || n === 'tasks' || n === 'reports') continue;
+    if (n.startsWith('.') || n === 'node_modules' || n === 'tools' || n === 'tasks' || n === 'reports' || n === 'temp') continue;
     const p = path.join(dir, n);
     if (fs.statSync(p).isDirectory()) listPages(p, out);
     else if (n.endsWith('.html')) out.push(path.relative(ROOT, p));

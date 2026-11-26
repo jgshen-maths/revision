@@ -18,7 +18,7 @@ root = Path(__file__).resolve().parent
 updated = 0
 for f in sorted(root.rglob("*.html")):
     parts = f.relative_to(root).parts
-    if any(p.startswith(".") or p in ("node_modules", "tools", "tasks", "reports") for p in parts):
+    if any(p.startswith(".") or p in ("node_modules", "tools", "tasks", "reports", "temp") for p in parts):
         continue
     text = f.read_text(encoding="utf-8")
     if TOKEN in text:
