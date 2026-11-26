@@ -41,6 +41,8 @@ This is a public GitHub Pages site (deployed from `main`, root folder). Every pa
   `1-1-integers.html` is Section 1.1, … `gate.html` is the chapter's Horizon Gate (a reading page, not a lesson).
 - `inject_analytics.py` — adds the Cloudflare Web Analytics beacon to every page. Safe to run again (skips pages that have it).
 - `tools/check.js` — site checker (phone width, KaTeX errors, JavaScript errors, Home link, analytics, index links).
+- `tools/tblfix.py` — phone fix for lesson pages (tables scroll in their own box; KaTeX cannot widen the page). Run it on every new lesson page. Safe to run twice.
+- `temp/` — Mr Shen's source files for new lessons. **Never commit it** (it is in `.gitignore`).
 - `tasks/` — task cards (written by Claude). `reports/` — your reports and screenshots.
 
 ## 4. Commands (macOS, run from the repo root)
@@ -48,6 +50,7 @@ Setup, once per Mac:
 ```bash
 cd tools && npm install && npx playwright install chromium && cd ..
 ```
+For every new or replaced lesson page, first run the phone fix: `python3 tools/tblfix.py <page.html> ...` (prints `fixed:` or `already fixed:`).
 Add the analytics beacon to any new page (run before every commit that adds or replaces a page):
 ```bash
 python3 inject_analytics.py
