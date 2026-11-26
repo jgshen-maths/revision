@@ -1,5 +1,5 @@
 # T001 — Update README course list and run the first site check
-Status: ready
+Status: in review (PR #1)
 Size: S (≤ 15 min, plus one-time tool setup)
 Branch: task/T001-readme-and-site-check
 Run on: MacBook

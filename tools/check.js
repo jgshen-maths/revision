@@ -59,16 +59,17 @@ function serve() {
         document.querySelectorAll('details').forEach(d => d.open = true);
         const sw = document.documentElement.scrollWidth;
         const kerr = document.querySelectorAll('.katex-error').length;
-        const wide = [...document.querySelectorAll('body *')].filter(e => {
-          if (e.closest('.katex, svg') && e.tagName !== 'svg') return false;
-          const b = e.getBoundingClientRect(); if (!b.width) return false;
-          let a = e.parentElement; while (a) { const ov = getComputedStyle(a).overflowX; if (ov === 'auto' || ov === 'scroll' || ov === 'hidden') return false; a = a.parentElement; }
-          return b.right > 392;
-        }).slice(0, 3).map(e => e.tagName.toLowerCase() + (e.className && typeof e.className === 'string' ? '.' + e.className.split(' ')[0] : ''));
+        // elements that stick out past the phone edge and are not inside a narrower scroll box
+        const inScroll = e => { let a = e.parentElement; while (a && a !== document.body) { const ov = getComputedStyle(a).overflowX; if ((ov === 'auto' || ov === 'scroll' || ov === 'hidden') && a.getBoundingClientRect().right <= 392) return true; a = a.parentElement; } return false; };
+        const out = [...document.querySelectorAll('body *')].filter(e => { const b = e.getBoundingClientRect(); return b.width && b.right > 392 && !inScroll(e) && getComputedStyle(e).position !== 'fixed'; });
+        // keep the outermost offenders (their children are usually offenders too)
+        const top = out.filter(e => !out.includes(e.parentElement));
+        const desc = e => { let d = e.tagName.toLowerCase(); if (e.id) d += '#' + e.id; if (typeof e.className === 'string' && e.className.trim()) d += '.' + e.className.trim().split(/\s+/).slice(0, 2).join('.'); const k = e.closest('.katex') || e.querySelector('.katex'); const t = (k || e).textContent.replace(/\s+/g, ' ').trim().slice(0, 60); return `${d} (right edge ${Math.round(e.getBoundingClientRect().right)}px${k ? ', inside maths' : ''}) "${t}"`; };
+        const wide = top.slice(0, 4).map(desc);
         return { sw, kerr, wide };
       });
       const lab = tabs.length ? `tab ${i + 1}` : 'page';
-      if (r.sw > 392) probs.push(`${lab}: page is ${r.sw}px wide on a 390px phone (${r.wide.join(', ') || 'see screenshot'})`);
+      if (r.sw > 392) { probs.push(`${lab}: page is ${r.sw}px wide on a 390px phone`); r.wide.forEach(w => probs.push('    sticks out: ' + w)); }
       if (r.kerr) probs.push(`${lab}: ${r.kerr} KaTeX error(s)`);
       if (SHOTS) await pg.screenshot({ path: `${SHOT_DIR}/${p.replace(/[\/.]/g, '_')}_${i + 1}.png`, fullPage: true });
     }
