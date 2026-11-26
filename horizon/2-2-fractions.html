@@ -1,0 +1,1761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style id="tw">/*! tailwindcss v4.3.3 | MIT License | https://tailwindcss.com */
+@layer properties;
+@layer theme, base, components, utilities;
+@layer theme {
+  :root, :host {
+    --font-sans: "Avenir Next","Segoe UI",system-ui,sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
+    monospace;
+    --color-red-700: oklch(50.5% 0.213 27.518);
+    --color-amber-50: oklch(98.7% 0.022 95.277);
+    --color-amber-400: oklch(82.8% 0.189 84.429);
+    --color-amber-700: oklch(55.5% 0.163 48.998);
+    --color-amber-800: oklch(47.3% 0.137 46.201);
+    --color-emerald-700: oklch(50.8% 0.118 165.612);
+    --color-teal-50: #f1f3fb;
+    --color-teal-200: #c9d0ef;
+    --color-teal-600: #3b4fa8;
+    --color-teal-700: #33449a;
+    --color-teal-800: #2a3880;
+    --color-indigo-700: oklch(45.7% 0.24 277.023);
+    --color-slate-100: oklch(96.8% 0.007 247.896);
+    --color-slate-300: oklch(86.9% 0.022 252.894);
+    --color-slate-400: oklch(70.4% 0.04 256.788);
+    --color-slate-500: oklch(55.4% 0.046 257.417);
+    --color-slate-600: oklch(44.6% 0.043 257.281);
+    --color-slate-700: oklch(37.2% 0.044 257.287);
+    --color-slate-800: oklch(27.9% 0.041 260.031);
+    --spacing: 0.25rem;
+    --text-xs: 0.75rem;
+    --text-xs--line-height: calc(1 / 0.75);
+    --text-sm: 0.875rem;
+    --text-sm--line-height: calc(1.25 / 0.875);
+    --text-lg: 1.125rem;
+    --text-lg--line-height: calc(1.75 / 1.125);
+    --text-xl: 1.25rem;
+    --text-xl--line-height: calc(1.75 / 1.25);
+    --text-2xl: 1.5rem;
+    --text-2xl--line-height: calc(2 / 1.5);
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --leading-relaxed: 1.625;
+    --radius-lg: 0.5rem;
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --default-font-family: var(--font-sans);
+    --default-mono-font-family: var(--font-mono);
+  }
+}
+@layer base {
+  *, ::after, ::before, ::backdrop, ::file-selector-button {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0 solid;
+  }
+  html, :host {
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    tab-size: 4;
+    font-family: var(--default-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji');
+    font-feature-settings: var(--default-font-feature-settings, normal);
+    font-variation-settings: var(--default-font-variation-settings, normal);
+    -webkit-tap-highlight-color: transparent;
+  }
+  hr {
+    height: 0;
+    color: inherit;
+    border-top-width: 1px;
+  }
+  abbr:where([title]) {
+    -webkit-text-decoration: underline dotted;
+    text-decoration: underline dotted;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+  a {
+    color: inherit;
+    -webkit-text-decoration: inherit;
+    text-decoration: inherit;
+  }
+  b, strong {
+    font-weight: bolder;
+  }
+  code, kbd, samp, pre {
+    font-family: var(--default-mono-font-family, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace);
+    font-feature-settings: var(--default-mono-font-feature-settings, normal);
+    font-variation-settings: var(--default-mono-font-variation-settings, normal);
+    font-size: 1em;
+  }
+  small {
+    font-size: 80%;
+  }
+  sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  sub {
+    bottom: -0.25em;
+  }
+  sup {
+    top: -0.5em;
+  }
+  table {
+    text-indent: 0;
+    border-color: inherit;
+    border-collapse: collapse;
+  }
+  :-moz-focusring:where(:not(iframe)) {
+    outline: auto;
+  }
+  progress {
+    vertical-align: baseline;
+  }
+  summary {
+    display: list-item;
+  }
+  ol, ul, menu {
+    list-style: none;
+  }
+  img, svg, video, canvas, audio, iframe, embed, object {
+    display: block;
+    vertical-align: middle;
+  }
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+  button, input, select, optgroup, textarea, ::file-selector-button {
+    font: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    border-radius: 0;
+    background-color: transparent;
+    opacity: 1;
+  }
+  :where(select:is([multiple], [size])) optgroup {
+    font-weight: bolder;
+  }
+  :where(select:is([multiple], [size])) optgroup option {
+    padding-inline-start: 20px;
+  }
+  ::file-selector-button {
+    margin-inline-end: 4px;
+  }
+  ::placeholder {
+    opacity: 1;
+  }
+  @supports (not (-webkit-appearance: -apple-pay-button))  or (contain-intrinsic-size: 1px) {
+    ::placeholder {
+      color: currentcolor;
+      @supports (color: color-mix(in lab, red, red)) {
+        color: color-mix(in oklab, currentcolor 50%, transparent);
+      }
+    }
+  }
+  textarea {
+    resize: vertical;
+  }
+  ::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+  ::-webkit-date-and-time-value {
+    min-height: 1lh;
+    text-align: inherit;
+  }
+  ::-webkit-datetime-edit {
+    display: inline-flex;
+  }
+  ::-webkit-datetime-edit-fields-wrapper {
+    padding: 0;
+  }
+  ::-webkit-datetime-edit, ::-webkit-datetime-edit-year-field, ::-webkit-datetime-edit-month-field, ::-webkit-datetime-edit-day-field, ::-webkit-datetime-edit-hour-field, ::-webkit-datetime-edit-minute-field, ::-webkit-datetime-edit-second-field, ::-webkit-datetime-edit-millisecond-field, ::-webkit-datetime-edit-meridiem-field {
+    padding-block: 0;
+  }
+  ::-webkit-calendar-picker-indicator {
+    line-height: 1;
+  }
+  :-moz-ui-invalid {
+    box-shadow: none;
+  }
+  button, input:where([type='button'], [type='reset'], [type='submit']), ::file-selector-button {
+    appearance: button;
+  }
+  ::-webkit-inner-spin-button, ::-webkit-outer-spin-button {
+    height: auto;
+  }
+  [hidden]:where(:not([hidden='until-found'])) {
+    display: none !important;
+  }
+}
+@layer utilities {
+  .mt-1 {
+    margin-top: var(--spacing);
+  }
+  .mt-2 {
+    margin-top: calc(var(--spacing) * 2);
+  }
+  .mt-3 {
+    margin-top: calc(var(--spacing) * 3);
+  }
+  .mt-4 {
+    margin-top: calc(var(--spacing) * 4);
+  }
+  .mt-5 {
+    margin-top: calc(var(--spacing) * 5);
+  }
+  .mt-6 {
+    margin-top: calc(var(--spacing) * 6);
+  }
+  .mt-8 {
+    margin-top: calc(var(--spacing) * 8);
+  }
+  .mb-1 {
+    margin-bottom: var(--spacing);
+  }
+  .mb-2 {
+    margin-bottom: calc(var(--spacing) * 2);
+  }
+  .mb-3 {
+    margin-bottom: calc(var(--spacing) * 3);
+  }
+  .mb-4 {
+    margin-bottom: calc(var(--spacing) * 4);
+  }
+  .mb-5 {
+    margin-bottom: calc(var(--spacing) * 5);
+  }
+  .block {
+    display: block;
+  }
+  .flex {
+    display: flex;
+  }
+  .grid {
+    display: grid;
+  }
+  .hidden {
+    display: none;
+  }
+  .inline-block {
+    display: inline-block;
+  }
+  .table {
+    display: table;
+  }
+  .min-w-0 {
+    min-width: 0px;
+  }
+  .flex-1 {
+    flex: 1;
+  }
+  .shrink {
+    flex-shrink: 1;
+  }
+  .cursor-pointer {
+    cursor: pointer;
+  }
+  .list-decimal {
+    list-style-type: decimal;
+  }
+  .list-disc {
+    list-style-type: disc;
+  }
+  .grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+  .items-center {
+    align-items: center;
+  }
+  .items-start {
+    align-items: flex-start;
+  }
+  .gap-2 {
+    gap: calc(var(--spacing) * 2);
+  }
+  .gap-3 {
+    gap: calc(var(--spacing) * 3);
+  }
+  .gap-4 {
+    gap: calc(var(--spacing) * 4);
+  }
+  :where(.space-y-1 > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(var(--spacing) * var(--tw-space-y-reverse));
+    margin-block-end: calc(var(--spacing) * calc(1 - var(--tw-space-y-reverse)));
+  }
+  .gap-x-6 {
+    column-gap: calc(var(--spacing) * 6);
+  }
+  .gap-y-1 {
+    row-gap: var(--spacing);
+  }
+  .overflow-x-auto {
+    overflow-x: auto;
+  }
+  .rounded {
+    border-radius: 0.25rem;
+  }
+  .rounded-lg {
+    border-radius: var(--radius-lg);
+  }
+  .border-b-4 {
+    border-bottom-style: var(--tw-border-style);
+    border-bottom-width: 4px;
+  }
+  .border-l-4 {
+    border-left-style: var(--tw-border-style);
+    border-left-width: 4px;
+  }
+  .border-amber-400 {
+    border-color: var(--color-amber-400);
+  }
+  .border-teal-200 {
+    border-color: var(--color-teal-200);
+  }
+  .border-teal-600 {
+    border-color: var(--color-teal-600);
+  }
+  .bg-amber-50 {
+    background-color: var(--color-amber-50);
+  }
+  .bg-slate-100 {
+    background-color: var(--color-slate-100);
+  }
+  .bg-teal-50 {
+    background-color: var(--color-teal-50);
+  }
+  .p-3 {
+    padding: calc(var(--spacing) * 3);
+  }
+  .px-2 {
+    padding-inline: calc(var(--spacing) * 2);
+  }
+  .px-3 {
+    padding-inline: calc(var(--spacing) * 3);
+  }
+  .py-1 {
+    padding-block: var(--spacing);
+  }
+  .pl-5 {
+    padding-left: calc(var(--spacing) * 5);
+  }
+  .pl-6 {
+    padding-left: calc(var(--spacing) * 6);
+  }
+  .text-2xl {
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
+  }
+  .text-lg {
+    font-size: var(--text-lg);
+    line-height: var(--tw-leading, var(--text-lg--line-height));
+  }
+  .text-sm {
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
+  }
+  .text-xl {
+    font-size: var(--text-xl);
+    line-height: var(--tw-leading, var(--text-xl--line-height));
+  }
+  .text-xs {
+    font-size: var(--text-xs);
+    line-height: var(--tw-leading, var(--text-xs--line-height));
+  }
+  .leading-relaxed {
+    --tw-leading: var(--leading-relaxed);
+    line-height: var(--leading-relaxed);
+  }
+  .font-bold {
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+  }
+  .font-semibold {
+    --tw-font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
+  }
+  .text-amber-700 {
+    color: var(--color-amber-700);
+  }
+  .text-amber-800 {
+    color: var(--color-amber-800);
+  }
+  .text-emerald-700 {
+    color: var(--color-emerald-700);
+  }
+  .text-indigo-700 {
+    color: var(--color-indigo-700);
+  }
+  .text-red-700 {
+    color: var(--color-red-700);
+  }
+  .text-slate-300 {
+    color: var(--color-slate-300);
+  }
+  .text-slate-400 {
+    color: var(--color-slate-400);
+  }
+  .text-slate-500 {
+    color: var(--color-slate-500);
+  }
+  .text-slate-600 {
+    color: var(--color-slate-600);
+  }
+  .text-slate-700 {
+    color: var(--color-slate-700);
+  }
+  .text-slate-800 {
+    color: var(--color-slate-800);
+  }
+  .text-teal-700 {
+    color: var(--color-teal-700);
+  }
+  .text-teal-800 {
+    color: var(--color-teal-800);
+  }
+  .underline {
+    text-decoration-line: underline;
+  }
+  .ease-out {
+    --tw-ease: var(--ease-out);
+    transition-timing-function: var(--ease-out);
+  }
+  @media (width >= 48rem) {
+    .md\:grid-cols-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .md\:grid-cols-5 {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+  }
+}
+@property --tw-space-y-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-leading {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ease {
+  syntax: "*";
+  inherits: false;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-space-y-reverse: 0;
+      --tw-border-style: solid;
+      --tw-leading: initial;
+      --tw-font-weight: initial;
+      --tw-ease: initial;
+    }
+  }
+}
+</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Horizon · Section 2.2 · Fractions</title>
+
+
+<style>
+  body { font-family: 'Inter', system-ui, sans-serif; background-color: #f7f6fb; color: #0f172a; overflow-x: hidden; }
+  .tab-content { display: none; animation: fadeIn 0.4s ease-out; }
+  .tab-content.active { display: block; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+  input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; background: transparent; }
+  input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; height: 20px; width: 20px; border-radius: 50%; background: #3b4fa8; cursor: pointer; margin-top: -8px; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+  input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 6px; cursor: pointer; background: #cbd5e1; border-radius: 3px; }
+  .btn { background:#3b4fa8; color:#fff; font-weight:700; padding:.45rem 1rem; border-radius:.4rem; font-size:.875rem; transition:.15s; box-shadow:0 1px 2px rgba(0,0,0,.15); }
+  .btn:hover { background:#33449a; } .btn:disabled { background:#94a3b8; cursor:not-allowed; }
+  .btn-ghost { background:#fff; color:#33449a; border:2px solid #c9d0ef; font-weight:700; padding:.3rem .75rem; border-radius:.4rem; font-size:.8rem; transition:.15s; }
+  .btn-ghost:hover { background:#eef0fa; border-color:#3b4fa8; } .btn-ghost.on { background:#3b4fa8; color:#fff; border-color:#3b4fa8; }
+  .card { background:#fff; border:1px solid #e2e8f0; border-radius:.75rem; padding:1.25rem; }
+  .key { background:#eef0fa; border-left:5px solid #3b4fa8; border-radius:.5rem; padding:1rem 1.25rem; }
+  .warn { background:#fffbeb; border-left:5px solid #f59e0b; border-radius:.5rem; padding:1rem 1.25rem; }
+  .step-badge { display:inline-flex; align-items:center; justify-content:center; width:1.75rem; height:1.75rem; border-radius:9999px; background:#3b4fa8; color:#fff; font-weight:800; font-size:.85rem; flex-shrink:0; }
+  .ex-card { background:#fff; border:1px solid #cbd5e1; border-radius:.75rem; padding:1.1rem 1.25rem; margin-bottom:1rem; }
+  .ex-card.ok { border-color:#34d399; background:#f0fdf4; } .ex-card.bad { border-color:#fca5a5; background:#fef2f2; }
+  .qnum { width:2rem; height:2rem; border-radius:.5rem; background:#1c2230; color:#fff; font-weight:800; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .inp { border:2px solid #cbd5e1; border-radius:.4rem; padding:.45rem .7rem; font-family: ui-monospace, monospace; font-weight:700; width:100%; max-width:22rem; }
+  .inp:focus { outline:none; border-color:#3b4fa8; box-shadow:0 0 0 3px #c9d0ef; }
+  .opt { display:block; width:100%; text-align:left; border:2px solid #cbd5e1; background:#fff; border-radius:.5rem; padding:.5rem .8rem; margin-bottom:.4rem; font-size:.9rem; transition:.15s; }
+  .opt:hover { border-color:#3b4fa8; background:#eef0fa; } .opt.sel { border-color:#3b4fa8; background:#dde2f6; font-weight:700; }
+  .opt.right { border-color:#10b981; background:#d1fae5; } .opt.wrong { border-color:#ef4444; background:#fee2e2; }
+  .chip { display:inline-flex; align-items:center; justify-content:center; min-width:2.6rem; height:2.4rem; padding:0 .5rem; border:2px solid #cbd5e1; border-radius:.5rem; background:#fff; font-weight:700; cursor:pointer; transition:.15s; user-select:none; }
+  .chip:hover { border-color:#3b4fa8; background:#eef0fa; transform:translateY(-2px); }
+  .chip.selA { background:#c9d0ef; border-color:#3b4fa8; color:#1c2230; } .chip.selB { background:#fde68a; border-color:#d97706; color:#78350f; }
+  .chip.pos { background:#ecfeff; border-color:#22d3ee; color:#155e75; } .chip.neg { background:#fff1f2; border-color:#fb7185; color:#9f1239; }
+  .chip.pick { outline:4px solid #f59e0b; }
+  .chip.static { cursor:default; } .chip.static:hover { transform:none; }
+  .sol-box { background:#f0fdf4; border:1px solid #bbf7d0; border-radius:.6rem; padding:1rem 1.2rem; } .sol-box.fail { background:#eef0fa; border-color:#c9d0ef; }
+  .lvl { background:#1c2230; color:#fff; border-radius:.6rem; padding:.6rem 1rem; font-weight:800; margin:1.5rem 0 .8rem; }
+  .tab-done::after { content:" ✓"; color:#10b981; }
+  .ok-t { color:#047857; font-weight:700; } .bad-t { color:#b91c1c; font-weight:700; }
+  table.tb { border-collapse:collapse; font-size:.85rem; } table.tb th, table.tb td { border:1px solid #cbd5e1; padding:.35rem .6rem; text-align:center; }
+  table.tb th { background:#eef0fa; }
+  .tech { background:#fff; border:1px solid #c9d0ef; border-left:6px solid #3b4fa8; border-radius:.6rem; padding:1rem 1.2rem; margin-bottom:1rem; }
+  .tech .tt { font-weight:800; color:#33449a; margin-bottom:.35rem; }
+  .eg { background:#f8fafc; border:1px dashed #94a3b8; border-radius:.5rem; padding:.6rem .9rem; margin-top:.5rem; font-size:.9rem; }
+  .turn { display:inline-block; background:#fef3c7; color:#92400e; font-weight:800; font-size:.72rem; padding:.1rem .5rem; border-radius:9999px; margin-bottom:.4rem; }
+  .chip.sm { min-width:2.1rem; height:2rem; font-size:.8rem; padding:0 .3rem; }
+  .chip.prime { background:#c9d0ef; border-color:#3b4fa8; color:#1c2230; }
+  .chip.struck { background:#f7f6fb; color:#94a3b8; text-decoration:line-through; border-color:#e2e8f0; }
+  .chip.one { background:#fee2e2; border-color:#f87171; color:#991b1b; }
+  .chip.oddd { background:#fef3c7; border-color:#f59e0b; color:#78350f; }
+  .dot { width:1.15rem; height:1.15rem; border-radius:9999px; background:#5b6cc0; display:inline-block; }
+  .dot.b { background:#f59e0b; }
+  sup { font-size:.7em; }
+
+  /* ---- V2 additions ---- */
+  .qtext p { margin:.4rem 0; } .qtext p:first-child { margin-top:0; } .qtext p:last-child { margin-bottom:0; }
+  .qtext ul { list-style:disc; padding-left:1.4rem; margin:.4rem 0; } .qtext li { margin:.15rem 0; }
+  .qlabel { display:inline-block; background:#dde2f6; color:#1c2230; font-weight:800; font-size:.78rem; letter-spacing:.02em; padding:.1rem .65rem; border-radius:9999px; }
+  .hint { background:#fffbeb; border-left:4px solid #f59e0b; padding:.4rem .75rem; border-radius:.35rem; font-size:.88rem; color:#78350f; }
+  .codetab { margin:.2rem 0 .5rem; } .codetab td, .codetab th { min-width:2.1rem; padding:.2rem .35rem; }
+  .codetab th { background:#dde2f6; }
+  mjx-container[display="true"] { overflow-x:auto; overflow-y:hidden; max-width:100%; }
+  .fprev { margin-top:.55rem; border:2px dashed #a7b2e2; background:#eef0fa; border-radius:.5rem; padding:.4rem .8rem; min-height:3rem; max-width:34rem; }
+  .fprev .lab { font-size:.68rem; font-weight:800; color:#33449a; text-transform:uppercase; letter-spacing:.05em; display:block; }
+  .fprev .msg { font-size:.85rem; color:#475569; }
+  kbd.k { background:#f7f6fb; border:1px solid #94a3b8; border-bottom-width:3px; border-radius:.3rem; padding:0 .4rem; font-family:ui-monospace,monospace; font-weight:700; font-size:.85em; }
+  .proof { background:#fff; border:2px solid #33449a; border-radius:.75rem; padding:1.1rem 1.3rem; margin-bottom:1.2rem; }
+  .proof .ph { font-weight:800; color:#33449a; font-size:1.05rem; margin-bottom:.4rem; }
+  .proof .ps { margin:.7rem 0; padding-left:.9rem; border-left:4px solid #c9d0ef; font-size:.92rem; color:#1e293b; }
+  .proof .ps b.n { color:#33449a; }
+  .rp-tile { background:#f8fafc; border:1px solid #cbd5e1; border-radius:.6rem; padding:.7rem .9rem; text-align:center; }
+  .rp-tile .v { font-size:1.6rem; font-weight:800; color:#1c2230; } .rp-tile .l { font-size:.72rem; color:#475569; font-weight:700; }
+  .badge { display:inline-block; font-size:.72rem; font-weight:800; padding:.1rem .55rem; border-radius:9999px; white-space:nowrap; }
+  .b-sec { background:#d1fae5; color:#065f46; } .b-dev { background:#fef3c7; color:#92400e; } .b-need { background:#fee2e2; color:#991b1b; }
+  .b-flu { background:#d1fae5; color:#065f46; } .b-per { background:#cffafe; color:#155e75; } .b-gue { background:#fef3c7; color:#92400e; } .b-rus { background:#fee2e2; color:#991b1b; } .b-str { background:#ede9fe; color:#5b21b6; }
+  .rp-bar { display:flex; height:1.6rem; border-radius:.4rem; overflow:hidden; border:1px solid #cbd5e1; }
+  .rp-bar div { display:flex; align-items:center; justify-content:center; font-size:.72rem; font-weight:800; color:#fff; }
+  .meter { height:.6rem; background:#e2e8f0; border-radius:9999px; overflow:hidden; min-width:6rem; } .meter > div { height:100%; background:#3b4fa8; }
+  table.rp { border-collapse:collapse; width:100%; font-size:.84rem; } table.rp th, table.rp td { border-bottom:1px solid #e2e8f0; padding:.45rem .5rem; text-align:left; vertical-align:top; }
+  table.rp th { background:#eef0fa; font-size:.75rem; text-transform:uppercase; letter-spacing:.03em; color:#33449a; }
+  .heat td.h { text-align:center; font-weight:800; border-radius:.3rem; }
+  .toast { position:fixed; right:1rem; bottom:1rem; background:#1c2230; color:#fff; padding:.8rem 1.1rem; border-radius:.6rem; box-shadow:0 6px 18px rgba(0,0,0,.3); z-index:50; max-width:20rem; font-size:.9rem; }
+  @media print { body { background:#fff; } .toast, .tab-link, .no-print { display:none !important; } }
+
+  /* ---- 2.3 additions ---- */
+  .chip.struck-lite { opacity:.55; }
+  select.inp { background:#fff; }
+  /* ---- V2 additions: examples, proof drawers, scenes, scoring, map ---- */
+  .seeit { background:#eef2ff; border:2px solid #a5b4fc; border-radius:.6rem; padding:.7rem 1rem; margin:.7rem 0; }
+  .seeit .sh { font-weight:800; color:#3730a3; font-size:.95rem; margin-bottom:.35rem; }
+  .seg { margin:.55rem 0; padding:.1rem 0 .1rem .8rem; border-left:4px solid #6366f1; font-size:.9rem; color:#1e293b; }
+  .seg .et { font-weight:800; color:#312e81; margin-bottom:.15rem; } .seg p { margin:.25rem 0; }
+  details.pf { border:1px dashed #a7b2e2; border-radius:.5rem; background:#f8fafc; padding:.45rem .8rem; margin:.6rem 0 .2rem; }
+  details.pf > summary { cursor:pointer; font-weight:800; color:#33449a; font-size:.92rem; }
+  details.pf[open] > summary { margin-bottom:.4rem; }
+  .scene { border:2px solid #cbd5e1; border-radius:.75rem; padding:.9rem 1.15rem; margin-bottom:1rem; background:#fff; font-size:.92rem; color:#1e293b; }
+  .scene.bad { border-color:#fca5a5; background:#fef2f2; } .scene.good { border-color:#6ee7b7; background:#ecfdf5; }
+  .scene .sh { font-weight:800; color:#33449a; font-size:.78rem; text-transform:uppercase; letter-spacing:.05em; margin-bottom:.4rem; }
+  .scene.bad .sh { color:#b91c1c; } .scene .ask { margin-top:.7rem; background:#fffbeb; border-left:4px solid #f59e0b; padding:.45rem .75rem; border-radius:.35rem; }
+  .machine { font-family:ui-monospace,Menlo,Consolas,monospace; font-size:.8rem; background:#0f172a; color:#a7f3d0; border-radius:.45rem; padding:.45rem .75rem; margin:.5rem 0; overflow-x:auto; }
+  .mono { font-family:ui-monospace,Menlo,Consolas,monospace; font-weight:700; background:#e2e8f0; padding:0 .3rem; border-radius:.25rem; }
+  .pts { display:inline-block; min-width:2.6rem; text-align:center; font-weight:800; font-size:.75rem; padding:.1rem .45rem; border-radius:9999px; color:#fff; }
+  .pts.p3 { background:#059669; } .pts.p2 { background:#0891b2; } .pts.p1 { background:#d97706; } .pts.p0 { background:#dc2626; }
+  .kmswatch { padding:.05rem .6rem; border-radius:9999px; border:1px solid #94a3b8; font-weight:700; }
+
+  /* ---- 3.2 additions ---- */
+  .qlabel { display:inline-block; background:#4f46e5; color:#fff; font-weight:800; font-size:.7rem; letter-spacing:.04em; text-transform:uppercase; border-radius:.35rem; padding:.1rem .5rem; margin-bottom:.35rem; }
+  .mono { font-family:ui-monospace,Menlo,Consolas,monospace; background:#f7f6fb; border-radius:.25rem; padding:0 .25rem; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script>
+/* MathJax-compatible shim: the lesson code calls MathJax.typesetPromise; we render with KaTeX */
+window.MathJax={typesetPromise:function(els){try{(els&&els.length?els:[document.body]).forEach(function(e){if(e&&window.renderMathInElement)renderMathInElement(e,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false}],throwOnError:false,ignoredClasses:['nomath']})})}catch(err){}return Promise.resolve()}};
+</script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%20role%3D%22img%22%20aria-label%3D%22%E7%94%B3%20Shen%20Studio%22%3E%3Crect%20width%3D%22100%22%20height%3D%22100%22%20rx%3D%2212%22%20fill%3D%22%23B3261E%22/%3E%3Cpath%20d%3D%22M41.57%2027.7V42.46H27.58V27.7ZM15.1%2025.34V70.78H16.95C22.18%2070.78%2027.58%2067.91%2027.58%2066.65V62.18H41.57V90H44.01C48.82%2090%2054.3%2086.88%2054.3%2085.62V62.18H68.97V68.93H71.07C75.37%2068.93%2081.53%2066.65%2081.61%2065.89V29.64C83.38%2029.3%2084.39%2028.55%2084.9%2027.87L73.69%2019.19L68.12%2025.34H54.3V13.96C56.74%2013.62%2057.33%2012.7%2057.5%2011.52L41.57%2010V25.34H28.42L15.1%2020.2ZM54.3%2027.7H68.97V42.46H54.3ZM41.57%2059.82H27.58V44.82H41.57ZM54.3%2059.82V44.82H68.97V59.82Z%22%20fill%3D%22%23FFFFFF%22/%3E%3C/svg%3E">
+<style id="shen-brand">
+.shen-footer{display:flex;align-items:center;justify-content:center;gap:8px;padding:18px 12px 26px;font:500 13px/1.3 Inter,"Helvetica Neue",Arial,sans-serif;color:#6B6458;letter-spacing:.03em;text-align:center}
+.shen-footer svg{width:20px;height:20px;flex-shrink:0}
+.shen-footer b{font-weight:600;color:#1A1A1A}
+.shen-print-mark{display:none}
+@media print{.shen-footer{display:none!important}
+.shen-print-mark{display:flex!important;position:fixed;right:0;bottom:0;align-items:center;gap:1.5mm;font:500 7.5pt/1 Inter,Arial,sans-serif;color:#555;opacity:.75;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.shen-print-mark svg{width:4mm;height:4mm}}
+</style>
+<style id="home-link">
+.homebtn{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 12px;border:1px solid var(--line,#ddd);border-radius:999px;background:#fff;color:var(--ink,#1c2230);text-decoration:none;font:600 .88rem/1 Inter,system-ui,sans-serif;white-space:nowrap;flex-shrink:0}
+.homebtn:hover{background:#f1eff6}
+.homebtn svg{width:16px;height:16px}
+@media print{.homebtn{display:none!important}}
+</style>
+<style id="hz">/* ===== Horizon lessons on the Maths Atlas theme ===== */
+:root{--ink:#1c2230;--muted:#5b6475;--paper:#f7f6fb;--line:#e2e0ea;--a:#3b4fa8;--a-soft:#e8ebf8;--b:#b5487a;--hz:#d4693a;--hz-soft:#fdf0e8}
+html,body{margin:0;padding:0}
+body{background:var(--paper)!important;color:var(--ink);font:17px/1.62 "Avenir Next","Segoe UI",system-ui,-apple-system,sans-serif!important;overflow-x:hidden}
+h1,h2,h3,h4{font-family:Georgia,"Times New Roman",serif}
+h2{color:var(--ink)}
+header.top{position:sticky;top:0;z-index:30;background:rgba(247,246,251,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.topin{max-width:980px;margin:0 auto;padding:.55rem 1rem .35rem;display:flex;align-items:center;gap:.8rem;flex-wrap:wrap}
+.brand{font-family:Georgia,serif;font-weight:600;font-size:1.02rem;flex:1;min-width:180px;line-height:1.3}
+.brand .hzk{display:inline-block;font:700 .66rem/1 "Avenir Next",system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#fff;background:linear-gradient(90deg,#2b2350,var(--hz));border-radius:999px;padding:.28rem .6rem;margin-right:.4rem;vertical-align:2px}
+.brand small{display:block;font-weight:400;color:var(--muted);font-size:.84rem}
+.prog{font-size:.82rem;color:var(--muted);text-align:right;white-space:nowrap}
+nav.tabs{max-width:980px;margin:0 auto;display:flex;gap:.35rem;overflow-x:auto;padding:.1rem 1rem .6rem;scrollbar-width:thin}
+nav.tabs .tab-link{flex:0 0 auto;border:1px solid var(--line)!important;background:#fff!important;color:var(--ink)!important;border-radius:999px!important;padding:.32rem .8rem!important;font:400 .9rem/1.4 "Avenir Next",system-ui,sans-serif!important;cursor:pointer;white-space:nowrap}
+nav.tabs .tab-link.border-teal-600{background:var(--ink)!important;color:#fff!important;border-color:var(--ink)!important}
+nav.tabs .tab-link.tab-done::after{color:#2f8a4c}
+nav.tabs .tab-link.border-teal-600.tab-done::after{color:#9be3b0}
+main.hzmain{max-width:980px;margin:0 auto;padding:1.4rem 1rem 3rem}
+main.hzmain h2{font-size:1.65rem!important}
+main.hzmain .card{border-color:var(--line)}
+.katex{font-size:1.06em}
+.katex-display{overflow-x:auto;overflow-y:hidden;padding:2px 0}
+input,select,button,textarea{font-family:inherit}
+@media print{header.top{position:static}}
+
+.hzr h3{font-size:1.15rem;margin:1.4rem 0 .4rem;font-weight:600}
+.hzr .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:.8rem 1rem;margin:.5rem 0}
+.hzr-t{overflow-x:auto}.hzr-t table{width:100%;border-collapse:collapse}
+.hzr-t td{padding:.3rem .35rem;vertical-align:middle;font-size:.95rem}
+.hzr-t td:last-child{white-space:nowrap;font-size:.82rem}
+.hzr-ul{list-style:disc;padding-left:1.2rem;margin:.2rem 0}.hzr-ul li{margin:.25rem 0}
+@media(max-width:480px){.hzr-t td:nth-child(2){min-width:70px}.hzr-t td:nth-child(2) div{min-width:60px!important}}
+.codetab,table.tb,table.rp{display:block;overflow-x:auto;max-width:100%}
+</style>
+</head>
+<body>
+<header class="top"><div class="topin"><a class="homebtn" href="../index.html#horizon" aria-label="Back to the Maths Atlas home page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>Home</a><div class="brand"><span class="hzk">Horizon</span>Chapter 2 · Rational Numbers<small>Section 2.2 · Fractions: the birth of the rationals</small></div><div class="prog"><span id="prog-count">0</span> / <span id="prog-total">0</span> done</div></div><nav class="tabs" id="tabs"><button type="button" class="tab-link text-teal-700 border-b-4 border-teal-600 font-bold" data-tab="t1" onclick="openTab(event,'t1')">1. Sharing &amp; Fractions</button><button type="button" class="tab-link" data-tab="t2" onclick="openTab(event,'t2')">2. Number Line &amp; Operators</button><button type="button" class="tab-link" data-tab="t3" onclick="openTab(event,'t3')">3. Comparing &amp; Ordering</button><button type="button" class="tab-link" data-tab="t4" onclick="openTab(event,'t4')">4. Between Two Fractions</button><button type="button" class="tab-link" data-tab="t5" onclick="openTab(event,'t5')">5. Smart Thinking</button><button type="button" class="tab-link" data-tab="t6" onclick="openTab(event,'t6')">6. Homework</button><button type="button" class="tab-link" data-tab="t7" onclick="openTab(event,'t7')"><span id="t7-label">7. Learning Report</span></button></nav></header>
+<main class="hzmain">
+
+  <div id="t1" class="tab-content active">
+    <h2 class="text-2xl font-bold text-slate-800 mb-1">Step 1: Sharing, and the Birth of Fractions</h2>
+    <p class="text-slate-600 mb-5">In 2.1 you met negative and zero indices, and you already saw $2^{-3}=\tfrac18$ appear. Now we meet the numbers properly. Where do fractions come from, when are two fractions <em>the same number</em>, and what is the &ldquo;simplest&rdquo; way to write one?</p>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">1</span><h3 class="text-lg font-bold text-slate-800">Real life first: sharing three pizzas among four people</h3></div>
+    <div class="scene">
+      <div class="sh">Scene 1: the pizza problem</div>
+      <p>Three equal pizzas must be shared <strong>fairly</strong> among four friends. Each friend should get the same amount. Everyone wants to know: how much is that?</p>
+      <ul class="list-disc pl-6 mt-2 space-y-1">
+        <li><strong>Plan A.</strong> Cut every pizza into $4$ equal slices. That makes $12$ slices, and each friend takes $3$ slices, one from each pizza.</li>
+        <li><strong>Plan B.</strong> Cut every pizza into $8$ equal slices: $24$ slices, so each friend takes $6$ slices.</li>
+        <li><strong>Plan C.</strong> Cut every pizza into $12$ equal slices: $36$ slices, so each friend takes $9$ slices.</li>
+      </ul>
+      <p class="mt-2">Plan A gives each friend three quarters of a pizza, Plan B six eighths and Plan C nine twelfths. The slices look different, but a friend gets <strong>exactly the same amount of pizza</strong> every time.</p>
+      <div class="ask">So three <em>different-looking</em> fractions, $\tfrac34$, $\tfrac68$ and $\tfrac9{12}$, name the <strong>same number</strong>. Two questions follow. (1) When exactly are two fractions the same number? (2) Is there one best way to write it?</div>
+    </div>
+
+    <div class="key mb-4 text-sm text-slate-800">
+      <p><strong>Why we needed a new kind of number.</strong> In 1.1 you learned that $\mathbb{Z}$ is <em>closed</em> under $+$, $-$ and $\times$. It is <strong>not closed under division</strong>: $3\div4$ has no answer in $\mathbb{Z}$, because no integer $x$ makes $4\times x=3$. The pizza problem is exactly this division.</p>
+      <p class="mt-2"><strong>Definition.</strong> For integers $a$ and $b$ with $b\ne0$, the fraction $\dfrac ab$ is the number $x$ that answers the question &ldquo;$b\times x=a$&rdquo;, that is, the answer to $a\div b$. The set of all such numbers is the set of <strong>rational numbers</strong>:</p>
+      <p class="mt-1">$$\mathbb{Q}=\left\{\frac ab:\ a\in\mathbb{Z},\ b\in\mathbb{Z},\ b\ne0\right\}.$$</p>
+      <ul class="list-disc pl-6 mt-2 space-y-1">
+        <li>Every integer is a fraction: $n=\dfrac n1$. So $\mathbb{N}\subset\mathbb{Z}\subset\mathbb{Q}$, a chain of sets, each inside the next.</li>
+        <li>$a$ is the <strong>numerator</strong> (how many pieces) and $b$ is the <strong>denominator</strong> (the name of the piece: how many equal parts make one whole).</li>
+        <li><strong>Why $b\ne0$?</strong> We would need a number $x$ with $0\times x=a$. If $a\ne0$ no such number exists, and if $a=0$ every number works. Either way $\tfrac a0$ means nothing.</li>
+      </ul>
+    </div>
+
+    <div class="proof">
+      <div class="ph">Theorem 1: when are two fractions equal?</div>
+      <p class="text-sm">(i) Multiplying or dividing the numerator and denominator by the same non-zero number does not change the fraction: $\dfrac ab=\dfrac{ka}{kb}$.</p>
+      <p class="text-sm mt-1">(ii) <strong>Cross-multiplication test:</strong> $\dfrac ab=\dfrac cd$ exactly when $ad=bc$.</p>
+      <div class="seeit"><div class="sh">What this theorem says, with examples</div>
+        <div class="seg"><p class="et">Example 1: the pizza fractions</p><p>$\dfrac34=\dfrac{3\times2}{4\times2}=\dfrac68=\dfrac{3\times3}{4\times3}=\dfrac9{12}$. Check with the test: $3\times8=24=4\times6$ &#10003;.</p></div>
+        <div class="seg"><p class="et">Example 2: a quick test</p><p>Are $\dfrac{4}{6}$ and $\dfrac{10}{15}$ equal? Cross-multiply: $4\times15=60$ and $6\times10=60$. Yes, both equal $\tfrac23$.</p></div>
+        <div class="seg"><p class="et">Example 3: a test that fails</p><p>Are $\dfrac5{7}$ and $\dfrac{15}{20}$ equal? $5\times20=100$ but $7\times15=105$. No. (They are close: $0.714\ldots$ and $0.75$.)</p></div>
+        <div class="seg"><p class="et">Example 4: finding a missing number</p><p>$\dfrac37=\dfrac{?}{35}$. The denominator was multiplied by $5$ ($7\to35$), so the numerator must be too: $3\times5=15$.</p></div>
+      </div>
+      <details class="pf"><summary>Show the proof (optional reading for the curious)</summary>
+      <div class="ps"><b class="n">Part (i).</b> $\dfrac ab$ is the number $x$ with $bx=a$. Multiply both sides by $k$: $(kb)x=ka$. So the same $x$ answers $\dfrac{ka}{kb}$.</div>
+      <div class="ps"><b class="n">Part (ii), forward.</b> If $\dfrac ab=\dfrac cd$, multiply both sides by $bd$ (not zero): $ad=cb$.</div>
+      <div class="ps"><b class="n">Part (ii), backward.</b> If $ad=bc$, divide both sides by $bd$: $\dfrac ab=\dfrac cd$. $\blacksquare$</div>
+      <div class="ps"><b class="n">Meaning.</b> A rational number is a whole <em>family</em> of equal-looking fractions, like the residue classes of 1.3: $\left\{\dfrac34,\dfrac68,\dfrac9{12},\dfrac{-3}{-4},\ldots\right\}$.</div>
+      </details>
+    </div>
+    <p class="text-sm font-bold text-slate-700 mb-2">Try it: the Equivalence Explorer</p>
+    <div class="card mb-5">
+      <div class="grid md:grid-cols-2 gap-4 items-start">
+        <div>
+          <label class="text-sm font-bold" for="eq-a">Numerator $a=$ <span id="eq-av" class="text-teal-700">3</span></label>
+          <input type="range" id="eq-a" min="-30" max="30" value="3" oninput="eqUpdate()">
+          <label class="text-sm font-bold mt-2 block" for="eq-b">Denominator $b=$ <span id="eq-bv" class="text-teal-700">4</span></label>
+          <input type="range" id="eq-b" min="2" max="36" value="4" oninput="eqUpdate()">
+          <div id="eq-msg" class="mt-3 text-sm space-y-1"></div>
+        </div>
+        <div id="eq-bars" class="overflow-x-auto"></div>
+      </div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3 mt-6"><span class="step-badge">2</span><h3 class="text-lg font-bold text-slate-800">The simplest form is unique</h3></div>
+    <div class="proof">
+      <div class="ph">Theorem 2: every fraction has exactly one simplest form</div>
+      <p class="text-sm">Every rational number can be written as $\dfrac ab$ with $b>0$ and $\text{HCF}(a,b)=1$, and there is <strong>only one</strong> way to do so. To find it, divide the numerator and denominator by their HCF.</p>
+      <div class="seeit"><div class="sh">What this theorem says, with examples</div>
+        <div class="seg"><p class="et">Example 1: divide by the HCF</p><p>$\dfrac{84}{126}$: $84=2^2\times3\times7$ and $126=2\times3^2\times7$, so $\text{HCF}=2\times3\times7=42$. Then $\dfrac{84}{126}=\dfrac{84\div42}{126\div42}=\dfrac23$.</p></div>
+        <div class="seg"><p class="et">Example 2: negative fractions</p><p>$\dfrac{-6}{9}=\dfrac{-2}3$ and also $\dfrac{6}{-9}=\dfrac{-2}{3}$. By convention we keep the denominator positive and put the minus sign in the numerator (or in front): $-\dfrac23$.</p></div>
+        <div class="seg"><p class="et">Example 3: how many fractions $\dfrac a{12}$ are already in simplest form?</p><p>For $a=1,2,\ldots,11$, the fraction is simplest exactly when $\text{HCF}(a,12)=1$. Since $12=2^2\times3$, $a$ must not be divisible by $2$ or $3$: $a=1,5,7,11$. That is $4$ fractions: $\tfrac1{12},\tfrac5{12},\tfrac7{12},\tfrac{11}{12}$.</p></div>
+      </div>
+      <details class="pf"><summary>Show the proof (optional reading for the curious)</summary>
+      <div class="ps"><b class="n">Existence.</b> Let $g=\text{HCF}(a,b)$. Then $a=ga'$ and $b=gb'$ with $\text{HCF}(a',b')=1$, and $\dfrac ab=\dfrac{a'}{b'}$ by Theorem 1. Multiply top and bottom by $-1$ if needed to make the denominator positive.</div>
+      <div class="ps"><b class="n">Uniqueness.</b> Suppose $\dfrac ab=\dfrac cd$ with both fractions in simplest form and $b,d>0$. By Theorem 1, $ad=bc$. Then $b$ divides $ad$. Since $\text{HCF}(a,b)=1$, $b$ has no prime factor in common with $a$, so by the Fundamental Theorem of Arithmetic (1.2) all the prime factors of $b$ must lie in $d$: $b\mid d$. In the same way $d\mid b$. Two positive integers that divide each other are equal, so $b=d$, and then $a=c$. $\blacksquare$</div>
+      </details>
+    </div>
+
+    <div class="tech">
+      <div class="tt">Technique 1: simplify a fraction</div>
+      <p class="text-sm text-slate-700">Find the HCF of the numerator and denominator (prime factors, as in 1.2), then divide both by it. If you do not see the HCF at once, cancel any common factor you can see and repeat until the HCF of the new numbers is $1$.</p>
+      <div class="eg"><p><strong>Example 1:</strong> $\dfrac{144}{360}$. $144=2^4\times3^2$ and $360=2^3\times3^2\times5$, so the HCF is $2^3\times3^2=72$ and the answer is $\dfrac{2}{5}$.</p>
+        <p class="mt-1"><strong>Example 2 (cancel in steps):</strong> $\dfrac{90}{150}\to\dfrac{9}{15}$ (divide by $10$) $\to\dfrac35$ (divide by $3$).</p></div>
+    </div>
+    <div class="tech">
+      <div class="tt">Technique 2: find a missing number, or work backwards from a ratio</div>
+      <p class="text-sm text-slate-700">If a fraction equals $\dfrac pq$ in simplest form, then the numerator and denominator are $kp$ and $kq$ for some whole number $k$. Use the information given to find $k$.</p>
+      <div class="eg"><p><strong>Example 1:</strong> A fraction equals $\dfrac38$ and its numerator and denominator add to $88$. Write it as $\dfrac{3k}{8k}$: $3k+8k=11k=88$, so $k=8$, and the fraction is $\dfrac{24}{64}$.</p>
+        <p class="mt-1"><strong>Example 2:</strong> A fraction equals $\dfrac27$ and the denominator is $15$ more than the numerator. $7k-2k=5k=15$, so $k=3$ and the fraction is $\dfrac{6}{21}$.</p></div>
+    </div>
+
+    <h3 class="text-xl font-bold text-slate-800 mb-3 mt-8 bg-slate-100 p-3 rounded-lg inline-block">Check your understanding</h3>
+    <div id="ex-t1"></div>
+  </div>
+
+  <div id="t2" class="tab-content">
+    <h2 class="text-2xl font-bold text-slate-800 mb-1">Step 2: Fractions on the Number Line, and Fractions as Operators</h2>
+    <p class="text-slate-600 mb-5">A fraction is a <strong>point</strong> on the number line as well as a piece of a pizza. Here you learn to place fractions, read scales, switch between improper fractions and mixed numbers, and use a fraction as an <strong>operator</strong> that acts on a quantity.</p>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">1</span><h3 class="text-lg font-bold text-slate-800">Placing a fraction on the number line</h3></div>
+    <div class="key mb-4 text-sm text-slate-800">
+      <p><strong>Rule.</strong> To place $\dfrac pq$ with $q>0$: cut <em>each unit</em> of the number line into $q$ equal gaps, then count $p$ gaps from $0$ (to the right if $p>0$, to the left if $p<0$).</p>
+      <ul class="list-disc pl-6 mt-2 space-y-1">
+        <li>Equal fractions land on the <strong>same point</strong>: $\dfrac34$ and $\dfrac68$ are one point, reached with a different number of smaller steps (Theorem 1).</li>
+        <li>An <strong>improper fraction</strong> has $p\ge q$ and lies at $1$ or further right. Write it as a <strong>mixed number</strong> with the division algorithm from 1.3: $\dfrac{17}5$: $17=5\times3+2$, so $\dfrac{17}5=3\dfrac25$, between $3$ and $4$.</li>
+        <li>For a negative fraction, divide the positive version, then reflect: $-\dfrac{17}5=-3\dfrac25=-3.4$, between $-4$ and $-3$. (Careful: it is <em>not</em> between $-3$ and $-2$.)</li>
+      </ul>
+    </div>
+    <p class="text-sm font-bold text-slate-700 mb-2">Try it: the Number Line Placer</p>
+    <div class="card mb-5">
+      <div class="flex items-center gap-3 flex-wrap mb-2">
+        <label class="text-sm font-bold" for="nl-p">Numerator $p=$ <span id="nl-pv" class="text-teal-700">17</span></label><input type="range" id="nl-p" min="-36" max="36" value="17" oninput="nlUpdate()" style="max-width:14rem">
+        <label class="text-sm font-bold" for="nl-q">Denominator $q=$ <span id="nl-qv" class="text-teal-700">5</span></label><input type="range" id="nl-q" min="1" max="12" value="5" oninput="nlUpdate()" style="max-width:10rem">
+      </div>
+      <div id="nl-svg" class="overflow-x-auto"></div>
+      <div id="nl-msg" class="mt-2 text-sm space-y-1"></div>
+    </div>
+
+    <div class="tech">
+      <div class="tt">Technique 3: read a scale (what is one small gap worth?)</div>
+      <p class="text-sm text-slate-700">Two marked values and some unmarked gaps in between: <strong>(difference between the marks) $\div$ (number of equal gaps) = the value of one gap</strong>. Then count gaps from a marked value. Count <em>gaps</em>, not ticks: there is one more tick than gaps.</p>
+      <div class="eg"><p><strong>Example 1:</strong> The marks $0$ and $2$ have $8$ equal gaps between them. One gap is $\dfrac{2-0}{8}=\dfrac14$. The point $5$ gaps from $0$ is $\dfrac54$.</p>
+        <p class="mt-1"><strong>Example 2 (marks not at zero):</strong> Marks $\dfrac13$ and $\dfrac23$ with $5$ equal gaps. The difference is $\dfrac23-\dfrac13=\dfrac13$, and one gap is $\dfrac13\div5=\dfrac1{15}$. The point $2$ gaps above $\dfrac13$ is $\dfrac13+\dfrac2{15}=\dfrac5{15}+\dfrac2{15}=\dfrac7{15}$.</p>
+        <p class="mt-1"><strong>Example 3 (placing a given fraction):</strong> Marks $\dfrac12$ and $\dfrac34$ with $5$ equal gaps. One gap is $\dfrac14\div5=\dfrac1{20}$. The fraction $\dfrac35=0.6$ is $\dfrac35-\dfrac12=\dfrac1{10}=\dfrac2{20}$ above $\dfrac12$, so at gap number $2$.</p></div>
+    </div>
+    <div class="tech">
+      <div class="tt">Technique 4: change between improper fractions and mixed numbers</div>
+      <p class="text-sm text-slate-700"><strong>Improper to mixed:</strong> divide the numerator by the denominator: the quotient is the whole part, the remainder is the new numerator. <strong>Mixed to improper:</strong> whole $\times$ denominator + numerator, over the denominator.</p>
+      <div class="eg"><p><strong>Example 1:</strong> $\dfrac{47}6$: $47=6\times7+5$, so $7\dfrac56$.</p>
+        <p class="mt-1"><strong>Example 2:</strong> $3\dfrac27=\dfrac{3\times7+2}7=\dfrac{23}7$.</p></div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3 mt-6"><span class="step-badge">2</span><h3 class="text-lg font-bold text-slate-800">A fraction as an operator on a quantity</h3></div>
+    <div class="key mb-4 text-sm text-slate-800">
+      <p>In 1.2 you learned that $3\times2$ means &ldquo;apply the operator $3$ to the number $2$&rdquo;: it stretches $2$ to three times its length. A fraction can be an <strong>operator</strong> too.</p>
+      <p class="mt-2"><strong>$\dfrac pq$ of a quantity $N$ means: divide $N$ into $q$ equal parts, then take $p$ of them.</strong> In symbols, $\dfrac pq\times N$. The operator $\dfrac pq$ does <em>two small jobs</em>: &ldquo;$\div q$&rdquo; shrinks, &ldquo;$\times p$&rdquo; stretches. The order does not matter.</p>
+      <p class="mt-2"><strong>Example:</strong> $\dfrac34$ of $20$. Shrink: $20\div4=5$ (one quarter). Stretch: $5\times3=15$. So $\dfrac34$ of $20=15$. On the number line from $0$ to $20$, you land $\dfrac34$ of the way along.</p>
+    </div>
+    <div class="tech">
+      <div class="tt">Technique 5: find a fraction of a quantity, and the fraction that a part is of a whole</div>
+      <div class="eg"><p><strong>Example 1 (fraction of):</strong> A tank holds $240$ litres. $\dfrac38$ is used. Used: $240\div8=30$ per eighth, $30\times3=90$ litres. Left: $240-90=150$ litres (or $\dfrac58$ of $240=150$).</p>
+        <p class="mt-1"><strong>Example 2 (what fraction):</strong> $18$ of the $30$ students walk to school. The fraction is $\dfrac{18}{30}$, which simplifies to $\dfrac35$ by Technique 1.</p></div>
+    </div>
+    <div class="tech">
+      <div class="tt">Technique 6: undo the operator (find the whole from a part)</div>
+      <p class="text-sm text-slate-700">If $\dfrac pq$ of a number is known, <strong>reverse the two jobs</strong>: undo the stretch by dividing by $p$ (that gives one $\dfrac1q$ part), then undo the shrink by multiplying by $q$.</p>
+      <div class="eg"><p><strong>Example 1:</strong> $\dfrac23$ of a number is $18$. Divide by $2$: $9$ is one third. Multiply by $3$: the number is $27$.</p>
+        <p class="mt-1"><strong>Example 2:</strong> $\dfrac35$ of a ribbon is $21$ cm. One fifth is $21\div3=7$ cm, so the whole ribbon is $35$ cm, and $\dfrac25$ of it is $14$ cm.</p></div>
+    </div>
+
+    <h3 class="text-xl font-bold text-slate-800 mb-3 mt-8 bg-slate-100 p-3 rounded-lg inline-block">Check your understanding</h3>
+    <div id="ex-t2"></div>
+  </div>
+
+  <div id="t3" class="tab-content">
+    <h2 class="text-2xl font-bold text-slate-800 mb-1">Step 3: Comparing and Ordering Fractions</h2>
+    <p class="text-slate-600 mb-5">Which fraction is bigger? You will meet four reliable tools: the cross-multiplication test, the common denominator, benchmarks, and a clever &ldquo;gap&rdquo; trick for fractions that are very close to $1$.</p>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">1</span><h3 class="text-lg font-bold text-slate-800">Real life first: who is the better shooter?</h3></div>
+    <div class="scene">
+      <div class="sh">Scene 1: the basketball argument</div>
+      <p>In the school final, Ana made $7$ of her $9$ shots. Ben made $9$ of his $12$ shots. Both claim to be the better shooter. Ben made more baskets and took more shots, but that does not settle it. We need to compare the <strong>fractions</strong> $\dfrac79$ and $\dfrac9{12}$.</p>
+      <p class="mt-2">Different denominators mean different-sized pieces, so we cannot compare the numerators directly. Cut both into the <strong>same-size pieces</strong>. $9$ and $12$ both divide $36$: $\dfrac79=\dfrac{28}{36}$ and $\dfrac9{12}=\dfrac{27}{36}$. Now we count pieces of the same size: $28\gt27$, so <strong>Ana</strong> is the better shooter, by one thirty-sixth of a basket.</p>
+      <div class="ask">The idea is always the same: put the fractions on a common denominator, then compare numerators. Is there a faster way that does not need us to find the common denominator? Yes: Theorem 3.</div>
+    </div>
+    <div class="proof">
+      <div class="ph">Theorem 3: the cross-multiplication test</div>
+      <p class="text-sm">For positive denominators $b>0$ and $d>0$: $$\frac ab\lt\frac cd\iff ad\lt bc,\qquad \frac ab=\frac cd\iff ad=bc,\qquad \frac ab>\frac cd\iff ad>bc.$$ (The numbers $a$ and $c$ may be negative.)</p>
+      <div class="seeit"><div class="sh">What this theorem says, with examples</div>
+        <div class="seg"><p class="et">Example 1: Ana against Ben</p><p>$\dfrac79$ against $\dfrac9{12}$: $7\times12=84$ and $9\times9=81$. Since $84>81$, $\dfrac79>\dfrac9{12}$. &#10003; (The cross products are $\tfrac{28}{36}$ and $\tfrac{27}{36}$ with the common $36$ removed.)</p></div>
+        <div class="seg"><p class="et">Example 2: close fractions</p><p>$\dfrac58$ against $\dfrac7{11}$: $5\times11=55$ and $8\times7=56$. So $\dfrac58\lt\dfrac7{11}$. (Decimals: $0.625$ and $0.636\ldots$)</p></div>
+        <div class="seg"><p class="et">Example 3: negative numerators</p><p>$-\dfrac35$ against $-\dfrac47$: $-3\times7=-21$ and $5\times(-4)=-20$. Since $-21\lt-20$, $-\dfrac35\lt-\dfrac47$. (The one with the bigger positive part is further left.)</p></div>
+      </div>
+      <details class="pf"><summary>Show the proof (optional reading for the curious)</summary>
+      <div class="ps"><b class="n">Multiply by a positive number.</b> Multiplying both sides of an inequality by a <em>positive</em> number keeps its direction. Since $bd>0$, multiply $\dfrac ab\lt\dfrac cd$ by $bd$: $a\,d\lt c\,b$.</div>
+      <div class="ps"><b class="n">Reverse.</b> Dividing both sides of $ad\lt bc$ by the positive $bd$ gives back $\dfrac ab\lt\dfrac cd$. The cases $=$ and $>$ are identical. $\blacksquare$</div>
+      <div class="ps"><b class="n">Why $b,d>0$ matters.</b> If a denominator were negative, multiplying by $bd$ would flip the inequality. So always put the minus sign in the numerator first.</div>
+      </details>
+    </div>
+    <p class="text-sm font-bold text-slate-700 mb-2">Try it: the Fraction Comparer</p>
+    <div class="card mb-5">
+      <div class="flex items-center gap-2 flex-wrap mb-2">
+        <input type="number" id="cp-a" class="inp" style="max-width:5.5rem" value="7" oninput="cpUpdate()" aria-label="first numerator"><span class="font-bold">/</span><input type="number" id="cp-b" class="inp" style="max-width:5.5rem" value="9" min="1" oninput="cpUpdate()" aria-label="first denominator">
+        <span class="font-bold px-2">versus</span>
+        <input type="number" id="cp-c" class="inp" style="max-width:5.5rem" value="9" oninput="cpUpdate()" aria-label="second numerator"><span class="font-bold">/</span><input type="number" id="cp-d" class="inp" style="max-width:5.5rem" value="12" min="1" oninput="cpUpdate()" aria-label="second denominator">
+      </div>
+      <div class="flex gap-2 flex-wrap mb-2"><button class="btn-ghost" onclick="cpSet(5,8,7,11)">5/8 v 7/11</button><button class="btn-ghost" onclick="cpSet(111110,111111,222221,222223)">111110/111111 v 222221/222223</button><button class="btn-ghost" onclick="cpSet(2020,2021,2021,2022)">2020/2021 v 2021/2022</button></div>
+      <div id="cp-out" class="text-sm space-y-1"></div>
+    </div>
+
+    <div class="tech">
+      <div class="tt">Technique 7: compare or order with a common denominator</div>
+      <p class="text-sm text-slate-700">Use the LCM of the denominators (1.2). Rewrite every fraction with that denominator, then put the numerators in order. This is best for <strong>ordering three or more</strong> fractions.</p>
+      <div class="eg"><p><strong>Example:</strong> Order $\dfrac34,\ \dfrac57,\ \dfrac7{10},\ \dfrac23$. LCM of $4,7,10,3$ is $420$. $\dfrac34=\dfrac{315}{420}$, $\dfrac57=\dfrac{300}{420}$, $\dfrac7{10}=\dfrac{294}{420}$, $\dfrac23=\dfrac{280}{420}$. Increasing order: $\dfrac23\lt\dfrac7{10}\lt\dfrac57\lt\dfrac34$.</p></div>
+    </div>
+    <div class="tech">
+      <div class="tt">Technique 8: benchmarks, same numerator, same denominator</div>
+      <ul class="list-disc pl-6 text-sm text-slate-700 space-y-1">
+        <li><strong>Same denominator:</strong> the larger numerator is larger. <strong>Same numerator (positive):</strong> the <em>smaller</em> denominator is larger, since fewer, bigger pieces: $\dfrac7{15}>\dfrac7{16}$.</li>
+        <li><strong>Benchmarks.</strong> Compare each fraction with $0$, $\tfrac12$ or $1$. For example $\dfrac{9}{17}>\tfrac12$ (since $2\times9=18>17$) but $\dfrac{8}{17}\lt\tfrac12$, so $\dfrac9{17}>\dfrac8{17}$ with no calculation.</li>
+      </ul>
+      <div class="eg"><p><strong>Example:</strong> Which is larger, $\dfrac{13}{25}$ or $\dfrac{14}{29}$? $\dfrac{13}{25}>\dfrac12$ because $26>25$, but $\dfrac{14}{29}\lt\dfrac12$ because $28\lt29$. So $\dfrac{13}{25}$ is larger.</p></div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3 mt-6"><span class="step-badge">2</span><h3 class="text-lg font-bold text-slate-800">Fractions just below $1$: compare the missing piece</h3></div>
+    <div class="key mb-4 text-sm text-slate-800">
+      <p>Fractions such as $\dfrac{99}{100}$ or $\dfrac{998}{1001}$ are almost $1$. The cross-multiplication test works, but the numbers are huge. Instead write each as <strong>1 minus the missing piece</strong>:</p>
+      <p class="mt-1">$$\frac{b-k}{b}=1-\frac kb.$$</p>
+      <p class="mt-1">The <strong>smaller the missing piece, the larger the fraction</strong>. So compare the gaps $\dfrac kb$ instead, and remember the order <em>flips</em>.</p>
+    </div>
+    <div class="tech">
+      <div class="tt">Technique 9: the gap-to-1 method</div>
+      <ol class="list-decimal pl-6 text-sm text-slate-700 space-y-1">
+        <li>Write each fraction as $1-\text{gap}$, where gap $=\dfrac{\text{denominator}-\text{numerator}}{\text{denominator}}$.</li>
+        <li>Make each gap a <strong>unit fraction</strong> $\dfrac1{(\ldots)}$ by dividing top and bottom by the numerator of the gap. The gap with the <em>bigger</em> denominator is the <em>smaller</em> gap.</li>
+        <li>Smaller gap means bigger fraction.</li>
+      </ol>
+      <div class="eg"><p><strong>Example 1:</strong> Order $\dfrac45,\dfrac56,\dfrac67$. The gaps are $\dfrac15,\dfrac16,\dfrac17$. Gaps shrink in this order, so the fractions grow: $\dfrac45\lt\dfrac56\lt\dfrac67$.</p>
+        <p class="mt-1"><strong>Example 2:</strong> Which is larger, $\dfrac{7}{8}$ or $\dfrac{77}{87}$? Gaps: $\dfrac18=0.125$ and $\dfrac{10}{87}=\dfrac1{8.7}\approx0.115$. The second gap is smaller, so $\dfrac{77}{87}$ is larger.</p>
+        <p class="mt-1"><strong>Example 3 (gaps that are not unit fractions):</strong> Order $\dfrac{99}{100},\ \dfrac{999}{1001},\ \dfrac{9999}{10003}$. Gaps: $\dfrac1{100}$, $\dfrac{2}{1001}=\dfrac1{500.5}$, $\dfrac4{10003}=\dfrac1{2500.75}$. The gaps shrink, so the fractions increase in the order listed: $\dfrac{99}{100}\lt\dfrac{999}{1001}\lt\dfrac{9999}{10003}$.</p></div>
+    </div>
+
+    <h3 class="text-xl font-bold text-slate-800 mb-3 mt-8 bg-slate-100 p-3 rounded-lg inline-block">Check your understanding</h3>
+    <div id="ex-t3"></div>
+  </div>
+
+  <div id="t4" class="tab-content">
+    <h2 class="text-2xl font-bold text-slate-800 mb-1">Step 4: Between Any Two Fractions</h2>
+    <p class="text-slate-600 mb-5">After the integer $5$ comes $6$. But what comes after the fraction $\tfrac12$? In this tab you discover a surprising property of $\mathbb{Q}$: between any two fractions, however close, there is always another one, and then another, forever.</p>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">1</span><h3 class="text-lg font-bold text-slate-800">Real life first: zooming in on the finish line</h3></div>
+    <div class="scene">
+      <div class="sh">Scene 1: two runners and a stopwatch</div>
+      <p>Two runners finish a race: Mia in $10.2$ seconds and Leo in $10.3$ seconds. The judges say Mia was first. Could a better stopwatch show a runner finishing <em>between</em> the two? Yes: $10.25$ seconds. And between $10.2$ and $10.25$? Yes: $10.225$. Every time we improve the watch, we can place a finishing time in the gap.</p>
+      <p class="mt-2">Now ask the same about fractions. What is the number <strong>just after</strong> $\dfrac12$? If it were $\dfrac{51}{100}$, then $\dfrac{501}{1000}$ is nearer. If it were $\dfrac{501}{1000}$, then $\dfrac{5001}{10000}$ is nearer. There is <strong>no next fraction</strong>, whatever you try.</p>
+      <div class="ask">In $\mathbb{Z}$ every number has a next number. In $\mathbb{Q}$ no number does. The numbers are &ldquo;packed&rdquo; so densely that the gaps never close. Mathematicians call this property <strong>density</strong>.</div>
+    </div>
+
+    <div class="proof">
+      <div class="ph">Theorem 4: the midpoint, and density of $\mathbb{Q}$</div>
+      <p class="text-sm">If $p\lt q$ are fractions, then their <strong>average</strong> $m=\dfrac{p+q}2$ is a fraction with $p\lt m\lt q$. Therefore there are <strong>infinitely many</strong> fractions between any two fractions.</p>
+      <div class="seeit"><div class="sh">What this theorem says, with examples</div>
+        <div class="seg"><p class="et">Example 1: halfway between two fractions</p><p>Halfway between $\dfrac14$ and $\dfrac56$. Common denominator $12$: $\dfrac3{12}$ and $\dfrac{10}{12}$. Add: $\dfrac{13}{12}$. Halve: $\dfrac{13}{24}$. Check: $\dfrac14=0.25$, $\dfrac56=0.8\overline3$, and $\dfrac{13}{24}=0.541\overline6$, which is the middle.</p></div>
+        <div class="seg"><p class="et">Example 2: negative fractions</p><p>Halfway between $-\dfrac12$ and $\dfrac13$. Common denominator $6$: $-\dfrac36$ and $\dfrac26$. Add: $-\dfrac16$. Halve: $-\dfrac1{12}$. It is just left of $0$, as expected, because $-\dfrac12$ is further from $0$ than $\dfrac13$.</p></div>
+        <div class="seg"><p class="et">Example 3: zooming in forever</p><p>Start with $0$ and $1$. Their midpoint is $\dfrac12$. The midpoint of $0$ and $\dfrac12$ is $\dfrac14$, then $\dfrac18$, $\dfrac1{16},\ldots$ Each step finds a new fraction between $0$ and the previous one. There is no end, so there are infinitely many fractions between $0$ and $1$.</p></div>
+      </div>
+      <details class="pf"><summary>Show the proof (optional reading for the curious)</summary>
+      <div class="ps"><b class="n">It is a fraction.</b> The sum of two fractions is a fraction, and halving is dividing by $2$, so $m$ is a fraction.</div>
+      <div class="ps"><b class="n">It is between.</b> Since $p\lt q$: adding $p$ to both sides gives $2p\lt p+q$, so $p\lt\dfrac{p+q}2$. Adding $q$ to both sides of $p\lt q$ gives $p+q\lt2q$, so $\dfrac{p+q}2\lt q$.</div>
+      <div class="ps"><b class="n">Infinitely many.</b> Repeat: put a new fraction between $p$ and $m$, then between $p$ and that one, and so on. We never run out. $\blacksquare$</div>
+      </details>
+    </div>
+    <div class="tech">
+      <div class="tt">Technique 10: find the fraction halfway between two fractions (the average)</div>
+      <p class="text-sm text-slate-700">Put both on a common denominator, add the numerators, then halve (multiply the denominator by $2$). Simplify at the end.</p>
+      <div class="eg"><p><strong>Example 1:</strong> Halfway between $\dfrac35$ and $\dfrac79$. Common denominator $45$: $\dfrac{27}{45}$ and $\dfrac{35}{45}$. Sum $\dfrac{62}{45}$, half $\dfrac{31}{45}$.</p>
+        <p class="mt-1"><strong>Example 2 (the number-line way):</strong> Halfway is the left value plus half the distance: $\dfrac14+\dfrac12\left(\dfrac56-\dfrac14\right)=\dfrac14+\dfrac12\times\dfrac7{12}=\dfrac14+\dfrac7{24}=\dfrac{13}{24}$. Same answer.</p></div>
+    </div>
+    <p class="text-sm font-bold text-slate-700 mb-2">Try it: the Between Explorer (midpoint, mediant and zooming in)</p>
+    <div class="card mb-5">
+      <div class="flex items-center gap-2 flex-wrap mb-2">
+        <input type="number" id="bt-a" class="inp" style="max-width:5.5rem" value="1" oninput="btUpdate()" aria-label="first numerator"><span class="font-bold">/</span><input type="number" id="bt-b" class="inp" style="max-width:5.5rem" value="3" min="1" oninput="btUpdate()" aria-label="first denominator">
+        <span class="font-bold px-2">and</span>
+        <input type="number" id="bt-c" class="inp" style="max-width:5.5rem" value="1" oninput="btUpdate()" aria-label="second numerator"><span class="font-bold">/</span><input type="number" id="bt-d" class="inp" style="max-width:5.5rem" value="2" min="1" oninput="btUpdate()" aria-label="second denominator">
+      </div>
+      <div class="flex gap-2 flex-wrap mb-2"><button class="btn-ghost" onclick="btSet(1,3,1,2)">1/3 and 1/2</button><button class="btn-ghost" onclick="btSet(-2,3,4,5)">&minus;2/3 and 4/5</button><button class="btn-ghost" onclick="btSet(3,7,4,9)">3/7 and 4/9</button></div>
+      <div id="bt-svg" class="overflow-x-auto"></div>
+      <div id="bt-out" class="text-sm space-y-1 mt-2"></div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3 mt-6"><span class="step-badge">2</span><h3 class="text-lg font-bold text-slate-800">A second way: add the tops and add the bottoms (the mediant)</h3></div>
+    <div class="scene">
+      <div class="sh">Scene 2: combining two shooting records</div>
+      <p>Back to the basketball final. Ana: $7$ out of $9$. Ben: $9$ out of $12$. If the two players are counted as one team, the team made $7+9=16$ out of $9+12=21$ shots. The team record $\dfrac{16}{21}$ lies <strong>between</strong> $\dfrac9{12}=0.75$ and $\dfrac79=0.78$: indeed $\dfrac{16}{21}=0.762\ldots$ A combined record can never be better than the best or worse than the worst player. This &ldquo;add the tops, add the bottoms&rdquo; fraction is called the <strong>mediant</strong>.</p>
+    </div>
+    <div class="proof">
+      <div class="ph">Theorem 5: the mediant lies between</div>
+      <p class="text-sm">If $\dfrac ab\lt\dfrac cd$ with $b>0$, $d>0$, then $$\frac ab\lt\frac{a+c}{b+d}\lt\frac cd.$$</p>
+      <div class="seeit"><div class="sh">What this theorem says, with examples</div>
+        <div class="seg"><p class="et">Example 1: the first step of a pattern</p><p>Between $\dfrac13$ and $\dfrac12$: the mediant is $\dfrac{1+1}{3+2}=\dfrac25$. Check: $0.333\lt0.4\lt0.5$ &#10003;. Between $\dfrac25$ and $\dfrac12$: mediant $\dfrac37$ ($0.4286$). Between $\dfrac25$ and $\dfrac37$: $\dfrac5{12}$. You can keep going forever, with new fractions each time.</p></div>
+        <div class="seg"><p class="et">Example 2: the team record</p><p>$\dfrac9{12}\lt\dfrac{16}{21}\lt\dfrac79$, as in Scene 2.</p></div>
+        <div class="seg"><p class="et">Example 3: a fraction with a small denominator</p><p>The mediant gives a fraction between $\dfrac3{7}$ and $\dfrac49$: $\dfrac{7}{16}$. It is easy to check: $3\times16=48\lt7\times7=49$ and $7\times9=63\lt4\times16=64$. (In Tab 5 you will see that no fraction between them has a smaller denominator than $16$.)</p></div>
+      </div>
+      <details class="pf"><summary>Show the proof (optional reading for the curious)</summary>
+      <div class="ps"><b class="n">Start.</b> $\dfrac ab\lt\dfrac cd$ means $ad\lt bc$ (Theorem 3).</div>
+      <div class="ps"><b class="n">Left inequality.</b> $\dfrac ab\lt\dfrac{a+c}{b+d}$ means (cross-multiply) $a(b+d)\lt b(a+c)$, that is $ab+ad\lt ab+bc$, which is $ad\lt bc$. &#10003;</div>
+      <div class="ps"><b class="n">Right inequality.</b> $\dfrac{a+c}{b+d}\lt\dfrac cd$ means $d(a+c)\lt c(b+d)$, that is $ad+cd\lt bc+cd$, which is $ad\lt bc$. &#10003; $\blacksquare$</div>
+      </details>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3 mt-6"><span class="step-badge">3</span><h3 class="text-lg font-bold text-slate-800">Fractions inside an interval</h3></div>
+    <div class="tech">
+      <div class="tt">Technique 11: which integers $x$ make $\dfrac xn$ lie between two fractions?</div>
+      <ol class="list-decimal pl-6 text-sm text-slate-700 space-y-1">
+        <li>Multiply every part of the inequality by $n$ (a positive number, so the direction is kept).</li>
+        <li>Turn the end values into decimals, or compare using whole numbers, to find the range for $x$.</li>
+        <li>List the integers in the range, and check whether the end values are <em>included</em> (&ldquo;between&rdquo; usually means <strong>strictly</strong> between).</li>
+      </ol>
+      <div class="eg"><p><strong>Example 1:</strong> Which integers $x$ make $\dfrac x5$ lie between $\dfrac{9}{4}$ and $\dfrac{17}{4}$? Multiply by $5$: $\dfrac{45}4\lt x\lt\dfrac{85}4$, that is $11.25\lt x\lt21.25$. So $x=12,13,\ldots,21$: $10$ integers.</p>
+        <p class="mt-1"><strong>Example 2 (the end value is a boundary):</strong> How many fractions $\dfrac n{15}$ lie strictly between $\dfrac14$ and $\dfrac23$? Multiply by $15$: $3.75\lt n\lt10$. So $n=4,5,\ldots,9$: $6$ fractions ($n=10$ gives exactly $\tfrac23$, which is not strictly between).</p>
+        <p class="mt-1"><strong>Example 3 (a single answer):</strong> Which integer $x$ makes $\dfrac x7$ lie between $\dfrac{22}{3}$ and $\dfrac{23}{3}$? Multiply by $7$: $\dfrac{154}3\lt x\lt\dfrac{161}3$, that is $51.33\lt x\lt53.67$. So $x=52$ or $53$. (Two answers: be careful about how many integers the question expects.)</p></div>
+    </div>
+    <div class="tech">
+      <div class="tt">Technique 12: place a fraction on a scale between two marked fractions</div>
+      <p class="text-sm text-slate-700">Use Technique 3: gap value $=\dfrac{\text{difference}}{\text{number of gaps}}$. Then divide the distance from the left mark by the gap value to find how many gaps along it sits.</p>
+      <div class="eg"><p><strong>Example:</strong> The marks are $\dfrac14$ and $\dfrac12$ with $10$ equal gaps. One gap is $\dfrac14\div10=\dfrac1{40}$. Where is $\dfrac3{10}$? Distance from $\dfrac14$: $\dfrac3{10}-\dfrac14=\dfrac1{20}=\dfrac2{40}$, which is $2$ gaps.</p></div>
+    </div>
+
+    <h3 class="text-xl font-bold text-slate-800 mb-3 mt-8 bg-slate-100 p-3 rounded-lg inline-block">Check your understanding</h3>
+    <div id="ex-t4"></div>
+  </div>
+
+  <div id="t5" class="tab-content">
+    <h2 class="text-2xl font-bold text-slate-800 mb-1">Step 5: Smart Thinking with Fractions</h2>
+    <p class="text-slate-600 mb-5">Competition problems about fractions rarely ask for brute force. This tab collects three smart ideas: what happens when you add the same number to the top and bottom, how to find the fraction with the <em>smallest denominator</em> in a gap, and how to count fractions in simplest form.</p>
+
+    <div class="flex items-start gap-3 mb-3"><span class="step-badge">1</span><h3 class="text-lg font-bold text-slate-800">Adding the same number to the top and bottom</h3></div>
+    <div class="scene">
+      <div class="sh">Scene 1: a student who is catching up</div>
+      <p>A student has handed in $3$ of $5$ homework tasks (a rate of $\dfrac35$). Each day she hands in <strong>one more task, and one more task is also set</strong>: so after $k$ days she has handed in $3+k$ of $5+k$. Does her rate go up or down? Surprisingly it goes <em>up</em>, and it creeps towards $1$ but never reaches it.</p>
+    </div>
+    <div class="proof">
+      <div class="ph">Theorem 6: if $0\lt a\lt b$ and $k>0$, then $\dfrac{a+k}{b+k}>\dfrac ab$</div>
+      <p class="text-sm">Adding the same positive number to the numerator and the denominator of a <strong>proper</strong> fraction makes it bigger, but still less than $1$. (For an improper fraction $a>b$ the effect is the opposite.)</p>
+      <div class="seeit"><div class="sh">What this theorem says, with examples</div>
+        <div class="seg"><p class="et">Example 1: which is larger?</p><p>$\dfrac{2020}{2021}$ against $\dfrac{2021}{2022}$. The second is the first with $1$ added to the top and the bottom, so it is larger. (Check with the gaps: $\dfrac1{2021}>\dfrac1{2022}$.)</p></div>
+        <div class="seg"><p class="et">Example 2: reaching a target</p><p>Add $k$ to the top and bottom of $\dfrac35$ so that it becomes $\dfrac79$: $\dfrac{3+k}{5+k}=\dfrac79$. Cross-multiply: $9(3+k)=7(5+k)$, so $27+9k=35+7k$ and $k=4$. Check: $\dfrac{7}{9}$ &#10003;.</p></div>
+        <div class="seg"><p class="et">Example 3: how many days to reach $95\%$?</p><p>$\dfrac{n}{n+5}\ge\dfrac{19}{20}$: $20n\ge19n+95$, so $n\ge95$. At $n=95$ the fraction is exactly $\dfrac{95}{100}$.</p></div>
+        <div class="seg"><p class="et">Example 4: an improper fraction goes the other way</p><p>$\dfrac53=1.67$ but $\dfrac{5+3}{3+3}=\dfrac86=1.33$. The fraction moved <em>down</em>, towards $1$. In both cases the fraction moves towards $1$.</p></div>
+      </div>
+      <details class="pf"><summary>Show the proof (optional reading for the curious)</summary>
+      <div class="ps"><b class="n">Subtract.</b> $\dfrac{a+k}{b+k}-\dfrac ab=\dfrac{b(a+k)-a(b+k)}{b(b+k)}=\dfrac{k(b-a)}{b(b+k)}$.</div>
+      <div class="ps"><b class="n">Sign.</b> Here $k>0$, $b-a>0$, $b>0$, $b+k>0$, so the fraction is positive. So $\dfrac{a+k}{b+k}>\dfrac ab$. Also $\dfrac{a+k}{b+k}\lt1$ since $a+k\lt b+k$. $\blacksquare$</div>
+      </details>
+    </div>
+    <div class="tech">
+      <div class="tt">Technique 13: &ldquo;the same number added to the top and bottom&rdquo; problems</div>
+      <ol class="list-decimal pl-6 text-sm text-slate-700 space-y-1">
+        <li>Write the new fraction with an unknown $k$: $\dfrac{a+k}{b+k}$.</li>
+        <li>Cross-multiply (Theorem 3) and solve the simple equation for $k$.</li>
+        <li>Check by substituting back. For &ldquo;at least&rdquo; problems, solve the inequality and take the smallest whole number that works.</li>
+      </ol>
+      <div class="eg"><p><strong>Example:</strong> What is the smallest whole number $n$ with $\dfrac{n}{n+7}>0.9$? $\dfrac{n}{n+7}>\dfrac9{10}$ gives $10n>9n+63$, so $n>63$. The smallest whole number is $64$. Check: $\dfrac{64}{71}=0.9014\ldots>0.9$ and $\dfrac{63}{70}=0.9$ exactly, which is <em>not</em> bigger.</p></div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3 mt-6"><span class="step-badge">2</span><h3 class="text-lg font-bold text-slate-800">The smallest denominator in a gap: neighbours</h3></div>
+    <div class="key mb-4 text-sm text-slate-800">
+      <p>Between $\dfrac13$ and $\dfrac12$ the mediant is $\dfrac25$. Could there be a fraction between them with a denominator <em>smaller</em> than $5$? Check: denominators $2,3,4$ give $\tfrac12,\tfrac13,\tfrac14,\tfrac23,\tfrac34$ and none is strictly between $0.333$ and $0.5$. So $5$ is the smallest. Why? The fractions $\dfrac13$ and $\dfrac12$ are <strong>neighbours</strong>: $3\times1-1\times2=1$. The cross-product difference is as small as it can be.</p>
+    </div>
+    <div class="proof">
+      <div class="ph">Theorem 7: neighbouring fractions</div>
+      <p class="text-sm">Let $\dfrac ab\lt\dfrac cd$ with $bc-ad=1$. Then <strong>every</strong> fraction $\dfrac xy$ strictly between them has $y\ge b+d$, and the mediant $\dfrac{a+c}{b+d}$ achieves $y=b+d$ exactly.</p>
+      <div class="seeit"><div class="sh">What this theorem says, with examples</div>
+        <div class="seg"><p class="et">Example 1: $\dfrac3{7}$ and $\dfrac49$</p><p>$bc-ad=7\times4-3\times9=28-27=1$. So the smallest denominator of any fraction between them is $7+9=16$, and it is $\dfrac7{16}$. You can check by trying every denominator up to $15$: none fits.</p></div>
+        <div class="seg"><p class="et">Example 2: $\dfrac5{12}$ and $\dfrac37$</p><p>$bc-ad=12\times3-5\times7=36-35=1$. So the smallest denominator is $12+7=19$, with the fraction $\dfrac8{19}$.</p></div>
+        <div class="seg"><p class="et">Example 3: a pair that is <em>not</em> neighbours</p><p>$\dfrac14$ and $\dfrac12$: $4\times1-1\times2=2$, not $1$. The theorem does not apply, and indeed $\dfrac13$ sits between them with denominator $3\lt4+2$.</p></div>
+      </div>
+      <details class="pf"><summary>Show the proof (optional reading for the curious)</summary>
+      <div class="ps"><b class="n">Setup.</b> Let $\dfrac ab\lt\dfrac xy\lt\dfrac cd$. By Theorem 3, $ay\lt bx$ and $xd\lt cy$. All of these are whole numbers, so each difference is at least $1$: $bx-ay\ge1$ and $cy-dx\ge1$.</div>
+      <div class="ps"><b class="n">Combine.</b> Multiply the first by $d$ and the second by $b$: $bdx-ady\ge d$ and $bcy-bdx\ge b$. Add: $y(bc-ad)\ge b+d$.</div>
+      <div class="ps"><b class="n">Use the neighbour condition.</b> Since $bc-ad=1$, we get $y\ge b+d$. The mediant (Theorem 5) lies between and has denominator exactly $b+d$. $\blacksquare$</div>
+      </details>
+    </div>
+    <div class="tech">
+      <div class="tt">Technique 14: find the fraction with the smallest denominator between two fractions</div>
+      <ol class="list-decimal pl-6 text-sm text-slate-700 space-y-1">
+        <li>Compute $bc-ad$ for the two fractions $\dfrac ab\lt\dfrac cd$.</li>
+        <li>If it is $1$, the answer is the mediant, with denominator $b+d$.</li>
+        <li>If it is bigger, find a neighbouring pair between them (using mediants) and use the same idea, or search denominators in order.</li>
+      </ol>
+      <div class="eg"><p><strong>Example:</strong> The smallest denominator for a fraction strictly between $\dfrac5{12}$ and $\dfrac3{7}$ is $12+7=19$, since $bc-ad=1$. The fraction is $\dfrac{5+3}{12+7}=\dfrac8{19}$.</p></div>
+    </div>
+
+    <div class="flex items-start gap-3 mb-3 mt-6"><span class="step-badge">3</span><h3 class="text-lg font-bold text-slate-800">Counting fractions in simplest form</h3></div>
+    <div class="key mb-4 text-sm text-slate-800">
+      <p>By Theorem 2, a fraction $\dfrac ab$ is in simplest form exactly when $\text{HCF}(a,b)=1$. So <strong>counting simplest-form fractions is counting numbers that are coprime to $b$</strong>. This links back to the divisor ideas of 1.2.</p>
+    </div>
+    <div class="tech">
+      <div class="tt">Technique 15: count the fractions in simplest form</div>
+      <ul class="list-disc pl-6 text-sm text-slate-700 space-y-1">
+        <li><strong>One denominator $b$:</strong> count the numerators $1\le a\le b-1$ with no prime factor in common with $b$.</li>
+        <li><strong>All denominators up to $N$:</strong> list the denominators $2,3,\ldots,N$ and add the counts. Each simplest-form fraction is listed exactly once, because simplest form is unique (Theorem 2).</li>
+      </ul>
+      <div class="eg"><p><strong>Example 1:</strong> Numerators for denominator $12=2^2\times3$: $1,5,7,11$ (not divisible by $2$ or $3$). $4$ fractions.</p>
+        <p class="mt-1"><strong>Example 2: all simplest fractions strictly between $0$ and $1$ with denominator at most $6$.</strong> $b=2$: $\tfrac12$ (1). $b=3$: $\tfrac13,\tfrac23$ (2). $b=4$: $\tfrac14,\tfrac34$ (2). $b=5$: four fractions. $b=6$: $\tfrac16,\tfrac56$ (2). Total $1+2+2+4+2=11$. In order: $\tfrac16,\tfrac15,\tfrac14,\tfrac13,\tfrac25,\tfrac12,\tfrac35,\tfrac23,\tfrac34,\tfrac45,\tfrac56$.</p></div>
+    </div>
+
+    <h3 class="text-xl font-bold text-slate-800 mb-3 mt-8 bg-slate-100 p-3 rounded-lg inline-block">Check your understanding</h3>
+    <div id="ex-t5"></div>
+  </div>
+
+  <div id="t6" class="tab-content">
+    <h2 class="text-2xl font-bold text-slate-800 mb-1">Homework: Fractions</h2>
+    <p class="text-slate-600 mb-3">Three levels, from understanding to challenge, including set notation (Section 1.0) and HCF and coprime numbers (Chapter 1). Each question gives you 3 attempts, then shows the full solution. When every question in the chapter is finished, your <strong>Learning Report</strong> unlocks in Tab 7.</p>
+    <div class="card mb-3 bg-teal-50 border-teal-200"><p class="text-sm text-slate-800" id="hw-score">Homework status: 0 correct, 0 revealed, 0 remaining</p></div>
+    <div id="ex-t6"></div>
+  </div>
+
+  <div id="t7" class="tab-content">
+    <h2 class="text-2xl font-bold text-slate-800 mb-1">Your Learning Report</h2>
+    <div id="report-root"></div>
+  </div>
+
+  </main>
+<footer class="shen-footer"><svg viewBox="0 0 100 100" role="img" aria-label="申 Shen Studio"><rect width="100" height="100" rx="12" fill="#B3261E"/><path d="M41.57 27.7V42.46H27.58V27.7ZM15.1 25.34V70.78H16.95C22.18 70.78 27.58 67.91 27.58 66.65V62.18H41.57V90H44.01C48.82 90 54.3 86.88 54.3 85.62V62.18H68.97V68.93H71.07C75.37 68.93 81.53 66.65 81.61 65.89V29.64C83.38 29.3 84.39 28.55 84.9 27.87L73.69 19.19L68.12 25.34H54.3V13.96C56.74 13.62 57.33 12.7 57.5 11.52L41.57 10V25.34H28.42L15.1 20.2ZM54.3 27.7H68.97V42.46H54.3ZM41.57 59.82H27.58V44.82H41.57ZM54.3 59.82V44.82H68.97V59.82Z" fill="#FFFFFF"/></svg><span><b>Shen Studio</b> · Designed by Mr. Shen</span></footer>
+<div class="shen-print-mark" aria-hidden="true"><svg viewBox="0 0 100 100" role="img" aria-label="申 Shen Studio"><rect width="100" height="100" rx="12" fill="#B3261E"/><path d="M41.57 27.7V42.46H27.58V27.7ZM15.1 25.34V70.78H16.95C22.18 70.78 27.58 67.91 27.58 66.65V62.18H41.57V90H44.01C48.82 90 54.3 86.88 54.3 85.62V62.18H68.97V68.93H71.07C75.37 68.93 81.53 66.65 81.61 65.89V29.64C83.38 29.3 84.39 28.55 84.9 27.87L73.69 19.19L68.12 25.34H54.3V13.96C56.74 13.62 57.33 12.7 57.5 11.52L41.57 10V25.34H28.42L15.1 20.2ZM54.3 27.7H68.97V42.46H54.3ZM41.57 59.82H27.58V44.82H41.57ZM54.3 59.82V44.82H68.97V59.82Z" fill="#FFFFFF"/></svg><span>Shen Studio</span></div>
+
+
+<script>
+
+/* ============ helpers ============ */
+const R = String.raw;
+function typeset(el){ try{ if(window.MathJax && MathJax.typesetPromise){ MathJax.typesetPromise(el?[el]:undefined).catch(()=>{}); } }catch(e){} }
+function sorter(a,b){ const na=Number(a), nb=Number(b); if(!isNaN(na)&&!isNaN(nb)) return na-nb; return String(a)<String(b)?-1:String(a)>String(b)?1:0; }
+function fm(n){ return n<0 ? '−'+(-n) : ''+n; }
+function fp(n){ return n<0 ? '(−'+(-n)+')' : ''+n; }
+function range(a,b){ const r=[]; for(let i=a;i<=b;i++) r.push(i); return r; }
+function fmtSet(arr){ return arr.length? '{ '+arr.join(', ')+' }' : '∅'; }
+function cleanNum(s){ return String(s).replace(/[−–—]/g,'-'); }
+function gcd(a,b){ while(b){ [a,b]=[b,a%b]; } return a; }
+function isPrime(n){ if(n<2) return false; for(let i=2;i*i<=n;i++) if(n%i===0) return false; return true; }
+function factorize(n){ const f={}; let d=2; while(d*d<=n){ while(n%d===0){ f[d]=(f[d]||0)+1; n/=d; } d++; } if(n>1) f[n]=(f[n]||0)+1; return f; }
+function indexForm(f){ const ks=Object.keys(f).map(Number).sort((a,b)=>a-b); return ks.map(p=>f[p]>1? p+'<sup>'+f[p]+'</sup>' : ''+p).join(' × ') || '1'; }
+function divisorsOf(n){ const r=[]; for(let d=1; d<=n; d++) if(n%d===0) r.push(d); return r; }
+function clampInt(v,lo,hi){ v=parseInt(v); if(isNaN(v)) return lo; return Math.max(lo,Math.min(hi,v)); }
+
+function openTab(evt, id){
+  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab-link').forEach(b=>{ b.classList.remove('text-teal-700','border-b-4','border-teal-600','font-bold'); b.classList.add('text-slate-500','font-semibold'); });
+  document.getElementById(id).classList.add('active');
+  const btn=document.querySelector('.tab-link[data-tab="'+id+'"]'); btn.classList.remove('text-slate-500','font-semibold'); btn.classList.add('text-teal-700','border-b-4','border-teal-600','font-bold');
+  if(id==='t7') buildReport();
+  typeset(document.getElementById(id)); window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ============ modular helpers ============ */
+
+function S(steps){ return '<ol class="list-decimal pl-5 space-y-1 text-sm text-slate-700">'+steps.map(s=>'<li>'+s+'</li>').join('')+'</ol>'; }
+const EX={};
+const P=(...ps)=>ps.map(p=>`<p>${p}</p>`).join('');
+
+function parseFrac(raw){ const v=cleanNum(raw).replace(/\s/g,''); const m=v.match(/^(-?\d+)(?:\/(-?\d+))?$/); if(!m) return null; return {n:parseInt(m[1],10), d:m[2]===undefined?1:parseInt(m[2],10)}; }
+var _pf={};
+function fracPreview(id){
+  const el=document.getElementById('prev-'+id), inp=document.getElementById('inp-'+id); if(!el||!inp) return;
+  const f=parseFrac(inp.value); let h='<span class="lab">Preview</span>';
+  if(inp.value.trim()==='') h+='<span class="msg">Your fraction will appear here as you type, for example $\\dfrac{3}{4}$ is typed as 3/4.</span>';
+  else if(!f) h+='<span class="msg">This cannot be read yet. Type a whole number, or two whole numbers with / between them.</span>';
+  else if(f.d===0) h+='<span class="msg">The denominator cannot be 0.</span>';
+  else if(f.d<0) h+='<span class="block text-xs text-amber-700 font-semibold">Put the minus sign on the top.</span>';
+  else h+='<span class="text-lg">$'+(f.d===1? String(f.n) : (f.n<0?'-':'')+'\\dfrac{'+Math.abs(f.n)+'}{'+f.d+'}')+'$</span>';
+  el.innerHTML=h; clearTimeout(_pf[id]); _pf[id]=setTimeout(()=>typeset(el),120);
+}
+/* ============ 3.2 widgets ============ */
+function gcd2(a,b){ a=Math.abs(a); b=Math.abs(b); while(b){ const t=a%b; a=b; b=t; } return a; }
+function ftex(n,d){ const g=gcd2(n,d)||1; n/=g; d/=g; if(d<0){ n=-n; d=-d; } return d===1? String(n) : (n<0? '-':'')+'\\dfrac{'+Math.abs(n)+'}{'+d+'}'; }
+function gv(id){ return Number(document.getElementById(id).value); }
+/* ---- Tab 1: Equivalence Explorer ---- */
+function eqUpdate(){
+  const a=gv('eq-a'), b=gv('eq-b'); document.getElementById('eq-av').textContent=a; document.getElementById('eq-bv').textContent=b;
+  const g=gcd2(a,b)||1, sn=a/g, sd=b/g, v=Math.abs(a)/b;
+  const units=Math.max(1,Math.ceil(v-1e-12)), shown=Math.min(units,4);
+  const barRow=(den,num,label)=>{ let s=''; const W=300, h=26; for(let u=0;u<shown;u++){ const left=Math.min(Math.max(num-u*den,0),den); s+=`<svg viewBox="0 0 ${W+4} ${h+4}" width="${W+4}" height="${h+4}" style="display:block;margin:2px 0" role="img" aria-label="${label}">`; for(let i=0;i<den;i++){ s+=`<rect x="${2+i*W/den}" y="2" width="${W/den}" height="${h}" fill="${i<left?'#5b6cc0':'#eef0fa'}" stroke="#1c2230" stroke-width="1"/>`; } s+='</svg>'; } return s; };
+  let h='';
+  if(a===0){ h='<p class="text-sm">Zero parts shaded: the value is $0$.</p>'; }
+  else { h+=`<div class="text-xs font-bold text-slate-600">$\\dfrac{${Math.abs(a)}}{${b}}$ (${b} parts per bar)</div>`+barRow(b,Math.abs(a),'bars for the given fraction');
+    if(g>1) h+=`<div class="text-xs font-bold text-slate-600 mt-2">Simplest form $${ftex(a,b)}$ (${sd} parts per bar)</div>`+barRow(sd,Math.abs(sn),'bars for the simplest form');
+    if(units>shown) h+=`<p class="text-xs text-slate-500">Only the first ${shown} whole bars are drawn.</p>`; }
+  document.getElementById('eq-bars').innerHTML=h;
+  const sign=a<0? '-':'';
+  let m=`<p>$\\text{HCF}(${Math.abs(a)},${b})=${g}$</p>`;
+  m+= g>1? `<p>Simplest form: $\\dfrac{${a}}{${b}}=\\dfrac{${a}\\div${g}}{${b}\\div${g}}=${ftex(a,b)}$</p>` : `<p><strong>Already in simplest form</strong> (the HCF is $1$).</p>`;
+  m+=`<p>Equivalent: $${ftex(a,b)}=\\dfrac{${sn*2}}{${sd*2}}=\\dfrac{${sn*3}}{${sd*3}}=\\dfrac{${sn*5}}{${sd*5}}$</p>`;
+  m+= sd===1? `<p class="font-semibold">This fraction is the integer $${sn}$, so it is in $\\mathbb{Z}$.</p>` : `<p>It is <strong>not</strong> an integer.</p>`;
+  document.getElementById('eq-msg').innerHTML=m; typeset(document.getElementById('eq-msg')); typeset(document.getElementById('eq-bars'));
+}
+/* ---- Tab 2: Number Line Placer ---- */
+function nlUpdate(){
+  const p=gv('nl-p'), q=gv('nl-q'); document.getElementById('nl-pv').textContent=p; document.getElementById('nl-qv').textContent=q;
+  const v=p/q; let lo=Math.min(0,Math.floor(v)), hi=Math.max(1,Math.ceil(v)); let zoom=false;
+  if(hi-lo>7){ lo=Math.floor(v); hi=lo+1; zoom=true; }
+  const W=560, x0=30, L=W-60, span=hi-lo; const X=t=>x0+L*(t-lo)/span;
+  let s=`<svg viewBox="0 0 ${W} 110" style="max-width:${W}px;width:100%" role="img" aria-label="number line with the point ${p} over ${q}"><line x1="${x0-12}" y1="60" x2="${x0+L+12}" y2="60" stroke="#0f172a" stroke-width="2.5"/>`;
+  const minor = q*span<=90;
+  for(let k=lo*q;k<=hi*q;k++){ const t=k/q, x=X(t), whole=(k%q===0); if(!whole && !minor) continue; s+=`<line x1="${x}" y1="${whole?44:52}" x2="${x}" y2="${whole?76:68}" stroke="#0f172a" stroke-width="${whole?2.5:1.3}"/>`; if(whole) s+=`<text x="${x}" y="98" text-anchor="middle" font-size="15" font-weight="700" font-family="Inter,Arial,sans-serif">${k/q}</text>`; }
+  s+=`<circle cx="${X(v)}" cy="60" r="7" fill="#5b6cc0" stroke="#1c2230" stroke-width="2"/><text x="${X(v)}" y="34" text-anchor="middle" font-size="16" font-weight="800" fill="#1c2230" font-family="Inter,Arial,sans-serif">${p}/${q}</text></svg>`;
+  document.getElementById('nl-svg').innerHTML=s;
+  const fl=Math.floor(v), r=p-fl*q; let m='';
+  m+=`<p>One gap on the line is $\\dfrac1{${q}}$ (each unit is split into ${q} equal ${q===1?'gap':'gaps'}).</p>`;
+  if(p%q===0) m+=`<p class="font-semibold">$\\dfrac{${p}}{${q}}=${p/q}$ is an integer point.</p>`;
+  else if(Math.abs(p)>q) m+= v>0? `<p>Improper fraction: $\\dfrac{${p}}{${q}}=${fl}\\dfrac{${r}}{${q}}$, which lies between $${fl}$ and $${fl+1}$.</p>` : `<p>$\\dfrac{${p}}{${q}}=${v.toFixed(3).replace(/0+$/,'')}$ lies between $${fl}$ and $${fl+1}$ (the integer below is $${fl}$).</p>`;
+  else m+=`<p>A proper fraction: $\\dfrac{${p}}{${q}}$ lies between $${fl}$ and $${fl+1}$.</p>`;
+  if(zoom) m+='<p class="text-xs text-slate-500">The line is zoomed in to the unit that contains the point.</p>';
+  document.getElementById('nl-msg').innerHTML=m; typeset(document.getElementById('nl-msg'));
+}
+/* ---- Tab 3: Fraction Comparer ---- */
+function cpSet(a,b,c,d){ document.getElementById('cp-a').value=a; document.getElementById('cp-b').value=b; document.getElementById('cp-c').value=c; document.getElementById('cp-d').value=d; cpUpdate(); }
+function cpUpdate(){
+  const a=gv('cp-a'), b=gv('cp-b'), c=gv('cp-c'), d=gv('cp-d'), out=document.getElementById('cp-out');
+  if(!(b>0)||!(d>0)||[a,b,c,d].some(x=>!Number.isInteger(x))){ out.innerHTML='<p class="text-amber-700 font-semibold">Use whole numbers, and make both denominators positive.</p>'; return; }
+  const l=a*d, r=c*b, rel= l<r? '<' : l>r? '>' : '=';
+  let h=`<p>Cross-multiply: $${a}\\times${d}=${l}$ and $${c}\\times${b}=${r}$.</p>`;
+  h+=`<p class="font-bold text-teal-800">So $\\dfrac{${a}}{${b}}\\ ${rel}\\ \\dfrac{${c}}{${d}}$.</p>`;
+  if(a>0&&c>0&&a<b&&c<d){ const g1=b-a, g2=d-c; h+=`<p class="text-slate-600">Gap-to-1 view: $1-\\dfrac{${a}}{${b}}=\\dfrac{${g1}}{${b}}${g1===1?'':'=\\dfrac1{'+(+(b/g1).toFixed(4))+'}'}$ and $1-\\dfrac{${c}}{${d}}=\\dfrac{${g2}}{${d}}${g2===1?'':'=\\dfrac1{'+(+(d/g2).toFixed(4))+'}'}$. The bigger gap belongs to the smaller fraction.</p>`; }
+  h+=`<p class="text-slate-600">As decimals: ${(a/b).toFixed(6)} and ${(c/d).toFixed(6)}.</p>`;
+  out.innerHTML=h; typeset(out);
+}
+/* ---- Tab 4: Between Explorer ---- */
+function btSet(a,b,c,d){ document.getElementById('bt-a').value=a; document.getElementById('bt-b').value=b; document.getElementById('bt-c').value=c; document.getElementById('bt-d').value=d; btUpdate(); }
+function btUpdate(){
+  let a=gv('bt-a'), b=gv('bt-b'), c=gv('bt-c'), d=gv('bt-d'); const out=document.getElementById('bt-out'), svg=document.getElementById('bt-svg');
+  if(!(b>0)||!(d>0)||[a,b,c,d].some(x=>!Number.isInteger(x))){ out.innerHTML='<p class="text-amber-700 font-semibold">Use whole numbers, and make both denominators positive.</p>'; svg.innerHTML=''; return; }
+  if(a*d>c*b){ [a,c]=[c,a]; [b,d]=[d,b]; }
+  if(a*d===c*b){ out.innerHTML='<p class="font-semibold">These two fractions are equal, so there is no gap.</p>'; svg.innerHTML=''; return; }
+  const mn=a*d+c*b, md=2*b*d, mdn=a+c, mdd=b+d, x=a/b, y=c/d, mid=(x+y)/2, med=mdn/mdd;
+  const W=560, x0=30, L=W-60, pad=(y-x)*0.25, lo=x-pad, hi=y+pad, X=t=>x0+L*(t-lo)/(hi-lo);
+  let s=`<svg viewBox="0 0 ${W} 120" style="max-width:${W}px;width:100%" role="img" aria-label="the two fractions, their midpoint and their mediant on a number line"><line x1="${x0-10}" y1="70" x2="${x0+L+10}" y2="70" stroke="#0f172a" stroke-width="2.5"/>`;
+  const pts=[[x,'#0f172a',`${a}/${b}`,34],[y,'#0f172a',`${c}/${d}`,34],[mid,'#5b6cc0','midpoint',100],[med,'#4f46e5','mediant',100]];
+  pts.forEach(([t,col,lab,ty])=>{ s+=`<circle cx="${X(t)}" cy="70" r="6" fill="${col}"/><text x="${X(t)}" y="${ty}" text-anchor="middle" font-size="13" font-weight="700" fill="${col}" font-family="Inter,Arial,sans-serif">${lab}</text>`; });
+  svg.innerHTML=s+'</svg>';
+  let h=`<p><span class="font-bold text-teal-700">Midpoint</span> $=\\dfrac12\\left(\\dfrac{${a}}{${b}}+\\dfrac{${c}}{${d}}\\right)=\\dfrac{${mn}}{${md}}${ftex(mn,md)===('\\dfrac{'+mn+'}{'+md+'}')?'':'='+ftex(mn,md)}$</p>`;
+  h+=`<p><span class="font-bold text-indigo-700">Mediant</span> $=\\dfrac{${a}+${c}}{${b}+${d}}=\\dfrac{${mdn}}{${mdd}}${ftex(mdn,mdd)===('\\dfrac{'+mdn+'}{'+mdd+'}')?'':'='+ftex(mdn,mdd)}$, which is also between them.</p>`;
+  h+=`<p class="text-slate-600">Check: ${x.toFixed(5)} &lt; ${mid.toFixed(5)} and ${med.toFixed(5)} &lt; ${y.toFixed(5)}.</p>`;
+  if(c*b-a*d===1) h+=`<p class="font-semibold">$bc-ad=1$: these are <strong>neighbours</strong>, so the smallest denominator between them is $${b}+${d}=${b+d}$.</p>`;
+  out.innerHTML=h; typeset(out);
+}
+
+const NLQ5=(()=>{ const x0=30, w=500, n=16; let s=`<svg viewBox="0 0 560 110" style="max-width:560px;width:100%" role="img" aria-label="A number line from one fifth to one third divided into 16 equal gaps">`;
+  s+=`<line x1="${x0-12}" y1="60" x2="${x0+w+12}" y2="60" stroke="#0f172a" stroke-width="2.5"/>`;
+  for(let i=0;i<=n;i++){ const x=x0+w*i/n, big=(i===0||i===n); s+=`<line x1="${x}" y1="${big?38:50}" x2="${x}" y2="${big?84:70}" stroke="#0f172a" stroke-width="${big?3:2}"/>`; }
+  s+=`<text x="${x0}" y="26" text-anchor="middle" font-size="20" font-weight="700" font-family="Inter,Arial,sans-serif">1/5</text><text x="${x0+w}" y="26" text-anchor="middle" font-size="20" font-weight="700" font-family="Inter,Arial,sans-serif">1/3</text></svg>`; return s; })();
+EX.t1=[
+ { level:'A. Equivalent fractions and simplest form', id:'t1q1', type:'frac', q:R`Write $\dfrac{84}{126}$ in simplest form.`, ans:'2/3',
+   sol:S([R`$84=2^2\times3\times7$ and $126=2\times3^2\times7$, so $\text{HCF}=2\times3\times7=42$.`,R`$\dfrac{84\div42}{126\div42}=\dfrac{2}{3}$.`]) },
+ { id:'t1q2', type:'frac', q:R`Write $\dfrac{144}{360}$ in simplest form.`, ans:'2/5',
+   sol:S([R`$144=2^4\times3^2$ and $360=2^3\times3^2\times5$, so $\text{HCF}=2^3\times3^2=72$.`,R`$\dfrac{144\div72}{360\div72}=\dfrac25$.`]) },
+ { id:'t1q3', type:'num', q:R`Find the missing number: $\dfrac37=\dfrac{?}{35}$.`, ans:15,
+   sol:S([R`The denominator was multiplied by $35\div7=5$.`,R`So the numerator is $3\times5=\mathbf{15}$.`]) },
+ { id:'t1q4', type:'num', q:R`Find the missing number: $\dfrac58=\dfrac{40}{?}$.`, ans:64,
+   sol:S([R`The numerator was multiplied by $40\div5=8$.`,R`So the denominator is $8\times8=\mathbf{64}$.`]) },
+ { id:'t1q5', type:'mc', q:R`Which fraction is equal to $\dfrac46$?`, opts:[R`$\dfrac68$`,R`$\dfrac{10}{15}$`,R`$\dfrac{12}{16}$`,R`$\dfrac{14}{20}$`], ans:1,
+   sol:S([R`$\dfrac46=\dfrac23$. Cross-multiply each option with $\dfrac46$.`,R`$4\times15=60=6\times10$ &#10003;. The others fail: $4\times8=32\ne36$, $4\times16=64\ne72$, $4\times20=80\ne84$.`]) },
+ { id:'t1q6', type:'mc', q:R`Which of these pairs is <strong>not</strong> a pair of equal fractions?`, opts:[R`$\dfrac35$ and $\dfrac{18}{30}$`,R`$\dfrac79$ and $\dfrac{28}{36}$`,R`$\dfrac58$ and $\dfrac{15}{25}$`,R`$\dfrac23$ and $\dfrac{14}{21}$`], ans:2,
+   sol:S([R`Cross-multiply: $5\times25=125$ but $8\times15=120$, so $\dfrac58\ne\dfrac{15}{25}$.`,R`(Indeed $\dfrac{15}{25}=\dfrac35$.) The other three pairs pass the test.`]) },
+ { level:'B. Sets, integers and the meaning of a fraction', id:'t1q7', type:'mc', q:R`Which of these is <strong>not</strong> an integer?`, opts:[R`$\dfrac{12}{4}$`,R`$\dfrac{-15}{3}$`,R`$\dfrac72$`,R`$\dfrac05$`], ans:2,
+   sol:S([R`$\dfrac{12}4=3$, $\ \dfrac{-15}3=-5$, $\ \dfrac05=0$ are all integers.`,R`$\dfrac72=3.5$ lies between $3$ and $4$, so it is not in $\mathbb{Z}$.`]) },
+ { id:'t1q8', type:'num', q:R`How many of the six fractions $\dfrac{12}4,\ \dfrac72,\ \dfrac{-15}5,\ \dfrac{18}5,\ \dfrac07,\ \dfrac{14}4$ are integers?`, ans:3,
+   sol:S([R`$\dfrac{12}4=3$, $\ \dfrac{-15}5=-3$ and $\dfrac07=0$ are integers.`,R`$\dfrac72$, $\dfrac{18}5$ and $\dfrac{14}4=\dfrac72$ are not.`,R`The answer is $\mathbf{3}$.`]) },
+ { id:'t1q9', type:'num', q:R`Three pizzas are each cut into $8$ equal slices and shared fairly among $4$ friends. How many slices does each friend get?`, ans:6,
+   sol:S([R`There are $3\times8=24$ slices.`,R`$24\div4=\mathbf{6}$ slices each. That is $\dfrac68=\dfrac34$ of a pizza.`]) },
+ { id:'t1q10', type:'mc', q:R`Why is $\dfrac50$ not a rational number?`, opts:[R`No number $x$ satisfies $0\times x=5$, so $5\div0$ has no answer`,R`Because $5$ is odd`,R`Because $0$ is not an integer`,R`Because the answer would be negative`], ans:0,
+   sol:S([R`$\dfrac ab$ is the number $x$ with $bx=a$.`,R`For $b=0$ and $a=5$ this needs $0\times x=5$, which no number satisfies.`]) },
+ { level:'C. Counting and working backwards', id:'t1q11', type:'num', q:R`How many of the fractions $\dfrac1{12},\dfrac2{12},\ldots,\dfrac{11}{12}$ are already in simplest form?`, ans:4,
+   sol:S([R`$12=2^2\times3$. A fraction $\dfrac a{12}$ is in simplest form when $a$ is divisible by neither $2$ nor $3$.`,R`$a=1,5,7,11$: $\mathbf{4}$ fractions.`]) },
+ { id:'t1q12', type:'num', q:R`For how many integers $n$ with $1\le n\le60$ is $\dfrac n{60}$ in simplest form?`, ans:16,
+   sol:S([R`$60=2^2\times3\times5$. We need $n$ not divisible by $2$, $3$ or $5$.`,R`Odd numbers: $30$. Remove the odd multiples of $3$ ($10$ of them) and the odd multiples of $5$ ($6$ of them), but the odd multiples of $15$ ($15$ and $45$) were removed twice: add $2$ back.`,R`$30-10-6+2=\mathbf{16}$. (They are $1,7,11,13,17,19,23,29,31,37,41,43,47,49,53,59$.)`]) },
+ { id:'t1q13', type:'num', q:P(R`A fraction equals $\dfrac38$. Its numerator and denominator add up to $88$.`,R`<strong>Question:</strong> what is the numerator?`), ans:24,
+   sol:S([R`Write the fraction as $\dfrac{3k}{8k}$.`,R`$3k+8k=11k=88$, so $k=8$.`,R`The fraction is $\dfrac{24}{64}$, so the numerator is $\mathbf{24}$.`]) },
+ { id:'t1q14', type:'num', q:P(R`A fraction equals $\dfrac59$. Its denominator is $36$ more than its numerator.`,R`<strong>Question:</strong> what is the numerator?`), ans:45,
+   sol:S([R`Write the fraction as $\dfrac{5k}{9k}$.`,R`$9k-5k=4k=36$, so $k=9$.`,R`The numerator is $5\times9=\mathbf{45}$ (the fraction is $\dfrac{45}{81}$).`]) },
+ { id:'t1q15', type:'set', q:P(R`List all the fractions in simplest form with denominator $10$ that lie strictly between $0$ and $1$.`,R`Type them separated by commas, for example <span class="mono">1/10,3/10</span> (use the form <span class="mono">a/b</span>).`), ans:'1/10,3/10,7/10,9/10',
+   sol:S([R`The numerator $a$ (from $1$ to $9$) must have no common factor with $10=2\times5$.`,R`$a=1,3,7,9$. So the set is $\left\{\dfrac1{10},\dfrac3{10},\dfrac7{10},\dfrac9{10}\right\}$.`]) }
+];
+EX.t2=[
+ { level:'A. Reading scales', id:'t2q1', type:'frac', q:R`The marks $\dfrac12$ and $\dfrac52$ on a number line have $8$ equal gaps between them. What is the value of <strong>one gap</strong>?`, ans:'1/4',
+   sol:S([R`The difference between the marks is $\dfrac52-\dfrac12=2$.`,R`$2\div8=\dfrac14$.`]) },
+ { id:'t2q2', type:'frac', q:R`A number line from $0$ to $3$ is divided into $12$ equal gaps. The point $P$ is $7$ gaps from $0$. What fraction does $P$ show? (Simplest form.)`, ans:'7/4',
+   sol:S([R`One gap is $3\div12=\dfrac14$.`,R`$7$ gaps is $7\times\dfrac14=\dfrac74$.`]) },
+ { id:'t2q3', type:'num', q:P(R`<span class="qlabel">Competition question</span>`,R`The fractions $\dfrac15$ and $\dfrac13$ are marked on the number line below. The $16$ equal gaps between them are marked with ticks.`,NLQ5,R`Counting the $\dfrac15$ mark as number $0$, which numbered mark is the position of $\dfrac14$?`), ans:6,
+   sol:S([R`The distance from $\dfrac15$ to $\dfrac13$ is $\dfrac13-\dfrac15=\dfrac2{15}$.`,R`One gap is $\dfrac2{15}\div16=\dfrac1{120}$. (So $\dfrac15=\dfrac{24}{120}$ and $\dfrac13=\dfrac{40}{120}$: $16$ gaps. &#10003;)`,R`$\dfrac14=\dfrac{30}{120}$, which is $30-24=6$ gaps after $\dfrac15$.`,R`The position is mark number $\mathbf{6}$.`]) },
+ { id:'t2q4', type:'frac', q:R`The marks $\dfrac13$ and $\dfrac23$ have $5$ equal gaps between them. What fraction is the point $2$ gaps above $\dfrac13$?`, ans:'7/15',
+   sol:S([R`One gap is $\left(\dfrac23-\dfrac13\right)\div5=\dfrac13\div5=\dfrac1{15}$.`,R`$\dfrac13+\dfrac2{15}=\dfrac5{15}+\dfrac2{15}=\dfrac7{15}$.`]) },
+ { level:'B. Mixed numbers and the number line', id:'t2q5', type:'num', q:R`Write $\dfrac{47}6$ as a mixed number. What is the <strong>whole-number part</strong>?`, ans:7,
+   sol:S([R`$47=6\times7+5$.`,R`So $\dfrac{47}6=7\dfrac56$, and the whole part is $\mathbf{7}$.`]) },
+ { id:'t2q6', type:'num', q:R`$\dfrac{47}6=7\dfrac{?}{6}$. What is the missing numerator?`, ans:5,
+   sol:S([R`$47\div6$ gives quotient $7$ and remainder $5$.`,R`The missing numerator is the remainder: $\mathbf{5}$.`]) },
+ { id:'t2q7', type:'frac', q:P(R`Write $3\dfrac27$ as an improper fraction.`,R`(Type it as <span class="mono">a/b</span>.)`), ans:'23/7', simp:false,
+   sol:S([R`$3\dfrac27=\dfrac{3\times7+2}7=\dfrac{23}7$.`]) },
+ { id:'t2q8', type:'num', q:R`The fraction $-\dfrac{17}5$ lies between two consecutive integers. What is the <strong>smaller</strong> one?`, ans:-4,
+   sol:S([R`$\dfrac{17}5=3\dfrac25=3.4$, so $-\dfrac{17}5=-3.4$.`,R`$-3.4$ lies between $-4$ and $-3$. The smaller is $\mathbf{-4}$.`]) },
+ { level:'C. A fraction as an operator', id:'t2q9', type:'num', q:R`Find $\dfrac34$ of $20$.`, ans:15,
+   sol:S([R`Shrink: $20\div4=5$.`,R`Stretch: $5\times3=\mathbf{15}$.`]) },
+ { id:'t2q10', type:'num', q:R`Find $\dfrac56$ of $72$.`, ans:60,
+   sol:S([R`$72\div6=12$.`,R`$12\times5=\mathbf{60}$.`]) },
+ { id:'t2q11', type:'num', q:R`A tank holds $240$ litres. $\dfrac38$ of the water is used. How many litres are left?`, ans:150,
+   sol:S([R`One eighth is $240\div8=30$ litres, so $\dfrac38$ is $90$ litres used.`,R`Left: $240-90=\mathbf{150}$ litres. (Or $\dfrac58$ of $240=150$.)`]) },
+ { id:'t2q12', type:'frac', q:R`$18$ of the $30$ students in a class walk to school. What fraction walk? (Simplest form.)`, ans:'3/5',
+   sol:S([R`The fraction is $\dfrac{18}{30}$ and $\text{HCF}(18,30)=6$.`,R`$\dfrac{18\div6}{30\div6}=\dfrac35$.`]) },
+ { id:'t2q13', type:'num', q:R`$\dfrac23$ of a number is $18$. Find the number.`, ans:27,
+   sol:S([R`Undo the operator. Divide by $2$: $18\div2=9$ is one third.`,R`Multiply by $3$: $9\times3=\mathbf{27}$.`]) },
+ { id:'t2q14', type:'num', q:P(R`$\dfrac35$ of a ribbon is $21$ cm long.`,R`<strong>Question:</strong> how long is $\dfrac25$ of the ribbon, in cm?`), ans:14,
+   sol:S([R`$\dfrac35$ is $21$ cm, so $\dfrac15$ is $21\div3=7$ cm.`,R`$\dfrac25$ is $2\times7=\mathbf{14}$ cm.`]) },
+ { id:'t2q15', type:'num', q:P(R`A tank is $\dfrac34$ full and contains $90$ litres. Then $\dfrac13$ of the water in the tank is removed.`,R`<strong>Question:</strong> how many litres remain?`), ans:60,
+   sol:S([R`$\dfrac13$ of $90$ is $30$ litres removed.`,R`$90-30=\mathbf{60}$ litres remain. (The capacity $120$ is not needed.)`]) }
+];
+EX.t3=[
+ { level:'A. Comparing two fractions', id:'t3q1', type:'mc', q:R`Which is larger, $\dfrac58$ or $\dfrac7{11}$?`, opts:[R`$\dfrac58$`,R`$\dfrac7{11}$`,R`They are equal`], ans:1,
+   sol:S([R`Cross-multiply: $5\times11=55$ and $7\times8=56$.`,R`Since $55<56$, we have $\dfrac58<\dfrac7{11}$, so $\dfrac7{11}$ is larger.`]) },
+ { id:'t3q2', type:'mc', q:R`Which is larger, $\dfrac7{15}$ or $\dfrac7{16}$?`, opts:[R`$\dfrac7{15}$`,R`$\dfrac7{16}$`,R`They are equal`], ans:0,
+   sol:S([R`Same numerator: sharing $7$ among fewer parts gives bigger parts.`,R`$\dfrac7{15}>\dfrac7{16}$.`]) },
+ { id:'t3q3', type:'frac', q:R`Which is larger, $\dfrac{23}{45}$ or $\dfrac{17}{33}$? Type the larger one in the form <span class="mono">a/b</span>.`, ans:'17/33', simp:false,
+   sol:S([R`Cross-multiply: $23\times33=759$ and $17\times45=765$.`,R`$759<765$, so $\dfrac{23}{45}<\dfrac{17}{33}$. The larger is $\dfrac{17}{33}$.`,R`(Check with the benchmark $\dfrac12$: $\dfrac{23}{45}\approx0.511$ and $\dfrac{17}{33}\approx0.515$.)`]) },
+ { id:'t3q4', type:'text', q:P(R`Arrange $\dfrac34,\ \dfrac57,\ \dfrac7{10},\ \dfrac23$ from <strong>smallest to largest</strong>. Label them a, b, c, d in the order given, and type the letters, for example <span class="mono">abcd</span>.`), ans:['dcba'],
+   sol:S([R`Use the common denominator $420$: $\dfrac34=\dfrac{315}{420}$, $\dfrac57=\dfrac{300}{420}$, $\dfrac7{10}=\dfrac{294}{420}$, $\dfrac23=\dfrac{280}{420}$.`,R`Smallest to largest: $\dfrac23<\dfrac7{10}<\dfrac57<\dfrac34$, which is <strong>d, c, b, a</strong>.`]) },
+ { id:'t3q5', type:'mc', q:R`Which fraction is the largest?`, opts:[R`$\dfrac67$`,R`$\dfrac78$`,R`$\dfrac89$`,R`$\dfrac9{10}$`], ans:3,
+   sol:S([R`Each is $1-\dfrac1{n}$ with $n=7,8,9,10$.`,R`The gap to $1$ is smallest for $\dfrac9{10}$ (gap $\dfrac1{10}$), so it is the largest.`]) },
+ { id:'t3q6', type:'mc', q:R`Why does cross-multiplication work as a test of $\dfrac ab<\dfrac cd$ (with $b,d>0$)?`, opts:[R`Multiplying both sides by the positive number $bd$ keeps the inequality direction`,R`Because fractions with bigger numerators are always bigger`,R`Because we are allowed to divide by zero`,R`Because $b$ and $d$ are always equal`], ans:0,
+   sol:S([R`$\dfrac ab\times bd=ad$ and $\dfrac cd\times bd=bc$.`,R`$bd>0$ so the direction is preserved: $\dfrac ab<\dfrac cd\iff ad<bc$. A negative multiplier would flip it, which is why denominators must be positive.`]) },
+ { level:'B. Counting and boundaries', id:'t3q7', type:'num', q:R`What is the largest integer $n$ for which $\dfrac n9<\dfrac75$?`, ans:12,
+   sol:S([R`Multiply both sides by $45$: $5n<63$, so $n<12.6$.`,R`The largest integer is $\mathbf{12}$.`]) },
+ { id:'t3q8', type:'num', q:R`How many integers $n$ satisfy $\dfrac13<\dfrac n{12}<\dfrac56$?`, ans:5,
+   sol:S([R`$\dfrac13=\dfrac4{12}$ and $\dfrac56=\dfrac{10}{12}$, so $4<n<10$.`,R`That gives $n=5,6,7,8,9$: $\mathbf5$ integers.`]) },
+ { id:'t3q9', type:'num', q:R`How many integers $n$ satisfy $\dfrac13<\dfrac n{17}<\dfrac12$?`, ans:3,
+   sol:S([R`$\dfrac{17}3=5.67$ and $\dfrac{17}2=8.5$, so $5.67<n<8.5$.`,R`$n=6,7,8$: $\mathbf3$ integers.`]) },
+ { id:'t3q10', type:'num', q:R`What is the smallest positive integer $n$ for which $\dfrac n{n+7}>0.9$?`, ans:64,
+   sol:S([R`$\dfrac n{n+7}>\dfrac9{10}\iff10n>9n+63\iff n>63$.`,R`The smallest integer is $\mathbf{64}$. (Check: $\dfrac{63}{70}=0.9$ exactly, which is not greater than $0.9$, while $\dfrac{64}{71}\approx0.9014$ is.)`]) },
+ { level:'C. The gap-to-1 method (competition questions)', id:'t3q11', type:'text', q:P(R`<span class="qlabel">Competition question</span>`,R`Let $A=\dfrac{111110}{111111},\ B=\dfrac{222221}{222223},\ C=\dfrac{333331}{333334}$.`,R`Arrange them from <strong>smallest to largest</strong>. Type the three letters, for example <span class="mono">abc</span>.`), ans:['acb'],
+   sol:S([R`All three are very close to $1$, so compare the <strong>gaps to $1$</strong>. The bigger the gap, the smaller the fraction.`,R`$1-A=\dfrac1{111111}$.`,R`$1-B=\dfrac2{222223}=\dfrac1{111111.5}$.`,R`$1-C=\dfrac3{333334}=\dfrac1{111111.33\ldots}$.`,R`A unit fraction with a bigger denominator is smaller, so the gaps satisfy $1-B<1-C<1-A$. Hence $A<C<B$: the answer is <strong>A, C, B</strong>.`]) },
+ { id:'t3q12', type:'num', q:P(R`In the previous question, $1-B=\dfrac{2}{222223}$. Write this as $\dfrac1x$. What is $x$ exactly?`), ans:111111.5,
+   sol:S([R`$\dfrac2{222223}=\dfrac1{222223\div2}=\dfrac1{111111.5}$.`,R`So $x=\mathbf{111111.5}$.`]) },
+ { id:'t3q13', type:'text', q:P(R`Arrange $a=\dfrac{99}{100},\ b=\dfrac{999}{1001},\ c=\dfrac{9999}{10003}$ from smallest to largest. Type the three letters.`), ans:['abc'],
+   sol:S([R`Gaps to $1$: $1-a=\dfrac1{100}$, $1-b=\dfrac2{1001}=\dfrac1{500.5}$, $1-c=\dfrac4{10003}=\dfrac1{2500.75}$.`,R`The largest gap is $a$'s, then $b$'s, then $c$'s. So $a<b<c$: <strong>abc</strong>.`]) }
+];
+EX.t4=[
+ { level:'A. Midpoints', id:'t4q1', type:'frac', q:R`Find the number exactly halfway between $\dfrac14$ and $\dfrac56$.`, ans:'13/24',
+   sol:S([R`Midpoint $=\dfrac12\left(\dfrac14+\dfrac56\right)=\dfrac12\left(\dfrac3{12}+\dfrac{10}{12}\right)=\dfrac12\times\dfrac{13}{12}=\dfrac{13}{24}$.`]) },
+ { id:'t4q2', type:'frac', q:R`Find the number exactly halfway between $-\dfrac12$ and $\dfrac13$.`, ans:'-1/12',
+   sol:S([R`$-\dfrac12+\dfrac13=-\dfrac36+\dfrac26=-\dfrac16$.`,R`Half of that: $-\dfrac1{12}$.`]) },
+ { id:'t4q3', type:'frac', q:P(R`<span class="qlabel">Competition question</span>`,R`Which number is exactly halfway between $-\dfrac23$ and $\dfrac45$?`), ans:'1/15',
+   sol:S([R`$-\dfrac23+\dfrac45=\dfrac{-10+12}{15}=\dfrac2{15}$.`,R`Halve it: $\dfrac1{15}$.`,R`Check the distances: $\dfrac1{15}-\left(-\dfrac23\right)=\dfrac{11}{15}$ and $\dfrac45-\dfrac1{15}=\dfrac{11}{15}$. &#10003;`]) },
+ { id:'t4q4', type:'frac', q:R`Find the average of $\dfrac12,\ \dfrac13$ and $\dfrac16$.`, ans:'1/3',
+   sol:S([R`Sum $=\dfrac36+\dfrac26+\dfrac16=1$.`,R`Average $=1\div3=\dfrac13$.`]) },
+ { id:'t4q5', type:'frac', q:R`Find the number halfway between $\dfrac35$ and $\dfrac79$.`, ans:'31/45',
+   sol:S([R`$\dfrac35+\dfrac79=\dfrac{27}{45}+\dfrac{35}{45}=\dfrac{62}{45}$.`,R`Half: $\dfrac{31}{45}$.`]) },
+ { level:'B. The mediant and the smallest denominator', id:'t4q6', type:'frac', q:R`Find the mediant of $\dfrac13$ and $\dfrac12$ (add the tops, add the bottoms).`, ans:'2/5',
+   sol:S([R`Mediant $=\dfrac{1+1}{3+2}=\dfrac25$.`,R`It lies between: $\dfrac13<\dfrac25<\dfrac12$ since $0.333<0.4<0.5$.`]) },
+ { id:'t4q7', type:'mc', q:R`A player scores $1$ out of $3$ shots in the first game and $1$ out of $2$ in the second. Her overall record over both games is...`, opts:[R`$\dfrac25$, which lies between $\dfrac13$ and $\dfrac12$`,R`$\dfrac12$, the same as her better game`,R`$\dfrac5{12}$, the exact midpoint of $\dfrac13$ and $\dfrac12$`,R`$\dfrac13$, the same as her worse game`], ans:0,
+   sol:S([R`Overall she made $1+1=2$ out of $3+2=5$ shots: $\dfrac25$ (the mediant).`,R`The mediant always lies between the two rates, but it is not the midpoint $\dfrac5{12}$, because the games have different numbers of shots.`]) },
+ { id:'t4q8', type:'frac', q:P(R`Among all fractions strictly between $\dfrac37$ and $\dfrac49$, find the one with the <strong>smallest denominator</strong>.`,R`(Type it as <span class="mono">a/b</span>.)`), ans:'7/16',
+   sol:S([R`$4\times7-3\times9=1$, so $\dfrac37$ and $\dfrac49$ are neighbours: $bc-ad=1$.`,R`By Theorem 7 the smallest denominator in between is $7+9=16$, and the fraction is the mediant $\dfrac{3+4}{7+9}=\dfrac7{16}$.`]) },
+ { id:'t4q9', type:'mc', q:R`For positive $a,b,c,d$ with $\dfrac ab<\dfrac cd$, which is always true?`, opts:[R`$\dfrac ab<\dfrac{a+c}{b+d}<\dfrac cd$`,R`$\dfrac{a+c}{b+d}=\dfrac12\left(\dfrac ab+\dfrac cd\right)$`,R`$\dfrac{a+c}{b+d}>\dfrac cd$`,R`$\dfrac{a+c}{b+d}<\dfrac ab$`], ans:0,
+   sol:S([R`This is the mediant theorem (Theorem 5). The mediant is a weighted average, not the midpoint, so option 2 is false in general (for $\dfrac13,\dfrac12$ the midpoint is $\dfrac5{12}$ but the mediant is $\dfrac25$).`]) },
+ { level:'C. Integers hiding between fractions', id:'t4q10', type:'num', q:P(R`<span class="qlabel">Competition question</span>`,R`For an integer $x$, the fraction $\dfrac x9$ lies strictly between $\dfrac{71}7$ and $\dfrac{113}{11}$. Find $x$.`), ans:92,
+   sol:S([R`$\dfrac{71}7=10\dfrac17\approx10.143$ and $\dfrac{113}{11}=10\dfrac3{11}\approx10.273$.`,R`So $10.143<\dfrac x9<10.273$, i.e. $91.29<x<92.45$.`,R`The only integer is $x=\mathbf{92}$. (Check: $\dfrac{92}9=10\dfrac29$; and $\dfrac17<\dfrac29<\dfrac3{11}$ since $0.143<0.222<0.273$. &#10003;)`]) },
+ { id:'t4q11', type:'num', q:R`How many integers $x$ satisfy $\dfrac{13}5<\dfrac x8<\dfrac{29}6$?`, ans:18,
+   sol:S([R`Multiply by $8$: $\dfrac{104}5<x<\dfrac{116}3$, i.e. $20.8<x<38.67$.`,R`$x=21,22,\ldots,38$: $38-21+1=\mathbf{18}$ integers.`]) },
+ { id:'t4q12', type:'num', q:R`How many integers $n$ satisfy $\dfrac14<\dfrac n{15}<\dfrac23$?`, ans:6,
+   sol:S([R`$\dfrac{15}4=3.75$ and $\dfrac{15\times2}3=10$, so $3.75<n<10$.`,R`The integers are $n=4,5,\ldots,9$.`,R`That is $\mathbf6$ integers.`]) },
+ { id:'t4q13', type:'num', q:R`What is the largest integer $x$ for which $\dfrac x{13}<\dfrac79$?`, ans:10,
+   sol:S([R`$9x<91$, so $x<10.11$.`,R`The largest integer is $\mathbf{10}$.`]) },
+ { id:'t4q14', type:'mc', q:R`How many fractions lie strictly between $\dfrac{1}{3}$ and $\dfrac12$?`, opts:[R`None`,R`Exactly one, the midpoint`,R`Exactly $100$`,R`Infinitely many`], ans:3,
+   sol:S([R`Between any two fractions there is their midpoint. Then take the midpoint of the new gap, and so on forever.`]) },
+ { id:'t4q15', type:'frac', q:P(R`A number line from $0$ to $1$ is repeatedly zoomed: each time we keep the left half of the current interval. After $5$ such steps, how long is the interval? (Type as a fraction.)`), ans:'1/32',
+   sol:S([R`Each step halves the length: $1\to\dfrac12\to\dfrac14\to\dfrac18\to\dfrac1{16}\to\dfrac1{32}$.`]) }
+];
+EX.t5=[
+ { level:'A. Adding the same number to top and bottom', id:'t5q1', type:'mc', q:R`Which is larger, $\dfrac{2020}{2021}$ or $\dfrac{2021}{2022}$?`, opts:[R`$\dfrac{2020}{2021}$`,R`$\dfrac{2021}{2022}$`,R`They are equal`], ans:1,
+   sol:S([R`$\dfrac{2021}{2022}$ is $\dfrac{2020}{2021}$ with $1$ added to the top and bottom. Adding the same positive number to the top and bottom of a proper fraction makes it larger.`,R`Or compare the gaps to $1$: $\dfrac1{2021}$ and $\dfrac1{2022}$. The smaller gap belongs to $\dfrac{2021}{2022}$.`]) },
+ { id:'t5q2', type:'num', q:R`What is the smallest positive integer $n$ for which $\dfrac n{n+5}\ge\dfrac{19}{20}$?`, ans:95,
+   sol:S([R`$20n\ge19(n+5)=19n+95$, so $n\ge95$.`,R`The smallest is $\mathbf{95}$. (Check: $\dfrac{95}{100}=\dfrac{19}{20}$ exactly.)`]) },
+ { id:'t5q3', type:'num', q:R`What number must be added to <strong>both</strong> the numerator and the denominator of $\dfrac35$ to give $\dfrac79$?`, ans:4,
+   sol:S([R`$\dfrac{3+k}{5+k}=\dfrac79$, so $9(3+k)=7(5+k)$.`,R`$27+9k=35+7k$, so $2k=8$ and $k=\mathbf4$. (Check: $\dfrac79$. &#10003;)`]) },
+ { id:'t5q4', type:'num', q:R`What is the largest integer $n$ for which $\dfrac n{n+3}<\dfrac{19}{20}$?`, ans:56,
+   sol:S([R`$20n<19n+57$, so $n<57$.`,R`The largest integer is $\mathbf{56}$.`]) },
+ { id:'t5q5', type:'mc', q:R`A fraction $\dfrac{7}{5}$ (bigger than $1$) has $3$ added to its top and bottom. What happens?`, opts:[R`It gets bigger`,R`It gets smaller, moving towards $1$`,R`It stays the same`,R`It becomes negative`], ans:1,
+   sol:S([R`$\dfrac{7+3}{5+3}=\dfrac{10}8=1.25<1.4$.`,R`Adding the same number to the top and bottom always pushes a fraction towards $1$: up if it is below $1$, down if it is above $1$.`]) },
+ { level:'B. Neighbour fractions', id:'t5q6', type:'num', q:R`Among fractions strictly between $\dfrac5{12}$ and $\dfrac37$, what is the <strong>smallest possible denominator</strong>?`, ans:19,
+   sol:S([R`$3\times12-5\times7=1$, so they are neighbours.`,R`The smallest denominator is $12+7=\mathbf{19}$.`]) },
+ { id:'t5q7', type:'frac', q:R`What is the fraction with that smallest denominator, strictly between $\dfrac5{12}$ and $\dfrac37$?`, ans:'8/19',
+   sol:S([R`It is the mediant: $\dfrac{5+3}{12+7}=\dfrac8{19}$.`,R`Check: $0.4167<0.4211<0.4286$. &#10003;`]) },
+ { id:'t5q8', type:'mc', q:R`True or false: the fraction $\dfrac{a+c}{b+d}$ is always exactly halfway between $\dfrac ab$ and $\dfrac cd$.`, opts:[R`True`,R`False`], ans:1,
+   sol:S([R`False. Counter-example: $\dfrac01$ and $\dfrac12$ have midpoint $\dfrac14$, but their mediant is $\dfrac{0+1}{1+2}=\dfrac13$.`]) },
+ { id:'t5q9', type:'num', q:R`Among fractions strictly between $\dfrac25$ and $\dfrac12$, what is the smallest possible denominator?`, ans:7,
+   sol:S([R`$1\times5-2\times2=1$, so they are neighbours; the answer is $5+2=\mathbf7$ (the fraction is $\dfrac37$).`]) },
+ { level:'C. Counting and closest fractions', id:'t5q10', type:'num', q:R`How many different fractions in simplest form lie strictly between $0$ and $1$ and have denominator at most $6$?`, ans:11,
+   sol:S([R`Count numerators coprime to the denominator: $b=2$: $1$; $b=3$: $2$; $b=4$: $2$; $b=5$: $4$; $b=6$: $2$.`,R`$1+2+2+4+2=\mathbf{11}$.`]) },
+ { id:'t5q11', type:'num', q:R`The same question with denominator at most $7$.`, ans:17,
+   sol:S([R`Add the fractions with denominator $7$: $6$ new ones.`,R`$11+6=\mathbf{17}$.`]) },
+ { id:'t5q12', type:'num', q:P(R`Among the fractions $\dfrac{n}{100}$, which numerator $n$ gives the fraction closest to $\dfrac17$?`), ans:14,
+   sol:S([R`$\dfrac{100}7=14.29$, so $n=14$ or $15$.`,R`$\left|\dfrac{14}{100}-\dfrac17\right|=\dfrac1{350}$ and $\left|\dfrac{15}{100}-\dfrac17\right|=\dfrac1{140}$. The first is smaller, so $n=\mathbf{14}$.`]) },
+ { id:'t5q13', type:'num', q:R`How many unit fractions $\dfrac1n$ ($n$ a positive integer) lie strictly between $\dfrac1{100}$ and $\dfrac1{10}$?`, ans:89,
+   sol:S([R`$\dfrac1{100}<\dfrac1n<\dfrac1{10}$ means $10<n<100$.`,R`$n=11,12,\ldots,99$: $99-11+1=\mathbf{89}$.`]) }
+];
+EX.t6=[
+ { level:'Level 1: Understanding', id:'h1', type:'mc', q:R`Which set is the set $\mathbb{Q}$ of rational numbers?`, opts:[R`$\left\{\dfrac ab:\ a,b\in\mathbb{Z},\ b\ne0\right\}$`,R`$\left\{\dfrac ab:\ a,b\in\mathbb{Z}\right\}$`,R`$\left\{\dfrac1n:\ n\in\mathbb{Z}^+\right\}$`,R`$\{x:\ x\in\mathbb{Z},\ x\ne0\}$`], ans:0,
+   sol:S([R`A rational number is a ratio of two integers with a <strong>non-zero</strong> denominator.`,R`Option 2 allows $b=0$, which is meaningless.`]) },
+ { id:'h2', type:'set', q:P(R`List the elements of $\left\{x\in\mathbb{Z}:\ -2<\dfrac x3<2\right\}$.`,R`Type the elements separated by commas.`), ans:'-5,-4,-3,-2,-1,0,1,2,3,4,5',
+   sol:S([R`Multiply by $3$: $-6<x<6$.`,R`The integers are $-5,-4,\ldots,5$.`]) },
+ { id:'h3', type:'mc', q:R`Which fraction is equal to $\dfrac69$?`, opts:[R`$\dfrac23$`,R`$\dfrac34$`,R`$\dfrac96$`,R`$\dfrac{12}{15}$`], ans:0,
+   sol:S([R`Divide top and bottom by $3$: $\dfrac69=\dfrac23$.`]) },
+ { id:'h4', type:'mc', q:R`Which of these is <strong>not</strong> a rational number?`, opts:[R`$\dfrac{-4}{9}$`,R`$0$`,R`$\dfrac70$`,R`$3\dfrac12$`], ans:2,
+   sol:S([R`$\dfrac70$ has denominator $0$, so it is not defined. The others can all be written as $\dfrac ab$ with $b\ne0$.`]) },
+ { id:'h5', type:'mc', q:R`Between which two consecutive integers does $\dfrac{19}4$ lie?`, opts:[R`$3$ and $4$`,R`$4$ and $5$`,R`$5$ and $6$`,R`$19$ and $20$`], ans:1,
+   sol:S([R`$\dfrac{19}4=4\dfrac34$.`]) },
+ { id:'h6', type:'frac', q:R`Write $\dfrac{91}{156}$ in simplest form.`, ans:'7/12',
+   sol:S([R`$91=7\times13$ and $156=12\times13$, so $\text{HCF}=13$.`,R`$\dfrac{91}{156}=\dfrac7{12}$.`]) },
+ { id:'h7', type:'num', q:R`Find $\dfrac25$ of $45$.`, ans:18,
+   sol:S([R`$45\div5=9$, and $9\times2=\mathbf{18}$.`]) },
+ { level:'Level 2: Fluency and application', id:'h8', type:'num', q:R`Find the missing number: $\dfrac7{12}=\dfrac?{60}$.`, ans:35,
+   sol:S([R`$60\div12=5$, so the numerator is $7\times5=\mathbf{35}$.`]) },
+ { id:'h9', type:'frac', q:P(R`Write $3\dfrac56$ as an improper fraction.`,R`(Type it as <span class="mono">a/b</span>.)`), ans:'23/6', simp:false,
+   sol:S([R`$3\times6+5=23$, so $\dfrac{23}6$.`]) },
+ { id:'h10', type:'mc', q:R`Which is the largest of $\dfrac56,\ \dfrac79,\ \dfrac{11}{14}$?`, opts:[R`$\dfrac56$`,R`$\dfrac79$`,R`$\dfrac{11}{14}$`], ans:0,
+   sol:S([R`Gaps to $1$: $\dfrac16,\ \dfrac29=\dfrac1{4.5},\ \dfrac3{14}=\dfrac1{4.67}$.`,R`The smallest gap is $\dfrac16$, so $\dfrac56$ is the largest.`]) },
+ { id:'h11', type:'text', q:P(R`Let $a=\dfrac38,\ b=\dfrac5{12},\ c=\dfrac25,\ d=\dfrac7{20}$. Arrange them from smallest to largest by typing the four letters.`), ans:['dacb'],
+   sol:S([R`Common denominator $120$: $a=\dfrac{45}{120}$, $b=\dfrac{50}{120}$, $c=\dfrac{48}{120}$, $d=\dfrac{42}{120}$.`,R`Order: $d<a<c<b$, so <strong>dacb</strong>.`]) },
+ { id:'h12', type:'frac', q:R`Find the number halfway between $\dfrac16$ and $\dfrac34$.`, ans:'11/24',
+   sol:S([R`$\dfrac16+\dfrac34=\dfrac2{12}+\dfrac9{12}=\dfrac{11}{12}$.`,R`Half: $\dfrac{11}{24}$.`]) },
+ { id:'h13', type:'num', q:R`How many integers $x$ satisfy $\dfrac23<\dfrac x{12}<\dfrac74$?`, ans:12,
+   sol:S([R`Multiply by $12$: $8<x<21$.`,R`$x=9,\ldots,20$: $\mathbf{12}$ integers.`]) },
+ { id:'h14', type:'num', q:R`What is the smallest positive integer $n$ for which $\dfrac n{n+4}>\dfrac45$?`, ans:17,
+   sol:S([R`$5n>4n+16$, so $n>16$.`,R`The smallest integer is $\mathbf{17}$.`]) },
+ { id:'h15', type:'frac', q:R`Find the mediant of $\dfrac25$ and $\dfrac37$.`, ans:'5/12',
+   sol:S([R`$\dfrac{2+3}{5+7}=\dfrac5{12}$.`]) },
+ { id:'h16', type:'num', q:R`$\dfrac59$ of a number is $35$. Find the number.`, ans:63,
+   sol:S([R`$35\div5=7$ is one ninth, and $7\times9=\mathbf{63}$.`]) },
+ { level:'Level 3: Challenge and smart thinking', id:'h17', type:'mc', q:R`Which is larger, $\dfrac{2021}{2023}$ or $\dfrac{2022}{2024}$?`, opts:[R`$\dfrac{2021}{2023}$`,R`$\dfrac{2022}{2024}$`,R`They are equal`], ans:1,
+   sol:S([R`Gaps to $1$: $\dfrac2{2023}$ and $\dfrac2{2024}$. The smaller gap belongs to $\dfrac{2022}{2024}$.`]) },
+ { id:'h18', type:'num', q:P(R`A fraction equals $\dfrac7{12}$. The sum of its numerator and denominator is $95$.`,R`<strong>Question:</strong> what is its numerator?`), ans:35,
+   sol:S([R`Write it as $\dfrac{7k}{12k}$; $19k=95$, so $k=5$.`,R`The numerator is $7\times5=\mathbf{35}$.`]) },
+ { id:'h19', type:'num', q:R`For how many integers $n$ with $1\le n\le30$ is $\dfrac n{30}$ in simplest form?`, ans:8,
+   sol:S([R`$30=2\times3\times5$. We need $n$ coprime to $30$: $1,7,11,13,17,19,23,29$.`,R`That is $\mathbf8$ values.`]) },
+ { id:'h20', type:'num', q:R`What number must be added to both the numerator and the denominator of $\dfrac59$ to give $\dfrac34$?`, ans:7,
+   sol:S([R`$4(5+k)=3(9+k)$, so $20+4k=27+3k$ and $k=\mathbf7$.`]) },
+ { id:'h21', type:'frac', q:R`Among fractions strictly between $\dfrac25$ and $\dfrac12$, find the one with the smallest denominator.`, ans:'3/7',
+   sol:S([R`$5-4=1$, so they are neighbours; the answer is the mediant $\dfrac{2+1}{5+2}=\dfrac37$.`]) },
+ { id:'h22', type:'num', q:R`How many integers $n$ satisfy $\dfrac17<\dfrac n{50}<\dfrac13$?`, ans:9,
+   sol:S([R`$\dfrac{50}7=7.14$ and $\dfrac{50}3=16.67$.`,R`$n=8,\ldots,16$: $\mathbf9$ integers.`]) },
+ { id:'h23', type:'num', q:R`$\dfrac12$ of $\dfrac13$ of $\dfrac14$ of a number is $6$. Find the number.`, ans:144,
+   sol:S([R`Apply the operators together: $\dfrac12\times\dfrac13\times\dfrac14=\dfrac1{24}$, so the number is $6\times24=\mathbf{144}$.`,R`Or undo them one at a time: $6\times2\times3\times4=144$.`]) },
+ { id:'h24', type:'text', q:P(R`Arrange $a=\dfrac{100}{101},\ b=\dfrac{200}{203},\ c=\dfrac{300}{304}$ from smallest to largest by typing the three letters.`), ans:['bca'],
+   sol:S([R`Gaps to $1$: $1-a=\dfrac1{101}$, $1-b=\dfrac3{203}=\dfrac1{67.7}$, $1-c=\dfrac4{304}=\dfrac1{76}$.`,R`Largest gap (smallest fraction): $b$, then $c$, then $a$. So <strong>bca</strong>.`]) },
+ { id:'h25', type:'num', q:R`How many integers lie strictly between $-\dfrac{17}4$ and $\dfrac{23}5$?`, ans:9,
+   sol:S([R`$-\dfrac{17}4=-4.25$ and $\dfrac{23}5=4.6$.`,R`The integers are $-4,-3,\ldots,4$: $\mathbf9$.`]) }
+];
+const CONCEPTS={
+ eqv:{label:'Equivalent fractions and simplest form',tab:'t1',where:'Tab 1, Theorems 1 and 2',
+   tips:['$\\dfrac ab=\\dfrac cd$ exactly when $ad=bc$. Use cross-multiplication as the test.','To simplify, divide top and bottom by the <strong>HCF</strong>. Factorise both numbers first.','For a missing number, find the multiplier from the side where both numbers are known.']},
+ nl:{label:'Fractions on the number line',tab:'t2',where:'Tab 2, Steps 1 and 2',
+   tips:['To read a scale: gap value $=$ (distance between marks) $\\div$ (number of gaps). Then count gaps.','For a mixed number, divide: $47\\div6=7$ remainder $5$ gives $7\\tfrac56$.','Negative fractions: $-\\tfrac{17}5=-3.4$ lies between $-4$ and $-3$.']},
+ opr:{label:'A fraction as an operator',tab:'t2',where:'Tab 2, Techniques 5 and 6',
+   tips:['$\\tfrac pq$ of $N$: shrink by $\\div q$, then stretch by $\\times p$.','To undo, reverse the order: if $\\tfrac23$ of $N$ is $18$, divide by $2$ then multiply by $3$.','In a story, say what the whole is before choosing the fraction.']},
+ cmp:{label:'Comparing and ordering fractions',tab:'t3',where:'Tab 3, Theorem 3 and Techniques 7 to 9',
+   tips:['Cross-multiply when the denominators are positive: $\\tfrac ab<\\tfrac cd\\iff ad<bc$.','Near $1$? Compare the gaps to $1$: a bigger gap means a smaller fraction.','Same numerator: the bigger denominator gives the smaller fraction.']},
+ btw:{label:'Between two fractions',tab:'t4',where:'Tab 4, Theorems 4 and 5',
+   tips:['The midpoint is the average: $\\tfrac12(x+y)$. There are infinitely many fractions between any two.','Integers $x$ with $x/n$ in an interval: multiply the interval by $n$, then count integers.','The mediant $\\tfrac{a+c}{b+d}$ lies between, but is not the midpoint.']},
+ den:{label:'Same number added to top and bottom',tab:'t5',where:'Tab 5, Theorem 6',
+   tips:['Adding the same $k>0$ to the top and bottom of a proper fraction makes it larger (closer to $1$).','Set up an equation: $\\tfrac{a+k}{b+k}=\\tfrac cd$ and cross-multiply.','For $\\tfrac n{n+k}$, compare the gap $\\tfrac k{n+k}$ with the target gap.']},
+ smt:{label:'Neighbour fractions and counting',tab:'t5',where:'Tab 5, Theorem 7 and Technique 15',
+   tips:['If $bc-ad=1$, the smallest denominator between $\\tfrac ab$ and $\\tfrac cd$ is $b+d$.','To count simplest-form fractions, count numerators coprime to the denominator.','Test a small case first, then generalise.']}
+};
+const SKILLS={
+ U:{label:'Understand (definitions and properties)',tips:['Before choosing an answer, <strong>explain the idea in one full sentence</strong> in your own words, then match it to an option.']},
+ C:{label:'Compute (carry out a method)',tips:['Cover the worked example, redo it yourself, then compare line by line. <strong>Write every step</strong> rather than doing it in your head.']},
+ A:{label:'Apply (use it in a problem or context)',tips:['Underline what is <strong>given</strong> and what is <strong>asked</strong>, turn the story into a maths sentence, and only then calculate. Check that the answer makes sense in the story.']},
+ Rz:{label:'Reason (multi-step and challenge problems)',tips:['Break the problem into small steps. After each step ask &ldquo;what does this tell me?&rdquo; and test a small case before the big one.']}
+};
+const TAGS={
+ t1q1:['eqv','C'],t1q2:['eqv','C'],t1q3:['eqv','C'],t1q4:['eqv','C'],t1q5:['eqv','U'],t1q6:['eqv','U'],
+ t1q7:['eqv','U'],t1q8:['eqv','U'],t1q9:['eqv','A'],t1q10:['eqv','U'],
+ t1q11:['smt','C'],t1q12:['smt','Rz'],t1q13:['eqv','A'],t1q14:['eqv','A'],t1q15:['smt','C'],
+ t2q1:['nl','C'],t2q2:['nl','C'],t2q3:['nl','Rz'],t2q4:['nl','C'],t2q5:['nl','C'],t2q6:['nl','C'],t2q7:['nl','C'],t2q8:['nl','U'],
+ t2q9:['opr','C'],t2q10:['opr','C'],t2q11:['opr','A'],t2q12:['opr','A'],t2q13:['opr','A'],t2q14:['opr','A'],t2q15:['opr','Rz'],
+ t3q1:['cmp','C'],t3q2:['cmp','U'],t3q3:['cmp','C'],t3q4:['cmp','C'],t3q5:['cmp','C'],t3q6:['cmp','U'],
+ t3q7:['cmp','C'],t3q8:['cmp','A'],t3q9:['cmp','A'],t3q10:['cmp','Rz'],
+ t3q11:['cmp','Rz'],t3q12:['cmp','C'],t3q13:['cmp','Rz'],
+ t4q1:['btw','C'],t4q2:['btw','C'],t4q3:['btw','Rz'],t4q4:['btw','C'],t4q5:['btw','C'],
+ t4q6:['btw','C'],t4q7:['btw','A'],t4q8:['smt','Rz'],t4q9:['btw','U'],
+ t4q10:['btw','Rz'],t4q11:['btw','A'],t4q12:['btw','A'],t4q13:['btw','A'],t4q14:['btw','U'],t4q15:['btw','U'],
+ t5q1:['den','U'],t5q2:['den','C'],t5q3:['den','C'],t5q4:['den','C'],t5q5:['den','U'],
+ t5q6:['smt','C'],t5q7:['smt','C'],t5q8:['btw','U'],t5q9:['smt','C'],
+ t5q10:['smt','A'],t5q11:['smt','A'],t5q12:['smt','Rz'],t5q13:['cmp','A'],
+ h1:['eqv','U'],h2:['btw','C'],h3:['eqv','U'],h4:['eqv','U'],h5:['nl','U'],h6:['eqv','C'],h7:['opr','C'],
+ h8:['eqv','C'],h9:['nl','C'],h10:['cmp','C'],h11:['cmp','C'],h12:['btw','C'],h13:['btw','A'],h14:['den','C'],h15:['btw','C'],h16:['opr','A'],
+ h17:['den','U'],h18:['eqv','Rz'],h19:['smt','Rz'],h20:['den','A'],h21:['smt','C'],h22:['btw','Rz'],h23:['opr','Rz'],h24:['cmp','Rz'],h25:['nl','A']
+};
+const TAB_NAMES={t1:'Tab 1 Sharing and the Birth of Fractions',t2:'Tab 2 Number Line and Operators',t3:'Tab 3 Comparing and Ordering',t4:'Tab 4 Between Any Two Fractions',t5:'Tab 5 Smart Thinking',t6:'Tab 6 Homework'};
+
+/* ============ EXERCISE ENGINE ============ */
+const EXMAP={}, ST={};
+const now=()=>Date.now()+(window.__skew||0);
+function normSet(s){
+  s=cleanNum(s).toLowerCase().trim();
+  if(/∅|empty|^\{\s*\}$/.test(s)) return '';
+  s=s.replace(/[{}\s]/g,''); const arr=s.split(',').filter(x=>x!==''); arr.sort(sorter); return arr.join(',');
+}
+function parseFact(s){
+  s=String(s).toLowerCase().replace(/[×x·\*]/g,'*').replace(/²/g,'^2').replace(/³/g,'^3').replace(/\s/g,'');
+  if(!s) return null; const m={};
+  for(const t of s.split('*')){ const mm=t.match(/^(\d+)(?:\^(\d+))?$/); if(!mm) return null; const p=+mm[1], k=mm[2]?+mm[2]:1; m[p]=(m[p]||0)+k; }
+  return m;
+}
+function sameFact(a,b){ const ka=Object.keys(a), kb=Object.keys(b); return ka.length===kb.length && ka.every(k=>a[k]===b[k]); }
+
+/* live LaTeX preview of a typed factorisation */
+function factToLatex(raw){
+  const s0=String(raw).trim(); if(!s0) return {state:'empty'};
+  let t=s0.toLowerCase().replace(/[×x·]/g,'*').replace(/²/g,'^2').replace(/³/g,'^3').replace(/\s/g,'');
+  const tm=t.match(/[*^]+$/); let dang='';
+  if(tm){ if(tm[0].length>1) return {state:'bad'}; dang=tm[0]; t=t.slice(0,-1); }
+  if(!t) return {state:'bad'};
+  const out=[], bases=[];
+  for(const p of t.split('*')){ const m=p.match(/^(\d+)(?:\^(\d+))?$/); if(!m) return {state:'bad'}; bases.push(+m[1]); out.push(m[2]!==undefined? m[1]+'^{'+m[2]+'}' : m[1]); }
+  if(dang==='^') out[out.length-1]+='^{\\square}';
+  let tex=out.join('\\times ');
+  if(dang==='*') tex+='\\times\\,\\square';
+  const notPrime=[...new Set(bases.filter(b=>!isPrime(b)))];
+  return {state:'ok',tex,notPrime};
+}
+const _pt={};
+function factPreview(id){
+  const el=document.getElementById('prev-'+id), inp=document.getElementById('inp-'+id); if(!el||!inp) return;
+  const r=factToLatex(inp.value); let h='<span class="lab">Preview</span>';
+  if(r.state==='empty') h+='<span class="msg">Your answer will appear here as you type, for example $2^3\\times3\\times5$.</span>';
+  else if(r.state==='bad') h+='<span class="msg">This cannot be read yet. Use numbers, <kbd class="k">^</kbd> and <kbd class="k">*</kbd> only.</span>';
+  else { h+='<span class="text-lg">$'+r.tex+'$</span>'; if(r.notPrime.length) h+='<span class="block text-xs text-amber-700 font-semibold mt-1">Not all factors are prime yet: '+r.notPrime.map(b=>'$'+b+'$').join(', ')+' can be split further.</span>'; }
+  el.innerHTML=h; clearTimeout(_pt[id]); _pt[id]=setTimeout(()=>typeset(el),120);
+}
+
+function exHTML(e,n){
+  let inp='';
+  const enter=`onkeydown="if(event.key==='Enter')checkEx('${e.id}')"`;
+  if(e.type==='num') inp=`<input type="text" inputmode="decimal" class="inp" id="inp-${e.id}" placeholder="Your answer" ${enter}>`;
+  else if(e.type==='set') inp=`<input type="text" class="inp" id="inp-${e.id}" placeholder="e.g. 2, 3, 5" ${enter}><p class="text-xs text-slate-500 mt-1">Type the elements separated by commas.</p>`;
+  else if(e.type==='fact') inp=`<input type="text" class="inp" id="inp-${e.id}" placeholder="Type your factorisation" oninput="factPreview('${e.id}')" ${enter}><p class="text-xs text-slate-500 mt-1">Use <kbd class="k">^</kbd> for a power and <kbd class="k">*</kbd> for $\\times$. Primes only.</p><div class="fprev" id="prev-${e.id}"></div>`;
+  else if(e.type==='text') inp=`<input type="text" class="inp" id="inp-${e.id}" placeholder="Your answer" ${enter}>`;
+  else if(e.type==='frac') inp=`<input type="text" class="inp" id="inp-${e.id}" placeholder="e.g. 3/4" oninput="fracPreview('${e.id}')" ${enter}><p class="text-xs text-slate-500 mt-1">Type a fraction as <kbd class="k">a/b</kbd> (or a whole number).${e.simp===false?'':' Give it in simplest form.'}</p><div class="fprev" id="prev-${e.id}"></div>`;
+  else if(e.type==='mc') inp=e.opts.map((o,i)=>`<button class="opt" id="opt-${e.id}-${i}" onclick="pickOpt('${e.id}',${i})">${o}</button>`).join('');
+  return `<div class="ex-card" id="card-${e.id}" onfocusin="markSeen('${e.id}')" onclick="markSeen('${e.id}')"><div class="flex items-start gap-3"><div class="qnum">${n}</div><div class="flex-1 min-w-0">
+    <div class="qtext text-slate-800 leading-relaxed">${e.q}</div>
+    <div class="mt-3">${inp}</div>
+    <div class="mt-3 flex items-center gap-3 flex-wrap"><button class="btn" id="btn-${e.id}" onclick="checkEx('${e.id}')">Check answer</button><span id="att-${e.id}" class="text-xs font-semibold text-slate-500">Attempts left: 3</span></div>
+    <div id="fb-${e.id}" class="mt-2 text-sm font-semibold"></div>
+    <div id="sol-${e.id}" class="hidden mt-3 sol-box"><h4 class="font-bold text-slate-800 mb-1" id="solh-${e.id}">Step-by-step solution</h4>${e.sol}</div>
+  </div></div></div>`;
+}
+function markSeen(id){ const st=ST[id]; if(st && !st.t0 && !st.done){ st.t0=st.last=now(); } }
+function mountEx(key){
+  const box=document.getElementById('ex-'+key); let h='', lv='', n=0;
+  EX[key].forEach(e=>{ if(e.level&&e.level!==lv){ lv=e.level; h+=`<div class="lvl">${lv}</div>`; } e.lv=lv; n++; e.no=n; h+=exHTML(e,n); });
+  box.innerHTML=h;
+  EX[key].forEach(e=>{ EXMAP[e.id]=e; ST[e.id]={tries:0,done:false,pick:null,tab:key,correct:false,t0:null,last:null,log:[]}; });
+  if('IntersectionObserver' in window){
+    const io=new IntersectionObserver(es=>es.forEach(en=>{ if(en.isIntersecting && (en.intersectionRatio>=0.15 || en.intersectionRect.height>=180)) markSeen(en.target.id.slice(5)); }),{threshold:[0.05,0.15,0.3,0.5]});
+    box.querySelectorAll('.ex-card').forEach(c=>io.observe(c));
+  }
+}
+function pickOpt(id,i){ const st=ST[id]; if(st.done) return; markSeen(id); st.pick=i; EXMAP[id].opts.forEach((_,k)=>document.getElementById(`opt-${id}-${k}`).classList.toggle('sel',k===i)); }
+function checkEx(id){
+  const e=EXMAP[id], st=ST[id]; if(st.done) return;
+  const fb=document.getElementById('fb-'+id); let correct=false, ansText=''; const warn=m=>{ fb.className='mt-2 text-sm font-semibold text-amber-700'; fb.textContent=m; };
+  if(e.type==='num'){
+    const raw=document.getElementById('inp-'+id).value; const v=cleanNum(raw).replace(/[, ]/g,''); if(v===''||isNaN(Number(v))) return warn('Type a number first.');
+    ansText=raw.trim(); correct=Math.abs(Number(v)-e.ans)<1e-9;
+  } else if(e.type==='frac'){
+    const raw=document.getElementById('inp-'+id).value; const f=parseFrac(raw); if(!f) return warn('Type a fraction like 3/4, or a whole number.');
+    if(f.d===0) return warn('The denominator cannot be 0.');
+    if(f.d<0) return warn('Put any minus sign on the top. The bottom must be a positive number.');
+    const t=parseFrac(e.ans); ansText=raw.trim(); correct = f.n*t.d===f.d*t.n;
+    if(correct && e.simp!==false && gcd2(f.n,f.d)!==1) return warn('That fraction has the right value, but it is not in simplest form yet. Simplify it and try again (this does not use up an attempt).');
+  } else if(e.type==='set'){
+    const v=document.getElementById('inp-'+id).value; if(v.trim()==='') return warn('Type your answer first.'); ansText=v.trim(); correct=normSet(v)===normSet(e.ans);
+  } else if(e.type==='fact'){
+    const v=document.getElementById('inp-'+id).value; if(v.trim()==='') return warn('Type your answer first.');
+    const pf=parseFact(v); if(!pf) return warn('This cannot be read yet. Use numbers, ^ and * only (see the preview).');
+    ansText=v.trim(); correct = sameFact(pf, parseFact(e.ans)) && Object.keys(pf).every(k=>isPrime(+k));
+  } else if(e.type==='text'){
+    const v=document.getElementById('inp-'+id).value.toLowerCase().replace(/[^a-z0-9]/g,''); if(v==='') return warn('Type your answer first.'); ansText=v; correct=e.ans.includes(v);
+  } else if(e.type==='mc'){
+    if(st.pick===null) return warn('Choose an option first.'); ansText=String(e.opts[st.pick]); correct=st.pick===e.ans;
+  }
+  const t=now(); if(!st.t0){ st.t0=st.last=t; }
+  st.log.push({dt:t-st.last, ans:ansText, ok:correct}); st.last=t;
+  st.tries++; const left=3-st.tries; document.getElementById('att-'+id).textContent='Attempts left: '+Math.max(left,0);
+  if(correct) finishEx(id,true); else if(left<=0) finishEx(id,false);
+  else { fb.className='mt-2 text-sm font-semibold text-red-700'; fb.textContent='Not quite. Try again: '+left+' attempt'+(left===1?'':'s')+' left.'; const c=document.getElementById('card-'+id); c.classList.add('bad'); setTimeout(()=>{ if(!st.done) c.classList.remove('bad'); },900); }
+}
+function finishEx(id,ok){
+  const e=EXMAP[id], st=ST[id]; st.done=true; st.correct=ok;
+  const card=document.getElementById('card-'+id), fb=document.getElementById('fb-'+id), sol=document.getElementById('sol-'+id);
+  card.classList.remove('bad'); if(ok) card.classList.add('ok');
+  fb.className='mt-2 text-sm font-bold '+(ok?'text-emerald-700':'text-red-700');
+  { const pts=ok?4-st.tries:0; fb.textContent= ok?`Correct! You earned ${pts} point${pts>1?'s':''} (correct on attempt ${st.tries} of 3).`:'All 3 attempts used: 0 points. Study the full solution below.'; }
+  sol.classList.remove('hidden'); if(!ok) sol.classList.add('fail');
+  document.getElementById('solh-'+id).textContent= ok?'Full solution (compare with your method)':'Full step-by-step solution';
+  document.getElementById('btn-'+id).disabled=true;
+  if(e.type==='mc') e.opts.forEach((_,k)=>{ const b=document.getElementById(`opt-${id}-${k}`); b.disabled=true; b.classList.remove('sel'); if(k===e.ans) b.classList.add('right'); else if(k===st.pick) b.classList.add('wrong'); });
+  else document.getElementById('inp-'+id).disabled=true;
+  typeset(sol); refreshProgress();
+}
+let reportUnlocked=false;
+function allDone(){ return Object.keys(EX).every(k=>EX[k].every(e=>ST[e.id]&&ST[e.id].done)); }
+function refreshProgress(){
+  let done=0,total=0;
+  Object.keys(EX).forEach(k=>{ let d=0; EX[k].forEach(e=>{ total++; if(ST[e.id]&&ST[e.id].done){done++;d++;} }); const b=document.querySelector('.tab-link[data-tab="'+k+'"]'); if(b) b.classList.toggle('tab-done',d===EX[k].length); });
+  document.getElementById('prog-count').textContent=done; document.getElementById('prog-total').textContent=total;
+  let c=0,r=0; EX.t6.forEach(e=>{ if(ST[e.id].done){ ST[e.id].correct?c++:r++; } });
+  document.getElementById('hw-score').textContent=`Homework status: ${c} correct, ${r} revealed after 3 attempts, ${EX.t6.length-c-r} remaining`;
+  const ready=allDone(); const lab=document.getElementById('t7-label');
+  if(lab) lab.textContent='7. Learning Report';
+  if(ready && !reportUnlocked){ reportUnlocked=true; showToast(); }
+  if(document.getElementById('t7').classList.contains('active')) buildReport();
+}
+function showToast(){
+  const t=document.createElement('div'); t.className='toast no-print'; t.id='report-toast';
+  t.innerHTML='<strong>All questions finished.</strong> Your Learning Report is ready.<div class="mt-2"><button class="btn" style="background:#fff;color:#1c2230" onclick="document.getElementById(\'report-toast\').remove();openTab(null,\'t7\')">View my report</button></div>';
+  document.body.appendChild(t);
+}
+
+/* ============ LEARNING REPORT ============ */
+const EFFORT={
+ flu:{label:'Secure',long:'Correct first time',cls:'b-flu',score:1},
+ per:{label:'Persistent',long:'Corrected with real thought between attempts',cls:'b-per',score:0.8},
+ gue:{label:'Guess-and-check',long:'Quick retries, close to guessing',cls:'b-gue',score:0.45},
+ rus:{label:'Rushed',long:'Used the attempts quickly to reach the solution',cls:'b-rus',score:0},
+ str:{label:'Needs support',long:'Real effort, but the idea is not secure yet',cls:'b-str',score:0.2}
+};
+function thrFor(e){
+  const base={mc:4,num:7,set:9,fact:10,text:6,frac:8}[e.type]||7; const tg=TAGS[e.id]||[]; let f=1;
+  if(tg[1]==='Rz') f=1.5; else if(tg[1]==='A') f=1.25;
+  if(/Level 2/.test(e.lv||'')) f*=1.2; if(/Level 3/.test(e.lv||'')) f*=1.5;
+  return base*f*1000;
+}
+function analyzeQ(e){
+  const st=ST[e.id], thr=thrFor(e), L=st.log, n=L.length, quick=L.map(a=>a.dt<thr);
+  const norm=a=>String(a).toLowerCase().replace(/\s/g,'');
+  const wrong=L.filter(a=>!a.ok); const repeated=wrong.length>1 && new Set(wrong.map(a=>norm(a.ans))).size<wrong.length;
+  let key;
+  if(st.correct){ if(n===1) key='flu'; else { const qr=quick.slice(1).filter(Boolean).length; key= qr===0?'per':'gue'; } }
+  else { const q=quick.filter(Boolean).length; key= q===n?'rus' : q>=2?'gue':'str'; }
+  const tg=TAGS[e.id]||['smart','C'];
+  return {id:e.id, tab:st.tab, no:e.no, concept:tg[0], skill:tg[1], n, ok:st.correct, key, repeated, score:EFFORT[key].score, pts:(st.correct?4-n:0), log:L, thr};
+}
+function aggregate(rows){
+  const n=rows.length; if(!n) return null;
+  const sum=f=>rows.reduce((a,r)=>a+f(r),0);
+  const first=rows.filter(r=>r.ok&&r.n===1).length, rev=rows.filter(r=>!r.ok).length;
+  const rush=rows.filter(r=>r.key==='rus'||r.key==='gue').length;
+  const pts=sum(r=>r.pts), score=pts/(3*n);
+  const status= score>=0.8?'sec': score>=0.5?'dev':'need';
+  const by=[0,1,2,3].map(p=>rows.filter(r=>r.pts===p).length);
+  return {n, first, rev, rush, att:sum(r=>r.n)/n, score, pts, max:3*n, by, status, habit: rush/n>=0.34, str: rows.filter(r=>r.key==='str').length};
+}
+const STAT={sec:['Secure','b-sec'],dev:['Developing','b-dev'],need:['Needs support','b-need']};
+function pct(x){ return Math.round(x*100)+'%'; }
+function secs(ms){ return (ms/1000).toFixed(ms<10000?1:0)+'s'; }
+/* ============ KNOWLEDGE MAP (V2) ============ */
+const KM_NODES={
+ eqv:[90,175,'Equivalent fractions and simplest form'], nl:[290,70,'Fractions on the number line'], opr:[290,300,'A fraction as an operator'],
+ cmp:[490,175,'Comparing and ordering'], btw:[690,70,'Between two fractions'], den:[690,300,'Adding to top and bottom'],
+ smt:[890,185,'Neighbours and counting']
+};
+const KM_EDGES=[
+ ['eqv','nl','Equivalent fractions name the same point on the line'],
+ ['eqv','opr','Simplify first, then shrink and stretch'],
+ ['eqv','cmp','Cross-multiplication comes from equivalent fractions'],
+ ['nl','cmp','Larger means further right on the number line'],
+ ['nl','btw','Reading a scale finds points between two marks'],
+ ['cmp','btw','Placing a number between two others needs comparison'],
+ ['cmp','den','The gap-to-1 method compares fractions near 1'],
+ ['btw','smt','The mediant is the key to neighbour fractions'],
+ ['den','smt','Both use cross-multiplication on a single condition'],
+ ['eqv','smt','Counting simplest fractions needs coprime numbers']
+];
+function kmWrap(s,n){ const w=s.split(' '), L=[]; let cur=''; w.forEach(x=>{ if((cur+' '+x).trim().length>n && cur){ L.push(cur); cur=x; } else cur=(cur+' '+x).trim(); }); if(cur) L.push(cur); return L; }
+function kmDownstream(c){ const out=new Set(), q=[c]; while(q.length){ const x=q.pop(); KM_EDGES.forEach(([a,b])=>{ if(a===x && !out.has(b)){ out.add(b); q.push(b); } }); } return [...out]; }
+function kmSupports(c){ const d=kmDownstream(c); if(!d.length) return ''; return `<p class="text-sm text-slate-700 mt-2"><strong>Why fix this first:</strong> this idea feeds ${d.map(x=>'<em>'+KM_NODES[x][2]+'</em>').join(', ')} on the knowledge map.</p>`; }
+function kmapHTML(agg){
+  const W=160, H=62;
+  const edge=(a,b)=>{
+    const [x1,y1]=KM_NODES[a], [x2,y2]=KM_NODES[b]; const dx=x2-x1, dy=y2-y1;
+    const t=Math.min((W/2)/Math.abs(dx||1e-9),(H/2)/Math.abs(dy||1e-9));
+    const sx=x1+dx*t, sy=y1+dy*t, ex=x2-dx*t-Math.sign(dx)*2, ey=y2-dy*t-Math.sign(dy)*2;
+    const risk=agg[a]&&agg[a].status==='need';
+    return `<line x1="${sx.toFixed(1)}" y1="${sy.toFixed(1)}" x2="${ex.toFixed(1)}" y2="${ey.toFixed(1)}" stroke="${risk?'#dc2626':'#64748b'}" stroke-width="${risk?2.6:2}" ${risk?'stroke-dasharray="7 5"':''} marker-end="url(#${risk?'kmr':'kmg'})"><title>${KM_NODES[a][2]} leads to ${KM_NODES[b][2]}</title></line>`;
+  };
+  let svg=`<svg viewBox="0 0 1010 390" style="min-width:780px;width:100%" role="img" aria-label="Knowledge map: how the ideas of this chapter connect, coloured by your score"><defs><marker id="kmg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#64748b"/></marker><marker id="kmr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#dc2626"/></marker></defs>`;
+  svg+=KM_EDGES.map(([a,b])=>edge(a,b)).join('');
+  Object.keys(KM_NODES).forEach(c=>{
+    const [x,y,label]=KM_NODES[c], g=agg[c]; const f=g?g.score:0, hue=Math.round(f*120);
+    const lines=kmWrap(label,19), total=lines.length+1, y0=y-(total*14)/2+11;
+    const stroke=g&&g.status==='need'?'#dc2626':`hsl(${hue},55%,32%)`;
+    svg+=`<g style="cursor:pointer" onclick="openTab(null,'${CONCEPTS[c].tab}')"><title>${CONCEPTS[c].label}: ${g?g.pts+' of '+g.max+' points':'no questions'}. Click to revisit ${CONCEPTS[c].where}.</title>
+      <rect x="${x-W/2}" y="${y-H/2}" width="${W}" height="${H}" rx="12" fill="hsl(${hue},70%,86%)" stroke="${stroke}" stroke-width="${g&&g.status==='need'?3.5:2}"/>`+
+      lines.map((l,i)=>`<text x="${x}" y="${y0+i*14}" text-anchor="middle" font-size="12" font-weight="700" fill="hsl(${hue},60%,16%)" font-family="Inter,Arial,sans-serif">${l}</text>`).join('')+
+      `<text x="${x}" y="${y0+lines.length*14}" text-anchor="middle" font-size="12" font-weight="800" fill="hsl(${hue},65%,22%)" font-family="Inter,Arial,sans-serif">${g?pct(f)+' ('+g.pts+'/'+g.max+')':'-'}</text></g>`;
+  });
+  svg+='</svg>';
+  const weak=Object.keys(KM_NODES).filter(c=>agg[c]&&agg[c].status==='need');
+  const mid=Object.keys(KM_NODES).filter(c=>agg[c]&&agg[c].status==='dev');
+  let note='';
+  if(weak.length){
+    note=`<div class="warn text-sm text-slate-800 mb-3"><p class="font-bold">Where to start</p><p class="mt-1">The red dashed arrows leave a concept with a low score. Ideas further along those arrows are built on it, so improve the <strong>earliest</strong> red concept first: ${weak.map(c=>'<em>'+KM_NODES[c][2]+'</em>').join(', ')}.</p></div>`;
+  } else if(mid.length){
+    note=`<div class="key text-sm text-slate-800 mb-3"><strong>No concept is in the red.</strong> The amber-looking ones (${mid.map(c=>'<em>'+KM_NODES[c][2]+'</em>').join(', ')}) are the best place to gain more points.</div>`;
+  } else {
+    note=`<div class="key text-sm text-slate-800 mb-3"><strong>The whole network is green.</strong> Every idea is secure, and the ideas that depend on each other support each other.</div>`;
+  }
+  const legend=`<div class="flex items-center gap-2 flex-wrap text-xs text-slate-600 mb-2"><span>Node colour = your score:</span><span class="kmswatch" style="background:hsl(0,70%,86%)">low</span><span class="kmswatch" style="background:hsl(60,70%,86%)">middle</span><span class="kmswatch" style="background:hsl(120,70%,86%)">high</span><span>Arrow A &rarr; B means &ldquo;B builds on A&rdquo;. Click a concept to revisit it.</span></div>`;
+  const how=`<details class="mt-2"><summary class="cursor-pointer font-bold text-slate-800 text-sm">How the ideas connect</summary><ul class="list-disc pl-6 text-sm text-slate-700 mt-2 grid md:grid-cols-2 gap-x-6 gap-y-1">${KM_EDGES.map(([a,b,r])=>`<li><strong>${KM_NODES[a][2]} &rarr; ${KM_NODES[b][2]}:</strong> ${r}.</li>`).join('')}</ul></details>`;
+  return `<h3 class="text-lg font-bold text-slate-800 mt-2 mb-2">Your knowledge map</h3><p class="text-sm text-slate-600 mb-2">The ideas of this chapter form a network. Each box is a concept, coloured by how many points you earned on its questions. Arrows show which idea builds on which.</p>${legend}<div class="card mb-3 overflow-x-auto">${svg}</div>${note}${how}`;
+}
+/* ============ SCORE (V2) ============ */
+function scoreHTML(rows,A){
+  const tot=rows.length, max=3*tot, st=STAT[A.status];
+  const cols=['#dc2626','#d97706','#0891b2','#059669'], labs=['0 points: not solved in 3 attempts','1 point: correct on attempt 3','2 points: correct on attempt 2','3 points: correct on attempt 1'];
+  let h=`<h3 class="text-lg font-bold text-slate-800 mt-6 mb-2">Your score</h3><div class="card mb-3">
+   <p class="text-sm text-slate-700 mb-3"><strong>How points work.</strong> Each question is worth up to <strong>3 points</strong>: <strong>3</strong> if you are correct on the first attempt, <strong>2</strong> on the second, <strong>1</strong> on the third, and <strong>0</strong> if all three attempts fail. Points show how securely you knew the idea. The effort check below shows <em>how</em> you worked.</p>
+   <div class="flex items-center gap-4 flex-wrap mb-3"><div class="rp-tile" style="min-width:13rem"><div class="v">${A.pts} / ${max}</div><div class="l">total points (${pct(A.score)})</div></div><div><span class="badge ${st[1]}">${st[0]}</span><div class="text-xs text-slate-600 mt-1">Secure from 80%, Developing from 50%</div></div></div>
+   <div class="rp-bar mb-2">${[3,2,1,0].filter(p=>A.by[p]).map(p=>`<div style="width:${A.by[p]/tot*100}%;background:${cols[p]}" title="${labs[p]}">${A.by[p]}</div>`).join('')}</div>
+   <div class="grid md:grid-cols-2 gap-x-6 gap-y-1 text-sm mb-3">${[3,2,1,0].map(p=>`<div><span class="pts p${p}">${p}</span> <strong>${A.by[p]}</strong> &nbsp;${labs[p].split(': ')[1]}</div>`).join('')}</div>
+   <table class="rp"><tr><th>Tab</th><th>Questions</th><th>Points</th><th>Score</th></tr>`;
+  Object.keys(EX).forEach(k=>{ const rs=rows.filter(r=>r.tab===k), p=rs.reduce((a,r)=>a+r.pts,0), m=3*rs.length, f=p/m, s=STAT[f>=0.8?'sec':f>=0.5?'dev':'need'];
+    h+=`<tr><td class="font-semibold">${TAB_NAMES[k]}</td><td>${rs.length}</td><td>${p} / ${m}</td><td>${pct(f)}<div class="meter mt-1"><div style="width:${f*100}%"></div></div></td></tr>`; });
+  return h+'</table></div>';
+}
+
+function reportPart(rows,title,note){
+  if(!rows.length) return `<h2 class="text-xl font-bold text-slate-800 mt-8 mb-2">${title}</h2><div class="card mb-3 text-slate-600">No questions finished in this part yet. ${note}</div>`;
+  const A=aggregate(rows), tot=rows.length;
+  const cnt={flu:0,per:0,gue:0,rus:0,str:0}; rows.forEach(r=>cnt[r.key]++);
+  const firstDt=rows.map(r=>r.log[0]?r.log[0].dt:0), avgThink=firstDt.reduce((a,b)=>a+b,0)/tot;
+  const habitShare=(cnt.rus+cnt.gue)/tot;
+  let h='';
+  h+=`<p class="text-slate-600 mb-4">This report is built automatically from what you did on the ${tot} questions you have finished in this part. It looks at <strong>what you got right</strong> and also at <strong>how you got there</strong>: how many attempts you used and whether each attempt showed real thinking. Timing is only a guide, so read the advice as suggestions, not a verdict.</p>`;
+  const concAggAll={}; Object.keys(CONCEPTS).forEach(c=>{ const rs=rows.filter(r=>r.concept===c); if(rs.length) concAggAll[c]=aggregate(rs); });
+  h+=kmapHTML(concAggAll);
+  h+=scoreHTML(rows,A);
+  h+='<h3 class="text-lg font-bold text-slate-800 mt-6 mb-2">At a glance</h3>';
+  h+=`<div class="grid grid-cols-2 md:grid-cols-5 gap-3 mb-5">
+    <div class="rp-tile"><div class="v">${tot}</div><div class="l">questions finished</div></div>
+    <div class="rp-tile"><div class="v">${pct(A.first/tot)}</div><div class="l">correct on the first attempt</div></div>
+    <div class="rp-tile"><div class="v">${A.att.toFixed(1)}</div><div class="l">average attempts per question</div></div>
+    <div class="rp-tile"><div class="v">${A.rev}</div><div class="l">solutions revealed after 3 attempts</div></div>
+    <div class="rp-tile"><div class="v">${secs(avgThink)}</div><div class="l">average thinking time before the first answer</div></div></div>`;
+  // effort
+  const order=['flu','per','gue','rus','str'], colors={flu:'#059669',per:'#0891b2',gue:'#d97706',rus:'#dc2626',str:'#7c3aed'};
+  h+=`<h3 class="text-lg font-bold text-slate-800 mb-2">1. Effort check: how you got your answers</h3><div class="card mb-3"><div class="rp-bar mb-3">${order.filter(k=>cnt[k]).map(k=>`<div style="width:${cnt[k]/tot*100}%;background:${colors[k]}" title="${EFFORT[k].label}">${cnt[k]}</div>`).join('')}</div>
+   <div class="grid md:grid-cols-2 gap-x-6 gap-y-1 text-sm">${order.map(k=>`<div><span class="badge ${EFFORT[k].cls}">${EFFORT[k].label}</span> <strong>${cnt[k]}</strong> &nbsp;${EFFORT[k].long}</div>`).join('')}</div></div>`;
+  if(habitShare>=0.2){
+    h+=`<div class="warn mb-4 text-sm text-slate-800"><p class="font-bold">Work habit to fix: slow down on retries</p><p class="mt-1">On ${cnt.rus+cnt.gue} of ${tot} questions (${pct(habitShare)}) your attempts came very quickly, one after another. The three attempts are there for <em>thinking</em>, not for trying the next answer. After a wrong answer, do this before you click again:</p>
+    <ol class="list-decimal pl-6 mt-1"><li>Re-read the question and underline what is asked.</li><li>Look back at the worked example in the tab and find the step you skipped.</li><li>Change something in your method, then answer.</li></ol></div>`;
+  } else if(cnt.rus+cnt.gue===0){
+    h+=`<div class="key mb-4 text-sm text-slate-800"><strong>Good work habits.</strong> You did not rush to a solution on any question. Where an answer was wrong, you took time between attempts.</div>`;
+  } else {
+    h+=`<div class="key mb-4 text-sm text-slate-800"><strong>Mostly steady.</strong> A few questions (${cnt.rus+cnt.gue}) had very quick retries. They are marked in the table below. Slow down on those and compare with the worked solution.</div>`;
+  }
+  // concept table
+  const concRows=Object.keys(CONCEPTS).map(c=>({c, rows:rows.filter(r=>r.concept===c)})).filter(x=>x.rows.length);
+  h+=`<h3 class="text-lg font-bold text-slate-800 mt-6 mb-2">2. Results by concept</h3><div class="card mb-3 overflow-x-auto"><table class="rp"><tr><th>Concept</th><th>Questions</th><th>Score</th><th>First attempt</th><th>Avg attempts</th><th>Effort flags</th><th>Understanding</th></tr>`;
+  const concAgg={};
+  concRows.forEach(({c,rows:rs})=>{ const g=aggregate(rs); concAgg[c]=g; const st=STAT[g.status];
+    h+=`<tr><td class="font-semibold">${CONCEPTS[c].label}</td><td>${g.n}</td><td>${g.pts} / ${g.max}<div class="meter mt-1"><div style="width:${g.score*100}%"></div></div></td><td>${g.first} of ${g.n}<div class="meter mt-1"><div style="width:${g.first/g.n*100}%"></div></div></td><td>${g.att.toFixed(1)}</td><td>${g.rush?`<span class="badge b-rus">${g.rush} quick</span>`:'<span class="text-slate-400">none</span>'}${g.str?` <span class="badge b-str">${g.str} struggled</span>`:''}</td><td><span class="badge ${st[1]}">${st[0]}</span></td></tr>`; });
+  h+='</table></div>';
+  // skills
+  h+=`<h3 class="text-lg font-bold text-slate-800 mt-6 mb-2">3. Results by skill</h3><div class="card mb-3 overflow-x-auto"><table class="rp"><tr><th>Skill</th><th>Questions</th><th>Score</th><th>First attempt</th><th>Avg attempts</th><th>Effort flags</th><th>Level</th></tr>`;
+  const skAgg={};
+  Object.keys(SKILLS).forEach(k=>{ const rs=rows.filter(r=>r.skill===k); if(!rs.length) return; const g=aggregate(rs); skAgg[k]=g; const st=STAT[g.status];
+    h+=`<tr><td class="font-semibold">${SKILLS[k].label}</td><td>${g.n}</td><td>${g.pts} / ${g.max}<div class="meter mt-1"><div style="width:${g.score*100}%"></div></div></td><td>${g.first} of ${g.n}<div class="meter mt-1"><div style="width:${g.first/g.n*100}%"></div></div></td><td>${g.att.toFixed(1)}</td><td>${g.rush?`<span class="badge b-rus">${g.rush} quick</span>`:'<span class="text-slate-400">none</span>'}</td><td><span class="badge ${st[1]}">${st[0]}</span></td></tr>`; });
+  h+='</table></div>';
+  // heat map
+  h+=`<p class="text-sm font-bold text-slate-700 mt-4 mb-1">Concept by skill (each cell: average score, number of questions)</p><div class="card mb-3 overflow-x-auto"><table class="rp heat"><tr><th>Concept</th>${Object.keys(SKILLS).map(k=>`<th>${SKILLS[k].label.split(' (')[0]}</th>`).join('')}</tr>`;
+  concRows.forEach(({c,rows:rs})=>{ h+=`<tr><td class="font-semibold">${CONCEPTS[c].label}</td>`+Object.keys(SKILLS).map(k=>{ const cell=rs.filter(r=>r.skill===k); if(!cell.length) return '<td class="h text-slate-300">&ndash;</td>'; const sc=cell.reduce((a,r)=>a+r.pts/3,0)/cell.length; const hue=Math.round(sc*120); return `<td class="h" style="background:hsl(${hue},70%,88%);color:hsl(${hue},60%,22%)">${Math.round(sc*100)}%<div class="text-xs font-semibold">${cell.length} q</div></td>`; }).join('')+'</tr>'; });
+  h+='</table></div>';
+  // study plan
+  const weak=concRows.map(x=>({c:x.c,g:concAgg[x.c]})).filter(x=>x.g.status!=='sec').sort((a,b)=>a.g.score-b.g.score);
+  h+=`<h3 class="text-lg font-bold text-slate-800 mt-6 mb-2">4. How to understand better: your study plan</h3>`;
+  if(!weak.length){
+    h+=`<div class="key text-sm text-slate-800 mb-3"><strong>Every concept looks secure.</strong> Next step: choose the skill with the lowest result in the table above and explain one solved <em>Reason</em> question aloud to a friend, step by step. Then try writing out the printable homework by hand.</div>`;
+  } else {
+    weak.forEach(({c,g})=>{ const cc=CONCEPTS[c], st=STAT[g.status];
+      h+=`<div class="card mb-3"><div class="flex items-center gap-2 flex-wrap mb-1"><span class="font-bold text-slate-800">${cc.label}</span><span class="badge ${st[1]}">${st[0]}</span><span class="text-xs text-slate-500">${g.first} of ${g.n} correct first time</span></div>`;
+      if(g.habit) h+=`<p class="text-sm text-amber-800 bg-amber-50 border-l-4 border-amber-400 rounded px-3 py-1 mb-2"><strong>First, slow down.</strong> Many attempts here were very quick, so the result may show haste more than a gap in understanding. Redo these questions carefully, writing each step.</p>`;
+      h+=`<ul class="list-disc pl-6 text-sm text-slate-700 space-y-1">${cc.tips.map(t=>`<li>${t}</li>`).join('')}</ul>
+        ${kmSupports(c)}<div class="mt-2 flex items-center gap-2 flex-wrap"><button class="btn-ghost" onclick="openTab(null,'${cc.tab}')">Revisit: ${cc.where}</button></div></div>`; });
+  }
+  const weakSk=Object.keys(skAgg).filter(k=>skAgg[k].status!=='sec');
+  if(weakSk.length){
+    h+=`<div class="card mb-3"><p class="font-bold text-slate-800 mb-1">Skill advice</p><ul class="list-disc pl-6 text-sm text-slate-700 space-y-1">${weakSk.map(k=>`<li><strong>${SKILLS[k].label}.</strong> ${SKILLS[k].tips[0]}</li>`).join('')}</ul></div>`;
+  }
+  // question table
+  h+=`<details class="mt-4"><summary class="cursor-pointer font-bold text-slate-800 text-lg">5. Question by question</summary><div class="card mt-2 overflow-x-auto"><table class="rp"><tr><th>Question</th><th>Concept</th><th>Skill</th><th>Attempts</th><th>Result</th><th>Points</th><th>Effort</th><th>Time before each attempt</th></tr>`;
+  rows.forEach(r=>{ const dots=r.log.map(a=>a.ok?'<span class="ok-t">&#10003;</span>':'<span class="bad-t">&#10007;</span>').join(' ');
+    h+=`<tr><td>${TAB_NAMES[r.tab].split(' ').slice(0,2).join(' ')} Q${r.no}</td><td>${CONCEPTS[r.concept].label}</td><td>${SKILLS[r.skill].label.split(' (')[0]}</td><td>${dots}</td><td>${r.ok?'Correct on attempt '+r.n:'Not solved (solution revealed)'}</td><td><span class="pts p${r.pts}">${r.pts} / 3</span></td><td><span class="badge ${EFFORT[r.key].cls}">${EFFORT[r.key].label}</span>${r.repeated?' <span class="text-xs text-slate-500">repeated the same wrong answer</span>':''}</td><td class="text-xs text-slate-600">${r.log.map(a=>secs(a.dt)).join(', ')}</td></tr>`; });
+  h+='</table></div></details>';
+  h+=``;
+  return `<h2 class="text-xl font-bold text-slate-800 mt-8 mb-2">${title}</h2><p class="text-sm text-slate-500 mb-3">${note}</p>`+h;
+}
+
+
+function isComp(e){ return e.tab==='t5' || /^Level 3/.test(e.lv||''); }
+function buildReport(){
+  const root=document.getElementById('report-root');
+  const all=[]; Object.keys(EX).forEach(k=>EX[k].forEach(e=>{ if(ST[e.id]&&ST[e.id].done){ const r=analyzeQ(e); r.comp=isComp(Object.assign({tab:k},e)); all.push(r); } }));
+  const nCore=Object.keys(EX).reduce((n,k)=>n+EX[k].filter(e=>!isComp(Object.assign({tab:k},e))).length,0), nAll=Object.keys(EX).reduce((n,k)=>n+EX[k].length,0);
+  const core=all.filter(r=>!r.comp), comp=all.filter(r=>r.comp);
+  let h=`<div class="card mb-3"><p class="text-slate-700">Your report grows as you work. It is built from the questions you have <strong>finished</strong> (correct, or all 3 attempts used): how many attempts you used, whether you made a real effort on each try, and which ideas are secure. Finished so far: <strong>${all.length} of ${nAll}</strong>.</p>
+  <p class="text-slate-700 mt-2">It has two parts. <strong>Part A</strong> is the core knowledge of this section (Tabs 1 to 4 and homework Levels 1 and 2). <strong>Part B</strong> is the competition side (Tab 5 Smart Thinking and homework Level 3). Your core result is not lowered by the competition questions.</p></div>`;
+  if(!all.length){ root.innerHTML=h+'<div class="card text-slate-600">Finish a few questions and come back: your report will start here.</div>'; return; }
+  h+=reportPart(core,'Part A · Core knowledge',`Tabs 1 to 4 and homework Levels 1 and 2 (${core.length} of ${nCore} finished).`);
+  h+=reportPart(comp,'Part B · Competition thinking',`Tab 5 Smart Thinking and homework Level 3 (${comp.length} of ${nAll-nCore} finished). These questions go beyond the core: treat this part as a challenge.`);
+  h+=`<div class="mt-5 flex gap-2 flex-wrap no-print"><button class="btn" onclick="window.print()">Print or save this report</button><button class="btn-ghost" onclick="openTab(null,'t6')">Back to homework</button></div>`;
+  root.innerHTML=h; typeset(root);
+}
+
+window.addEventListener('DOMContentLoaded',()=>{
+  Object.keys(EX).forEach(mountEx);
+  Object.keys(EXMAP).forEach(id=>{ if(!TAGS[id]) console.error('missing tag for '+id); else if(!CONCEPTS[TAGS[id][0]]) console.error('bad concept '+id); });
+  Object.keys(TAGS).forEach(id=>{ if(!EXMAP[id]) console.error('tag without question '+id); });
+  eqUpdate(); nlUpdate(); cpUpdate(); btUpdate();
+  refreshProgress(); buildReport(); typeset();
+});
+</script>
+<!-- table-scroll-fix --><style id="tblfix">.katex{position:relative}.tblwrap{position:relative;display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}.tblwrap>table{display:table!important;overflow:visible!important;max-width:none!important}</style><script id="tblfix-js">(function(){function wrap(){document.querySelectorAll("table").forEach(function(t){var p=t.parentElement;if(!p||p.classList.contains("tblwrap"))return;var w=document.createElement("div");w.className="tblwrap";p.insertBefore(w,t);w.appendChild(t);});}function go(){wrap();new MutationObserver(wrap).observe(document.body,{childList:true,subtree:true});}if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",go);else go();})();</script><!-- end table-scroll-fix -->
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4572b9e5c4984cd3a0d53765770f398c"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

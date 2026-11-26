@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Horizon Gate II: The Space Between</title>
+<style>
+:root{
+  --desk:#241b13; --paper:#f1e6cb; --paper2:#e9dab6; --paper3:#f7efd9;
+  --ink:#1c1a16; --ink2:#4c4437; --ink3:#7a6e5a; --verm:#c23b22; --verm2:#9c2a16; --indigo:#2b3a5c; --moss:#4d6b3c;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --ruler-h:64px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--desk);color:var(--ink);font-family:var(--serif);-webkit-text-size-adjust:100%}
+body{overflow:hidden}
+button{font-family:inherit;cursor:pointer}
+/* ---------- ruler / progress ---------- */
+#ruler{position:fixed;left:0;right:0;top:0;height:var(--ruler-h);z-index:20;background:linear-gradient(#3a2d20,#2a2017);border-bottom:2px solid #0f0a06;color:#e9dab6;display:flex;align-items:center;gap:18px;padding:0 20px}
+#ruler .brand{font-size:12px;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;color:#d9c79b}
+#ruler .brand b{color:#f1e6cb;font-weight:700}
+#line{position:relative;flex:1;height:100%;cursor:pointer;min-width:120px}
+#line svg{position:absolute;inset:0;width:100%;height:100%}
+#readout{font-family:var(--mono);font-size:12px;white-space:nowrap;min-width:150px;text-align:right;color:#f1e6cb}
+#readout i{color:#ff9a82;font-style:normal}
+/* ---------- the scroll ---------- */
+#scroll{position:fixed;left:0;right:0;top:var(--ruler-h);bottom:0;display:flex;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x proximity;scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:var(--verm) #3a2d20}
+#strip{display:flex;flex:none;position:relative;margin:22px 0 26px;border-radius:2px;filter:drop-shadow(0 10px 22px rgba(0,0,0,.55))}
+.panel{position:relative;flex:0 0 min(100vw,1120px);width:min(100vw,1120px);scroll-snap-align:start;background:
+  radial-gradient(ellipse at 20% 0%,rgba(255,255,255,.35),transparent 55%),
+  radial-gradient(ellipse at 90% 100%,rgba(120,80,30,.18),transparent 55%),
+  linear-gradient(var(--paper),var(--paper2));
+  overflow-y:auto;overflow-x:hidden;padding:34px clamp(18px,3.4vw,52px) 80px;border-right:1px dashed rgba(76,68,55,.35)}
+.panel:first-child{border-radius:6px 0 0 6px}
+.panel:last-child{border-right:none;border-radius:0 6px 6px 0}
+.panel::before{content:attr(data-num);position:absolute;right:14px;top:-18px;font-size:min(34vw,330px);font-style:italic;color:rgba(194,59,34,.07);pointer-events:none;line-height:1;font-weight:700}
+.panel>*{position:relative}
+.panel::-webkit-scrollbar{width:8px}.panel::-webkit-scrollbar-thumb{background:rgba(76,68,55,.35);border-radius:4px}
+.eyebrow{display:flex;align-items:center;gap:12px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--verm2);margin:0 0 10px}
+.seal{display:inline-grid;place-items:center;min-width:38px;height:38px;padding:0 6px;border:2px solid var(--verm);color:var(--verm);font-weight:700;font-size:15px;border-radius:5px;transform:rotate(-4deg);background:rgba(194,59,34,.06)}
+h2{font-size:clamp(30px,4.2vw,52px);line-height:1.04;margin:0 0 6px;font-weight:700;letter-spacing:-.01em}
+h2 em{color:var(--verm);font-style:italic}
+.sub{font-size:clamp(16px,1.6vw,20px);font-style:italic;color:var(--ink2);margin:0 0 20px;max-width:46ch}
+h3{font-size:19px;margin:0 0 6px;color:var(--indigo)}
+p{font-size:clamp(15.5px,1.25vw,17.5px);line-height:1.62;margin:0 0 12px;color:#2a261f}
+.cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:clamp(20px,3vw,44px);align-items:start}
+.cols.even{grid-template-columns:1fr 1fr}
+.story p:first-of-type::first-letter{float:left;font-size:3.5em;line-height:.82;padding:6px 8px 0 0;color:var(--verm);font-weight:700}
+.note{border-left:3px solid var(--verm);padding:2px 0 2px 12px;margin:14px 0;font-size:15px;font-style:italic;color:var(--ink2)}
+.note b{font-style:normal;color:var(--verm2)}
+.quote{font-size:clamp(19px,2vw,26px);font-style:italic;line-height:1.3;color:var(--indigo);border-top:1px solid var(--ink3);border-bottom:1px solid var(--ink3);padding:12px 4px;margin:18px 0}
+.toy{background:var(--paper3);border:1.5px solid var(--ink);border-radius:4px;padding:14px 16px 16px;box-shadow:5px 5px 0 rgba(28,26,22,.85);position:relative}
+.toy .tag{position:absolute;top:-12px;left:14px;background:var(--verm);color:#fff;font-size:11px;letter-spacing:.16em;text-transform:uppercase;padding:3px 9px;border-radius:2px}
+.toy h3{margin-top:6px}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:8px 0}
+.row label{font-size:14px;color:var(--ink2)}
+input[type=text],input[type=number],select{font:15px var(--mono);padding:6px 8px;border:1.5px solid var(--ink);background:#fffaf0;color:var(--ink);border-radius:3px;max-width:100%}
+input[type=range]{accent-color:var(--verm);width:min(260px,100%)}
+.btn{font:600 14px var(--serif);background:var(--ink);color:var(--paper);border:none;border-radius:3px;padding:7px 12px}
+.btn:hover{background:var(--verm2)}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--paper)}
+.btn.on{background:var(--verm)}
+.out{font-size:15px;line-height:1.5}
+.out table{border-collapse:collapse;font-size:13.5px;width:100%}
+.out td,.out th{padding:3px 7px;border-bottom:1px solid rgba(28,26,22,.2);text-align:left;vertical-align:middle}
+.out th{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3)}
+.mono{font-family:var(--mono);font-size:.92em}
+.fr{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;line-height:1.05;margin:0 2px;font-size:.92em}
+.fr>span:first-child{border-bottom:1.3px solid currentColor;padding:0 3px 1px}
+.fr>span:last-child{padding:1px 3px 0}
+.hi{color:var(--verm);font-weight:700}
+.bar{position:relative;height:16px;border:1.5px solid var(--ink);background:#fffaf0;border-radius:2px;overflow:hidden}
+.bar i{position:absolute;top:0;bottom:0;background:var(--verm)}
+svg text{font-family:var(--serif)}
+details{margin:10px 0;border:1px solid var(--ink3);border-radius:3px;background:rgba(255,255,255,.35)}
+summary{cursor:pointer;padding:7px 12px;font-weight:600;color:var(--indigo)}
+details>div{padding:2px 14px 10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.chip{border:1.5px solid var(--ink);border-radius:20px;padding:3px 12px;font-size:14px;background:var(--paper3)}
+.chip b{color:var(--verm)}
+/* doors */
+.doors{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:18px 0}
+.door{background:var(--paper3);border:1.5px solid var(--ink);border-radius:60px 60px 3px 3px;padding:30px 14px 16px;text-align:center;position:relative}
+.door .n{position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:var(--verm);color:#fff;font-size:12px;padding:2px 12px;border-radius:0 0 8px 8px;letter-spacing:.1em}
+.door h3{margin:6px 0 4px;font-size:17px}
+.door p{font-size:14px;line-height:1.45;margin:0 0 6px}
+.door .beyond{font-style:italic;color:var(--verm2);font-size:13.5px}
+/* timeline */
+.tl{position:relative;margin:30px 0 8px;padding-top:6px;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px 14px}
+.tl::before{content:"";position:absolute;left:0;right:0;top:20px;height:2px;background:var(--ink)}
+.ev{position:relative;padding-top:30px}
+.ev::before{content:"";position:absolute;top:13px;left:0;width:14px;height:14px;border-radius:50%;background:var(--verm);border:2px solid var(--paper)}
+.ev b{display:block;font-size:15px;color:var(--verm2)}
+.ev span{font-size:13.5px;line-height:1.4;display:block}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:20px}
+.card{background:var(--paper3);border:1.5px solid var(--ink);padding:12px 14px;border-radius:3px}
+.card h3{margin:0 0 2px}.card .when{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3);margin-bottom:6px}
+.card p{font-size:14.5px;line-height:1.5;margin:0}
+.paths{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:20px 0}
+.path{border:2px solid var(--ink);padding:14px 16px;background:var(--paper3);border-radius:3px}
+.path h3{color:var(--verm2)}
+.path ul{margin:6px 0 0;padding-left:18px;font-size:15px;line-height:1.5}
+.next{margin-top:26px;display:flex;justify-content:flex-end}
+.next button{background:none;border:none;color:var(--verm2);font:italic 600 17px var(--serif);padding:6px 0;border-bottom:2px solid var(--verm)}
+.next button:hover{color:var(--ink)}
+/* hero */
+.hero{display:flex;flex-direction:column;justify-content:center;min-height:calc(100vh - var(--ruler-h) - 130px);text-align:center;align-items:center}
+.hero .ed{letter-spacing:.34em;text-transform:uppercase;font-size:12.5px;color:var(--verm2)}
+.hero h1{font-size:clamp(46px,9vw,118px);line-height:.95;margin:12px 0 8px;font-weight:700;letter-spacing:-.02em}
+.hero h1 em{color:var(--verm);font-weight:400}
+.hero .tag2{font-size:clamp(17px,2.2vw,26px);font-style:italic;color:var(--ink2);max-width:30ch;margin:6px auto 18px}
+.hero svg{width:min(780px,92%);height:auto}
+.hanko{position:absolute;right:clamp(14px,5vw,80px);top:40px;width:94px;height:94px;border:4px solid var(--verm);color:var(--verm);display:grid;place-items:center;font-size:44px;font-weight:700;border-radius:8px;transform:rotate(7deg);opacity:.92;background:rgba(194,59,34,.05)}
+.hanko small{position:absolute;bottom:4px;font-size:9px;letter-spacing:.18em;text-transform:uppercase}
+.hint{margin-top:14px;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3);animation:nudge 2s ease-in-out infinite}
+@keyframes nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(10px)}}
+/* unroll */
+#strip.unroll{animation:unroll 1.5s cubic-bezier(.2,.7,.2,1) both}
+@keyframes unroll{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+@media (prefers-reduced-motion:reduce){#strip.unroll{animation:none}.hint{animation:none}#scroll{scroll-behavior:auto}}
+/* side arrows */
+.arrow{position:fixed;top:50%;z-index:15;width:44px;height:64px;border:none;background:rgba(28,26,22,.78);color:var(--paper);font-size:26px;border-radius:4px}
+.arrow:hover{background:var(--verm)}
+#prev{left:6px}#next{right:6px}
+.cv{display:block;width:100%;height:auto;background:#fffaf0;border:1.5px solid var(--ink);border-radius:3px}
+.grid7{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;font-size:13px;font-family:var(--mono)}
+.grid7 div{border:1px solid rgba(28,26,22,.35);padding:5px 2px;text-align:center;background:#fffaf0;transition:background .15s}
+.grid7 .dup{opacity:.35;text-decoration:line-through}
+.grid7 .now{background:var(--verm);color:#fff}
+.grid7 .seen{background:#f3c9bd}
+.rings{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.ring{text-align:center;font-size:13px}
+@media (max-width:860px){
+  :root{--ruler-h:54px}
+  #ruler{padding:0 10px;gap:8px}#ruler .brand{display:none}#readout{min-width:104px;font-size:11px}
+  .cols,.cols.even{grid-template-columns:1fr}
+  .doors{grid-template-columns:repeat(2,1fr)}
+  .tl{grid-template-columns:repeat(2,1fr)}.tl::before{display:none}
+  .cards,.paths{grid-template-columns:1fr}
+  .arrow{display:none}
+  .panel{padding-top:24px}
+  .hanko{width:64px;height:64px;font-size:30px;top:14px}
+}
+</style>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%20role%3D%22img%22%20aria-label%3D%22%E7%94%B3%20Shen%20Studio%22%3E%3Crect%20width%3D%22100%22%20height%3D%22100%22%20rx%3D%2212%22%20fill%3D%22%23B3261E%22/%3E%3Cpath%20d%3D%22M41.57%2027.7V42.46H27.58V27.7ZM15.1%2025.34V70.78H16.95C22.18%2070.78%2027.58%2067.91%2027.58%2066.65V62.18H41.57V90H44.01C48.82%2090%2054.3%2086.88%2054.3%2085.62V62.18H68.97V68.93H71.07C75.37%2068.93%2081.53%2066.65%2081.61%2065.89V29.64C83.38%2029.3%2084.39%2028.55%2084.9%2027.87L73.69%2019.19L68.12%2025.34H54.3V13.96C56.74%2013.62%2057.33%2012.7%2057.5%2011.52L41.57%2010V25.34H28.42L15.1%2020.2ZM54.3%2027.7H68.97V42.46H54.3ZM41.57%2059.82H27.58V44.82H41.57ZM54.3%2059.82V44.82H68.97V59.82Z%22%20fill%3D%22%23FFFFFF%22/%3E%3C/svg%3E">
+<style id="home-link">
+.homebtn{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 12px;border:1px solid var(--line,#ddd);border-radius:999px;background:#fff;color:var(--ink,#1c2230);text-decoration:none;font:600 .88rem/1 Inter,system-ui,sans-serif;white-space:nowrap;flex-shrink:0}
+.homebtn:hover{background:#f1eff6}
+.homebtn svg{width:16px;height:16px}
+@media print{.homebtn{display:none!important}}
+</style>
+<style id="shen-brand">
+.shen-footer{display:flex;align-items:center;justify-content:center;gap:8px;padding:18px 12px 26px;font:500 13px/1.3 Inter,"Helvetica Neue",Arial,sans-serif;color:#6B6458;letter-spacing:.03em;text-align:center}
+.shen-footer svg{width:20px;height:20px;flex-shrink:0}
+.shen-footer b{font-weight:600;color:#1A1A1A}
+.shen-print-mark{display:none}
+@media print{.shen-footer{display:none!important}
+.shen-print-mark{display:flex!important;position:fixed;right:0;bottom:0;align-items:center;gap:1.5mm;font:500 7.5pt/1 Inter,Arial,sans-serif;color:#555;opacity:.75;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.shen-print-mark svg{width:4mm;height:4mm}}
+</style>
+<style id="hz-gate">
+.homebtn.gatehome{position:fixed;left:14px;bottom:14px;z-index:70;background:rgba(255,253,247,.92)!important;color:#1c1a16!important;border:1px solid rgba(28,26,22,.25)!important;backdrop-filter:blur(6px);font-family:Inter,system-ui,sans-serif}
+.shen-footer{position:relative;z-index:5;padding-bottom:70px!important;background:transparent!important}
+@media print{.homebtn.gatehome{display:none}}
+</style>
+</head>
+<body>
+<div id="ruler" role="navigation" aria-label="Progress along the scroll">
+  <div class="brand"><b>Horizon Gate</b> &middot; Edition II</div>
+  <div id="line" title="Click to travel along the scroll"><svg id="linesvg" preserveAspectRatio="none"></svg></div>
+  <div id="readout">you are at <i>0</i></div>
+</div>
+<button class="arrow" id="prev" aria-label="Previous panel">&#8249;</button>
+<button class="arrow" id="next" aria-label="Next panel">&#8250;</button>
+<div id="scroll"><div id="strip" class="unroll">
+<!-- ============ I. GATE ============ -->
+<section class="panel" data-num="I" id="p1" data-title="The Gate">
+  <div class="hanko">II<small>chapter</small></div>
+  <div class="hero">
+    <div class="ed">Horizon Gate &middot; Edition II &middot; end of Chapter 2, Rational Numbers</div>
+    <h1>The Space <em>Between</em></h1>
+    <div class="tag2">Between any two numbers, however close, there is always another.</div>
+    <svg id="herosvg" viewBox="0 0 800 150" aria-label="A number line from 0 to 1 filling with fractions"></svg>
+    <div class="hint">unroll the scroll &rarr;</div>
+  </div>
+</section>
+
+<!-- ============ II. DOORS ============ -->
+<section class="panel" data-num="II" id="p2" data-title="Four doors behind you">
+  <div class="eyebrow"><span class="seal">II</span> Looking back before we leap</div>
+  <h2>Four doors you have <em>already opened</em></h2>
+  <p class="sub">Each one of them was a doorway, and behind each doorway a whole country begins.</p>
+  <div class="doors">
+    <div class="door"><span class="n">2.1</span><h3>Powers</h3><p>You learned that 10<sup>k</sup> builds place value and that powers obey laws.</p><p class="beyond">Beyond: logarithms, scientific notation, and the number 2<sup>1/12</sup> that tunes every piano.</p></div>
+    <div class="door"><span class="n">2.2</span><h3>Fractions</h3><p>You placed fractions on a line, ordered them and found the ones in between.</p><p class="beyond">Beyond: Farey sequences, Ford circles, and the way the Egyptians wrote every fraction.</p></div>
+    <div class="door"><span class="n">2.3</span><h3>Arithmetic</h3><p>You added, multiplied and divided and never left the family of fractions.</p><p class="beyond">Beyond: a <i>field</i>, the stage on which algebra, geometry and cryptography perform.</p></div>
+    <div class="door"><span class="n">2.4</span><h3>Decimals</h3><p>You saw that every fraction either stops or repeats, and why.</p><p class="beyond">Beyond: cycles of remainders, number bases, and the way your computer counts.</p></div>
+  </div>
+  <div class="quote">Five new words you now own: <b>dense</b>, <b>countable</b>, <b>period</b>, <b>convergent</b>, <b>field</b>. Each one has a room in this scroll.</div>
+  <div class="cols even">
+    <div>
+      <h3>How to read this scroll</h3>
+      <p>There are no exercises here and nothing is marked. Every panel is a story, and most have a small toy to play with. You will meet scribes, a legend about a drowned philosopher, a stock market that lost half its value to a rounding habit, and questions that nobody on Earth can answer yet.</p>
+    </div>
+    <div>
+      <h3>Travel tips</h3>
+      <p>Use the arrows, the side buttons, a swipe, or click the ruler at the top. The ruler is itself a number line from 0 to 1, and it tells you which fraction your position is closest to.</p>
+    </div>
+  </div>
+  <div class="next"><button data-go="3">Next: the Between itself &rarr;</button></div>
+</section>
+
+<!-- ============ III. THE BETWEEN ============ -->
+<section class="panel" data-num="III" id="p3" data-title="The Between">
+  <div class="eyebrow"><span class="seal">III</span> Density</div>
+  <h2>There is always <em>room</em></h2>
+  <p class="sub">Pick any two fractions. The mediant sits between them, and so on for ever.</p>
+  <div class="cols">
+    <div class="story">
+      <p>Take [[1|3]] and [[1|2]]. Add the tops and add the bottoms and you get [[2|5]], which is bigger than [[1|3]] and smaller than [[1|2]]. This odd addition is called the <b>mediant</b>, and it always lands strictly between two fractions whose denominators are positive.</p>
+      <p>Start with [[0|1]] and [[1|1]], the two ends of the line. Take their mediant, then the mediants of the new neighbours, and keep going. Every fraction between 0 and 1 will turn up, each one exactly once and already in lowest terms. The whole family is arranged in a tree, called the <b>Stern&ndash;Brocot tree</b> after the German mathematician Moritz Stern (1858) and the French clockmaker Achille Brocot (1861), who used it to choose gear ratios.</p>
+      <div class="note"><b>Why it matters.</b> Because there is always another fraction between any two, mathematicians say the rationals are <b>dense</b>. You can never find "the next fraction after [[1|3]]". There is no such thing.</div>
+      <p>Density sounds like completeness, but wait for the next panel. The rationals are packed so tightly that you cannot slip a pin between them, and still they have holes.</p>
+    </div>
+    <div>
+      <div class="toy"><span class="tag">toy 1</span><h3>Trap a number with mediants</h3>
+        <div class="row"><label for="sb-x">number between 0 and 1:</label><input type="text" id="sb-x" value="0.14159265" size="14">
+          <button class="btn" id="sb-go">Descend</button></div>
+        <div class="row" id="sb-presets"></div>
+        <div class="out" id="sb-out"></div>
+      </div>
+    </div>
+  </div>
+  <div class="toy" style="margin-top:26px"><span class="tag">toy 2</span><h3>Ford circles: a picture of the fractions</h3>
+    <div class="row"><label for="fd-q">denominators up to <b id="fd-qv">8</b></label><input type="range" id="fd-q" min="1" max="30" value="8"></div>
+    <svg id="ford" viewBox="0 0 1000 330" class="cv" role="img" aria-label="Ford circles"></svg>
+    <p style="margin:10px 0 0;font-size:15px">Each fraction [[p|q]] gets a circle of diameter [[1|q<sup>2</sup>]] sitting on the line. Two circles touch exactly when [[p|q]] and [[r|s]] satisfy <span class="mono">|ps &minus; qr| = 1</span>, the same neighbours that mediants create. Large denominators make tiny circles, and not one overlaps another.</p>
+  </div>
+  <div class="next"><button data-go="4">Next: the scribe's thirds &rarr;</button></div>
+</section>
+
+<!-- ============ IV. SCRIBE ============ -->
+<section class="panel" data-num="IV" id="p4" data-title="The Scribe's Thirds">
+  <div class="eyebrow"><span class="seal">IV</span> Egyptian fractions</div>
+  <h2>The scribe who split <em>everything</em></h2>
+  <p class="sub">Around 1550 BCE, one scribe wrote a handbook of how to share loaves.</p>
+  <div class="cols">
+    <div class="story">
+      <p>The Rhind Papyrus, now in the British Museum, was copied by a scribe named Ahmes from an older text. It opens with a table that writes [[2|n]] for every odd n from 3 to 101 as a sum of <b>different unit fractions</b>, fractions with 1 on top. For example [[2|7]] = [[1|4]] + [[1|28]].</p>
+      <p>Why would anyone do this? Imagine sharing 2 loaves among 7 workers. Cut each loaf into quarters and give everyone a quarter; one quarter remains, and you cut that into 7 slivers. Everyone gets exactly [[1|4]] and [[1|28]], and nobody has to argue about which piece is bigger.</p>
+      <div class="note"><b>The Eye of Horus.</b> Egyptian legend writes the parts of the eye as [[1|2]], [[1|4]], [[1|8]], [[1|16]], [[1|32]] and [[1|64]]. They add to [[63|64]], and the story says the missing [[1|64]] is supplied by the god Thoth. It is the first picture of a series that gets closer to 1 without arriving.</div>
+      <div id="eye" style="margin:12px 0"></div>
+      <p>In 1202 Fibonacci wrote a greedy recipe: at each step take the biggest unit fraction that fits, subtract, and repeat. It always finishes. Nobody knows, however, whether it always finds the <i>shortest</i> answer. Many questions about these sums are still open (see panel XI).</p>
+    </div>
+    <div>
+      <div class="toy"><span class="tag">toy 3</span><h3>The greedy scribe</h3>
+        <div class="row"><label for="eg-a">split</label><input type="number" id="eg-a" value="2" min="1" max="9999" style="width:6.5em"><b>/</b><input type="number" id="eg-b" value="7" min="2" max="9999" style="width:6.5em"><button class="btn" id="eg-go">Split</button></div>
+        <div class="row" id="eg-presets"></div>
+        <div class="out" id="eg-out"></div>
+      </div>
+    </div>
+  </div>
+  <div class="next"><button data-go="5">Next: a scandal &rarr;</button></div>
+</section>
+
+<!-- ============ V. SCANDAL ============ -->
+<section class="panel" data-num="V" id="p5" data-title="The Scandal">
+  <div class="eyebrow"><span class="seal">V</span> A number that is not a ratio</div>
+  <h2>The number that <em>broke</em> the school</h2>
+  <p class="sub">A legend of the Pythagoreans, who believed that all is number, and number is ratio.</p>
+  <div class="cols">
+    <div class="story">
+      <p>A square has sides of length 1. How long is its diagonal? By Pythagoras's own theorem, the diagonal squared is 1 + 1 = 2, so the diagonal is a number whose square is 2.</p>
+      <p>Ancient Babylonian scribes already knew a very good answer: a clay tablet from about 1800 BCE (YBC 7289) gives the diagonal as 1;24,51,10 in base 60, which is 1.41421296&hellip;, matching &radic;2 to six significant figures. But is there a <i>fraction</i> p/q whose square is exactly 2? The Greeks proved that there is not.</p>
+      <p>The story, and it is a story, since historians cannot be certain, says the proof was discovered by Hippasus of Metapontum, and that the brotherhood was so shaken that he was drowned at sea. What we do know is that this was one of the great shocks in the history of thought: the fractions were not enough.</p>
+      <details><summary>The proof that √2 is not a fraction</summary><div>
+        <p>Suppose √2 = p/q in lowest terms. Then p<sup>2</sup> = 2q<sup>2</sup>, so p<sup>2</sup> is even, so p is even, say p = 2m. Then 4m<sup>2</sup> = 2q<sup>2</sup>, so q<sup>2</sup> = 2m<sup>2</sup>, so q is even too. But now p and q are both even, which contradicts "lowest terms". So no such fraction exists.</p>
+        <p>You met the ingredients in Chapter 1: even and odd are remainders mod 2, and the square of an odd number is odd.</p></div></details>
+    </div>
+    <div>
+      <div class="toy"><span class="tag">toy 4</span><h3>Squeezing √2 with fractions</h3>
+        <p style="font-size:14.5px;margin:0 0 6px">Start with [[1|1]]. From p/q build the next fraction [[p+2q|p+q]]. Watch how the fractions leap above and below √2 &asymp; 1.41421356&hellip;, closing in but never landing.</p>
+        <div class="row"><button class="btn" id="pl-next">Next fraction</button><button class="btn ghost" id="pl-reset">Reset</button></div>
+        <div class="out" id="pl-out"></div>
+      </div>
+      <div class="note" style="margin-top:18px"><b>Look at the last column.</b> p<sup>2</sup> &minus; 2q<sup>2</sup> is always 1 or &minus;1. The fractions are as near to a solution of x<sup>2</sup> = 2 as whole numbers permit.</div>
+    </div>
+  </div>
+  <div class="next"><button data-go="6">Next: counting the uncountable &rarr;</button></div>
+</section>
+
+<!-- ============ VI. COUNT ============ -->
+<section class="panel" data-num="VI" id="p6" data-title="The Countable Crowd">
+  <div class="eyebrow"><span class="seal">VI</span> Cantor's surprise</div>
+  <h2>More fractions than whole numbers? <em>No.</em></h2>
+  <p class="sub">The strangest fact about the rationals is how few of them there are.</p>
+  <div class="cols">
+    <div class="story">
+      <p>Between 0 and 1 there are infinitely many fractions, and they are dense. Surely there are far more fractions than whole numbers 1, 2, 3, &hellip;? In 1874 Georg Cantor showed the opposite: you <b>can</b> line up every positive fraction in a single list, with a first, a second, a third, and so on, and no fraction is ever missed.</p>
+      <p>The trick is to put the fractions [[n|d]] in a grid and walk along the diagonals, skipping any fraction already met in lowest terms. Press play and watch the walk.</p>
+      <div class="note"><b>The twist.</b> Cantor then proved (in 1874, and again with his famous diagonal argument in 1891) that the decimals between 0 and 1 <i>cannot</i> be listed. For any list you write down, you can build a new decimal by changing the <i>n</i>th digit of the <i>n</i>th number, and the new number is not on the list. So the real numbers form a bigger infinity than the rationals.</div>
+      <p>If you could pick a real number at random, the chance that it is a fraction is zero. Fractions are everywhere on the line, and still almost all of the line lies elsewhere. That is the real reason for the next chapters of mathematics: to understand all the numbers that are <i>not</i> fractions.</p>
+    </div>
+    <div>
+      <div class="toy"><span class="tag">toy 5</span><h3>Walk the grid</h3>
+        <div class="row"><button class="btn" id="cn-play">Play</button><button class="btn ghost" id="cn-step">Step</button><button class="btn ghost" id="cn-reset">Reset</button>
+        <span class="mono" id="cn-count"></span></div>
+        <div class="grid7" id="cn-grid"></div>
+        <p style="font-size:13px;margin:6px 0 0;color:var(--ink2)">Columns are numerators 1&ndash;7, rows are denominators 1&ndash;7. Struck-through cells repeat a fraction already counted, like [[2|4]] = [[1|2]].</p>
+        <div class="out mono" id="cn-list" style="margin-top:8px"></div>
+      </div>
+    </div>
+  </div>
+  <div class="next"><button data-go="7">Next: wheels of remainders &rarr;</button></div>
+</section>
+<!-- ============ VII. WHEELS ============ -->
+<section class="panel" data-num="VII" id="p7" data-title="Wheels of Remainders">
+  <div class="eyebrow"><span class="seal">VII</span> Why decimals repeat</div>
+  <h2>Ten turns of a <em>wheel</em></h2>
+  <p class="sub">The block 142857 is not a coincidence. It is a ring of six remainders.</p>
+  <div class="cols">
+    <div class="story">
+      <p>In long division by 7 every step multiplies the remainder by 10 and reduces it modulo 7. Start at 1 and you visit 1, 3, 2, 6, 4, 5, and then you are back at 1. It is a clock with six positions, and the digits of [[1|7]] are written down as you go round it. You can start the clock at any hour: [[3|7]] starts at 3, and its digits are the same wheel read from another place. That is why 142857 &times; 3 = 428571.</p>
+      <p>For 13 there are <b>two</b> separate wheels, each with six remainders. Fractions [[1|13]], [[3|13]], [[4|13]], [[9|13]], [[10|13]] and [[12|13]] ride one wheel and are rotations of each other; [[2|13]], [[5|13]], [[6|13]], [[7|13]], [[8|13]] and [[11|13]] ride the other.</p>
+      <p>The length of every wheel is the same number, the <b>period</b>. When the period equals b &minus; 1, as it does for 7, 17, 19, 23, 29, 47 and 59, there is just one wheel, and the prime is called a <b>full-reptend prime</b>. In 1801 the 24-year-old Carl Friedrich Gauss included the study of these decimal periods in his book <i>Disquisitiones Arithmeticae</i>, the same book that founded modular arithmetic, which you met in Chapter 1.</p>
+      <div class="note"><b>Open door.</b> Are there infinitely many full-reptend primes? Emil Artin guessed in 1927 that about 37.4% of all primes are, and it is still unproved.</div>
+    </div>
+    <div>
+      <div class="toy"><span class="tag">toy 6</span><h3>Draw the wheels</h3>
+        <div class="row" id="cy-btns"></div>
+        <div class="row"><label for="cy-b">or type a denominator coprime to 10 (up to 99):</label><input type="number" id="cy-b" value="13" min="3" max="99" style="width:5em"></div>
+        <div class="out" id="cy-info" style="margin-bottom:8px"></div>
+        <div class="rings" id="cy-rings"></div>
+      </div>
+    </div>
+  </div>
+  <div class="next"><button data-go="8">Next: the sound of ratios &rarr;</button></div>
+</section>
+
+<!-- ============ VIII. MUSIC ============ -->
+<section class="panel" data-num="VIII" id="p8" data-title="The Sound of Ratios">
+  <div class="eyebrow"><span class="seal">VIII</span> Music</div>
+  <h2>The sound of <em>fractions</em></h2>
+  <p class="sub">Two strings sound sweet together when their lengths are in a simple ratio.</p>
+  <div class="cols">
+    <div class="story">
+      <p>The Pythagoreans noticed that halving a string raises the note by an octave (ratio 2:1), and that a ratio of 3:2 gives a perfect fifth and 4:3 a fourth. Simple fractions made pure sounds, and this convinced them that harmony was number.</p>
+      <p>Press the buttons and look at the wave. For simple ratios the two tones fall into step after a few beats and the picture repeats. For the ratio &radic;2 : 1, which is not a fraction, the wave <i>never</i> repeats, and the interval sounds restless. That is the tritone, which medieval musicians nicknamed the "devil in music".</p>
+      <div class="note"><b>The comma that does not close.</b> Climb twelve perfect fifths and you should land on the same note as seven octaves higher. But ([[3|2]])<sup>12</sup> = [[531441|4096]] &approx; 129.746, while 2<sup>7</sup> = 128. The gap, the <b>Pythagorean comma</b>, is a ratio of [[531441|524288]], about a quarter of a semitone. Why can this never close? Because 3<sup>12</sup> is odd and 2<sup>19</sup> is even, and, as you saw in Chapter 1, prime factorisations are unique. No power of 3 ever equals a power of 2.</div>
+      <p>The cure that musicians finally adopted is to split the octave into 12 equal steps, each a ratio of 2<sup>1/12</sup> &approx; 1.05946, an irrational number. Every interval is slightly out of tune, and every key is playable. Rational ratios also approximate it well: [[18|17]] &approx; 1.05882 was used by Renaissance lute makers to place frets.</p>
+    </div>
+    <div>
+      <div class="toy"><span class="tag">toy 7</span><h3>Play two strings together</h3>
+        <div class="row" id="mu-btns"></div>
+        <canvas id="mu-cv" class="cv" width="700" height="200"></canvas>
+        <div class="out" id="mu-info" style="margin-top:8px"></div>
+        <p style="font-size:13px;margin:4px 0 0;color:var(--ink2)">Sound needs your device volume on. The lower note is always 220 Hz (the A below middle C).</p>
+      </div>
+    </div>
+  </div>
+  <div class="next"><button data-go="9">Next: the secret staircase &rarr;</button></div>
+</section>
+
+<!-- ============ IX. CONTINUED FRACTIONS ============ -->
+<section class="panel" data-num="IX" id="p9" data-title="The Secret Staircase">
+  <div class="eyebrow"><span class="seal">IX</span> Continued fractions</div>
+  <h2>The secret <em>staircase</em></h2>
+  <p class="sub">There is a way to write any number that reveals its best fraction approximations.</p>
+  <div class="cols">
+    <div class="story">
+      <p>Take [[355|113]]. Write it as 3 and a bit: 3 + [[16|113]]. Flip the bit: [[113|16]] = 7 + [[1|16]]. So</p>
+      <div style="font-size:19px;margin:6px 0 12px">[[355|113]] = 3 + <span class="fr"><span>1</span><span>7 + <span class="fr"><span>1</span><span>16</span></span></span></span></div>
+      <p>This staircase of fractions inside fractions is a <b>continued fraction</b>, written [3; 7, 16]. You have already done the algorithm: it is exactly Euclid's HCF algorithm from Chapter 1, keeping the quotients. Every fraction has a staircase that <i>ends</i>. An irrational number has one that goes on for ever.</p>
+      <p>Stop the staircase early and you get a <b>convergent</b>, and convergents are the best possible fractions for their size. For &pi; = [3; 7, 15, 1, 292, &hellip;] they are 3, [[22|7]], [[333|106]], [[355|113]]. That last fraction, accurate to six decimals, was found by the astronomer Zu Chongzhi in fifth-century China. The big number 292 is the reason it is so good: a huge step means the previous fraction is very close.</p>
+      <p>The golden ratio is [1; 1, 1, 1, &hellip;], the most "stairlike" irrational and therefore the hardest to approximate by fractions. Its convergents are the ratios of Fibonacci numbers.</p>
+      <div class="note"><b>Practical magic.</b> The tropical year is about 365.24219 days. Its staircase gives the convergents [[1|4]], [[7|29]] and [[8|33]]: the Julian leap-year rule (1 in 4), and a 33-year cycle with 8 leap years, which is the basis of the Persian calendar's accuracy. The Gregorian rule ([[97|400]]) is a different compromise. Gear makers use convergents for the same reason: the fewest teeth that give the ratio they need.</div>
+    </div>
+    <div>
+      <div class="toy"><span class="tag">toy 8</span><h3>Build the staircase</h3>
+        <div class="row"><label for="cf-x">number or fraction:</label><input type="text" id="cf-x" value="355/113" size="16"><button class="btn" id="cf-go">Climb</button></div>
+        <div class="row" id="cf-presets"></div>
+        <div class="out" id="cf-out"></div>
+      </div>
+    </div>
+  </div>
+  <div class="next"><button data-go="10">Next: where the between bites &rarr;</button></div>
+</section>
+
+<!-- ============ X. COMPUTERS ============ -->
+<section class="panel" data-num="X" id="p10" data-title="Where the Between Bites">
+  <div class="eyebrow"><span class="seal">X</span> Computers and money</div>
+  <h2>When a tenth is <em>not</em> a tenth</h2>
+  <p class="sub">Your computer counts in base 2. Chapter 2.4 told you which fractions terminate. It depends on the base!</p>
+  <div class="cols">
+    <div class="story">
+      <p>A fraction terminates in base 10 exactly when its denominator has no prime factors except 2 and 5, because those are the primes of 10. In base 2 the only allowed prime is 2. So [[1|10]], so friendly in decimal, is an endless repeating "fraction" in binary: 0.0001100110011&hellip;. A computer must cut it off, and the cut-off value is slightly wrong. Add two such cut-offs and the error shows: in most programming languages 0.1 + 0.2 gives 0.30000000000000004.</p>
+      <p>The Babylonians used base 60, and now we can see why: 60 = 2<sup>2</sup>&middot;3&middot;5 means [[1|2]], [[1|3]], [[1|4]], [[1|5]] and [[1|6]] all terminate. Ten has only two such friends.</p>
+      <div class="note"><b>The index that melted.</b> In January 1982 the Vancouver Stock Exchange began a new index at 1000.000. After each trade the computer recalculated it and <i>truncated</i> (chopped off) the result at three decimals instead of rounding it. Thousands of tiny losses piled up. By November 1983 the index showed about 525, while the true value was about 1098.9. Truncation always rounds down, so the error never cancels. This is the lesson of Tab 5 of Chapter 2.4 with real money attached.</div>
+      <div class="note"><b>A tenth of a second.</b> On 25 February 1991 an American Patriot missile battery in Dhahran failed to intercept an incoming missile. The system had been running for about 100 hours, and its clock, which counted tenths of a second, stored 0.1 with a truncated binary expansion. The tiny error accumulated to about a third of a second, enough to look in the wrong part of the sky. Twenty-eight soldiers died. Engineers now take rounding as seriously as arithmetic.</div>
+    </div>
+    <div>
+      <div class="toy"><span class="tag">toy 9</span><h3>One fraction, four number bases</h3>
+        <div class="row"><input type="number" id="bs-n" value="1" min="0" max="999" style="width:5.5em"><b>/</b><input type="number" id="bs-d" value="10" min="2" max="999" style="width:5.5em"><button class="btn" id="bs-go">Expand</button></div>
+        <div class="row" id="bs-presets"></div>
+        <div class="out" id="bs-out"></div>
+        <hr style="border:none;border-top:1px dashed var(--ink3);margin:14px 0">
+        <h3>What your computer really stores</h3>
+        <div class="row"><input type="text" id="fl-x" value="0.1" size="8"><b>+</b><input type="text" id="fl-y" value="0.2" size="8"><button class="btn" id="fl-go">Add</button></div>
+        <div class="out mono" id="fl-out" style="font-size:12.5px"></div>
+      </div>
+    </div>
+  </div>
+  <div class="next"><button data-go="11">Next: the unanswered questions &rarr;</button></div>
+</section>
+
+<!-- ============ XI. OPEN QUESTIONS ============ -->
+<section class="panel" data-num="XI" id="p11" data-title="Questions Nobody Can Answer">
+  <div class="eyebrow"><span class="seal">XI</span> The frontier</div>
+  <h2>Questions nobody <em>can answer</em></h2>
+  <p class="sub">Some of them can be understood with only what you know now.</p>
+  <div class="cols">
+    <div class="story">
+      <p><b>Can every 4/n be split into three unit fractions?</b> The Erdős&ndash;Straus conjecture (1948) says that for every n &ge; 2 there are positive whole numbers x, y, z with [[4|n]] = [[1|x]] + [[1|y]] + [[1|z]]. Computers have checked every n up to about 10<sup>17</sup>, and nobody has a proof. Try it with the toy.</p>
+      <p><b>Is e + &pi; irrational?</b> Both e and &pi; are known to be irrational (Lambert, 1761, for &pi;). Yet nobody knows whether their <i>sum</i> is a fraction. The same is open for e&times;&pi;. At most one of them can be rational, but we cannot say which.</p>
+      <p><b>Is Euler's constant &gamma; irrational?</b> It is defined as the limit of 1 + [[1|2]] + &hellip; + [[1|n]] &minus; ln n. It is about 0.5772, and no one knows whether it is a fraction. In 1978 Roger Ap&eacute;ry stunned the world by proving that &zeta;(3) = 1 + [[1|8]] + [[1|27]] + [[1|64]] + &hellip; is irrational. The same question for &zeta;(5) is still open.</p>
+      <div class="quote">A great problem is one that a child can state and a lifetime cannot finish.</div>
+    </div>
+    <div>
+      <div class="toy"><span class="tag">toy 10</span><h3>Erdős&ndash;Straus finder</h3>
+        <div class="row"><label for="es-n">n =</label><input type="number" id="es-n" value="2026" min="2" max="9999" style="width:6.5em"><button class="btn" id="es-go">Find x, y, z</button><button class="btn ghost" id="es-hard">A hard one</button></div>
+        <div class="out" id="es-out"></div>
+        <p style="font-size:13px;color:var(--ink2);margin:8px 0 0">The toy searches all splits with x &le; y &le; z. It never fails for n up to 9999, in line with the conjecture, but a computer check is not a proof.</p>
+      </div>
+    </div>
+  </div>
+  <div class="next"><button data-go="12">Next: the voices &rarr;</button></div>
+</section>
+
+<!-- ============ XII. VOICES ============ -->
+<section class="panel" data-num="XII" id="p12" data-title="Voices Along the Line">
+  <div class="eyebrow"><span class="seal">XII</span> People and time</div>
+  <h2>Voices along the <em>line</em></h2>
+  <p class="sub">Thirty-five centuries of people trying to fit the world between 0 and 1.</p>
+  <div class="tl">
+    <div class="ev"><b>c. 1550 BCE</b><span>Ahmes copies the Rhind Papyrus with its table of 2/n.</span></div>
+    <div class="ev"><b>c. 500 BCE</b><span>Pythagorean school: harmony is ratio. The scandal of &radic;2.</span></div>
+    <div class="ev"><b>c. 300 BCE</b><span>Euclid's <i>Elements</i> sets out the algorithm for the HCF, the root of continued fractions.</span></div>
+    <div class="ev"><b>1202</b><span>Fibonacci's <i>Liber Abaci</i> teaches Europe Hindu&ndash;Arabic numerals and unit fractions.</span></div>
+    <div class="ev"><b>1585</b><span>Simon Stevin publishes <i>De Thiende</i> ("The Tenth") and brings decimals to Europe.</span></div>
+    <div class="ev"><b>1801</b><span>Gauss publishes the <i>Disquisitiones</i>, with modular arithmetic and decimal periods.</span></div>
+    <div class="ev"><b>1858</b><span>Dedekind has the idea of defining the real numbers by cutting the rationals in two (published 1872).</span></div>
+    <div class="ev"><b>1874</b><span>Cantor shows the rationals can be listed and the reals cannot.</span></div>
+    <div class="ev"><b>1978</b><span>Ap&eacute;ry proves &zeta;(3) is irrational.</span></div>
+    <div class="ev"><b>2014</b><span>Computer search confirms Erd&odblac;s&ndash;Straus for n up to 10<sup>17</sup>.</span></div>
+  </div>
+  <div class="cards">
+    <div class="card"><div class="when">scribe, Egypt</div><h3>Ahmes</h3><p>He tells us he copied the work from an older one. He was a teacher in a way: the papyrus is a book of worked problems, much like this course.</p></div>
+    <div class="card"><div class="when">teacher, Flanders &amp; the Netherlands</div><h3>Simon Stevin</h3><p>An engineer and bookkeeper who argued that decimals were so useful that governments should adopt them for every measure. It took two centuries, but he was right.</p></div>
+    <div class="card"><div class="when">professor, Germany</div><h3>Richard Dedekind</h3><p>He asked what a number <i>is</i>, and answered with a cut: split the rationals into a lower set and an upper set, and the gap between them is a real number, even &radic;2.</p></div>
+    <div class="card"><div class="when">mathematician, Germany</div><h3>Georg Cantor</h3><p>He compared infinities and was attacked by powerful colleagues for it. Today his ideas are the foundation of modern mathematics.</p></div>
+    <div class="card"><div class="when">astronomer, China</div><h3>Zu Chongzhi</h3><p>In the fifth century he found [[355|113]] for &pi;, a record that stood for almost a thousand years.</p></div>
+    <div class="card"><div class="when">mathematician, India</div><h3>Srinivasa Ramanujan</h3><p>His notebooks are full of continued fractions, found by insight rather than proof, and many have since been proved to be true.</p></div>
+  </div>
+  <div class="next"><button data-go="13">Next: the open gate &rarr;</button></div>
+</section>
+
+<!-- ============ XIII. FINALE ============ -->
+<section class="panel" data-num="XIII" id="p13" data-title="The Open Gate">
+  <div class="eyebrow"><span class="seal">XIII</span> Beyond</div>
+  <h2>The gate is <em>open</em></h2>
+  <p class="sub">You walked from 0 to 1 and found a whole world in the space between.</p>
+  <div class="quote">Between any two numbers there is always another. Between any two ideas, too.</div>
+  <div class="paths">
+    <div class="path"><h3>Read</h3><ul><li>The story of Hippasus and the discovery of irrational numbers</li><li>How Stevin invented decimals (<i>De Thiende</i>)</li><li>Zu Chongzhi and the story of &pi;</li></ul></div>
+    <div class="path"><h3>Explore</h3><ul><li>Search "Stern&ndash;Brocot tree", "Farey sequence" and "Ford circles"</li><li>Search "continued fraction" and "golden ratio Fibonacci convergents"</li><li>Search "full reptend prime" and try 17, 19, 23 in toy 6</li></ul></div>
+    <div class="path"><h3>Climb</h3><ul><li>Prove that the mediant lies between two fractions</li><li>Why does a period of 1/p always divide p &minus; 1? (Fermat's little theorem, Chapter 1.3)</li><li>Can you find a fraction that is a rotation of another in toy 6?</li></ul></div>
+  </div>
+  <div class="cols even">
+    <div>
+      <h3>What you carry out of this chapter</h3>
+      <div class="chips"><span class="chip"><b>2.1</b> powers of ten</span><span class="chip"><b>2.2</b> a line full of fractions</span><span class="chip"><b>2.3</b> a closed arithmetic</span><span class="chip"><b>2.4</b> endings and cycles</span></div>
+    </div>
+    <div>
+      <h3>Next gate</h3>
+      <p>Chapter 3 is about <b>proportion</b>: ratio, rate, scale and change. The same fractions that sat still in this chapter will start to <i>move</i>. Edition III of the Horizon Gate will open there, in a new world and a new design.</p>
+    </div>
+  </div>
+  <div class="next"><button data-go="1">&larr; Roll the scroll back to the start</button></div>
+</section>
+</div></div>
+<script>
+(function(){
+"use strict";
+/* ---------- fraction tokens ---------- */
+const strip=document.getElementById('strip');
+strip.innerHTML=strip.innerHTML.replace(/\[\[([^\[\]|]+)\|([^\[\]|]+)\]\]/g,'<span class="fr"><span>$1</span><span>$2</span></span>');
+const $=id=>document.getElementById(id);
+const FR=(n,d)=>`<span class="fr"><span>${n}</span><span>${d}</span></span>`;
+const NS='http://www.w3.org/2000/svg';
+function el(tag,attrs,parent,txt){const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);if(txt!==undefined)e.textContent=txt;if(parent)parent.appendChild(e);return e;}
+function gcdN(a,b){a=Math.abs(a);b=Math.abs(b);while(b){[a,b]=[b,a%b];}return a;}
+function gcdB(a,b){if(a<0n)a=-a;if(b<0n)b=-b;while(b){[a,b]=[b,a%b];}return a;}
+function btns(host,items,fn){items.forEach(it=>{const b=document.createElement('button');b.className='btn ghost';b.innerHTML=it.label;b.addEventListener('click',()=>fn(it));host.appendChild(b);});}
+function bigDec(num,den,dp){ // decimal string of num/den (BigInt, num>=0)
+  const ip=num/den;let r=num%den;let s=ip.toString();if(dp>0){s+='.';for(let i=0;i<dp;i++){r*=10n;s+=(r/den).toString();r%=den;}}return s;}
+
+/* ---------- scroll, panels, ruler ---------- */
+const scroller=$('scroll');
+const panels=[...document.querySelectorAll('.panel')];
+function panelLeft(i){return panels[i].offsetLeft+strip.offsetLeft-0;}
+function goPanel(i){i=Math.max(0,Math.min(panels.length-1,i));scroller.scrollTo({left:panels[i].offsetLeft+strip.offsetLeft,behavior:'smooth'});}
+function curPanel(){const x=scroller.scrollLeft+scroller.clientWidth*0.35;let k=0;panels.forEach((p,i)=>{if(p.offsetLeft+strip.offsetLeft<=x)k=i;});return k;}
+document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>goPanel(+b.dataset.go-1)));
+$('prev').addEventListener('click',()=>goPanel(curPanel()-1));
+$('next').addEventListener('click',()=>goPanel(curPanel()+1));
+document.addEventListener('keydown',e=>{
+  if(/INPUT|SELECT|TEXTAREA/.test(document.activeElement.tagName))return;
+  if(e.key==='ArrowRight'||e.key==='PageDown'){goPanel(curPanel()+1);e.preventDefault();}
+  if(e.key==='ArrowLeft'||e.key==='PageUp'){goPanel(curPanel()-1);e.preventDefault();}
+  if(e.key==='Home'){goPanel(0);}if(e.key==='End'){goPanel(panels.length-1);}
+});
+scroller.addEventListener('wheel',e=>{
+  if(e.shiftKey||Math.abs(e.deltaX)>Math.abs(e.deltaY))return;
+  const p=e.target.closest&&e.target.closest('.panel');
+  if(p&&p.scrollHeight>p.clientHeight+4)return; // let tall panels scroll vertically
+  scroller.scrollBy({left:e.deltaY,behavior:'auto'});e.preventDefault();
+},{passive:false});
+// ruler
+const lsvg=$('linesvg');let LW=1000,LH=64;
+function bestFrac(x,maxd){let best=[0,1],err=1;for(let d=1;d<=maxd;d++){const n=Math.round(x*d);const e=Math.abs(x-n/d);if(e<err-1e-12){err=e;best=[n,d];}}return best;}
+function drawRuler(){
+  lsvg.innerHTML='';const r=lsvg.getBoundingClientRect();LW=Math.max(r.width,100);LH=r.height;
+  lsvg.setAttribute('viewBox',`0 0 ${LW} ${LH}`);
+  const y=LH*0.62,pad=10,W=LW-2*pad;
+  el('line',{x1:pad,x2:pad+W,y1:y,y2:y,stroke:'#d9c79b','stroke-width':2},lsvg);
+  for(let i=0;i<=10;i++){const x=pad+W*i/10;el('line',{x1:x,x2:x,y1:y-(i%5===0?11:7),y2:y,stroke:'#d9c79b','stroke-width':1.4},lsvg);
+    if(i%5===0)el('text',{x:x,y:y+16,'text-anchor':'middle',fill:'#d9c79b','font-size':11},lsvg,i===0?'0':i===10?'1':'1/2');}
+  panels.forEach((p,i)=>{const t=i/(panels.length-1);const x=pad+W*t;const c=el('circle',{cx:x,cy:y,r:4.5,fill:'#c23b22',stroke:'#f1e6cb','stroke-width':1.5,style:'cursor:pointer'},lsvg);
+    const tt=el('title',{},c,(i+1)+'. '+p.dataset.title);c.addEventListener('click',ev=>{ev.stopPropagation();goPanel(i);});});
+  el('path',{id:'mark',d:'M0 0 L-6 -12 L6 -12 Z',fill:'#ff9a82',transform:`translate(${pad},${y-8})`},lsvg);
+  upd();
+}
+function upd(){
+  const max=scroller.scrollWidth-scroller.clientWidth;const t=max>0?Math.min(1,Math.max(0,scroller.scrollLeft/max)):0;
+  const pad=10,W=LW-2*pad,y=LH*0.62;const m=$('mark');if(m)m.setAttribute('transform',`translate(${pad+W*t},${y-8})`);
+  const [n,d]=bestFrac(t,12);$('readout').innerHTML=`you are near <i>${n===0?'0':n===d?'1':n+'/'+d}</i> &asymp; ${t.toFixed(3)}`;
+}
+$('line').addEventListener('click',e=>{const r=$('line').getBoundingClientRect();const t=Math.min(1,Math.max(0,(e.clientX-r.left-10)/(r.width-20)));
+  scroller.scrollTo({left:t*(scroller.scrollWidth-scroller.clientWidth),behavior:'smooth'});});
+scroller.addEventListener('scroll',upd,{passive:true});
+window.addEventListener('resize',drawRuler);
+if(window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches)strip.classList.remove('unroll');
+setTimeout(()=>strip.classList.remove('unroll'),1700);
+
+/* ---------- hero: fractions appear between 0 and 1 ---------- */
+(function(){
+  const svg=$('herosvg');const X0=30,X1=770,Y=80;
+  el('line',{x1:X0,x2:X1,y1:Y,y2:Y,stroke:'#1c1a16','stroke-width':2.4},svg);
+  const mk=(n,d,lv)=>{const x=X0+(X1-X0)*n/d;const g=el('g',{opacity:0,style:'transition:opacity .6s'},svg);
+    const h=lv===0?18:Math.max(5,16-lv*2.4);el('line',{x1:x,x2:x,y1:Y-h,y2:Y+h,stroke:lv===0?'#1c1a16':'#c23b22','stroke-width':lv===0?2.4:1.6},g);
+    if(lv<=3){el('text',{x:x,y:Y+h+16+(lv%2?0:0),'text-anchor':'middle','font-size':lv<=1?16:13,fill:lv===0?'#1c1a16':'#9c2a16'},g,n+'/'+d);}
+    return g;};
+  const levels=[[[0,1],[1,1]]];
+  for(let k=1;k<=6;k++){const d=2**k;const arr=[];for(let n=1;n<d;n+=2)arr.push([n,d]);levels.push(arr);}
+  const groups=levels.map((arr,lv)=>arr.map(([n,d])=>mk(n,d,lv)));
+  let step=0;
+  function tick(){ if(step<groups.length){groups[step].forEach(g=>g.setAttribute('opacity',1));step++;}
+    else{ if(window.__heroDone)return; step=0;groups.forEach(a=>a.forEach(g=>g.setAttribute('opacity',0)));}}
+  tick();
+  if(window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches){while(step<groups.length)tick();return;}
+  setInterval(()=>{ if(step>=groups.length){ // hold, then restart
+      step=groups.length+1; setTimeout(()=>{step=0;groups.forEach(a=>a.forEach(g=>g.setAttribute('opacity',0)));},2200); }
+    else if(step<groups.length)tick(); },900);
+})();
+
+/* ---------- toy 1: Stern–Brocot mediants ---------- */
+const SB_PRE=[['&pi; &minus; 3','0.141592653589793238462643383279'],['golden ratio &minus; 1','0.618033988749894848204586834365'],['&radic;2 &minus; 1','0.414213562373095048801688724209'],['0.3819','0.3819'],['0.75','0.75']];
+btns($('sb-presets'),SB_PRE.map(p=>({label:p[0],v:p[1]})),it=>{$('sb-x').value=it.v;sbRun();});
+function parseDec(s){s=s.trim();const m=s.match(/^(\d*)\.?(\d*)$/);if(!m||(m[1]===''&&m[2]===''))return null;const ip=m[1]||'0',fp=m[2]||'';if(fp.length>40)return null;
+  return {n:BigInt(ip+fp),d:10n**BigInt(fp.length)};}
+function sbRun(){
+  const out=$('sb-out');let x;const t=$('sb-x').value.trim();
+  if(t.includes('/')){const [a,b]=t.split('/');if(/^\d+$/.test(a.trim())&&/^\d+$/.test(b.trim())&&BigInt(b)>0n)x={n:BigInt(a),d:BigInt(b)};}else x=parseDec(t);
+  if(!x||x.n<=0n||x.n>=x.d){out.innerHTML='<p style="color:var(--verm2)">Choose a number strictly between 0 and 1, such as 0.4 or 3/7.</p>';return;}
+  let lo=[0n,1n],hi=[1n,1n],rows='',steps=0,found=false;
+  while(steps<22){steps++;const p=lo[0]+hi[0],q=lo[1]+hi[1];const cmp=p*x.d-x.n*q;
+    const dec=Number(p)/Number(q);
+    const note=cmp===0n?'<b class="hi">exactly it!</b>':(cmp>0n?'too big, so the new upper end':'too small, so the new lower end');
+    rows+=`<tr><td>${steps}</td><td>${FR(lo[0]+'',lo[1]+'')} , ${FR(hi[0]+'',hi[1]+'')}</td><td>${FR(p+'',q+'')}</td><td class="mono">${dec.toFixed(7)}</td><td>${note}</td></tr>`;
+    if(cmp===0n){found=true;break;}
+    if(cmp>0n)hi=[p,q];else lo=[p,q];}
+  out.innerHTML=`<table><tr><th>#</th><th>trap</th><th>mediant</th><th>value</th><th>verdict</th></tr>${rows}</table>`+
+   (found?`<p style="margin-top:6px">Found after ${steps} step${steps>1?'s':''}: the number is a fraction.</p>`:`<p style="margin-top:6px">After ${steps} steps the number is trapped between ${FR(lo[0]+'',lo[1]+'')} and ${FR(hi[0]+'',hi[1]+'')}. An irrational number would go on for ever, and the traps would give its best approximations.</p>`);
+}
+$('sb-go').addEventListener('click',sbRun);$('sb-x').addEventListener('keydown',e=>{if(e.key==='Enter')sbRun();});sbRun();
+
+/* ---------- toy 2: Ford circles ---------- */
+function ford(){
+  const Q=+$('fd-q').value;$('fd-qv').textContent=Q;const svg=$('ford');svg.innerHTML='';
+  const base=318,W=1000;
+  el('line',{x1:0,x2:W,y1:base,y2:base,stroke:'#1c1a16','stroke-width':2},svg);
+  for(let q=1;q<=Q;q++){for(let p=0;p<=q;p++){if(gcdN(p,q)!==1)continue;
+    const r=W/(2*q*q);if(r*2>base*1.0&&q===1&&false)continue;
+    const cx=W*p/q;const cy=base-r;
+    const hue=q/Q;const col=`hsl(${12+Math.min(q,30)*7},${70-q}%,${48+q*0.6}%)`;
+    const c=el('circle',q===1?{cx:cx,cy:cy,r:r,fill:'none',stroke:'#7a6e5a','stroke-width':1.2,'stroke-dasharray':'6 6'}:{cx:cx,cy:cy,r:r,fill:col,'fill-opacity':.32,stroke:'#1c1a16','stroke-width':q<5?1.6:0.8},svg);
+    el('title',{},c,p+'/'+q);
+    if(q<=4&&r>22){el('text',{x:cx,y:cy+5,'text-anchor':'middle','font-size':Math.min(24,r*0.5)+'',fill:'#1c1a16'},svg,p+'/'+q);}
+  }}
+  // clip: circles at 0 and 1 stick out — clip with viewBox
+}
+$('fd-q').addEventListener('input',ford);ford();
+$('ford').setAttribute('viewBox','0 0 1000 330');
+
+/* ---------- toy 3: greedy Egyptian ---------- */
+(function(){
+  const eye=$('eye');let h='';const parts=[2,4,8,16,32,64];let acc=0;
+  h+='<div style="display:flex;gap:4px;align-items:flex-end;height:46px">';
+  parts.forEach(d=>{const w=100/d;h+=`<div title="1/${d}" style="flex:${Math.max(w,6)};height:${10+w*0.7}px;background:var(--verm);opacity:${0.35+0.65*(1/d)*2};display:grid;place-items:center;color:#fff;font-size:11px">1/${d}</div>`;});
+  h+='</div><div style="font-size:13px;margin-top:4px;color:var(--ink2)">Sum of all six: '+FR(63,64)+' (never reaches 1)</div>';
+  eye.innerHTML=h;
+})();
+btns($('eg-presets'),[['2/7',2,7],['5/6',5,6],['4/13',4,13],['6/7',6,7],['5/121',5,121],['31/311',31,311]].map(a=>({label:a[0],a:a[1],b:a[2]})),it=>{$('eg-a').value=it.a;$('eg-b').value=it.b;egRun();});
+function egRun(){
+  let a=BigInt(Math.round(+$('eg-a').value||0)),b=BigInt(Math.round(+$('eg-b').value||0));const out=$('eg-out');
+  if(a<=0n||b<=1n||a>=b){out.innerHTML='<p style="color:var(--verm2)">Choose a proper fraction, with 0 &lt; top &lt; bottom.</p>';return;}
+  const g0=gcdB(a,b);a/=g0;b/=g0;const parts=[];const startA=a,startB=b;let steps='';
+  while(a>0n&&parts.length<12){const d=(b+a-1n)/a;parts.push(d);steps+=`<tr><td>${FR(a+'',b+'')}</td><td>biggest unit fraction that fits: ${FR(1,d.toString().length>12?d.toString().slice(0,6)+'&hellip;':d)}</td></tr>`;
+    a=a*d-b;b=b*d;const g=gcdB(a,b);if(g>0n){a/=g;b/=g;}}
+  const sum=parts.map(d=>FR(1,d.toString().length>14?'<small>'+d.toString().length+'-digit number</small>':d)).join(' + ');
+  out.innerHTML=`<p>${FR(startA+'',startB+'')} = ${sum}${a>0n?' + &hellip;':''}</p><p style="font-size:13.5px;color:var(--ink2)">${parts.length} unit fraction${parts.length>1?'s':''} used${a>0n?' (stopped early)':''}.</p><table><tr><th>left to split</th><th>step</th></tr>${steps}</table>`;
+}
+$('eg-go').addEventListener('click',egRun);egRun();
+
+/* ---------- toy 4: sqrt2 squeezer ---------- */
+(function(){
+  let seq;function reset(){seq=[[1n,1n]];draw();}
+  function draw(){
+    let rows='';seq.forEach(([p,q],i)=>{const e=p*p-2n*q*q;const dec=bigDec(p*10n**12n,q*10n**12n,12);
+      const above=e>0n;rows+=`<tr><td>${FR(p+'',q+'')}</td><td class="mono" style="font-size:12px">${dec}</td><td>${above?'above':'below'}</td><td class="mono">${e>0n?'+'+e:e}</td></tr>`;});
+    $('pl-out').innerHTML=`<table><tr><th>fraction</th><th>value</th><th>fraction is</th><th>p²−2q²</th></tr>${rows}</table><p class="mono" style="font-size:12px;margin-top:4px">√2 = 1.414213562373&hellip;</p>`;
+  }
+  $('pl-next').addEventListener('click',()=>{if(seq.length>=14)return;const [p,q]=seq[seq.length-1];seq.push([p+2n*q,p+q]);draw();});
+  $('pl-reset').addEventListener('click',reset);
+  reset();for(let i=0;i<4;i++)$('pl-next').click();
+})();
+
+/* ---------- toy 5: Cantor grid ---------- */
+(function(){
+  const N=7;const cells={};const grid=$('cn-grid');
+  // order of diagonals
+  const order=[];for(let s=2;s<=2*N;s++){const diag=[];for(let n=1;n<s;n++){const d=s-n;if(n<=N&&d<=N)diag.push([n,d]);}
+    if(s%2===0)diag.reverse();diag.forEach(x=>order.push(x));}
+  for(let d=1;d<=N;d++)for(let n=1;n<=N;n++){const c=document.createElement('div');c.textContent=n+'/'+d;grid.appendChild(c);cells[n+','+d]=c;}
+  let idx=0,count=0,list=[],timer=null;
+  function reset(){clearInterval(timer);timer=null;$('cn-play').textContent='Play';idx=0;count=0;list=[];Object.values(cells).forEach(c=>c.className='');draw();}
+  function draw(){$('cn-count').textContent=count+' counted';$('cn-list').innerHTML=list.length?list.slice(-24).map(x=>x).join(', ')+(list.length>24?' &hellip;':''):'&nbsp;';}
+  function step(){if(idx>=order.length){clearInterval(timer);timer=null;$('cn-play').textContent='Play';return;}
+    Object.values(cells).forEach(c=>{if(c.classList.contains('now')){c.classList.remove('now');c.classList.add('seen');}});
+    const [n,d]=order[idx++];const c=cells[n+','+d];
+    if(gcdN(n,d)!==1){c.classList.add('dup');}else{count++;list.push(count+':'+n+'/'+d);c.classList.add('now');}
+    draw();}
+  $('cn-step').addEventListener('click',step);
+  $('cn-play').addEventListener('click',()=>{if(timer){clearInterval(timer);timer=null;$('cn-play').textContent='Play';}else{timer=setInterval(step,260);$('cn-play').textContent='Pause';}});
+  $('cn-reset').addEventListener('click',reset);reset();
+})();
+
+/* ---------- toy 6: cycles of remainders ---------- */
+(function(){
+  btns($('cy-btns'),[3,7,11,13,17,21,37,41].map(b=>({label:'1/'+b,b})),it=>{$('cy-b').value=it.b;run();});
+  function run(){
+    const b=Math.round(+$('cy-b').value);const info=$('cy-info'),host=$('cy-rings');host.innerHTML='';
+    if(!(b>=3&&b<=99)||gcdN(b,10)!==1){info.innerHTML='<span style="color:var(--verm2)">Choose a number from 3 to 99 with no factor 2 or 5 (like 7, 13, 21, 33).</span>';return;}
+    const seen=new Set(),orbits=[];
+    for(let r=1;r<b;r++){if(gcdN(r,b)!==1||seen.has(r))continue;const o=[];let x=r;while(!seen.has(x)){seen.add(x);o.push(x);x=x*10%b;}orbits.push(o);}
+    const units=orbits.reduce((s,o)=>s+o.length,0),L=orbits[0].length;
+    // digits of 1/b
+    let digs='',rr=1;for(let i=0;i<L;i++){rr*=10;digs+=Math.floor(rr/b);rr%=b;}
+    info.innerHTML=`${FR(1,b)} = 0.<span class="overline" style="text-decoration:overline;text-decoration-color:var(--verm)">${digs}</span> &nbsp; period <b class="hi">${L}</b>, ${orbits.length} wheel${orbits.length>1?'s':''} of ${L} remainder${L>1?'s':''}`+
+      (L===b-1?' &mdash; <b class="hi">a full-reptend prime</b>: one single wheel.':'.')+
+      `<br><span style="font-size:13.5px;color:var(--ink2)">Each wheel is the orbit of &times;10 modulo ${b}: ${units} remainders share ${orbits.length} wheel${orbits.length>1?'s':''}.</span>`;
+    orbits.slice(0,10).forEach((o,k)=>{
+      const n=o.length,S=n>24?170:n>10?150:128,R=S/2-18-(n<=24?0:0);
+      const wrap=document.createElement('div');wrap.className='ring';
+      const svg=el('svg',{viewBox:`0 0 ${S} ${S}`,width:S,height:S},wrap);
+      const pos=i=>{const a=-Math.PI/2+2*Math.PI*i/n;return [S/2+R*Math.cos(a),S/2+R*Math.sin(a)];};
+      const nr=n>24?3:n>12?9:12;
+      const defs=el('defs',{},svg);const mk=el('marker',{id:'ar'+k,viewBox:'0 0 10 10',refX:9,refY:5,markerWidth:6,markerHeight:6,orient:'auto-start-reverse'},defs);
+      el('path',{d:'M0 0 L10 5 L0 10 z',fill:'#c23b22'},mk);
+      if(n===1){el('circle',{cx:S/2,cy:S/2-R,r:nr,fill:'#fffaf0',stroke:'#1c1a16'},svg);el('text',{x:S/2,y:S/2-R+4,'text-anchor':'middle','font-size':12},svg,o[0]);
+        el('path',{d:`M${S/2+nr-2} ${S/2-R-4} q18 -10 14 8`,stroke:'#c23b22',fill:'none','stroke-width':1.4,'marker-end':`url(#ar${k})`},svg);}
+      else for(let i=0;i<n;i++){const [x1,y1]=pos(i),[x2,y2]=pos((i+1)%n);const dx=x2-x1,dy=y2-y1,len=Math.hypot(dx,dy);
+        const ux=dx/len,uy=dy/len;const sx=x1+ux*(nr+1),sy=y1+uy*(nr+1),ex=x2-ux*(nr+4),ey=y2-uy*(nr+4);
+        if(n===2){const off=(i?1:-1)*7;el('path',{d:`M${x1+off} ${y1} Q ${S/2+off*2} ${S/2} ${x2+off} ${y2}`,stroke:'#c23b22',fill:'none','stroke-width':1.4,'marker-end':`url(#ar${k})`},svg);}
+        else el('line',{x1:sx,y1:sy,x2:ex,y2:ey,stroke:'#c23b22','stroke-width':1.3,'marker-end':`url(#ar${k})`},svg);}
+      for(let i=0;i<n;i++){const [x,y]=pos(i);el('circle',{cx:x,cy:y,r:nr,fill:i===0?'#c23b22':'#fffaf0',stroke:'#1c1a16','stroke-width':1.2},svg);
+        if(n<=24)el('text',{x:x,y:y+4,'text-anchor':'middle','font-size':n>12?9:12,fill:i===0?'#fff':'#1c1a16'},svg,o[i]);}
+      const lab=document.createElement('div');
+      let dg='',r2=o[0];for(let i=0;i<Math.min(n,12);i++){r2*=10;dg+=Math.floor(r2/b);r2%=b;}
+      lab.innerHTML=`${FR(o[0],b)} = 0.(${dg}${n>12?'&hellip;':''})`;wrap.appendChild(lab);host.appendChild(wrap);});
+    if(orbits.length>10){const m=document.createElement('div');m.style.cssText='align-self:center;font-size:14px';m.textContent='… and '+(orbits.length-10)+' more wheels';host.appendChild(m);}
+  }
+  $('cy-b').addEventListener('input',run);run();
+})();
+
+/* ---------- toy 7: music ---------- */
+(function(){
+  const NOTES=[['unison 1:1',1,'1 : 1'],['octave 2:1',2,'2 : 1'],['fifth 3:2',1.5,'3 : 2'],['fourth 4:3',4/3,'4 : 3'],['major third 5:4',1.25,'5 : 4'],['minor third 6:5',1.2,'6 : 5'],['tritone √2:1',Math.SQRT2,'√2 : 1'],['piano fifth 2^(7/12)',Math.pow(2,7/12),'2<sup>7/12</sup> : 1']];
+  const rat={0:[1,1],1:[2,1],2:[3,2],3:[4,3],4:[5,4],5:[6,5]};
+  let cur=2,ctx=null;
+  const host=$('mu-btns');NOTES.forEach((n,i)=>{const b=document.createElement('button');b.className='btn ghost';b.textContent=n[0];b.addEventListener('click',()=>{cur=i;draw();play(n[1]);[...host.children].forEach((c,j)=>c.classList.toggle('on',j===i));});host.appendChild(b);});
+  host.children[2].classList.add('on');
+  function play(r){try{ctx=ctx||new (window.AudioContext||window.webkitAudioContext)();if(ctx.state==='suspended')ctx.resume();
+    const t=ctx.currentTime;[220,220*r].forEach(f=>{const o=ctx.createOscillator(),g=ctx.createGain();o.type='sine';o.frequency.value=f;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(0.14,t+0.05);g.gain.linearRampToValueAtTime(0,t+2.2);o.connect(g);g.connect(ctx.destination);o.start(t);o.stop(t+2.3);});}catch(e){}}
+  function draw(){
+    const cv=$('mu-cv'),c=cv.getContext('2d'),W=cv.width,H=cv.height;c.clearRect(0,0,W,H);c.fillStyle='#fffaf0';c.fillRect(0,0,W,H);
+    const r=NOTES[cur][1];const T=6; // 6 cycles of the lower note
+    c.strokeStyle='rgba(28,26,22,.15)';c.lineWidth=1;for(let k=0;k<=T;k++){const x=W*k/T;c.beginPath();c.moveTo(x,0);c.lineTo(x,H);c.stroke();}
+    c.strokeStyle='#c23b22';c.lineWidth=2;c.beginPath();
+    for(let i=0;i<=W;i++){const t=T*i/W;const y=Math.sin(2*Math.PI*t)+Math.sin(2*Math.PI*r*t);const py=H/2-y*H*0.22;if(i)c.lineTo(i,py);else c.moveTo(i,py);}c.stroke();
+    c.fillStyle='#4c4437';c.font='12px Georgia';c.fillText('6 cycles of the lower note, with the two waves added together',8,H-8);
+    const info=$('mu-info');const f2=(220*r).toFixed(1);
+    let msg=`Frequencies: 220 Hz and ${f2} Hz.`;
+    if(cur<=5){const [p,q]=rat[cur];msg+=` The ratio is a fraction ${FR(p,q)}, so the wave repeats exactly every <b class="hi">${q}</b> cycle${q>1?'s':''} of the lower note.`;}
+    else if(cur===6)msg+=` The ratio &radic;2 is irrational, so the combined wave <b class="hi">never</b> exactly repeats.`;
+    else msg+=` The ratio 2<sup>7/12</sup> = 1.49831 is irrational, but it is very close to ${FR(3,2)} = 1.5 (an error of 0.1%), so the wave nearly repeats every 2 cycles.`;
+    msg+=`<br>Twelve fifths: ${FR('3<sup>12</sup>','2<sup>19</sup>')} = ${FR(531441,524288)} &approx; ${(531441/524288).toFixed(5)}, never exactly 1.`;
+    info.innerHTML=msg;
+  }
+  draw();
+})();
+
+/* ---------- toy 8: continued fractions ---------- */
+(function(){
+  const PRE=[['π','3.1415926535897932384626433832795028841971'],['e','2.7182818284590452353602874713526624977572'],['golden ratio','1.6180339887498948482045868343656381177203'],['√2','1.4142135623730950488016887242096980785696'],['year 365.24219','365.24219'],['355/113','355/113'],['0.3819','0.3819']];
+  btns($('cf-presets'),PRE.map(p=>({label:p[0],v:p[1]})),it=>{$('cf-x').value=it.v;run();});
+  function run(){
+    const out=$('cf-out'),t=$('cf-x').value.trim();let x,exact=false,D=0;
+    if(t.includes('/')){const [a,b]=t.split('/');if(/^\d+$/.test(a.trim())&&/^\d+$/.test(b.trim())&&BigInt(b)>0n){x={n:BigInt(a),d:BigInt(b)};exact=true;}}
+    else{x=parseDec(t);if(x){D=t.split('.')[1]?t.split('.')[1].length:0;}}
+    if(!x||x.n<=0n){out.innerHTML='<p style="color:var(--verm2)">Type a positive decimal such as 3.14159, or a fraction such as 355/113.</p>';return;}
+    let n=x.n,d=x.d;const terms=[];const conv=[];let p0=0n,q0=1n,p1=1n,q1=0n;
+    const limit=exact?10n**30n:10n**BigInt(D);
+    while(d>0n&&terms.length<16){const a=n/d;const r=n%d;terms.push(a);const p2=a*p1+p0,q2=a*q1+q0;
+      if(!exact&&q2*q2*4n>limit&&terms.length>1){terms.pop();break;}
+      conv.push([p2,q2]);p0=p1;q0=q1;p1=p2;q1=q2;n=d;d=r;}
+    const done=(d===0n);
+    let rows='';conv.forEach(([p,q],i)=>{const num=(p*x.d>x.n*q?p*x.d-x.n*q:x.n*q-p*x.d),den=x.d*q;
+      const err=num===0n?0:Number(num*10n**30n/den)/1e30;
+      rows+=`<tr><td>${i}</td><td class="mono">${terms[i]}</td><td>${q===1n?p:FR(p+'',q+'')}</td><td class="mono">${bigDec(p*10n**9n,q*10n**9n,9).replace(/0+$/,'').replace(/\.$/,'')}</td><td class="mono">${err===0?'exact':err.toExponential(1)}</td></tr>`;});
+    const notation='['+terms[0]+(terms.length>1?'; '+terms.slice(1).join(', '):'')+(done?'':', …')+']';
+    out.innerHTML=`<p style="font-size:17px;margin:2px 0 8px"><b>${notation}</b>${done?' &mdash; the staircase ends, so the number is a fraction.':''}</p><table><tr><th>k</th><th>step</th><th>convergent</th><th>value</th><th>error</th></tr>${rows}</table>${exact||!done?'':''}`+(!exact&&!done?'<p style="font-size:12.5px;color:var(--ink2);margin-top:4px">Only the steps that the typed digits can justify are shown.</p>':'');
+  }
+  $('cf-go').addEventListener('click',run);$('cf-x').addEventListener('keydown',e=>{if(e.key==='Enter')run();});run();
+})();
+
+/* ---------- toy 9: bases + floats ---------- */
+(function(){
+  btns($('bs-presets'),[['1/10',1,10],['1/3',1,3],['1/5',1,5],['1/6',1,6],['1/7',1,7],['1/12',1,12],['1/60',1,60]].map(a=>({label:a[0],n:a[1],d:a[2]})),it=>{$('bs-n').value=it.n;$('bs-d').value=it.d;run();});
+  function expand(n,d,base,max){n=BigInt(n);d=BigInt(d);const B=BigInt(base);const ip=n/d;let r=n%d;const digs=[];const seen=new Map();let start=-1;
+    while(r!==0n&&digs.length<max){if(seen.has(r)){start=seen.get(r);break;}seen.set(r,digs.length);r*=B;digs.push(Number(r/d));r%=d;}
+    return {ip,digs,start,term:r===0n};}
+  function fmt(e,base){const sep=base===60?', ':'';const D=x=>x;
+    const pre=e.start>=0?e.digs.slice(0,e.start):e.digs;const rep=e.start>=0?e.digs.slice(e.start):[];
+    let s=e.ip.toString()+(base===60?'; ':'.');
+    if(base===60){s=e.ip+';'+(e.digs.length||e.start>=0?' ':'');}
+    const j=a=>a.join(sep);
+    if(e.term)return e.digs.length?(base===60?e.ip+'; '+j(pre):e.ip+'.'+j(pre)):e.ip.toString();
+    const shownRep=rep.length>20?rep.slice(0,20):rep;
+    return (base===60?e.ip+'; ':e.ip+'.')+j(pre)+(pre.length&&base===60?', ':'')+'<span style="text-decoration:overline;text-decoration-color:var(--verm)">'+j(shownRep)+(rep.length>20?'…':'')+'</span>';}
+  function run(){
+    const n=Math.round(+$('bs-n').value),d=Math.round(+$('bs-d').value);const out=$('bs-out');
+    if(!(n>=0&&d>=2&&n<10*d)){out.innerHTML='<p style="color:var(--verm2)">Use a top that is at least 0 and less than ten times the bottom, and a bottom of at least 2.</p>';return;}
+    const g=gcdN(n,d)||1;const sn=n/g,sd=d/g;
+    const rows=[['base 2 (computers)',2],['base 3',3],['base 10 (us)',10],['base 12 (dozens)',12],['base 60 (Babylon)',60]].map(([nm,b])=>{const e=expand(sn,sd,b,60);
+      return `<tr><td>${nm}</td><td class="mono" style="word-break:break-all">${fmt(e,b)}</td><td>${e.term?'<b style="color:var(--moss)">stops</b>':'<b class="hi">repeats</b>'}</td></tr>`;}).join('');
+    out.innerHTML=`<p style="margin:0 0 4px">${FR(sn,sd)}:</p><table><tr><th>base</th><th>expansion</th><th></th></tr>${rows}</table><p style="font-size:13px;color:var(--ink2);margin-top:4px">A fraction in lowest terms stops in base b exactly when every prime in its denominator also divides b.</p>`;
+  }
+  $('bs-go').addEventListener('click',run);run();
+  function fl(){const xs=$('fl-x').value.trim(),ys=$('fl-y').value.trim();const x=Number(xs),y=Number(ys);const out=$('fl-out');
+    if(!xs||!ys||!isFinite(x)||!isFinite(y)){out.textContent='Type two ordinary numbers.';return;}
+    out.innerHTML=`${xs} is stored as<br>&nbsp;&nbsp;${x.toPrecision(25)}<br>${ys} is stored as<br>&nbsp;&nbsp;${y.toPrecision(25)}<br>sum printed by the computer:<br>&nbsp;&nbsp;<b>${String(x+y)}</b>`;}
+  $('fl-go').addEventListener('click',fl);fl();
+})();
+
+/* ---------- toy 10: Erdős–Straus ---------- */
+(function(){
+  function find(n){ // 4/n = 1/x+1/y+1/z, x<=y<=z ; returns first few
+    const sols=[];
+    const xmin=Math.floor(n/4)+1,xmax=Math.floor(3*n/4);
+    for(let x=xmin;x<=xmax&&sols.length<3;x++){
+      const a=4*x-n,b=n*x; // remainder a/b = 4/n - 1/x
+      if(a<=0)continue;
+      const ymin=Math.max(x,Math.floor(b/a)+1),ymax=Math.floor(2*b/a);
+      for(let y=ymin;y<=ymax;y++){const num=a*y-b;if(num<=0)continue;const den=b*y;if(den%num===0){const z=den/num;if(z>=y){sols.push([x,y,z]);break;}}}
+    }
+    return sols;}
+  function run(){const n=Math.round(+$('es-n').value);const out=$('es-out');
+    if(!(n>=2&&n<=9999)){out.innerHTML='<p style="color:var(--verm2)">Choose n from 2 to 9999.</p>';return;}
+    const s=find(n);
+    if(!s.length){out.innerHTML=`<p><b class="hi">No split found for n = ${n}.</b> That would disprove the conjecture, so check the input.</p>`;return;}
+    out.innerHTML=`<p>${FR(4,n)} = ${s.map(([x,y,z])=>`${FR(1,x)} + ${FR(1,y)} + ${FR(1,z)}`).join('<br>&nbsp;&nbsp;&nbsp;&nbsp;= ')}</p><p style="font-size:13.5px;color:var(--ink2)">Found ${s.length} split${s.length>1?'s':''} (it stops after three).</p>`;}
+  $('es-go').addEventListener('click',run);$('es-n').addEventListener('keydown',e=>{if(e.key==='Enter')run();});
+  $('es-hard').addEventListener('click',()=>{const hard=[2521,5881,8641,7561,9361,6841];$('es-n').value=hard[Math.floor(Math.random()*hard.length)];run();});
+  run();
+})();
+
+drawRuler();upd();
+})();
+</script>
+<footer class="shen-footer"><svg viewBox="0 0 100 100" role="img" aria-label="申 Shen Studio"><rect width="100" height="100" rx="12" fill="#B3261E"/><path d="M41.57 27.7V42.46H27.58V27.7ZM15.1 25.34V70.78H16.95C22.18 70.78 27.58 67.91 27.58 66.65V62.18H41.57V90H44.01C48.82 90 54.3 86.88 54.3 85.62V62.18H68.97V68.93H71.07C75.37 68.93 81.53 66.65 81.61 65.89V29.64C83.38 29.3 84.39 28.55 84.9 27.87L73.69 19.19L68.12 25.34H54.3V13.96C56.74 13.62 57.33 12.7 57.5 11.52L41.57 10V25.34H28.42L15.1 20.2ZM54.3 27.7H68.97V42.46H54.3ZM41.57 59.82H27.58V44.82H41.57ZM54.3 59.82V44.82H68.97V59.82Z" fill="#FFFFFF"/></svg><span><b>Shen Studio</b> · Designed by Mr. Shen</span></footer>
+<div class="shen-print-mark" aria-hidden="true"><svg viewBox="0 0 100 100" role="img" aria-label="申 Shen Studio"><rect width="100" height="100" rx="12" fill="#B3261E"/><path d="M41.57 27.7V42.46H27.58V27.7ZM15.1 25.34V70.78H16.95C22.18 70.78 27.58 67.91 27.58 66.65V62.18H41.57V90H44.01C48.82 90 54.3 86.88 54.3 85.62V62.18H68.97V68.93H71.07C75.37 68.93 81.53 66.65 81.61 65.89V29.64C83.38 29.3 84.39 28.55 84.9 27.87L73.69 19.19L68.12 25.34H54.3V13.96C56.74 13.62 57.33 12.7 57.5 11.52L41.57 10V25.34H28.42L15.1 20.2ZM54.3 27.7H68.97V42.46H54.3ZM41.57 59.82H27.58V44.82H41.57ZM54.3 59.82V44.82H68.97V59.82Z" fill="#FFFFFF"/></svg><span>Shen Studio</span></div>
+
+
+<a class="homebtn gatehome" href="../index.html#horizon" aria-label="Back to the Maths Atlas home page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>Home</a>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4572b9e5c4984cd3a0d53765770f398c"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
