@@ -42,6 +42,7 @@ This is a public GitHub Pages site (deployed from `main`, root folder). Every pa
 - `inject_analytics.py` — adds the Cloudflare Web Analytics beacon to every page. Safe to run again (skips pages that have it).
 - `tools/check.js` — site checker (phone width, KaTeX errors, JavaScript errors, Home link, analytics, index links).
 - `tools/tblfix.py` — phone fix for lesson pages (tables scroll in their own box; KaTeX cannot widen the page). Run it on every new lesson page. Safe to run twice.
+- `tools/add_steppers.py`, `tools/stepper/` and `content/steppers/` — the "Let's do it together" guided problems (format and teaching rules in `content/steppers/README.md`).
 - `temp/` — Mr Shen's source files for new lessons. **Never commit it** (it is in `.gitignore`).
 - `tasks/` — task cards (written by Claude). `reports/` — your reports and screenshots.
 
@@ -69,7 +70,8 @@ For other screenshots (a board of the home page, desktop width) the card gives a
 scripts outside the repo (e.g. `/tmp`). Always serve over local HTTP (`python3 -m http.server 8000`), never `file://`.
 
 ## 5. Hard rules
-- Page content is in **English**. Do not translate, reword or "fix" maths, answers, solutions or lesson text unless the card gives the new text.
+- Page content is in **English**. Do not translate, reword or "fix" maths, answers, solutions or lesson text unless the card gives the new text
+  or the card explicitly asks you to write content (then follow the rules the card points to, and check every number with Python).
 - Never change numbers, answers, question data or lesson scoring unless the card gives them.
 - Every lesson page keeps: the Home button (link to `../index.html`), the 申 seal footer, the favicon, and its learning report.
   No version label (e.g. "V2") anywhere inside a page; versions live only in Claude's file names.

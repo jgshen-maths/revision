@@ -1,0 +1,35 @@
+<!-- hz-stepper engine --><style id="hz-stepper-css">
+.tutor{border:2px solid #3b4fa8;border-radius:18px;background:#fff;padding:1rem;margin:1.25rem 0}
+.tutor .who{font-size:.8rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#3b4fa8;margin-bottom:.15rem}
+.tutor .ttl{font-weight:700;color:#1c2230;margin-bottom:.4rem}
+.tutor .tq{font-size:1.05rem;margin:.5rem 0 .7rem;line-height:1.6}
+.tutor .tbtns{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.4rem}
+.tutor .tbtns button{background:#fff;color:#1c2230;border:2px solid #c9d0ef;border-radius:.5rem;padding:.4rem .9rem;font-weight:600;cursor:pointer}
+.tutor .tbtns button:hover{border-color:#3b4fa8;background:#eef0fa}
+.tutor .tbtns button:disabled{opacity:.45;color:#64748b;text-decoration:line-through;cursor:default}
+.tutor .tbtns button.primary{background:#3b4fa8;color:#fff;border-color:#3b4fa8}
+.tutor .tfb{border-radius:10px;padding:.5rem .8rem;margin:.4rem 0;font-size:.95rem}
+.tutor .tfb.ok{background:#e5f4ea;color:#24683b}.tutor .tfb.no{background:#fdecea;color:#9b2c2c}
+.tutor .dots{display:flex;gap:5px;margin:.3rem 0}.tutor .dots i{width:22px;height:6px;border-radius:3px;background:#dcd8e6}.tutor .dots i.on{background:#3b4fa8}
+</style><script id="hz-stepper-js">
+(function(){
+function tex(el){try{if(window.MathJax&&MathJax.typesetPromise)MathJax.typesetPromise([el]);}catch(e){}}
+function run(box,S){var i=0,fb='',ok=true,solved=false;
+ function render(){var h='<div class="who">Let\'s do it together</div><div class="ttl">'+S.title+'</div>';
+  if(i>=S.steps.length){box.innerHTML=h+'<div class="tfb ok">'+S.end+'</div><div class="tbtns"><button type="button" data-again>Do it again</button></div>';
+   box.querySelector('[data-again]').onclick=function(){i=0;fb='';solved=false;render();};tex(box);return;}
+  var st=S.steps[i];h+='<div class="dots">'+S.steps.map(function(_,j){return '<i class="'+(j<=i?'on':'')+'"></i>';}).join('')+'</div>';
+  if(st.vis)h+='<div style="margin:.4rem 0">'+st.vis+'</div>';
+  h+='<div class="tq">'+st.q+'</div>';if(fb)h+='<div class="tfb '+(ok?'ok':'no')+'">'+fb+'</div>';
+  if(!solved){var n=st.opts.length,k=(i*2+1)%n;h+='<div class="tbtns">'+st.opts.map(function(_,j){return (j+k)%n;}).map(function(j){return '<button type="button" data-j="'+j+'"'+(st._off&&st._off[j]?' disabled':'')+'>'+st.opts[j][0]+'</button>';}).join('')+'</div>';}
+  else h+='<div class="tbtns"><button type="button" class="primary" data-next>'+(i<S.steps.length-1?'Next →':'Finish ✓')+'</button></div>';
+  box.innerHTML=h;
+  box.querySelectorAll('[data-j]').forEach(function(b){b.onclick=function(){var j=+b.dataset.j,o=st.opts[j];
+   if(o[1]){fb=st.ok;ok=true;solved=true;st._off=null;}else{fb=o[2]||'Not quite. Have another look.';ok=false;st._off=st._off||{};st._off[j]=1;}render();};});
+  var nx=box.querySelector('[data-next]');if(nx)nx.onclick=function(){i++;fb='';solved=false;render();};
+  tex(box);}
+ render();}
+function go(){var D=window.HZ_STEPPERS||{};document.querySelectorAll('.tutor[data-stepper]').forEach(function(box){var S=D[box.dataset.stepper];if(S)run(box,S);});}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',go);else go();
+})();
+</script><!-- end hz-stepper engine -->
