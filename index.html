@@ -333,5 +333,6 @@ $('#q').oninput=filter;$('#liveOnly').onchange=filter;
 $('#expand').onclick=()=>{const all=[...document.querySelectorAll('details.year')],open=all.some(d=>!d.open);all.forEach(d=>d.open=open);$('#expand').textContent=open?'Close all':'Open all'};
 render();
 </script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4572b9e5c4984cd3a0d53765770f398c"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
