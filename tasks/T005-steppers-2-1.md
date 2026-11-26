@@ -1,5 +1,5 @@
 # T005 — Pilot: write the "Let's do it together" steppers for Section 2.1 (Powers)
-Status: ready (start after T004 is merged)
+Status: ready
 Size: M (≤ 1 h)
 Branch: task/T005-steppers-2-1
 Run on: MacBook

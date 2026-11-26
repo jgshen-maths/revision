@@ -1,5 +1,5 @@
 # T004 — Publish Horizon Chapter 2 (Rational Numbers)
-Status: ready
+Status: done (PR #4, merged)
 Size: M (≤ 1 h)
 Branch: task/T004-horizon-ch2
 Run on: MacBook
