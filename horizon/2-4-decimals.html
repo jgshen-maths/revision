@@ -897,7 +897,7 @@ input,select,button,textarea{font-family:inherit}
     <div class="tech">
       <div class="tt">Technique 6: order numbers written in mixed forms</div>
       <p class="text-sm text-slate-700">When fractions, decimals and recurring decimals are mixed, write each as a decimal to enough places, or each as a fraction, and compare.</p>
-      <div class="eg"><p><strong>Example:</strong> Order $a=0.7$, $b=0.72$, $c=0.\overline7$, $d=0.7\overline2$. To five places: $0.70000,\ 0.72000,\ 0.77777,\ 0.72222$. So $a<b<d<c$.</p></div>
+      <div class="eg"><p><strong>Example:</strong> Order $a=0.7$, $b=0.72$, $c=0.\overline7$, $d=0.7\overline2$. To five places: $0.70000,\ 0.72000,\ 0.77777,\ 0.72222$. So $a\lt b\lt d\lt c$.</p></div>
     </div>
 
     <div class="tutor" data-stepper="t3"></div>
@@ -928,7 +928,7 @@ input,select,button,textarea{font-family:inherit}
       </div>
       <details class="pf"><summary>Show the proof (optional reading for the curious)</summary>
       <div class="ps"><b class="n">A pure repeat when $\gcd(b,10)=1$.</b> Start the long division of $\dfrac ab$ with remainder $a$. After $k$ digits the remainder is $a\times10^k\bmod b$. The digits repeat from the start exactly when this remainder equals $a$ again, that is $a(10^k-1)\equiv0\pmod b$, which (as $\gcd(a,b)=1$) means $b\mid10^k-1$. Such a $k$ exists: the powers $10,10^2,\ldots$ cannot all be different mod $b$, and $10^i\equiv10^j$ with $\gcd(10,b)=1$ lets us cancel to get $10^{j-i}\equiv1$.</div>
-      <div class="ps"><b class="n">Removing the $2$s and $5$s.</b> Let $s=\max(m,n)$. Then $10^s\times\dfrac ab=\dfrac Ac$ where $A$ is an integer coprime to $c$ (we multiplied by $2^s5^s$, which cancels $2^m5^n$ and leaves only $2$s and $5$s on top). Write $\dfrac Ac=w+\dfrac rc$, with $0<r<c$, $\gcd(r,c)=1$. The decimal of $\dfrac rc$ is purely repeating with the period $k$ above, and dividing by $10^s$ moves it $s$ places right.</div>
+      <div class="ps"><b class="n">Removing the $2$s and $5$s.</b> Let $s=\max(m,n)$. Then $10^s\times\dfrac ab=\dfrac Ac$ where $A$ is an integer coprime to $c$ (we multiplied by $2^s5^s$, which cancels $2^m5^n$ and leaves only $2$s and $5$s on top). Write $\dfrac Ac=w+\dfrac rc$, with $0\lt r\lt c$, $\gcd(r,c)=1$. The decimal of $\dfrac rc$ is purely repeating with the period $k$ above, and dividing by $10^s$ moves it $s$ places right.</div>
       <div class="ps"><b class="n">Why the pre-period is exactly $s$.</b> A purely repeating decimal equals $\dfrac N{10^k-1}$ (Theorem 5), whose denominator in simplest form is coprime to $10$. If $\dfrac ab$ started to repeat earlier than $s$ places, shifting by one fewer place, $10^{s-1}\dfrac ab$ would be a purely repeating number plus an integer with a denominator still divisible by $2$ or $5$. That is impossible. $\blacksquare$</div>
       </details>
     </div>
