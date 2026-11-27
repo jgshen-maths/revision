@@ -1,5 +1,5 @@
 # T008 — Write the "Let's do it together" steppers for Chapter 1 (Sections 1.1, 1.2, 1.3)
-Status: ready
+Status: ready — only after T007 is merged
 Size: M (≤ 1 h per section)
 Branch: task/T008-steppers-ch1
 Run on: MacBook
@@ -18,7 +18,8 @@ Two house rules from these sections that your steppers must follow:
 - HCF and LCM are found **from prime factorisations** (smaller / larger power of each prime), as in 1.2 Tab 5.
 
 ## Steps
-1. `git checkout main && git pull && git checkout -b task/T008-steppers-ch1`
+1. `git checkout main && git pull`, then confirm T007 is merged: `git log --oneline -30 | grep "T007:"` must print a line.
+   If it prints nothing, stop and report "blocked: T007 not merged". Otherwise `git checkout -b task/T008-steppers-ch1`.
 2. For each section in turn (1.1, 1.2, 1.3):
    1. Read the listed tabs: text, Techniques, worked examples, "Check your understanding" exercises.
    2. For each listed tab choose its **main method** and write one stepper on a **fresh problem**.

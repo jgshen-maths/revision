@@ -6,7 +6,7 @@ Run on: MacBook
 
 ## Goal
 In 2.3 and 2.4 four inline formulas contain a raw `<` followed by a letter, so the browser reads it as an HTML tag
-and the rest of the sentence disappears (T006 noticed one). Replace `<` by KaTeX's `\lt` in exactly these four places.
+and the rest of the sentence disappears. (Found by the executor in `reports/T006.md`; Claude then found the other three.) Replace `<` by KaTeX's `\lt` in exactly these four places.
 
 ## Steps
 1. `git checkout main && git pull && git checkout -b task/T007-fix-less-than`
