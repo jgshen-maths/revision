@@ -1,5 +1,5 @@
 # T007 — Fix four formulas where "<" breaks the page
-Status: ready
+Status: done (PR #7, merged)
 Size: S (≤ 15 min)
 Branch: task/T007-fix-less-than
 Run on: MacBook

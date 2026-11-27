@@ -1,5 +1,5 @@
 # T008 — Write the "Let's do it together" steppers for Chapter 1 (Sections 1.1, 1.2, 1.3)
-Status: ready — only after T007 is merged
+Status: ready (T007 merged)
 Size: M (≤ 1 h per section)
 Branch: task/T008-steppers-ch1
 Run on: MacBook
