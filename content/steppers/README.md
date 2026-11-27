@@ -29,7 +29,7 @@ window.HZ_STEPPERS = {
 - Add it to a page with `python3 tools/add_steppers.py <page.html> content/steppers/<section>.js` (validates the format; safe to rerun).
 
 ## How to write a good stepper (the teaching rules)
-1. **One stepper per teaching tab** (Tabs 1–4). Not in Tab 5 (Smart Thinking), Homework or the Report.
+1. **One stepper per teaching tab** (usually Tabs 1–4; the card lists the tabs). Not in Smart Thinking / competition tabs, Homework or the Report.
 2. **Follow the tab's main method**, the technique most of its exercises need, in the same order and the same words the tab uses
    (e.g. "Technique 3"). Do not teach anything the tab has not taught.
 3. **A fresh problem**: similar to the tab's worked example but with different numbers. Not copied from an exercise or the homework.

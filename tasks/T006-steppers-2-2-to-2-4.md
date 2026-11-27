@@ -1,5 +1,5 @@
 # T006 — Write the "Let's do it together" steppers for Sections 2.2, 2.3 and 2.4
-Status: ready
+Status: done (PR #6, merged)
 Size: M (≤ 1 h per section)
 Branch: task/T006-steppers-2-2-to-2-4
 Run on: MacBook
